@@ -307,7 +307,7 @@
 .simple-book .home-controls>.journey-stage{grid-column:1/-1;grid-row:2}
 .simple-book .home-controls>.gather-tools{grid-column:1/-1;grid-row:3}
 .simple-book .home-controls:has(>.journey-stage)>.gather-zone{grid-column:1/-1;grid-row:3}
-.simple-book .home-view .home-controls{max-height:calc(100dvh - var(--hud-bottom,146px) - 64px - env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.simple-book .home-view .home-controls{max-height:calc(100dvh - var(--hud-bottom,146px) - 44px - 64px - env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 @media(max-width:480px){
  .simple-book .topbar{flex-wrap:nowrap;gap:4px;padding-left:8px;padding-right:8px}
  .simple-book .topbar-right{gap:0}
