@@ -19,6 +19,7 @@ export function normalizeNotices(value) {
     .slice(0,80).map(item=>({id:item.id.slice(0,160),title:item.title.slice(0,160),body:item.body.slice(0,600),
       route:/^(?:home(?:\/[\w-]+)?|build|research|village|more(?:\/[\w-]+)?)$/.test(item.route)?item.route:'',
       researchTab:['science','workshop','policies'].includes(item.researchTab)?item.researchTab:'',
+      category:item.category==='return'?'return':'',
       read:item.read===true,year:Number.isFinite(item.year)?Math.max(0,item.year):0}));
 }
 export function addNotices(existing, incoming, year=0) {

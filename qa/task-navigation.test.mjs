@@ -26,7 +26,7 @@ test('系统返回原来的家园地区，追踪返回可定位其他目标',asy
  assert.match(t.doc.node('#resource-bar').innerHTML,/追踪：蜂箱/);
 });
 
-test('布局、排序与最近选择可恢复，手记阅读清除未读记录',async()=>{
+test('布局、排序与最近选择可恢复，手记明确标记后清除未读记录',async()=>{
  const storage=sharedStorage(s=>{s.settings.paused=true;s.buildings.library=3;s.resources.science=500;});
  const t=await createTab(storage);await t.click({command:'toggle-management-map'});
  await t.click({buildSort:'recent'});await t.click({buildChoice:'hut'});
@@ -34,6 +34,7 @@ test('布局、排序与最近选择可恢复，手记阅读清除未读记录',
  assert.equal(saved.managementMapCollapsed,true);assert.equal(saved.buildSort,'recent');assert.deepEqual(saved.recentBuildings,['hut']);
  await t.click({act:'research',id:'calendar'});
  saved=JSON.parse(storage.getItem('honeywood-ui-v1'));assert.ok(saved.notices.some(note=>!note.read));
- await t.click({command:'journal'});saved=JSON.parse(storage.getItem('honeywood-ui-v1'));
+ await t.click({command:'journal'});assert.ok(JSON.parse(storage.getItem('honeywood-ui-v1')).notices.some(note=>!note.read));
+ await t.click({command:'read-displayed-notices'});saved=JSON.parse(storage.getItem('honeywood-ui-v1'));
  assert.ok(saved.notices.length);assert.ok(saved.notices.every(note=>note.read));
 });
