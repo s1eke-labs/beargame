@@ -178,8 +178,8 @@
 @media(prefers-reduced-motion:reduce){.simple-book .loading-bear,.simple-book .loading-shadow,.simple-book .loading-leaf{animation:none}.simple-book .loading-screen,.simple-book #loading-fill{transition:none}}
 /* Exploration prioritizes terrain and destinations; utilities are on demand. */
 .simple-book .world-map-header{position:relative;min-height:48px;flex:0 0 48px;display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:0 56px 0 14px;gap:8px}
-.simple-book .world-map-header h1{font-size:15px;margin:0;white-space:nowrap}
-.simple-book .explore-more{min-height:44px;min-width:64px;padding:4px 8px;border:0;background:transparent;font-size:13px}
+.simple-book .world-map-header h1{font-size:var(--text-emphasis);margin:0;white-space:nowrap}
+.simple-book .explore-more{min-height:44px;min-width:64px;padding:4px 8px;border:0;background:transparent;font-size:var(--text-body)}
 .simple-book .world-map-canvas{background-image:url('../../art/forest-long-map.webp');background-size:cover;background-position:center top;background-repeat:no-repeat}
 .simple-book .era-settlement .world-map-canvas{background-image:url('../../art/explore-settlement-long.webp')}
 .simple-book .era-industrial .world-map-canvas{background-image:url('../../art/explore-industrial-long.webp')}
@@ -192,4 +192,159 @@
 .simple-book .explore-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:8px 0}
 .simple-book .explore-menu button,.simple-book .explore-fallback button{display:flex;align-items:center;justify-content:center;gap:9px;min-height:56px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#eef0db}
 .simple-book .explore-menu .icon{width:22px;height:22px}
-.simple-book .explore-fallback{margin-top:14px}.simple-book .explore-fallback h3{font-size:13px;font-weight:500}.simple-book .explore-fallback button{width:100%;justify-content:space-between;margin-top:6px}
+.simple-book .explore-fallback{margin-top:14px}.simple-book .explore-fallback h3{font-size:var(--text-body);font-weight:500}.simple-book .explore-fallback button{width:100%;justify-content:space-between;margin-top:6px}
+
+/* 界面布局规范：安全区、阅读字号和管理密度在此统一，旧主题不再定义顶栏尺寸。 */
+.simple-book{--state-warning:#8a471e;--state-danger:#943c30;--state-success:#355f3e;--state-info:#345c73}
+.simple-book button,.simple-book summary{min-width:var(--control-size);min-height:var(--control-size)}
+.simple-book .app-shell{max-width:1600px}
+.simple-book .topbar{height:auto;min-height:44px;flex:0 0 auto;padding:env(safe-area-inset-top,0px) max(12px,env(safe-area-inset-right,0px)) 0 max(12px,env(safe-area-inset-left,0px));gap:8px;flex-wrap:wrap}
+.simple-book .topbar-right{min-height:44px;gap:4px}
+.simple-book .calendar-pill{font-size:var(--text-caption);padding:0 4px}
+.simple-book .resource-ribbon{height:auto;min-height:76px;display:flex;gap:8px;padding:6px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));overflow-x:auto;align-items:stretch;max-width:none;width:100%}
+.simple-book .resource-tile{flex:1 1 0;min-width:0;min-height:60px;gap:6px;padding:2px 3px;text-align:left}
+.simple-book .resource-tile>.atlas{flex:0 0 26px;width:26px;height:30px}
+.simple-book .resource-copy{flex:1;gap:1px;overflow:hidden}
+.simple-book .resource-copy strong{font-size:var(--text-emphasis);max-width:none;line-height:1.3}
+.simple-book .resource-copy small{font-size:var(--text-body);line-height:1.35;opacity:1;max-width:none}
+.simple-book .resource-copy .resource-name,.simple-book .resource-copy .resource-capacity{display:block;color:var(--muted);font-size:var(--text-caption);line-height:1.35;white-space:nowrap}
+.simple-book .resource-mini-meter{display:block;height:4px;margin-top:3px;background:#dde5ce;border-radius:3px;overflow:hidden}
+.simple-book .resource-mini-meter i{display:block;height:100%;background:var(--state-success)}
+.simple-book .resource-tile.at-cap .resource-mini-meter i{background:var(--state-warning)}
+.simple-book .all-resources{align-self:center;flex:0 0 44px;min-width:44px;min-height:44px;margin-left:0;position:static}
+.simple-book .food-risk{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;width:100%;padding:8px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));background:#fff0d4;color:var(--state-warning);border-bottom:1px solid #d7b989;font-size:var(--text-body);text-align:left}
+.simple-book .resource-pin{min-width:44px;min-height:44px;font-size:var(--text-caption);border:1px solid var(--line);border-radius:10px;padding:6px}
+.simple-book .resource-pin[aria-pressed=true]{background:#e3eccf;color:var(--state-success);border-color:var(--state-success)}
+.simple-book .home-controls,.simple-book .status-strip{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+.simple-book .next-step{min-height:52px;height:auto;padding:5px;overflow:visible}
+.simple-book .guide-copy>b,.simple-book .guide-copy>small{white-space:normal;overflow:visible;text-overflow:clip}
+.simple-book .guide-copy>b{font-size:var(--text-body)}
+.simple-book .guide-copy>small{font-size:var(--text-caption)}
+.simple-book .gather-button,.simple-book .refine-button{height:auto;min-height:54px}
+.simple-book .scene-map-return{width:44px;min-width:44px;flex-basis:44px}
+.simple-book .bottom-nav>button{font-size:var(--text-caption)}
+.simple-book .dialog-backdrop{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.simple-book .dialog{max-width:720px;max-height:calc(100dvh - env(safe-area-inset-top,0px) - 16px)}
+.simple-book .dialog-body{scroll-padding-bottom:24px}
+.simple-book .confirm-actions{gap:10px;flex-wrap:wrap}
+.simple-book .confirm-actions>button{flex:1;min-width:120px}
+.simple-book .secondary-button,.simple-book .subtle-button{background:var(--surface);border-color:#a5b392;color:var(--ink);box-shadow:none}
+.simple-book .danger-outline{background:#fff6ed;border-color:#b97965;color:var(--state-danger);box-shadow:none}
+.simple-book .negative{color:var(--state-danger)!important}
+
+/* 决策内容：收益、条件和操作分别成行，普通操作保持明确的主按钮。 */
+.simple-book .decision-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0;min-width:0}
+.simple-book .decision-toolbar label{display:flex;flex:1 0 100%;flex-wrap:wrap;align-items:center;gap:6px;min-width:0;font-size:var(--text-body)}
+.simple-book .decision-toolbar input,.simple-book .inventory-search input{min-width:0;width:100%;min-height:44px;border:1px solid #a5b392;border-radius:10px;padding:9px 10px;background:var(--surface);font-size:1rem}
+.simple-book .decision-filters,.simple-book .management-tabs{display:flex;gap:6px;overflow-x:auto;align-items:stretch;scrollbar-width:thin;padding:2px 0 5px;margin:4px 0}
+.simple-book .management-tabs{flex:0 0 auto;padding-right:52px;margin:8px 10px}
+.simple-book .decision-filters{max-width:100%;min-width:0}
+.simple-book .decision-filters button,.simple-book .management-tabs button{min-width:44px;min-height:44px;white-space:nowrap;padding:8px 12px;font-size:var(--text-body)}
+.simple-book .card-benefit,.simple-book .card-unlocks,.simple-book .decision-status{grid-column:1/-1;margin:4px 0;font-size:var(--text-body);line-height:1.6;overflow-wrap:anywhere}
+.simple-book .card-benefit{color:var(--state-success)}
+.simple-book .card-unlocks{color:var(--state-info)}
+.simple-book .decision-status{color:var(--state-warning);padding:7px 9px;background:#f7eedc;border-radius:8px}
+.simple-book .action-card:has(>.buy-button:not([aria-disabled=true]))>.decision-status,.simple-book .build-station:has(.build-purchase>.buy-button:not([aria-disabled=true]))>.decision-status{color:var(--state-success);background:#eef2e1}
+.simple-book .decision-tools{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.simple-book .decision-tools>button{min-height:44px;min-width:44px;flex:1;font-size:var(--text-body)}
+.simple-book .trade-preview,.simple-book .conversion-preview,.simple-book .mission-status{grid-column:1/-1;padding:10px;background:#eef2e1;border-radius:10px;font-size:var(--text-body);line-height:1.6;overflow-wrap:anywhere}
+.simple-book .trade-good,.simple-book .trade-odds{display:block}
+.simple-book .storage-warning{display:block;color:var(--state-warning);font-size:var(--text-body)}
+.simple-book .acquisition-links,.simple-book .prerequisite-list{display:flex;flex-direction:column;gap:8px;margin:10px 0;font-size:var(--text-body);overflow-wrap:anywhere}
+.simple-book .missing-resource{grid-column:1/-1;font-size:var(--text-body);padding-top:8px;border-top:1px solid var(--line)}
+.simple-book .decision-extra-filters{width:100%;font-size:var(--text-body)}
+.simple-book .decision-extra-filters>summary{cursor:pointer;display:flex;align-items:center;min-height:44px;color:var(--muted)}
+.simple-book .decision-extra-filters>summary:before{content:'▸';margin-right:8px}
+.simple-book .decision-extra-filters[open]>summary:before{content:'▾'}
+.simple-book .acquisition-links button,.simple-book .prerequisite-list button{min-height:44px;text-align:left;white-space:normal}
+.simple-book .tracked-goal{padding:12px;margin:10px 0;border:1px solid #9cac7e;border-radius:12px;background:#eef2e1;font-size:var(--text-body);line-height:1.6;overflow-wrap:anywhere}
+.simple-book .job-contribution,.simple-book .job-preview,.simple-book .happiness-breakdown{font-size:var(--text-body);line-height:1.6;overflow-wrap:anywhere}
+.simple-book .job-preview{color:var(--state-info)}
+.simple-book .region-status,.simple-book .building-status{display:block;padding:3px 6px;border-radius:6px;background:#fff9eced;color:var(--state-success);font-size:var(--text-caption);line-height:1.4;max-width:100%;white-space:normal}
+.simple-book .inline-action-feedback{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;margin:8px 12px;background:#fff0d4;border:1px solid #caa66b;border-radius:10px;color:var(--state-warning);font-size:var(--text-body);line-height:1.5}
+.simple-book .inline-action-feedback button{min-width:44px;min-height:44px;flex-shrink:0}
+.simple-book .journal-highlights{display:grid;gap:10px;margin:12px 0}
+.simple-book .journal-highlight{border:1px solid var(--line);border-radius:12px;padding:12px;font-size:var(--text-body);line-height:1.6;background:var(--surface)}
+.simple-book .journal-highlight p{margin:6px 0}
+.simple-book .notice-shortcut{min-width:44px;min-height:44px;font-size:var(--text-caption)}
+
+/* 管理页在小屏优先容纳文字；插画缩小，不再通过缩字压缩信息。 */
+.simple-book .research-path .card-title h3,.simple-book .job-top h3{font-size:var(--text-emphasis);line-height:1.5}
+.simple-book .research-path .discovery-card .cost,.simple-book .decision-cost b{font-size:var(--text-body)}
+.simple-book .decision-cost small{font-size:var(--text-caption)}
+.simple-book .research-path>.discovery-card{padding:12px;gap:6px;overflow:visible}
+.simple-book .research-path .card-illustration{height:64px;flex-basis:64px}
+.simple-book .research-path .card-illustration>.atlas{width:70px;height:64px}
+.simple-book .job-bottom>small{font-size:var(--text-body);line-height:1.6}
+.simple-book .job-diorama{height:76px}
+.simple-book .job-diorama>.job-workplace{height:65px;width:70px}
+.simple-book .queue-controls{gap:5px;flex-wrap:wrap}
+.simple-book .queue-controls .icon-button{width:44px;min-width:44px;min-height:44px}
+.simple-book .sheet-build .construction-tray .filter-pill{min-height:44px;font-size:var(--text-body)}
+.simple-book .sheet-build .construction-workbench{display:flex;flex-direction:column;flex:1 1 0;overflow:auto;gap:10px;padding:0 12px 12px}
+.simple-book .sheet-build .game-ribbon{min-height:44px;height:auto;flex:0 0 auto}
+.simple-book .sheet-build .build-station{display:grid;grid-template-columns:minmax(80px,32%) minmax(0,1fr);grid-template-rows:auto auto;gap:8px;flex:0 0 auto}
+.simple-book .sheet-build .build-showcase{min-height:80px;max-height:140px;height:100%}
+.simple-book .sheet-build .build-showcase>.atlas{min-height:80px;max-height:140px;max-width:150px;flex:none}
+.simple-book .sheet-build .blueprint-caption{padding:0;align-self:center;min-width:0}
+.simple-book .sheet-build .blueprint-caption p{display:block;overflow:visible;max-width:none;font-size:var(--text-body);line-height:1.6;-webkit-line-clamp:unset}
+.simple-book .sheet-build .build-purchase{grid-column:1/-1;flex-wrap:wrap;gap:10px;padding:10px}
+.simple-book .sheet-build .build-purchase .buy-button{min-width:100px;flex:1 0 100px}
+.simple-book .sheet-build .decision-costs{flex:3 1 190px}
+.simple-book .sheet-build .construction-tray{margin-top:0;flex:0 0 auto}
+.simple-book .sheet-build .building-option{flex-basis:90px;min-height:80px}
+.simple-book .sheet-build .building-option b{font-size:var(--text-body);white-space:normal}
+.simple-book .sheet-build .construction-management{flex-shrink:0}
+
+@media(max-width:480px){
+ .simple-book .resource-ribbon{gap:3px;padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
+ .simple-book .resource-tile{gap:3px;flex-direction:column;align-items:stretch;justify-content:center}
+ .simple-book .resource-tile>.atlas{display:none}
+ .simple-book .resource-copy{flex:0 1 auto}
+ .simple-book .jobs-grid,.simple-book .card-grid.research-path{grid-template-columns:minmax(0,1fr)}
+ .simple-book .research-path .card-preview{flex-direction:row;align-items:center;gap:12px;text-align:left}
+ .simple-book .research-path .card-illustration{width:56px;height:56px;flex:0 0 56px}
+ .simple-book .research-path .card-illustration>.atlas{width:56px;height:56px}
+ .simple-book .research-path .card-title h3{text-align:left}
+ .simple-book .research-path .discovery-card>.costs{justify-content:flex-start}
+ .simple-book .job-top{flex-direction:row;align-items:center;gap:12px}
+ .simple-book .job-diorama{width:76px;height:74px;flex:0 0 76px;border:0;border-radius:10px}
+ .simple-book .job-diorama>.job-bear{height:45px;width:34px}
+ .simple-book .job-diorama>.job-workplace{right:0;width:54px;height:54px}
+ .simple-book .job-top h3{text-align:left}
+ .simple-book .job-card{padding:10px;gap:8px}
+ .simple-book .job-bottom>small{text-align:left;justify-content:flex-start;min-height:0}
+ .simple-book .job-bottom>.stepper{align-self:flex-end}
+ .simple-book .resource-copy .resource-capacity{white-space:normal}
+ .simple-book .resource-copy small{overflow:hidden;text-overflow:ellipsis}
+ .simple-book .all-resources{align-self:flex-start;margin-top:6px}
+ .simple-book .detail-hero>.atlas{width:72px;height:78px}
+ .simple-book .inventory-line{flex-wrap:wrap;gap:4px}
+ .simple-book .inventory-line strong{font-size:var(--text-emphasis)}
+ .simple-book .game-item>.costs{padding-left:0}
+}
+@media(min-width:1000px){
+ .simple-book .playfield.panel-view{grid-template-columns:minmax(300px,1fr) minmax(560px,1.15fr);grid-template-rows:minmax(0,1fr);padding:12px;gap:16px}
+ .simple-book .panel-view .world-board{grid-column:1;grid-row:1;max-width:none;min-width:0;height:100%}
+ .simple-book .panel-view .home-controls{display:none}
+ .simple-book .panel-view .game-sheet{position:relative;inset:auto;grid-column:2;grid-row:1;width:100%;height:100%;max-height:100%;border:2px solid var(--book-outline);border-radius:18px;transform:none;max-width:none}
+ .simple-book .panel-view .game-sheet.explore-overview{grid-column:1/-1}
+ .simple-book .panel-view .game-sheet.explore-overview~*{display:none}
+ .simple-book .more-hub-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .simple-book .home-view .world-board{max-width:1200px}
+ .simple-book .home-controls{max-width:760px}
+ .simple-book .resource-ribbon{max-width:1000px;margin-inline:auto}
+ .simple-book .dialog-backdrop{padding:20px max(20px,env(safe-area-inset-right,0px)) 20px max(20px,env(safe-area-inset-left,0px))}
+}
+@media(max-height:620px){
+ .simple-book .notebook-intro{display:none}
+}
+@media(max-height:500px) and (min-width:600px){
+ .simple-book .resource-ribbon{min-height:58px;padding-top:3px;padding-bottom:3px}
+ .simple-book .resource-tile{min-height:48px}
+ .simple-book .resource-copy .resource-capacity,.simple-book .resource-mini-meter{display:none}
+ .simple-book .nav-token{display:none}
+ .simple-book .bottom-nav>button{min-height:44px}
+ .simple-book .panel-view .game-sheet{max-height:100%;height:100%}
+ .simple-book .guide-picture{display:none}
+}
