@@ -63,28 +63,29 @@ export function createGame(options={}){
   return Math.max(.25,1-.02*Math.max(0,population-5)+.1*luxuryCount+(e.happiness||0)-.02*Math.max(0,population-populationCapacity(e)));
  }
  function production(){
-  const e=effects(),H=happiness(e),bears=state.bears.length,assigned=state.bears.filter(b=>b.job).length,caps={},gross={},net={};
-  for(const r of catalog.resources){caps[r.id]=r.cap===null?null:Math.max(0,r.cap+(e[r.id+'Max']||0));gross[r.id]=0;net[r.id]=0;}
+  const e=effects(),H=happiness(e),bears=state.bears.length,assigned=state.bears.filter(b=>b.job).length,caps={},gross={},net={},breakdown={};
+  const part=(id,label,value)=>{breakdown[id][label]=(breakdown[id][label]||0)+value;};
+  for(const r of catalog.resources){caps[r.id]=r.cap===null?null:Math.max(0,r.cap+(e[r.id+'Max']||0));gross[r.id]=0;net[r.id]=0;breakdown[r.id]={};}
   const season=constants.SEASON_FACTORS[state.calendar.season]+state.calendar.weather*.15;
-  for(const def of catalog.buildings){const count=enabledCount(def.id);if(!count||def.conversion)continue;for(const r of catalog.resources)if(def.effect?.[r.id])gross[r.id]+=def.effect[r.id]*count*(r.id==='honey'?season:1);}
+  for(const def of catalog.buildings){const count=enabledCount(def.id);if(!count||def.conversion)continue;for(const r of catalog.resources)if(def.effect?.[r.id]){const value=def.effect[r.id]*count*(r.id==='honey'?season:1);gross[r.id]+=value;part(r.id,def.name+(r.id==='honey'?'（当季天气）':''),value);}}
   for(const bear of state.bears){
    const job=maps.jobs[bear.job];if(!job?.output)continue;
    const bonus=skillBonus(bear.skills[job.id]||0);
-   gross[job.output]+=job.rate*(1+bonus)*H*(1+(e[job.id==='hunter'?'hunterJobRatio':job.id+'Ratio']||0));
+   const value=job.rate*(1+bonus)*H*(1+(e[job.id==='hunter'?'hunterJobRatio':job.id+'Ratio']||0));gross[job.output]+=value;part(job.output,job.name,value);
   }
-  for(const r of catalog.resources){gross[r.id]*=1+(e[r.id+'Ratio']||0);if(r.id==='honey')gross[r.id]*=1+(e.pollutionHoneyRatio||0);net[r.id]=gross[r.id];}
+  for(const r of catalog.resources){gross[r.id]*=1+(e[r.id+'Ratio']||0);if(r.id==='honey')gross[r.id]*=1+(e.pollutionHoneyRatio||0);net[r.id]=gross[r.id];for(const label of Object.keys(breakdown[r.id]))breakdown[r.id][label]*=(1+(e[r.id+'Ratio']||0))*(r.id==='honey'?1+(e.pollutionHoneyRatio||0):1);}
   const demand=.85*(bears+assigned*Math.max(0,H-1))*(1-limitedDR(e.honeyDemandReduction||0));
-  net.honey-=demand;net.furs-=bears*.01;net.ivory-=bears*.007;
+  net.honey-=demand;net.furs-=bears*.01;net.ivory-=bears*.007;part('honey','伙伴口粮',-demand);part('furs','伙伴日常消耗',-bears*.01);part('ivory','伙伴日常消耗',-bears*.007);
   const conversions=[];
   for(const def of catalog.buildings){
    const count=enabledCount(def.id);if(!count||!def.conversion)continue;
    let scale=count;for(const [id,value]of Object.entries(def.conversion.input))scale=Math.min(scale,Math.max(0,state.resources[id]+net[id])/value);
    scale=Math.max(0,scale);
-   for(const [id,value]of Object.entries(def.conversion.input))net[id]-=value*scale;
-   for(const [id,value]of Object.entries(def.conversion.output)){net[id]+=value*scale;gross[id]+=value*scale;}
+   for(const [id,value]of Object.entries(def.conversion.input)){net[id]-=value*scale;part(id,def.name+'原料',-value*scale);}
+   for(const [id,value]of Object.entries(def.conversion.output)){net[id]+=value*scale;gross[id]+=value*scale;part(id,def.name,value*scale);}
    conversions.push({id:def.id,scale,total:count});
   }
-  return {effects:e,happiness:H,housing:populationCapacity(e),caps,gross,net,demand,conversions};
+  return {effects:e,happiness:H,housing:populationCapacity(e),caps,gross,net,demand,conversions,breakdown};
  }
  function gateReason(gate={}){
   if(gate.scienceAny?.length&&!gate.scienceAny.some(id=>state.science[id]))return `先完成${gate.scienceAny.map(id=>maps.science[id]?.name||id).join('或')}`;
@@ -182,7 +183,7 @@ export function createGame(options={}){
   const previous=effectCache,p=production();effectCache=p.effects;
   try{
    const counts=jobCounts(),assigned=Object.values(counts).reduce((a,b)=>a+b,0),defsWith=key=>catalog[key].map(card);
-   const resources=catalog.resources.map(r=>({id:r.id,name:r.name,value:state.resources[r.id],max:p.caps[r.id],rate:p.net[r.id]*5,grossRate:p.gross[r.id]*5,consumptionRate:Math.max(0,(p.gross[r.id]-p.net[r.id])*5),breakdown:[{label:'总产出',rate:p.gross[r.id]*5},{label:'总消耗',rate:(p.net[r.id]-p.gross[r.id])*5}],visible:!!state.resourceUnlocked[r.id]||['honey','wood'].includes(r.id)||state.resources[r.id]>0||Math.abs(p.net[r.id])>EPSILON,description:r.description}));
+   const resources=catalog.resources.map(r=>({id:r.id,name:r.name,value:state.resources[r.id],max:p.caps[r.id],rate:p.net[r.id]*5,grossRate:p.gross[r.id]*5,consumptionRate:Math.max(0,(p.gross[r.id]-p.net[r.id])*5),breakdown:Object.entries(p.breakdown[r.id]).filter(([,value])=>Math.abs(value)>EPSILON).map(([label,value])=>({label,rate:value*5})),visible:!!state.resourceUnlocked[r.id]||['honey','wood'].includes(r.id)||state.resources[r.id]>0||Math.abs(p.net[r.id])>EPSILON,description:r.description}));
    const jobs=catalog.jobs.map(d=>{const reason=gateReason(d.gate),yieldFor=bear=>d.rate*(1+skillBonus(bear?.skills[d.id]||0))*p.happiness*(1+(p.effects[d.id==='hunter'?'hunterJobRatio':d.id+'Ratio']||0))*(1+(p.effects[d.output+'Ratio']||0))*(d.output==='honey'?1+(p.effects.pollutionHoneyRatio||0):1)*5,currentRate=state.bears.filter(b=>b.job===d.id).reduce((sum,b)=>sum+yieldFor(b),0),next=state.bears.filter(b=>!b.job).sort((a,b)=>(b.skills[d.id]||0)-(a.skills[d.id]||0))[0];return {...d,type:'assign',currentRate,nextRate:next?yieldFor(next):null,nextFood:next?-.85*Math.max(0,p.happiness-1)*(1-limitedDR(p.effects.honeyDemandReduction||0))*5:null,unlocked:!reason,visible:!reason||counts[d.id]>0,available:!reason&&assigned<state.bears.length,reason:reason||(assigned>=state.bears.length?'没有空闲小熊':''),costs:[],owned:counts[d.id],assigned:counts[d.id],limit:null,effects:`基础产量 ${d.rate*5} ${resourceById[d.output]?.name}/秒`};});
    return {
     version:1,release:{...release},contentLevel:1,rateMultiplier:1,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts').map(c=>({...c,outputAmount:c.amount*(c.id==='wood'?(state.solitary?1+(p.effects.woodRatio||0):1):1+(p.effects.craftRatio||0))})),science:defsWith('science'),workshop:defsWith('workshop'),jobs,queue:queueView(p),
@@ -274,6 +275,11 @@ export function createGame(options={}){
    if(cap!==null&&state.resources[def.output]>=cap)return result(false,'成品已满仓。');pay(costsFor(def,amount));add(def.output,output,p);state.stats.totalCrafted+=amount;
    return result(true,`${def.name}：获得 ${Number(output.toFixed(3))} ${resourceById[def.output].name}。`);
   }
+  if(type==='reassign'){
+   const [from,to]=String(id).split(':'),job=maps.jobs[to];if(!maps.jobs[from]||!job||from===to)return result(false,'请选择两个不同的岗位。');const reason=gateReason(job.gate);if(reason)return result(false,reason);
+   const candidates=state.bears.filter(b=>b.job===from).sort((a,b)=>(b.skills[to]||0)-(a.skills[to]||0));amount=amount==='max'?candidates.length:amount;if(!Number.isInteger(amount)||amount<1||amount>candidates.length)return result(false,'原岗位没有足够伙伴。');for(let i=0;i<amount;i++)candidates[i].job=to;
+   return result(true,`${amount} 只${maps.jobs[from].name}已调任${job.name}。`,{amount});
+  }
   if(type==='assign'||type==='unassign'){
    const job=maps.jobs[id];if(!job)return result(false,'没有这份工作。');if(type==='assign'){const reason=gateReason(job.gate);if(reason)return result(false,reason);}
    const candidates=state.bears.filter(b=>type==='assign'?!b.job:b.job===id);amount=amount==='max'?candidates.length:Math.min(amount,candidates.length);
@@ -310,6 +316,17 @@ export function createGame(options={}){
   finally{actionDepth--;effectCache=null;}
   if(outcome.ok)notify();return outcome;
  }
+ function decisionPreview(change){
+  const original=state,previousCache=effectCache;state=clone(state);effectCache=null;actionDepth++;
+  try{const before=production(),outcome=change();if(outcome?.ok===false)return outcome;effectCache=null;const after=production();return {ok:true,...outcome,resources:catalog.resources.map(r=>({id:r.id,name:r.name,before:before.net[r.id]*5,after:after.net[r.id]*5,delta:(after.net[r.id]-before.net[r.id])*5,capacityDelta:before.caps[r.id]===null?0:after.caps[r.id]-before.caps[r.id]})).filter(r=>Math.abs(r.delta)>EPSILON||Math.abs(r.capacityDelta)>EPSILON),housingDelta:after.housing-before.housing,craftDelta:(after.effects.craftRatio||0)-(before.effects.craftRatio||0),happinessDelta:(after.happiness-before.happiness)*100};}
+  finally{state=original;effectCache=previousCache;actionDepth--;}
+ }
+ function previewBuilding(id,amount=1){
+  const def=maps.buildings[id];if(!def||gateReason(def.gate))return {ok:false,message:'建筑尚未开放。'};amount=amount==='max'?maxAffordable(def):amount;
+  if(!Number.isInteger(amount)||amount<1||amount>MAX_BATCH||owned(def)+amount>MAX_BATCH)return {ok:false,message:'数量无效或当前没有足够物资。'};
+  return decisionPreview(()=>{const bill=costsFor(def,amount),affordable=enough(bill),before=enabledCount(id);if(affordable)pay(bill);state.buildings[id]=owned(def)+amount;state.activeBuildings[id]=before+amount;state.disabled[id]=false;return {amount,affordable};});
+ }
+ function previewTransfer(from,to,amount=1){return decisionPreview(()=>resolveAction('reassign',from+':'+to,amount));}
  function simulate(seconds,{offline=false,notify:doNotify=true}={}){
   const why=locked();if(why)return {ok:false,message:why,seconds:0};
   if(!Number.isFinite(seconds)||seconds<0)return {ok:false,message:'时间必须是非负有限数字。',seconds:0};
@@ -351,7 +368,7 @@ export function createGame(options={}){
   }catch(error){state=checkpoint;pendingOffline=pendingCheckpoint;effectCache=null;return {ok:false,cancelled:!!signal?.aborted,message:`离线结算中断，原有进度已恢复。${error?.message||''}`};}
   finally{catchingUp=false;pendingOperation=null;notify();}
  }
- return {snapshot,getViewModel:snapshot,getState:snapshot,act,dispatch:({type,id,amount})=>act(type,id,amount),tick:seconds=>simulate(seconds),simulate,catchUpAsync,save,export:exportSave,exportSave,importSave,setSetting,
+ return {snapshot,previewBuilding,previewTransfer,getViewModel:snapshot,getState:snapshot,act,dispatch:({type,id,amount})=>act(type,id,amount),tick:seconds=>simulate(seconds),simulate,catchUpAsync,save,export:exportSave,exportSave,importSave,setSetting,
   subscribe(fn){if(typeof fn!=='function')throw new TypeError('订阅者必须是函数');listeners.add(fn);return()=>listeners.delete(fn);},
   _scheduleOffline(seconds){pendingOffline=seconds;},_restoreStatus(status,protect=false){saveStatus=status;storageProtected=protect;},
  };

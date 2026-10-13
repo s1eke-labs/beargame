@@ -17,7 +17,7 @@ const scenario=edit=>{const state=createState(12,1);edit(state);return createGam
 
 test('森林批量失败就地保留实际总缺口，物资足够后清除',()=>{
  const game=scenario(s=>{s.resources.honey=15;});const node={dataset:{actionError:'buildings:hive'},hidden:true,innerHTML:''};
- try{fixture.init(game,node);fixture.click({act:'build',id:'hive',section:'buildings',amount:'5'});assert.equal(node.hidden,false);assert.match(node.innerHTML,/蜂蜜还差 48.53/);assert.match(node.innerHTML,/添置蜂箱/);
+ try{fixture.init(game,node);fixture.click({act:'build',id:'hive',section:'buildings',amount:'5'});assert.equal(node.hidden,false);assert.match(node.innerHTML,/蜂蜜还差 48.53/);assert.match(node.innerHTML,/返回家园采蜜/);
  fixture.refresh();assert.equal(node.hidden,false);for(let n=0;n<60;n++)game.act('gather','honey');fixture.refresh();assert.equal(node.hidden,true);assert.equal(fixture.errors()['buildings:hive'],undefined);
  }finally{delete globalThis.document;}
 });
