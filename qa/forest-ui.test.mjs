@@ -131,7 +131,8 @@ const runtimeSource=source.replaceAll("from './engine.js'",`from '${pathToFileUR
 const originalOpenDialog=openDialog,originalCloseDialog=closeDialog;
 export const fixture={
  init(storage,id='test-a') { globalThis.localStorage=storage; tabId=id; storageIssue=''; readOnly=false; loadBlocked=false; settling=false; settlementFailed=false; hiddenAt=null; dialog=null; dialogHistory=false; parentDialog=null; ui.revealBuilding=null; ui.page='home'; ui.region='village'; ui.buildChoice='hive'; settings.reducedMotion=false; refreshDialog=()=>{}; render=()=>{vm=game.snapshot();}; renderStatus=()=>{}; openDialog=(kind,title,data={})=>{dialog={kind,title,...data};}; closeDialog=()=>{dialog=null;}; notify=()=>{}; dialogRoot={querySelector(){return null;}}; app={querySelector(){return null;}}; claim(); reloadGame(); return vm;},
- step, save, perform, onVisibility, onStorage, flushActive, settle, importFile, preload,
+ step, save, perform, onVisibility, onStorage, flushActive, settle, importFile, preload, prefetchArt, imageFailed,
+ resetArt(){failedAssets.clear();loadedAssets.clear();},
  scene(snapshot,root,options={}){vm=snapshot;app=root;ui.page='home';ui.region=options.region||'village';readOnly=false;storageIssue='';loadBlocked=false;settling=false;settlementFailed=false;dialog=null;settings.reducedMotion=!!options.reduced;if(Object.hasOwn(options,'revealBuilding'))ui.revealBuilding=options.revealBuilding;updateScene();},
  views(snapshot){vm=snapshot;return {map:mapPage(),more:morePage(),build:buildPage(),queue:queuePage()};},
  live(snapshot,root){vm=snapshot;app=root;updateLive();},
@@ -301,7 +302,7 @@ async function withLoader(run){
  const images=[],timers=new Map(),events=new Map();let serial=0;
  const screen={removed:false,classes:new Set(),classList:{add(name){screen.classes.add(name);}},getBoundingClientRect(){return {};},addEventListener(name,fn){events.set(name,fn);},removeEventListener(name,fn){if(events.get(name)===fn)events.delete(name);},remove(){this.removed=true;}};
  const progress={value:0,max:1},label={textContent:'正在准备家园…'},app={inert:true,hidden:true,removeAttribute(name){if(name==='aria-hidden')this.hidden=false;}};
- globalThis.document={querySelector:s=>({'#loading-screen':screen,'#loading-progress':progress,'#loading-label':label})[s]||null};
+ globalThis.document={querySelector:s=>({'#loading-screen':screen,'#loading-progress':progress,'#loading-label':label})[s]||null,querySelectorAll:()=>[]};
  globalThis.Image=class{constructor(){images.push(this);}decode(){return Promise.resolve();}};
  globalThis.setTimeout=(fn,ms)=>{const id=++serial;timers.set(id,{fn,ms});return id;};globalThis.clearTimeout=id=>timers.delete(id);globalThis.matchMedia=()=>({matches:false});
  try{await run({images,timers,events,screen,progress,label,app});}finally{Object.assign(globalThis,original);}
@@ -323,6 +324,14 @@ test('首屏插画失败或超时仍可进入游戏且忽略过期回调',async 
   assert.equal(label.textContent,'家园已可游玩');assert.equal(timers.size,0);
  }));
 });
+
+test('插画重试使用当前外观并在成功后恢复占位内容',async()=>withLoader(async({images})=>{
+ fixture.resetArt();const classes=new Set(),src=forestArt.growth.hive;
+ const img={tagName:'IMG',dataset:{artUrl:src},alt:'',src,classList:{add:x=>classes.add(x),remove:x=>classes.delete(x),contains:x=>classes.has(x)}};
+ globalThis.document.querySelectorAll=()=>[img];fixture.imageFailed({target:img});assert.equal(classes.has('image-failed'),true);
+ const retry=fixture.prefetchArt(true);assert.equal(images.length,1);assert.equal(images[0].src,src);await images[0].onload();await retry;
+ assert.equal(classes.has('image-failed'),false);assert.equal(img.src,src);assert.equal(img.alt,'');
+}));
 
 test('ready loader fades once, keeps hidden controls inert, and honors reduced motion',async t=>{
  await t.test('only its own opacity transition releases Home',async()=>withLoader(async({screen,events,timers,app})=>{
