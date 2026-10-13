@@ -1,6 +1,7 @@
 /** 只读决策预览：沿用结算所用函数，不推进时钟、不抽取随机数。 */
 import {tradeVolume,goodsProbability,spiceProbability} from './diplomacy.js';
 import {policyTradeBonuses,policyTradeGoods} from './policies.js';
+import {researchPurposes} from './research-purposes.js';
 
 const probability=value=>Math.max(0,Math.min(1,value));
 const catalogIndexes=new WeakMap();
@@ -52,6 +53,7 @@ export function researchRelations(catalog,definition){
  }
  const section=definition.type==='research'?'science':definition.type==='upgrade'?'workshop':'metaphysics';
  const opens=[...new Set([...(definition.opens||[]),...(dependents.get(`${section}:${definition.id}`)||[])])];
- const benefit=definition.id==='metaphysics'?'开启传承研究，并允许将现有传承转为余烬传承。':opens.length?'为后续项目提供前置条件；部分项目仍需其他条件。':'这项研究没有直接产量增益，具体作用见说明。';
+ const benefit=definition.type==='research'&&researchPurposes[definition.id]||definition.summary||
+  (opens.length?`后续可继续发展${opens.slice(0,3).join('、')}。`:`${definition.name}：${definition.description||'当前目录没有直接产量加成。'}`);
  return {prerequisites,opens,decisionBenefit:benefit};
 }
