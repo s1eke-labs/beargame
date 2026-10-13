@@ -46,7 +46,7 @@
 .simple-book .decision-workbench .building-option.selected{border-color:var(--book-outline);background:#e5edcf;box-shadow:inset 0 0 0 1px var(--book-outline)}
 .simple-book .decision-workbench .blueprint-art{height:35px;width:50px}
 .simple-book .decision-workbench .building-option b{font-size:var(--text-body);line-height:1.25}
-.simple-book .choice-status{display:block;font-size:var(--text-caption);line-height:1.3;white-space:normal;color:var(--muted)}
+.simple-book .choice-status{display:block;font-size:var(--text-body);line-height:1.35;white-space:normal;color:var(--muted)}
 .simple-book .decision-workbench .building-option small{position:absolute;right:3px;top:2px;font-size:var(--text-caption)}
 .simple-book .decision-workbench .build-station{display:grid;grid-template-columns:68px minmax(0,1fr);grid-template-rows:auto;gap:6px 10px;padding-top:9px;border-top:1px solid var(--line)}
 .simple-book .decision-workbench .build-showcase{grid-column:1;grid-row:1;height:68px;min-height:68px;max-height:68px}
@@ -57,7 +57,7 @@
 .simple-book .decision-workbench .construction-owned{display:inline;margin:0;font-size:var(--text-caption)}
 .simple-book .decision-workbench .build-purchase{position:sticky;bottom:0;z-index:5;grid-column:1/-1;grid-row:auto;min-height:64px;margin:0;padding:7px;background:#e7eed8;border:1px solid #96a782;box-shadow:0 2px 0 #fff9ec}
 .simple-book .decision-workbench .build-purchase>.buy-button{flex:0 0 104px;min-width:104px;min-height:46px}
-.simple-book .decision-workbench .decision-status{grid-column:1/-1;grid-row:auto;margin:0;padding:4px 8px;line-height:1.45;font-size:var(--text-caption)}
+.simple-book .decision-workbench .decision-status{grid-column:1/-1;grid-row:auto;margin:0;padding:4px 8px;line-height:1.45;font-size:var(--text-body)}
 .simple-book .decision-workbench .decision-tools{margin:0;gap:8px}
 .simple-book .decision-workbench .decision-tools>button{font-size:var(--text-caption)}
 .simple-book .decision-workbench .build-extra{grid-column:1/-1;width:100%;margin:0;border-top:1px solid var(--line);border-bottom:0}
@@ -70,7 +70,7 @@
 .simple-book .compact-research .card-title h3{text-align:left;font-size:var(--text-emphasis)}
 .simple-book .compact-research>.discovery-card{gap:5px;padding:10px;min-height:0}
 .simple-book .compact-research .card-benefit,.simple-book .compact-research .card-unlocks{margin:2px 0;font-size:var(--text-body);line-height:1.45}
-.simple-book .compact-research .decision-status{padding:4px 7px;margin:0;font-size:var(--text-caption);line-height:1.45}
+.simple-book .compact-research .decision-status{padding:4px 7px;margin:0;font-size:var(--text-body);line-height:1.45}
 .simple-book .compact-research .discovery-card>.costs{justify-content:flex-start}
 .simple-book .compact-research .decision-tools{margin-top:0}
 .simple-book .compact-research .decision-tools>button{font-size:var(--text-caption)}
@@ -124,7 +124,7 @@
 .simple-book .tracked-goal-main>span:first-child{min-width:0}
 .simple-book .tracked-goal-main b,.simple-book .tracked-goal-main small{display:block;overflow-wrap:anywhere}
 .simple-book .tracked-goal-main b{font-size:var(--text-body)}
-.simple-book .tracked-goal-main small{font-size:var(--text-caption)}
+.simple-book .tracked-goal-main small{font-size:var(--text-body)}
 .simple-book .target-return{flex-shrink:0;font-size:var(--text-caption)}
 .simple-book .tracked-goal-cancel{flex-shrink:0;min-width:44px;max-width:64px;font-size:var(--text-caption);text-align:center}
 .simple-book .task-return-bar{padding:0 12px;border-bottom:1px solid var(--line);background:#f0eddd}
@@ -146,7 +146,7 @@
 .simple-book .state-blocked{color:var(--state-danger)}
 .simple-book .state-ready,.simple-book .state-complete{color:var(--state-success)}
 .simple-book .state-idle,.simple-book .state-waiting{color:var(--muted)}
-.simple-book .building-status,.simple-book .region-status{display:inline-flex;align-items:center;gap:3px;width:max-content;max-width:100%;font-size:var(--text-caption)}
+.simple-book .building-status,.simple-book .region-status{display:inline-flex;align-items:center;gap:3px;width:max-content;max-width:100%;font-size:var(--text-body)}
 .simple-book .building-status>.icon,.simple-book .region-status>.icon{width:13px;height:13px}
 .simple-book .recipe-workbench .recipe-picker{margin-top:8px}
 .simple-book .recipe-workbench .recipe-option{flex-basis:80px;min-height:84px}
@@ -154,13 +154,111 @@
 .simple-book .recipe-workbench .recipe-purchase{position:sticky;bottom:0;z-index:6;background:var(--paper);padding:8px 0;border-block:1px solid var(--line)}
 @media(min-width:1000px){
  .simple-book .management-map-toggle{display:flex;position:absolute;top:0;right:60px;z-index:15;font-size:var(--text-caption);padding:0 8px}
+ .simple-book .panel-view .world-board .world-toolbar{visibility:visible;pointer-events:auto}
  .simple-book .panel-view .page-heading{padding-right:164px}
  .simple-book .sheet-build .management-tabs{padding-right:160px}
  .simple-book .playfield.panel-view.management-map-collapsed{grid-template-columns:minmax(0,1fr)}
  .simple-book .management-map-collapsed .world-board{display:none}
  .simple-book .management-map-collapsed .game-sheet{grid-column:1;max-width:1100px;justify-self:center}
- .simple-book .management-map-collapsed .card-grid.research-path{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .simple-book .management-map-collapsed .card-grid.research-path{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
  .simple-book .management-map-collapsed .compact-jobs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* 管理区域以自己的宽度决定内容密度；手机和平板不保留不可操作的场景。 */
+.simple-book .game-sheet-body{container-type:inline-size;container-name:management}
+.simple-book .card-grid.research-path{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));align-items:start}
+.simple-book .research-controls,.simple-book .recipe-controls{margin:0 0 8px}
+.simple-book .research-controls>summary,.simple-book .recipe-controls>summary{min-height:44px;font-size:var(--text-body)}
+.simple-book .system-heading{display:flex;align-items:center;gap:10px;min-height:52px;margin:0 -3px 10px;padding-right:48px;border-bottom:1px solid var(--line)}
+.simple-book .system-heading .back-button{flex:0 0 auto;margin:0;padding:0 4px;font-size:var(--text-body)}
+.simple-book .system-heading h1{font-size:1.125rem;line-height:1.35}
+.simple-book .system-heading .page-heading{position:static;margin:0;padding:0;min-height:0;background:none;border:0;box-shadow:none}
+.simple-book .progression-actions:empty{display:none}
+.simple-book .decision-status>small{display:block;font-size:var(--text-body);line-height:1.5;margin-top:3px}
+.simple-book .decision-cost.short small{font-size:var(--text-body);color:var(--state-warning)}
+.simple-book .happiness-alert{padding:10px 12px;margin:8px 0;border:1px solid #caa66b;border-radius:12px;background:#fff0d4;color:var(--state-warning);font-size:var(--text-body);line-height:1.5}
+.simple-book .happiness-alert .text-button{font-size:var(--text-body);color:inherit}
+.simple-book .job-transfer-form{display:grid;gap:14px;margin:14px 0}
+.simple-book .job-transfer-form label{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:var(--text-body)}
+.simple-book .job-transfer-form select,.simple-book .job-transfer-form input{width:100%;min-width:0;min-height:44px;padding:8px 10px;border:1px solid #a5b392;border-radius:10px;background:var(--surface);font:inherit;color:var(--ink)}
+.simple-book .job-transfer-form select:focus-visible{outline:3px solid #577b8f;outline-offset:3px}
+.simple-book .purchase-preview{display:flex;flex-direction:column;gap:3px;grid-column:1/-1;margin:4px 0;font-size:var(--text-body);line-height:1.45;color:var(--state-success)}
+.simple-book .purchase-preview p{font-size:inherit;line-height:inherit}
+.simple-book .purchase-preview>small{font-size:var(--text-caption);color:var(--muted);line-height:1.5}
+.simple-book .purchase-preview>details>summary{font-size:var(--text-body);cursor:pointer;padding:10px 0}
+.simple-book .immediate-shortages{display:flex;flex-wrap:wrap;gap:4px 8px;grid-column:1/-1;font-size:var(--text-body);line-height:1.45;color:var(--state-warning)}
+.simple-book .immediate-shortages .text-button{font-size:var(--text-body);color:var(--state-warning);text-decoration:underline;text-underline-offset:3px}
+.simple-book .pin-feedback{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:8px 0;padding:8px 10px;background:#eef2e1;border:1px solid var(--line);border-radius:10px;font-size:var(--text-body);line-height:1.5}
+.simple-book .pin-feedback button{flex-shrink:0;min-height:44px}
+.simple-book .inventory-pin-count{margin:0 0 8px;color:var(--muted);font-size:var(--text-body);line-height:1.5}
+.simple-book .journal-group{margin:16px 0}
+.simple-book .journal-group>h3,.simple-book .journal-group>h4{font-size:var(--text-emphasis);margin:0 0 8px}
+.simple-book .journal-group .journal-highlight+.journal-highlight{margin-top:8px}
+.simple-book .journal-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:var(--text-body)}
+.simple-book .journal-highlight.unread{border-left:4px solid #708954;background:#f1f4e5}
+.simple-book .journal-highlight h4{margin:3px 0;font-size:var(--text-emphasis)}
+.simple-book .journal-highlight small{color:var(--muted);font-size:var(--text-caption)}
+.simple-book .catalog-view-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:44px;padding:6px 2px;font-size:var(--text-body);color:var(--forest)}
+.simple-book .catalog-workbench,.simple-book .catalog-browse,.simple-book .catalog-detail{min-width:0;min-height:0}
+.simple-book .item-catalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:8px;padding:4px 0 10px}
+.simple-book .catalog-option{display:flex;align-items:flex-start;gap:9px;min-width:0;min-height:72px;width:100%;padding:10px;border:1px solid #a5b392;border-radius:12px;background:var(--surface);text-align:left}
+.simple-book .catalog-option.selected,.simple-book .catalog-option[aria-pressed=true]{border:2px solid var(--book-outline);padding:9px;background:#e5edcf}
+.simple-book .catalog-art,.simple-book .catalog-art>.atlas{width:44px;height:44px;flex:0 0 44px}
+.simple-book .catalog-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px;overflow-wrap:anywhere}
+.simple-book .catalog-copy>b{font-size:var(--text-emphasis);line-height:1.4}
+.simple-book .catalog-benefit{font-size:var(--text-body);line-height:1.45;color:var(--state-success)}
+.simple-book .catalog-copy .choice-status{font-size:var(--text-body)}
+.simple-book .catalog-copy>small{font-size:var(--text-caption);color:var(--muted);line-height:1.45}
+.simple-book .sheet-build .construction-tray{display:grid;grid-template-columns:minmax(0,1fr) auto}
+.simple-book .sheet-build .build-search-controls{grid-column:1/-1;grid-row:1;min-width:0}
+.simple-book .sheet-build .build-search-controls>summary{padding-right:118px}
+.simple-book .sheet-build .build-search-controls>summary>span{display:none}
+.simple-book .sheet-build .catalog-view-toggle{grid-column:2;grid-row:1;align-self:start;width:auto;max-width:114px;margin:0;padding:6px 2px 6px 8px}
+.simple-book .construction-tray:has(.build-search-controls[open])>.catalog-view-toggle{visibility:hidden;pointer-events:none}
+.simple-book .sheet-build .building-picker,.simple-book .sheet-build .item-catalog,.simple-book .sheet-build .clear-filter{grid-column:1/-1}
+.simple-book .recipe-workbench{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start}
+.simple-book .recipe-workbench>*{grid-column:1/-1;min-width:0}
+.simple-book .recipe-workbench>.recipe-controls{grid-row:1}
+.simple-book .recipe-workbench>.recipe-controls>summary{padding-right:118px}
+.simple-book .recipe-workbench>.recipe-controls>summary>span{display:none}
+.simple-book .recipe-workbench>.catalog-view-toggle{grid-column:2;grid-row:1;width:auto;max-width:114px;padding:6px 2px 6px 8px;align-self:start}
+.simple-book .recipe-workbench .recipe-purchase>.buy-button{min-width:96px;flex:0 0 96px;white-space:nowrap}
+.simple-book .build-showcase{position:relative}
+.simple-book .detail-hint{position:absolute;bottom:0;left:50%;transform:translateX(-50%);padding:1px 5px;border:1px solid var(--line);border-radius:5px;background:var(--paper);font-size:var(--text-caption);white-space:nowrap;pointer-events:none}
+@media(max-width:999px){
+ .simple-book .playfield.panel-view{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);padding:0;gap:0}
+ .simple-book .panel-view .world-board,.simple-book .panel-view .home-controls{display:none}
+ .simple-book .panel-view .game-sheet{position:relative;inset:auto;grid-column:1;grid-row:1;width:100%;height:100%;max-height:100%;margin:0;border-radius:14px 14px 0 0;transform:none;max-width:none}
+ .simple-book .panel-view .game-sheet.explore-overview{border:0;border-radius:0}
+ .simple-book .panel-view .game-sheet-body{padding-top:0}
+ .simple-book .panel-view .page-heading{padding-top:9px;padding-bottom:9px;min-height:48px}
+ .simple-book .more-overview .page-heading{margin-top:10px}
+}
+@media(max-height:740px) and (max-width:999px){
+ .simple-book .resource-ribbon{min-height:64px;padding-top:3px;padding-bottom:5px}
+ .simple-book .resource-tile{min-height:54px}
+ .simple-book .resource-copy .resource-capacity{display:none}
+ .simple-book .resource-mini-meter{height:3px;margin-top:2px}
+ .simple-book .resource-copy strong{font-size:var(--text-emphasis)}
+ .simple-book .food-risk{padding-top:4px;padding-bottom:4px}
+ .simple-book .system-heading{min-height:48px;margin-bottom:6px}
+ .simple-book .compact-research>.discovery-card{padding:8px;gap:4px}
+ .simple-book .compact-research .card-preview{min-height:44px;gap:8px}
+ .simple-book .compact-research .card-illustration,.simple-book .compact-research .card-illustration>.atlas{width:40px;height:40px;flex-basis:40px}
+ .simple-book .compact-research .card-benefit,.simple-book .compact-research .card-unlocks{line-height:1.4;margin:0}
+ .simple-book .compact-research .decision-tools{gap:4px}
+ .simple-book .research-sections{margin:0}
+ .simple-book .sheet-research:has(.research-sections) .page-heading{position:absolute;width:1px;height:1px;min-height:0;margin:0;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+ .simple-book .sheet-research .research-sections{padding:2px 52px 5px 0;min-height:49px}
+ .simple-book .research-controls,.simple-book .recipe-controls{margin-bottom:5px}
+ .simple-book .recipe-workbench .recipe-picker{margin-top:4px}
+ .simple-book .recipe-unit-cost{margin-top:6px}
+}
+@container management (min-width:520px){
+ .simple-book .catalog-workbench{display:grid;grid-template-columns:minmax(220px,.9fr) minmax(244px,1.1fr);gap:16px;align-items:start}
+ .simple-book .catalog-workbench>.catalog-browse{grid-column:1}
+ .simple-book .catalog-workbench>.catalog-detail{grid-column:2;position:sticky;top:0}
+ .simple-book .catalog-workbench .item-catalog{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:360px){
  .simple-book .compact-jobs .job-top{grid-template-columns:minmax(0,1fr) auto;gap:5px}
@@ -250,7 +348,8 @@
  .simple-book .panel-view .world-board{visibility:hidden}
  .simple-book .panel-view .game-sheet{position:absolute;inset:0;width:100%;height:100%;max-height:100%;border-radius:12px}
  .simple-book .sheet-build .sheet-close{top:0;right:10px}
- .simple-book .sheet-build .management-tabs{padding-right:190px}
+ .simple-book .sheet-build .management-tabs{padding-right:300px}
+ .simple-book .sheet-build .catalog-view-toggle{position:absolute;top:0;right:190px;width:110px;max-width:110px;z-index:12;background:var(--paper);white-space:nowrap}
  .simple-book .sheet-build .decision-workbench .build-station{display:grid;grid-template-columns:minmax(0,1fr) minmax(244px,36%);grid-template-rows:minmax(0,1fr);gap:8px}
  .simple-book .sheet-build .build-browse-scroll{grid-column:1;grid-row:1;padding-bottom:0}
  .simple-book .sheet-build .decision-workbench .construction-tray{display:flex;flex-direction:column}
