@@ -45,9 +45,9 @@ const source=(await readFile(resolve(root,'src/chapters/forest/main.js'),'utf8')
  .replaceAll("from './art.js'",`from '${pathToFileURL(resolve(root,'src/chapters/forest/art.js'))}'`)
  .replace(/if\(typeof document!==.*?boot\(\);\s*$/,'')+`
 export const fixture={
- init(snapshot){vm=snapshot;settings={pinned:[]};ui.page='research';ui.region='village';ui.researchTab='science';ui.researchQuery='农事';ui.researchReady=true;ui.returnContext=null;ui.pendingTarget=null;ui.pageScrolls={};dialog={kind:'resources',resource:'science'};dialogHistory=false;app={querySelector(){return null;}};closeDialog=()=>{dialog=null;};render=()=>{};openDialog=(kind,title,data)=>{dialog={kind,title,...data};};},
- click(data){onClick({target:{closest:()=>({dataset:data})}});}, readHash,restorePage,returnToTask,
- setPage(page){ui.page=page;},
+ init(snapshot){vm=snapshot;settings={pinned:[]};ui.page='research';ui.region='village';ui.buildChoice='hive';ui.queuePage=0;ui.researchTab='science';ui.researchQuery='农事';ui.researchReady=true;ui.returnContext=null;ui.pendingTarget=null;ui.pageScrolls={};dialog={kind:'resources',resource:'science'};dialogHistory=false;app={querySelector(){return null;}};closeDialog=()=>{dialog=null;};render=()=>{};openDialog=(kind,title,data)=>{dialog={kind,title,...data};};},
+ click(data){onClick({target:{closest:()=>({dataset:data})}});}, readHash,rememberPage,restorePage,returnToTask,
+ setPage(page){ui.page=page;},select(options){Object.assign(ui,options);},
  view:()=>({page:ui.page,query:ui.researchQuery,ready:ui.researchReady,target:ui.pendingTarget,origin:ui.returnContext,dialog,scrolls:ui.pageScrolls}),
 };`;
 const {fixture}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
@@ -100,4 +100,32 @@ test('队列成本的资源补给流程返回建造队列而不是家园',()=>{
   fixture.returnToTask();assert.equal(hash,'#build/queue');assert.equal(fixture.view().page,'queue');
   assert.equal(fixture.view().dialog.resource,'science');
  }finally{delete globalThis.location;delete globalThis.window;delete globalThis.history;}
+});
+
+test('岗位与工坊列表滚动不受其他页面的建筑和研究选择影响',()=>{
+ let top=380;
+ globalThis.window={get scrollY(){return top;},scrollTo({top:value}){top=value;}};
+ try{
+  fixture.init(createGame().snapshot());fixture.setPage('village');fixture.rememberPage();
+  fixture.select({page:'build',buildChoice:'warehouse',researchTab:'workshop',region:'woodland',queuePage:2});top=90;fixture.rememberPage();
+  fixture.setPage('village');fixture.restorePage();assert.equal(top,380);
+  fixture.setPage('crafts');top=270;fixture.rememberPage();
+  fixture.select({page:'research',researchTab:'science',buildChoice:'hut',queuePage:0});top=30;fixture.rememberPage();
+  fixture.setPage('crafts');fixture.restorePage();assert.equal(top,270);
+ }finally{delete globalThis.window;}
+});
+
+test('研究分类和队列页各自记忆位置而不共用一次滚动',()=>{
+ let top=180;
+ globalThis.window={get scrollY(){return top;},scrollTo({top:value}){top=value;}};
+ try{
+  fixture.init(createGame().snapshot());
+  fixture.click({researchTab:'workshop'});assert.equal(top,0);top=420;
+  fixture.select({buildChoice:'warehouse'});fixture.click({researchTab:'science'});assert.equal(top,180);
+  fixture.click({researchTab:'workshop'});assert.equal(top,420);
+  fixture.select({page:'queue',queuePage:0});top=250;
+  fixture.click({queuePage:'1'});assert.equal(top,0);top=70;
+  fixture.select({researchTab:'science'});fixture.click({queuePage:'0'});assert.equal(top,250);
+  fixture.click({queuePage:'1'});assert.equal(top,70);
+ }finally{delete globalThis.window;}
 });
