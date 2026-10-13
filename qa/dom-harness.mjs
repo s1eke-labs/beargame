@@ -9,7 +9,7 @@ export function now(){return clock;}
 class Classes{constructor(){this.values=new Set();}add(...x){x.forEach(v=>this.values.add(v));}remove(...x){x.forEach(v=>this.values.delete(v));}contains(x){return this.values.has(x);}toggle(x,force){const yes=force??!this.values.has(x);yes?this.values.add(x):this.values.delete(x);return yes;}}
 class Element{
  constructor(doc,id=''){this.doc=doc;this.id=id;this.dataset={};this.attributes={};this.classList=new Classes();this.style={setProperty(k,v){this[k]=v;}};this.innerHTML='';this.textContent='';this.scrollTop=0;this.isConnected=true;this.offsetParent={};this.listeners={};this.children=[];}
- set innerHTML(value){this._html=String(value);if(this.id==='app'){const main=this._html.match(/<main\b[^>]*id="main-content"[^>]*>([\s\S]*?)<\/main>/);if(main)this.doc.node('#main-content').innerHTML=main[1];}}
+ set innerHTML(value){this._html=String(value);if(this.id==='app'){const main=this._html.match(/<main\b[^>]*id="main-content"[^>]*>([\s\S]*?)<\/main>/);if(main)this.doc.node('#main-content').innerHTML=main[1];const resources=this._html.match(/<div id="resource-bar">([\s\S]*?)<\/div><main/);if(resources)this.doc.node('#resource-bar').innerHTML=resources[1];}}
  get innerHTML(){return this._html||'';}
  querySelector(s){return this.doc.node(s);}
  querySelectorAll(){return [];}
@@ -20,6 +20,8 @@ class Element{
  matches(selector){return selector==='a[href="#home"]'&&this.attributes.href==='#home';}
  getAttribute(k){return this.attributes[k]??null;}
  setAttribute(k,v){this.attributes[k]=v;}
+ removeAttribute(k){delete this.attributes[k];}
+ get ownerDocument(){return this.doc;}
  focus(){this.doc.activeElement=this;}
  insertAdjacentHTML(position,value){this.innerHTML=value+this.innerHTML;}
  append(child){this.children.push(child);}
@@ -46,6 +48,7 @@ export function renderedButton(tab,query,root='#main-content'){
  for(const match of html.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/g)){
   const attrs={},dataset={};
   for(const a of match[1].matchAll(/([\w:-]+)(?:="([^"]*)"|='([^']*)')?/g)){attrs[a[1]]=unescape(a[2]??a[3]??'');if(a[1].startsWith('data-'))dataset[a[1].slice(5).replace(/-([a-z])/g,(_,c)=>c.toUpperCase())]=attrs[a[1]];}
+  if(query.act&&!Object.hasOwn(query,'amount')&&dataset.amount&&dataset.amount!=='1')continue;
   if(Object.entries(query).every(([key,value])=>dataset[key]===String(value)))return {dataset,attrs,text:unescape(match[2].replace(/<[^>]*>/g,''))};
  }
  throw new Error(`Actual rendered control missing: ${JSON.stringify(query)} in ${root}`);
