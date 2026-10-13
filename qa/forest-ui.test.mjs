@@ -12,9 +12,9 @@ const source=await readFile(resolve(root,'src/chapters/forest/main.js'),'utf8');
 const css=await readFile(resolve(root,'src/chapters/forest/style.css'),'utf8');
 const html=await readFile(resolve(root,'src/chapters/forest/index.html'),'utf8');
 
-test('forest UI has only local chapter dependencies and exactly three persistent destinations',()=>{
+test('森林界面保持章节依赖隔离并随解锁开放一级入口',()=>{
  assert.deepEqual([...source.matchAll(/^import .+ from '([^']+)'/gm)].map(m=>m[1]),['./engine.js','./art.js']);
- assert.match(source,/function nav\(\)\{const list=\[\['home','家园','buildings','hut'\],\['build','建造','buildings','hive'\],\['more','更多'\]\]/);
+ assert.match(source,/function nav\(\)[\s\S]*?vm\.science\.some\(known\)/);assert.match(source,/\['village','小熊','bears','wave'\]/);
  assert.match(source,/data-nav="research"/);assert.match(source,/data-nav="village"/);assert.match(source,/data-nav="crafts"/);
  assert.doesNotMatch(html,/src\/main\.js|resources-atlas|research-subjects|worker-outfits/);
  assert.match(html,/viewport-fit=cover/);assert.match(css,/min-height:44px;min-width:44px/);assert.match(css,/@media\(max-width:350px\)/);
@@ -274,7 +274,7 @@ test('each next-building guide opens that exact selection without collecting res
   fixture.init(storageFor());const before=fixture.state().vm,snapshot=createGame().snapshot();
   for(const target of ['hive','hut','library']){
    fixture.scene(snapshot,root,{revealBuilding:null});assert.equal(guide.dataset.buildTarget,target);fixture.click(guide.dataset);assert.equal(fixture.ui().buildChoice,target);assert.equal(globalThis.location.hash,'build');
-   snapshot.buildings.find(c=>c.id===target).owned=1;
+   snapshot.buildings.find(c=>c.id===target).owned=target==='hive'?20:1;snapshot.resources.find(r=>r.id==='honey').value=1500;if(target==='hut'){snapshot.bears.value=1;snapshot.bears.free=0;}
   }
   assert.deepEqual(fixture.state().vm.resources,before.resources);assert.deepEqual(fixture.state().vm.stats,before.stats);assert.equal(fixture.state().vm.ticks,before.ticks);
  }finally{delete globalThis.document;delete globalThis.location;delete globalThis.localStorage;}
