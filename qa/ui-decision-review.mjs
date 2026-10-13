@@ -20,10 +20,9 @@ export async function reviewDecisionUi(browser,origin,{output=resolve(tmpdir(),'
  const {context:ec,page:ep}=await contextFor(early);
  try{
   await go(ep,'build');await ep.locator('[data-build-choice="hut"]').click();
-  await ep.locator('.build-extra>summary').click();
-  await ep.locator('.build-station [data-acquire-recipe="wood"]').scrollIntoViewIfNeeded();
+  await ep.locator('.build-station .immediate-shortages [data-acquire-recipe="wood"]').scrollIntoViewIfNeeded();
   const before=await ep.locator('.build-browse-scroll').evaluate(e=>e.scrollTop);
-  await ep.locator('.build-station [data-acquire-recipe="wood"]').click();
+  await ep.locator('.build-station .immediate-shortages [data-acquire-recipe="wood"]').click();
   await ep.locator('.recipe-workbench').waitFor();assert.equal(new URL(ep.url()).hash,'#more/crafts');
   await ep.locator('.recipe-purchase [data-act="refine"]').click();
   await ep.locator('[data-command="return-task"]').click();
@@ -62,7 +61,12 @@ export async function reviewDecisionUi(browser,origin,{output=resolve(tmpdir(),'
   const batchIds=await page.locator('.recipe-workbench .batch-controls [data-act]').evaluateAll(es=>es.map(e=>e.dataset.id));
   assert.ok(batchIds.length);assert.ok(batchIds.every(id=>id==='slab'));
   checks.push('常用功能去重，配方筛选与批量预览始终对应同一项目');
-  await go(page,'build');await page.locator('.build-station [data-track-target]').click();
+  await go(page,'build');
+  await page.locator('[data-catalog-view="build"]').click();await page.locator('.catalog-option[data-build-choice="hut"]').click();
+  assert.ok((await page.locator('.build-selected-header').innerText()).includes('树洞熊舍'));
+  assert.ok((await page.locator('.purchase-preview').innerText()).includes('住处'));
+  checks.push('完整建筑目录选中项目并展示实际购买后的住处变化');
+  await page.locator('.build-station [data-track-target]').click();
   await go(page,'village');assert.equal(await page.locator('[data-resume-target]').count(),1);
   await page.locator('[data-resume-target]').click();await page.locator('.dialog').waitFor();
   assert.equal(new URL(page.url()).hash,'#build');await page.locator('[data-command="close"]').click();

@@ -6,7 +6,7 @@ import {researchTopics} from './research-topics.js';
 
 export function searchControl(state,value,label){return `<label class="decision-search">${esc(label)}<input type="search" data-ui-search="${state}" data-focus-key="search-${state}" value="${esc(value||'')}" placeholder="${esc(label.startsWith('搜索')?label:'搜索'+label)}" autocomplete="off"></label>`;}
 export function filterControls(attr,value,entries){return `<div class="decision-filters" role="group" aria-label="筛选">${entries.map(([id,name])=>`<button class="filter-pill ${value===id?'selected':''}" data-${attr}="${id}" aria-pressed="${value===id}">${name}</button>`).join('')}</div>`;}
-export function matchesQuery(c,query,extra=''){const term=(query||'').trim().toLocaleLowerCase();return !term||`${c.name} ${c.description||''} ${c.effects||''} ${(c.opens||[]).join(' ')} ${extra}`.toLocaleLowerCase().includes(term);}
+export function matchesQuery(c,query,extra=''){const term=(query||'').trim().toLocaleLowerCase();return !term||`${c.name} ${c.description||''} ${c.decisionBenefit||''} ${c.effects||''} ${(c.opens||[]).join(' ')} ${extra}`.toLocaleLowerCase().includes(term);}
 export function buildChoices(vm,ui){
  const all=vm.buildings.filter(c=>knownBuilding(vm,c)),filter=all.length>10?(ui.buildFilter||'all'):'all';
  const storage=new Set(['barn','warehouse','harbor']),community=new Set(['hut','logHouse','mansion','library','academy','amphitheatre','temple','observatory']);
@@ -41,7 +41,7 @@ export function decisionTools(c,section,vm,ui={}){
  return `<div class="decision-tools"><button class="text-button" data-track-target="${esc(target)}" aria-pressed="${tracked}">${tracked?'取消追踪':'追踪目标'}</button>${option&&discovered(option)?`<button class="text-button" data-act="queueEnqueue" data-id="${esc(option.id)}" ${!option.available?'aria-disabled="true"':''} data-reason="${esc(option.reason)}">加入队列</button>`:''}</div>`;
 }
 export function prerequisiteMarkup(c,vm){if(!c.prerequisites?.length)return '';return `<div class="prerequisite-list"><b>前置条件</b>${c.prerequisites.map(p=>{const target=cardsFor(vm,p.section).find(c=>c.id===p.id),done=target?.completed||(target?.owned||0)>=p.count;return `<span>${p.alternative?'任选其一 · ':''}${done?'✓':p.alternative?'可选':'待完成'} ${discovered(target)?`<button class="text-button" data-detail="${p.section}:${esc(p.id)}">${esc(p.name)}${p.count>1?' ×'+fmt(p.count):''}</button>`:esc(p.name)}</span>`;}).join('')}</div>`;}
-export function acquisitionMarkup(vm,id,{blocked=false}={}){
+export function acquisitionOptions(vm,id,{blocked=false}={}){
  const facilities=[...(vm.buildings||[]).filter(c=>knownBuilding(vm,c)).map(c=>({...c,section:'buildings'})),...['space','faith','time'].flatMap(section=>cardsFor(vm,section).filter(discovered).map(c=>({...c,section})))];
  const links=[],add=(label,attr)=>{if(!links.some(x=>x.label===label))links.push({label,attr});};
  if(blocked){for(const c of facilities)if(c.capacityProvides?.includes(id))add(`扩容：${c.name}`,`data-detail="${c.section}:${esc(c.id)}"`);}
@@ -52,7 +52,17 @@ export function acquisitionMarkup(vm,id,{blocked=false}={}){
   if((vm.trades||[]).some(c=>discovered(c)&&c.tradePreview?.goods.some(g=>g.id===id&&g.totalChance>0)))add('查看贸易回报','data-system="trades"');
   if(id==='honey')add('回家采蜜','data-nav="home"');
  }
+ return links;
+}
+export function acquisitionMarkup(vm,id,options={}){
+ const links=acquisitionOptions(vm,id,options);
  return links.length?`<div class="acquisition-links">${links.slice(0,5).map(x=>`<button class="text-button" ${x.attr}>${esc(x.label)}</button>`).join('')}</div>`:'';
+}
+export function immediateShortages(c,section,vm){
+ const missing=shortages(vm,c),first=missing.find(x=>x.blocked)||missing.find(x=>x.rate<=0)||missing[0];
+ if(!first)return '';
+ const link=acquisitionOptions(vm,first.id,{blocked:first.blocked})[0];
+ return `<div class="immediate-shortages" data-task-target="${esc(section)}:${esc(c.id)}"><span>${esc(first.name)}${first.blocked?'需扩容':'还缺 '+fmt(first.missing,2)}</span>${link?`<button class="text-button" ${link.attr}>${esc(link.label)}</button>`:`<button class="text-button" data-resource="${esc(first.id)}">查看来源与条件</button>`}${missing.length>1?`<button class="text-button" data-detail="${esc(section)}:${esc(c.id)}">全部 ${missing.length} 项缺口</button>`:''}</div>`;
 }
 export function missingLinks(c,vm){const section=({build:'buildings',research:'science',upgrade:'workshop',policy:'policies',craft:'crafts',refine:'crafts',faith:'faith',space:'space',time:'time'})[c.type];return shortages(vm,c).map(x=>`<div class="missing-resource"${section?` data-task-target="${section}:${esc(c.id)}"`:''}><b>${esc(x.name)}${x.blocked?'容量不足':''}</b>${acquisitionMarkup(vm,x.id,{blocked:x.blocked})||'<small>继续推进研究以解锁获取方式。</small>'}</div>`).join('');}
 export function trackedGoal(vm,ui={}){
