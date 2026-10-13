@@ -28,9 +28,28 @@ game.setSetting('paused', true);
 - `log`：按新到旧排列的 `{id,text,kind,at}` 记录。
 - 其他字段：`stats`、`settings`、`saveStatus`、`coverage`、`offlineReport`、`progression`、`resetPreview`。
 
+### 按需决策预览
+
+`snapshot(options)` 可请求当前选项的实际生产变化。预览不扣款、不推进时钟、不消耗随机数，也不修改存档；速率均为每真实秒的净收支，暂停时表示恢复生产后的速率。它们只比较当前季节、库存和加成下的同一时刻，不能当成长期产量保证。
+
+```js
+const buildingView = game.snapshot({buildingTargets:['hive','library']});
+const selectedView = game.snapshot({batchTarget:{section:'buildings',id:'hive'}});
+const transferView = game.snapshot({jobTransfer:{from:'woodcutter',to:'scholar',amount:5}});
+```
+
+- `buildingTargets`：待预览的普通建筑标识符数组，去重后最多计算 6 项。`batchTarget.section === 'buildings'` 时会优先加入该建筑；无效标识符、尚未开放且未持有的建筑、已达到数量上限的建筑不返回预览。不传入目标时，`buildingPreviews` 为空数组。
+- `buildingPreviews` 中每项为 `{id,name,amount:1,available,mode,resources,energy,housing,note}`，始终比较新增一座。`mode:'purchase'` 表示当前能购买，计算包含实际建造费用扣除与新增设施的影响；`mode:'structure'` 表示当前物资未齐，仅比较新增设施，不扣除建造费用。界面必须区分这两种预估。
+- 建筑预览的 `resources` 只包含发生变化的资源，每项为 `{id,name,beforeRate,afterRate,rateDelta,beforeCapacity,afterCapacity,capacityDelta}`。无上限容量可能为 `null`；不能计算有限容量差时，`capacityDelta` 为 `null`。`energy` 包含供给、需求及能源效率的前后值：`beforeSupply/afterSupply`、`beforeDemand/afterDemand`、`beforeEfficiency/afterEfficiency`。`housing` 为 `{before,after,delta}`。
+- `jobTransfer` 为 `{from,to,amount}`，`amount` 默认 1，接受正整数或 `'max'`。响应 `jobTransferPreview` 为 `{from,to,requested,actualCount,available,reason,resources,note}`；未请求时为 `null`。`actualCount` 已计入原岗位人数和目标容量；不可调动时为 0，`reason` 说明原因。`resources` 只包含净收支有变化的资源，每项为 `{id,name,beforeRate,afterRate,rateDelta}`。
+
+预览不会保留操作资格。确认操作前应读取最新预览，并以 `act()` 的结果为准。
+
 ## 基础操作
 
-操作类型包括 `gather`、`refine`、`build`、`craft`、`research`、`upgrade`、`assign`、`unassign`、`hunt`、`trade`、`explore`、`praise`、`faith`、`space`、`observe`、`reset`、`challenge`。数量默认为 1，在适用时接受正整数或 `'max'`。`act('toggle', buildingId)` 切换生产状态。失败的操作不消耗资源。重置须调用 `act('reset','confirm')`；`act('challenge', challengeId)` 选择挑战并开始重置。界面须在重置、挑战或导入前取得明确确认。
+操作类型包括 `gather`、`refine`、`build`、`craft`、`research`、`upgrade`、`assign`、`unassign`、`reassign`、`hunt`、`trade`、`explore`、`praise`、`faith`、`space`、`observe`、`reset`、`challenge`。数量默认为 1，在适用时接受正整数或 `'max'`。`act('toggle', buildingId)` 切换生产状态。失败的操作不消耗资源。重置须调用 `act('reset','confirm')`；`act('challenge', challengeId)` 选择挑战并开始重置。界面须在重置、挑战或导入前取得明确确认。
+
+`act('reassign','原岗位标识符:目标岗位标识符',amount)` 将在岗伙伴直接调入另一岗位，例如 `game.act('reassign','woodcutter:scholar',5)`。它先检查岗位门槛、挑战限制与容量，再一次性变更；失败不会先撤回伙伴，成功返回实际调动人数 `actualCount`。数量超过原岗位人数或目标剩余容量时只调动可行人数；`'max'` 表示当前最多。选人沿用原岗位撤回规则，不占用已有空闲伙伴；调动的工程熊会清除原制作配方，其他工程熊的配方不变。该操作不新增存档字段。
 
 新游戏从空库存开始。运行时接口不提供演示库存、开发加速控件、网络调用或付费捷径。普通时间加速和时间水晶旅行属于需要通过游戏进度获得的规则。
 
