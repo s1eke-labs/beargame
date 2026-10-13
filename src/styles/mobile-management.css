@@ -261,6 +261,7 @@
  .simple-book .catalog-workbench .item-catalog{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:360px){
+ .simple-book .resource-tile{padding-inline:2px}
  .simple-book .compact-jobs .job-top{grid-template-columns:minmax(0,1fr) auto;gap:5px}
  .simple-book .compact-jobs .job-diorama{display:none}
  .simple-book .tracked-goal.task-strip{padding-inline:8px}
@@ -301,7 +302,12 @@
 .simple-book .gather-tools>summary:before{content:'▸'}
 .simple-book .gather-tools[open]>summary:before{content:'▾'}
 .simple-book .gather-tools>summary>span{margin-left:auto;font-size:var(--text-caption)}
+.simple-book .gather-tools>.gather-zone{display:flex;flex-direction:row}
 .simple-book .gather-tools .gather-button,.simple-book .gather-tools .refine-button{min-height:48px;box-shadow:none;border-width:1px}
+.simple-book .home-controls>.journey-stage{grid-column:1/-1;grid-row:2}
+.simple-book .home-controls>.gather-tools{grid-column:1/-1;grid-row:3}
+.simple-book .home-controls:has(>.journey-stage)>.gather-zone{grid-column:1/-1;grid-row:3}
+.simple-book .home-view .home-controls{max-height:calc(100dvh - var(--hud-bottom,146px) - 64px - env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 @media(max-width:480px){
  .simple-book .topbar{flex-wrap:nowrap;gap:4px;padding-left:8px;padding-right:8px}
  .simple-book .topbar-right{gap:0}
