@@ -5,7 +5,22 @@ export const SCENE_PAGE_SIZE=4;
 const owned=(vm,id)=>(vm.buildings.find(c=>c.id===id)?.owned||0);
 export function shortages(vm,card){return (card?.costs||[]).filter(c=>c.owned+1e-9<c.value).map(c=>{const r=vm.resources.find(r=>r.id===c.id);return {...c,missing:c.value-c.owned,capacity:r?.max,blocked:r?.max!=null&&Number.isFinite(r.max)&&c.value>r.max+1e-9,rate:r?.rate||0};});}
 export function costStatus(vm,card){if(card?.completed)return '已掌握';const missing=shortages(vm,card);if(missing.some(c=>c.blocked))return '先扩充仓库';if(card?.available)return '物资齐备';return missing.length?'还需积攒':card?.reason||'';}
-export function guidance(vm){
+export function guidanceStage(vm){
+ const bears=vm.bears||{},honey=vm.resources.find(r=>r.id==='honey')?.value||0;
+ if(!bears.value)return {id:'arrival',title:'迎接第一位伙伴',note:'20 座蜂箱和 1,500 蜂蜜是稳妥开局建议，不是入住的解锁条件。',steps:[
+  {label:'稳定蜜源',current:owned(vm,'hive'),target:20,complete:owned(vm,'hive')>=20,detail:'buildings:hive'},
+  {label:'储备口粮',current:honey,target:1500,complete:honey>=1500,nav:'home'},
+  {label:'准备熊舍',current:owned(vm,'hut'),target:1,complete:owned(vm,'hut')>0,detail:'buildings:hut'}
+ ],nextLabel:'伙伴入住后，为它安排工作',nextNav:'village'};
+ if(!(vm.science||[]).some(c=>c.completed))return {id:'learning',title:'让家园学会新知识',note:'书屋提供知识容量；安排学者，才会积累知识。',steps:[
+  {label:'安排岗位',current:bears.value-(bears.free||0),target:1,complete:bears.value>(bears.free||0),nav:'village'},
+  {label:'建好书屋',current:owned(vm,'library'),target:1,complete:owned(vm,'library')>0,detail:'buildings:library'},
+  {label:'安排学者',current:vm.jobs.find(j=>j.id==='scholar')?.assigned||0,target:1,complete:(vm.jobs.find(j=>j.id==='scholar')?.assigned||0)>0,nav:'village',job:'scholar'}
+ ],nextLabel:'积累知识，完成第一项研究',nextNav:'research'};
+ return null;
+}
+export function guidance(vm){return {...nextGuidance(vm),stage:guidanceStage(vm)};}
+function nextGuidance(vm){
  const honey=vm.resources.find(r=>r.id==='honey')||{value:0,rate:0},wood=vm.resources.find(r=>r.id==='wood')||{value:0,rate:0},science=vm.resources.find(r=>r.id==='science')||{value:0,rate:0},bears=vm.bears||{},hive=vm.buildings.find(c=>c.id==='hive'),hut=vm.buildings.find(c=>c.id==='hut'),library=vm.buildings.find(c=>c.id==='library');
  const build=(card,title,reason='')=>({kind:'building',id:card.id,card,detail:`buildings:${card.id}`,title,reason});
  const job=(id,title,reason='')=>({kind:'resource',id:'bear',nav:'village',job:id,title,reason});

@@ -20,6 +20,7 @@ export async function reviewFullUi(browser,origin,{output=resolve(tmpdir(),'bear
   await go('build');
   await page.locator('.build-station [data-track-target="buildings:hive"]').click();
   assert.equal(await page.locator('.build-station [data-track-target="buildings:hive"]').getAttribute('aria-pressed'),'true');
+  await page.locator('[data-fold="build-filters"]>summary').click();
   await page.locator('[data-build-availability="unbuilt"]').click();
   assert.equal(await page.locator('[data-build-availability="unbuilt"]').getAttribute('aria-pressed'),'true');
   await page.locator('[data-build-tab="queue"]').click();await page.locator('.queue-panel').waitFor();
@@ -35,18 +36,19 @@ export async function reviewFullUi(browser,origin,{output=resolve(tmpdir(),'bear
   checks.push('研究搜索、主题筛选与定时刷新保留输入焦点');
 
   await page.locator('.resource-tile').first().click();await page.locator('[data-ui-search="inventoryQuery"]').fill('蜂蜜');
+  await page.locator('.inventory-item').filter({has:page.locator('[data-resource-pin="honey"]')}).evaluate(el=>{el.open=true;});
   await page.locator('[data-resource-pin="honey"]').click();
   assert.equal(await page.locator('[data-resource-pin="honey"]').getAttribute('aria-pressed'),'true');
   await page.locator('[data-command="close"]').click();checks.push('库存搜索与资源固定');
 
-  await go('more');await page.locator('[data-system-pin="crafts"]').click();
+  await go('more');await page.locator('[data-command="edit-system-pins"]').click();await page.locator('[data-system-pin="crafts"]').click();
   assert.equal(await page.locator('[data-system-pin="crafts"]').getAttribute('aria-pressed'),'true');
   await page.locator('.topbar [data-command="settings"]').click();await page.locator('[data-command="text-size"]').click();
   assert.equal(await page.locator('html').getAttribute('data-text-size'),'large');await page.locator('[data-command="close"]').click();
   await page.reload();await page.locator('#loading-screen').waitFor({state:'hidden'});
   const prefs=await page.evaluate(()=>JSON.parse(localStorage.getItem('honeywood-ui-v1')));
   assert.deepEqual(prefs.resourcePins,['honey']);assert.deepEqual(prefs.systemPins,['crafts']);
-  assert.deepEqual(prefs.trackedTarget,{section:'buildings',id:'hive'});assert.equal(prefs.textSize,'large');
+  assert.deepEqual(prefs.trackedTarget,{section:'buildings',id:'hive',targetOwned:seed.buildings.hive+1});assert.equal(prefs.textSize,'large');
   checks.push('常用系统、目标及大字号在刷新后保持');
 
   const stable=await page.evaluate(async moduleUrl=>{
@@ -89,6 +91,7 @@ export async function reviewAttentionUi(browser,origin){
   assert.ok(await page.evaluate(()=>JSON.parse(localStorage.getItem('honeywood-ui-v1')).notices.some(n=>n.id==='story:first-bear')));
   await page.goto(origin+'#build');await page.locator('#loading-screen').waitFor({state:'hidden'});
   await page.locator('[data-build-choice="hut"]').click();
+  await page.locator('.build-extra>summary').click();
   await page.locator('.build-station .batch-controls summary').click();
   const single=page.locator('.build-station .buy-button'),batch=page.locator('.build-station [data-amount="5"]');
   for(const button of [single,batch]){

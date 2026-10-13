@@ -20,7 +20,7 @@ test('bottom More opens functions directly; system return restores hub and Back/
  const t=await fixture(),h=historyModel(t),before=resources(t);
  await click(t,{nav:'more'},'.bottom-nav');assert.equal(t.location.hash,'#more');assert.match(main(t),/class="more-hub"/);assert.doesNotMatch(main(t),/world-map-view|world-map-scroll/);activeNav(t,'more');
  await click(t,{system:'crafts'});assert.equal(t.location.hash,'#more/crafts');assert.match(main(t),/recipe-workbench/);assert.match(main(t),/返回更多/);assert.equal(t.doc.node('#dialog-root').innerHTML,'');
- await click(t,{system:''});assert.equal(t.location.hash,'#more');assert.match(main(t),/class="more-hub"/);
+ await click(t,{command:'return-system'});assert.equal(t.location.hash,'#more');assert.match(main(t),/class="more-hub"/);
  assert.deepEqual(h.entries.map(e=>e.hash),['#home','#more','#more/crafts','#more']);assert.ok(h.entries.every(e=>!e.state?.bearDialog));
  const count=h.entries.length;await h.move('back');assert.equal(t.location.hash,'#more/crafts');assert.match(main(t),/recipe-workbench/);await h.move('back');assert.equal(t.location.hash,'#more');assert.match(main(t),/class="more-hub"/);await h.move('forward');assert.equal(t.location.hash,'#more/crafts');assert.match(main(t),/recipe-workbench/);assert.equal(h.entries.length,count);assert.deepEqual(resources(t),before);
 });

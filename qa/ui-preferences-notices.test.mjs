@@ -35,7 +35,7 @@ test('实际事件处理保存固定资源、追踪目标与字号且不更改�
  const before=t.snapshot().resources.map(r=>[r.id,r.value]);
  await t.click({resourcePin:'honey'});await t.click({trackTarget:'buildings:hive'});
  await t.click({command:'settings'});await t.click({command:'text-size'});
- const saved=JSON.parse(storage.getItem(UI_KEY));assert.deepEqual(saved.resourcePins,['honey']);assert.deepEqual(saved.trackedTarget,{section:'buildings',id:'hive'});assert.equal(saved.textSize,'large');
+ const saved=JSON.parse(storage.getItem(UI_KEY));assert.deepEqual(saved.resourcePins,['honey']);assert.deepEqual(saved.trackedTarget,{section:'buildings',id:'hive',targetOwned:1});assert.equal(saved.textSize,'large');
  assert.deepEqual(t.snapshot().resources.map(r=>[r.id,r.value]),before);
  assert.equal(t.doc.documentElement.getAttribute('data-text-size'),'large');
  await t.click({resourcePin:'honey'});await t.click({trackTarget:'buildings:hive'});
