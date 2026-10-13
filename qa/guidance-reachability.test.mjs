@@ -9,6 +9,7 @@ const campaign=name=>createGame({storage:null,now:1,save:readFileSync(new URL(`.
 test('工业存档不再把尚无月晶来源的研究说成只需等待知识',()=>{
  const vm=campaign('industry-and-rocketry'),before=structuredClone(vm),guide=guidance(vm);
  assert.notEqual(guide.detail,'science:metaphysics');assert.equal(guide.detail,'science:acoustics');
+ assert.equal(guide.title,'研究声学','隐藏补充说明后，标题仍明确表达点击后的动作');
  const moon=acquisitionPlan(vm,'unobtainium');
  assert.equal(moon.reachable,false);assert.equal(moon.detail,'space:orbitalLaunch');
  assert.match(moon.reason,/月林采晶站.*初探星空.*月林之旅/);
@@ -57,4 +58,47 @@ test('成长阶段继续覆盖工坊、供能与航行，缺电指向生产管�
  vm.science=vm.science.map(card=>({...card,completed:['calendar','agriculture','mining'].includes(card.id)}));
  assert.equal(guidanceStage(vm).id,'workshop');
  assert.equal(guidanceStage(campaign('first-space')).id,'first-flight');
+});
+
+test('小于一份月晶的发现使用完整里程碑计数，花掉材料后不撤销发现',()=>{
+ const vm=campaign('challenge-ready');vm.science.find(card=>card.id==='chronophysics').completed=false;
+ const crystal=vm.resources.find(resource=>resource.id==='unobtainium');
+ assert.ok(crystal.value>0&&crystal.value<1);
+ for(const value of [crystal.value,0]){
+  crystal.value=value;
+  const stage=guidanceStage(vm),step=stage.steps.find(item=>item.label==='发现月晶');
+  assert.equal(stage.id,'moon-industry');assert.equal(step.current,1);assert.equal(step.target,1);assert.equal(step.complete,true);
+ }
+});
+
+test('月林完成后继续深空，已抵达潮星可沿现有航路发展',()=>{
+ const vm=campaign('challenge-ready');
+ vm.science.find(card=>card.id==='chronophysics').completed=false;
+ vm.science.find(card=>card.id==='exogeology').completed=true;
+ let stage=guidanceStage(vm);assert.equal(stage.id,'deep-space');assert.ok(stage.steps.some(step=>!step.complete));
+ const space=vm.progression.spaceCards;
+ space.find(card=>card.id==='piscineMission').reached=true;
+ stage=guidanceStage(vm);assert.equal(stage.steps[0].label,'抵达潮星');assert.equal(stage.steps[0].complete,true);
+ space.find(card=>card.id==='heliosMission').reached=true;
+ space.find(card=>card.id==='sunlifter').owned=1;
+ stage=guidanceStage(vm);assert.equal(stage.id,'time-continuity');assert.equal(stage.steps[0].complete,false);
+});
+
+test('先走时序路线的存档不退回探月，时间各段完成后跳过且不保留满格阶段',()=>{
+ const vm=campaign('first-time-shatter'),before=structuredClone(vm);
+ assert.equal(guidanceStage(vm).id,'time-continuity');assert.deepEqual(vm,before);
+ vm.buildings.find(card=>card.id==='chronosphere').owned=1;
+ vm.science.find(card=>card.id==='tachyonTheory').completed=true;
+ assert.equal(guidanceStage(vm).id,'time-forging');
+ vm.workshop.find(card=>card.id==='chronoforge').owned=1;
+ for(const id of ['temporalBattery','blastFurnace'])vm.progression.time.find(card=>card.id===id).owned=1;
+ assert.equal(guidanceStage(vm).id,'void-continuity');
+ for(const id of ['voidSpace','paradoxalKnowledge'])vm.science.find(card=>card.id===id).completed=true;
+ vm.progression.time.find(card=>card.id==='cryochambers').owned=1;
+ assert.equal(guidanceStage(vm),null);
+});
+
+test('空闲伙伴的指引标题独立说明安排动作',()=>{
+ const vm=campaign('first-space');vm.bears.free=3;
+ assert.equal(guidance(vm).title,'安排 3 只空闲伙伴');
 });

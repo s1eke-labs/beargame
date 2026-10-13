@@ -22,17 +22,46 @@ export function guidanceStage(vm){
   {label:'安排学者',current:vm.jobs.find(j=>j.id==='scholar')?.assigned||0,target:1,complete:(vm.jobs.find(j=>j.id==='scholar')?.assigned||0)>0,nav:'village',job:'scholar'}
  ],nextLabel:'积累知识，完成第一项研究',nextNav:'research'};
  const space=vm.progression?.spaceCards||[],mission=id=>space.find(card=>card.id===id),reached=id=>!!mission(id)?.reached;
+ const complete=stage=>stage.steps.every(step=>step.complete);
+ const milestone=(label,done,route)=>({label,current:done?1:0,target:1,complete:!!done,...route});
+ const spaceStep=(id,label)=>milestone(label,reached(id),mission(id)?.unlocked?{detail:`space:${id}`}:{nav:'more'});
+ const facilityStep=(cards,section,id,label)=>{
+  const card=cards.find(item=>item.id===id);
+  return milestone(label,(card?.owned||0)>0,card?.unlocked?{detail:`${section}:${id}`}:{nav:section==='workshop'?'research':'more'});
+ };
+ const timeStages=()=>[
+  {id:'time-continuity',title:'让时序研究服务家园',note:'时光蜜球需要月晶、时晶与电力；请先查看材料来源和建成后的收支。',steps:[
+   study('chronophysics','研究时序物理'),building('chronosphere','建设时光蜜球'),study('tachyonTheory','研究超光理论')
+  ],nextLabel:'学习时晶锻艺，建设时铸设施',nextNav:'research'},
+  {id:'time-forging',title:'建立时晶与炉热设施',note:'时晶锻艺开放时铸设施；穿越会消耗时晶并积累热量，先查看消耗再决定。',steps:[
+   facilityStep(vm.workshop||[],'workshop','chronoforge','学习时晶锻艺'),
+   facilityStep(vm.progression?.time||[],'time','temporalBattery','建设时流蓄池'),
+   facilityStep(vm.progression?.time||[],'time','blastFurnace','建设时焰熔炉')
+  ],nextLabel:'研究虚空领域与跨重建的延续方式',nextNav:'research'},
+  {id:'void-continuity',title:'探索虚空与营地延续',note:'冬眠舱的跨重建人数仍受时光蜜球等条件限制；重建前查看保留预览。',steps:[
+   study('voidSpace','研究虚空领域'),facilityStep(vm.progression?.time||[],'time','cryochambers','建设冬眠舱'),study('paradoxalKnowledge','研究悖论知识')
+  ],nextLabel:'按当前缺口继续扩建、研究与远航',nextNav:'more'}
+ ];
+ // 时序研究可以先于月林建设，已有这条路线的进度时不再退回首次远航。
+ if(researched('chronophysics'))return timeStages().find(stage=>!complete(stage))||null;
  if(researched('rocketry')){
   if(!reached('moonMission'))return {id:'first-flight',title:'把家园的道路延伸到星空',note:'支付物资只代表启程；抵达后才会开放当地设施。',steps:[
    study('rocketry','掌握飞天工程'),
-   ...[['orbitalLaunch','完成初探星空'],['moonMission','抵达月林']].map(([id,label])=>({label,current:reached(id)?1:0,target:1,complete:reached(id),...(mission(id)?.unlocked?{detail:`space:${id}`}:{nav:'more'})}))
+   ...[['orbitalLaunch','完成初探星空'],['moonMission','抵达月林']].map(([id,label])=>spaceStep(id,label))
   ],nextLabel:'建设月林采晶站，取得新的研究材料',nextNav:'more'};
-  const mine=space.find(card=>card.id==='moonOutpost');
-  return {id:'moon-industry',title:'让异星资源进入家园',note:'采晶站还需要运行原料和电力；已有设施不代表持续产出。',steps:[
-   {label:'建设月林采晶站',current:mine?.owned||0,target:1,complete:(mine?.owned||0)>0,...(mine?.unlocked?{detail:'space:moonOutpost'}:{nav:'more'})},
-   {label:'取得月晶',current:vm.resources.find(r=>r.id==='unobtainium')?.value||0,target:1,complete:(vm.resources.find(r=>r.id==='unobtainium')?.value||0)>0,nav:'more'},
+  const crystal=vm.resources.find(r=>r.id==='unobtainium');
+  const moon={id:'moon-industry',title:'让异星资源进入家园',note:'采晶站还需要运行原料和电力；已有设施不代表持续产出。',steps:[
+   facilityStep(space,'space','moonOutpost','建设月林采晶站'),
+   milestone('发现月晶',crystal?.visible||crystal?.value>0,{nav:'more'}),
    study('exogeology','研究异星地质')
   ],nextLabel:'扩展星际生产与更远的航路',nextNav:'more'};
+  if(!complete(moon))return moon;
+  const outer=['duneMission','piscineMission'].find(reached)||['duneMission','piscineMission'].find(id=>mission(id)?.travelDays>0)||'duneMission';
+  const deep={id:'deep-space',title:'建设更远的星际产线',note:'沙海与潮星提供不同的扩展路线；采日环提供能源，供电充足时按年产出反物质。',steps:[
+   spaceStep(outer,outer==='duneMission'?'抵达沙海':'抵达潮星'),spaceStep('heliosMission','抵达近日前哨'),facilityStep(space,'space','sunlifter','建设采日环')
+  ],nextLabel:'研究时序物理，准备跨重建的物资保留',nextNav:'research'};
+  if(!complete(deep))return deep;
+  return timeStages().find(stage=>!complete(stage))||null;
  }
  if(researched('electricity')||researched('industrialization')){
   const energy=vm.energy||{},target=Math.max(1,energy.demand||0);
@@ -108,9 +137,9 @@ function nextGuidance(vm){
  const build=(card,title,reason='')=>({kind:'building',id:card.id,card,detail:`buildings:${card.id}`,title,reason});
  const job=(id,title,reason='')=>({kind:'resource',id:'bear',nav:'village',job:id,title,reason});
  const farmer=vm.jobs.find(j=>j.id==='farmer'),free=bears.free||0;
- if(bears.value>0&&honey.rate<0&&honey.value/(-honey.rate)<45&&!vm.settings?.paused){return farmer?.unlocked?job('farmer','先补充口粮',free?'有空闲伙伴可以采蜜':'调整采蜜岗位，留住伙伴'):build(hive,'蜂蜜快不够了','先采集蜂蜜，增加蜂箱');}
+ if(bears.value>0&&honey.rate<0&&honey.value/(-honey.rate)<45&&!vm.settings?.paused){return farmer?.unlocked?job('farmer','先补充口粮',free?'有空闲伙伴可以采蜜':'调整采蜜岗位，留住伙伴'):build(hive,'补建蜂箱，补充口粮','先采集蜂蜜，增加蜂箱');}
  if(!hive?.owned)return build(hive,'建第一座蜂箱','开始自动产蜜');
- if(free>0)return job(farmer?.unlocked&&honey.rate<0?'farmer':library?.owned&&science.rate<=0?'scholar':'woodcutter',`${free} 只伙伴还没工作`,'安排后就会开始生产');
+ if(free>0)return job(farmer?.unlocked&&honey.rate<0?'farmer':library?.owned&&science.rate<=0?'scholar':'woodcutter',`安排 ${free} 只空闲伙伴`,'安排后就会开始生产');
  if(hut?.owned&&!bears.value)return {kind:'resource',id:'bear',nav:'village',title:'等第一位伙伴到来',reason:'住处已经准备好',arrival:Math.min(1,Math.max(0,bears.arrival||0))};
  // A tested opening suggestion, never an unlock condition or a restriction.
  if(!bears.max&&!bears.value){if(hive.owned<20)return build(hive,'再添一座蜂箱',`已有 ${hive.owned} 座 · 先稳住口粮`);if(honey.value<1500)return {kind:'resource',id:'honey',command:'resources',title:'给新伙伴存些口粮',reason:'建议留下 1,500 蜂蜜再入住',progress:Math.min(1,honey.value/1500)};return build(hut,'准备第一间熊舍','新伙伴会持续消耗蜂蜜');}
@@ -124,7 +153,7 @@ function nextGuidance(vm){
   const needs=plans.get(target.id)||[],unreachable=needs.find(({plan})=>!plan.reachable),actionable=needs.find(({plan})=>!plan.waiting);
   if(unreachable)return {...unreachable.plan,reason:`${target.name}还缺${unreachable.shortage.name}；${unreachable.plan.reason}`};
   if(actionable)return {...actionable.plan,reason:`为${target.name}准备${actionable.shortage.name}；${actionable.plan.reason}`};
-  return {kind:'resource',id:'science',card:target,detail:`science:${target.id}`,title:target.name,reason:target.available?'物资已经准备好了':`还需积攒${needs.map(({shortage})=>shortage.name).join('、')||'物资'}${vm.settings?.paused?'，恢复游戏后继续':''}`};
+  return {kind:'resource',id:'science',card:target,detail:`science:${target.id}`,title:`研究${target.name}`,reason:target.available?'物资已经准备好了':`还需积攒${needs.map(({shortage})=>shortage.name).join('、')||'物资'}${vm.settings?.paused?'，恢复游戏后继续':''}`};
  }
  return {kind:'resource',id:'bear',nav:'build',title:'看看家园还能添什么',reason:'建设与研究会打开新的选择'};
 }
