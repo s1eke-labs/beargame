@@ -1,6 +1,6 @@
 /** 目标、筛选与获取路径均从当前快照推导，不写入游戏状态。 */
 import {esc,fmt,cardsFor,discovered,knownBuilding} from './render.js';
-import {shortages} from './experience.js';
+import {shortages,acquisitionPlan} from './experience.js';
 import {timeLabel} from './decision-cards.js';
 import {researchTopics} from './research-topics.js';
 
@@ -56,13 +56,16 @@ export function acquisitionOptions(vm,id,{blocked=false}={}){
 }
 export function acquisitionMarkup(vm,id,options={}){
  const links=acquisitionOptions(vm,id,options);
- return links.length?`<div class="acquisition-links">${links.slice(0,5).map(x=>`<button class="text-button" ${x.attr}>${esc(x.label)}</button>`).join('')}</div>`:'';
+ if(links.length)return `<div class="acquisition-links">${links.slice(0,5).map(x=>`<button class="text-button" ${x.attr}>${esc(x.label)}</button>`).join('')}</div>`;
+ const plan=acquisitionPlan(vm,id,options),attr=acquisitionPlanAttributes(plan);
+ return `<p class="acquisition-explanation">${esc(plan.reason)}</p>${attr?`<div class="acquisition-links"><button class="text-button" ${attr}>${esc(plan.title)}</button></div>`:''}`;
 }
+function acquisitionPlanAttributes(plan){if(!plan)return '';return plan.detail?`data-detail="${esc(plan.detail)}"`:plan.recipe?`data-acquire-recipe="${esc(plan.recipe)}"`:plan.system?`data-system="${esc(plan.system)}"`:plan.nav?`data-nav="${esc(plan.nav)}"${plan.job?` data-job-focus="${esc(plan.job)}"`:''}`:'';}
 export function immediateShortages(c,section,vm){
  const missing=shortages(vm,c),first=missing.find(x=>x.blocked)||missing.find(x=>x.rate<=0)||missing[0];
  if(!first)return '';
- const link=acquisitionOptions(vm,first.id,{blocked:first.blocked})[0];
- return `<div class="immediate-shortages" data-task-target="${esc(section)}:${esc(c.id)}"><span>${esc(first.name)}${first.blocked?'需扩容':'还缺 '+fmt(first.missing,2)}</span>${link?`<button class="text-button" ${link.attr}>${esc(link.label)}</button>`:`<button class="text-button" data-resource="${esc(first.id)}">查看来源与条件</button>`}${missing.length>1?`<button class="text-button" data-detail="${esc(section)}:${esc(c.id)}">全部 ${missing.length} 项缺口</button>`:''}</div>`;
+ const link=acquisitionOptions(vm,first.id,{blocked:first.blocked})[0],plan=link?null:acquisitionPlan(vm,first.id,{blocked:first.blocked}),attr=link?.attr||acquisitionPlanAttributes(plan);
+ return `<div class="immediate-shortages" data-task-target="${esc(section)}:${esc(c.id)}"><span>${esc(first.name)}${first.blocked?'需扩容':'还缺 '+fmt(first.missing,2)}</span>${attr?`<button class="text-button" ${attr}>${esc(link?.label||plan.title)}</button>`:`<button class="text-button" data-resource="${esc(first.id)}">查看来源与条件</button>`}${plan?`<small>${esc(plan.reason)}</small>`:''}${missing.length>1?`<button class="text-button" data-detail="${esc(section)}:${esc(c.id)}">全部 ${missing.length} 项缺口</button>`:''}</div>`;
 }
 export function missingLinks(c,vm){const section=({build:'buildings',research:'science',upgrade:'workshop',policy:'policies',craft:'crafts',refine:'crafts',faith:'faith',space:'space',time:'time'})[c.type];return shortages(vm,c).map(x=>`<div class="missing-resource"${section?` data-task-target="${section}:${esc(c.id)}"`:''}><b>${esc(x.name)}${x.blocked?'容量不足':''}</b>${acquisitionMarkup(vm,x.id,{blocked:x.blocked})||'<small>继续推进研究以解锁获取方式。</small>'}</div>`).join('');}
 export function trackedGoal(vm,ui={}){

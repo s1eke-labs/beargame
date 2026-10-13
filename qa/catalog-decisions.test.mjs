@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {createGame} from '../src/engine/index.js';
 import {page,detailDialog} from '../src/ui/render.js';
 import {purchasePreview,itemCatalog} from '../src/ui/catalog.js';
-import {immediateShortages} from '../src/ui/decision-navigation.js';
+import {immediateShortages,acquisitionMarkup} from '../src/ui/decision-navigation.js';
 import {createTab,sharedStorage,clickRendered} from './dom-harness.mjs';
 
 test('目录选择保留实际建筑，浏览和收益预览不会花费资源',async()=>{
@@ -39,4 +39,14 @@ test('研究与配方搜索按需展开，同时保留可检索的具体用途',
  const research=page(vm,{page:'research',researchTab:'science'});
  assert.match(research,/<details class="choice-filters research-filter-options research-controls"[^>]*><summary>/);
  assert.match(research,/data-ui-search="researchQuery"/);
+});
+
+test('尚未开放的月晶来源给出前置行动，不会把玩家送进空白来源页',()=>{
+ const seed=JSON.parse(readFileSync(new URL('campaign/industry-and-rocketry.save.json',import.meta.url)));seed.savedAt=0;
+ const vm=createGame({storage:null,save:JSON.stringify(seed),now:0}).snapshot();
+ const source=acquisitionMarkup(vm,'unobtainium');
+ assert.match(source,/acquisition-explanation/);assert.match(source,/月|轨道|远航/);assert.match(source,/data-detail=|data-system=|data-nav=/);
+ const card={id:'test',costs:[{id:'unobtainium',name:'月晶',value:1,owned:0}]};
+ const shortage=immediateShortages(card,'science',vm);assert.match(shortage,/data-task-target="science:test"/);
+ assert.doesNotMatch(shortage,/data-resource="unobtainium"/);
 });
