@@ -9,7 +9,7 @@ const root=resolve(import.meta.dirname,'..');
 
 async function startServer(t,args=[]){
  const child=spawn(process.execPath,[resolve(root,'scripts/serve.mjs'),...args],{
-  cwd:root,env:{...process.env,PORT:'0'},stdio:['ignore','pipe','pipe'],
+  cwd:root,env:{...process.env,PORT:'0',BEARGAME_HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe'],
  });
  const closed=new Promise(resolve=>child.once('close',resolve));
  t.after(async()=>{
