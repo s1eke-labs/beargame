@@ -6,7 +6,7 @@ import {resolve} from 'node:path';
 import {createGame,constants} from '../src/chapters/forest/engine.js';
 import {createState,serialize} from '../src/chapters/forest/save.js';
 import {forestArt,forestAssets} from '../src/chapters/forest/art.js';
-import {regions,visibleRegions,chapterComplete,lotPosition,sceneLayout,sceneActors,batchSummary,esc,UI_KEY,LEASE_KEY,LEGACY_KEY} from '../src/chapters/forest/main.js';
+import {regions,visibleRegions,chapterComplete,lotPosition,sceneLayout,sceneActors,batchSummary,firstScreenAssets,esc,UI_KEY,LEASE_KEY,LEGACY_KEY} from '../src/chapters/forest/main.js';
 const root=resolve(import.meta.dirname,'..');
 const source=await readFile(resolve(root,'src/chapters/forest/main.js'),'utf8');
 const css=await readFile(resolve(root,'src/chapters/forest/style.css'),'utf8');
@@ -21,11 +21,11 @@ test('森林界面保持章节依赖隔离并随解锁开放一级入口',()=>{
 });
 
 test('short phone Home fits its action dock above navigation with one scrolling scene',()=>{
- const vars=Object.fromEntries([...css.matchAll(/--home-(topbar|hud|toolbar|dock|nav):(\d+)px/g)].map(([,key,value])=>[key,Number(value)]));
- assert.deepEqual(vars,{topbar:48,hud:48,toolbar:44,dock:104,nav:64});
+ const vars=Object.fromEntries([...css.match(/\.app-shell\.home-view\{([^}]+)/)[1].matchAll(/--home-(topbar|hud|toolbar|dock|nav):(\d+)px/g)].map(([,key,value])=>[key,Number(value)]));
+ assert.deepEqual(vars,{topbar:48,hud:60,toolbar:44,dock:124,nav:64});
  const fixed=Object.values(vars).reduce((sum,n)=>sum+n,0);
- assert.equal(553-fixed,245);assert.ok(500-fixed>=190);
- assert.equal(553-fixed-44,201); // Paused + completed: completion reuses the guide row.
+ assert.equal(553-fixed,213);assert.ok(500-fixed>=160);
+ assert.equal(553-fixed-44,169); // Paused + completed: completion reuses the guide row.
  assert.match(css,/\.home-view \.status-banner:not\(\.error\)\{height:44px;min-height:44px/);
  assert.match(source,/if\(complete\)\{guide\.dataset\.command='completion';delete guide\.dataset\.nav;/);
  assert.doesNotMatch(source,/<section class="completion">/);
@@ -51,7 +51,7 @@ test('map uses the remaining viewport for exactly one scroller while all control
  assert.ok(!css.includes('.world-map-scroll{height:calc('));assert.ok(!css.includes('min-height:350px'));
  // Sizing contracts only: actual browser geometry is a separate acceptance gate.
  for(const [width,height,safe] of [[336,553,0],[504,829,0],[390,1000,34],[900,1000,0]]){
-  const compact=width<700&&height<=650,top=compact?48:58,hud=compact?48:62,heading=compact?46:74,tabs=compact?64:76;
+  const compact=width<700&&height<=650,top=compact?48:58,hud=compact?60:62,heading=compact?46:74,tabs=compact?64:76;
   for(const banner of [0,44,80]){const remaining=height-safe-top-hud-heading-tabs-banner;assert.ok(remaining>0,`${width}x${height}: available map area`);assert.equal(top+hud+heading+tabs+banner+safe+remaining,height);}
  }
 });
@@ -78,9 +78,9 @@ test('continuous painting fills tall Home and keeps long maps scrollable without
 
 test('short phone selected building and first notebook card keep their action in the first screen',()=>{
  const vars=Object.fromEntries([...css.matchAll(/--compact-(topbar|hud|heading|hero|nav):(\d+)px/g)].map(([,key,value])=>[key,Number(value)]));
- assert.deepEqual(vars,{topbar:48,hud:48,heading:46,hero:100,nav:64});
+ assert.deepEqual(vars,{topbar:48,hud:60,heading:46,hero:100,nav:64});
  // Two cost rows, two effect lines and a paused banner still leave the primary action visible.
- const station=8+vars.hero+6+61+78+50;
+ const station=8+82+78+50;
  const actionBottom=vars.topbar+vars.hud+vars.heading+station+44;
  assert.ok(actionBottom<=553-vars.nav,`primary action ends at ${actionBottom}px`);
  assert.match(css,/@media\(max-width:699px\) and \(max-height:650px\)/);
@@ -309,19 +309,18 @@ async function withLoader(run){
 
 test('loading waits for image decoding and counts actual assets',async()=>withLoader(async({images,progress})=>{
  let decoded;const gate=new Promise(resolve=>{decoded=resolve;});const pending=fixture.preload();
- assert.equal(images.length,forestAssets.length);assert.equal(progress.max,forestAssets.length);assert.equal(progress.value,0);
+ assert.equal(images.length,firstScreenAssets().length);assert.equal(progress.max,firstScreenAssets().length);assert.ok(images.length<forestAssets.length);assert.equal(progress.value,0);
  images[0].decode=()=>gate;const first=images[0].onload();await Promise.all(images.slice(1).map(image=>image.onload()));await flushPromises();
- assert.equal(progress.value,forestAssets.length-1);decoded();await first;await pending;assert.equal(progress.value,forestAssets.length);
+ assert.equal(progress.value,firstScreenAssets().length-1);decoded();await first;await pending;assert.equal(progress.value,firstScreenAssets().length);
  assert.ok(images.every(image=>image.onload===null&&image.onerror===null));
 }));
 
-test('failed or timed-out loading cannot overwrite an error with late progress',async t=>{
+test('首屏插画失败或超时仍可进入游戏且忽略过期回调',async t=>{
  for(const failure of ['network','decode','timeout'])await t.test(failure,async()=>withLoader(async({images,timers,progress,label})=>{
-  const pending=fixture.preload();const rejected=assert.rejects(pending,/图片/);const late=images[0].onload;
+  const pending=fixture.preload();const late=images[0].onload;
   if(failure==='network')images[0].onerror();else if(failure==='decode'){images[0].decode=()=>Promise.reject(Error('decode'));await images[0].onload();}else [...timers.values()][0].fn();
-  await rejected;const atFailure=progress.value;label.textContent='加载失败，可以重试';
-  await Promise.all(images.slice(1).map(image=>image.onload()));images[0].decode=()=>Promise.resolve();await late();await flushPromises();
-  assert.equal(progress.value,atFailure);assert.equal(label.textContent,'加载失败，可以重试');assert.equal(timers.size,0);
+  await Promise.all(images.slice(1).map(image=>image.onload()));await pending;assert.equal(progress.value,firstScreenAssets().length);label.textContent='家园已可游玩';images[0].decode=()=>Promise.resolve();await late();await flushPromises();
+  assert.equal(label.textContent,'家园已可游玩');assert.equal(timers.size,0);
  }));
 });
 

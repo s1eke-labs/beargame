@@ -27,7 +27,7 @@ export const fixture={
   notify=text=>notices.push(text);download=(text,name)=>downloads.push({text,name});
  },
  load(){claim();reloadGame();render();},
- boot(gate){preload=async()=>{};finishLoading=()=>gate;return boot();},
+ boot(gate){preload=async()=>{};prefetchArt=async()=>{};finishLoading=()=>gate;return boot();},
  click(dataset,disabled=false){onClick({target:{closest:()=>({dataset,disabled})}});},
  failTick(message){game.tick=()=>({ok:false,message});},
  failOffline(message,reject=false){game.catchUpAsync=async()=>{if(reject)throw new Error(message);return {ok:false,message};};},
