@@ -11,7 +11,7 @@ test('each actual stage control requires confirmation; cancel preserves old buil
   const gates={pasture:'ecology',aqueduct:'robotics',library:'electronics',amphitheatre:'electronics',warehouse:'advExogeology'};
   for(const [id,research]of Object.entries(gates)){
     const storage=sharedStorage(s=>{s.ironWill=false;s.buildings[id]=3;s.science[research]=true;});
-    const tab=await createTab(storage);await go(tab,'build');
+    const tab=await createTab(storage);await go(tab,'build');await clickRendered(tab,{buildTab:'stages'});
     const control=renderedButton(tab,{act:'stage',id});assert.ok(control.dataset.confirm.includes('3'));
     await clickRendered(tab,{act:'stage',id});assert.equal(tab.snapshot().buildings.find(d=>d.id===id).owned,3);
     await clickRendered(tab,{command:'cancel'},'#dialog-root');assert.equal(tab.snapshot().buildings.find(d=>d.id===id).owned,3);
@@ -35,6 +35,7 @@ test('actual leadership pagination and filter can appoint and promote the final 
 test('actual queue controls enqueue without spending and only clear after confirmation',async()=>{
   const tab=await createTab(sharedStorage(s=>{s.resources.honey=100;}));await go(tab,'build');
   await clickRendered(tab,{act:'queueEnqueue',id:'build:hive'});assert.equal(tab.snapshot().queue.used,1);assert.equal(resource(tab,'honey'),100);
+  await clickRendered(tab,{buildTab:'queue'});
   await clickRendered(tab,{act:'queueClear',id:'confirm'});await clickRendered(tab,{command:'cancel'},'#dialog-root');assert.equal(tab.snapshot().queue.used,1);
   await clickRendered(tab,{act:'queueClear',id:'confirm'});await clickRendered(tab,{command:'confirm'},'#dialog-root');assert.equal(tab.snapshot().queue.used,0);assert.equal(resource(tab,'honey'),100);
 });

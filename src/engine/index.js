@@ -1,3 +1,5 @@
+import {jobDecisions,happinessBreakdown} from './decision-jobs.js';
+import {tradeDecision,researchRelations} from './decision-view.js';
 import {checkSeasonalGiftOnLoad,seasonalGiftsView,actSeasonalGifts} from './seasonal-gifts.js';
 import {beginUndoAction,finishUndoAction,actUndo,undoView,clearUndo,advanceUndoClock,onUndoDay,consumeUndoTrade,captureUndoSession,restoreUndoSession} from './undo.js';
 import {achievementEvent,checkAchievements,achievementView,captureResetFacts,carryAchievements,rollBearAppearance} from './achievements.js';
@@ -261,7 +263,7 @@ export function createGame(options={}){
   if(!reason&&isOne&&count)reason='已完成';
   if(!reason&&def.max&&count>=def.max)reason='已达到上限';
   if(!reason&&!enough(costs))reason='物资不足';
-  return {...def,effect:undefined,conversion:undefined,gate:undefined,cost:undefined,unlocked,visible:unlocked||count>0,available:!reason,reason,costs:Object.entries(costs).map(([id,value])=>({id,name:resourceById[id]?.name||(id==='devotion'?'累计星光':id),value,owned:currency(id)})),owned:count,completed:!!(isOne&&count),effects:describeEffects(def),enabled:!state.disabled[def.id]&&(def.type!=='build'||enabledCount(def.id)>0),active:def.type==='build'?enabledCount(def.id):undefined,sellable:def.type==='build'&&count>0&&!workshopHooks.workshopSellReason?.(state,def.id),sellReason:def.type==='build'?workshopHooks.workshopSellReason?.(state,def.id)||'':'',toggleable:!!def.toggleable||!!def.conversion||['steamworks','oilWell','biolab','factory'].includes(def.id)};
+  return {...def,effect:undefined,conversion:undefined,gate:undefined,cost:undefined,unlocked,visible:unlocked||count>0,available:!reason,reason,costs:Object.entries(costs).map(([id,value])=>({id,name:resourceById[id]?.name||(id==='devotion'?'累计星光':id),value,owned:currency(id)})),owned:count,completed:!!(isOne&&count),effects:describeEffects(def),provides:[...new Set([...Object.keys(def.effect||{}).filter(id=>resourceById[id]&&def.effect[id]>0),...Object.keys(def.conversion?.output||{}),...(def.output?[def.output]:[])])],capacityProvides:Object.keys(def.effect||{}).filter(id=>id.endsWith('Max')&&resourceById[id.slice(0,-3)]&&def.effect[id]>0).map(id=>id.slice(0,-3)),...(['research','upgrade'].includes(def.type)?researchRelations(catalog,def):{}),enabled:!state.disabled[def.id]&&(def.type!=='build'||enabledCount(def.id)>0),active:def.type==='build'?enabledCount(def.id):undefined,sellable:def.type==='build'&&count>0&&!workshopHooks.workshopSellReason?.(state,def.id),sellReason:def.type==='build'?workshopHooks.workshopSellReason?.(state,def.id)||'':'',toggleable:!!def.toggleable||!!def.conversion||['steamworks','oilWell','biolab','factory'].includes(def.id)};
  }
  function maxAffordable(def){
   if(!enough(costsFor(def,1)))return 0;
@@ -293,27 +295,32 @@ export function createGame(options={}){
   const extended=prestigePreview(context());if(extended)return extended;
   return {paragon:Math.max(0,state.bears.length-70),karma:0,bears:state.bears.length,available:!!state.science.metaphysics,description:'重建营地会清除本轮资源、建筑、科技与熊群。保留传承、业力及已完成挑战。'};
  }
- function snapshot(){
+ function snapshot({jobDetails=false}={}){
   const previousCache=effectCache;const p=production();effectCache=p.effects;try{
   const rateScale=realTicksPerSecond(),counts=jobCounts(), assigned=Object.values(counts).reduce((a,b)=>a+b,0);
   const defsWith=(key)=>catalog[key].map(d=>card(key==='buildings'?buildingDefinition(d.id):d));
   const resources=catalog.resources.map(r=>({id:r.id,name:r.name,value:state.resources[r.id],max:p.caps[r.id],rate:p.net[r.id]*rateScale,grossRate:p.gross[r.id]*rateScale,consumptionRate:Math.max(0,(p.gross[r.id]-p.net[r.id])*rateScale),breakdown:[{label:'总产出',rate:p.gross[r.id]*rateScale},{label:'总消耗',rate:(p.net[r.id]-p.gross[r.id])*rateScale}],visible:!!state.resourceUnlocked[r.id]||['honey','wood'].includes(r.id)||state.resources[r.id]>0||Math.abs(p.net[r.id])>EPSILON,description:r.description}));
-  const jobs=catalog.jobs.map(d=>{const limit=d.id==='ambassador'?ambassadorLimit(state,p.effects):d.id==='engineer'?n(state.buildings,'factory'):Infinity;const reason=gateReason(d.gate)||(d.id==='priest'&&isChallenge('atheism')?'无星长夜中不能安排祈愿熊':'')||(counts[d.id]>=limit?'岗位已满':'');return {...d,type:'assign',unlocked:!reason,visible:!reason||counts[d.id]>0,available:!reason&&assigned<state.bears.length,reason:reason||(assigned>=state.bears.length?'没有空闲小熊':''),costs:[],owned:counts[d.id],assigned:counts[d.id],limit:Number.isFinite(limit)?limit:null,effects:d.output?`基础产量 ${d.rate*rateScale} ${resourceById[d.output]?.name}/秒`:d.description};});
+  let jobs=catalog.jobs.map(d=>{const limit=d.id==='ambassador'?ambassadorLimit(state,p.effects):d.id==='engineer'?n(state.buildings,'factory'):Infinity;const reason=gateReason(d.gate)||(d.id==='priest'&&isChallenge('atheism')?'无星长夜中不能安排祈愿熊':'')||(counts[d.id]>=limit?'岗位已满':'');return {...d,type:'assign',unlocked:!reason,visible:!reason||counts[d.id]>0,available:!reason&&assigned<state.bears.length,reason:reason||(assigned>=state.bears.length?'没有空闲小熊':''),costs:[],owned:counts[d.id],assigned:counts[d.id],limit:Number.isFinite(limit)?limit:null,effects:d.output?`基础产量 ${d.rate*rateScale} ${resourceById[d.output]?.name}/秒`:d.description};});
+  if(jobDetails){
+   const originalState=state,originalCache=effectCache;
+   const project=bears=>{try{state=clone(originalState);state.bears=clone(bears);effectCache=null;return production();}finally{state=originalState;effectCache=originalCache;}};
+   jobs=jobDecisions({state,production:p,rateScale,jobs,resources,project});
+  }
   const season=state.calendar.season,advanced=progressionView(context(),p);
   const praiseGain=state.resources.faith*progressionHooks.praiseMultiplier(state.faithRatio);
   const praiseReason=!state.science.theology?'需要星光礼仪':isChallenge('atheism')?'无星长夜中不能举行祈愿':state.resources.faith<=.0001?'还没有积攒足够的信仰':!Number.isFinite(praiseGain)||praiseGain>1e100-state.praised?'祈愿结果超出可保存范围':'';
   return {
-   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades'),challenges:advanced.challengeCards,
+   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades').map(c=>c.unlocked||c.owned?{...c,tradePreview:tradeDecision(context(),maps.trades[c.id],p)}:c),challenges:advanced.challengeCards,
    actions:[
     {id:'honey',type:'gather',name:'采集蜂蜜',description:'从花丛边采回 1 蜂蜜。',unlocked:true,available:state.resources.honey<p.caps.honey,costs:[],effects:'+1 蜂蜜'},
     card(maps.crafts.wood),card(festivalDefinition),
     {id:'hunt',type:'hunt',name:'巡林狩猎',description:'消耗 100 活力，寻找毛皮与象牙。',unlocked:!!state.science.archery,available:!!state.science.archery&&!isChallenge('pacifism')&&state.resources.manpower>=100,costs:[{id:'manpower',name:'活力',value:100,owned:state.resources.manpower}],reason:isChallenge('pacifism')?'和平山林中不能狩猎':state.resources.manpower<100?'需要 100 活力':''},
-    {id:'praise',type:'praise',name:'向星空祈愿',description:'把当前信仰汇入累计星光。',unlocked:!!state.science.theology,available:!praiseReason,reason:praiseReason,costs:[],effects:`累计星光 ${state.praised.toFixed(2)}`},
+    {id:'praise',type:'praise',name:'向星空祈愿',description:'把当前信仰汇入累计星光。',unlocked:!!state.science.theology,available:!praiseReason,reason:praiseReason,costs:[{id:'faith',name:'信仰',value:state.resources.faith,owned:state.resources.faith}],conversionPreview:{input:state.resources.faith,output:praiseGain},effects:`累计星光 ${state.praised.toFixed(2)}`},
     {id:'explore',type:'explore',name:'派熊远行',description:'消耗 1000 活力，寻找新的交换伙伴。',unlocked:Object.values(state.discoveries).some(Boolean),available:Object.values(state.discoveries).some(Boolean)&&state.resources.manpower>=1000,costs:[{id:'manpower',name:'活力',value:1000,owned:state.resources.manpower}],reason:state.resources.manpower<1000?'需要 1000 活力':''},
     {id:'observe',type:'observe',name:'记录星象',description:'抓住短暂出现的观测机会。',unlocked:!!state.observation,available:!!state.observation,costs:[]},
    ],
    calendar:{...state.calendar,seasonName:constants.SEASONS[season],weatherName:state.calendar.weather>0?'暖和':state.calendar.weather<0?'寒冷':'平和'},
-   bears:{value:state.bears.length,max:p.housing,free:state.bears.length-assigned,happiness:p.happiness*100,jobs:counts,arrival:state.arrival,individuals:state.bears.map(b=>({...b,skills:{...b.skills}}))},
+   bears:{value:state.bears.length,max:p.housing,free:state.bears.length-assigned,happiness:p.happiness*100,happinessBreakdown:happinessBreakdown(state,p.effects,p.housing,p.happiness*100),jobs:counts,arrival:state.arrival,individuals:state.bears.map(b=>({...b,skills:{...b.skills}}))},
    log:state.log.map(x=>({...x})),stats:{...state.stats},settings:{...state.settings},saveStatus:{...saveStatus},coverage:clone(coverage),offlineReport,pendingOffline,catchingUp,pendingOperation:pendingOperation?{...pendingOperation}:null,
    progression:{praised:state.praised,faithRatio:state.faithRatio,transcendence:state.transcendence,craftBonus:p.effects.craftRatio||0,faithBonus:p.faithProduction,paragonBonus:p.paragonProduction,challenge:state.challenge,festivalDays:state.festivalDays,conversions:p.conversions,...advanced},
    ...achievementView(context()),gifts:seasonalGiftsView(context()),undo:undoView(context()),queue:queueView(context()),engineers:engineerView(context()),embassies:embassyView(context()),buildingStages:stageView(context()),workshopDynamics:workshopHooks.workshopView(context()),diplomacy:{ambassadors:{...p.ambassadors,culturePerSecond:p.ambassadors.culture*rateScale,spicePerSecond:p.ambassadors.spice*rateScale},ambassadorLimit:ambassadorLimit(state,p.effects)},policies:policyView(context()),leadership:leadershipView(context()),energy:{supply:p.effects.energySupply||0,demand:p.effects.energyDemand||0,efficiency:p.effects.energyDeficit||1},pollution:{value:state.pollution,level:p.effects.pollutionLevel||0,honeyPenalty:p.effects.pollutionHoneyRatio||0},resetPreview:resetPreview(),ticks:state.ticks,observation:state.observation?{...state.observation}:null,
