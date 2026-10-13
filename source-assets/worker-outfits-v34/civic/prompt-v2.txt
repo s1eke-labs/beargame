@@ -1,5 +1,5 @@
-用途：精确物体编辑。
-编辑这张六精灵游戏图集。严格保留三列两行构图，全部六只熊的身份、形状、表情、轮廓、服装、物件、姿势差异、格内位置和尺寸。仅修改以下两个技术渲染问题：
-1. 两个地质学家精灵（中间列）的岩石均改为简单中灰石，最多一个平涂深灰阴影块。去除众多晶体切面以及所有纹理或渐变。
-2. 仅保留小熊精灵及干净抗锯齿边缘；彻底去除全部阴影／辉光／光晕／微弱背景杂物。每个精灵轮廓外的全部区域必须是真正干净的透明通道，不能是棋盘格或黑／灰背景。无投影。
-保留真正的 RGBA 透明通道。不做其他修改。不缩放或移动任何小熊。无文字、网格、水印或新增效果。
+Use case: precise-object-edit.
+Edit this six-sprite game atlas. Preserve EXACTLY the three-column/two-row composition, all six bear identities, shapes, expressions, outlines, outfits, objects, pose differences, cell positions and sizes. Change only these two technical rendering issues:
+1. In BOTH geologist sprites (middle column), make the rock a simple medium-gray rock with at most ONE flat darker-gray shadow shape. Remove the many crystalline facets and all texture or gradients.
+2. Keep only the bear sprites with their clean antialiased edges; remove absolutely all shadow/glow/halo/faint background debris. The entire area outside each sprite silhouette must be true clean alpha transparency, not a checkerboard or black/gray background. No drop shadows.
+Retain genuine RGBA alpha transparency. No other changes. Do not resize/reposition any bear. No text, grid, watermark, or added effects.

@@ -23,8 +23,8 @@
     },
     {
       "path": "generated-art/prompts.json",
-      "bytes": 5483,
-      "sha256": "8cc2d0a159172bca4b27cd455ede242de0f9e0eaf27c0b3cde5ac93f2c54d0eb"
+      "bytes": 6072,
+      "sha256": "11f884542f03c552428081383dd11e47ffacb77ee07d3ab76b4189de3f65d7d0"
     },
     {
       "path": "mechanics-specification/00-scope-and-provenance.md",
@@ -163,8 +163,8 @@
     },
     {
       "path": "storybook-v2/provenance.json",
-      "bytes": 6740,
-      "sha256": "d9dc7543de56fcd4ac9b9f7c302e083783e8f565b00912c87fb943a7202238ef"
+      "bytes": 7644,
+      "sha256": "9463a8cefe6aeee1dd4b25f7aea087d0279b9f56101ae522eb0401b04f917cfe"
     },
     {
       "path": "storybook-v2/resources-atlas.png",
@@ -178,5 +178,5 @@
     }
   ],
   "fileCount": 35,
-  "totalBytes": 12780525
+  "totalBytes": 12782018
 }

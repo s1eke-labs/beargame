@@ -1,11 +1,11 @@
-用途：故事插画，保持角色形象一致的 2D 游戏精灵图集。
-输入图片 1 是最终角色形象参考：将其中的准确角色改编为所需图集。不要复制参考中的纸面网格；输出必须是真实透明 RGBA。
-生成一张正方形图片，包含均匀排列的 4 列 x 4 行精灵图集。16 个等大单元格中各放置一个相同参考白熊的全身形象。单元格之间以及整张图集四周保留较大透明间距。每个角色及其道具必须完整位于单元格内并留出充足边距。无文字、标签、地面、阴影或背景；无可见网格。
-角色一致性最关键：极简友好的白色豆形／梨形一体身体，宽大近圆形头部与短小身体无缝相连，黑色描边的小椭圆耳朵，粗手绘且略不规则的黑色外轮廓，两只黑色小点眼睛，小黑三角鼻和小 W 形嘴。腿短粗，手臂是垂下的 U 形面条状。头身之间无分界线。匹配参考的宽头、整体比例、五官位置、短小四肢和小耳朵。身体保持纯白不透明、黑线清晰、完全平涂、无阴影。不添加腮红、粉脸颊、衣服、帽子、鞋子、肚皮色块、单独的椭圆口鼻区、眉毛细节、毛发纹理或渐变。
-严格按从左到右的阅读顺序安排姿势：
-第 1 行：1. 正面待机，忠实参考的中性甜美表情，双臂垂下；2. 开心地抬起一只手轻轻挥手，身体相同；3. 朝右侧面待机，与参考中间的小熊完全一致；4. 背面待机，与参考右侧小熊完全一致，有小圆尾巴，无面部。
-第 2 行：5. 身前抱一根低饱和赭色小原木，行走姿势 A；6. 抱同一根原木，轻柔交替的行走姿势 B；7. 身前照料一个低饱和赭色小蜂蜜罐，使用小蜂蜜棒，姿势 A；8. 相同蜂蜜照料动作，蜂蜜棒略微移动，姿势 B。
-第 3 行：9. 手持并阅读一本打开的鼠尾草绿书，姿势 A；10. 相同阅读姿势，书页／手臂略有变化，姿势 B；11. 斜持一把小灰镐，姿势 A；12. 同一把镐略向外挥，姿势 B。
-第 4 行：13. 手持一把小灰扳手，姿势 A；14. 同一扳手略有工作动作，姿势 B；15. 正面困倦，双眼轻闭，双臂垂下，无睡眠符号；16. 正面双手在中央抱一个赭色小蜂蜜罐。
-道具使用简洁平面描边形状，尺寸足够小，不遮挡角色轮廓。只有道具着色：木材／蜂蜜为低饱和赭色，书为鼠尾草绿，工具为中性灰。无服装或配饰，无额外物件。
-每组 A/B 姿势必须严格保持相同角色身体尺寸和脚底基线，整张图集也尽量一致。16 个角色都必须像此参考，不得变为泰迪熊、带突出吻部的北极熊或蓬松的幼态动物。
+Use case: illustration-story, identity-preserving 2D game sprite atlas.
+Input image 1 is the definitive CHARACTER IDENTITY reference: adapt that precise character into the requested atlas. Do not reproduce the reference paper grid; the output is actual transparent RGBA.
+Produce ONE square image containing a 4-column by 4-row evenly spaced sprite atlas. Each of the 16 equal cells contains exactly one full-body rendition of the SAME reference white bear. Use large transparent gutters between cells and around the entire sheet. Every actor must fit completely inside its cell, with ample padding including props. No text, labels, ground, shadows or background; no visible grid.
+Identity is crucial: extremely simple friendly white bean/pear-shaped single body, broad near-circular head merging seamlessly into short body, tiny oval ears with black outlines, thick hand-drawn slightly irregular black outline, two small black dot eyes, tiny black triangular nose and small W-shaped mouth. Short stubby legs and hanging U-shaped noodle arms. Head and body have no dividing line. Match the reference's broad head, overall proportions, face placement, tiny limbs and little ears. Keep the body pure opaque white with crisp black lines, absolutely flat and unshaded. No blush, pink cheeks, clothing, hats, shoes, belly patches, separate muzzle oval, eyebrow detail, fur texture or gradients.
+Lay out these poses exactly in reading order, left to right:
+Row 1: 1. idle front, reference-faithful neutral sweet face, arms down; 2. cheerful tiny wave with one arm raised, same body; 3. idle right-facing side/profile exactly like the reference middle bear; 4. idle back exactly like reference right bear, tiny round tail and no face.
+Row 2: 5. carrying one small muted ochre wood log in front, walking pose A; 6. carrying the identical log, gentle alternate walking pose B; 7. tending a small muted ochre honey jar in front with a tiny dipper, pose A; 8. same honey tending with a small dipper movement, pose B.
+Row 3: 9. holding and reading an open sage-green book, pose A; 10. same reading with tiny page/arm change, pose B; 11. holding a small gray pickaxe diagonally, pose A; 12. same pickaxe swung slightly outward, pose B.
+Row 4: 13. holding a small gray wrench, pose A; 14. same wrench with a tiny working movement, pose B; 15. sleepy front with gently closed eyes and arms down, no sleep symbols; 16. holding a single small ochre honey jar centrally with both arms, front view.
+Props are flat simple outlined shapes and remain small enough not to obscure the character silhouette. Only props have color, muted ochre wood/honey, sage-green book, neutral gray tools. No costumes or accessories. No extra objects.
+Maintain precisely the same actor body size and foot baseline within each A/B pair and as consistently as possible across the atlas. The 16 characters must all look like this reference, not teddy bears, polar bears with muzzles, or fluffy chibi animals.

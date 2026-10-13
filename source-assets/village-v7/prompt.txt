@@ -1,10 +1,10 @@
-用途：故事插画。
-资产类型：本游戏正式精灵图集，恰好八个独立建筑精灵，规则的 4 列 x 2 行布局，2:1 宽画布，八个正方形单元格。
-输入图片 1（现有建筑图集）：仅参考主体身份。图片 2（成长图集）：仅参考扩建建筑身份，简化其过多的渲染细节。图片 3（白豆熊图集）：主要风格参考，匹配粗重平滑的暖深黑轮廓、圆润友好形状、平涂固有色、极少细节、近乎无阴影和柔和手作绘本气质。图片 4（木蜂箱）：仅参考配色，即低饱和鼠尾草绿屋顶和蜂蜜金木材。不要重画蜂箱。
-严格创建以下八个独立、朝前建筑精灵，从左至右：
-上排：1. 小熊小屋，奶油色圆润小屋，鼠尾草屋顶上两个轻微圆熊耳凸起，圆蜂蜜木门和一扇圆窗。2. 小图书馆，奶油山墙小屋、鼠尾草屋顶、蜂蜜木双门上方有打开的书徽记。3. 小谷仓，奶油墙、鼠尾草山墙屋顶、蜂蜜木框和简单交叉支撑双门。4. 伐木场，开放蜂蜜木棚、鼠尾草屋顶、3 根粗原木堆。
-下排：1. 扩建熊小屋，同一小屋的较大版本，附一个小侧室和烟囱，依然圆润简单。2. 扩建图书馆，较大馆舍附短圆阅读塔、打开的书徽记、鼠尾草屋顶。3. 扩建粮仓，较大谷仓配一个筒仓和小侧库，奶油与蜂蜜木材、鼠尾草屋顶、交叉支撑门。4. 作坊，紧凑奶油小屋、鼠尾草屋顶、蜂蜜木门框，门上方一个简单交叉锤锯徽记。
-构图：每个精灵完整位于所属等大方格内。建筑整体可见，正面为主，仅有轻微侧面体积，八个精灵的视线高度和比例逻辑一致。距每格边缘保留 10% 透明留白，精灵间有明显透明间隔，每排建筑底部对齐。每个底部允许稀疏的 1–2 个圆鼠尾草灌木形。精灵轮廓干净独立。
-风格：可爱平面绘本剪贴，深色描边如白熊一样粗重一致。限用奶油／鼠尾草／蜂蜜配色。宽大简单形状，每种材质最多一种低饱和平涂阴影。无绘画纹理、渐变渲染、微小砖纹或复杂屋瓦。较大建筑与初级建筑保持同一视觉语言。
-背景：真正透明 RGBA，无任何颜色背景，不烘焙棋盘格。无地板平面，建筑轮廓外无地面阴影。
-约束：恰好 8 个精灵，严格 4x2 排列；间距内无额外物件；无小熊或其他角色、蜜蜂、蜂箱、文字、字母、标签、网格、界面、边框或水印。
+Use case: illustration-story.
+Asset type: one production sprite atlas for Beargame, exactly eight individual building sprites in a perfectly regular 4-column x 2-row layout, wide 2:1 canvas with eight square cells.
+Input image 1 (existing buildings atlas): subject identity reference only. Input image 2 (growth atlas): expanded-building identities only, simplify its over-detailed rendering. Input image 3 (white bean bear atlas): PRIMARY STYLE REFERENCE: match its bold smooth dark warm-black outlines, rounded friendly shapes, flat local colors, very sparse detail, almost no shading, soft handmade storybook character. Input image 4 (wooden hives): palette reference only: muted sage green roofs, honey-gold timber. Do not redraw the hives.
+Create exactly these eight isolated front-facing building sprites, left to right:
+TOP ROW: 1. tiny bear hut, cream rounded cottage, sage roof with two subtle rounded bear-ear roof bumps, round honey-wood door and one round window. 2. small library, cream gabled cottage with sage roof, open book emblem above honey-wood double door. 3. small barn, cream walls, sage gabled roof, honey timber frame and simple cross-braced double doors. 4. lumber yard, an open honey-wood shed with sage roof and 3 chunky stacked logs.
+BOTTOM ROW: 1. expanded bear hut, a larger version of the same cottage with a small attached side room and chimney, still rounded and simple. 2. expanded library, larger library with short attached round reading tower, open book emblem, sage roofs. 3. expanded granary, larger barn with one silo and small side store, cream and honey wood, sage roofs, cross-braced doors. 4. workshop, cream compact cottage with sage roof, honey timber doorway, one simple crossed hammer-and-saw emblem above door.
+Composition: Each sprite fully inside its own equal square cell. Entire buildings visible, front-on with only slight dimensional side faces, same consistent eye level and scale logic across all eight. Keep 10% transparent padding from every cell edge, strong transparent gutters separating all sprites, aligned building bases within each row. Sparse 1-2 rounded sage shrub shapes at each base are fine. Clean isolated sprite silhouettes.
+Style: Charming flat picture-book cutouts with confidently bold consistent dark outlines like the white bear. Limited cream / sage / honey palette. Broad simple shapes, max one muted flat shadow shade per material. No painterly texture, no gradient rendering, no microscopic brickwork, no intricate roof tiles. Bigger structures remain the same visual language as starter structures.
+Background: genuinely transparent RGBA, no backdrop of any color, no baked checkerboard. No floor plane, no ground shadows outside building silhouette.
+Constraints: exactly 8 sprites and exact 4x2 arrangement, no extra objects in gutters, no bears or other characters, no bees, no hive, no text, no letters, no labels, no grid, no UI, no border, no watermark.

@@ -1,35 +1,35 @@
-用途：风格化概念设计。
-为本游戏创建一张透明精灵图集：恰好 24 个互不相同的原创手绘建筑精灵，严格排列为 6 列、4 行。横幅 3:2 图片，理想尺寸为 1536x1024。等大网格不可见，每个精灵位于所属格中央，保留宽裕透明间距，物体不能越过单元格边界。无标签、文字、数字、小熊、人物、边框或棋盘格。
-风格：温馨清晰的手绘奇幻城镇游戏精灵，四分之三等距视角，奶油色石材、蜂蜜色木材、适用处使用鼠尾草绿屋顶，细暖棕轮廓，少量苔藓与花朵，暖琥珀色高光，材质以细致插画和柔和阴影表现。轮廓鲜明易读。全程使用透明背景，每个剪贴对象彼此独立。
-极其重要：严格按以下逐行顺序将每种结构各画一次，不重复通用房屋。每个主体必须具有明显不同的轮廓和功能道具。
-第 1 行，从左至右：
-1 pasture：低围栏矩形花卉蔬菜园，有多排种植物，无蜂箱、无建筑。
-2 amphitheatre：宽大的半圆阶梯式露天木座席，环绕一个无遮顶的小舞台。
-3 harbor：一小块独立青绿水面上的木码头，配奶油色小帆船和高码头吊车。
-4 tradepost：低矮帆布商队摊位，配彩色织物遮棚和板条箱。
-5 steamworks：裸露黄铜蒸汽机磨坊，带巨大飞轮和一根高烟囱，工业轮廓不规则。
-6 magneto：独立铜线圈发电机，两个高线圈之间有蓝色电弧。
-第 2 行，从左至右：
-7 calciner：矮胖圆形奶油石灰窑炉，敞开的炉口发橙光。
-8 oilWell：高大蜂蜜色木架钻油塔，具有醒目的长摇臂抽油机。
-9 accelerator：四个支架托起的大型水平圆环科学加速器机械。
-10 reactor：宽大的浅色穹顶动力反应堆，两侧各有一座弯曲冷却塔。
-11 aiCore：高而发光的青绿玻璃圆柱计算核心，带铜环。
-12 dataCenter：开放矩形服务器亭，低矮平坦的鼠尾草绿屋顶下露出成排深色直立服务器机架。
-第 3 行，从左至右：
-13 solarFarm：倾斜金属架上的六块蓝色太阳能板组成宽阵列，无房屋。
-14 hydroPlant：低矮弧形石坝，带流动蓝水和木水轮机房。
-15 broadcastTower：极细高的桁架无线电桅杆，带天线碟和底部小控制箱。
-16 zebraOutpost：两顶奶油色与炭色条纹的小帆布营帐，配旗帜。
-17 zebraWorkshop：宽大的奶油色与炭色条纹露天遮棚，下方可见木工作台和工具。
-18 zebraForge：矮胖沙漠锻炉，带拱形陶土窑和铁砧。
-第 4 行，从左至右：
-19 stasisPod：倾斜细长的发光玻璃休眠舱站，配金属支撑，无使用者。
-20 ivoryTemple：高耸浅象牙色螺旋神龛，圆形阶梯底座上有雕刻螺旋尖塔。
-21 brewery：三个大而圆的铜酿造罐组成一组，带管道和木桶平台。
-22 modernPasture：长形先进温室，弧形透明绿色玻璃屋顶，内有植物。
-23 modernAqueduct：粗壮石材与钢材水泵站，外露大蓝管道和溢洪道。
-24 modernAmphitheatre：现代广播演出厅，宽弧形舞台顶棚，两侧有扬声器／天线。
-严格保持六列四行布局，整张图集视觉比例一致。24 个独立轮廓均须完整可见，四周留空。
+Use case: stylized-concept.
+Create ONE transparent sprite ATLAS for Beargame: exactly 24 DISTINCT original hand-painted building sprites arranged in EXACTLY 6 COLUMNS AND 4 ROWS. Landscape 3:2 image, ideally 1536x1024. Invisible equal grid, every sprite centered in its cell, generous transparent gutters, no object crossing cell boundary. No labels, no text, no numbers, no bears, no people, no border, no checkerboard.
+Style: cozy crisp hand-painted fantasy town game sprites viewed three-quarter isometric, cream stone, honey wood, sage green roofs where appropriate, fine warm brown contour lines, little moss and flowers, warm amber highlights, softly shaded detailed illustrated materials. Strong readable silhouette. Transparent background throughout, each cutout isolated.
+EXTREMELY IMPORTANT: draw every requested structure once in this precise row-major order and no generic house repetitions. Each subject has a clearly DIFFERENT silhouette and functional props.
+ROW 1 left to right:
+1 pasture: low fenced rectangular flower-and-vegetable garden plots, lots of planted rows, no hive and no building.
+2 amphitheatre: wide semicircular stepped open-air timber seating curving around an uncovered small stage.
+3 harbor: timber dock on a small isolated patch of turquoise water, little cream sailboat and tall dock crane.
+4 tradepost: low canvas caravan merchant stall with colorful fabric awnings and crates.
+5 steamworks: exposed brass steam engine mill with enormous flywheel and one tall chimney, irregular industrial silhouette.
+6 magneto: standalone copper coil electricity generator with two tall coils and blue arcing electricity.
+ROW 2 left to right:
+7 calciner: squat circular cream-stone lime kiln round furnace, open orange glowing mouth.
+8 oilWell: tall skeletal honeywood oil drilling rig with obvious long rocking pumpjack arm.
+9 accelerator: large horizontal circular scientific accelerator ring machinery on four supports.
+10 reactor: broad pale domed power reactor flanked by two curved cooling towers.
+11 aiCore: tall glowing turquoise glass cylindrical computation core with copper rings.
+12 dataCenter: open rectangular server pavilion exposing rows of dark upright server racks beneath a low flat sage roof.
+ROW 3 left to right:
+13 solarFarm: broad array of six blue solar panels on tilted metal frames, NO house.
+14 hydroPlant: short curved stone dam with flowing blue water and a wooden waterwheel powerhouse.
+15 broadcastTower: extremely slender tall lattice radio mast with antenna dish and tiny control box at base.
+16 zebraOutpost: two small striped cream-and-charcoal canvas camp tents with a banner.
+17 zebraWorkshop: wide open-air cream-and-charcoal striped awning above visible wooden workbenches and tools.
+18 zebraForge: squat desert forge with an arched terracotta kiln and anvil.
+ROW 4 left to right:
+19 stasisPod: tilted elongated glowing glass sleep capsule station with metal supports, no occupant.
+20 ivoryTemple: tall pale ivory spiral shrine, sculpted helical spire on a round stepped base.
+21 brewery: cluster of three large rounded copper brewing vats, pipes and wooden barrel platform.
+22 modernPasture: long advanced greenhouse with curved transparent green glass roof and plants.
+23 modernAqueduct: chunky stone and steel water-pump station with exposed large blue pipes and spillway.
+24 modernAmphitheatre: modern broadcasting performance hall with broad curved stage canopy and two speakers/antennae.
+Keep perfect six-column four-row layout, same visual scale across the atlas. All 24 isolated silhouettes fully visible with room around them.
 
-使用内置 image_gen 生成。先生成原图，再进行间距调整编辑；两个 PNG 均保留。编辑要求每个精灵位于所属 256x256 单元格中央的 190x190 区域内，保留设计与顺序。生成器改善了间距，但未严格满足所有间距要求。IvoryTemple 需要自定义裁剪 x270..510、y738..996，以保留尖顶。
+Built-in image_gen used. Original generation followed by gutter-adjustment edit; both PNGs retained. Edit requested each sprite fit the central 190x190 area of each 256x256 cell, preserving designs and order. Generator improved spacing but did not strictly honor all gutters. IvoryTemple needs custom crop x270..510, y738..996 to retain its tip.

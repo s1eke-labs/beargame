@@ -1,12 +1,12 @@
-用途：保持角色身份。
-资产类型：本游戏正式 PNG 精灵图集。将附带参考熊图集变为恰好六个新完整白熊职业精灵，真正透明背景，3 个等宽列、2 个等高行，3:2 横幅。参考图提供角色身份与线条风格，严格以其正面待机白熊为共享身体模板。不要复制网格或现有工具。
+Use case: identity-preserve.
+Asset type: production PNG sprite atlas for Beargame. Transform the attached reference bear atlas into exactly six new complete white-bear occupation sprites on TRUE TRANSPARENT background, with 3 equal columns and 2 equal rows. Landscape 3:2 canvas. Reference image is the character identity and line-style reference; use its front-facing idle white bear exactly as the shared body template. Do not reproduce its grid or its existing tools.
 
-角色身份与风格的绝对不变量：相同的简单白熊圆宽脸、两只小圆耳、小黑点眼、小黑鼻与简单嘴、短粗身体、很短四肢。粗近黑平滑轮廓、纯白不透明熊身、平涂克制颜色、干净 2D 绘本卡通。不加毛发、纹理、颗粒、写实、光照、渐变、阴影、腮红、接缝、装饰标记、细小服装细节、人体解剖、文字或标签。每只熊的双耳都保持可辨认。
+Absolute identity/style invariants: same simple white bear round wide face, two small round ears, tiny black dot eyes, tiny black nose and simple mouth, short stocky body and very short limbs. Chunky near-black smooth outlines, pure white opaque bear fills, flat restrained colors. Clean 2D picture-book cartoon. Do not add fur, texture, grain, realism, lighting, gradients, shadows, blush, seams, decorative marks, tiny clothing detail, human anatomy, text or labels. Both ears remain recognizable on each bear.
 
-布局与动画对齐：严格 3 列 x 2 行，无网格线。每列一个职业，上排第 1 帧，下排第 2 帧。六只熊的头宽、头高、躯干宽、躯干高、面部几何、身体位置和站立脚位完全一致；帧间身体不偏移、不缩小、不倾斜。每格头／躯干中心的相对坐标相同，脚位于格高 85% 处。配对帧之间仅手臂和所持工具姿势改变。每个精灵四周透明间距宽，尤其列间；帽、耳、手臂、脚、工具和树桩均必须完整位于所属等大格内。精灵不能越界。无背景色、棋盘格、地板、景物、边框或接触阴影。
+Layout and animation registration: exactly 3 columns by 2 rows; no gridlines. Each column is one occupation, top row frame 1, bottom row frame 2. All SIX use exactly the same head width, head height, torso width, torso height, face geometry, body position and planted feet; body does not shift, shrink or lean between frames. Center head/torso at the same relative coordinate inside every cell, feet at 85% of cell height. Only arms and held tool pose change between paired frames. Keep a wide transparent gutter around every sprite, especially between columns; all hat, ears, arms, feet, tool and stump must be wholly inside their own equal-sized cell. No sprite crosses a cell boundary. No background colors, checkers, floor, scenery, borders or contact shadows.
 
-第 1 列伐木工：砖红短软帽，耳朵可见；极简棕围裙。短木柄、宽灰斧头。上帧：站立熊举斧准备砍，脚旁一个小树桩。下帧：同熊、同锚点、同尺寸，斧头落到脚旁小树桩上。无搬运原木、浮空木材或锯。
-第 2 列猎人／巡林员：鼠尾草绿宽檐帽、很短的简单绿斗篷、粗深色双筒望远镜。上帧：胸前低持望远镜。下帧：举到眼前观察，头和脚锚点相同。无枪、弓或动物。
-第 3 列农夫／养蜂人：浅奶油蜂帽，宽简单帽檐、蜂蜜黄围裙，单个矩形木蜂巢框，内部少量大而简单的蜂蜜色六边形。上帧：围裙前低持蜂巢框。下帧：同一框抬至脸部下侧检查，熊脸仍可见。无细网、遮脸面纱、蜜蜂或蜂蜜罐。
+Column 1 woodcutter: brick-red short soft cap with ears visible; very simple brown apron. Short wooden handle, broad gray axe head. TOP: standing bear raises its axe, ready to chop, and small stump sits beside its foot. BOTTOM: same bear at same anchor and size, axe lowered onto that small stump beside its foot. No carried logs, no floating wood, no saw.
+Column 2 hunter/patrol: sage-green wide-brim hat, very short simple green cape, chunky dark binoculars. TOP: holds binoculars down at chest level. BOTTOM: raises binoculars to eyes to look; identical anchored head and feet. No gun, no bow, no animals.
+Column 3 farmer/beekeeper: light cream bee hat with broad simple brim, honey-yellow apron, single wooden rectangular honeycomb frame with a few LARGE simple honey-colored hexagons. TOP: holds the frame low in front of apron. BOTTOM: same frame raised beside lower face for inspection, bear face still visible. No fine mesh, no veil obscuring face, no bees, no honey jar.
 
-重要要求：每组必须像同一模型的两帧，不能像分别重新设计或比例不同的两只熊。六个完整绘画之外全部透明。
+Important: Each pair must look like two frames of the identical model, not two separately redesigned or differently scaled bears. Transparent alpha everywhere outside the six complete drawings.

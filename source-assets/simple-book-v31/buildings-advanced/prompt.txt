@@ -1,35 +1,35 @@
-用途：风格迁移。
-资产类型：一张正式游戏精灵图集，1536 x 1024 横幅，透明 RGBA 背景。
-输入图片 1 是风格参考：简洁白熊绘本插画。输入图片 2 是编辑目标和内容／顺序参考：细节过多的 24 建筑图集。
-将图片 2 中全部 24 个建筑从头重绘，使用图片 1 相同的简洁绘画语言。保留准确语义身份和逐行顺序，移除几乎所有细节。采用粗圆头毡笔般的线条、友好圆润造型和平涂儿童绘本风格，呈现小熊简笔绘本效果。严格 6 列 x 4 行，恰好 24 个独立建筑，各自在等大的 256 x 256 单元格中居中，精灵完整位于格内，四周透明留白至少 22px。间距明显，不重叠，无网格线。各精灵居中、大小相近，采用浅 3/4 透视。精灵四周干净、真实透明。
-风格是最高要求：粗重、深棕近黑、平滑圆润的外轮廓，内部线条同样粗、少而简洁；大块简单形状；奶油色、低饱和鼠尾草绿、蜂蜜金和暖棕平涂，技术部分仅用极克制的低饱和蓝／水绿色点缀。每个建筑约 5 至 12 个大视觉形状，不能有几十个小零件。只允许平涂；必要时可用一个简单平面底部阴影。无材质纹理、风化、颗粒、绘画笔触、渐变、光照效果、辉光、3D 渲染、细线、微小细节、重复小砖／螺栓／叶片／窗格、杂乱景观。无角色、文字、标签、数字或水印。
-严格从左至右排列：
-第 1 行：
-1 pasture：小鼠尾草绿牧场，粗矮棕围栏，仅 3 株宽绿芽和一捆干草。
-2 amphitheatre：奶油色半圆露天剧场，仅 3 层宽弧形座席和开放舞台。
-3 harbor：一块低饱和蓝水面上的粗木码头，简单小帆船和一台矮吊车。
-4 tradepost：小市场摊位，宽奶油色与蜂蜜色条纹顶棚，单柜台和两个大箱子。
-5 steamworks：紧凑奶油色工厂，大蜂蜜色飞轮、一根圆烟囱、一个鼠尾草绿屋顶。
-6 magneto：两个矮蜂蜜铜色线圈，圆顶之间由一条简单蓝色折线连接。
-第 2 行：
-7 calciner：矮奶油圆窑，宽深色拱口、一团简单橙火、短烟囱。
-8 oilWell：简化棕色抽油机，大单摇梁位于块状底座之上。
-9 accelerator：粗甜甜圈状低饱和蓝环形机器，四个奶油色支架。
-10 reactor：大奶油穹顶、两个简单圆冷却塔、一扇小蓝窗。
-11 aiCore：奶油框架中的直立圆胶囊状低饱和水绿罐，内部一个简单蓝色脑形色块。
-12 dataCenter：矮奶油建筑，鼠尾草绿屋顶，三扇大深蓝服务器门；每门仅两道宽指示标记。
-第 3 行：
-13 solarFarm：粗支架上的三块宽低饱和蓝矩形太阳能板，每板仅一个十字。
-14 hydroPlant：矮奶油水坝，一道蓝瀑布和一个简单大蜂蜜色水轮。
-15 broadcastTower：简单高棕锥形塔，一个大奶油卫星碟和两根宽横梁。
-16 zebraOutpost：两个简单奶油帐篷，各只有两三条宽深棕条纹，配一面小旗。
-17 zebraWorkshop：正面敞开的宽条纹奶油棕色棚，一张工作台和一个大扳手形状。
-18 zebraForge：简单奶油棕条纹棚，旁有圆棕锻炉、橙色拱口和一个铁砧。
-第 4 行：
-19 stasisPod：斜放的圆润低饱和水绿胶囊，奶油蜂蜜色框架、一扇宽窗、一个粗底座。
-20 ivoryTemple：高而平滑的奶油色螺旋纪念碑，圆形两层底座，少量蜂蜜色装饰边。
-21 brewery：三个大圆蜂蜜／铜色酿造罐，由一根粗管连接，仅一个小台阶。
-22 modernPasture：圆润鼠尾草绿与浅蓝温室，仅三道宽框架拱，内部可见两株粗植物。
-23 modernAqueduct：矮奶油水务设施，一根大弯蓝管和一道宽蓝瀑布。
-24 modernAmphitheatre：简单舞台，大奶油弧顶棚、三层宽弧座席、两个粗扬声器。
-图集必须呈现为与白熊同一手绘世界的 24 个不同可爱简洁图标，绝不能成为细密的微型 3D 游戏模型。无背景色。
+Use case: style-transfer.
+Asset type: one production game sprite atlas, 1536 x 1024 landscape, TRANSPARENT RGBA background.
+Input image 1 is the STYLE REFERENCE: the simple white-bear picture-book drawings. Input image 2 is the EDIT TARGET and content/order reference: an over-detailed 24-building atlas.
+Redraw ALL 24 buildings from image 2 from scratch in the SAME simple drawing language as image 1. Preserve the exact semantic identities and exact row-major ordering, but strip away almost all detail. Make them look drawn with a chunky round felt-tip pen, friendly rounded shapes, flat-color simple children's picture-book illustrations, 小熊简笔绘本. Strictly 6 columns by 4 rows, exactly 24 standalone buildings, one centered inside each equal 256 x 256 cell, all of each sprite contained within its cell with at least 22px clear transparent padding around it. Clear visible gutters, no overlaps, no grid lines. Keep each sprite centered and similarly sized, shallow 3/4 perspective. Clean true transparency around sprites.
+STYLE IS THE MOST IMPORTANT REQUIREMENT: thick very dark brown/near-black smooth rounded outer outlines and similarly chunky sparse inner lines, large simple shapes, flat cream, muted sage, honey gold and warm brown colors with very restrained muted blue/aqua technology accents. Each building approximately 5 to 12 large visual shapes, not dozens of small components. Flat fill ONLY. One simple flat base shadow if needed. No material texture, no weathering, no grain, no painterly brush strokes, no gradients, no lighting effects, no glow, no rendered 3D, no fine linework, no tiny details, no tiny repeated bricks/bolts/leaves/windowpanes, no landscaping clutter. No characters, no lettering, no labels, no numbers, no watermark.
+Exact left-to-right contents:
+ROW 1:
+1 pasture: small sage grassy paddock, chunky low brown fence, only 3 broad green sprouts and one hay bale.
+2 amphitheatre: cream semicircular open theatre with just 3 broad curved seating tiers and an open stage.
+3 harbor: chunky wooden dock on one muted blue water patch, simple small sailboat and one short crane.
+4 tradepost: small market stall with a wide cream-and-honey striped canopy, single counter and two big crates.
+5 steamworks: compact cream factory with a big honey flywheel, one rounded smokestack and one sage roof.
+6 magneto: two squat honey-and-copper coils with one simple blue zigzag connecting their rounded tops.
+ROW 2:
+7 calciner: squat cream round kiln with a broad dark arched opening, one simple orange flame and short chimney.
+8 oilWell: simplified brown pumpjack with a single large rocking beam over a block base.
+9 accelerator: thick donut-shaped muted blue ring machine with four cream supports.
+10 reactor: large cream dome, two simple rounded cooling towers and a small blue window.
+11 aiCore: upright rounded capsule-like muted aqua tank in a cream frame, one simple blue brain-shaped blob inside.
+12 dataCenter: squat sage-roofed cream building with three large dark blue server doors; each door only two broad indicator marks.
+ROW 3:
+13 solarFarm: three broad muted blue rectangular solar panels on chunky stands, each panel with only one cross.
+14 hydroPlant: squat cream dam with a single blue waterfall and one large simple honey waterwheel.
+15 broadcastTower: simple tall brown tapered tower with one large cream satellite dish and two broad crossbars.
+16 zebraOutpost: two simple cream tent shapes with only two or three broad dark brown stripes each and a single small flag.
+17 zebraWorkshop: an open-front broad-striped cream-and-brown canopy shelter with one workbench and a large wrench shape.
+18 zebraForge: simple striped cream-and-brown shelter beside a round brown forge with orange arched opening and one anvil.
+ROW 4:
+19 stasisPod: diagonal rounded muted aqua capsule in a cream and honey frame, one broad window and one chunky base.
+20 ivoryTemple: a tall smooth cream spiral-shaped monument on a round two-tier base, sparse honey trim.
+21 brewery: three big rounded honey/copper brewing vats connected by one thick pipe, tiny single step.
+22 modernPasture: rounded sage-and-pale-blue greenhouse with only three broad frame arches and two chunky plants visible inside.
+23 modernAqueduct: squat cream waterworks with one large curved blue pipe and one broad blue waterfall.
+24 modernAmphitheatre: simple stage with a big cream curved canopy, three broad curved seating steps and two chunky speakers.
+The atlas must read as 24 distinct cute SIMPLE icons from the SAME hand-drawn world as the white bear, never as miniature detailed 3D game models. No background color.
