@@ -1,5 +1,5 @@
 {
-  "method": "Complete-image connected components of alpha > 16; detached components assigned to nearest actual principal silhouette rectangle; final boxes include 4px padding for antialiased edges. No nominal grid clipping. PNG pixels and alpha unchanged.",
+  "method": "对整张图像的 alpha >16 像素提取连通区域；分离区域分配给最近的实际主轮廓矩形；最终裁切框保留 4px 边距以容纳抗锯齿边缘。未按名义网格裁切，PNG 像素和透明通道未改变。",
   "atlases": {
     "semantic-resources-b": {
       "relic": {

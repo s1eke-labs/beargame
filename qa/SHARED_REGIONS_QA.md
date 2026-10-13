@@ -1,22 +1,22 @@
-# Shared Home / Explore regions — v6.4.0
+# 家园与探索共享区域——v6.4.0
 
-User-facing change: Explore is the world-map entry point. Selecting a physical region opens the same Home scene and region tab, rather than rendering a second arrangement of buildings.
+用户可见变化：“探索”作为世界地图入口。选择实体区域后，会打开对应的家园场景和区域标签，两种入口使用同一套建筑布局。
 
-## Single source
+## 统一的区域数据
 
-`geographicRegions()` supplies both world-map membership and Home scene groups, including upgraded building destinations and small-region folding. Native facilities use their canonical district slots; folded singleton facilities append after native village slots. They may move when a district opens or merges, but entry route does not change their layout. Details continue to dispatch original engine IDs.
+`geographicRegions()` 同时提供世界地图归属和家园场景分组，包括建筑升级后的目标区域和小区域合并。区域内原生设施使用固定位置；并入的单独设施排列在村落原生位置之后。区域开放或合并时，设施位置可能变化，但从不同入口进入不会改变布局。详情操作继续分发原始引擎 ID。
 
-Canonical scene links are `#home/<region>`. Existing `#more/map/<region>` links resolve to the corresponding shared scene; old action suffixes resolve to the still-supported system pages. Unknown or merged physical Home regions fall back to village. Unlocked systems without a distinct physical district remain reachable through Explore's More menu.
+标准场景链接为 `#home/<region>`。已有的 `#more/map/<region>` 链接会转到对应的共享场景；旧操作后缀会转到仍受支持的系统页面。未知或已合并的家园实体区域回退到村落。已解锁但没有独立实体区域的系统仍可从探索的“更多”菜单进入。
 
-A Home toolbar control returns to the world map. Home scene scroll, map scroll, modal history, explicit paid actions, paused state and read-only ownership are preserved. Recipe picking, engineer automation, embassies, faith, space and time controls remain accessible.
+家园工具栏提供返回世界地图的控件。家园场景滚动、地图滚动、对话框历史、明确确认的资源消耗操作、暂停状态和只读归属状态均被保留。配方选择、工程师自动化、使馆、信仰、太空和时间操作仍可访问。
 
-## Checks
+## 检查记录
 
-- 739 automated tests pass, including 50 independent shared-region checks.
-- All 32 combinations of five building-stage upgrades preserve exactly-once scene membership.
-- Seven-versus-six regression: hive/hut/library/barn/pasture/logHouse/mansion plus academy. Both Home village and Explore village contain six types; library and academy consistently belong to learning.
-- Actual handlers cover map entry, legacy/fallback links, invalid links, navigation without resource changes, modal history, modeled scroll restoration, and sale/merge/undo.
-- The normal-action campaign still passes all 15 stage/branch results, 51,106 operations, with exact exported-state equality.
-- Static build checks validate 90 production files and 181 local asset/import links.
+- 739 项自动测试通过，其中包含 50 项独立的共享区域检查。
+- 五种建筑阶段升级的全部 32 种组合，均保持每种建筑在场景中只出现一次。
+- “七种与六种”回归场景：`hive`、`hut`、`library`、`barn`、`pasture`、`logHouse`、`mansion`，再加上 `academy`。家园村落与探索村落均包含六种建筑；`library` 和 `academy` 始终归入学研区域。
+- 真实事件处理器覆盖地图入口、旧链接及回退链接、无效链接、不改变资源的导航、对话框历史、模拟滚动恢复，以及出售、合并和撤销。
+- 正常操作推进回放的全部 15 条阶段或分支结果、51,106 次操作仍通过，导出状态精确相等。
+- 静态构建检查验证了 90 个生产文件和 181 个本地资源或模块引用。
 
-DOM/history simulation has no layout engine. Live Chrome visual, geometry and touch-sized viewport checks are performed separately after publication. This does not claim physical mobile-device coverage.
+DOM 和历史记录模拟不包含布局引擎。此版本记录将真实 Chrome 视觉、元素位置与触控尺寸视口检查安排在发布后单独进行；上述结果不代表实体移动设备验证。

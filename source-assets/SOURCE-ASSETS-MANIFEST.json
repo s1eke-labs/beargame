@@ -1,10 +1,10 @@
 {
-  "scope": "Original generated image masters and independently authored factual mechanics documents. No reference repository source code or original artwork. Kept outside public dist.",
+  "scope": "本项目生成的美术原图与玩法规则文档，仅供源码维护，不进入公开发布目录 dist。",
   "files": [
     {
       "path": "generated-art/asset-manifest.json",
-      "bytes": 8567,
-      "sha256": "8b1e10cc46c2f8b675f86bd700e7c3d79ed3a0b7a0ccb7ec7514a623d0d6dc16"
+      "bytes": 8550,
+      "sha256": "bf4e6a0da71271bfa85e710e78992f44a7372473ecd6559a584fd2680d6a85d3"
     },
     {
       "path": "generated-art/originals/buildings-atlas.png",
@@ -23,128 +23,128 @@
     },
     {
       "path": "generated-art/prompts.json",
-      "bytes": 6074,
-      "sha256": "47a6765f7311aa00640e26cd99c0f633b780fb8f4607f948317c62bc694d3b7b"
+      "bytes": 5483,
+      "sha256": "8cc2d0a159172bca4b27cd455ede242de0f9e0eaf27c0b3cde5ac93f2c54d0eb"
     },
     {
       "path": "mechanics-specification/00-scope-and-provenance.md",
-      "bytes": 2932,
-      "sha256": "9a6a2369ac6b9d046992ed6b60e3c80129e63f56f7f08d6d193c67e4590b1213"
+      "bytes": 1974,
+      "sha256": "7f0e20ce044e066ed4ed8994060aa653e3abdbb78696e6d73760232c582eb358"
     },
     {
       "path": "mechanics-specification/01-core-rules.md",
-      "bytes": 7738,
-      "sha256": "6c50b17b4a8be16b204288a7d117f150b212cf5b04f7cbf9b5fc4ac971eb5294"
+      "bytes": 6675,
+      "sha256": "13b7d8609701e956dde245dab5954e4668f0ee29c23743cf40e1d3040617b64f"
     },
     {
       "path": "mechanics-specification/02-selected-facts.json",
-      "bytes": 55621,
-      "sha256": "1550e9824dcd6218582ecae590c53edc065ab87d7e400bd937b1db063f091781"
+      "bytes": 49856,
+      "sha256": "3b32b1a7493c89d1c04c42a9f5172131da0354cf6bf63c18f2181c92614dd36f"
     },
     {
       "path": "mechanics-specification/03-population-crafting-prestige.md",
-      "bytes": 5740,
-      "sha256": "442e4d88c6d36d185eff8d64e2d1e0fc1caa4bb2b3526dde208eccd9a847f147"
+      "bytes": 5046,
+      "sha256": "2c8761f50bbfda39bb99861ff3d11a666cd514df5bd2af6ba81c688ccfa9753b"
     },
     {
       "path": "mechanics-specification/04-workshop-selected-facts.json",
-      "bytes": 49650,
-      "sha256": "0ab902109ee891dd3e118d46f4bb5a1fa03bdc850392e14dbb9fed2a72084984"
+      "bytes": 44010,
+      "sha256": "fbdeab75ebce080c0b938235c9a30640b205becab2356d16c0c2e0e973b3f23c"
     },
     {
       "path": "mechanics-specification/05-faith-space-rules.md",
-      "bytes": 5704,
-      "sha256": "c38ee1c4a384101790abff79dc241b3c912d5e1f522879567a06951d0ee031ac"
+      "bytes": 4965,
+      "sha256": "0891fd02700c375cfb1c80dc4a069abf39d31df39e9227d6abaca0ee0ac69ad1"
     },
     {
       "path": "mechanics-specification/06-late-selected-facts.json",
-      "bytes": 32569,
-      "sha256": "ee418cce03fe79f923393692f45812a374adfc7a9430aeea6aec605a20d91e39"
+      "bytes": 29669,
+      "sha256": "a863725a1dc6a86223653227302be87ee736dd854dad0a810789b024677a1357"
     },
     {
       "path": "mechanics-specification/07-trade-and-events.md",
-      "bytes": 5994,
-      "sha256": "42d8d1ac5eedfc51aa8163cf8718ad842461af2b74b85a559604ab5cac1f597e"
+      "bytes": 5549,
+      "sha256": "1e909bb667cab5e511b1cc1ffaf462ba3bcea14a4ef6091492d7ba4b28eb2d2e"
     },
     {
       "path": "mechanics-specification/08-trade-selected-facts.json",
-      "bytes": 5688,
-      "sha256": "e87647c812ae2184a1d288641b6da5d25685800c3da7f23e360e81f97c208b1d"
+      "bytes": 5292,
+      "sha256": "f7dbc95a7d20040dca2450fc13afe39a43dbbb98fbd2cf73d79db2fa3c75f9de"
     },
     {
       "path": "mechanics-specification/09-feature-catalogue.json",
-      "bytes": 100470,
-      "sha256": "6f005aa6ae3e212c69019fdb5e1b71d5b0e2719a0926110feea66a8644d7f9fb"
+      "bytes": 134551,
+      "sha256": "62032c9f7e55f10366e307e5de9a67f47d8a7fec7159fcb42fe9b6279cf45d9f"
     },
     {
       "path": "mechanics-specification/09-feature-catalogue.md",
-      "bytes": 24671,
-      "sha256": "ec9582867936857971d2c5797666fafc08ffd634e088baf16a3deaa35a0c58a6"
+      "bytes": 33350,
+      "sha256": "5ac68f2422ba387d0e701ef3467dd14443736a0faee5fcc0f9fa94e5573a3535"
     },
     {
       "path": "mechanics-specification/10-industry-storage-pollution.md",
-      "bytes": 7184,
-      "sha256": "c8b27e4a429ed82cc3223de5374c02383c55c4f05d99d74fc55e1ef33cb366d4"
+      "bytes": 6508,
+      "sha256": "cbd71f7bb8e2655950a9592f0556037c818d39f1abe45d74c67ed885834d83bc"
     },
     {
       "path": "mechanics-specification/11-pacts-celestial-cycles.md",
-      "bytes": 5901,
-      "sha256": "b105ae8e5e36b0f0fdf44057f2ad465c5487fd6d9ba1b51401d24604acbb16d7"
+      "bytes": 5369,
+      "sha256": "32cd7b8ce301a9e443a67e898200c664d36ef440acd5697e09afff10013262a1"
     },
     {
       "path": "mechanics-specification/12-cycles-facts.json",
-      "bytes": 7252,
-      "sha256": "3815068df1963e076e18f565e4f064bfbfa3b44917eda3c3a99b80c828c96e09"
+      "bytes": 7138,
+      "sha256": "320935b07fec267c833910cdd6d0b3dcaaa2310d67a4922b4f893aaa2c34fe94"
     },
     {
       "path": "mechanics-specification/13-special-workshop-facts.json",
-      "bytes": 3203,
-      "sha256": "4c435b54b2c038d971ab052cac6c32976e8978701355e76edb8ccb36455424a4"
+      "bytes": 3326,
+      "sha256": "aad626d554a8885528393a2d28bbe6ba74e29de1e8462106ca185cffa7586752"
     },
     {
       "path": "mechanics-specification/14-challenge-handoff.md",
-      "bytes": 9963,
-      "sha256": "af02e4054e5020fe7e355e03aaa002c889aa125faca6e5e21f7f48ee68fcdf15"
+      "bytes": 8584,
+      "sha256": "59d4accb691d6115aaccf2dea1cf5f7134b685c0e694b16965f869ef373aec8a"
     },
     {
       "path": "mechanics-specification/15-default-profile-and-handoff.md",
-      "bytes": 6502,
-      "sha256": "c5b4001fa2ea30a9146445117bd74576b3091e99369c309b4512257f4a5daab3"
+      "bytes": 5490,
+      "sha256": "01b2e318b76ba0d879a2d5e417bbe8070374cc073f497d0b062e7a152ae4635c"
     },
     {
       "path": "mechanics-specification/16-late-audit.md",
-      "bytes": 13049,
-      "sha256": "0c8884c76a28805924ab2c3c6e8a3dcb783d2d7e508cf9fa964827e7c43fdf22"
+      "bytes": 9799,
+      "sha256": "9307b4e4cade5efbc7437b32d137f7c710c364f207d2c69311ebfbd5a8d9543f"
     },
     {
       "path": "mechanics-specification/17-progression-handoff.md",
-      "bytes": 5418,
-      "sha256": "e3e44b3ae0b12ccdcf1bbaa0e04366e0d20f94bcf220c73d7267d77d0e27bb30"
+      "bytes": 4446,
+      "sha256": "3537ca6e4ccce987c23f1d5f0fb2133e79c3edc6abe1c2efa1cfda9f52971457"
     },
     {
       "path": "mechanics-specification/17-redshift-audit.md",
-      "bytes": 6117,
-      "sha256": "3a6416eeef3f659afe725ae576f073c67b21b1b2acc91334912a5c37dcf4fc9e"
+      "bytes": 5545,
+      "sha256": "1ae4a2b922f24031dabe709d3c8209567ee3b06dc082747a2e89b5b699b55493"
     },
     {
       "path": "mechanics-specification/18-achievements-facts.md",
-      "bytes": 11895,
-      "sha256": "633e39633b3e34773d534510f567c9f913ee336f3a7b3fd0dfa4c8fb3f8e20fd"
+      "bytes": 8823,
+      "sha256": "f9983e5ed9fdf59b4940b42802e8f5fb377a3b24b40df3fa960a2b1d1f23dd39"
     },
     {
       "path": "mechanics-specification/18-religion-redshift.md",
-      "bytes": 7222,
-      "sha256": "ffca08ae1ec985b29535ab7debaa721d01e629ed01a500c18aa5aad247941ba7"
+      "bytes": 5510,
+      "sha256": "37733339acda617ecc1641badb0d51a15f2c0d2f1cf71e702fc8b276de3b0e98"
     },
     {
       "path": "mechanics-specification/19-redshift-implementation.md",
-      "bytes": 7395,
-      "sha256": "c9fe6935d4ba7938f1998cf9039cb2ae9176f17cfbc1a58cf5455d6cc67f6383"
+      "bytes": 5925,
+      "sha256": "b1e3c063ea31e15a30f96ea902e3d02d75e499148de44c37c365102cb1dd12eb"
     },
     {
       "path": "mechanics-specification/manifest.json",
-      "bytes": 2829,
-      "sha256": "3e818a92b18ed5f73c673030457c979b6a67dd865bd6a3e7d70016848075b7ec"
+      "bytes": 2764,
+      "sha256": "a20942f58a213c1dd2fb7fc8c96da126f736493733a632efc1124e88a81e6203"
     },
     {
       "path": "storybook-v2/buildings-atlas.png",
@@ -158,13 +158,13 @@
     },
     {
       "path": "storybook-v2/manifest.json",
-      "bytes": 11330,
-      "sha256": "9eb3410793e8c4d388e16c69136c9ee7bcc7ead7b42e81cdab74244d398007d3"
+      "bytes": 11325,
+      "sha256": "3e1526f1f27d1b104c2da80fb1c0ac3d562365ff14f2a863b1c4543b9cc6e77d"
     },
     {
       "path": "storybook-v2/provenance.json",
-      "bytes": 7682,
-      "sha256": "7cb4a3f82d1c581b021b6e26bd4651d64034fa45f19be23975e9cc69cf7e8d76"
+      "bytes": 6740,
+      "sha256": "d9dc7543de56fcd4ac9b9f7c302e083783e8f565b00912c87fb943a7202238ef"
     },
     {
       "path": "storybook-v2/resources-atlas.png",
@@ -178,5 +178,5 @@
     }
   ],
   "fileCount": 35,
-  "totalBytes": 12772623
+  "totalBytes": 12780525
 }

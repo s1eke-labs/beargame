@@ -1,106 +1,105 @@
-# Milestones and badges: independently recorded factual predicates
+# 里程碑与徽章判定规范
 
-Reference checkout: 781e379f79f1e7512d168849cba21ed111502644. Inspected 2026-10-08. This file is private implementation provenance, outside the distributed game source. No source implementation, translated expressive description or artwork was reused. The runtime's milestone identifiers, grouping, descriptions, event ledger and functional implementation are newly authored. Source identifiers below are provenance references only.
+规则检查日期：2026-10-08。本文记录本项目里程碑、徽章和事件记录的判定条件。界面使用中文名称与说明，表中的代码标识符用于关联实现。
 
-## Common behavior
+## 通用行为
 
-- The source checks its achievement manager every 50 ticks (game.js:2626), equivalent to 10 seconds at normal 5 Hz. Ordinary observation checks should not scan the population every game tick. Event-specific records are earned at their actual action hook.
-- The manager separately tests base and star predicates. A star need not imply base earned: 100 completions of one challenge earns the repeat-completion star without the five-distinct-challenges base (achievements.js:486–501).
-- Acquired base flags, star flags and badges persist across normal resets. Hard reset clears them (achievements.js:515–543; game.js:5625–5644, 5828).
-- No removal or annulment of earned records was found. Later deaths, lost resources, removed buildings or loss of Iron Will do not retract past awards. These may prevent earning an as-yet-unearned record.
-- Death count is current-run, reset to zero (game.js:5642); totalYears/totalResets are lifetime. Current-run successful trades and the irreversible hunter-assignment flag matter for a reset badge. Imported old saves missing these new Beargame fields use conservative evidence: zero provable current-run trades, hunter history unknown/treated as present, unknown current-run death history when lifetime deaths are nonzero. They are not retroactively credited with events. Unknown prior deaths block the zero-death milestone; only newly observed deaths count toward departure thresholds until a reset establishes a known fresh run.
-- UI hides all unearned names and descriptions. The historical achievement is omitted until earned. Four special/negative achievements are excluded from ordinary progress totals. The obsolete pollution badge is always omitted from badge progress and UI. Result: 31 catalogued achievements, 26 ordinary visible total initially, 7 ordinary stars, 21 catalogued badges, 20 visible badge total.
-- Achievements grant no ordinary production or storage bonuses. One explicit event badge grants 3 void once; see below.
-- Source every-check 10% chance replaces the timeslip badge's title with a glyph joke (achievements.js:504–511). This non-mechanical source expression is intentionally not reproduced; no gameplay RNG is consumed for it.
+- 常规成就管理器每 50 刻检查一次，在正常每秒 5 刻时相当于每十秒检查。普通观察条件不应每刻扫描人口；事件记录在实际行动入口中发放。
+- 基础条件与星级条件分别检查。获得星级不一定意味着基础条件达成，例如同一挑战完成 100 次可获得重复完成星级，但不满足五种不同挑战的基础条件。
+- 已获得的基础、星级和徽章标记跨普通重置保留，彻底重置会清空。
+- 已得记录不因后续死亡、资源丢失、建筑移除或离开坚毅模式撤销；这些变化只影响尚未获得的记录。
+- 死亡数按当前轮次记录，重置后归零；`totalYears`、`totalResets` 为全程累计。重置徽章需要本轮成功贸易数和不可逆的猎人任命历史。导入缺少新增字段的旧存档时采用保守证据：可证明本轮贸易为零，猎人历史未知按存在处理；若全程死亡非零，则本轮死亡历史未知。不能追补没有观察到的事件。未知既往死亡阻止零死亡里程碑；在重置建立已知新轮次前，只有新观察到的死亡计入离世阈值。
+- 界面隐藏未获记录的名称与说明。历史限定成就未获时完全省略；四项特殊或负面成就不计普通总进度；停用污染徽章始终不计进度也不显示。共 31 项成就，初始普通可见总数 26、普通星级七项；共 21 项徽章，可见总数 20。
+- 成就不提供普通生产或仓储奖励，只有下文明确的一项事件徽章首次提供 3 虚空。
+- 成就标题不使用随机装饰，也不为装饰消耗玩法随机数。
 
-## Achievement identity and condition matrix
+## 成就条件
 
-Columns: original Beargame identity | private source identity | factual predicate. Base source positions are achievements.js:6–273.
+| 本项目标识符 | 判定条件 |
+|---|---|
+| `winterArchive` | 本机真实日期为 2017 年 1 月；未获得前隐藏 |
+| `forestGuest` | 灵鹿库存 >0 |
+| `dewKeepsake` | 灵露库存 >0 |
+| `wingedGuest` | 星翼鹿库存 >0 |
+| `crystalMemory` | 时间水晶库存 >0 |
+| `nightGuest` | 幽角鹿库存 >0 |
+| `hundredStones` | 哀伤库存 ≥100 |
+| `loneQuarry` | 坚毅模式、人口为零、已建矿井 >0 |
+| `loneStore` | 坚毅模式、人口为零、已建仓库 >0 |
+| `loneSteam` | 坚毅模式、人口为零、已建蒸汽工坊 >0 |
+| `loneMeadow` | 坚毅模式、人口为零、已建牧场 ≥45；不检查建筑阶段 |
+| `lonePower` | 坚毅模式、人口为零、已建磁电机 >0 |
+| `loneFactory` | 坚毅模式、人口为零、已建工厂 >0 |
+| `loneMoon` | 坚毅模式且已发射月球任务；星级另要求典范 <10 |
+| `earlyOrbit` | 完成轨道发射且年份 ≤1；星级另要求开局未携带时空球或启用休眠舱收益 |
+| `watchfulForest` | 启用天文台 ≥100，尚未研究 `SETI` |
+| `oneBedTemple` | 已建叠石祭坛 >0，村庄原始住房向下取整后恰为 1 |
+| `brightWishes` | 储存的累计颂愿 ≥696342 |
+| `stripedCompany` | 条纹访客 >1 |
+| `tenEmptyBeds` | 本轮死亡 ≥10；不计普通总数 |
+| `hundredEmptyBeds` | 本轮死亡 ≥100；星级要求 ≥666666；不计普通总数 |
+| `racingPaws` | 非坚毅模式中，实际手动采集控制器记录连续 2,500 次点击，期间没有长达 2,500 毫秒的空闲间隔；不计普通总数 |
+| `stubbornCore` | 实际出售人工智能核心被拒绝：人工智能等级 ≥15，且没有 `transkittenism`；不计普通总数 |
+| `rememberedKindness` | 业力 ≥1 |
+| `safeHaven` | 人口 ≥50 且本轮死亡为零；星级要求人口 ≥1,000 且无死亡 |
+| `joyfulGrove` | 人口 >35 且幸福度 ≥1.5；星级在同样人口条件下要求幸福度 ≥5 |
+| `outermostTrail` | 实际到达 `furthestRing`，仅购买任务不算 |
+| `fortyMillennia` | 全程 `totalYears` ≥40,000；星级要求 `trueYear` ≥40,000 |
+| `longCelebration` | 节庆剩余天数 ≥100×100×4，即 40,000；无生效星级条件 |
+| `manyJourneys` | 至少完成五种不同挑战；星级要求累计重复完成次数 ≥100 |
+| `clearTomorrow` | 实际购买 `carbonSequestration` 时污染为零，或继承停用徽章；星级仅限无时空球和休眠舱收益开局后的同类清洁购买事件 |
 
-| Beargame identity | Source identity | Fact |
-|---|---|---|
-| winterArchive | theElderLegacy | Real local date is January 2017; hidden until earned |
-| forestGuest | unicornConspiracy | unicorns > 0 |
-| dewKeepsake | uniception | tears > 0 |
-| wingedGuest | sinsOfEmpire | alicorn > 0 |
-| crystalMemory | anachronox | timeCrystal > 0 |
-| nightGuest | deadSpace | necrocorn > 0 |
-| hundredStones | sadnessAbyss | sorrow >= 100 |
-| loneQuarry | ironWill | Iron Will, population == 0, mine owned > 0 |
-| loneStore | uberkatzhen | Iron Will, population == 0, warehouse owned > 0 |
-| loneSteam | hundredYearsSolitude | Iron Will, population == 0, steamworks owned > 0 |
-| loneMeadow | soilUptuned | Iron Will, population == 0, pasture owned >= 45; no stage check |
-| lonePower | atlasUnmeowed | Iron Will, population == 0, magneto owned > 0 |
-| loneFactory | meowMeowRevolution | Iron Will, population == 0, factory owned > 0 |
-| loneMoon | spaceOddity | Iron Will + moon mission launched; star additionally paragon < 10 |
-| earlyOrbit | jupiterAscending | orbital launch completed and calendar year <= 1; star additionally started without chronospheres or active cryochambers |
-| watchfulForest | veryLargeArray | observatory active count >= 100, SETI unresearched |
-| oneBedTemple | shadowOfTheColossus | ziggurat owned > 0 and village raw floored housing == 1 |
-| brightWishes | sunGod | stored cumulative worship >= 696342 |
-| stripedCompany | heartOfDarkness | zebras > 1 |
-| tenEmptyBeds | winterIsComing | current-run deaths >= 10; excluded from ordinary totals |
-| hundredEmptyBeds | youMonster | current-run deaths >= 100; star >= 666666; excluded from ordinary totals |
-| racingPaws | superUnethicalClimax | Actual manual gather controller detects 2500 clicks without a 2500ms inactivity gap outside Iron Will; excluded from ordinary totals |
-| stubbornCore | systemShock | Actual AI core sale refusal: AI level >= 15, no transkittenism; excluded from ordinary totals |
-| rememberedKindness | lotusMachine | karma >= 1 |
-| safeHaven | serenity | population >= 50 and current-run deaths == 0; star population >= 1000 and no deaths |
-| joyfulGrove | utopiaProject | population > 35 and happiness >= 1.5; star happiness >= 5 with same population condition |
-| outermostTrail | deathStranding | furthestRing planet reached, not merely mission purchased |
-| fortyMillennia | cathammer | lifetime totalYears >= 40000; star trueYear >= 40000 |
-| longCelebration | eternalBacchanalia | remaining festival days >= 100*100*4 = 40000; commented-out star is inactive |
-| manyJourneys | challenger | at least five distinct completed challenges; star total repeat completions >= 100 |
-| clearTomorrow | betterSafeThanSorry | Actual carbonSequestration purchase with pollution == 0, or inherited obsolete badge; star only actual same clean purchase after a start without chronospheres/cryo |
+事件补充：
 
-Additional event provenance:
-- gather detection: buildings.js:3218–3228. Inactivity timer, not a fixed-window frequency estimate.
-- refused core sale: buildings.js:2177–2185.
-- carbon purchase: workshop.js:3035–3042. Merely importing an already researched technology at zero pollution does not establish the event.
-- trueYear: calendar.js:408–410: calendar.year + (season*100+day)/400 - time.flux. The day may be negative.
-- housing: game.js:4514 floors raw housing for village.maxKittens. village.js:393–400 rounds that floored housing multiplied by 1+limitedDR(maxKittensRatio,1) for simulation capacity. game.js:4537–4538 exposes simulated count and this capacity as the displayed population resource. The one-bed achievement uses the raw floored value; unhoused/overcrowding use simulation capacity.
+- 采集使用空闲计时器，不是固定窗口频率估计。
+- 人工智能核心成就在实际拒绝出售时触发。
+- 碳封存要求观察到购买事件；导入已研究该技术且污染为零的存档不构成事件证据。
+- `trueYear=calendar.year+(season×100+day)/400−time.flux`，日期可为负。
+- 原始住房先向下取整，模拟容量再将该值乘以 `1+limitedDR(maxKittensRatio,1)` 并四舍五入。界面人口资源显示模拟人数和容量。单床成就使用原始取整住房；无家和拥挤条件使用模拟容量。
 
-## Badge identity and condition matrix
+## 徽章条件
 
-Source base positions: achievements.js:276–434. Actual event hooks override misleading or playful descriptions; no translated source jokes are used.
+徽章依据实际事件与状态判定。
 
-| Beargame identity | Source identity | Fact |
-|---|---|---|
-| fiftyReturns | lotus | lifetime totalResets >= 50, not strictly greater than 50 |
-| loneNightReturn | ivoryTower | completion of atheism on reset while Iron Will; completion needs active cryochamber or stasis pod |
-| easygoingLeader | useless | actual appointed leader trait == none |
-| previewTrail | beta | actual current browser URL contains case-sensitive substring beta |
-| quietNotice | silentHill | connected announcement service's content is exactly empty string; missing service is not empty content |
-| woodSpecialist | evergreen | successfully assign an engineer specialty to wood, not manual craft completion |
-| unhousedThousand | deadSpace | population >= 1000 and simulation housing capacity == 0 |
-| moonlessHerd | reginaNoctis | population >= 500 and alicorn == 0 |
-| caughtSpark | ghostInTheMachine | active error-reporting service's error callback invoked; no random award for ordinary console noise |
-| betweenDays | abOwo | ordinary confirmed reset with calendar.day < 0; no atheism predicate in the actual hook |
-| gentleExchange | cleanPaws | reset with pacifism active, baseManpowerCost > 0, current-run successful trades > 0, no hunter ever assigned this run; challenge need not complete |
-| duneDetour | sequenceBreak | dune reached and moon not reached |
-| colorfulLeader | fantasticFurColor | appointed leader's true color is nonzero |
-| untieTime | whatYearIsIt | manual shatter at negative day, actual amount >= 500; +3 void once; every qualifying event randomizes actual leader color |
-| clockBeforeRocket | tardis | manual shatter while orbitalLaunch owned == 0 |
-| overflowingReturn | wheredThisComeFrom | reset with resStasisRatio > 1; at 0.015 per chronosphere, first integer qualifying count is 67 |
-| fiveBorrowedYears | lostDates | current-run time flux <= -5 |
-| elderBanquet | buffet | elder energy >= 1000 |
-| farawayHomes | newHome | terraforming housing > raw total housing - terraforming housing, and population <= simulation housing capacity |
-| oldClearSky | betterSafeThanSorry | deprecated, no acquisition hook, fully hidden; persist loaded flags for migration |
-| fortyTwoWings | soLongAndThanksForAllTheHay | abs(alicorn - 42) < 1e-12, strict inequality |
+| 本项目标识符 | 判定条件 |
+|---|---|
+| `fiftyReturns` | 全程 `totalResets` ≥50，包含恰好 50 |
+| `loneNightReturn` | 坚毅模式中重置并完成无神挑战；完成需要启用休眠舱或静滞舱 |
+| `easygoingLeader` | 实际任命领袖的特质为 `none` |
+| `previewTrail` | 当前真实浏览器地址包含区分大小写的 `beta` 子串 |
+| `quietNotice` | 已连接公告服务返回的内容严格等于空字符串；服务缺失不算内容为空 |
+| `woodSpecialist` | 成功给工程师分配木材专精；手动制作不算 |
+| `unhousedThousand` | 人口 ≥1,000，模拟住房容量为零 |
+| `moonlessHerd` | 人口 ≥500，星翼鹿为零 |
+| `caughtSpark` | 已启用错误上报服务的错误回调实际触发；普通控制台输出不随机授奖 |
+| `betweenDays` | 日期为负时执行普通确认重置；不要求无神挑战 |
+| `gentleExchange` | 重置时和平挑战进行中、基础劳力贸易费 >0、本轮成功贸易 >0，且本轮从未任命猎人；不要求挑战完成 |
+| `duneDetour` | 已到达 `dune`，尚未到达月球 |
+| `colorfulLeader` | 实际任命领袖的真实颜色非零 |
+| `untieTime` | 负日期中手动碎裂，实际数量 ≥500；首次奖励 3 虚空，每次符合事件都随机改变实际领袖颜色 |
+| `clockBeforeRocket` | 手动碎裂时 `orbitalLaunch` 拥有数为零 |
+| `overflowingReturn` | 重置时 `resStasisRatio` >1；每座时空球贡献 0.015 时，首个符合的整数数量为 67 |
+| `fiveBorrowedYears` | 本轮时间偏移 ≤−5 |
+| `elderBanquet` | 长者能量 ≥1,000 |
+| `farawayHomes` | 地形改造住房 >原始总住房−地形改造住房，且人口不超过模拟住房容量 |
+| `oldClearSky` | 已停用、无获取事件、完全隐藏；保留加载标记用于迁移 |
+| `fortyTwoWings` | `abs(alicorn−42)<1e−12`，严格小于 |
 
-Event and probability facts:
-- Wood specialization village.js:3598–3603.
-- Atheism completion challenges.js:180–185. Pacifism reset check challenges.js:303–316; hunter assignment permanently marks run history village.js:373–375. Source legacy missing hunter history defaults true (village.js:910).
-- Black Sky + Iron Will and no goldOre can make base manpower trade cost zero when manpower stock == 0 (diplomacy.js:607–628). Subsequent discounts do not affect this badge's base-cost test.
-- Ordinary negative-day reset game.js:5411–5416. Automatic challenge restart does not execute that ordinary reset callback.
-- Resource retention badge game.js:5618–5622; source start flag game.js:5640–5642 depends on positive retention or active cryochambers, not the number of surviving villagers.
-- Shatter time badges time.js:1388–1406. Furnace-generated time skips do not call this manual shatter controller.
-- Error-report badge game.js:199–220 depends on an installed telemetry provider and telemetry not being disabled. Beargame has no provider and reports the record as unavailable; there is no fabricated telemetry service or fabricated error.
-- New visitor color chance: village.js:1500 uses floor(U*100) <= 10, exactly 11 of 100 outcomes, despite a comment saying 10%. If colored, choose one of six colors uniformly. Conditional variety uses the same 11/100 boundary and selects one of four variants. Appearance is cosmetic, not a production bonus.
-- Forced leader recolor game.js:6407–6431 uses color threshold 100 (always), variety threshold 0 (one of 100 outcomes); only the resulting color is applied by time.js:1402. Tests verify integer boundaries and all six colors.
+事件与概率补充：
 
-## Scope limits disclosed rather than fabricated
+- 木材专精要求岗位分配成功；猎人任命永久标记本轮历史，旧存档缺失历史时按已有任命处理。
+- 黑空与坚毅同时启用、没有 `goldOre` 且劳力库存为零时，基础劳力贸易费可为零；后续折扣不影响徽章对基础费用的检查。
+- 自动挑战重启不执行普通负日期重置回调。
+- 开局保留标记取决于正资源保留率或启用休眠舱，不取决于最终幸存人数。
+- 高炉产生的时间跳跃不调用手动碎裂控制器，因此不触发对应手动徽章。
+- 错误上报徽章要求已安装且未禁用的遥测服务。本项目没有该服务，记录应显示不可用，不能虚构服务或错误。
+- 新访客特殊颜色概率使用 `floor(U×100)≤10`，恰为 100 种结果中的 11 种。有颜色时，均匀选择六种之一；条件外观变体也使用 11/100 边界，再从四种变体中选择。外观不提供生产加成。
+- 强制领袖变色时，颜色阈值为 100，始终触发；变体阈值为零，即 1/100，但时间事件只应用最终颜色。测试应覆盖整数边界和六种颜色。
 
-The 2017 dated milestone cannot newly occur at the current real date. The deprecated hidden badge has no new acquisition path. The beta badge needs the real browser URL; no beta deployment is asserted. Announcement and error-report badges remain unavailable without verified connected service observations. Optional environment injection is an internal adapter/test seam, not a user-facing unlock command. No experimental map predicate is present in these 52 records.
+## 实现边界
 
-The game independently authors all player-facing Chinese wording and identifiers. It omits the source's random title glyph gag, original difficulty-letter decoration, and reference branding. No numeric gameplay reward is omitted or invented by that cosmetic choice.
+2017 年限定里程碑不能在当前真实日期新获得；停用隐藏徽章没有新获取路径。预览徽章要求真实浏览器地址，不意味着已经存在预览部署。公告与错误上报徽章在没有已验证服务观测时保持不可用。可选环境注入只是内部适配与测试接口，不是玩家解锁命令。这 52 项记录不含实验地图条件。
 
-Additional verified housing edge: terraforming policy adds +0.1 to the same housing-ratio effect as hydroponics (science.js:2021, space.js:755/790). Per-station housing is 1 + unlimitedDR(hydroponics,100) + policy ratio, not (1+hydroponics bonus)*(1+policy ratio). The badge checks this independent contribution against raw total housing.
+界面文案和标识符由本项目维护。纯装饰不消耗随机数，也不增加或减少数值奖励。
+
+住房补充：地形改造政策向水培共用的住房倍率效果增加 0.1。每站住房为 `1+unlimitedDR(水培,100)+政策倍率`，不能计算为 `(1+水培加成)×(1+政策倍率)`。远方家园徽章将该独立贡献与原始总住房比较。

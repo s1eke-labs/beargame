@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generationMode": "built-in image_gen.imagegen",
+  "generationMode": "内置 image_gen.imagegen",
   "generatedAssetCount": 3,
   "styleReference": "/workspace/shared/bear-reference/cover-illustration.webp",
   "paletteReference": {
@@ -9,7 +9,7 @@
     "sage": "#667f69",
     "yellow": "#e9d694"
   },
-  "cropMethod": "Measured connected alpha components above 8/255, not uniform grid; 12 pixel safe transparent padding. Unmodified originals and lossless WebP retain all alpha pixels, including faint generator residue outside the measured sprites.",
+  "cropMethod": "测量 alpha 高于 8/255 的连通区域，未使用均匀网格；保留 12 像素安全透明边距。未经修改的原图和无损 WebP 保留全部透明通道像素，包括测量精灵范围外微弱的生成残留。",
   "files": {
     "village-terrain": {
       "width": 1024,

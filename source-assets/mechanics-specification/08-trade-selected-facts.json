@@ -1,6 +1,5 @@
 {
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
-  "scope": "8/8partners, baseline first-tier goods only; advanced embassy goods unverified.",
+  "scope": "列出全部 8 个贸易伙伴，仅覆盖基础首层商品；高级使馆商品尚未验证。",
   "baseFee": {
     "manpower": 50,
     "gold": 15
@@ -31,8 +30,7 @@
           ]
         }
       ],
-      "discovery": "initial-random",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "initial-random"
     },
     {
       "referenceKey": "sharks",
@@ -56,8 +54,7 @@
           ]
         }
       ],
-      "discovery": "initial-random",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "initial-random"
     },
     {
       "referenceKey": "griffins",
@@ -81,8 +78,7 @@
           ]
         }
       ],
-      "discovery": "initial-random",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "initial-random"
     },
     {
       "referenceKey": "nagas",
@@ -106,8 +102,7 @@
           ]
         }
       ],
-      "discovery": "culture>=1500",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "culture>=1500"
     },
     {
       "referenceKey": "zebras",
@@ -143,8 +138,7 @@
           ]
         }
       ],
-      "discovery": "ship>=1",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "ship>=1"
     },
     {
       "referenceKey": "spiders",
@@ -168,8 +162,7 @@
           ]
         }
       ],
-      "discovery": "ship>=100 AND scienceCapacity>125000",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "ship >= 100 且 scienceCapacity > 125000"
     },
     {
       "referenceKey": "dragons",
@@ -193,8 +186,7 @@
           ]
         }
       ],
-      "discovery": "nuclearFission",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "nuclearFission"
     },
     {
       "referenceKey": "leviathans",
@@ -254,8 +246,7 @@
           ]
         }
       ],
-      "discovery": "annualBlackPyramidEvent",
-      "source": "js/diplomacy.js:18–361"
+      "discovery": "annualBlackPyramidEvent"
     }
   ]
 }

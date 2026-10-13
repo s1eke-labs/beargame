@@ -1,9 +1,9 @@
-Use case: stylized-concept. Asset type: original Beargame research technology sprite atlas.
-Generate a single transparent PNG atlas, landscape 1536 x 1024, EXACTLY SIX COLUMNS and FOUR ROWS, 24 equal square 256x256 cells. Layout is mandatory. Center one isolated subject group within each cell, inside a 180x180 safe area, roomy fully transparent gutters and no clipping. No drawn grid, no panels, no text.
-Warm hand-painted storybook game inventory illustrations, bold charcoal hand-drawn outlines, soft gouache fills, simple readable silhouettes, cream sage honey amber muted blue, a little copper and gray, gentle highlights. Every symbol must read clearly at 80px. No buildings, no houses, no architecture, no bears, no words, no labels, no backdrop.
-Strict row-major subject list:
-Row 1 left to right: (1) seasons: four seasonal leaves around a small sundial; (2) agriculture: green seedling and golden honeycomb; (3) hunting: wooden bow and quiver; (4) mining: pickaxe and mineral crystals; (5) metallurgy: small crucible pouring glowing metal; (6) husbandry: deer antler and green sprout.
-Row 2 left to right: (7) society: three linked wooden rings expressing community; (8) mathematics: small abacus with triangle and circle; (9) construction: crossed hammer and carpenter square, NO HOUSE; (10) hydraulics: standalone water wheel diagram and blue drops, NO BUILDING; (11) currency: gold coins and small balance scale; (12) writing: feather quill inkpot scroll.
-Row 3 left to right: (13) philosophy: open cream book with thoughtful glowing light above; (14) machinery: interlocking gears and lever; (15) chemistry: colored glass flasks; (16) astronomy: telescope and star; (17) navigation: compass; (18) electricity: copper coil and lightning bolt.
-Row 4 left to right: (19) biology: microscope and leaf; (20) industry: piston and cog, NO FACTORY BUILDING; (21) computing: processor chip and short circuits; (22) nuclear: atom energy rings; (23) space: small rocket and ringed planet; (24) time: hourglass with orbital ring.
-Each motif clearly different. No incidental motifs in empty cells. Exactly 24 isolated illustrations. Genuine alpha transparency.
+用途：风格化概念设计。资产类型：本游戏原创研究科技精灵图集。
+生成一张透明 PNG 图集，横幅 1536 x 1024，严格六列、四行，共 24 个 256x256 等大正方形单元格。必须遵守布局。每格中央的 180x180 安全区内放置一组独立主体，周围留足完全透明间距，不裁切。无绘制网格、面板或文字。
+温暖手绘绘本游戏物品插画，粗炭色手绘轮廓、柔和水粉填色、简单易读轮廓，采用奶油色、鼠尾草绿、蜂蜜色、琥珀色、低饱和蓝色，辅以少量铜色、灰色和柔和高光。每个符号在 80px 下仍须清楚可辨。无建筑、房屋、建筑结构、小熊、词语、标签或背景。
+严格按逐行顺序安排主体：
+第 1 行，从左至右：(1) seasons：小日晷周围有四季树叶；(2) agriculture：绿幼苗和金蜂巢；(3) hunting：木弓和箭筒；(4) mining：镐和矿物晶体；(5) metallurgy：倾倒发光金属的小坩埚；(6) husbandry：鹿角和绿芽。
+第 2 行，从左至右：(7) society：三个相连木环，表达社群；(8) mathematics：小算盘、三角形和圆；(9) construction：交叉的锤子与木工角尺，无房屋；(10) hydraulics：独立水轮示意图和蓝水滴，无建筑；(11) currency：金币和小天平；(12) writing：羽毛笔、墨水瓶、卷轴。
+第 3 行，从左至右：(13) philosophy：打开的奶油色书，上方有沉思光芒；(14) machinery：相互咬合的齿轮和杠杆；(15) chemistry：彩色玻璃烧瓶；(16) astronomy：望远镜和星星；(17) navigation：指南针；(18) electricity：铜线圈和闪电。
+第 4 行，从左至右：(19) biology：显微镜和叶子；(20) industry：活塞和齿轮，无工厂建筑；(21) computing：处理器芯片和短电路线；(22) nuclear：原子能量环；(23) space：小火箭和带环行星；(24) time：带轨道环的沙漏。
+每个图案必须清晰不同。空白处无附加图案。恰好 24 个独立插画，使用真实透明度。

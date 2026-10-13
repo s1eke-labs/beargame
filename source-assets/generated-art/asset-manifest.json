@@ -1,10 +1,10 @@
 {
-  "generator": "built-in image_gen.imagegen",
+  "generator": "内置 image_gen.imagegen",
   "originalsPreserved": true,
   "creativeEdits": false,
-  "encoding": "ImageMagick WebP; RGB quality 84 background, RGBA quality 88 atlases; alpha-quality 100",
-  "atlasNote": "Generated spacing is uneven. Use these pixel crop rectangles instead of equal 4x4 CSS cells. Bounds include a two-pixel edge around substantial alpha, without significant neighboring sprite pixels. Faint generator alpha speckles are not part of the subjects.",
-  "recommendedDisplay": "Fit each crop in a square at 88-90% of available side, preserving crop aspect ratio. Put contact baseline at bottom for buildings.",
+  "encoding": "ImageMagick WebP；RGB 背景质量 84，RGBA 图集质量 88；alpha-quality 100",
+  "atlasNote": "生成图集的间距不均匀，应使用这些像素裁切矩形，不能使用等分的 4×4 CSS 单元。边界在主要透明通道轮廓外保留两像素，不含明显的相邻精灵像素。生成器留下的微弱透明杂点不属于主体。",
+  "recommendedDisplay": "保持裁切宽高比，将每个裁切结果缩放到正方形可用边长的 88–90%。建筑的接地基线放在底部。",
   "assets": {
     "buildings-atlas": {
       "original": "/workspace/scratch/2ea1830e5ccf/beargame-art/originals/buildings-atlas.png",

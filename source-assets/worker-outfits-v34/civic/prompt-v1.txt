@@ -1,11 +1,11 @@
-Use case: stylized-concept.
-Asset type: production game sprite atlas with genuine transparent alpha background.
-Input image role: character identity and drawing-style reference only. Reinterpret the supplied white bear into exactly six new job sprites, preserving its very large round white face, tiny black eyes and black nose with tiny smiling mouth, round ears, short white limbs and compact body. Match thick rounded near-black outlines and simple large flat color blocks. These are the SAME bear dressed for three professions.
+用途：风格化概念设计。
+资产类型：正式游戏精灵图集，具有真正透明的背景透明通道。
+输入图用途：仅参考角色身份和绘画风格。将所给白熊重新演绎为严格六个新职业精灵，保留很大的圆白脸、小黑眼黑鼻和小笑嘴、圆耳、短白四肢与紧凑身体。匹配粗圆近黑描边和简单大平涂色块。三个职业穿着的是同一只熊。
 
-Composition: one landscape atlas, exactly THREE equally spaced COLUMNS and TWO equally spaced ROWS. Column 1 contains the two priest/wishkeeper frames. Column 2 contains the two geologist frames. Column 3 contains the two ambassador frames. Row 1 is ready, row 2 is working. Each figure must fit entirely within its own invisible cell with generous empty transparent gutters and margins, including all accessories. Use the same head/body size, centered horizontal body position and fixed feet baseline within every cell. For each vertical pair, body, head, face, feet and outfit must remain virtually identical between frames; animate primarily forearms and props, not body translation or size. Full-body front or very slight three-quarter view like reference. No ground shadows.
+构图：一张横幅图集，严格三列等距、两行等距。第 1 列为两个祭司／祈愿守护者帧，第 2 列为两个地质学家帧，第 3 列为两个大使帧。第 1 行准备，第 2 行工作。每个角色及全部配饰完整位于所属不可见格内，透明间距和边距宽裕。每格头身尺寸一致，身体横向居中，脚底基线固定。每组上下配对中，身体、头、脸、脚和服装几乎完全一致，主要通过前臂和道具表现动画，不平移身体或改变大小。全身正面或与参考一样极轻微四分之三视角。无地面阴影。
 
-Column 1 priest / wishkeeper bear: lavender short cape, no elaborate robe, carrying one SMALL warm yellow wish lantern. Top ready frame holds lantern low around belly height. Bottom working frame gently lifts the same lantern toward chest/face level. No religious cross, no glowing light effects, no sparkles.
-Column 2 geologist bear: sand-colored short vest plus a simple sample bag on shoulder strap, carrying one gray rock sample. Top ready frame looks/leans subtly toward the rock held low, while keeping head center/body position and scale consistent. Bottom work frame raises rock toward eye level to inspect it. This is a geologist, not a miner: absolutely NO pickaxe or shovel.
-Column 3 ambassador bear: burgundy scarf, carrying a cream paper scroll. Top ready frame presents the scroll forward at belly/chest height. Bottom working frame keeps scroll in one hand and raises free hand in a friendly greeting wave. Absolutely NO coin, money or medal.
+第 1 列祭司／祈愿守护者熊：薰衣草短斗篷，无复杂长袍，手持一个小暖黄祈愿灯笼。上方准备帧将灯笼低持于腹部；下方工作帧轻轻把同一灯笼抬至胸／脸高度。无宗教十字、发光效果或闪点。
+第 2 列地质学家熊：沙色短背心，肩带上一个简单样品袋，手持一块灰岩样本。上方准备帧看向／略微倾向低持岩石，同时保持头中心、身体位置和比例一致。下方工作帧将岩石举到眼前观察。必须体现地质学家身份，绝无镐或铲。
+第 3 列大使熊：酒红围巾，手持奶油纸卷轴。上方准备帧在腹／胸高度向前展示卷轴；下方工作帧一手持卷轴，另一手抬起友好挥手。绝无硬币、钱或奖章。
 
-Rendering: clean hand-drawn 2D game art, thick smooth round dark outlines, flat colors, at most ONE flat shadow tone per object. White bear face/body stays white. No gradients, texture, fur detail, tiny buttons, hatch lines, 3D shading or realistic lighting. No text, no labels, no grid, no border, no watermark, no checkerboard baked into image. Real alpha transparency surrounding all six isolated sprites. Do not copy the input atlas layout or include any unrequested poses or characters. Exactly six sprites in a strict 3 columns by 2 rows arrangement.
+渲染：干净手绘 2D 游戏美术，粗平滑圆深色轮廓、平涂颜色，每个物体最多一种平面阴影色。白熊脸／身保持白色。无渐变、纹理、毛发细节、小纽扣、排线、3D 阴影或写实光照。无文字、标签、网格、边框、水印或烘焙棋盘格。六个独立精灵周围真实透明。不要复制输入图集布局，不添加未要求的姿势或角色。严格 3 列 2 行、恰好六个精灵。

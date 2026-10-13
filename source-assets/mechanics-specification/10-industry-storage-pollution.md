@@ -1,54 +1,47 @@
-# Industry, storage and environmental rules
+# 工业、仓储与环境规则
 
-## Storage contributions
+## 仓储贡献
 
-VERIFIED`js/resources.js:896–919`;`js/workshop.js:2833–2860`;`js/buildings.js:600–641`.
+以下规则已核实。谷仓、仓库和港口的容量增量共享修正。木材、矿物和铁的增量乘以 `(1+barnRatio)×(1+warehouseRatio)`；煤、钛和黄金乘以 `1+warehouseRatio`；蜂蜜通常不变，研究筒仓后乘以 `1+0.25×barnRatio`。这些修正不乘以初始仓储。仓库通常不增加蜂蜜容量，研究筒仓后每座增加 750。港口货运增强先将各项港口容量乘以 `1+limitedDR(0.01×船数,2.25+反应堆提供的上限加成)`；普通反应堆船舶加成使每座启用的反应堆将该限值增加 0.05。
 
-Barn/warehouse/harbor capacity additions share modifiers, despite the upgrade names. Wood/minerals/iron additions multiply(1+barnRatio)×(1+warehouseRatio). Coal/titanium/gold additions multiply1+warehouseRatio. Honey additions are unchanged unless silos is researched, then multiply1+.25barnRatio. This helper does not multiply starting storage. Warehouse's honey addition is0normally,750after silos. Harbor cargo enhancement multiplies each harbor capacity first:1+limitedDR(.01ships,2.25+reactor-based cap bonus); ordinary reactor-vessel bonus adds.05per active reactor to that limit.
+普通玩法中，纲要增加 `min(floor(10×纲要数),建筑知识容量)` 知识容量。建筑容量包括对应管理器的基础贡献；太空转移、坚毅模式、法典与升华以及数据中心效果可改变此上限。手稿增加 `(√(1+800×floor(手稿数))−1)/2` 文化容量，再应用手稿文化效果。油轮增加 `floor(500×油轮数)` 石油容量。
 
-Compendia add min(floor(10×compendia),buildingScienceCapacity)to science capacity in normal play. Building capacity includes its manager's base contribution; space-transfer, Iron Will, codex/transcendence and data-center compendia effects alter this ceiling. Manuscripts add(√(1+800floor(manuscripts))−1)/2culture capacity, then manuscript-culture effects. Tankers addfloor(500×tankers)oil capacity.
+图书馆基础知识容量 250 乘以 `1+启用天文台数×libraryRatio`。钛镜及后续两种反射器各增加 0.02 `libraryRatio`。数据中心将基础知识容量 250 改为 750，文化 10 改为 250，每座增加 1,000 纲要上限，耗电 2；低温计算后耗电 1，并受生物实验室与人工智能上行效果影响。生物实验室基础知识上限为 1,500；天文台为 1,000，有星盘后为 1,500，再乘以 `1+observatoryRatio`。
 
-A library's base science capacity250 is multiplied by1+activeObservatories×libraryRatio. Titanium mirrors and later two reflectors each add.02libraryRatio. Data centers replace base250with750 and culture10with250, add1,000compendia-ceiling each, use2energy(1with cryocomputing), and receive biolab/AI uplink effects. Biolab base science cap1,500; observatory1,000or1,500with astrolabe, then×(1+observatoryRatio).
+## 工业转换与倍率
 
-## Industry conversions and multipliers
+冶炼炉通常每刻输入 0.05 木材与 0.1 矿物，输出 `0.02×(1+smelterRatio)` 铁。煤炉产出 `0.005×(1+smelterRatio)` 煤；金矿产出 0.001 黄金、核冶炼产出 0.0015 钛，两者的基础计算不受 `smelterRatio` 影响。原料不足时按比例降低产出，部分转换不得扣除完整成本。
 
-VERIFIED`js/buildings.js:1071–1277,1281–1320,1390–1435,1459–1502,1558–1629`;`game.js:3724–3788`.
+煅烧炉每刻输入 1.5 矿物与 0.024 石油，输出 `0.15×(1+calcinerRatio)` 铁及 `0.0005×(1+3×calcinerRatio)` 钛。炼钢自动化取用部分新产铁，消耗等量煤，制造该量除以 100 的钢，再应用自动化专属制作及反应堆加成。此功能单独开关，无投入时不能凭空产钢。
 
-Smelter normal inputs.05wood+.1minerals/tick, output.02iron×(1+smelterRatio). Coal-furnace output.005coal×same ratio; gold-ore output.001gold, nuclear output.0015titanium are separate and do not receive smelterRatio in their base calculation. Input shortage proportionally throttles output; don't consume a full cost for a partial conversion.
+蒸汽工坊启用后，在煤惩罚改进前应用一次 0.2 煤倍率，不是 `0.2^建筑数`。每座启用设施提供 1 电力，并使磁电机增强 0.15。印刷机使每座启用蒸汽工坊每刻产出 0.0005 手稿；胶印和光刻各乘以 4。自动化卡滞与复位另行处理。
 
-Calciner inputs1.5minerals+.024oil/tick, output.15iron×(1+calcinerRatio), .0005titanium×(1+3calcinerRatio). Steel automation takes a fraction of newly produced iron, consuming the same coal quantity, to make that quantity/100steel, with automation-specific craft and reactor bonuses. It is separately toggleable and cannot create steel from no inputs.
+每座磁电机每刻消耗 0.05 石油，生产 5 电力，增加 0.02 `magnetoRatio`。生产倍率为 `1+总magnetoRatio×(1+0.15×启用蒸汽工坊数)`，不作用于蜂蜜，石油也不应用此普通倍率。反应堆每座增加 0.05 生产倍率和 10 电力，每刻消耗 0.001 铀，增加 250 铀容量；其生产倍率不作用于蜂蜜和铀。磁电机与反应堆倍率在生产链中相乘，不合为一个加法项。标记为临时资源的类别还存在例外。
 
-Steamworks has an enabled-system coal multiplier.2 before coal-penalty improvements; this is applied once, not.2^count. Each active unit gives1power and boosts magnetos by.15. Printing press yields.0005manuscripts per active steamworks per tick; offset and photolithography multiply4each. Automation jamming/reset is additional behavior.
+油井产出为 `0.02×(1+oilWellRatio)`。抽油机增加 0.45 倍率并可消耗 1 电力；禁用抽油机自动化仅移除这 0.45，加工厂的 0.35 加成仍保留。基础工厂提供 0.05 制作倍率、需求 2 电力、每刻污染 2；工厂物流将 0.05 替换为 0.06。碳封存自动化使耗电翻倍，将总排放设为零并额外清除 2 污染/刻；已研究但未启用时，总排放为 1。生物实验室生物燃料在修正前每刻消耗 1 蜂蜜、生产 0.02 石油并耗电 1；其知识仓储与倍率区分启用数量和建成数量。
 
-Magnetos consume.05oil/tick each, produce5power, and add.02magnetoRatio each. Magneto production multiplier is1+totalMagnetoRatio×(1+.15activeSteamworks). It excludes honey; oil misses this ordinary multiplier. Reactors add.05productionRatio each and10power, use.001uranium/tick and add250uranium capacity; their production multiplier excludes honey and uranium. These two production multipliers act multiplicatively in the production pipeline, not as one additive sum. Resource classes marked transient have exclusions.
+## 电力短缺
 
-Oil well output.02×(1+oilWellRatio). Pumpjack+.45ratio and optional1power consumption; disabled pumpjack automation removes just that .45bonus. Refinery+.35ratio persists. Base factory gives.05craft ratio,2power demand,2pollution/tick. Factory-logistics replaces.05with.06. Carbon sequestration automation doubles power demand, sets gross pollution0and adds−2pollution/tick; researched-but-disabled mode gross pollution1. Biolab biofuel consumes1honey/tick for.02oil,1power before modifiers; its stored science/ratio contribution has special active-vs-built semantics.
+总供电乘以 `1+energyProductionRatio`，需求乘以 `1+energyConsumptionRatio+energyConsumptionIncrease`，能源挑战中再翻倍。需求大于供电时，计算 `D=max(0.25,供电/需求)`；已完成能源挑战且当前不在挑战时，D 改为 `(1+D)/2`。D 作用于磁电机倍率、反应堆生产倍率及太空倍率贡献，不普遍缩减全部普通生产。无需求时辅助函数返回零，但无短缺时不能据此惩罚生产。年度反物质仅在供电至少等于需求时产生。
 
-## Energy shortage
+## 污染
 
-VERIFIED`js/resources.js:826–840,1098–1110`;`js/buildings.js:157–184`;`js/space.js:983–994`.
+普通每刻净污染为 `总排放×(1−0.5×清洁比例)×(1+排放倍率)+显式清理−P×1e−7`。清洁比例为 `清洁能源/(清洁能源+污染能源)`，不存在这两类能源时为零。清洁能源包括太阳能、水电、半数反应堆能源和太阳能卫星；污染能源包括磁电机与蒸汽工坊。P 最低为零。末日挑战禁用自然消散。
 
-Total power supply multiplies by1+energyProductionRatio. Demand multiplies by(1+energyConsumptionRatio+energyConsumptionIncrease), doubled while energy challenge active. If demand>supply, computeD=max(.25,supply/demand); after completed energy challenge outside the challenge, D becomes(1+D)/2. ApplyD to magnetoRatio and reactor productionRatio contributions and spaceRatio contributions, not all ordinary production indiscriminately. No demand means the helper returns0but it is not invoked to penalize production when no deficit exists. Annual antimatter is produced only if supply≥demand.
+P 为正时，定义 `L=max(0,floor(log10(P/1e6)))`，否则 L=0。以下 `ln` 为自然对数，蜂蜜污染倍率最低限制为 −0.75。
 
-## Pollution
+- L=0：P<5e6 时蜂蜜倍率为零，否则为 `−0.2×(P−5e6)/5e6`；幸福度、迁入、信仰不变。
+- L=1：蜂蜜倍率为 `−0.2−(P−1e7)×0.05/1e8`；P<5e7 时幸福度不变，否则减少 `3.2e−7×(P−5e7)` 个百分点；迁入与太阳革命不变。
+- L=2：蜂蜜倍率为 `limitedDR(−0.5−0.1×ln(P),10)/10`；幸福度减少 `1.08×ln(P)` 点；P<5e8 时迁入除数为零，否则为 `1+1.68e−8×(P−5e8)`；太阳革命不变。
+- L=3：蜂蜜公式同上，幸福度减少 `1.18×ln(P)`，迁入除数为 `1.11×log10(P)`，太阳效果不变。
+- L≥4：蜂蜜公式同上，幸福度减少 `1.2×ln(P)`，迁入除数为 `1.2×log10(P)`；木材和蜂蜜的太阳革命加成减少 `min(1e−10×(P−1e10)/9,1)`。
 
-VERIFIED`js/buildings.js:2721–2786,2915–2946,3017–3023`.
+迁入仅在合并减速除数大于 1 时做除法。关闭污染界面显示不会取消污染效果，`disablePollution` 仅隐藏显示。
 
-Normal per-tick net pollution is grossEmission×(1−.5cleanFraction)×(1+emissionRatio)+explicitCleanup−P×1e−7. HerecleanFraction=clean/(clean+polluting), or0when no such energy. Clean energy counts solar, hydro, half reactor energy, and solar satellites; polluting counts magneto and steamworks. P cannot fall below0. Post-apocalypse disables natural dissipation.
+验算：P=0 时一座矿井增加 0.08 污染/刻；P=800,000 且没有清洁能源修正时，一座矿井的净污染为零。P=5e6 时蜂蜜惩罚为零，P=1e7 时为 −0.2。供电 5、需求 20 时 D=0.25，一座反应堆的名义 0.05 加成降为 0.0125，但不是将全部生产降至四分之一。
 
-DefineL=max(0,floor(log10(P/1e6)))for positiveP, else0; natural logs below areln. Honey pollution ratio is clamped no lower than−.75. Normal effects by level:
-- L=0: honey ratio0ifP<5e6, otherwise−.2(P−5e6)/5e6; no happiness/arrival/faith changes.
-- L=1: honey ratio−.2−(P−1e7)×.05/1e8; happiness0below5e7, otherwise−3.2e−7(P−5e7)percentage points; no arrival or solar-revolution change.
-- L=2: honey ratio limitedDR(−.5−.1ln(P),10)/10; happiness−1.08ln(P)points; arrival divisor0below5e8, otherwise1+1.68e−8(P−5e8); no solar-revolution change.
-- L=3: same honey formula; happiness−1.18ln(P); arrival divisor1.11log10(P); solar effect unchanged.
-- L≥4: same honey formula; happiness−1.2ln(P); arrival divisor1.2log10(P); reduce the solar-revolution bonus to wood and honey bymin(1e−10(P−1e10)/9,1).
+## 转换与电力更新顺序
 
-Arrival divides by its combined slowdown only if greater than1. Pollution can affect outcomes even when its UI-display setting is hidden; the source'sdisablePollution option only hides display.
+冶炼炉、煅烧炉和加速器的 `AutoProd` 类输出在完整典范倍率之后加入，仅获得 `1+0.05×典范生产加成`，再应用适用的磁电机、反应堆和太阳倍率。铸币厂和生物实验室的 `Prod` 类输出在这些倍率之后加入，不再获得这些倍率。后续政策与周期效果仍按规定应用，实现必须保留类别区别。
 
-Fixtures: P=0andone mine gives+.08pollution/tick. P=800000 withone mine gives0net without clean-energy changes. AtP=5e6honey penalty0; atP=1e7honey−.2. At power supply5,demand20,D=.25; one reactor's nominal+.05bonus becomes+.0125. This does not mean all production is quartered.
-
-## Converter/power ordering addendum
-
-`game.js:3733–3790` distinguishes automated output classes. Smelter/calciner/acceleratorAutoProd output enters after full paragon and receives only1+.05×paragonProductionBonus, then applicable magneto/reactor/solar multipliers. Mint/biolabProd output enters after those multipliers and does not receive them. Later policy/cycle effects still apply where prescribed. The class distinction is functional and must survive independent implementation.
-
-Reactors disable all active units when current uranium plus one unit's uranium consumption is≤0. Magnetos turn off one active unit per tick when current oil≤.05. These are source per-unit checks, not proportional power throttles by full fleet demand. Full active-count power remains until toggled (`js/buildings.js:1411–1416,1620–1636`).
+当前铀加上单座反应堆的铀消耗变化不大于零时，关闭全部启用反应堆。当前石油不大于 0.05 时，每刻关闭一座磁电机。这是单座检查，不是按整个设施群需求比例缩减电力；在开关状态改变之前，仍按完整启用数量计电力。

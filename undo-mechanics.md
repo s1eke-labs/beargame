@@ -1,101 +1,52 @@
-> Historical design record. Retired in v6.5.1: player-facing undo is disabled, no receipts or countdowns are retained, and committed actions cannot be reversed through this API. Transaction-error rollback remains a separate safety mechanism. The sections below describe the former behavior, not current gameplay.
+# 可撤销操作规则（历史记录）
 
-# Reversible action mechanics
+> 该功能已于 v6.5.1 停用：不再保留玩家操作撤销凭据或倒计时，已完成操作不能通过此接口撤回。事务失败回滚仍是独立的安全机制。下文描述旧版设计，不代表当前玩法。
 
-This module is independently authored. The reference checkout was inspected to
-establish gameplay facts; no reference implementation, comments, interface
-wording, or art is included in the shipped game. Evidence below identifies the
-reference implementation at commit `781e379f` (the full revision is recorded in
-the accompanying mechanics provenance).
+## 时限与生命周期
 
-## Timing and lifetime
+- 同时只保留一个待撤销操作；每次新的可撤销操作成功后替换旧记录。默认调度频率为 5 Hz，窗口为 100 个调度步，即 20 秒。
+- 到期计时在暂停检查前推进。加速模拟不增加调度调用次数，因此不缩短撤销窗口；不足一个调度步的经过时间在本地累积。
+- 只读游戏不能撤销。尝试执行有效的待撤销记录后会消耗该记录，包括无法归还产物而失败的情况。
+- 记录只在运行时存在，导入、重新加载和重置不能恢复；单纯保存不会清除它。
+- 离线批量结算开始时清除记录；离线及异步时间跳跃的状态锁也禁止撤销。
 
-- `game.js:637–643, 6162–6169`: one pending undo operation; each new reversible
-  success replaces it. The deadline is 20 times the scheduler tick frequency:
-  100 ticks at the default 5 Hz.
-- `game.js:5318–5334`: the deadline advances before the paused early return.
-  Accelerated simulation does not make extra scheduler calls and therefore does
-  not shorten the undo window. Fractional elapsed timer time is carried locally.
-- `game.js:6172–6197`: a read-only game cannot execute undo; attempting a valid
-  pending operation consumes the slot, including a failure to return its goods.
-- `game.js:2823` and the save/load routines: the slot is runtime-only. Import,
-  reload and reset cannot recreate it. Merely saving does not remove it.
-- Beargame's explicit offline batch clears the pending slot at settlement start.
-  The offline and asynchronous time-jump mutation locks also disable undo.
+## 历史支持范围
 
-## Which actions can be reversed
+| 操作 | 撤回方式 |
+| --- | --- |
+| 购买建筑 | 移除购买数量，按当前完整逆向价格返还符合条件的材料 |
+| 出售建筑 | 恢复数量，偿还普通出售得到的半价返还 |
+| 出售崇拜升级 | 恢复出售等级并偿还半价返还；普通出售至少保留一级 |
+| 出售行星设施 | 恢复设施并偿还半价返还；普通出售可降至零 |
+| 切换建筑阶段 | 恢复旧阶段及被移除建筑，偿还其半价返还 |
+| 手动制作或精炼木材 | 扣回实际得到的产出，返还制作时记录的输入 |
+| 成功贸易 | 归还全部原始贸易产物，返还记录的成本，增加防止重复抽取随机结果的债务 |
+| 购买使馆 | 移除购买等级并全额返还文化成本 |
+| 赞颂或崇拜转换 | 撤回记录的信仰账目，要求仍持有生成的货币 |
+| 信仰资源转换 | 归还实际生成资源，返还记录的输入 |
+| 购买崇拜或神话升级 | 移除数量，全额返还符合条件的材料 |
+| 购买契约 | 移除数量及新增债务；发生破裂后不可撤销 |
+| 时间升级或修复冷冻舱 | 移除新增数量；修复时恢复已用冷冻舱数，并返还符合条件的成本 |
+| 购买行星设施 | 移除数量并返还符合条件的材料 |
 
-| Beargame action | Evidence | Reversal |
-| --- | --- | --- |
-| Building purchase | `js/buildings.js:3148–3173, 3352–3370` | Remove purchased quantity; refund eligible materials at the current full reverse price |
-| Building sale | `js/buildings.js:3174–3198, 3372–3383` | Restore quantity; repay the ordinary half-price refund |
-| Worship-upgrade sale | `js/religion.js:1941–1942, 1972–1985, 1797–1814` | Restore sold ranks and repay the half-price refund; ordinary sale leaves at least one rank |
-| Planet-facility sale | `js/space.js:1262–1278, 1440–1455` | Restore sold facilities and repay the half-price refund; ordinary sale may reach zero |
-| Building stage change | `js/buildings.js:3198–3206, 3542–3587` | Restore previous stage, restore removed buildings, repay their half-price refund |
-| Manual craft / wood refine | `js/workshop.js:2660–2694, 2767–2788`; `js/buildings.js:3003–3015, 3252–3278` | Remove actual output received; refund the inputs recorded when crafting |
-| Successful trade | `js/diplomacy.js:756–782, 978–991` | Return all raw trade yields; refund recorded costs; add anti-reroll debt |
-| Embassy purchase | `js/diplomacy.js:746–755, 1630–1651` | Remove purchased levels and refund full culture price |
-| Praise / adore | `js/religion.js:1600–1615, 1626–1647, 1752–1771` | Undo the recorded faith accounting, subject to still having the generated currency |
-| Religious resource conversion | `js/religion.js:1718–1751, 2223–2233, 2328–2337` | Return actual generated resource; refund recorded input |
-| Worship and mythic purchases | `js/religion.js:1772–1796, 1905–1918, 1959–1972` | Remove quantity; full eligible material refund |
-| Pact purchase | `js/religion.js:1815–1845, 2543–2552` | Remove quantity and incurred debt; disallowed after fracture |
-| Time upgrades / winter chamber repair | `js/time.js:1032–1072, 1662–1675, 1742–1755, 1799–1819` | Remove added quantity, restore used chamber count for a repair, refund eligible costs |
-| Planet facility purchase | `js/space.js:1247–1261, 1427–1440` | Remove quantity and refund eligible materials |
+研究、工坊研究、政策（包括供养政策）、形而上学、超越购买、太空任务、狩猎、观测、探索、声望重置和时间旅行等不支持的操作不产生撤销事务。除非替换整个游戏状态，否则它们不替换已有记录。自动制作不登记手动制作凭据，支持撤销的队列购买使用手动购买共用的钩子。
 
-Science, workshop research, policies (including the feeding policies),
-metaphysics, transcendence purchases, space missions, hunts, observation,
-exploration, prestige/reset, time travel, and other unsupported operations are
-not turned into reversible transactions. They do not replace an existing slot
-unless the operation replaces the entire game state. Automatic crafting does
-not register a manual craft receipt. A queued supported purchase uses the same
-purchase hooks as its manual equivalent.
+## 资源、容量与防滥用
 
-## Resources, caps and anti-exploit behavior
+- 建筑购买撤销按 100% 返还，普通拆除按 50%。逆向价格根据撤回的数量、当前折扣与阶段重新计算。制作撤销使用原操作实际消耗和实际得到的数量，后续领袖或配方变化不能改变它。
+- 设施购买或出售不返还石油、煤油和钍；反物质仅在电力充足时可返还。制作、转换和贸易的输入返还不使用这些设施排除规则。
+- 返还走普通事件资源增加路径，遵循容量限制；不销毁已有超容量库存，也不能使已超容量资源继续增加。购买后的生产收益保留。
+- 贸易记录未经容量裁切的原始货物，制作记录实际收到的产出。因此溢出的贸易可能无法撤销，或需要使用原有库存归还。
+- 修改资源前检查全部应归还资源。制作或贸易撤销失败时，不能返还输入或只扣除部分输出。重复撤销不能重复领取返还；数量和阶段也需校验。
+- 每撤销一次贸易，增加一次受保护的后续尝试。受保护的敌对贸易失败，不足必然概率的友好加成与可选商品被抑制；必得商品仍按普通随机数量浮动。保护的 45 天倒计时归零后，在下一次每日检查中清除；加载和重置也清除保护。随机数生成器不回退。
+- 解锁、成就、统计、日历、居民到来、职业经验和后台生产不属于事务字段，不能从旧快照恢复。赞颂返还保留期间产生的信仰；崇拜转换先检查新增顿悟仍在，再恢复旧崇拜值，不构成通用状态回退。
 
-- Building reversal uses 100%, ordinary dismantling uses 50%. Current pricing is
-  recomputed at the quantity being reversed, with current discounts and stage.
-  Craft reversal instead uses the inputs actually consumed and output actually
-  received at the original ratio; later leader/recipe changes cannot change it.
-- `core.js:796–810, 884–902, 1949–1984` and `js/resources.js:116–118,
-  77–83, 471–476, 520–527`: oil, kerosene and thorium are non-refundable for
-  facility purchases/sales. Antimatter is refundable only with sufficient power.
-  Craft/conversion/trade input refunds do not use these facility exclusions.
-- Refunds go through the normal event resource add behavior. They respect caps;
-  existing over-cap stores are not destroyed, but a refund cannot increase an
-  already over-cap store. Production earned after purchase remains earned.
-- Trade records the raw merchandise quantities (`diplomacy.js:988`), whereas
-  crafting records capped actual output. Thus an overflowing trade may be
-  impossible to reverse, or may require previously held goods. This is an
-  intentional reference behavior, not a substitution of cap-adjusted yields.
-- Every resource to be returned is checked before changing any resource. Failed
-  craft/trade undo cannot refund inputs or consume only some outputs. Repeated
-  undo cannot repeat a refund. Counts and stages are validated too.
-- `diplomacy.js:780–781, 721–727, 434–435, 831–850, 869–978`: undoing a trade adds
-  one protected future attempt per undone attempt. Protected hostile trades
-  fail, friendly bonuses below certainty are suppressed, and optional goods
-  below certainty are suppressed. Guaranteed goods still receive their ordinary
-  random quantity variation. Protection's 45-day countdown clears on the next
-  daily check after reaching zero; load/reset clears it. RNG is never rewound.
-- Unlocks, achievements, statistics, calendar, bear arrivals, job experience and
-  background production are not transaction fields and are never restored from
-  an old state snapshot. Praise refunds preserve faith produced in the meantime.
-  Adore follows the source's specific old-worship restoration after checking
-  the gained epiphany remains; it is not a general game-state rewind.
+## 偿还校验
 
-## Deliberate safeguards
+恢复已出售的地面建筑、崇拜升级、行星设施或旧建筑阶段前，必须原子检查全部偿还资源。若出售所得已被消耗，则拒绝撤回，防止免费恢复设施。微小的相对浮点容差允许数学上相等的往返余额通过，但不能带来有意义的免费收益。
 
-The reference's ground-building, worship, planet-facility and stage-sale undo can restore facilities even if the refunded
-resources have since been spent, because its resource deduction clamps at zero.
-Beargame instead checks all required repayment resources atomically and refuses
-that reversal. This prevents free facilities, as required for the safe undo
-feature. A tiny relative floating-point tolerance allows mathematically equal
-cost-cycle balances to reverse without permitting a meaningful free return.
+## 历史验证范围
 
-## Verification
+旧版验收覆盖全价与半价返还、记录替换、普通失败、生产与随机数及统计保留、暂停和加速下到期、零碎时钟调用、容量裁切后的制作产出、已消耗产出、配方变化、出售、阶段切换、崇拜与行星出售、重复循环、保存加载重置、时间修复、信仰转换、状态锁、贸易原子性与债务，以及不支持的操作类别。界面和引擎测试另覆盖共用事件分发与跨标签页所有权。
 
-`tests/undo.test.mjs` covers full/half refunds, replacement, ordinary failures,
-production/RNG/stat preservation, paused and accelerated expiry, fractional
-clock calls, capped craft output, consumed output, changed recipes, sales,
-stages, worship/planet sales, repeated cycles, saving/loading/reset, time repair, faith conversion,
-locks, trade atomicity/debt, and unsupported action categories. UI and broader
-engine tests cover shared dispatch and cross-tab ownership.
+当前 `tests/undo.test.mjs` 验证撤销停用后的兼容行为。上述旧版覆盖记录不能作为当前版本仍支持撤销的依据。

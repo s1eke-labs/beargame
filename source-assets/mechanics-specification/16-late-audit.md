@@ -1,55 +1,55 @@
-# Late-mechanics factual audit
+# 后期机制核查
 
-Reference: local Kittens Game checkout at commit `781e379f`. This is an independently worded factual specification, not source code or a reproduction of source presentation. Runtime files were not edited in this audit. Source coordinates below are relative to that fixed reference checkout. LDR means the separately specified limited diminishing-return operation; UDR(x,s) means triangularInverse(x/s).
+本篇记录规则检查结果，不修改运行时代码。`LDR` 表示有限递减运算；`UDR(x,s)` 表示 `triangularInverse(x/s)`。实现检查项是记录时的状态，需要与后续实现记录共同阅读。
 
-## Calendar and temporal paradoxes
+## 日历与时间悖论
 
-- Each active chronosphere contributes .01 to seasonal paradox probability. Contributions add linearly; probability at or above 1 guarantees the event. Chronocontrol does not increase probability. Paradox duration is 10 days plus one day per active chronocontrol, or three days per chronocontrol after distorsion. Thus two chronocontrols give 12 days normally or 16 with distorsion. Distorsion is not a flat two-day extension. Sources: buildings.js:2113–2135; time.js:609–623; workshop.js:2065–2078.
-- At a season boundary, compute the new season, insert the negative day if a paradox occurs, and update the year before daily, seasonal, and yearly events. The boundary itself produces a negative-day void roll: a 10-day paradox generates rolls on -10 through -1. Source: calendar.js:443–470.
-- Normal resource flow, including ordinary consumption and conversions, cannot change resource quantities while day<0. Event gains, manual actions, annual rewards, and corruption conversion remain possible. Daily relic production and Order of the Void do stop. Sources: resources.js:642–686; religion.js:325–339,374–391; calendar.js:502–507.
-- Each negative-day void roll is an integer uniformly distributed from -1 through 2+temporalParadoxVoid. Void never becomes negative and remains integer. Ordinary daily astronomical, meteor, arrival, and mythic-event checks still run, as do elder countdown and market updates. Sources: resources.js:1113–1121; calendar.js:519–728.
-- Annual events still run when the new day is negative and when the millennial challenge freezes the displayed year at 500. Annual antimatter requires produced energy>=consumed energy; temporal flux has no such gate. Annual quantity is base annual production multiplied by (1+resource policy ratio) and (1+pyramid annual ratio). TurnSmoothly provides one annual temporal flux per active chronosphere before these multipliers. Sources: calendar.js:455–470,1058–1133; game.js:4606–4612; buildings.js:2133–2135; workshop.js:2081–2085.
+- 每座启用时空球增加 0.01 季度悖论概率，线性相加；概率至少 1 时必定发生。时间控制不增加概率。悖论持续 10 天，每座启用时间控制再加一天；研究时空扭曲后，每座改加三天。例如两座时，通常持续 12 天，扭曲后持续 16 天，不能将扭曲理解为固定增加两天。
+- 季节边界先计算新季节，若发生悖论则插入负日期，并在每日、每季、每年事件之前更新年份。边界本身产生负日期虚空判定，十天悖论在 −10 至 −1 各判定一次。
+- 日期小于零时，普通资源流、普通消耗和转换均不能改变库存；事件奖励、手动行动、年度奖励和腐化转换仍可发生。每日遗物生产与虚空教团停止。
+- 每次负日期虚空判定在 −1 到 `2+temporalParadoxVoid` 之间均匀抽取整数，虚空保持非负整数。普通每日天象、陨石、迁入、神话事件、长者倒计时和市场更新仍执行。
+- 新日期为负，或千年挑战将显示年份冻结在 500 时，年度事件仍执行。年度反物质要求供电至少等于需求，时间通量无此要求。年度数量为 `基础年度生产×(1+资源政策倍率)×(1+金字塔年度倍率)`。`turnSmoothly` 在这些倍率之前为每座启用时空球提供每年一份时间通量。
 
-## Challenge selection and Iron Will
+## 挑战选择与坚毅模式
 
-Each ordinary challenge has independent pending/active/completion state. Every pending challenge activates together on reset; nonpending challenges become inactive. Ascoh is not a prerequisite for multiple selection. It reveals precise reserved resource amounts and reserved bear details; without it the reserve UI provides broad resource-type count bands. Sources: challenges.js:1019–1031,1118–1144; game.js:5745–5755.
+每项普通挑战拥有独立的待开始、进行中和完成状态。全部待开始挑战在重置时同时启用，其他停用。`ascoh` 不是多选前置条件，它用于显示精确储备资源和小熊明细；没有该能力时，储备界面只提供资源种类数量的大致范围。
 
-Iron Will is separate from ordinary challenges and can coexist with them. An ordinary reset begins in Iron Will when neither resource-stasis retention nor active cryochambers carries benefits. The explicit Iron Will challenge action applies pending ordinary challenges while placing retained resources/bears into reserves and removing chronospheres and cryochambers. Non-Iron-Will Post Apocalypse instead permits direct cryochamber survivors. Ordinary housing, space station housing, and terraforming housing break Iron Will. Sources: challenges.js:684–708,781–785,891–896; game.js:5640; core.js:2385–2396; buildings.js:504,528,551; space.js:323,763.
+坚毅模式独立于普通挑战，允许同时进行。普通重置在没有资源静滞保留且没有启用休眠舱带来收益时进入坚毅模式。显式开始坚毅挑战时，将保留资源与小熊放入储备，移除时空球和休眠舱，并启用待开始的普通挑战。非坚毅的末日挑战允许休眠舱幸存者直接带入。普通住房、空间站住房和地形改造住房都会结束坚毅模式。
 
-Black Sky plus Iron Will changes early diplomacy: once a partner exists, sharks and griffins become available; before goldOre, a zero stock of gold/manpower makes that respective fee zero; griffin wood cost is 400; the shark staple output becomes science with base amount80 and seasonal adjustments 0,-.1,-.2,-.5. Leaving Iron Will restores ordinary terms. Black Sky's satellite repeat penalty is suppressed in Iron Will. Sources: diplomacy.js:606–650,681–702; challenges.js:243–245.
+黑空与坚毅同时启用时，前期外交改变：已有一个交易方后，鲨鱼和狮鹫可用；未研究 `goldOre` 前，黄金或劳力库存为零时，对应基础费用为零；狮鹫木材成本为 400；鲨鱼主产物变为基础数量 80 的知识，四季调整为 0、−0.1、−0.2、−0.5。离开坚毅后恢复普通条款，坚毅期间抑制黑空的卫星重复惩罚。
 
-## Previously disabled metaphysics
+## 形而上学能力补充
 
-- CodexLeviathanianus costs75 paragon after codexLogos. It raises the compendium science-storage ceiling, not crafting. Let B=ground-building science capacity + pyramidSpaceCompendiumRatio times space science capacity, T=transcendence, L=black-library count, A=blackLibraryBonus. Ceiling is B times (10 in Iron Will, otherwise1) times [1+.05T(1+L(.02+A))], then add building scienceMaxCompendia. Actual extra science storage is min(floor(10×compendium stock),ceiling). Sources: prestige.js:83–90; workshop.js:2837–2855; religion.js:1321–1330.
-- ZebraDiplomacy costs35 after diplomacy; ZebraCovenant costs75 after zebraDiplomacy. On leaving Iron Will, existing hunters above floor(.1×capacity) depart, or above floor(.5×capacity) with covenant. These perks never create hunters, and covenant overrides diplomacy. Baseline capacity includes karmaZebras+1. Sources: prestige.js:164–181; calendar.js:642–656; resources.js:792–795.
-- NavigationDiplomacy costs300 after covenant. With a ship it permits the first automatic envoy at year0; otherwise threshold is1 with diplomacy,5 with positive karma tally, or20. Normal discovery priority still applies, including nagas at culture>=1500 before zebras at ship>=1. Sources: prestige.js:184–189; diplomacy.js:475–506,585–602.
-- Ambassadors costs100 after diplomacy. Slots equal discovered ordinary partners, plus one for elders only after elder energy becomes positive. Treaties costs500 after ambassadors and adds floor(total embassy levels/30) slots and a per-bear multiplier of1+.1×rank. Sources: prestige.js:191–218; village.js:328–352.
-- Per effective ambassador: trade-volume ratio .0007; embassy-DR cap increment .00133; blueprint chance increment .00008; spice chance increment .00009; ordinary-output chance increment .00003. Culture/spice upkeep is20/.8 per tick. With N>5 assigned, respective per-worker upkeep multipliers are1+.025(N-5) and1+.001(N-5)^2. Normal skill, leader, happiness, and treaty-rank factors affect benefits AND upkeep. Resource shortage proportionally scales all contributions. Chance contributions use LDR limit .25; embassy-cap contribution above1 becomes its square root. Holy Genocide population production scaling does not affect ambassadors. Sources: village.js:163–200,496–525,626–687.
-- Ordinary trade-output probability is (base probability+ambassador ordinary bonus) times [1+LDR(embassyLevel×rate,.75+ambassador cap increment)], rate=.0025 in Iron Will and .01 otherwise. Nonpositive base-plus-bonus blocks that output. Spice probability uses (.35+bonus) times (1+embassyLevel×rate), without LDR; above100% it increases yield. Blueprint probability is .1+bonus, plus the naga-specific policy bonus when applicable. Trade-volume multiplier=(1+ordinary volume ratio)(1+ambassador volume ratio), affecting partner input and ordinary outputs, including zebra titanium, but not gold/manpower fees, spice, or blueprints. Sources: diplomacy.js:1014–1037,1129–1160.
-- Ascoh costs5 after adjustmentBureau and supplies only the reserve visibility noted above. Sources: prestige.js:481–487; challenges.js:1019,1118.
+- `codexLeviathanianus` 在 `codexLogos` 后花费 75 典范，提高纲要的知识仓储上限，不提高制作。设 B 为地面建筑知识容量加上 `pyramidSpaceCompendiumRatio×太空知识容量`，T 为升华阶位，L 为黑图书馆数，A 为 `blackLibraryBonus`。上限为 `B×坚毅模式下的10或普通模式下的1×[1+0.05T×(1+L×(0.02+A))]`，再加建筑 `scienceMaxCompendia`。实际额外知识容量为 `min(floor(10×纲要库存),上限)`。
+- `zebraDiplomacy` 在外交后花费 35 典范；`zebraCovenant` 在前者后花费 75。离开坚毅时，现有条纹猎手超过 `floor(0.1×容量)` 的部分离开；有盟约时改为 `floor(0.5×容量)`。这些能力不凭空产生猎手，盟约覆盖外交效果。基础容量包含 `karmaZebras+1`。
+- `navigationDiplomacy` 在盟约后花费 300，有船时允许首位自动使者在第 0 年出现；否则有外交能力为第 1 年、正业力计数为第 5 年、通常为第 20 年。普通发现优先级仍生效，文化至少 1,500 的娜迦优先于至少一艘船的斑马。
+- `ambassadors` 在外交后花费 100。席位等于已发现的普通交易方数，长者能量为正后额外增加一席。`treaties` 在使节后花费 500，增加 `floor(全部使馆等级/30)` 席位，每只小熊的阶位倍率为 `1+0.1×阶位`。
+- 每个有效使节提供贸易量倍率 0.0007、使馆递减上限增量 0.00133、蓝图概率增量 0.00008、香料概率增量 0.00009、普通商品概率增量 0.00003；每刻消耗文化 20 和香料 0.8。任命数 N>5 时，每人文化和香料消耗分别乘以 `1+0.025×(N−5)`、`1+0.001×(N−5)^2`。普通技能、领袖、幸福度与条约阶位同时影响收益和消耗；短缺按比例缩放全部贡献。概率贡献使用限值 0.25 的 LDR，使馆上限贡献超过 1 时取平方根。神圣人口缩放不影响使节。
+- 普通贸易商品概率为 `(基础概率+使节普通加成)×[1+LDR(使馆等级×速率,0.75+使节上限增量)]`，坚毅速率为 0.0025，通常为 0.01。基础概率与使节普通加成之和非正时不能产出。香料概率为 `(0.35+加成)×(1+使馆等级×速率)`，不递减，超过 100% 后提高产量。蓝图概率为 `0.1+加成`，适用时另加娜迦政策效果。贸易量倍率为 `(1+普通贸易量倍率)×(1+使节贸易量倍率)`，影响交易方原料和包括斑马钛在内的普通产物，不影响黄金、劳力费、香料或蓝图。
+- `ascoh` 在 `adjustmentBureau` 后花费 5 典范，仅提供上述储备可见性。
 
-## Elders and blackcoin
+## 长者与黑币
 
-Effective markers equal owned markers times [1+LDR(.1×Black Sky completions,2)] outside active Black Sky, or simply owned markers during it. Policies do not alter effective marker count. Effective pyramids add one after any Black Sky completion outside the active challenge. Sources: religion.js:892–906,1041–1042; challenges.js:234–249.
+黑空挑战未启用时，有效标记碑数为 `拥有数×[1+LDR(0.1×黑空完成次数,2)]`；挑战中直接使用拥有数。政策不改变有效数量。曾完成黑空且当前不在挑战时，有效金字塔数增加一。
 
-Annual elder-arrival probability is .035×effective pyramids×(1+.1×effective markers), implemented against a uniform integer0–999. At least one existing trade partner is required and ongoing visits never stack. Initial duration=400×(5+floor(energy)) days. A successful trade reduces remaining duration to at most100×(4+floor(energy)). Each daily event decrements positive duration; departure occurs on the next daily check after duration reaches0. Ordinary output has an additional multiplier1+.02×energy. Sources: calendar.js:1084–1095; diplomacy.js:705–744,883–899.
+年度长者到访概率为 `0.035×有效金字塔数×(1+0.1×有效标记碑数)`，用 0–999 均匀整数判断。需已有至少一个交易方，正在到访时不会叠加。初始停留为 `400×(5+floor(能量))` 天；成功贸易将剩余时间限制为最多 `100×(4+floor(能量))`。每日事件递减正停留时间，到零后的下一次每日检查离开。普通贸易产物额外乘以 `1+0.02×能量`。
 
-Feeding spends floor(min(requested amount,necrocorn stock)), with requests below1 treated as1. Energy rises by consumed amount times(1+feeding efficiency), capped at floor((5×effective markers+5)×(1+energy-cap policy modifier)). Necrocracy adds .05 to that cap modifier. FeedingFrenzy's efficiency is UDR(unspent pact slots,50). Feeding does not lengthen the current visit. Trying to feed when stock<1 empties that fractional stock and sets duration0. Energy>=25 unlocks Unicorn Tears. Elder energy resets between runs. Sources: diplomacy.js:1162–1195,403–411; science.js:1131–1143,2080–2102.
+喂养花费 `floor(min(请求量,幽角鹿库存))`，请求小于一按一处理。能量增加 `消耗量×(1+喂养效率)`，上限为 `floor((5×有效标记碑数+5)×(1+能量上限政策修正))`。`necrocracy` 使该上限修正增加 0.05；盛宴馈赠效率为 `UDR(未用契约槽位,50)`。喂养不会延长当前到访；库存小于一时尝试喂养会清空小数库存并将停留设为零。能量至少 25 解锁灵露挑战，能量在重置轮次之间清零。
 
-The elder trade catalogue additionally contains temporal flux (base3, probability-.1, width.2) and tears (base1500, probability-.1, width.8), which ambassadors can make eligible. Elders do not need resource-unlock flags and have no embassies. Sources: diplomacy.js:338–355,463–468.
+长者商品还包括时间通量（基础 3、概率 −0.1、宽度 0.2）和灵露（基础 1,500、概率 −0.1、宽度 0.8），使节可令其变为可售。长者不要求资源解锁标记，也没有使馆。
 
-Simulated market price begins1000 and survives reset. Once antimatter science is researched, each calendar day multiplies it by1+S×U/40000, where U is uniform[0,1), S is+1/0/-1 with probabilities .4/.3/.3. A resulting price>1100 is multiplied by a fresh uniform[.7,.8). Buy spends all relics for relics/price blackcoin; sell spends all blackcoin for blackcoin×price relics. No fees, spread, or integer rounding. The elder-panel buy/sell controls require blackchain OR existing blackcoin. Sources: calendar.js:239,726–728,1144–1160; diplomacy.js:1199–1212,1313–1332; game.js:5769–5770.
+模拟市场价格初始为 1,000，跨重置保留。研究反物质后，每个日历日乘以 `1+S×U/40000`，U 为 [0,1) 均匀随机数，S 以 0.4、0.3、0.3 概率分别取 +1、0、−1。结果大于 1,100 时，再乘以新的 [0.7,0.8) 均匀随机数。买入消耗全部遗物，换取 `遗物/价格` 黑币；卖出消耗全部黑币，换取 `黑币×价格` 遗物；无手续费、价差或整数取整。长者面板买卖控件要求 `blackchain` 或已持有黑币。
 
-InvisibleBlackHand has no passive pricing effect. With antimatter research it enables a paid manual correction while price>550. Correction uses the same uniform[.7,.8) multiplier. The optional external live-price display is separate from the simulated market. Sources: workshop.js:2098–2108; diplomacy.js:1335–1355,1384–1386.
+`invisibleBlackHand` 无被动定价效果。研究反物质后，价格大于 550 时可付费手动修正，仍使用 [0.7,0.8) 的随机倍率。可选实时价格显示与模拟市场分开。
 
-Manual-correction time-crystal price, independently expressed from diplomacy.js:1394–1417: define Y=.002401×moonOutposts×(1+.01×spaceElevators+.02×orbitalArrays)×(1+.045×factories)×(1.03+tradeRatio+.03×burnedParagonRatio)×(1+.02×elderEnergy). Let h=5 after the millennial challenge is completed, else10; G=1.13Y×resourceRetrievalRatio×(1+retrievalBoost). Estimated production rate is the maximum of1.13Y/4000, (2.4Y-9)/4000, and1.13Y/4000+[(1+h/100)G-1]×heatPerTick/h. Multiply that rate by8000466.693057134×ln(1100/price), take max(result,256), divide by8, then round upward to a power of2. Minimum charge32 time crystals.
+手动修正的时间水晶费用：设 `Y=0.002401×moonOutposts×(1+0.01×spaceElevators+0.02×orbitalArrays)×(1+0.045×factories)×(1.03+tradeRatio+0.03×burnedParagonRatio)×(1+0.02×elderEnergy)`。完成千年挑战后 h=5，否则 h=10；`G=1.13Y×resourceRetrievalRatio×(1+retrievalBoost)`。预估产率为 `1.13Y/4000`、`(2.4Y−9)/4000`、`1.13Y/4000+[(1+h/100)G−1]×heatPerTick/h` 三者最大值。乘以 `8000466.693057134×ln(1100/价格)`，与 256 取最大，再除以 8，向上取至 2 的幂。最低费用为 32 时间水晶。
 
-## Winter, pact happiness, and religion integration
+## 寒冬、契约幸福度与宗教整合
 
-Winter challenge seasonal multiplier affects base building food before farmer output is added. It is .25+.15×weather, where weather=-1/0/+1; in cold weather only, multiply by1-LDR(.02×prior completions,1). The paragon production multiplier does not apply to any honey production while the challenge is active. After year3, cold probability is .175+LDR(.05n,.825); warm probability=max(0,.175-LDR(.05n,.825)); before year4 weather is neutral. Outside the challenge, spring base-food multiplier gains1+LDR(.05n,2), summer solar farms gain1+LDR(.05n,2), and any completion eliminates cold weather in actual winter. Solar farms always use winter's .75 seasonal multiplier during the active challenge. Sources: calendar.js:928–950,1167–1195; challenges.js:50–84; game.js:3684–3736; buildings.js:398–408.
+寒冬季节倍率在加入养蜂人产出前作用于基础建筑食物，值为 `0.25+0.15×天气`，天气取 −1、0、+1；仅寒冷天气再乘以 `1−LDR(0.02×既往完成次数,1)`。挑战进行中，全部蜂蜜生产不应用典范生产倍率。第 3 年之后，冷概率为 `0.175+LDR(0.05n,0.825)`，暖概率为 `max(0,0.175−LDR(0.05n,0.825))`，此前天气中立。挑战外，春季基础食物和夏季太阳能农场分别获得 `1+LDR(0.05n,2)` 倍率；完成过挑战后，实际冬季不再出现冷天气。挑战中太阳能农场始终使用冬季 0.75 倍率。
 
-With UpfrontPayment, only karma's happiness contribution is multiplied by max(pact debt factor,.1). Other happiness contributions are unchanged. Source: village.js:953–964.
+预付供养仅将业力的幸福度贡献乘以 `max(契约债务系数,0.1)`，其他幸福度贡献不变。
 
-Solarchant's true effect is a separate religion faith multiplier1+.1×count. It multiplies, rather than adds to, ordinary faith ratio. Source: religion.js:1047–1055; game.js:3710–3717. In the inspected independent runtime, catalogue faithRatioReligion is currently ignored by the generic production loop while progression adds an alias to faithRatio: this is not currently two applications, but enabling generic RatioReligion requires removing the alias. Current black-obelisk, black-core, dark-nova and active-Holy-Genocide adjustments likewise were not found to apply twice: their catalogue placeholders are unused or corrected by a delta/override. Stained-glass/basilica direct temple culture and the naga cultist's one-tenth temple contribution represent different buildings, not duplication.
+`solarchant` 提供独立宗教信仰倍率 `1+0.1×数量`，与普通信仰倍率相乘。核查时，目录中的 `faithRatioReligion` 尚未被通用生产循环使用，发展模块通过 `faithRatio` 别名应用，因此当时没有重复生效；若启用通用 `RatioReligion`，应移除别名。黑方尖碑、黑核心、暗新星与生效中的 `holyGenocide` 也未发现重复应用：目录占位未使用，或通过差值、覆盖校正。彩绘玻璃与大教堂对神庙文化的直接贡献，以及娜迦祭司的十分之一神庙贡献，来自不同建筑。
 
-Implementation checks identified during this pass (files may already be changing): daily-before-season ordering loses the first void roll; annual temporal-flux reward was absent; meteor/observation negative-day gates were stricter than reference; winter's late correction reintroduced paragon through globalProduction and omitted cold harshness/rewards; codexLeviathanianus had an incorrect crafting summary. Verify these against the final runtime rather than treating this snapshot as a final test report.
+本轮发现的实现检查项：每日事件早于季节事件会遗漏第一次虚空判定；年度时间通量奖励曾缺失；陨石和观测的负日期限制需放宽到上述规则；寒冬后置修正曾通过 `globalProduction` 再次引入典范，并遗漏严寒与奖励；`codexLeviathanianus` 的制作摘要不准确。这些是阶段性检查项，需依据最终代码确认，不能将本篇当作最终测试报告。

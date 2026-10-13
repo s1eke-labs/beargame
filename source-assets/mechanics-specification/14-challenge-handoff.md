@@ -1,59 +1,57 @@
-# Challenge handoff: verified facts and remaining work
+# 挑战规则与待验证事项
 
-This document records the source pass completed before the specification task ended. It is not a claim of complete implementation. Source: fixed commit stated in00-scope-and-provenance.md.
+本篇记录已经核实的挑战机制，不代表全部规则已实现。
 
-## Shared state and concurrent selection
+## 共享状态与同时选择
 
-`js/challenges.js:507–717`; `game.js:5745–5756`. Every challenge tracks unlocked, pending, active and completion count independently. Multiple pending challenges become active together on reset. All nonpending challenges become inactive. Completing an active challenge sets completed/researched, increments its count once, turns it inactive and recalculates effects. Ordinary active completion is checked during updates; atheism and pacifism are evaluated on reset. Iron Will follows its separate housing/reset rules. Default unlocked identities are Iron Will, winter, anarchy; the challenge tab itself is unlocked by adjustmentBureau, not by chronophysics. The reserve panel visibility has a separate chronophysics condition.
+每项挑战分别记录解锁、待开始、进行中和完成次数。重置时，全部待开始挑战同时启用，其他挑战停用。完成进行中的挑战后，设置已完成与已研究标记，完成次数增加一次，停用挑战并重新计算效果。普通挑战在更新中检查，无神与和平挑战在重置时检查，坚毅模式遵循单独的住房和重置规则。默认解锁坚毅、寒冬和无政府；挑战页签由 `adjustmentBureau` 解锁，储备面板另要求时空物理。
 
-Most challenge effects multiply by prior completion count; noStack exceptions use their direct value. Apply designated limited-DR/caps afterward. Therefore many first-run repeat penalties are zero even though their effect declarations are nonzero.
+多数挑战效果乘以既往完成次数，标记 `noStack` 的例外直接使用声明值，之后再应用有限递减和上限。因此许多首次挑战的重复惩罚实际为零。
 
-## Energy
+## 能源挑战
 
-`js/challenges.js:116–153`; `js/resources.js:835–840,1098–1110`. Unlocked by the centaurus mission. Active demand multiplier is2×(1+.1n), n previous completions. Completion requires owning each of: solar-stage pasture; hydro-stage aqueduct; steamworks; magneto; reactor; satellite plus solarSatellites; sunlifter; tectonic; hrHarvester. Each building count must be positive; listed checks use built count. Reward outside the challenge is limitedDR(−.02n,1) demand-ratio adjustment, plus halving energy-shortage penalties once completed. No single-power-total completion shortcut.
+由 `centaurus` 任务解锁。进行中需求倍率为 `2×(1+0.1n)`，n 为既往完成次数。完成要求分别拥有太阳能阶段牧场、水电阶段引水渠、蒸汽工坊、磁电机、反应堆、卫星且有太阳能卫星研究、太阳采集器、构造设施与 `hrHarvester`；每项建成数量均须大于零，不能用总电力替代。挑战外奖励为需求倍率调整 `limitedDR(−0.02n,1)`，且完成后电力短缺惩罚减半。
 
-## Pacifism
+## 和平挑战
 
-`js/challenges.js:261–331`; `js/science.js:1300–1336,2430–2443`; `js/village.js:1049,5488`.
+一次派出至少 1,000 支狩猎队后解锁。进行中隐藏并禁止狩猎行动，武器岗位加成效率降低 `0.1n`，最低 −1。政策价格乘以 `1.25^n`，使馆虚拟购买次数为 n，蒸汽工坊为 `floor(1.5n)`；首次为零。第一座蒸汽工坊的蓝图成本替换为 `5n+1`。
 
-Unlock by sending at least1,000hunting squads in one action. Active challenge hides/disallows hunting action; weapon job bonuses receive−.1n effectiveness capped at−1. Policy prices multiply1.25^n; embassy fake countn; steamworks fake count followsfloor(1.5n), with first-run zero after count aggregation. First steamworks blueprint ingredient is replaced by5n+1. Completion occurs on reset only ifouterSpaceTreaty is researched. Treaty is unlocked through satellite research/building and requires a built satellite, costs10,000culture before challenge policy scaling, blocksmilitarizeSpace; militarization is unavailable in pacifism.
+仅在重置时、已研究 `outerSpaceTreaty` 的情况下完成。条约通过卫星研究和建筑解锁，要求已建成卫星，挑战价格缩放前花费 10,000 文化，并排斥 `militarizeSpace`；和平挑战中禁止太空军事化。
 
-Outside the challenge: alicornPerTickRatio+.1per completion; tradeKnowledge=n. LetL=(7+3n)(.99+.01n) andR=limitedDR(.099+.0075n,.25). Extra trade ratio istradepostPerUnitTradeRatio×min(L,tradepostCount×R). The completion does not give a generic fixed trade bonus. No-hunter/traded-this-run badge logic is separate from completion. Reserve reclaim cannot occur while any challenge remains active.
+挑战外每次完成增加 0.1 `alicornPerTickRatio`，并使 `tradeKnowledge=n`。设 `L=(7+3n)×(0.99+0.01n)`，`R=limitedDR(0.099+0.0075n,0.25)`，额外贸易倍率为 `每座贸易站贸易倍率×min(L,贸易站数×R)`，不是固定通用贸易加成。“未任命猎人且本轮有贸易”的徽章条件与挑战完成条件分开。仍有任一挑战进行时不能领取储备。
 
-## Winter, anarchy, atheism, millennial and black sky
+## 寒冬、无政府、无神、千年与黑空
 
-- Winter: all seasons use winter food behavior; completion whenhelios reached. Outside reward per completion+.05spring-food and+.05summer-solar effects, each limited at2. Active cold chance+.05n and harshness−.02n, limits.825and1. Source`js/challenges.js:50–85`.
-- Anarchy: no leaders/promotions/skill learning or skill production bonuses; active laziness=.5+limitedDR(.05n,.25), noStack. Complete on first AI core. Reward+.2nmaster-skill multiplier limited at4; karma reset calculation uses doubled eligible population after completion. Source`js/challenges.js:87–115`.
-- Atheism: no priests/normal faith production paths. Active modifiers per prior completion: culture cap−250, science cap−500, manpower cap−125, happiness−.5points. Complete on reset with active cryochamber OR stasis pod. Reward solar-revolution boost+.1nlimited at4 plus tier-based solar cap. Source`js/challenges.js:154–190`; associated temple effects must also be applied.
-- 1000Years: unlocked by shattering; completion is checked after shattering when calendar year≥1000 (`js/time.js:727–729`). Active per-completion shatter-cost increase+.5 and void cost+.4. Outside reward shatter-cost reduction−.02nlimited at1, heat efficiency+.1ncapped3, heat compression+.05n, temporal-press retention10n. Source`js/challenges.js:191–230`.
-- Black sky: unlocked after elders arrive; no ordinary astronomical events. Complete withspaceBeacon built count>prior completions. Active satellite penalty declaration.1n itself then aggregated by completion count (verify squared behavior in the engine); suppressed in Iron Will. First orbital launch omits charts and multiplies other costs11; first calciner omits titanium and multiplies other costs11. Reward corruption+.1nlimited at2 and one effective bonus black pyramid outside active challenge. Source`js/challenges.js:231–260`;`js/buildings.js:2629–2637`;`js/space.js:1307`.
+- 寒冬：所有季节使用冬季食物规则，到达 `helios` 后完成。挑战外每次完成提供春季食物和夏季太阳能效果各 +0.05，限值均为 2。进行中的冷天气概率 +0.05n、严寒修正 −0.02n，限值分别为 0.825 和 1。
+- 无政府：禁止领袖、晋升、技能学习及技能产出加成。进行中的懒惰比例为 `0.5+limitedDR(0.05n,0.25)`，不再次叠加。建成第一座人工智能核心时完成。奖励大师技能倍率 +0.2n，限值 4；完成后业力重置计算使用双倍有效人口。
+- 无神：禁止祭司及普通信仰生产路径。每次既往完成带来的进行中修正为文化容量 −250、知识容量 −500、劳力容量 −125、幸福度 −0.5 点。在重置时有启用的休眠舱或静滞舱即可完成。奖励太阳革命增强 +0.1n，限值 4，并提供阶位相关太阳加成上限；相关神庙效果也必须应用。
+- 千年：水晶碎裂解锁，碎裂后年份至少 1,000 时检查完成。进行中每次既往完成增加 0.5 碎裂成本和 0.4 虚空成本。挑战外奖励为碎裂成本降低 `limitedDR(0.02n,1)`、热效率 +0.1n（最高 3）、热压缩 +0.05n、时间压机保留 10n。
+- 黑空：长者到访后解锁，禁止普通天文事件。`spaceBeacon` 建成数量大于既往完成次数时完成。进行中的卫星惩罚声明为 0.1n，汇总时又乘完成次数，需验证平方行为；坚毅模式中抑制该惩罚。首次轨道发射去掉星图成本，其他成本乘以 11；首座煅烧炉去掉钛成本，其他成本乘以 11。挑战外奖励腐化 +0.1n（限值 2），以及一座有效黑金字塔。
 
-## Unicorn Tears: prices and capacities
+## 灵露挑战：价格与容量
 
-`js/challenges.js:333–462`;`js/buildings.js:2681–2718`;`js/science.js:2255–2278`;`js/workshop.js:2973–3020`;`js/resources.js:930–935`.
+长者能量达到 25 时解锁，拥有至少一只幽角鹿时完成。进行中的基础资源容量为灵鹿 10、灵露 1、星翼鹿 0.2，不受典范、宇宙或全局仓储加成影响，仅应用对应资源 `MaxRatio`。每蒸发一份溢出灵露增加 3 污染。特殊升级 `alicornStable` 在 15 星翼鹿时解锁，挑战中增加 0.2 星翼鹿容量。
 
-Unlock when elder energy reaches25. Complete on owning at least1necrocorn. Base resource caps while active: unicorns10, tears1, alicorn.2. These caps bypass paragon/cosmic/global-storage bonuses; only resource-specificMaxRatio applies. Each evaporated overflow tear adds3pollution. A specialalicornStable upgrade unlocks at15alicorns and adds.2alicorn capacity while active.
+建筑额外价格增长为 `Q=limitedDR(1.2+0.03n,2.5)`。首座无额外费用，之后零阶段仓库增加 `2×已拥有数量` 灵鹿，港口增加同量灵露，均应用建筑级价格折扣。其他建筑按第一组原料成本、资源折扣前的数值计算权重，乘以 `Q^(已拥有数量−1)` 后分档：100≤权重≤100,000 时增加 `权重/100` 灵鹿；100,000<权重≤1e9 时增加 `权重/100,000` 灵露；权重>1e9 时增加 `ln(权重)−19.7232` 星翼鹿。权重<100 不收费。建筑折扣也作用于额外费用。
 
-Building extra-price growthQ=limitedDR(1.2+.03n,2.5). First copy has no extra cost. Subsequent warehouse-stage0 adds2×owned unicorns; harbor adds2×owned tears, each with building-level price discount. Other buildings compute weight from their first ingredient prices (before resource discounts), multiplyQ^(owned−1), then add: weight≥100to≤100000 → weight/100unicorns; weight>100000to≤1e9 → weight/100000tears; weight>1e9 → ln(weight)−19.7232alicorns. Building-level discount scales this additional cost. If weight<100, none.
+资源权重系数：蜂蜜 0；木材 0.5；矿物 0.35；铁 1；钛 200；铀 150,000；稀星矿 1e6；反物质 1e10；星图 200；香料 250；木梁及石板 0.75；金属板 5；混凝土 25；齿轮 20；合金 300；精灵合金 1e8；船 1,500；油轮 150,000；煤油 7,000；羊皮纸 2；纲要 20；蓝图 50；钍 180,000；未列资源为 10。已有灵鹿、星翼鹿、灵露或巨石原料时，权重为负无穷并抑制额外收费；需安全处理零乘无穷及未定总值。
 
-Weight coefficients: honey0; wood.5; minerals.35; iron1; titanium200; uranium150000; unobtainium1e6; antimatter1e10; starchart200; spice250; beam/slab.75; plate5; concrete25; gear20; alloy300; eludium1e8; ship1500; tanker150000; kerosene7000; parchment2; compendium20; blueprint50; thorium180000. Unlisted resources10. Existingunicorn/alicorn/tears/megalith inputs suppress extra prices (negative-infinite weight; zero×infinity and indeterminate totals handled safely).
+科学额外倍率 `S=limitedDR(0.25n,75)`。手稿原料增加 `S×手稿量` 灵鹿，纲要原料增加 `S×纲要量` 灵露，蓝图原料增加 `max(1,limitedDR(S,10))` 星翼鹿，与蓝图数量无关。S=0 时无额外费用。
 
-Science extra multiplierS=limitedDR(.25n,75). Manuscript ingredient addsS×its amount unicorns; compendium ingredient addsS×its amount tears; blueprint ingredient addsmax(1,limitedDR(S,10))alicorns independent of blueprint quantity. No extras whenS=0.
+工坊倍率 `M=limitedDR(0.01n,1)`。正权重 W<1e6 时增加 `ceil(W^(2/3)×M)` 灵鹿；1e6≤W<1e8 时增加 `ceil((W−990,000)×M/1,000)` 灵露；W≥1e8 时增加 `ceil((log10(W)−7)×100,000×M)` 灵露。M=0 时无额外费用。科学家折扣之后作用于科学成本，不降低挑战额外价格。
 
-Workshop multiplierM=limitedDR(.01n,1). For positive weightW<1e6 addceil(W^(2/3)M)unicorns; for1e6≤W<1e8 addceil((W−990000)M/1000)tears; forW≥1e8 addceil((log10(W)−7)×100000M)tears. No extras atM=0. Scientist discount applies to science afterward, not to challenge prices.
+特殊容量增量：灵鹿牧场 +50 灵鹿；墓冢 +1 灵露；高塔 +20 灵露；城塞 +2,000 灵鹿和 +5 灵露；宫殿 +50 灵鹿、+275 灵露、+0.2 星翼鹿；理想乡 +5,500 灵鹿、+1,800 灵露、+0.6 星翼鹿；日尖塔 +10% 灵鹿容量、+10,000 灵露、+1 星翼鹿；选育升级 +50% 灵鹿容量。祭坛特殊容量、信仰组合与完成后的墓冢信仰容量奖励仍待验证。奖励使象牙价格增长率降低 `limitedDR(0.003n,0.075)`，仅作用于象牙原料，价格倍率最低为 1。
 
-Special cap increments: unicorn pasture+50unicorns; tomb+1tear; tower+20tears; citadel+2000unicorns/+5tears; palace+50unicorns/+275tears/+.2alicorn; utopia+5500unicorns/+1800tears/+.6alicorn; sunspire+10%unicorn cap/+10000tears/+1alicorn; selection upgrade+50%unicorn cap. Ziggurat special caps, faith combos and post-completion tomb faith-cap reward require remaining verification. Reward ivory-price growth adjustment−.003nlimited at.075; apply only ivory ingredient growth, with ratio floor1.
+## 末日挑战
 
-## Post Apocalypse
+由 `holyGenocide` 解锁。初始污染为 `1e11+1e8×(既往完成次数+带入小熊数)`。每只带入小熊获得 `1,000×(1+业力/100)` 蜂蜜。自然污染消散禁用；每次既往完成增加 10 迁入减速效果，与污染效果相加。住房获得 `max(污染等级−8,0)` 虚拟购买次数。
 
-`js/challenges.js:463–500`;`game.js:5711–5721`;`js/buildings.js:2725–2738,2648–2660`.
+污染等级至少 5 时，蜂房超过 `max(95−已用休眠舱−污染等级,7+坚毅模式下的8)` 阈值后，成本增加 `15×蜂房价格倍率^max(已拥有数+已用休眠舱−100,0)` 稀星矿。污染严格等于零时完成，恢复 1e−7 自然消散，移除住房虚拟次数，解锁两项特殊政策。每次完成增加 1 休眠舱支持。污染贸易费乘以 `1+污染等级`。
 
-Unlocked by holyGenocide. Initial pollution=1e11+1e8×(prior completions+carried bears). Carried bears get1,000honey each×(1+karma/100). Natural pollution dissipation is disabled. Arrival slowdown effect10per completion combines additively with pollution. Housing acquires fake purchased countmax(pollutionLevel−8,0). At pollution level≥5, hives beyond thresholdmax(95−usedCryochambers−level,7+(8ifIronWill))add15×hiveRatio^max(owned+usedCryochambers−100,0)unobtainium to cost. Completion requires pollution exactly0; restores normal1e−7dissipation and removes housing fake counts, unlocks two special policies. Cryochamber support reward is1per completion. Polluted trade fees multiply by1+pollutionLevel.
+## 挑战储备
 
-## Challenge reserves
+启用待开始挑战前，先处理重置完成检查，再计算储备，最后将时空球设为零，避免资源直接进入新挑战。休眠舱也归零，唯独非坚毅模式的末日挑战直接带入保留小熊，不放入储备。
 
-`js/challenges.js:690–835,978–992`. Before applying pending challenges, resolve reset-completion checks, calculate reserves, then set chronospheres to0 so their resources do not enter the new challenge directly. Cryochambers are also set0except non-Iron-Will Post Apocalypse; that mode directly carries preserved bears instead of placing them in reserve.
+只有建成时空球才使用当前 `resStasisRatio` 储备比例。跳过时间水晶与标记 `persists=false` 的资源；没有 `fluxCondensator` 时跳过非木材制作资源。普通非持久资源和木材保留 `数量×比例`，虚空取整；有凝结器的制作资源保留 `100×比例×sqrt(数量)`。持久资源按普通重置规则保留，不重复放入储备。多次存入时，每种资源记录 `max(已有储备,本次储备)`，不求和。
 
-Resource reserve ratio is currentresStasisRatio only with a built chronosphere. Skip time crystals and resources markedpersists=false. Skip nonwood crafted resources withoutfluxCondensator. Normal nonpersistent resources and wood retainquantity×ratio; void is floored. Crafted stock with condenser retains100×ratio×sqrt(quantity). Persisting resources follow ordinary reset persistence rather than duplicated reserve stock. Across repeated reserve deposits each resource storesmax(existing,new), not the sum.
-
-Bears: select the highest-experience number equal to active cryochambers, remove job/leader/specialty assignments, append to reserve bear list; reserve chamber count accumulates. Reclaim is allowed only with no active challenge and no Iron Will. Uncapped reserve resources add to current quantity; capped resources set tomax(current,reserved), which can exceed cap. Skip any time crystals. Reserved bears append; reserved chamber count becomes used cryochambers. Clear all reserves, and mark run as having used chronospheres. Delayed reserves are not automatically awarded when one of several active challenges completes.
+小熊按经验从高到低保留，数量等于启用休眠舱数；清除岗位、领袖与工程专精后追加到储备列表，储备舱数累加。没有进行中的挑战且不处于坚毅模式时才能领取。无上限资源与当前库存相加；有上限资源使用 `max(当前,储备)`，允许超过容量。跳过所有时间水晶。追加储备小熊，储备舱转为已用休眠舱，清空储备，并记录本轮使用过时空球。多个同时进行的挑战中完成一项，不会自动领取延迟储备。

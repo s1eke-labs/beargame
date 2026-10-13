@@ -1,89 +1,97 @@
-# Original art provenance
+# 美术素材记录
 
-The forest clearing, building atlas and resource atlas were newly generated for this game in three image-generation calls on 2026-10-08. The consistent style uses hand-painted isometric forest buildings, warm honey colors and soft woodland neutrals.
+林间空地、建筑图集和资源图集于 2026-10-08 通过三次图像生成制作，采用手绘等距森林建筑、温暖蜂蜜色和柔和林地中性色。下文按版本记录素材演进，尺寸与体积均对应当时版本；当前文件信息以 `public/art/asset-manifest.json` 为准。
 
-Files shipped at `public/art/`:
+初版 `public/art/` 素材：
 
-- `forest-clearing.webp`: 1536 × 1024, empty forest clearing. Constructed buildings are overlaid only after the engine reports them as owned.
-- `buildings-atlas.webp`: 1254 × 1254, RGBA, sixteen original building illustrations.
-- `resources-atlas.webp`: 1254 × 1254, RGBA, sixteen original resource and bear illustrations.
+- `forest-clearing.webp`：1536 × 1024，空白林间空地；只有引擎报告已拥有建筑后才叠加相应插画。
+- `buildings-atlas.webp`：1254 × 1254，RGBA，十六幅建筑插画。
+- `resources-atlas.webp`：1254 × 1254，RGBA，十六幅资源与小熊插画。
 
-WebP encoding preserves the source atlas alpha channels exactly. The generated atlas has nonuniform spacing, so `src/ui/art-data.js` uses measured clean crop rectangles instead of assuming equal tiles. All thirty-two crop rectangles were checked for substantial neighboring alpha pixels. The manifest records the dimensions and exact crop bounds.
+WebP 编码完整保留源图集的透明通道。生成图集的间距不均，因此 `src/ui/art-data.js` 使用实测裁切矩形。全部三十二个裁切矩形均检查过是否混入相邻精灵的明显非透明像素，清单记录尺寸和精确裁切边界。网站图标与小型界面线条图标采用简单矢量图形，森林、建筑、小熊和资源插画使用生成的位图。
 
-The favicon and small interface line icons are original simple vector UI marks; the forest, buildings, bear and resource illustrations use the generated raster artwork.
+## 绘本改版（2026-10-09）
 
-## Storybook revision — 2026-10-09
+美术方向改为简洁纸墨绘本。三张新素材包含竖屏空地、十六幅建筑和十六幅资源或角色插画。原始 PNG、提示词、透明通道裁切测量和哈希保留在 `source-assets/storybook-v2`。生产 WebP 采用质量 88，精灵透明通道经逐像素比较确认保留，裁切边界均为实测。
 
-The user requested the simple ink-and-paper direction of their previous 自嘲熊历险记 project. Three new built-in generated assets replace the previous three-dimensional-looking village art: a portrait clearing, sixteen building sprites, and sixteen resource/character sprites. The actual prior cover illustration was inspected as a visual reference. Original PNGs, generation prompts, alpha-crop measurements and hashes are preserved in source-assets/storybook-v2. The production WebP copies use quality 88 compression; sprite alpha channels were compared pixel-for-pixel and preserved. Crop bounds are measured, not inferred from a uniform grid.
+当时生产美术约 577 KiB。位置、建筑数量、居民形象和分区均来自实际游戏状态，背景不预画建筑。装饰小熊作为玩家向导，与居民人口分开。
 
-Production artwork is approximately 577 KiB. All placement, building quantities, resident appearances and districts derive from current game state; the background contains no fabricated buildings. Decorative mascot is the player's guide, separate from resident population.
+## 移动端构图改版（2026-10-09）
 
+v3 生成并检查一张新竖屏空地，以纸色地面、克制的墨线树木和浅色道路替换 v2 绿地，不预画建筑或居民。1024 × 1280 PNG、提示词和生成记录位于 `source-assets/generated-art`，生产背景为 60,416 字节，v2 建筑和资源图集沿用。每种建筑用一幅插画加准确数量徽标表示，每页四个稳定建筑位置，居民独立排列，避免重叠或虚构人口。
 
-## Mobile composition revision — 2026-10-09
+## 建筑成长与劳动小熊（2026-10-09）
 
-A single new original portrait clearing was generated for v3 and inspected before use. It replaces the v2 green field with a paper-colored clearing, restrained ink trees and a pale path; it has no buildings or residents baked in. The 1024 × 1280 PNG, prompt and provenance are in source-assets/generated-art. The production background is 60,416 bytes; existing original v2 building and resource atlases are unchanged. Building quantities use one sprite per type plus an accurate count badge. Four stable building slots per scene page and a separate resident lane keep the real game state readable without invented residents or repeated overlapping copies.
+新增并检查两张透明图集：十二幅建筑成长或高级形态、十二幅小熊劳动姿态。PNG、实测裁切矩形、提示词和哈希保留在 `source-assets/growth-v4`。两图均为 1448 × 1086，保留透明通道的 WebP 合计 656,446 字节。成长插画表达实际拥有数量与建筑身份，不新增升级或生产规则。
 
-## Visible growth and working bears — 2026-10-09
+劳动插画对应真实居民标识符及其当前职业。暂停、只读、结算或产出满仓时停止劳动姿态；工程师还要求存在已分配且原料充足的配方。减少动态效果和页面隐藏会停止动画，最多展示三位代表性工人，数量对应实际分组。
 
-Two original transparent atlases were generated, inspected and integrated for this revision: twelve building growth/advanced silhouettes and twelve bear work poses. PNGs, exact measured crop rectangles, prompts and hashes are preserved in source-assets/growth-v4. Both atlases are 1448×1086; alpha-preserving WebP output totals 656,446 bytes. Growth art is a presentation of actual owned counts and building identities, not a new upgrade or changed production rule. Worker illustrations reference real individual bear IDs and their current assignments. Working poses stop for pause, read-only mode, settlement or full output storage; engineers additionally require an active funded recipe. Reduced-motion mode and hidden documents suppress animation. At most three representative workers are displayed; counts reflect their real assigned groups.
+## 统一白熊形象（2026-10-09）
 
-## Reference-led bear identity — 2026-10-09
+根据用户提供的白熊正面、侧面和背面设定，生成一张统一的十六姿态透明图集：正面静立、挥手、侧面、背面、五组双帧劳动动作、困倦和抱蜜姿态。造型保持宽头与身体相连、小椭圆耳、短肢、黑点五官和简单黑色轮廓。
 
-The user supplied a front/side/back white bear character reference. One built-in image-generation call created a unified sixteen-pose transparent atlas: neutral front, wave, side, back, five two-frame working pairs, sleepy and honey-carry poses. The broad head merging into the body, small oval ears, short limbs, black dot face and simple black contour follow that reference. Original PNG, prompt, measured crop metadata and generation provenance are preserved in source-assets/reference-bear-v5. The production atlas is lossless WebP with pixel-exact RGBA encoding; the original near-opaque white interiors and transparent exterior are preserved without alpha alteration. Animation pairs share crop size and baseline. All mascot/resource bear aliases and worker frames use the same identity; container-relative sizing preserves its proportions in rectangular icon slots. The small existing favicon was adjusted to the same face proportions. Game rules and saved-state schema are unchanged.
+原始 PNG、提示词、实测裁切元数据和生成记录保留在 `source-assets/reference-bear-v5`。生产图集使用无损 WebP，RGBA 逐像素一致，保持原始近不透明白色内部和透明外部，不修改透明通道。动画配对共用裁切尺寸与基线，向导、资源小熊别名和劳动帧使用同一形象，通过容器相对尺寸保持比例。网站小图标也调整为相同脸部比例，规则和存档结构保持稳定。
 
-## Wooden hives and opening greeting — 2026-10-09
+## 木蜂箱与开场招呼（2026-10-09）
 
-At the user's request, one built-in generated transparent sheet replaces the straw hive with a pale wooden hive with a sage roof and a matching expanded apiary. The original 1774×887 PNG, generation prompt and measured alpha crops are preserved in source-assets/wooden-hive-v6. The lossless production WebP preserves source alpha. All basic-hive previews and the expanded apiary use this new sheet. No production values, costs, unlock thresholds or save schema changed. The opening greeting reuses the reference bear's front, wave and side sprites in a short, nonblocking presentation sequence, then removes the guide. It waits for its image to load, pauses when hidden or covered, honors reduced motion, and records completion only after finishing.
+新增透明图，将草编蜂箱替换为鼠尾草绿屋顶的浅木蜂箱及配套扩建蜂场。1774 × 887 原图、提示词和实测裁切保留在 `source-assets/wooden-hive-v6`，生产无损 WebP 保留源透明通道。基础蜂箱预览和扩建蜂场使用此图，产量、费用、解锁门槛和存档结构保持稳定。
 
-## Village and loading revision — 2026-10-09
+当时的开场招呼复用白熊正面、挥手和侧面姿态，短暂播放后移除向导，不阻塞操作。它等待图像加载，在隐藏或被遮挡时暂停，遵循减少动态效果设置，仅完整播放后记录完成。
 
-Two new built-in generated assets unify the core scene: a portrait clearing with four empty lots and a winding road, and an eight-building atlas using bold outlines, cream walls, sage roofs and honey wood. Prompts and core building original/crops are in source-assets/village-v7. The existing reference bear and wooden hives retain their designs. Production bear/hive images are now quality-92 WebP (alpha retained), reducing those two downloads from 1,446,706 to 429,894 bytes. A small two-frame loading sprite is derived from the existing idle/wave bear poses; no new character or artificial resident is created. The old in-scene introduction has been removed.
+## 村落与加载改版（2026-10-09）
 
-The current asset manifest records production dimensions, byte sizes and hashes. Critical art preloads use the same independently hashed URLs as CSS, and the game starts after image decode; loading errors offer a reload without deleting progress. Original engine rules and save schema are unchanged.
+新增两张素材统一核心场景：含四个空地块和蜿蜒道路的竖屏空地，以及采用粗轮廓、奶油色墙面、鼠尾草绿屋顶和蜜色木材的八建筑图集。提示词、核心建筑原图与裁切位于 `source-assets/village-v7`。白熊和木蜂箱沿用原设计。
 
-## Navigation and exploration revision — 2026-10-09
+生产白熊与蜂箱改为质量 92 的 WebP 并保留透明通道，两图下载量从 1,446,706 降至 429,894 字节。小型双帧加载动画复用静立和挥手姿态，不新增角色或虚构居民；旧场景内介绍已移除。
 
-One original generated portrait exploration map is used behind the discovered destination buttons. The terrain artwork has no prebuilt settlements or interface text. Source and prompt are preserved in source-assets/exploration-v8. Only engine-unlocked destinations appear. Construction now uses an object-centered blueprint workbench and illustrated inventory slots. All menus overlay a single invariant world/dock geometry. Resource HUD text updates separately from pressed/scrolling controls; navigation does not invoke gathering.
+素材清单记录生产尺寸、字节数和哈希。关键美术预加载与 CSS 使用相同的独立哈希网址，图像解码后才进入游戏；加载失败可重试且不清除进度。规则与存档结构保持稳定。
 
-## Nested exploration regions — 2026-10-09
+## 导航与探索改版（2026-10-09）
 
-One newly generated three-panel atlas supplies woodland, riverbank and twilight regional backgrounds, cropped into three 627 × 836 WebP scenes. It contains terrain only, without characters, buildings or interface text. Original, prompt and crop metadata are preserved in source-assets/regions-v9. Existing building art supplies functional local landmarks. World-map controls navigate to regional scenes; only tapping a regional landmark opens its engine-backed operation panel. Achievements and prestige are utilities rather than geographic places. The world map scroll position survives returning from regions. No new economic rules, resource gains or save schema changes are introduced.
+新增竖屏探索地图作为已发现目的地按钮的背景，只画地形，不预画聚落或界面文字。原图与提示词保留在 `source-assets/exploration-v8`，只显示引擎已解锁的目的地。建造界面使用以对象为中心的蓝图工作台和插画物品格；所有菜单覆盖在固定的世界与底部栏布局上。资源栏文字与正在按压或滚动的控件分开更新，导航不触发采集。
 
-## Unified painted architecture v26
-Four original AI-generated transparent sheets (home growth, workplaces, expedition, utilities) were created with the built-in image generator against the approved original v25 workshop reference. Original RGBA PNGs and measured crop/packing metadata are retained in `source-assets/painted-v26`. Production sheets use transparent WebP, 1536×768 each. Source subjects include 32 illustrated base/developed variants. The approved base workshop and reference white bear are retained. Visible expansion is derived only from actual owned building counts; work motion follows real production/assignment state and stops when paused, disabled, capped, or read-only.
+## 分层探索区域（2026-10-09）
 
-## v5.8 cohesive storybook world
-Original AI-generated repaint of the owned home ground art, using its existing paths and woodland art as references. No third-party assets. Source and prompt: source-assets/home-v27. Runtime: forest-clearing-painted.webp. Existing owned building sprites compose notebook subject images, workplace dioramas and map landmarks; original reference-led white bear retained with subtle CSS lighting.
+新增三面板图集提供林地、河岸和暮色区域背景，裁成三张 627 × 836 WebP。图中仅有地形，不含角色、建筑或界面文字。原图、提示词和裁切元数据位于 `source-assets/regions-v9`，已有建筑插画作为功能地标。
 
-## v5.9 semantic art and geographic regions
-All newly generated images are original built-in imagegen outputs. 24 research subject motifs contain no buildings, 52 resource symbols replace misleading aliases and fill catalog omissions, and 24 functional building silhouettes replace shared factories/houses (21 used by current catalog/stage variants; 3 reserved variants). Three world terrain paintings represent settlement, industry, and stellar civilization. Runtime sheets use alpha-aware sprite extraction and repacking only. Source PNGs: source-assets/semantic-v29; generated atlas keys preserved in src/ui/semantic-resources.js, semantic-buildings.js and research-art.js. Era transitions and geographic grouping are presentation derived from actual completed research and owned facilities, with no economy changes.
+世界地图进入区域场景，点击区域地标后才打开对应的引擎操作面板。成就和声望属于工具功能，区域返回后保留世界地图滚动位置。此改版未新增经济规则、资源收益或存档结构。
 
-## v6.0 — Little Bear Simple Picture Book (2026-10-10)
+## 统一绘画建筑（v26）
 
-The user requested that the entire visual language follow the reference white bear.
-Original built-in image generation redrew 32 main/expanded buildings, the workshop,
-24 additional building subjects, 24 research subjects, 52 semantic resource icons,
-16 basic resource/decorative icons, and home/region/civilization environments.
-The original white-bear pose sheet and loading bear are retained unchanged.
+根据已确认的 v25 工坊图生成四张透明图集，分别用于家园成长、工作场所、远征和工具设施。RGBA 原图与实测裁切、打包元数据保留在 `source-assets/painted-v26`。生产图集各为 1536 × 768 的透明 WebP，包含三十二幅基础或发展形态，保留已确认的基础工坊与白熊。
 
-Generated originals, prompts, source crop rectangles and packing instructions are
-retained in `source-assets/simple-book-v31/`. `scripts/art/pack-simple-book.py`
-only extracts complete sprites, scales them and packs padded WebP atlases. Generated
-alpha is preserved. Source crops account for disconnected marks and sprites that
-cross nominal generated-grid lines. No third-party game code or artwork was used.
+可见扩建由实际拥有数量决定；工作动画遵循真实生产与职业状态，在暂停、停用、满仓或只读时停止。
 
-The direction is bold rounded contours, simplified functional silhouettes, broad
-cream/sage/honey color areas and minimal flat shadows. Terrain is deliberately
-low-detail. UI chrome uses the same quiet palette and outlined shapes, without
-painted wood, paper grain, blueprint grids or simulated metallic panels. Resource
-and research subject mappings, progression thresholds and all simulation values
-are unchanged.
+## 统一绘本世界（v5.8）
 
-## v6.1 occupational bear outfits
-Nine occupational costumes with eighteen ready/work poses were generated with built-in image generation using the established white bear reference. Raw atlases, prompts and measured body anchors are retained under source-assets/worker-outfits-v34. Technical packing preserves transparency and aligns head centers and feet rather than fitting tool bounds independently. Runtime worker-outfits.webp is shared by scene actors and job portraits. Idle bears retain the reference identity; production/pause/capacity controls select motion without changing economic rules.
+使用既有路径和林地画面作为设定，重新生成家园地面。原图与提示词位于 `source-assets/home-v27`，运行时使用 `forest-clearing-painted.webp`。现有建筑插画组合成笔记主体图、工作场所场景与地图地标；保留统一白熊，并使用轻微 CSS 光照。
 
-## v6.2.1 continuous map and loading motion
-A single long, uninterrupted forest painting replaces vertically repeated background tiles. Built-in image generation used the established simple picture-book forest reference; original, refinement and prompts are retained in source-assets/continuous-map-v39. Runtime uses a single cover image, without repetition or aspect distortion. The loading screen reuses the original bear drawing with continuous transform-only breathing, separate leaf/shadow movement, real progress interpolation, reduced-motion support and a short completion fade.
+## 语义插画与地理分区（v5.9）
 
-## v6.3 exploration overview
-Three single-composition tall world maps (settlement, industrial, stellar) were generated with built-in image generation and refined against the existing simple picture-book style. The forest era shares the continuous forest painting. Raw passes and prompts are retained in source-assets/exploration-eras-v40. All eras now use one cover background without repetition. Region thumbnails are limited to three real owned facilities; utility controls live in the More dialog, with unlocked ungrouped actions retained as contextual destinations.
+新增二十四个不含建筑的研究主题图案、五十二个资源符号和二十四种功能建筑轮廓。其中二十一种建筑用于现有目录及阶段变体，三种预留。三幅世界地形画分别表现聚落、工业和星际文明。
+
+运行时图集仅进行透明通道感知的裁切与重新打包。源 PNG 位于 `source-assets/semantic-v29`，图集标识保留在 `src/ui/semantic-resources.js`、`src/ui/semantic-buildings.js` 和 `src/ui/research-art.js`。时代切换与地理分组根据已完成研究和已拥有设施显示，不改变经济规则。
+
+## 小熊简笔绘本（v6.0，2026-10-10）
+
+整套视觉语言统一到白熊设定，重新生成三十二幅主要或扩建建筑、工坊、二十四幅附加建筑、二十四幅研究主题、五十二个语义资源图标、十六个基础资源或装饰图标，以及家园、区域和文明环境。白熊姿态图集与加载小熊保留。
+
+生成原图、提示词、源裁切矩形和打包说明保留在 `source-assets/simple-book-v31/`。`scripts/art/pack-simple-book.py` 只提取完整精灵、缩放并打包为带留白的 WebP 图集，保留透明通道。源裁切兼顾分离笔画和跨越名义网格线的图案。
+
+风格采用粗圆轮廓、简化功能剪影、大块奶油色、鼠尾草绿和蜜色，以及极少的平面阴影。地形刻意保持低细节，界面使用一致的安静配色和描边形状，不使用木纹、纸纹、蓝图网格或模拟金属面板。资源与研究主题映射、进度阈值及模拟数值保持稳定。
+
+## 小熊职业服饰（v6.1）
+
+以统一白熊为设定，生成九种职业服饰、十八个准备或劳动姿态。原始图集、提示词和实测身体锚点保留在 `source-assets/worker-outfits-v34`。打包保留透明度，按头部中心与脚底对齐，避免按各帧工具外框分别缩放。运行时 `worker-outfits.webp` 由场景角色和职业头像共用；空闲小熊保持原形象，生产、暂停和容量状态决定动作，不改变经济规则。
+
+## 连续地图与加载动画（v6.2.1）
+
+使用简笔绘本森林设定生成一张连续长幅森林画，替换纵向重复的背景块。原图、细化版本和提示词位于 `source-assets/continuous-map-v39`。运行时以单张等比例铺满图显示，不重复或拉伸。
+
+加载界面复用白熊原画，通过连续的变换属性实现呼吸，搭配独立叶片和影子运动、真实进度插值、减少动态效果支持和短暂完成淡出。
+
+## 探索总览（v6.3）
+
+新增并按简笔绘本风格细化三张单一构图的长幅世界地图，分别对应聚落、工业和星际时代；森林时代共用连续森林画。原始生成版本与提示词保留在 `source-assets/exploration-eras-v40`。
+
+全部时代使用单张等比例铺满背景，不重复铺贴。区域缩略图最多显示三座实际拥有的设施，工具功能位于“更多”对话框，已解锁但未分组的操作作为上下文目的地保留。

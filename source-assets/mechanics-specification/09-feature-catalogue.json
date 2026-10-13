@@ -1,3318 +1,3963 @@
 {
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
-  "purpose": "Factual identity/location checklist only; no descriptions, costs, implementation or source data tables copied.",
+  "project": "Beargame",
+  "purpose": "当前引擎目录的中文名称、代码标识符和本仓库定义位置索引；目录存在不代表全部动态效果、界面交互和完成路径已经验证。",
+  "scope": "完整开发版本；公开章节范围另见 docs/CHAPTER_RELEASES.md。标识符保留代码拼写，未启用条目不可视为可用功能，其余条目仍需满足运行时条件。",
   "categories": [
     {
       "category": "resources",
+      "name": "资源",
+      "count": 59,
+      "sources": [
+        "src/engine/catalog.js",
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
-          "id": "catnip",
-          "source": "js/resources.js:22",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "zebras",
+          "name": "条纹猎手",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "honey",
+          "name": "蜂蜜",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "wood",
-          "source": "js/resources.js:29",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "木材",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "minerals",
-          "source": "js/resources.js:37",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "coal",
-          "source": "js/resources.js:44",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "矿石",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "iron",
-          "source": "js/resources.js:52",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "铁",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "titanium",
-          "source": "js/resources.js:60",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "coal",
+          "name": "煤",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "gold",
-          "source": "js/resources.js:68",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "金",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "titanium",
+          "name": "钛",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "oil",
-          "source": "js/resources.js:76",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "石油",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "uranium",
-          "source": "js/resources.js:84",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "铀",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "unobtainium",
-          "source": "js/resources.js:93",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "月晶",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "antimatter",
-          "source": "js/resources.js:108",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "反物质",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "manpower",
-          "source": "js/resources.js:119",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "活力",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "science",
-          "source": "js/resources.js:127",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "知识",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "culture",
-          "source": "js/resources.js:135",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "文化",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "faith",
-          "source": "js/resources.js:143",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "kittens",
-          "source": "js/resources.js:151",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "zebras",
-          "source": "js/resources.js:158",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "starchart",
-          "source": "js/resources.js:165",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "temporalFlux",
-          "source": "js/resources.js:173",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "gflops",
-          "source": "js/resources.js:180",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "hashrates",
-          "source": "js/resources.js:188",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "信仰",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "furs",
-          "source": "js/resources.js:200",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "毛皮",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ivory",
-          "source": "js/resources.js:209",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "象牙",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spice",
-          "source": "js/resources.js:218",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "unicorns",
-          "source": "js/resources.js:227",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "alicorn",
-          "source": "js/resources.js:236",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "necrocorn",
-          "source": "js/resources.js:245",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "tears",
-          "source": "js/resources.js:253",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "karma",
-          "source": "js/resources.js:259",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "paragon",
-          "source": "js/resources.js:265",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "burnedParagon",
-          "source": "js/resources.js:272",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "timeCrystal",
-          "source": "js/resources.js:279",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "sorrow",
-          "source": "js/resources.js:286",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "relic",
-          "source": "js/resources.js:293",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "void",
-          "source": "js/resources.js:308",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "elderBox",
-          "source": "js/resources.js:321",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "wrappingPaper",
-          "source": "js/resources.js:336",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "blackcoin",
-          "source": "js/resources.js:350",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "bloodstone",
-          "source": "js/resources.js:364",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "tMythril",
-          "source": "js/resources.js:378",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "香料",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "beam",
-          "source": "js/resources.js:397",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "木梁",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "slab",
-          "source": "js/resources.js:403",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "石板",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "plate",
-          "source": "js/resources.js:408",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "铁板",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "steel",
-          "source": "js/resources.js:414",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "钢",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "concrate",
-          "source": "js/resources.js:423",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "concrete",
+          "name": "混凝土",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "gear",
-          "source": "js/resources.js:429",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "齿轮",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "alloy",
-          "source": "js/resources.js:436",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "合金",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "eludium",
-          "source": "js/resources.js:444",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星合金",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "scaffold",
-          "source": "js/resources.js:452",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "脚手架",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ship",
-          "source": "js/resources.js:458",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "船",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "tanker",
-          "source": "js/resources.js:464",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "kerosene",
-          "source": "js/resources.js:470",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "plastic",
-          "source": "js/resources.js:478",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "microchip",
-          "source": "js/resources.js:485",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "油轮",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "parchment",
-          "source": "js/resources.js:492",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "纸页",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "manuscript",
-          "source": "js/resources.js:498",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "手稿",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "compedium",
-          "source": "js/resources.js:505",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "compendium",
+          "name": "典籍",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blueprint",
-          "source": "js/resources.js:511",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "蓝图",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "thorium",
-          "source": "js/resources.js:519",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "kerosene",
+          "name": "煤油",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "megalith",
-          "source": "js/resources.js:529",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "巨石",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "starchart",
+          "name": "星图",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "timeCrystal",
+          "name": "时晶",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "relic",
+          "name": "遗珍",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "sorrow",
+          "name": "泪石",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "blackcoin",
+          "name": "黑金",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "karma",
+          "name": "业力",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "paragon",
+          "name": "传承",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "burnedParagon",
+          "name": "余烬传承",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "temporalFlux",
+          "name": "时流",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "void",
+          "name": "虚空",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "unicorns",
+          "name": "灵鹿",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "plastic",
+          "name": "塑料",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "microchip",
+          "name": "微芯片",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "thorium",
+          "name": "钍",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "bloodstone",
+          "name": "血石",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "tMythril",
+          "name": "秘银",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "gflops",
+          "name": "算力",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "hashrates",
+          "name": "密钥算量",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "elderBox",
+          "name": "远古礼盒",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "wrappingPaper",
+          "name": "礼盒绸纸",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "tears",
+          "name": "灵露",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "alicorn",
+          "name": "星翼鹿",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "necrocorn",
+          "name": "夜影鹿",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "buildings",
+      "name": "建筑",
+      "count": 40,
+      "sources": [
+        "src/engine/core-catalog.js",
+        "src/engine/building-stages.js"
+      ],
       "features": [
         {
-          "id": "field",
-          "source": "js/buildings.js:349",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "pasture",
-          "source": "js/buildings.js:368",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "aqueduct",
-          "source": "js/buildings.js:430",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "hive",
+          "name": "蜂箱",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "hut",
-          "source": "js/buildings.js:483",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "logHouse",
-          "source": "js/buildings.js:508",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "mansion",
-          "source": "js/buildings.js:531",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "树洞熊舍",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "library",
-          "source": "js/buildings.js:556",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "academy",
-          "source": "js/buildings.js:648",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "observatory",
-          "source": "js/buildings.js:684",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "biolab",
-          "source": "js/buildings.js:708",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林间书屋",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "barn",
-          "source": "js/buildings.js:791",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "蜜粮仓",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "pasture",
+          "name": "花间食圃",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "aqueduct",
+          "name": "林泉水渠",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "logHouse",
+          "name": "木屋",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "mansion",
+          "name": "山岭公馆",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "academy",
+          "name": "山林学院",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "observatory",
+          "name": "观星台",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "biolab",
+          "name": "花木实验室",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "warehouse",
-          "source": "js/buildings.js:824",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "工料库",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "harbor",
-          "source": "js/buildings.js:942",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "河湾港",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "mine",
-          "source": "js/buildings.js:996",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "石矿井",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "quarry",
-          "source": "js/buildings.js:1033",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "山岩采场",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "smelter",
-          "source": "js/buildings.js:1070",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "铸铁炉",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "calciner",
-          "source": "js/buildings.js:1153",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "焙烧炉",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "steamworks",
-          "source": "js/buildings.js:1280",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "蒸汽工坊",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "magneto",
-          "source": "js/buildings.js:1389",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林原发电机",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "lumberMill",
-          "source": "js/buildings.js:1439",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "木材工场",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "oilWell",
-          "source": "js/buildings.js:1458",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "深林油井",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "workshop",
-          "source": "js/buildings.js:1508",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "手作坊",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "factory",
-          "source": "js/buildings.js:1537",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "精工厂",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "reactor",
-          "source": "js/buildings.js:1589",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "晶能反应堆",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "accelerator",
-          "source": "js/buildings.js:1639",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "微粒加速环",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "tradepost",
-          "source": "js/buildings.js:1705",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林间驿站",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "mint",
-          "source": "js/buildings.js:1730",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "brewery",
-          "source": "js/buildings.js:1786",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林币铸坊",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "amphitheatre",
-          "source": "js/buildings.js:1841",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "山谷剧场",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "chapel",
-          "source": "js/buildings.js:1907",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "花灯祈堂",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "temple",
-          "source": "js/buildings.js:1944",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "山灵神殿",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "unicornPasture",
-          "source": "js/buildings.js:2032",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "灵鹿花苑",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ziggurat",
-          "source": "js/buildings.js:2062",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "叠石祭坛",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "chronosphere",
-          "source": "js/buildings.js:2112",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时光蜜球",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "aiCore",
-          "source": "js/buildings.js:2137",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "森智核心",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "brewery",
+          "name": "蜜酿坊",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraOutpost",
-          "source": "js/buildings.js:2189",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹前哨",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraWorkshop",
-          "source": "js/buildings.js:2224",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹工房",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraForge",
-          "source": "js/buildings.js:2263",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹熔炉",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "stasisPod",
-          "source": "js/buildings.js:2301",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹休眠舱",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ivoryTemple",
-          "source": "js/buildings.js:2326",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "白枝研磨堂",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        }
+      ]
+    },
+    {
+      "category": "buildingStages",
+      "name": "建筑改建",
+      "count": 5,
+      "sources": [
+        "src/engine/building-stages.js"
+      ],
+      "features": [
+        {
+          "id": "pasture",
+          "name": "花原太阳能板",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "aqueduct",
+          "name": "林泉水电站",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "library",
+          "name": "林间数据馆",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "amphitheatre",
+          "name": "山谷广播塔",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "warehouse",
+          "name": "林星港",
+          "source": "src/engine/building-stages.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "research",
+      "name": "研究",
+      "count": 61,
+      "sources": [
+        "src/engine/core-catalog.js"
+      ],
       "features": [
         {
           "id": "calendar",
-          "source": "js/science.js:13",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "四季历法",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "agriculture",
-          "source": "js/science.js:25",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "养蜂学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "archery",
-          "source": "js/science.js:38",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林间狩猎",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "mining",
-          "source": "js/science.js:50",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "采矿学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "metal",
-          "source": "js/science.js:62",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "冶金入门",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "animal",
-          "source": "js/science.js:73",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "brewery",
-          "source": "js/science.js:84",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "山林共生",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "civil",
-          "source": "js/science.js:93",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "聚落制度",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "math",
-          "source": "js/science.js:103",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "数量学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "construction",
-          "source": "js/science.js:115",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "营造学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "engineering",
-          "source": "js/science.js:130",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "水利工程",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "currency",
-          "source": "js/science.js:141",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "货币",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "writing",
-          "source": "js/science.js:152",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "文字",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "philosophy",
-          "source": "js/science.js:166",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林间哲思",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "machinery",
-          "source": "js/science.js:179",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "机械",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "steel",
-          "source": "js/science.js:189",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "炼钢",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "theology",
-          "source": "js/science.js:200",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "山灵学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "astronomy",
-          "source": "js/science.js:217",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "天文学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "navigation",
-          "source": "js/science.js:231",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "航海",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "architecture",
-          "source": "js/science.js:247",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "建筑学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "physics",
-          "source": "js/science.js:261",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "物理学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "metaphysics",
-          "source": "js/science.js:275",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "超验思辨",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "chemistry",
-          "source": "js/science.js:284",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "化学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "acoustics",
-          "source": "js/science.js:298",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "声学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "drama",
-          "source": "js/science.js:311",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "戏剧",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "archeology",
-          "source": "js/science.js:323",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "地层考察",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "electricity",
-          "source": "js/science.js:340",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "电学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "biology",
-          "source": "js/science.js:354",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "生物学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "biochemistry",
-          "source": "js/science.js:370",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "生物化学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "genetics",
-          "source": "js/science.js:384",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "遗传学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "industrialization",
-          "source": "js/science.js:397",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "工业化",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "mechanization",
-          "source": "js/science.js:411",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "机械化",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "metalurgy",
-          "source": "js/science.js:427",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "精密冶金",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "combustion",
-          "source": "js/science.js:439",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "燃烧学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "ecology",
-          "source": "js/science.js:453",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "生态学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "electronics",
-          "source": "js/science.js:471",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "电子学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "robotics",
-          "source": "js/science.js:489",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "自动机械",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "ai",
-          "source": "js/science.js:504",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "森林智算",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "quantumCryptography",
-          "source": "js/science.js:518",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "量子密语",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "blackchain",
-          "source": "js/science.js:530",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "幽晶链",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "nuclearFission",
-          "source": "js/science.js:542",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "核裂变",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "rocketry",
-          "source": "js/science.js:556",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "飞天工程",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "oilProcessing",
-          "source": "js/science.js:573",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "燃料精炼",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "sattelites",
-          "source": "js/science.js:586",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "卫星学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "orbitalEngineering",
-          "source": "js/science.js:601",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "轨道工程",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "thorium",
-          "source": "js/science.js:614",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "钍能研究",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "exogeology",
-          "source": "js/science.js:627",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "异星地质",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "advExogeology",
-          "source": "js/science.js:640",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "深空地质",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "nanotechnology",
-          "source": "js/science.js:655",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "纳米技术",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "superconductors",
-          "source": "js/science.js:668",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "超导",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "antimatter",
-          "source": "js/science.js:681",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "反物质",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "terraformation",
-          "source": "js/science.js:695",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "异星造林",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "hydroponics",
-          "source": "js/science.js:707",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星际水培",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "exogeophysics",
-          "source": "js/science.js:719",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "深空物理",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "particlePhysics",
-          "source": "js/science.js:729",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "粒子物理",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "dimensionalPhysics",
-          "source": "js/science.js:744",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "维度物理",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "artificialGravity",
-          "source": "js/science.js:756",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "人工引力",
+          "source": "src/engine/core-catalog.js",
+          "status": "目录保留，当前未启用"
         },
         {
           "id": "chronophysics",
-          "source": "js/science.js:768",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时序物理",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "tachyonTheory",
-          "source": "js/science.js:782",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "超光理论",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "cryptotheology",
-          "source": "js/science.js:796",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "隐秘神学",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "voidSpace",
-          "source": "js/science.js:811",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "虚空领域",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "paradoxalKnowledge",
-          "source": "js/science.js:832",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "悖论知识",
+          "source": "src/engine/core-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         }
       ]
     },
     {
       "category": "policies",
+      "name": "政策",
+      "count": 61,
+      "sources": [
+        "src/engine/policy-catalog.js"
+      ],
       "features": [
         {
           "id": "liberty",
-          "source": "js/science.js:855",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "开放蜂巢",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "tradition",
-          "source": "js/science.js:875",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "旧林手札",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "monarchy",
-          "source": "js/science.js:895",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "长老继任",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "authocracy",
-          "source": "js/science.js:914",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "独任领熊",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "republic",
-          "source": "js/science.js:948",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "全营议事",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "socialism",
-          "source": "js/science.js:966",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "共享蜜罐",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "scientificCommunism",
-          "source": "js/science.js:991",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "小工坊约定",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "liberalism",
-          "source": "js/science.js:1010",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "自由商路",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "communism",
-          "source": "js/science.js:1028",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "集体工场",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "fascism",
-          "source": "js/science.js:1048",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "严整营地",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "technocracy",
-          "source": "js/science.js:1067",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "智识议会",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "theocracy",
-          "source": "js/science.js:1082",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星愿议会",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "expansionism",
-          "source": "js/science.js:1096",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远林开拓",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "transkittenism",
-          "source": "js/science.js:1111",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "机心共生",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "necrocracy",
-          "source": "js/science.js:1130",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "黑晶领航",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "radicalXenophobia",
-          "source": "js/science.js:1145",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "闭门星约",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "diplomacy",
-          "source": "js/science.js:1175",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "结伴远行",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "isolationism",
-          "source": "js/science.js:1191",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "守林互市",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraRelationsAppeasement",
-          "source": "js/science.js:1207",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹善邻",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraRelationsBellicosity",
-          "source": "js/science.js:1221",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹竞逐",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "knowledgeSharing",
-          "source": "js/science.js:1235",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "互寄学报",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "culturalExchange",
-          "source": "js/science.js:1251",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "互访艺集",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "bigStickPolicy",
-          "source": "js/science.js:1267",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "商路护卫",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "cityOnAHill",
-          "source": "js/science.js:1283",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "山丘艺城",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "outerSpaceTreaty",
-          "source": "js/science.js:1299",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星空公约",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "militarizeSpace",
-          "source": "js/science.js:1315",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "轨道守望",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "lizardRelationsEcologists",
-          "source": "js/science.js:1335",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "绿叶护林员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "lizardRelationsPriests",
-          "source": "js/science.js:1370",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "绿叶星愿师",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "lizardRelationsDiplomats",
-          "source": "js/science.js:1391",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "绿叶调停员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sharkRelationsScribes",
-          "source": "js/science.js:1408",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "潮湾抄写员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sharkRelationsMerchants",
-          "source": "js/science.js:1423",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "潮湾行商员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sharkRelationsBotanists",
-          "source": "js/science.js:1445",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "潮湾育林员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "griffinRelationsMetallurgists",
-          "source": "js/science.js:1479",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "云翼炼钢员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "griffinRelationsScouts",
-          "source": "js/science.js:1496",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "云翼巡林员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "griffinRelationsMachinists",
-          "source": "js/science.js:1513",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "云翼机修员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "nagaRelationsMasons",
-          "source": "js/science.js:1533",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "盘藤砌石员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "nagaRelationsCultists",
-          "source": "js/science.js:1553",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "盘藤祭仪员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "nagaRelationsArchitects",
-          "source": "js/science.js:1573",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "盘藤设计员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spiderRelationsGeologists",
-          "source": "js/science.js:1600",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "丝谷地质员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spiderRelationsChemists",
-          "source": "js/science.js:1626",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "丝谷调配员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spiderRelationsPaleontologists",
-          "source": "js/science.js:1656",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "丝谷寻化石员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "dragonRelationsPhysicists",
-          "source": "js/science.js:1674",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "焰岭物理员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "dragonRelationsAstrologers",
-          "source": "js/science.js:1695",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "焰岭观星员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "dragonRelationsDynamicists",
-          "source": "js/science.js:1718",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "焰岭动力员",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "stoicism",
-          "source": "js/science.js:1742",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "节用蜜罐",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "epicurianism",
-          "source": "js/science.js:1762",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林间享乐",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "carnivale",
-          "source": "js/science.js:1778",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "花蜜庆典",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "extravagance",
-          "source": "js/science.js:1792",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "丰盛蜜宴",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "rationing",
-          "source": "js/science.js:1806",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "蜜粮配给",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "frugality",
-          "source": "js/science.js:1820",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "勤俭工坊",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "rationality",
-          "source": "js/science.js:1836",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "实证手札",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "mysticism",
-          "source": "js/science.js:1850",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林梦手札",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "stripMining",
-          "source": "js/science.js:1866",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "深层采石",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "clearCutting",
-          "source": "js/science.js:1884",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "密林轮伐",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "environmentalism",
-          "source": "js/science.js:1902",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "蜂林守护",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sustainability",
-          "source": "js/science.js:1919",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "循生工艺",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "fullIndustrialization",
-          "source": "js/science.js:1937",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "全营开工",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "conservation",
-          "source": "js/science.js:1958",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "保育林区",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "openWoodlands",
-          "source": "js/science.js:1975",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "开放林区",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "cryochamberExtraction",
-          "source": "js/science.js:1998",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "回收休眠仓",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "terraformingInsight",
-          "source": "js/science.js:2013",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "siphoning",
-          "source": "js/science.js:2054",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "feedingFrenzy",
-          "source": "js/science.js:2078",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "upfrontPayment",
-          "source": "js/science.js:2108",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "新生星球",
+          "source": "src/engine/policy-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "workshop",
+      "name": "工坊升级",
+      "count": 143,
+      "sources": [
+        "src/engine/workshop-catalog.js"
+      ],
       "features": [
         {
           "id": "mineralHoes",
-          "source": "js/workshop.js:9",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "石质蜂铲",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "ironHoes",
-          "source": "js/workshop.js:23",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "铁质蜂铲",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "mineralAxes",
-          "source": "js/workshop.js:36",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "石斧",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "ironAxes",
-          "source": "js/workshop.js:50",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "铁斧",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "steelAxe",
-          "source": "js/workshop.js:61",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "reinforcedSaw",
-          "source": "js/workshop.js:72",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "steelSaw",
-          "source": "js/workshop.js:86",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "titaniumSaw",
-          "source": "js/workshop.js:103",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "alloySaw",
-          "source": "js/workshop.js:120",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "钢斧",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "titaniumAxe",
-          "source": "js/workshop.js:134",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "钛斧",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "alloyAxe",
-          "source": "js/workshop.js:145",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "合金斧",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "unobtainiumAxe",
-          "source": "js/workshop.js:158",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "月晶斧",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "目录保留，当前未启用"
+        },
+        {
+          "id": "reinforcedSaw",
+          "name": "加固锯",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "steelSaw",
+          "name": "钢锯",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "titaniumSaw",
+          "name": "钛锯",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "alloySaw",
+          "name": "合金锯",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "unobtainiumSaw",
-          "source": "js/workshop.js:170",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "月晶锯",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "目录保留，当前未启用"
         },
         {
           "id": "stoneBarns",
-          "source": "js/workshop.js:186",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "石砌蜜仓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "reinforcedBarns",
-          "source": "js/workshop.js:202",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "reinforcedWarehouses",
-          "source": "js/workshop.js:221",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "加固蜜仓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "titaniumBarns",
-          "source": "js/workshop.js:240",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "钛骨蜜仓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "alloyBarns",
-          "source": "js/workshop.js:256",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "合金蜜仓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "concreteBarns",
-          "source": "js/workshop.js:271",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "混凝土蜜仓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "reinforcedWarehouses",
+          "name": "加固工料库",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "titaniumWarehouses",
-          "source": "js/workshop.js:286",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "钛骨工料库",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "alloyWarehouses",
-          "source": "js/workshop.js:302",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "合金工料库",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "concreteWarehouses",
-          "source": "js/workshop.js:317",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "混凝土工料库",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "storageBunkers",
-          "source": "js/workshop.js:332",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "energyRifts",
-          "source": "js/workshop.js:349",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "stasisChambers",
-          "source": "js/workshop.js:366",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "voidEnergy",
-          "source": "js/workshop.js:388",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "darkEnergy",
-          "source": "js/workshop.js:407",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "chronoforge",
-          "source": "js/workshop.js:422",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "tachyonModerator",
-          "source": "js/workshop.js:436",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "tachyonAccelerators",
-          "source": "js/workshop.js:449",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "fluxCondensator",
-          "source": "js/workshop.js:467",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "lhc",
-          "source": "js/workshop.js:478",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "photovoltaic",
-          "source": "js/workshop.js:494",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "thinFilm",
-          "source": "js/workshop.js:508",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "qdot",
-          "source": "js/workshop.js:523",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "solarSatellites",
-          "source": "js/workshop.js:539",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "cargoShips",
-          "source": "js/workshop.js:552",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "barges",
-          "source": "js/workshop.js:567",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "reactorVessel",
-          "source": "js/workshop.js:582",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "ironwood",
-          "source": "js/workshop.js:597",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "concreteHuts",
-          "source": "js/workshop.js:612",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "unobtainiumHuts",
-          "source": "js/workshop.js:624",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "eludiumHuts",
-          "source": "js/workshop.js:636",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "地下储物洞",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "silos",
-          "source": "js/workshop.js:648",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "密封蜜罐",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "refrigeration",
-          "source": "js/workshop.js:666",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "compositeBow",
-          "source": "js/workshop.js:680",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "crossbow",
-          "source": "js/workshop.js:701",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "railgun",
-          "source": "js/workshop.js:716",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "bolas",
-          "source": "js/workshop.js:736",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "huntingArmor",
-          "source": "js/workshop.js:754",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "steelArmor",
-          "source": "js/workshop.js:771",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "alloyArmor",
-          "source": "js/workshop.js:783",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "nanosuits",
-          "source": "js/workshop.js:795",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "caravanserai",
-          "source": "js/workshop.js:807",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "freightfulExchange",
-          "source": "js/workshop.js:823",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "transportSuperposition",
-          "source": "js/workshop.js:845",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "冷藏",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "advancedRefinement",
-          "source": "js/workshop.js:867",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "prospecting",
-          "source": "js/workshop.js:881",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "精细补给",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "goldOre",
-          "source": "js/workshop.js:889",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "geodesy",
-          "source": "js/workshop.js:904",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "register",
-          "source": "js/workshop.js:919",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "strenghtenBuild",
-          "source": "js/workshop.js:929",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "miningDrill",
-          "source": "js/workshop.js:949",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "unobtainiumDrill",
-          "source": "js/workshop.js:963",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "coalFurnace",
-          "source": "js/workshop.js:979",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "金矿分离",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "deepMining",
-          "source": "js/workshop.js:995",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "深层采煤",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "pyrolysis",
-          "source": "js/workshop.js:1010",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "coalFurnace",
+          "name": "煤炭烧制",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "electrolyticSmelting",
-          "source": "js/workshop.js:1021",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "geodesy",
+          "name": "大地测量",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "oxidation",
-          "source": "js/workshop.js:1035",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "miningDrill",
+          "name": "矿用钻机",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "steelPlants",
-          "source": "js/workshop.js:1049",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "unobtainiumDrill",
+          "name": "月晶钻机",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "automatedPlants",
-          "source": "js/workshop.js:1064",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "register",
+          "name": "熊口名册",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "nuclearPlants",
-          "source": "js/workshop.js:1078",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "bolas",
+          "name": "投索",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "rotaryKiln",
-          "source": "js/workshop.js:1089",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "huntingArmor",
+          "name": "护林甲",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "fluidizedReactors",
-          "source": "js/workshop.js:1105",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "compositeBow",
+          "name": "复合弓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "nuclearSmelters",
-          "source": "js/workshop.js:1120",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "orbitalGeodesy",
-          "source": "js/workshop.js:1133",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "printingPress",
-          "source": "js/workshop.js:1149",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "offsetPress",
-          "source": "js/workshop.js:1162",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "photolithography",
-          "source": "js/workshop.js:1177",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "uplink",
-          "source": "js/workshop.js:1192",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "starlink",
-          "source": "js/workshop.js:1207",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "cryocomputing",
-          "source": "js/workshop.js:1222",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "machineLearning",
-          "source": "js/workshop.js:1235",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "factoryAutomation",
-          "source": "js/workshop.js:1251",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "advancedAutomation",
-          "source": "js/workshop.js:1262",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "pneumaticPress",
-          "source": "js/workshop.js:1273",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "combustionEngine",
-          "source": "js/workshop.js:1284",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "fuelInjectors",
-          "source": "js/workshop.js:1300",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "factoryLogistics",
-          "source": "js/workshop.js:1316",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "carbonSequestration",
-          "source": "js/workshop.js:1330",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "factoryOptimization",
-          "source": "js/workshop.js:1346",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "factoryRobotics",
-          "source": "js/workshop.js:1360",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "spaceEngineers",
-          "source": "js/workshop.js:1375",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "aiEngineers",
-          "source": "js/workshop.js:1390",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "chronoEngineers",
-          "source": "js/workshop.js:1407",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "spaceManufacturing",
-          "source": "js/workshop.js:1424",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "crossbow",
+          "name": "林地弩",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "celestialMechanics",
-          "source": "js/workshop.js:1439",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "天体运行",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "astrolabe",
-          "source": "js/workshop.js:1447",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星盘",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "titaniumMirrors",
-          "source": "js/workshop.js:1461",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "钛镜",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "unobtainiumReflectors",
-          "source": "js/workshop.js:1478",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "月晶反光镜",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "eludiumReflectors",
-          "source": "js/workshop.js:1494",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星辉反光镜",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "hydroPlantTurbines",
-          "source": "js/workshop.js:1509",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "cargoShips",
+          "name": "货船扩装",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "amBases",
-          "source": "js/workshop.js:1523",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "aiBases",
-          "source": "js/workshop.js:1537",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "amFission",
-          "source": "js/workshop.js:1548",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "amReactors",
-          "source": "js/workshop.js:1560",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "amReactorsMK2",
-          "source": "js/workshop.js:1577",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "voidReactors",
-          "source": "js/workshop.js:1594",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "relicStation",
-          "source": "js/workshop.js:1608",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "amDrive",
-          "source": "js/workshop.js:1622",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "pumpjack",
-          "source": "js/workshop.js:1635",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "petri",
-          "source": "js/workshop.js:1651",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "biofuel",
-          "source": "js/workshop.js:1665",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "unicornSelection",
-          "source": "js/workshop.js:1679",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "alicornStable",
-          "source": "js/workshop.js:1696",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "gmo",
-          "source": "js/workshop.js:1719",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "cadSystems",
-          "source": "js/workshop.js:1736",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "caravanserai",
+          "name": "商队客栈",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "seti",
-          "source": "js/workshop.js:1747",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "全天观星",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "logistics",
-          "source": "js/workshop.js:1761",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "ironwood",
+          "name": "铁骨木屋",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "augumentation",
-          "source": "js/workshop.js:1773",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "strenghtenBuild",
+          "name": "结构加固",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "internet",
-          "source": "js/workshop.js:1785",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "energyRifts",
+          "name": "储能裂隙",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "neuralNetworks",
-          "source": "js/workshop.js:1795",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "lhc",
+          "name": "大型粒子环",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "assistance",
-          "source": "js/workshop.js:1809",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "electrolyticSmelting",
+          "name": "电解冶炼",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "enrichedUranium",
-          "source": "js/workshop.js:1821",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "oxidation",
+          "name": "氧化焙烧",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "coldFusion",
-          "source": "js/workshop.js:1836",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "steelPlants",
+          "name": "炼钢车间",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "thoriumReactors",
-          "source": "js/workshop.js:1850",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "automatedPlants",
+          "name": "自动炼钢",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "enrichedThorium",
-          "source": "js/workshop.js:1868",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "nuclearPlants",
+          "name": "核能炼钢",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "hubbleTelescope",
-          "source": "js/workshop.js:1884",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "rotaryKiln",
+          "name": "旋转窑",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "satnav",
-          "source": "js/workshop.js:1900",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "fluidizedReactors",
+          "name": "流化反应器",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "satelliteRadio",
-          "source": "js/workshop.js:1911",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "nuclearSmelters",
+          "name": "核能熔炼",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "astrophysicists",
-          "source": "js/workshop.js:1923",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "orbitalGeodesy",
+          "name": "轨道测地",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "mWReactor",
-          "source": "js/workshop.js:1936",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "printingPress",
+          "name": "林间印刷",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "eludiumCracker",
-          "source": "js/workshop.js:1948",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "offsetPress",
+          "name": "胶版印刷",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "thoriumEngine",
-          "source": "js/workshop.js:1963",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "photolithography",
+          "name": "光刻印刷",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "spiceNavigation",
-          "source": "js/workshop.js:1978",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "uplink",
+          "name": "知识联网",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
-          "id": "longRangeSpaceships",
-          "source": "js/workshop.js:1991",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "starlink",
+          "name": "星网联结",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "pumpjack",
+          "name": "抽油机械",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "oilRefinery",
-          "source": "js/workshop.js:2007",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "石油精制",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "petri",
+          "name": "培养皿",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "biofuel",
+          "name": "花木燃料",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "internet",
+          "name": "山林互联",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "neuralNetworks",
+          "name": "神经网络",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "assistance",
+          "name": "劳作助手",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "enrichedUranium",
+          "name": "浓缩铀",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "coldFusion",
+          "name": "冷核聚变",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "thoriumReactors",
+          "name": "钍反应堆",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "astrophysicists",
+          "name": "星空学者",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "mWReactor",
+          "name": "微型月站反应堆",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "unicornSelection",
+          "name": "灵鹿选育",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "stasisChambers",
+          "name": "静滞储仓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "voidEnergy",
+          "name": "虚空储能",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "darkEnergy",
+          "name": "暗能储仓",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "chronoforge",
+          "name": "时晶锻艺",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "tachyonModerator",
+          "name": "时流调节器",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "tachyonAccelerators",
+          "name": "超光加速器",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "fluxCondensator",
+          "name": "时流凝聚",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "photovoltaic",
+          "name": "光伏薄板",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "thinFilm",
+          "name": "柔性薄膜",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "qdot",
+          "name": "量子光点",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "solarSatellites",
+          "name": "光能蜂舟",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "barges",
+          "name": "载煤驳船",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "reactorVessel",
+          "name": "动力船舱",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "concreteHuts",
+          "name": "石骨熊舍",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "unobtainiumHuts",
+          "name": "月晶熊舍",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "eludiumHuts",
+          "name": "星辉熊舍",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "railgun",
+          "name": "电磁猎弩",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "steelArmor",
+          "name": "钢制护林甲",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "alloyArmor",
+          "name": "合金护林甲",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "nanosuits",
+          "name": "纳米护林衣",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "freightfulExchange",
+          "name": "星港货运",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "transportSuperposition",
+          "name": "叠态运输",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "prospecting",
+          "name": "陨石勘测",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "pyrolysis",
+          "name": "木材热解",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "cryocomputing",
+          "name": "低温计算",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "machineLearning",
+          "name": "林智学习",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "factoryAutomation",
+          "name": "蒸汽自动化",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "advancedAutomation",
+          "name": "双季自动化",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "pneumaticPress",
+          "name": "气动压机",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "combustionEngine",
+          "name": "内燃机",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "fuelInjectors",
+          "name": "燃料喷射",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "factoryLogistics",
+          "name": "厂区调度",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "carbonSequestration",
+          "name": "碳素封存",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "factoryOptimization",
+          "name": "工艺优化",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "factoryRobotics",
+          "name": "机械工匠",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "spaceEngineers",
+          "name": "轨道工匠",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "aiEngineers",
+          "name": "森智工匠",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "chronoEngineers",
+          "name": "时序工匠",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "spaceManufacturing",
+          "name": "星际制造",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "hydroPlantTurbines",
+          "name": "水轮改良",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "amBases",
+          "name": "反物质基地",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "aiBases",
+          "name": "森智基地",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "amFission",
+          "name": "反物质分解",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "amReactors",
+          "name": "星能反应炉",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "amReactorsMK2",
+          "name": "星能反应炉二型",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "voidReactors",
+          "name": "虚空反应炉",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "relicStation",
+          "name": "古物信标站",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "amDrive",
+          "name": "星质推进器",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "alicornStable",
+          "name": "云鹿居",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "gmo",
+          "name": "蜜源改良",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "cadSystems",
+          "name": "辅助制图",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "logistics",
+          "name": "协同劳作",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "augumentation",
+          "name": "感知增强",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "enrichedThorium",
+          "name": "浓缩钍",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "hubbleTelescope",
+          "name": "深空望远镜",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "satnav",
+          "name": "卫星导航",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "satelliteRadio",
+          "name": "星空广播",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "eludiumCracker",
+          "name": "星辉裂岩机",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "thoriumEngine",
+          "name": "钍能引擎",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
+        },
+        {
+          "id": "spiceNavigation",
+          "name": "星香导航",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "目录保留，当前未启用"
+        },
+        {
+          "id": "longRangeSpaceships",
+          "name": "远航星舟",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "目录保留，当前未启用"
         },
         {
           "id": "oilDistillation",
-          "source": "js/workshop.js:2022",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "分馏工艺",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "factoryProcessing",
-          "source": "js/workshop.js:2036",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "工厂精炼",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "voidAspiration",
-          "source": "js/workshop.js:2050",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "虚空收集",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "distorsion",
-          "source": "js/workshop.js:2064",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时空偏折",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "turnSmoothly",
-          "source": "js/workshop.js:2080",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时流顺行",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         },
         {
           "id": "invisibleBlackHand",
-          "source": "js/workshop.js:2097",
-          "status": "CATALOGUED; implementation unverified"
-        }
-      ]
-    },
-    {
-      "category": "recipes",
-      "features": [
-        {
-          "id": "wood",
-          "source": "js/workshop.js:2116",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "beam",
-          "source": "js/workshop.js:2126",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "slab",
-          "source": "js/workshop.js:2135",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "plate",
-          "source": "js/workshop.js:2144",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "steel",
-          "source": "js/workshop.js:2153",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "concrate",
-          "source": "js/workshop.js:2163",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "gear",
-          "source": "js/workshop.js:2173",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "alloy",
-          "source": "js/workshop.js:2182",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "eludium",
-          "source": "js/workshop.js:2192",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "scaffold",
-          "source": "js/workshop.js:2202",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "ship",
-          "source": "js/workshop.js:2211",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "tanker",
-          "source": "js/workshop.js:2225",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "kerosene",
-          "source": "js/workshop.js:2239",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "plastic",
-          "source": "js/workshop.js:2248",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "microchip",
-          "source": "js/workshop.js:2257",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "parchment",
-          "source": "js/workshop.js:2268",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "manuscript",
-          "source": "js/workshop.js:2277",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "compedium",
-          "source": "js/workshop.js:2287",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "blueprint",
-          "source": "js/workshop.js:2297",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "thorium",
-          "source": "js/workshop.js:2307",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "megalith",
-          "source": "js/workshop.js:2316",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "bloodstone",
-          "source": "js/workshop.js:2327",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "tMythril",
-          "source": "js/workshop.js:2337",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "暗市调律",
+          "source": "src/engine/workshop-catalog.js",
+          "status": "按游戏进度和操作条件开放"
         }
       ]
     },
     {
       "category": "zebraWorkshop",
+      "name": "条纹工艺",
+      "count": 8,
+      "sources": [
+        "src/engine/tribal-workshop.js"
+      ],
       "features": [
         {
           "id": "darkRevolution",
-          "source": "js/workshop.js:2353",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹传承",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "darkBrew",
-          "source": "js/workshop.js:2369",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "夜蜜酿法",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraTrappers",
-          "source": "js/workshop.js:2380",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹猎营",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "reforgedOutposts",
-          "source": "js/workshop.js:2398",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "前哨重铸",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "whispers",
-          "source": "js/workshop.js:2416",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "白枝密语",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "minerologyDepartment",
-          "source": "js/workshop.js:2430",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "陨石研究室",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "bloodstoneInstitute",
-          "source": "js/workshop.js:2448",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "赤晶研究所",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "rangefinders",
-          "source": "js/workshop.js:2466",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远距测量仪",
+          "source": "src/engine/tribal-workshop.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
-      "category": "mythicFaith",
+      "category": "recipes",
+      "name": "制作配方",
+      "count": 23,
+      "sources": [
+        "src/engine/core-catalog.js"
+      ],
       "features": [
         {
-          "id": "unicornTomb",
-          "source": "js/religion.js:635",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "wood",
+          "name": "林地采木",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "ivoryTower",
-          "source": "js/religion.js:676",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "beam",
+          "name": "木梁",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "ivoryCitadel",
-          "source": "js/religion.js:702",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "slab",
+          "name": "石板",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "skyPalace",
-          "source": "js/religion.js:731",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "plate",
+          "name": "铁板",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "unicornUtopia",
-          "source": "js/religion.js:779",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "steel",
+          "name": "钢",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "sunspire",
-          "source": "js/religion.js:831",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "concrete",
+          "name": "混凝土",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "marker",
-          "source": "js/religion.js:878",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "gear",
+          "name": "齿轮",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "unicornGraveyard",
-          "source": "js/religion.js:909",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "alloy",
+          "name": "合金",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "unicornNecropolis",
-          "source": "js/religion.js:929",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "eludium",
+          "name": "星合金",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "blackPyramid",
-          "source": "js/religion.js:944",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "scaffold",
+          "name": "脚手架",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "ship",
+          "name": "船",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "tanker",
+          "name": "油轮",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "kerosene",
+          "name": "煤油",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "plastic",
+          "name": "塑料",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "microchip",
+          "name": "微芯片",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "parchment",
+          "name": "纸页",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "manuscript",
+          "name": "手稿",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "compendium",
+          "name": "典籍",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "blueprint",
+          "name": "蓝图",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "thorium",
+          "name": "钍",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "megalith",
+          "name": "巨石",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "bloodstone",
+          "name": "血石",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "tMythril",
+          "name": "秘银",
+          "source": "src/engine/core-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "faith",
+      "name": "信仰升级",
+      "count": 11,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "solarchant",
-          "source": "js/religion.js:1046",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "晨光祈歌",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "scholasticism",
-          "source": "js/religion.js:1062",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "神殿研习",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "goldenSpire",
-          "source": "js/religion.js:1082",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "金蜜尖塔",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sunAltar",
-          "source": "js/religion.js:1103",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "朝日坛",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "stainedGlass",
-          "source": "js/religion.js:1123",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "彩光窗",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "solarRevolution",
-          "source": "js/religion.js:1143",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "日耀启明",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "basilica",
-          "source": "js/religion.js:1159",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "群山礼堂",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "templars",
-          "source": "js/religion.js:1179",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "守林誓约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "apocripha",
-          "source": "js/religion.js:1199",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "灵悟手记",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "transcendence",
-          "source": "js/religion.js:1212",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "升华之路",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "frescoes",
-          "source": "js/religion.js:1228",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "山灵壁画",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "transcendence",
+      "name": "超越升级",
+      "count": 11,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "blackObelisk",
-          "source": "js/religion.js:1258",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "夜晶碑",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blackNexus",
-          "source": "js/religion.js:1275",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "暗光汇点",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blackCore",
-          "source": "js/religion.js:1292",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "幽晶核",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "singularity",
-          "source": "js/religion.js:1306",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "群星奇点",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blackLibrary",
-          "source": "js/religion.js:1320",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "夜林藏书馆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blackRadiance",
-          "source": "js/religion.js:1334",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "静夜光辉",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blazar",
-          "source": "js/religion.js:1348",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远星脉冲",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "darkNova",
-          "source": "js/religion.js:1370",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "暗星新生",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "mausoleum",
-          "source": "js/religion.js:1387",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "长眠星庭",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "holyGenocide",
-          "source": "js/religion.js:1430",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "族群升格",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "darkParacosm",
-          "source": "js/religion.js:1460",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "镜外森林",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        }
+      ]
+    },
+    {
+      "category": "mythicFaith",
+      "name": "灵鹿祭仪设施",
+      "count": 10,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
+      "features": [
+        {
+          "id": "unicornTomb",
+          "name": "灵鹿石冢",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "ivoryTower",
+          "name": "白枝高塔",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "ivoryCitadel",
+          "name": "白枝城垣",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "skyPalace",
+          "name": "云巅灵宫",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "unicornUtopia",
+          "name": "灵鹿乐土",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "sunspire",
+          "name": "朝阳灵柱",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "marker",
+          "name": "幽林界碑",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "unicornGraveyard",
+          "name": "灵鹿静园",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "unicornNecropolis",
+          "name": "静夜鹿城",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "blackPyramid",
+          "name": "夜蜜金字塔",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "pacts",
+      "name": "约定",
+      "count": 6,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "pactOfCleansing",
-          "source": "js/religion.js:2577",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "净林之约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "pactOfDestruction",
-          "source": "js/religion.js:2601",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "重塑之约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "pactOfExtermination",
-          "source": "js/religion.js:2625",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "静默之约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "pactOfPurity",
-          "source": "js/religion.js:2644",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "澄明之约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "pactOfArcane",
-          "source": "js/religion.js:2670",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "秘艺之约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "pactOfChronicler",
-          "source": "js/religion.js:2692",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星史之约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        }
+      ]
+    },
+    {
+      "category": "pactPolicies",
+      "name": "约定策略",
+      "count": 3,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
+      "features": [
+        {
+          "id": "siphoning",
+          "name": "引流偿约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "payDebt",
-          "source": "js/religion.js:2718",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "feedingFrenzy",
+          "name": "盛宴馈赠",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
+        {
+          "id": "upfrontPayment",
+          "name": "预付供养",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        }
+      ]
+    },
+    {
+      "category": "pactStates",
+      "name": "约定状态",
+      "count": 1,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
+      "features": [
         {
           "id": "fractured",
-          "source": "js/religion.js:2752",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "约定破裂",
+          "source": "src/engine/progression-catalog.js",
+          "status": "本轮供养债务曾达到 50，约定已破裂；重建后恢复。"
         }
       ]
     },
     {
       "category": "missions",
+      "name": "太空任务",
+      "count": 13,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "orbitalLaunch",
-          "source": "js/space.js:23",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "初探星空",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "moonMission",
-          "source": "js/space.js:37",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "月林之旅",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "duneMission",
-          "source": "js/space.js:51",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远赴沙海",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "piscineMission",
-          "source": "js/space.js:66",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "探访潮星",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "heliosMission",
-          "source": "js/space.js:80",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "近日前哨",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "terminusMission",
-          "source": "js/space.js:94",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "冰境航行",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "kairoMission",
-          "source": "js/space.js:108",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "访寻微星",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "rorschachMission",
-          "source": "js/space.js:122",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "深空回声",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "yarnMission",
-          "source": "js/space.js:135",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "翠星远征",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "umbraMission",
-          "source": "js/space.js:149",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "暗隙探航",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "charonMission",
-          "source": "js/space.js:163",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "遥望冥岸",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "centaurusSystemMission",
-          "source": "js/space.js:176",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "双星归途",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "furthestRingMission",
-          "source": "js/space.js:192",
-          "status": "CATALOGUED; implementation unverified"
-        }
-      ]
-    },
-    {
-      "category": "planets",
-      "features": [
-        {
-          "id": "cath",
-          "source": "js/space.js:210",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "moon",
-          "source": "js/space.js:331",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "dune",
-          "source": "js/space.js:427",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "piscine",
-          "source": "js/space.js:502",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "helios",
-          "source": "js/space.js:556",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "terminus",
-          "source": "js/space.js:644",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "kairo",
-          "source": "js/space.js:690",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "yarn",
-          "source": "js/space.js:734",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "umbra",
-          "source": "js/space.js:799",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "charon",
-          "source": "js/space.js:853",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "centaurusSystem",
-          "source": "js/space.js:913",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "furthestRing",
-          "source": "js/space.js:956",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "极远星环",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "spaceBuildings",
+      "name": "太空设施",
+      "count": 22,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "spaceElevator",
-          "parent": "cath",
-          "source": "js/space.js:214",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "登星藤梯",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sattelite",
-          "parent": "cath",
-          "source": "js/space.js:238",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "巡天蜂舟",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spaceStation",
-          "parent": "cath",
-          "source": "js/space.js:294",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "轨道熊屋",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "moonOutpost",
-          "parent": "moon",
-          "source": "js/space.js:335",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "月林采晶站",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "moonBase",
-          "parent": "moon",
-          "source": "js/space.js:376",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "月林基地",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "planetCracker",
-          "parent": "dune",
-          "source": "js/space.js:431",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星岩采集器",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "hydrofracturer",
-          "parent": "dune",
-          "source": "js/space.js:453",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "深砂油泵",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spiceRefinery",
-          "parent": "dune",
-          "source": "js/space.js:477",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星香提炼站",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "researchVessel",
-          "parent": "piscine",
-          "source": "js/space.js:506",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "潮星研究船",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "orbitalArray",
-          "parent": "piscine",
-          "source": "js/space.js:532",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "环星阵列",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sunlifter",
-          "parent": "helios",
-          "source": "js/space.js:560",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "采日环",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "containmentChamber",
-          "parent": "helios",
-          "source": "js/space.js:581",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星质储舱",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "heatsink",
-          "parent": "helios",
-          "source": "js/space.js:603",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "散热翼",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sunforge",
-          "parent": "helios",
-          "source": "js/space.js:622",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "日焰锻台",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "cryostation",
-          "parent": "terminus",
-          "source": "js/space.js:648",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "冰境仓站",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spaceBeacon",
-          "parent": "kairo",
-          "source": "js/space.js:695",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远星灯塔",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "terraformingStation",
-          "parent": "yarn",
-          "source": "js/space.js:739",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "翠星造林站",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "hydroponics",
-          "parent": "yarn",
-          "source": "js/space.js:765",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星际蜜园",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "hrHarvester",
-          "parent": "umbra",
-          "source": "js/space.js:804",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "navigationRelay",
-          "parent": "umbra",
-          "source": "js/space.js:827",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "spaceShuttle",
-          "parent": "umbra",
-          "source": "js/space.js:839",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "暗隙能量帆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "entangler",
-          "parent": "charon",
-          "source": "js/space.js:858",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "量子织机",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "tectonic",
-          "parent": "centaurusSystem",
-          "source": "js/space.js:918",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "地脉发电站",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "moltenCore",
-          "parent": "centaurusSystem",
-          "source": "js/space.js:937",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "熔核井",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
-      "category": "chronoforge",
+      "category": "time",
+      "name": "时光设施",
+      "count": 13,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "temporalBattery",
-          "source": "js/time.js:315",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时流蓄池",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blastFurnace",
-          "source": "js/time.js:327",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时焰熔炉",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "timeBoiler",
-          "source": "js/time.js:394",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时焰锅炉",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "controlledDelay",
-          "source": "js/time.js:424",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "节律闸门",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "temporalAccelerator",
-          "source": "js/time.js:445",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时轮增幅器",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "temporalImpedance",
-          "source": "js/time.js:468",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远时缓冲器",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ressourceRetrieval",
-          "source": "js/time.js:484",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "旧年采集器",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "temporalPress",
-          "source": "js/time.js:497",
-          "status": "CATALOGUED; implementation unverified"
-        }
-      ]
-    },
-    {
-      "category": "voidspace",
-      "features": [
-        {
-          "id": "cryochambers",
-          "source": "js/time.js:531",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时页压机",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "usedCryochambers",
-          "source": "js/time.js:555",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "cryochambers",
+          "name": "冬眠舱",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "voidHoover",
-          "source": "js/time.js:578",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "空境采集器",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "voidRift",
-          "source": "js/time.js:592",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "空境裂隙",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "chronocontrol",
-          "source": "js/time.js:608",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时序锚点",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "voidResonator",
-          "source": "js/time.js:633",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "空境共鸣器",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "challenges",
+      "name": "挑战",
+      "count": 10,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "ironWill",
-          "source": "js/challenges.js:43",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "独行森林",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "winterIsComing",
-          "source": "js/challenges.js:49",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "漫长寒冬",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "anarchy",
-          "source": "js/challenges.js:86",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "自在熊群",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "energy",
-          "source": "js/challenges.js:115",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "紧缺能源",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "atheism",
-          "source": "js/challenges.js:149",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "无星长夜",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "1000Years",
-          "source": "js/challenges.js:188",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "千年之旅",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blackSky",
-          "source": "js/challenges.js:229",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "无光天幕",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "pacifism",
-          "source": "js/challenges.js:260",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "和平山林",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "unicornTears",
-          "source": "js/challenges.js:332",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "灵露试炼",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "postApocalypse",
-          "source": "js/challenges.js:457",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "余灰复苏",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "prestigePerks",
+      "name": "传承能力",
+      "count": 40,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
       "features": [
         {
           "id": "engeneering",
-          "source": "js/prestige.js:4",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "营建记忆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "codexVox",
-          "source": "js/prestige.js:18",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "口述蜜典",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "codexLogos",
-          "source": "js/prestige.js:32",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "思辨蜜典",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "codexAgrum",
-          "source": "js/prestige.js:48",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星野蜜典",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "megalomania",
-          "source": "js/prestige.js:61",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远古回声",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "blackCodex",
-          "source": "js/prestige.js:72",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "夜色蜜典",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "codexLeviathanianus",
-          "source": "js/prestige.js:82",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "巨鲸蜜典",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "goldenRatio",
-          "source": "js/prestige.js:91",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "金蜜比例",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "divineProportion",
-          "source": "js/prestige.js:105",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星愿比例",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "vitruvianFeline",
-          "source": "js/prestige.js:119",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "熊掌比例",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "renaissance",
-          "source": "js/prestige.js:132",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林地新生",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "diplomacy",
-          "source": "js/prestige.js:143",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "林间善意",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraDiplomacy",
-          "source": "js/prestige.js:163",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "草原约定",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebraCovenant",
-          "source": "js/prestige.js:173",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "草原盟誓",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "navigationDiplomacy",
-          "source": "js/prestige.js:183",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "海路盟誓",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ambassadors",
-          "source": "js/prestige.js:190",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远行使者",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "treaties",
-          "source": "js/prestige.js:201",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "营地条约",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "chronomancy",
-          "source": "js/prestige.js:220",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "时轮记忆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "astromancy",
-          "source": "js/prestige.js:231",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星迹记忆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "unicornmancy",
-          "source": "js/prestige.js:240",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "灵鹿记忆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "alicornmancy",
-          "source": "js/prestige.js:251",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星翼记忆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "anachronomancy",
-          "source": "js/prestige.js:262",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "逆时记忆",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "carnivals",
-          "source": "js/prestige.js:269",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "willenfluff",
-          "source": "js/prestige.js:280",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "pawgan",
-          "source": "js/prestige.js:293",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "蜜林嘉年华",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "numerology",
-          "source": "js/prestige.js:303",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星序规律",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "numeromancy",
-          "source": "js/prestige.js:313",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星序共鸣",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "malkuth",
-          "source": "js/prestige.js:325",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "willenfluff",
+          "name": "绒毛呼唤",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "yesod",
-          "source": "js/prestige.js:338",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "hod",
-          "source": "js/prestige.js:351",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "netzach",
-          "source": "js/prestige.js:364",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "tiferet",
-          "source": "js/prestige.js:378",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "gevurah",
-          "source": "js/prestige.js:392",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "chesed",
-          "source": "js/prestige.js:406",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "binah",
-          "source": "js/prestige.js:420",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "chokhmah",
-          "source": "js/prestige.js:434",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "keter",
-          "source": "js/prestige.js:448",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "pawgan",
+          "name": "熊掌召集",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "voidOrder",
-          "source": "js/prestige.js:461",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "空境低语",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "adjustmentBureau",
-          "source": "js/prestige.js:468",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "远行试炼",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ascoh",
-          "source": "js/prestige.js:480",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "储备明鉴",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "malkuth",
+          "name": "传承环 1",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "yesod",
+          "name": "传承环 2",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "hod",
+          "name": "传承环 3",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "netzach",
+          "name": "传承环 4",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "tiferet",
+          "name": "传承环 5",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "gevurah",
+          "name": "传承环 6",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "chesed",
+          "name": "传承环 7",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "binah",
+          "name": "传承环 8",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "chokhmah",
+          "name": "传承环 9",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "keter",
+          "name": "传承环 10",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "achievements",
+      "name": "成就",
+      "count": 31,
+      "sources": [
+        "src/engine/achievements.js"
+      ],
       "features": [
         {
-          "id": "theElderLegacy",
-          "source": "js/achievements.js:6",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "forestGuest",
+          "name": "花径上的新邻居",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "unicornConspiracy",
-          "source": "js/achievements.js:16",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "dewKeepsake",
+          "name": "捧住一滴星露",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "uniception",
-          "source": "js/achievements.js:23",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "wingedGuest",
+          "name": "树冠以上的来客",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "sinsOfEmpire",
-          "source": "js/achievements.js:30",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "nightGuest",
+          "name": "月影中的脚步",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "anachronox",
-          "source": "js/achievements.js:37",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "crystalMemory",
+          "name": "把时光装进蜜罐",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "deadSpace",
-          "source": "js/achievements.js:44",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "hundredStones",
+          "name": "百颗沉静的心愿",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "sadnessAbyss",
-          "source": "js/achievements.js:51",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "stripedCompany",
+          "name": "并肩巡过山林",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "ironWill",
-          "source": "js/achievements.js:58",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "loneQuarry",
+          "name": "独自敲开的山门",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "uberkatzhen",
-          "source": "js/achievements.js:65",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "loneStore",
+          "name": "独自码好的木箱",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "hundredYearsSolitude",
-          "source": "js/achievements.js:72",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "loneMeadow",
+          "name": "四十五片花圃",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "soilUptuned",
-          "source": "js/achievements.js:79",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "loneSteam",
+          "name": "林中第一声汽笛",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "atlasUnmeowed",
-          "source": "js/achievements.js:86",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "lonePower",
+          "name": "为独行点亮电灯",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "meowMeowRevolution",
-          "source": "js/achievements.js:93",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "loneFactory",
+          "name": "一熊的精工蓝图",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "spaceOddity",
-          "source": "js/achievements.js:100",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "loneMoon",
+          "name": "独行者的月光信",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "jupiterAscending",
-          "source": "js/achievements.js:111",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "earlyOrbit",
+          "name": "第二个春天前的远行",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "veryLargeArray",
-          "source": "js/achievements.js:122",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "watchfulForest",
+          "name": "百座望星台",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "shadowOfTheColossus",
-          "source": "js/achievements.js:129",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "oneBedTemple",
+          "name": "一张床与高高石阶",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "sunGod",
-          "source": "js/achievements.js:136",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "brightWishes",
+          "name": "山林捧起的曙光",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "heartOfDarkness",
-          "source": "js/achievements.js:143",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "rememberedKindness",
+          "name": "带回一缕温柔",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "winterIsComing",
-          "source": "js/achievements.js:150",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "safeHaven",
+          "name": "每只熊都在家",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "youMonster",
-          "source": "js/achievements.js:158",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "joyfulGrove",
+          "name": "蜜香满林",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "superUnethicalClimax",
-          "source": "js/achievements.js:170",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "outermostTrail",
+          "name": "森林尽头还有星星",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "systemShock",
-          "source": "js/achievements.js:178",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "fortyMillennia",
+          "name": "四万圈年轮",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "lotusMachine",
-          "source": "js/achievements.js:187",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "longCelebration",
+          "name": "百年花灯长明",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "serenity",
-          "source": "js/achievements.js:194",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "manyJourneys",
+          "name": "五条山路的归来者",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "utopiaProject",
-          "source": "js/achievements.js:206",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "clearTomorrow",
+          "name": "先为明天种树",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "deathStranding",
-          "source": "js/achievements.js:217",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "tenEmptyBeds",
+          "name": "记住十个空床位",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "cathammer",
-          "source": "js/achievements.js:224",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "hundredEmptyBeds",
+          "name": "山林的沉重记录",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "eternalBacchanalia",
-          "source": "js/achievements.js:235",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "racingPaws",
+          "name": "停不下来的采蜜爪",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "challenger",
-          "source": "js/achievements.js:247",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "stubbornCore",
+          "name": "不肯离开的森智",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "betterSafeThanSorry",
-          "source": "js/achievements.js:258",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "winterArchive",
+          "name": "旧冬日的蜜封",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "badges",
+      "name": "徽记",
+      "count": 21,
+      "sources": [
+        "src/engine/achievements.js"
+      ],
       "features": [
         {
-          "id": "lotus",
-          "source": "js/achievements.js:276",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "woodSpecialist",
+          "name": "木屑围裙",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "ivoryTower",
-          "source": "js/achievements.js:285",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "easygoingLeader",
+          "name": "慢悠悠的领队",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "useless",
-          "source": "js/achievements.js:291",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "colorfulLeader",
+          "name": "花色披肩",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "beta",
-          "source": "js/achievements.js:301",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "fiftyReturns",
+          "name": "归林五十次",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "silentHill",
-          "source": "js/achievements.js:312",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "loneNightReturn",
+          "name": "独行夜归",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "evergreen",
-          "source": "js/achievements.js:320",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "betweenDays",
+          "name": "日历夹缝里的新家",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "deadSpace",
-          "source": "js/achievements.js:325",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "gentleExchange",
+          "name": "不带猎队的商旅",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "reginaNoctis",
-          "source": "js/achievements.js:334",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "unhousedThousand",
+          "name": "千熊露天营",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "ghostInTheMachine",
-          "source": "js/achievements.js:342",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "moonlessHerd",
+          "name": "五百盏地上花灯",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "abOwo",
-          "source": "js/achievements.js:347",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "duneDetour",
+          "name": "绕过月亮的航线",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "cleanPaws",
-          "source": "js/achievements.js:352",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "clockBeforeRocket",
+          "name": "先走进时光",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "sequenceBreak",
-          "source": "js/achievements.js:357",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "untieTime",
+          "name": "解开打结的年轮",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "fantasticFurColor",
-          "source": "js/achievements.js:365",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "overflowingReturn",
+          "name": "比旧蜜罐更满",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "whatYearIsIt",
-          "source": "js/achievements.js:374",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "fiveBorrowedYears",
+          "name": "借走的五年",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "tardis",
-          "source": "js/achievements.js:379",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "elderBanquet",
+          "name": "远古商队的盛宴",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "wheredThisComeFrom",
-          "source": "js/achievements.js:384",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "farawayHomes",
+          "name": "翠星上的大熊村",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "lostDates",
-          "source": "js/achievements.js:389",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "fortyTwoWings",
+          "name": "四十二对星翼",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "buffet",
-          "source": "js/achievements.js:400",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "previewTrail",
+          "name": "试走的新林径",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "newHome",
-          "source": "js/achievements.js:408",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "quietNotice",
+          "name": "没有新告示的一天",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "betterSafeThanSorry",
-          "source": "js/achievements.js:419",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "caughtSpark",
+          "name": "留住一颗故障火星",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "soLongAndThanksForAllTheHay",
-          "source": "js/achievements.js:425",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "oldClearSky",
+          "name": "旧册中的青林印",
+          "source": "src/engine/achievements.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "jobs",
+      "name": "职业",
+      "count": 9,
+      "sources": [
+        "src/engine/catalog.js",
+        "src/engine/diplomacy.js",
+        "src/engine/engineer-automation.js"
+      ],
       "features": [
         {
           "id": "woodcutter",
-          "source": "js/village.js:14",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "伐木熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "farmer",
-          "source": "js/village.js:26",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "养蜂熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "scholar",
-          "source": "js/village.js:36",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "学者熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "hunter",
-          "source": "js/village.js:55",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "巡林熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "miner",
-          "source": "js/village.js:66",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "矿工熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "priest",
-          "source": "js/village.js:77",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "祈愿熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "geologist",
-          "source": "js/village.js:102",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "engineer",
-          "source": "js/village.js:154",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "地质熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "ambassador",
-          "source": "js/village.js:162",
-          "status": "CATALOGUED; implementation unverified"
-        }
-      ]
-    },
-    {
-      "category": "biomes",
-      "features": [
-        {
-          "id": "village",
-          "source": "js/village.js:1896",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "使节熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
-          "id": "plains",
-          "source": "js/village.js:1914",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "hills",
-          "source": "js/village.js:1944",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "forest",
-          "source": "js/village.js:1962",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "boneForest",
-          "source": "js/village.js:1990",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "rainForest",
-          "source": "js/village.js:2003",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "mountain",
-          "source": "js/village.js:2014",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "volcano",
-          "source": "js/village.js:2039",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "desert",
-          "source": "js/village.js:2054",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "bloodDesert",
-          "source": "js/village.js:2071",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "swamp",
-          "source": "js/village.js:2084",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "cath",
-          "source": "js/village.js:2099",
-          "status": "CATALOGUED; implementation unverified"
-        },
-        {
-          "id": "redmoon",
-          "source": "js/village.js:2108",
-          "status": "CATALOGUED; implementation unverified"
+          "id": "engineer",
+          "name": "工程熊",
+          "source": "src/engine/catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     },
     {
       "category": "tradingPartners",
+      "name": "商团",
+      "count": 8,
+      "sources": [
+        "src/engine/trade-catalog.js"
+      ],
       "features": [
         {
           "id": "lizards",
-          "source": "js/diplomacy.js:18",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "绿叶商团",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "sharks",
-          "source": "js/diplomacy.js:63",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "潮湾商团",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "griffins",
-          "source": "js/diplomacy.js:114",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "云翼商团",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "nagas",
-          "source": "js/diplomacy.js:159",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "盘藤商团",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "zebras",
-          "source": "js/diplomacy.js:212",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "条纹商团",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "spiders",
-          "source": "js/diplomacy.js:274",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "丝谷商团",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "dragons",
-          "source": "js/diplomacy.js:317",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "焰岭商团",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         },
         {
           "id": "leviathans",
-          "source": "js/diplomacy.js:337",
-          "status": "CATALOGUED; implementation unverified"
+          "name": "星海来客",
+          "source": "src/engine/trade-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        }
+      ]
+    },
+    {
+      "category": "cycles",
+      "name": "星象周期",
+      "count": 10,
+      "sources": [
+        "src/engine/progression-catalog.js"
+      ],
+      "features": [
+        {
+          "id": "charon",
+          "name": "冥岸星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "umbra",
+          "name": "暗隙星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "yarn",
+          "name": "翠星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "helios",
+          "name": "朝日星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "cath",
+          "name": "故林星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "redmoon",
+          "name": "月林星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "dune",
+          "name": "沙海星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "piscine",
+          "name": "潮星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "terminus",
+          "name": "冰境星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
+        },
+        {
+          "id": "kairo",
+          "name": "微光星轮",
+          "source": "src/engine/progression-catalog.js",
+          "status": "已编目；动态效果与交互覆盖须单独验证"
         }
       ]
     }

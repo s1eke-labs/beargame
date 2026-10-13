@@ -1,31 +1,31 @@
-# Progression implementation checkpoint
+# 发展系统实现检查记录
 
-2026-10-08 18:24 UTC. Independently authored runtime; factual reference is fixed Kittens Game commit 781e379f. This is an implementation/testing checkpoint, not a complete-parity assertion.
+记录时间：2026-10-09 02:24（新加坡时间）。本篇为阶段性实现与测试记录，不代表全部机制已完整验证。后续时间跳跃实现进展见 `19-redshift-implementation.md`。
 
-## Stable implementation and interfaces
+## 已实现模块与接口
 
-- Runtime ownership completed: `src/engine/progression.js`, `progression-catalog.js`; 23 passing focused tests in `tests/progression.test.mjs`.
-- Definitions cover 13 missions and 22 functional space buildings, 11 worship and 11 transcendence upgrades, 10 mythic structures, six ordinary pacts/three exclusive supply policies/fracture state, 40 metaphysics, 13 time facilities and 10 challenge identities. Zebra/ambassador integrations live in their owners' modules. Experimental/default-off space placeholders are excluded from the functional count.
-- `isChallenge(state,id)` accepts independent `ironWill` and concurrent `activeChallenges`, retaining legacy scalar support. `challengeSelect(id)` toggles pending choices. `challengeStart('confirm')` applies them together through a destructive reset. Legacy `challenge(id)` starts one challenge. `reclaimReserves` is blocked until ordinary challenges and Iron Will end.
-- Challenge reset reserves use maximum deposits per resource, append protected bears, clear jobs and engineer specializations, and preserve ordinary persistent resources directly. PA carries bears directly except explicit IW. Reclaim combines capped stock by maximum and uncapped stock by addition. Reset carries zebra karma through the separately authored factual formula.
-- `onYearProgression(ctx,oldYear,newYear)` is called after calendar normalization and after daily processing; it awards annual antimatter/flux, millennium paragon/karma, elder visits, and the pacifist alicornmancy reward. `onSeasonProgression` sets paradox day before daily processing.
-- Actions added: `feedElders`, `buyBlackcoin`, `sellBlackcoin`, `crashBlackcoin`, `useFurnaceHeat`, `toggleTemporalPress`, and `shatter('press')`. All-stock market conversion validates finite/saveable totals atomically. Market price survives reset; elder energy does not.
-- VM additions: `activeChallenges`, `ironWill`, `pendingChallenges`, `reserves`, `elders`, `blackcoinPrice`; challenge cards include `active`/`pending`. Reserve details require ascoh. New action cards include accurate costs, availability, reasons and destructive-confirmation text.
-- Travel cards expose `routeUnits`, `travelDays`, `travelSeconds`, `reached`; simulation subtracts routeSpeed/10 per tick, and marks reached on the following tick. Use `travelDays` for UI ETA.
+- 主要运行时文件为 `src/engine/progression.js`、`src/engine/progression-catalog.js`；记录时 `tests/progression.test.mjs` 的 23 项专项测试通过。
+- 定义覆盖 13 项任务、22 个可用太空建筑、11 项颂愿升级、11 项升华升级、十种神话建筑、六种普通契约、三项互斥供养政策与决裂状态、40 项形而上学能力、13 个时间设施和十种挑战身份。条纹猎手与使节在各自模块整合；实验性及默认关闭占位不计入可用数量。
+- `isChallenge(state,id)` 支持独立 `ironWill` 和并行 `activeChallenges`，兼容旧单值状态。`challengeSelect(id)` 切换待开始选择，`challengeStart('confirm')` 通过会重置本轮的操作同时启用全部选择。旧 `challenge(id)` 启动单项挑战。普通挑战与坚毅均结束前，`reclaimReserves` 被阻止。
+- 挑战重置储备对每种资源取最大存入值，追加保留小熊，清除岗位与工程专精，普通持久资源直接保留。非显式坚毅的末日挑战直接携带小熊。领取时，有上限库存取最大值，无上限库存相加。重置按规则保留条纹业力。
+- `onYearProgression(ctx,oldYear,newYear)` 在日历归一化及每日处理之后调用，提供年度反物质和通量、千年典范与业力、长者到访、和平挑战的星翼鹿奖励。`onSeasonProgression` 在每日处理前设置悖论日期。
+- 新增行动包括 `feedElders`、`buyBlackcoin`、`sellBlackcoin`、`crashBlackcoin`、`useFurnaceHeat`、`toggleTemporalPress` 和 `shatter('press')`。全库存市场兑换原子校验数值有限且可保存；市场价格跨重置保留，长者能量不保留。
+- 视图模型新增 `activeChallenges`、`ironWill`、`pendingChallenges`、`reserves`、`elders`、`blackcoinPrice`；挑战卡提供 `active`、`pending`。储备明细要求 `ascoh`。行动卡包含成本、可用性、原因和会重置状态的确认文案。
+- 旅行卡提供 `routeUnits`、`travelDays`、`travelSeconds`、`reached`。每刻减少 `routeSpeed/10` 行程，在下一刻标为到达；界面预估时间应使用 `travelDays`。
 
-## Remaining time-fast-forward divergence for next owner
+## 本次检查时的时间跳跃待办
 
-Current private `advanceYears(ctx,n)` is shared by crystal shatter, manual furnace heat, and furnace automation. It computes one production snapshot, multiplies its net rates by the entire skipped duration, advances the year in one jump, then calls `annualGains(ctx,n,old,new)` once. This is insufficient for exact multi-year reference behavior:
+记录时，水晶碎裂、手动高炉热量和高炉自动化共享私有 `advanceYears(ctx,n)`。该版本仅计算一次产率快照，将净速率乘以整个跳过时段，一次性推进年份，再调用一次 `annualGains(ctx,n,old,new)`。它尚未满足以下逐年规则；后续修复情况见 `19-redshift-implementation.md`。
 
-1. Reference default `js/time.js:663–735` processes one year at a time. Its first year uses only remaining days; subsequent years use 400 days. It recalculates resource rates after each annual boundary, so cycle changes, millennium paragon and year-dependent power change later yields. Current implementation uses the starting cycle/rates for the entire jump.
-2. Each reference yearly resource-retrieval interval separately preserves starting over-cap ceilings and applies current stock-dependent conversions. Current implementation has only one ceiling/supply snapshot.
-3. Reference retrieval calls engineer crafting when chronoEngineers is researched and advances pollution by retrieval-scaled ticks (`js/time.js:698–708`). Current advanceYears does not invoke those hooks.
-4. With void resonance, reference triggers Order of the Void for each year's full skipped ticks independently of retrieval ratio (`js/time.js:711–713`). Current advanceYears omits that path.
-5. Reference invokes complete annual hooks for every skipped year (`calendar.js:1058–1133`), including AI destruction and repeated elder checks. Current annualGains aggregates selected annual payouts and combines elder-arrival probability. It does not run every external annual subsystem. Route progress and final-year challenge completion already update.
-6. Alternative grouped-cycle routine exists beginning `js/time.js:830`, but fixed-reference default `testShatter=0` at line3 uses the ordinary yearly routine. Do not silently adopt a different profile.
+1. 每次处理一年，首年仅处理剩余天数，其后每年 400 天。每个年度边界后重新计算资源速率，使周期、千年典范和年份相关电力影响后续产量；当时实现整段沿用起始周期与产率。
+2. 每个年度回收区间分别记忆起始超限库存并应用当前库存相关转换；当时仅有一次容量与供给快照。
+3. 已研究时间工程师时，回收区间调用工程制作，并按回收倍率缩放后的刻数推进污染；当时缺少这些调用。
+4. 虚空共鸣按每年的完整跳过刻数触发虚空教团，独立于回收倍率；当时未接入。
+5. 每个跳过年度都应执行完整年度事件，包括人工智能破坏和重复长者检查。当时仅汇总部分奖励并合并长者概率，未运行每个年度子系统。航线进度和最终年份挑战完成已更新。
+6. 默认配置采用普通逐年推进。若改用分组周期优化，需明确配置并证明规则不变。
 
-Keep `shatterCost` unchanged unless separately checked: its bounded piecewise arithmetic is tested against an independently summed heat/dark-future oracle. Heat and resource retrieval are separate contracts. A future exact or grouped optimization should preserve action interfaces and add tests spanning cycle boundaries, year999→1000, year39999→40000, partial first years, over-cap stocks, stock depletion, engineers, pollution, void resonance and annually changing energy.
+`shatterCost` 的有界分段算法已有独立热量与黑暗未来求和验算，无额外核查时应保持。热量与资源回收是独立约定。逐年实现或分组优化应保留行动接口，并覆盖周期边界、第 999→1,000 年、第 39,999→40,000 年、不完整首年、超限库存、库存耗尽、工程师、污染、虚空共鸣和年度变化的电力。
 
-## Verification limits
+## 验证边界
 
-All 23 focused tests passed on the current shared code at this checkpoint. This is not browser QA, all-challenge-combination coverage or exhaustive source-oracle equivalence. See `16-late-audit.md` for corrected factual semantics and source coordinates, including paradox order, winter production, pact happiness, faith-ratio separation, elders and paid market correction.
+记录时，共享代码上的 23 项专项测试通过，不包含浏览器验证、全部挑战组合或所有数值边界。`16-late-audit.md` 记录了悖论顺序、寒冬生产、契约幸福度、信仰倍率分离、长者和付费市场修正等规则更正。

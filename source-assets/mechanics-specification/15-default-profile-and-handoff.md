@@ -1,47 +1,47 @@
-# Default profile and remaining verification
+# 默认配置与验证范围
 
-## Default source profile
+## 默认功能配置
 
-Verified in`game.js:2407–2442`:
-- Main web and mobile: village map OFF. Beta web: village map ON. The13biomes and combat/map subsystem are therefore not required to match default mainline.
-- SPACE_EXPL OFF everywhere. Artificial gravity and its two follow-up workshop upgrades are unreachable by the default tree; navigationRelay and spaceShuttle are unfinished source placeholders. Do not invent effects and call them faithful.
-- MAUSOLEUM_PACTS, QUEUE, QUEUE_REDSHIFT, UNICORN_TEARS_CHALLENGE and DARK_PARACOSM ON everywhere. These are ordinary default scope.
-- Offline redshift OFF by default on web(`js/settings.js:121–126`), always enabled mobile(`js/time.js:234`). The verified cap is10game-years normally and40atyear≥1000orpositiveparagon. A custom8-hour cap or always-on web reward would be a disclosed product choice, not parity.
-- Retiredbreweryresearch is disconnected. Its separate brewery building is active throughdrama.
-- Unobtainium axe/saw have source declarations but no normal unlock reference found. Mark these legacy/unreachable rather than guess a gate.
-- Senator state is declared/reset but no functional appointment path was found. Do not treat it as a missing playable senate.
+本篇记录规则整理时采用的默认配置，不能据此推定当前全部功能已经实现。
 
-## Numeric specification coverage at handoff
+- 正式网页和移动配置关闭村庄地图；预览配置可启用地图。13 个生态区及战斗地图不属于默认功能验收范围。
+- `SPACE_EXPL` 默认关闭。人造重力及后续两项工坊升级在默认科技树中不可达；`navigationRelay` 和 `spaceShuttle` 为未完成占位项，不应为其虚构效果。
+- `MAUSOLEUM_PACTS`、`QUEUE`、`QUEUE_REDSHIFT`、`UNICORN_TEARS_CHALLENGE` 和 `DARK_PARACOSM` 默认启用，属于常规范围。
+- 网页离线折算默认关闭，需由玩家开启；移动端浏览器沿用同一设置。常规上限为 10 个游戏年，年份至少 1,000 或典范为正时为 40 年。若采用固定八小时上限或网页默认启用，应明确记录为产品配置变化。
+- 已停用的 `brewery` 研究没有连接科技树；独立的酿造建筑通过戏剧研究解锁。
+- 稀星矿斧与锯有定义，但尚未确认普通解锁路径，应标为历史遗留或不可达，不能猜测前置条件。
+- 议员状态有声明和重置记录，但没有已确认的可用任命路径，不应据此声称存在缺失的可玩议会。
 
-This is coverage of independently authored factual records, NOT implementation or test coverage.
+## 规则记录覆盖范围
 
-- Core clock, food, caps, population, skills, happiness, prices, key storage/conversion/energy/pollution rules: detailed verified formulas and fixtures.
-- Base buildings:40/40 factual identities, costs and essential effects; all5alternate stages. Dynamic caveats explicitly attached.
-- Research:61/62 records including default-offartificialGravity; retiredbreweryexcluded. Main research dependency graph covered, selected cross-system unlocks require reconciliation.
-- Crafts:23/23 ingredient quantities and automation tiers/difficulties. Engine throughput and special modifiers are partially specified.
-- Workshop:143/143 identities, costs, gate summaries and essential effects. Dynamic boolean effects do not certify implemented behavior;2legacy/no-unlock and2default-off records are flagged.
-- Special workshop:8/8 default-mainline records.
-- Faith:11/11 ordinary religion and11/11 transcendence records,10/10mythic structures, main transformations and corruption,6ordinary pacts plus debt/fracture,10celestial cycles.
-- Space:13/13missions,12/12routes,24/24construction identities(22default-functional,2disabledplaceholders), with dynamic formulas/flags.
-- Trade:8/8partners' first-tier goods and discovery, fees, randomness, baseline embassy formulas; advanced goods not fully transcribed.
-- Challenges:10/10 identities catalogued; detailed shared state, energy/pacifism/UT/PA/reserve handoff plus other challenge essentials. Exceptional combinations not comprehensively tested.
-- All60resources,64policies,40prestige perks,31achievements and21badges have identity+source-location catalogue coverage. This task did not provide detailed numeric records for all of these categories; other assigned workers own policies/prestige implementation.
+以下为数值规范的整理范围，不代表当前实现或测试覆盖率。当前运行时目录见 `09-feature-catalogue.md`，其功能数量可能与含占位和遗留项的规则记录不同。
 
-## Explicit remaining factual / parity gaps
+- 核心时钟、食物、容量、人口、技能、幸福度、价格，以及主要仓储、转换、电力与污染规则已有详细公式和验算样例。
+- 基础建筑记录覆盖 40 个规则条目及五个替代阶段，包含成本、主要效果和动态例外。
+- 科学记录覆盖 61 项有效研究及默认关闭的人造重力，排除停用的酿造研究；主要依赖图已记录，跨系统解锁仍需逐项核对。
+- 制作记录覆盖 23 项配方原料及自动化阶位、难度；工程吞吐量和特殊修正仅部分明确。
+- 工坊记录覆盖 143 个普通条目的成本、条件概要及主要效果，另含八个特殊工艺条目。动态布尔效果不能证明行为已实现；其中两项遗留无解锁、两项默认关闭。
+- 信仰记录包括 11 项普通宗教升级、11 项升华升级、十种神话建筑、主要转换与腐化、六种普通契约及债务和决裂、十个星象周期。
+- 太空规则包括 13 项任务、12 条航线、24 个建筑定义，其中 22 个默认可用、两个禁用占位，含动态公式和开关。
+- 贸易包括八个交易方的首级商品、发现方式、费用、随机性和基础使馆公式；高级商品尚未完整记录。
+- 挑战包括十种身份以及共享状态、能源、和平、灵露、末日和储备规则；特殊组合未全面测试。
+- 资源、政策、传承、31 项成就和 21 项徽章均有分类记录。目录收录不代表所有类别已有完整数值规范；人口还需与库存资源分别处理。
 
-1. All advanced embassy goods and their season/range/chance/minimum-level values; complete ambassador shortage/upkeep/skills interactions; policy-specific trade formulas; anti-undo trade behavior and blackcoin market mode. Baseline8partners are not full diplomacy parity.
-2. Detailed64policy facts are delegated separately. Their effects, mutually exclusive prerequisites, one-shot policy actions and cross-system interactions must be reconciled with this specification.
-3. Final complete reset survival matrix for all60resources, all prestige perks, used cryochambers, challenges, faith and time upgrades is delegated to the late-game worker. This task specifies core reset/reserve rules only.
-4. All31achievement and21badge predicates, including star achievements, checks that invalidate achievements midrun and novelty/secret conditions. Their existence catalogue is not their gameplay implementation.
-5. Craft automation exact specialist progress, rank deficits, partial ingredient shortfalls, factory slot limits; steamworks factoryAutomation threshold/jamming, input-size rules and undo; queue processing/queue unlock categories/queue capacity/paused queues and redshift ordering.
-6. Detailed special-upgrade preparation/tribal-stock loop, resource persistence/visibility/tags, random bear generation distribution and challenge-specific hunter/worker edge cases.
-7. Every challenge combination. UT ziggurat capacity and post-completion tomb faith-cap interactions deserve targeted tests. Black-sky repeated satellite penalty aggregation, anarchy laziness/overflow selection, pacifism repeat discounts, Iron-Will variants and Post-Apocalypse preserved-bear handling are easy divergence points.
-8. Exact active-vs-offline behavior for season boundaries, cached effects, depletion/death cooldowns, event rounding, storage overcap and temporal paradoxes. Exact-tick independent simulation deliberately differs from the reference's bulk redshift approximation unless equivalence is established.
-9. Fine-grained power shortage update ordering, conversion boost classification, library/bio ratios based on active vs constructed units, AI apocalypse/currency behavior and post-reset storage overflow need oracle checks.
-10. Beta-only village map and default-off space exploration are deliberately outside default-mainline parity. Do not silently merge beta systems into a claim about the default game.
+## 仍需核实的规则
 
-## Suggested acceptance gates
+1. 全部高级使馆商品的季节、范围、概率、最低等级；使节短缺、供养和技能的完整交互；政策专属贸易公式；防撤销贸易状态与黑币市场。
+2. 政策效果、互斥前置、一次性行动及跨系统交互，需要与本目录一致。
+3. 全部资源、传承能力、已用休眠舱、挑战、信仰和时间升级的最终重置保留矩阵。本目录仅规定核心重置与储备行为。
+4. 全部 31 项成就与 21 项徽章条件，包括星级条件、轮内失效检查和隐藏条件。详见后续 `18-achievements-facts.md`；存在条目不代表实现了判定。
+5. 制作自动化的精确专精进度、阶位不足、部分原料短缺、工厂席位；蒸汽工坊阈值、卡滞、输入数量与撤销；队列处理、解锁类别、容量、暂停及离线顺序。
+6. 特殊升级准备和部族库存循环、资源持久化与可见性和标签、小熊随机外观分布、挑战专属猎人及工作边界。
+7. 挑战组合，尤其灵露挑战的祭坛容量和完成后的墓冢信仰容量；黑空重复卫星惩罚、无政府懒惰与溢出选择、和平重复折扣、坚毅变体和末日保留小熊行为。
+8. 在线与离线在季节边界、缓存效果、耗尽与死亡冷却、事件取整、仓储溢出和时间悖论上的区别。逐刻回放与离线批处理不能混为同一规则；后续进展见 `19-redshift-implementation.md`。
+9. 电力短缺精确更新顺序、转换加成分类、按启用数与建成数计算的图书馆和生物实验室倍率、人工智能末日与货币行为，以及重置后仓储溢出，需要可复核的预期值。
+10. 预览配置村庄地图与默认关闭的太空探索不属于默认验收范围，不能合并到默认游戏完成度声明中。
 
-Maintain separate columns for fact verified, implemented, unit tested, reference compared and browser tested. A button/record appearing in the UI proves only discoverability. Test representative early survival, a complete ordinary research path to space, time-crystal and relic reachability, at least one reset with storage/faith retention, one challenge completion, all five building stage replacements, and save round-trips at each stage. Use a seeded independent RNG; compare distributions/statistical expectations for random systems rather than expecting identical source-RNG sequences.
+## 验收建议
 
-Original-code boundary remains mandatory: source may be used for observation of functional facts, not copied into runtime or assets. This directory contains newly authored specification records and source coordinates; no reference implementation is included.
+分别记录规则核实、实现、单元测试、数值对照和浏览器测试状态。界面出现按钮或条目只能证明可发现性。代表性场景至少包括前期生存、完整普通科技路线到太空、时间水晶与遗物可达、带仓储和信仰保留的重置、一项挑战完成、五种建筑阶段替换，以及各阶段的存档往返。
+
+随机系统使用带种子的随机数流，按分布和统计期望验收。代码、界面文案和美术由本项目独立维护。后续检查记录应持续更新实现进展，同时保留尚未验证的边界。

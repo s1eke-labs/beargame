@@ -1,90 +1,89 @@
 {
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
   "files": [
     {
       "path": "00-scope-and-provenance.md",
-      "sha256": "9a6a2369ac6b9d046992ed6b60e3c80129e63f56f7f08d6d193c67e4590b1213",
-      "bytes": 2932
+      "sha256": "7f0e20ce044e066ed4ed8994060aa653e3abdbb78696e6d73760232c582eb358",
+      "bytes": 1974
     },
     {
       "path": "01-core-rules.md",
-      "sha256": "6c50b17b4a8be16b204288a7d117f150b212cf5b04f7cbf9b5fc4ac971eb5294",
-      "bytes": 7738
+      "sha256": "13b7d8609701e956dde245dab5954e4668f0ee29c23743cf40e1d3040617b64f",
+      "bytes": 6675
     },
     {
       "path": "02-selected-facts.json",
-      "sha256": "1550e9824dcd6218582ecae590c53edc065ab87d7e400bd937b1db063f091781",
-      "bytes": 55621
+      "sha256": "3b32b1a7493c89d1c04c42a9f5172131da0354cf6bf63c18f2181c92614dd36f",
+      "bytes": 49856
     },
     {
       "path": "03-population-crafting-prestige.md",
-      "sha256": "442e4d88c6d36d185eff8d64e2d1e0fc1caa4bb2b3526dde208eccd9a847f147",
-      "bytes": 5740
+      "sha256": "2c8761f50bbfda39bb99861ff3d11a666cd514df5bd2af6ba81c688ccfa9753b",
+      "bytes": 5046
     },
     {
       "path": "04-workshop-selected-facts.json",
-      "sha256": "0ab902109ee891dd3e118d46f4bb5a1fa03bdc850392e14dbb9fed2a72084984",
-      "bytes": 49650
+      "sha256": "fbdeab75ebce080c0b938235c9a30640b205becab2356d16c0c2e0e973b3f23c",
+      "bytes": 44010
     },
     {
       "path": "05-faith-space-rules.md",
-      "sha256": "c38ee1c4a384101790abff79dc241b3c912d5e1f522879567a06951d0ee031ac",
-      "bytes": 5704
+      "sha256": "0891fd02700c375cfb1c80dc4a069abf39d31df39e9227d6abaca0ee0ac69ad1",
+      "bytes": 4965
     },
     {
       "path": "06-late-selected-facts.json",
-      "sha256": "ee418cce03fe79f923393692f45812a374adfc7a9430aeea6aec605a20d91e39",
-      "bytes": 32569
+      "sha256": "a863725a1dc6a86223653227302be87ee736dd854dad0a810789b024677a1357",
+      "bytes": 29669
     },
     {
       "path": "07-trade-and-events.md",
-      "sha256": "42d8d1ac5eedfc51aa8163cf8718ad842461af2b74b85a559604ab5cac1f597e",
-      "bytes": 5994
+      "sha256": "1e909bb667cab5e511b1cc1ffaf462ba3bcea14a4ef6091492d7ba4b28eb2d2e",
+      "bytes": 5549
     },
     {
       "path": "08-trade-selected-facts.json",
-      "sha256": "e87647c812ae2184a1d288641b6da5d25685800c3da7f23e360e81f97c208b1d",
-      "bytes": 5688
+      "sha256": "f7dbc95a7d20040dca2450fc13afe39a43dbbb98fbd2cf73d79db2fa3c75f9de",
+      "bytes": 5292
     },
     {
       "path": "09-feature-catalogue.json",
-      "sha256": "6f005aa6ae3e212c69019fdb5e1b71d5b0e2719a0926110feea66a8644d7f9fb",
-      "bytes": 100470
+      "sha256": "62032c9f7e55f10366e307e5de9a67f47d8a7fec7159fcb42fe9b6279cf45d9f",
+      "bytes": 134551
     },
     {
       "path": "09-feature-catalogue.md",
-      "sha256": "ec9582867936857971d2c5797666fafc08ffd634e088baf16a3deaa35a0c58a6",
-      "bytes": 24671
+      "sha256": "5ac68f2422ba387d0e701ef3467dd14443736a0faee5fcc0f9fa94e5573a3535",
+      "bytes": 33350
     },
     {
       "path": "10-industry-storage-pollution.md",
-      "sha256": "c8b27e4a429ed82cc3223de5374c02383c55c4f05d99d74fc55e1ef33cb366d4",
-      "bytes": 7184
+      "sha256": "cbd71f7bb8e2655950a9592f0556037c818d39f1abe45d74c67ed885834d83bc",
+      "bytes": 6508
     },
     {
       "path": "11-pacts-celestial-cycles.md",
-      "sha256": "b105ae8e5e36b0f0fdf44057f2ad465c5487fd6d9ba1b51401d24604acbb16d7",
-      "bytes": 5901
+      "sha256": "32cd7b8ce301a9e443a67e898200c664d36ef440acd5697e09afff10013262a1",
+      "bytes": 5369
     },
     {
       "path": "12-cycles-facts.json",
-      "sha256": "3815068df1963e076e18f565e4f064bfbfa3b44917eda3c3a99b80c828c96e09",
-      "bytes": 7252
+      "sha256": "320935b07fec267c833910cdd6d0b3dcaaa2310d67a4922b4f893aaa2c34fe94",
+      "bytes": 7138
     },
     {
       "path": "13-special-workshop-facts.json",
-      "sha256": "4c435b54b2c038d971ab052cac6c32976e8978701355e76edb8ccb36455424a4",
-      "bytes": 3203
+      "sha256": "aad626d554a8885528393a2d28bbe6ba74e29de1e8462106ca185cffa7586752",
+      "bytes": 3326
     },
     {
       "path": "14-challenge-handoff.md",
-      "sha256": "af02e4054e5020fe7e355e03aaa002c889aa125faca6e5e21f7f48ee68fcdf15",
-      "bytes": 9963
+      "sha256": "59d4accb691d6115aaccf2dea1cf5f7134b685c0e694b16965f869ef373aec8a",
+      "bytes": 8584
     },
     {
       "path": "15-default-profile-and-handoff.md",
-      "sha256": "c5b4001fa2ea30a9146445117bd74576b3091e99369c309b4512257f4a5daab3",
-      "bytes": 6502
+      "sha256": "01b2e318b76ba0d879a2d5e417bbe8070374cc073f497d0b062e7a152ae4635c",
+      "bytes": 5490
     }
   ]
 }

@@ -1,9 +1,9 @@
-Use case: precise-object-edit.
-Edit the SECOND IMAGE, the 6-column 4-row resource icon atlas. The FIRST IMAGE is only the white bear STYLE REFERENCE.
-Keep exact atlas geometry, dimensions 1536x1024, all 24 cell positions and all object identities. Preserve every icon's silhouette except the zebra horn described below.
-Make ONE style cleanup pass so the atlas is a completely flat matte children's picture-book doodle sprite sheet:
-- The zebra at row 2, column 5 must be a regular zebra WITHOUT ANY HORN. Remove the little conical horn on its forehead, preserve its two ordinary ears, white body, black stripes, small muzzle and four stubby legs.
-- Remove white shine dashes on both teardrops and the blue hourglass, remove bevel and gloss marks on ingots and nodes, remove all gradients throughout. Use plain single-color matte fills bounded by the existing chunky near-black outlines. Simple two-color faces are okay for ingots. Dark gray processors should be one uniform flat color.
-- Simplify the two purple catnip flower heads to round purple disks with only a tiny dot center; keep leaves sage.
-- Keep the background and all empty holes/gaps ACTUALLY TRANSPARENT with clean alpha. No shadows, NO COLORED AURAS, NO GLOW, no visible background color whatsoever. Preserve alpha transparency. Do not draw black background or a checkerboard.
-Exact contents stay: row 1 gold relic, black coin, purple swirl, blue hourglass, fire, blue tear; row 2 red tear, white unicorn, white winged unicorn, purple necrocorn, HORNLESS ZEBRA, red gem; row 3 blue ingot, processor, four connected blue nodes, cream pellets, green chip, catnip; row 4 yellow bolt, smiley sun, wooden beam, gray steel ingot, gear, star scroll. No text. Keep every icon centered in its own 256x256 cell with transparent gutters.
+用途：精确物体编辑。
+编辑第二张图片，即 6 列 4 行资源图标图集。第一张图片仅为白熊风格参考。
+准确保留图集几何布局、1536x1024 尺寸、全部 24 格位置和物件身份。除下述斑马角外，保留每个图标的轮廓。
+执行一次风格清理，使图集成为完全平涂、哑光的儿童绘本涂鸦精灵图集：
+- 第 2 行第 5 列斑马必须是完全无角的普通斑马。去除额头小锥角，保留两只普通耳朵、白身体、黑条纹、小口鼻和四条短粗腿。
+- 去除两颗泪滴和蓝沙漏上的白亮线，去除金属锭和节点上的倒角与光泽标记，去除所有渐变。现有粗近黑轮廓内使用朴素单色哑光填色。锭可用简单双色面。深灰处理器应为统一平涂单色。
+- 将两个紫色猫薄荷花头简化为圆紫盘，仅有一个微小圆点花心；叶子保留鼠尾草绿。
+- 背景和全部空孔／空隙必须真正透明，透明通道干净。无阴影、彩色光环、辉光或任何可见背景色。保留透明通道，不画黑背景或棋盘格。
+内容严格保持：第 1 行金遗物、黑币、紫漩涡、蓝沙漏、火、蓝泪；第 2 行红泪、白独角兽、白翼独角兽、紫死灵独角兽、无角斑马、红宝石；第 3 行蓝锭、处理器、四个相连蓝节点、奶油颗粒、绿芯片、猫薄荷；第 4 行黄闪电、笑脸太阳、木梁、灰钢锭、齿轮、星图卷轴。无文字。每个图标居中于所属 256x256 格，间距透明。

@@ -1,32 +1,27 @@
-# Bears, crafting and repeated runs
+# 小熊、制作与多轮发展
 
-## Individual skills and leadership
+## 个体技能与领导
 
-VERIFIED: `js/village.js:1292–1320,3273–3338,3680–3755`.
+以下规则已核实。工作小熊每刻获得 0.01 技能经验，另加技能经验效果；每座学院提供 0.0005。当前岗位技能上限为 20,001，总经验是独立的可消耗数值。空闲小熊不学习也不遗忘；没有专精的工程师不学习当前技能。没有神经网络时，每项正值的非当前岗位技能每刻衰减 0.001，并同时减少总经验。有神经网络后，遗忘替换为对每个已解锁且有人工作的岗位，每刻增加 `0.001×该岗位工作数`。互联网将基础经验设为 `max(0.01,人口/10000)`，再受高级住房规模修正。无政府挑战禁止技能加成与学习。
 
-A working bear earns .01 skill experience per tick plus the additive skill-XP effect (.0005 per academy). Its active job's skill is capped at20,001; total experience is a separate spendable pool. An idle bear does not learn/forget. An engineer without a specialty does not learn its current skill. Without neural networks, each positive inactive job skill decays .001/tick, also reducing total XP. With neural networks, replace forgetting with .001×workers-in-that-job per tick for every unlocked occupied job. Internet sets base experience to max(.01,population/10000), subject to the advanced housing-scaling modifier. Anarchy disables job-skill bonuses and learning.
+技能区间对应的产出增量为：[0,100) 为 0；[100,500) 为 0.0125；[500,1200) 为 0.025；[1200,2500) 为 0.045；[2500,5000) 为 0.075；[5000,9000) 为 0.125；[9000,∞) 为 0.1875。最高档还可获得大师倍率，每档均受全局技能倍率影响。例如技能 100、幸福度 1 的伐木工在其他加成前产出 0.018225 木材/刻。
 
-Skill output increments by skill interval: [0,100)0; [100,500).0125; [500,1200).025; [1200,2500).045; [2500,5000).075; [5000,9000).125; [9000,∞).1875. The highest band can receive a master multiplier, and every band receives the global skill multiplier. Example: forester at skill100, happiness1 gives .018225 wood/tick before other bonuses.
+从阶位 r 晋升需消耗 `500×1.75^r` 总经验及 `25×(r+1)` 黄金。连续晋升累加各阶成本，不消耗岗位技能。领袖个人岗位倍率在阶位 0 时为 1，正阶位时为 `(r+1)/1.4`；独裁使其翻倍。户籍制度解锁领袖和晋升，无政府挑战禁止使用。
 
-Promotion from rank r consumes500×1.75^r total experience and25×(r+1)gold. Multiple-rank promotion sums these costs. Promotion does not consume job skills. A leader's personal job multiplier is1 at rank0 and(r+1)/1.4 at positive rank. Autocracy doubles it. Register unlocks leadership/promotions; anarchy forbids them.
+领袖特质基础效果：工程师提供 0.05 制作加成；冶金师提供适用金属制作 0.10；化学家提供适用化学制作 0.075；商人提供贸易 0.03；管理者提供狩猎效率 0.5；科学家减少知识成本 5%；贤者减少信仰及宗教黄金成本 10%。燃烧典范和君主制可调整这些数值；减免需要递减处理，不能无限线性应用。
 
-Leader-trait baseline effects (`js/village.js:234–280`): engineer+.05 crafting; metallurgist+.10 appropriate metal crafts; chemist+.075 relevant chemical crafts; merchant+.03 trade; manager+.5 hunter effectiveness; scientist5% science-cost reduction; wise10% faith/gold-religion-cost reduction. Burned paragon and monarchy modify these values; reductions are diminished and cannot simply be applied unbounded.
+## 制作与自动化
 
-## Crafting and automation
+配方数值见 `02-selected-facts.json`。每次制作的原料数量固定，普通产出为 `1+制作加成`。每座工坊提供 0.06，每座工厂在修正前增加 0.05。制作小数产量可累积。初始配方标记包括木材、木梁、石板、金属板、齿轮、脚手架、手稿和巨石。拥有原料也不能使用尚未解锁的配方，工坊页签还有独立前置条件。
 
-VERIFIED: `js/workshop.js:2116–2349,2542–2573`; `game.js:4412–4450`.
+木材使用精炼专属效果，不使用通用制作倍率。森林远征初始消耗 100 蜂蜜。高级精炼研究消耗 5,000 蜂蜜和 500 知识，将远征蜂蜜成本减半至 50。每座生物实验室增加 0.1 精炼产出倍率；部分政策与坚毅模式还会调整该行动。
 
-Selected recipe facts are in02-selected-facts.json. Per click, ingredient amounts are fixed and normal output is1+craft bonus. Workshop bonus is.06 each; factories add.05 each before modifiers. Fractional crafted output accumulates. Initial recipe flags: wood, beam, slab, plate, gear, scaffold, manuscript, megalith. Locked recipes remain inaccessible even if the materials are owned. The workshop tab itself has its own prerequisite.
+蓝图的计算机辅助设计产出取决于科学建筑数量。煤油制造加成的应用方式不同于普通工厂制作。资源专属倍率和全局制作效果在共享加成后生效。工程师每单位基础进度需要 `600×每秒刻数×配方难度` 刻，再应用产量、技能与阶位修正。专精精确吞吐量、工厂席位上限、阶位不足惩罚、原料不足行为与离线自动化已收录，尚未在本篇全面验证。
 
-Wood is an exception: its output uses refinement-specific effects rather than the general craft ratio. The provisioned forest expedition initially costs100honey. Advanced refinement costs5,000honey+500science and halves this ingredient cost to50(`js/workshop.js:868–879`). Biolabs add.1 refinement output ratio each. Some policies and Iron Will further modify the action.
+## 传承
 
-Blueprint CAD output depends on the number of science buildings. Kerosene manufacturing boosts apply differently than ordinary factory crafting. Resource-specific ratios and global-craft effects apply after the shared bonus. Engineers take600×ticksPerSecond×recipeDifficulty ticks per unit of progress before production/skill/rank modifiers. Exact specialty throughput, factory slot limits, rank penalties, partial-input behavior and offline automation are CATALOGUED at`js/workshop.js:2680–2880` and`js/village.js:690–738`, not fully validated here.
+设 N 为取整后的传承有效人口，高级模拟规模修正可能改变该值。普通重置增加 `max(N−70,0)` 典范。业力使用累积隐藏计数，每次增量为下列各项正值之和：
 
-## Prestige
-
-VERIFIED: `game.js:5471–5551,5867–5908`; `js/prestige.js:549–581`.
-
-Let N be rounded prestige-eligible population (advanced simulation scaling may alter it). Normal reset adds max(N−70,0)paragon. Karma uses a cumulative hidden tally. Its increment is the sum of positive parts:
 - N−35
 - 3×(N−60)
 - 4×(N−100)
@@ -34,12 +29,12 @@ Let N be rounded prestige-eligible population (advanced simulation scaling may a
 - 10×(N−300)
 - 15×(N−750)
 
-Only terms above their thresholds contribute. With anarchy completion the karma calculation uses2N. Karma visible to the player is(√(1+8×totalTally/5)−1)/2. It contributes one percentage point of happiness per karma unit. Reset100 population from zero prior tally gives185 tally, karma8.1168439698, and30paragon. Reset70 gives65 tally and0paragon. Reset35 gives zero.
+只有超过对应人口阈值的项才贡献数值。完成无政府挑战后，业力计算使用 2N。可见业力为 `(√(1+8×累计计数/5)−1)/2`；每单位业力增加一点幸福度。初始累计计数为零、100 人口重置时，增加 185 计数、8.1168439698 业力和 30 典范；70 人口为 65 计数、0 典范；35 人口均为零。
 
-Define prestige scaling M=1+paragonRatio effects. Production bonus is limited-DR(.01×paragon×M,2M)+limited-DR(.01×burnedParagon×M,L×M), where L=1 normally and4 in the dark future. Storage bonus is M×[paragon/1000+burnedParagon/2000] normally; dark future changes the burned denominator to500. Example:100paragon and0burned grants+100% eligible production,+10% eligible storage.200paragon production is+175%, not200%, because its limit is2 and its free range is1.5.
+设传承缩放 `M=1+paragonRatio 效果`。生产加成为 `limitedDR(0.01×典范×M,2M)+limitedDR(0.01×燃烧典范×M,L×M)`，L 通常为 1，黑暗未来为 4。普通仓储加成为 `M×[典范/1000+燃烧典范/2000]`，黑暗未来将燃烧典范的分母改为 500。例：100 典范、0 燃烧典范增加适用生产 100% 和适用仓储 10%；200 典范的生产加成为 175%，因限值 2 的完全生效区间仅到 1.5。
 
-Burning paragon moves all current paragon to burned paragon. A separate burned-paragon leadership scale uses unlimited-DR(burned,500). Metaphysics perks spend paragon and persist across resets. Chronospheres retain1.5% resources each, but ordinary crafted material retention has exceptions/upgrades; cryochambers preserve bears; faith/transcendence/challenge state and achievements have separate persistence rules. Exact reset survival matrix is CATALOGUED in`game.js:5558–5855`; do not equate reset with clearing everything except paragon.
+燃烧典范将全部当前典范转入燃烧典范。领袖另使用 `unlimitedDR(燃烧典范,500)` 缩放。形而上学能力消耗典范且跨重置保留。每座时空球保留 1.5% 资源，但普通制作材料存在例外与升级要求；休眠舱保留小熊；信仰、升华、挑战和成就有各自持久化规则。完整重置保留矩阵仍需逐项核实，不能将重置理解为只留下典范。
 
-## Offline policy
+## 离线规则
 
-VERIFIED:`js/time.js:191–259`. Redshift uses rounded elapsed milliseconds/2000 as days, skips offsets under3days, and caps elapsed days at10years(8,000seconds). At current year≥1000 or positive paragon the cap is40years(32,000seconds). Desktop has an enable setting; mobile enables it. The source advances several subsystems in bulk and enforces storage afterward. Exact active-tick replay is a defensible new implementation choice, but must be explicitly marked as an offline behavioral difference until compared across starvation, seasonal, conversion and random-event cases.
+离线折算将经过的毫秒数除以 2,000 后取整为天数，少于 3 天不处理。通常最多 10 年，即现实 8,000 秒；当前年份至少 1,000 或典范为正时，最多 40 年，即现实 32,000 秒。网页离线折算默认关闭，需由玩家开启；移动端浏览器沿用同一设置。离线过程批量推进多个子系统，并在后续恢复仓储上限。逐刻回放与离线批处理是不同规则，需要分别验证饥饿、季节、转换及随机事件。后续实现状态见 `19-redshift-implementation.md`。

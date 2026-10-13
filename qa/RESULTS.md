@@ -1,63 +1,61 @@
-# Independent QA results
+# 独立质量验证结果
 
-Verified 2026-10-08 against the current project. Numerical reference: Kittens Game commit `781e379f79f1e7512d168849cba21ed111502644`. The reference executable was not embedded in, or run as part of, this game.
+验证日期：2026-10-08，验证对象为当时的 Beargame 项目版本。以下为历史检查记录，本次文档整理未重新运行这些测试。
 
-## Final aggregate result
+## 汇总结果
 
-- `npm run verify`: **509 tests passed, 0 failed, 0 skipped**; JavaScript syntax checks, production build and local-file link audit passed.
-- Production audit: **40 files and 95 local asset/module references**, without missing targets or reference-checkout files in the distribution.
-- Full output: `latest-verification-output.txt`. Subsequent implementation edits require another verification run; this result is a checkpoint, not a guarantee about future changes.
+- `npm run verify`：**509 项测试通过，0 项失败，0 项跳过**；JavaScript 语法检查、生产构建和本地文件引用检查通过。
+- 生产产物检查：**40 个文件和 95 个本地资源或模块引用**，未发现缺失目标或不应进入发布包的文件。
+- 当时的完整输出记录为 `latest-verification-output.txt`，该历史产物当前未随仓库提供。后续实现变更需要重新验证；这里的结果仅代表该检查点。
 
-## Independently exercised behavior
+## 独立验证的行为
 
-### A real new-game path
+### 从新游戏开始的真实路径
 
-`independent-new-game-path.test.mjs` starts from `createGame`, with every resource and building empty. It performs ten ordinary gather actions and then waits for ordinary fixed-rate production. It builds twenty hives, refines five wood, buys housing, waits for both residents, assigns foresters, builds a library, exports/reimports that real progress, assigns scholars, researches Calendar and Agriculture, and finally assigns a farmer.
+`independent-new-game-path.test.mjs` 从 `createGame` 开始，所有资源和建筑均为空。先执行十次普通采集操作，再等待正常固定速率生产；随后建造二十个蜂箱、精炼五份木材、购买住房、等待两名居民到来、安排伐木工、建造图书馆、导出并重新导入实际进度、安排学者、研究四季历法和养蜂学，最后安排一名养蜂熊。
 
-This takes **702 simulated real seconds, 3,510 ordinary ticks and ten manual gathers**, with two surviving bears and no deaths. No resource amounts, research flags, arrival progress, production multipliers or development cheats are injected. This validates an early progression route; it does not represent a complete unassisted endgame playthrough.
+这一流程耗费 **702 个模拟的现实秒、3,510 个普通模拟步和十次手动采集**，最终两只小熊存活且没有死亡。过程中未注入资源数量、研究标记、到来进度、生产倍率或开发作弊参数。它验证了一条早期推进路线，未覆盖完整的无辅助后期通关。
 
-### Numeric and simulation checks
+### 数值与模拟检查
 
-- **339 factual records** have independently retained prices, declared geometric ratios and recipe output compared with the runtime catalog: 40 buildings, 61 research records, 143 workshop records, 23 recipes, five building replacements and selected complete faith/space subcatalogs. These checks validate catalog values, not every dynamic effect of every entry.
-- Selected dynamic fixtures cover storage, food demand, morale, migration, starvation cooldowns, skill intervals, geometric purchases, conversion ordering, leadership, policies, advanced trading, ambassador upkeep, event thresholds, pacts, celestial cycles, space travel, prestige and challenge interactions.
-- Seeded 20,000-trade samples test hostile success, friendly bonuses, titanium, blueprint and spice expectations. The independently implemented random stream is not expected to reproduce another implementation's exact random history.
-- Accelerated rates are checked against actual elapsed production: one ordinary spring hive at 1.5× time displays 1.40625 honey per real second and produces 2.8125 over two real seconds (15 simulation ticks). Breakdown totals agree with the displayed rate.
-- The compressed offline model has separate factual oracles. It is deliberately not tested by equating every offline result with active-tick replay. Calendar subyear fields, cached-rate production, capped growth, event rounding, queues, conversion timing and other enumerated redshift rules are covered by the combined suite.
+- **339 条事实记录**使用独立保存的价格、声明的等比系数和配方产出，与运行时目录进行核对：包括 40 种建筑、61 条研究、143 条工坊记录、23 个配方、五种建筑替换，以及选定的完整信仰和太空子目录。这些检查验证目录数值，未覆盖每条记录的全部动态效果。
+- 选定的动态测试覆盖仓储、食物需求、士气、迁入、饥饿冷却、技能间隔、等比购买、转化顺序、领袖、政策、高级交易、使节维护、事件门槛、契约、天体周期、太空旅行、轮回和挑战交互。
+- 使用固定随机种子的 20,000 次交易样本，检查敌对种族成功率、友好加成，以及钛、蓝图和香料的期望值。随机性验证侧重本项目的确定性行为与概率结果。
+- 加速速率与实际经过时间的产出相互核对：普通春季蜂箱在 1.5 倍时间下显示每现实秒 1.40625 份蜂蜜，两个现实秒内产出 2.8125 份，期间经过 15 个模拟步。分项总和与显示速率一致。
+- 压缩离线模型使用单独的预期结果校验，不要求每个离线结果都与在线逐步回放完全相等。组合测试覆盖年内日历字段、缓存速率生产、有上限的增长、事件取整、队列、转化时机和其他列明的离线时间快进规则。
 
-### Data and lifecycle safety
+### 数据与生命周期安全
 
-Tests preserve the safety assertions around pending operations rather than dropping them when the offline arithmetic changes:
+离线算法调整时，测试仍保留未完成操作周围的安全断言：
 
-- Mutation, reset, import, save and export locks during partial settlement
-- Host-event-loop yielding and progress reporting
-- Persisted checkpoints remaining untouched until completion
-- Failed/interrupted settlement rollback and deterministic checkpoint retry
-- Close/reopen replay without duplicated or lost gains
-- Hidden/visible transitions, offline-disabled and paused games
-- Losing cross-tab ownership during settlement, including prevention of stale writes
-- Strict malformed-import checks and ordinary save round trips
-- Undo use, twenty-real-second expiry while paused, read-only ownership, and undo refusal during offline or time-jump settlement
+- 部分结算期间锁定状态修改、重置、导入、保存和导出。
+- 向宿主事件循环让出执行权并报告进度。
+- 完成之前不更改已持久化的检查点。
+- 结算失败或中断时回滚，并能确定性地从检查点重试。
+- 关闭后重新打开并回放，不重复或丢失收益。
+- 覆盖隐藏和可见切换、关闭离线进度及暂停状态。
+- 结算期间失去跨标签页写入权时，阻止过期写入。
+- 严格检查畸形导入，并验证普通存档往返。
+- 覆盖撤销使用、暂停时经过二十个现实秒后过期、只读归属，以及离线或穿越结算期间拒绝撤销。
 
-The visibility test uses an uncapped outcome of **1,562.5 honey**, so a full warehouse cannot conceal duplicate settlement.
+可见性测试使用未触及仓储上限的 **1,562.5 份蜂蜜**结果，避免满仓掩盖重复结算。
 
-### Actual frontend handlers
+### 真实前端事件处理器
 
-`dom-harness.mjs` imports the actual `main.js`. The advanced tests extract button data from its current rendered HTML before invoking its handlers. They exercise all five destructive stage confirmations and cancellation, leadership paging/search/appointment/promotion across 1,000 residents, queue confirmations, engineer specialties, multi-challenge selection/start, time-jump progress locks, undo and the achievement page's earned/secret/service-unavailable states. The final sale addendum also exercises worship and planetary-facility cancellation, confirmed one/max quantities, worship's retained first level, fuel-refund exclusions, non-sale family exclusions and restoration through the actual undo button.
+`dom-harness.mjs` 导入真实的 `main.js`。高级测试先从当前渲染的 HTML 中提取按钮数据，再调用对应事件处理器。它们覆盖全部五种破坏性阶段操作的确认和取消、1,000 名居民的领袖分页、搜索、任命与晋升、队列确认、工程师专长、多挑战选择和开始、穿越进度锁、撤销，以及成就页面中的已取得、秘密和服务不可用状态。最终补充的出售测试还覆盖崇拜和行星设施的取消、确认出售一个或最大数量、崇拜保留首级、燃料不退款、不可出售类别，以及通过真实撤销按钮恢复。
 
-The final seasonal-gift addendum also drives actual December startup, January reopening of the same saved box, cancellation, single consumption, exact karma and wrapping-paper rewards, absence in a fresh October village, and read-only/offline/time-settlement refusal. It does not inject a gift into the December-to-January grant test.
+最终补充的季节礼物测试还驱动真实的十二月启动、次年一月重新打开同一已存礼盒、取消、单次消耗、精确业力和包装纸奖励、十月新村落中不出现礼物，以及只读、离线和时间结算期间拒绝操作。十二月至一月的礼物发放测试不通过注入礼物实现。
 
-This is a controlled DOM and HTML-parser test. It does **not** execute a browser layout engine, paint frames, inspect screenshots, validate real touch gestures or certify screen-reader behavior.
+上述属于受控 DOM 和 HTML 解析测试，不执行浏览器布局引擎、不绘制帧、不检查截图，也不验证真实触控手势或读屏软件行为。
 
-## CPU stress measurement
+## CPU 压力测量
 
-`node qa/benchmark-long-game.mjs --save` records 30 samples after five warmups for a synthetic all-research state at 0, 100 and 1,000 residents. At 1,000 residents the default leadership response contains **50 action cards for 25 residents**, with the remaining residents reachable through paging and search.
+`node qa/benchmark-long-game.mjs --save` 对研究全部完成的合成状态进行测量，分别设置 0、100 和 1,000 名居民，在五次预热后记录 30 个样本。1,000 名居民时，默认领袖响应包含 **25 名居民对应的 50 张操作卡片**，其余居民可通过分页和搜索访问。
 
-Exact timings and runtime information are in `latest-long-game-benchmark.json`. They measure Node CPU snapshot generation, HTML-string generation and one ordinary simulation tick. They are not mobile/browser performance results. Very large imported populations can still make an individual batch exceed the asynchronous time budget.
+精确计时和运行时信息曾记录在 `latest-long-game-benchmark.json`，该历史产物当前未随仓库提供。测量内容为 Node CPU 上的快照生成、HTML 字符串生成和一次普通模拟步，不代表移动端或浏览器性能。导入极大人口时，单个批次仍可能超过异步时间预算。
 
-## Provenance and verification limits
+## 验证边界
 
-`latest-provenance.json` records a scan for identical files and matching windows of six normalized significant source lines. No matches were found at this checkpoint. This limited scan does not establish legal clearance, exhaustive originality or absence of semantic similarity. Artwork provenance and independent authorship are separately documented by the project.
+本轮没有可用的受支持浏览器会话。**浏览器渲染、手机截图、首屏与溢出表现、触控易用性，以及真机响应速度仍未验证。** 源码与 CSS 对视口、安全区域、字号、减少动态效果和焦点样式的检查，不能替代这些工作。
 
-No supported browser session was available for this pass. **Browser rendering, phone screenshots, fold/overflow appearance, touch ergonomics and real-device responsiveness remain unverified.** CSS/source checks for viewport, safe-area behavior, text sizes, reduced motion and focus styling are not substitutes for that work.
-
-The test count is not a claim of exhaustive parity across all challenge combinations, optional source flags, extreme imports, random sequences or every late-game interaction. Static catalog parity, exercised mechanics, actual handler coverage and unperformed visual checks are intentionally reported separately.
+测试数量不能证明已穷举全部挑战组合、可选配置、极端导入、随机序列或后期交互。静态目录数值、已测试机制、真实事件处理器覆盖和未执行的视觉检查应分别报告。

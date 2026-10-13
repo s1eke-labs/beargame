@@ -1,35 +1,33 @@
-# Diplomacy and daily events
+# 外交与每日事件
 
-## Trading essentials
+## 贸易基础
 
-VERIFIED`js/diplomacy.js:18–361,475–523,585–602,825–972,994–1045,1111–1164,2158–2163`.
+以下规则已核实。基础贸易费为 50 劳力和 15 黄金，另加交易方要求的一种商品。商品投入与普通材料回报随贸易量缩放，香料与蓝图奖励不随其缩放。敌对交易失败也会扣费。交易前必须发现交易方。
 
-Base trade fee is50manpower+15gold in addition to one partner-specific commodity. The commodity requirement and normal material return scale with trade volume; spice and blueprint bonuses do not. Costs are paid even if a hostile trade fails. Every partner must be discovered before trading. Initial emissary normally arrives in year20; previous karma tally changes this to5; diplomacy perk1; navigation-diplomacy perk plus a ship0. Initial random partners are lizards/sharks/griffins. Send exploration costs1,000manpower. Its priority special discoveries are nagas atculture≥1,500; zebras atship≥1; spiders atship≥100andscience-cap>125,000; dragons atnuclear-fission researched. Otherwise choose among still-undiscovered non-hidden partners.
+首位使者通常在第 20 年到访；已有业力累计计数时改为第 5 年，有外交能力时为第 1 年，拥有航海外交能力且有船时为第 0 年。初始随机交易方为蜥蜴、鲨鱼或狮鹫部族。探索消耗 1,000 劳力。特殊发现按优先级依次检查：文化至少 1,500 时发现娜迦部族；至少一艘船时发现斑马部族；至少 100 艘船且知识上限大于 125,000 时发现蜘蛛部族；研究核裂变后发现龙族。否则从尚未发现的非隐藏交易方中选择。
 
-Negative final standing means failure probability equal to its magnitude. Positive standing is chance of25%extra normal-material yield. Neutral always succeeds. Friendly standing receives half ordinary standing bonuses, hostile standing can improve at most to neutral, and neutral only changes under a special diplomacy policy.
+最终关系为负时，其绝对值就是失败概率；关系为正时，该值是普通材料额外增加 25% 的概率；中立交易总是成功。友好关系只获得普通关系加成的一半，敌对关系最多改善到中立，中立关系只有在特殊外交政策下才会改变。
 
-For each successful material roll: quantity=base×[1+width×(uniform(0,1)−.5)]×(1+tradeRatio+applicablePolicy/ChallengeRatio)×(1+.02elderEnergy)×(1+seasonBonus)×tradeVolume. A friendly bonus trade multiplies this by1.25. Width is total relative range, not ±width: width.08 means±4%.
+每种材料成功判定后的数量为 `基础量×[1+范围宽度×(uniform(0,1)−0.5)]×(1+tradeRatio+适用政策或挑战倍率)×(1+0.02×长者能量)×(1+季节加成)×贸易量`。友好额外奖励再乘以 1.25。宽度表示整个相对范围，0.08 表示 ±4%。
 
-Every successful trade independently has10%blueprint chance (+1blueprint), and35%spice chance. Spice return is25+50×tradeMultiplier×uniform(0,1). Embassies multiply spice chance by1+.01level in ordinary play; it is not an additive1percentage point. If spice chance exceeds1, it becomes a guaranteed roll with output multiplied by that chance. Other goods' chances receive their own diminishing embassy bonus, limited at.75 without ambassadors; embassy minimum levels gate advanced goods. Negative base chances require positive ambassador effects before a good can ever be sold. Iron Will embassy effectiveness is quarter strength.
+每次成功贸易独立有 10% 概率获得一张蓝图，有 35% 概率获得香料。香料数量为 `25+50×贸易倍率×uniform(0,1)`。普通玩法中，使馆将香料概率乘以 `1+0.01×等级`，不是每级直接增加一个百分点。概率超过 1 时必定触发，并按该概率增加产量。其他商品使用独立递减使馆加成，没有使节时限值为 0.75；高级商品还有最低使馆等级。基础概率为负的商品需要正向使节效果才能出售。坚毅模式下使馆效果只有四分之一。
 
-Zebra trade additionally rolls titanium: chance=.15+.0035×shipCount, capped as probability at1; quantity=1.5+.03×ships, then trade volume and a special relation modifier. Ordinary trade ratio and season do not multiply this titanium. At100ships, conditional-on-success expected titanium=.5×4.5=2.25. With baseline hostile success.7, unconditional expected titanium1.575per paid trade.
+斑马贸易另判定钛：概率为 `0.15+0.0035×船数`，最高为 1；数量为 `1.5+0.03×船数`，再乘以贸易量和特殊关系修正，普通贸易倍率与季节倍率不作用于此。100 艘船时，成功交易的钛期望为 `0.5×4.5=2.25`；基础敌对成功率为 0.7 时，每次付费交易的无条件期望为 1.575。
 
-Eight partners' first-tier factual terms in08-trade-selected-facts.json are sufficient to establish early commodity reachability but not advanced embassy parity. Advanced embassy goods, ambassador upkeep and consumption scaling, policy variants, elder feeding/duration, trading anti-undo state and cap behavior remain separately CATALOGUED.
+八个交易方的首级商品记录见 `08-trade-selected-facts.json`。这些记录足以确定前期商品可达性，但不代表高级使馆规则已完整覆盖。高级使馆商品、使节供养及消耗缩放、政策变体、长者喂养与停留、防撤销贸易状态以及容量行为仍需分别验证。
 
-## Daily sky/weather events
+## 每日天象与天气
 
-VERIFIED`js/calendar.js:254–297,360–382,520–581,661–698,929–951`.
+有启用的图书馆或已研究天文学时，可出现天文事件。每日基础概率为 `0.0025+0.002×天文台数`，再应用时间、传承与挑战效果。手动观测奖励 `25×(1+scienceRatio)` 知识；天体力学使其在普通模式乘以 1.2、坚毅模式乘以 1.6。研究天文学后，普通概率下另得一张星图；极高事件概率可产生多张。观测机会持续 300 刻，即 60 秒；坚毅模式为 600 刻。自动搜寻研究会立即观测。超时自动概率为每座天文台 0.01，星象术使其翻倍，限制在 0..1；坚毅模式最低 0.25。超时实际以 0..99 整数进行包含等号的比较 `≤概率×100`，因此概率为零仍有实际 1% 的下限。
 
-Astronomical events are eligible once an active library exists or astronomy is researched. Base daily probability=.0025+.002×observatories, before time/prestige/challenge effects. A manual observation grants25×(1+scienceRatio)science; celestial mechanics multiplies this by1.2(normal)or1.6(Iron Will). After astronomy, it also grants1starchart at ordinary probabilities. Extremely high eventChance supports multiple charts. An opportunity lasts300ticks(60seconds), or600ticks in Iron Will. SETI observes immediately. Timeout auto-chance is.01per observatory, doubled by astromancy, clamped0..1; Iron Will minimum.25. The actual timeout integer0..99 comparison is inclusive(≤chance×100), giving an effective1%floor even at zero chance.
+前 3 年天气中立。从第 4 年起，每季抽取 0..999 整数：0–174 为暖，175–349 为冷，350–999 为中立，基础概率为 17.5%、17.5%、65%。冷天气加成将概率从暖转向冷，寒冬挑战另有特殊规则。
 
-Weather is neutral through year3. Starting year4, every season rolls integer0..999:0–174warm,175–349cold,350–999neutral. Base probabilities17.5%/17.5%/65%. Cold-chance effects move probability from warm to cold, with special winter-challenge behavior.
+采矿解锁普通陨石，每日概率为 0.001。特殊修正前，矿物奖励为 `50+25×mineralsRatio`；天体力学也影响相关知识奖励。裂隙使用每日 `riftChance`，奖励 `500×(1+0.1×unicornsRatioReligion)` 灵鹿。每日星翼鹿概率为建筑 `alicornChance` 总和乘以 `1+limitedDR(alicornPerTickRatio,1.2)`，触发时奖励一只。象牙流星概率为 `ivoryMeteorChance×灵鹿事件概率倍率`，奖励 `250+integer(0..1499)×(1+ivoryMeteorRatio)`。
 
-Mining enables ordinary meteor probability.001per day. Minerals gained=50+25×mineralsRatio before special modifiers; celestial mechanics also affects related science. Rifts use daily riftChance and grant500×(1+.1×unicornsRatioReligion)unicorns. Daily alicorn chance is the sum of structure alicornChance multiplied by1+limitedDR(alicornPerTickRatio,1.2), and awards1. Ivory meteor chance is ivoryMeteorChance times unicorn-event chance multiplier; award250+integer(0..1499)×(1+ivoryMeteorRatio).
+每年长者到访概率为 `0.035×有效黑金字塔数×(1+0.1×有效标记碑数)`；发现长者解锁黑空挑战。重复到访持续时间与稀有度倍率需专门测试。
 
-Yearly elder arrival chance is.035×effectiveBlackPyramids×(1+.1×effectiveMarkers); elder discovery opens black-sky challenge. Detailed recurring elder lifetime and rarity multipliers remain to be tested.
+## 使馆与长者补充
 
-## Embassy and elder addendum
+建造使馆需要文字研究和已发现的交易方。价格为 `交易方基础文化成本×(1−使馆成本减免)×1.15^(等级+embassyFakeBought)`，不可出售。普通商品需满足最低使馆等级并已解锁对应资源；煤、铀及全部长者商品不受资源解锁限制。商品的有效基础概率必须为正。概率倍率为 `1+limitedDR(等级×0.01,0.75+ambassadorEmbassyCap)`；坚毅模式将 0.01 改为 0.0025。贸易劳力与黄金费用减去对应折扣后最低为零；末日挑战再乘以 `1+污染等级`。贸易量为 `(1+普通贸易量加成)×(1+使节贸易量加成)`。
 
-Embassy construction requires writing and a discovered partner. Price=partnerBaseCulture×(1−embassyCostReduction)×1.15^(level+embassyFakeBought). No sale action. Normal goods must meet minimum embassy level and already-unlocked resource state, except coal, uranium and all elder goods. Their effective base chance must be positive. Probability multiplier is1+limitedDR(level×.01,.75+ambassadorEmbassyCap), or use.0025inIronWill (`js/diplomacy.js:463–473,1143–1162,1582–1615`). Trade fees clamp at0after subtracting tradeCatpowerDiscount/tradeGoldDiscount; PA multiplies by1+pollutionLevel. Trade volume=(1+ordinaryTradeVolume)×(1+ambassadorTradeVolume).
-
-Elder visit starts only with no current duration and at least one other discovered partner. Initial duration400×(5+floor(energy))days. Successful trades clamp remaining duration to100×(4+floor(energy)). Days decrement it; a subsequent day at≤0hides the faction. Feed wholefloor(min(request,necrocornStock))units, gainingamount×(1+feedEfficiency)energy, capped atfloor((5+5effectiveMarkers)×(1+leviathansEnergyModifier)). Empty feeding clears fractional stock and sets duration0. Energy≥25unlocksUT. Energy persists between visits (`js/diplomacy.js:705–744,883–884,1163–1195`).
+长者只在没有当前停留时间、且至少发现另一交易方时开始到访。初始停留为 `400×(5+floor(能量))` 天；成功贸易将剩余时间限制为最多 `100×(4+floor(能量))`。每日递减，减到零后的下一日检查隐藏长者。喂养消耗 `floor(min(请求量,幽角鹿库存))`，获得 `消耗量×(1+喂养效率)` 能量，上限为 `floor((5+5×有效标记碑数)×(1+leviathansEnergyModifier))`。无完整单位可喂养时，清空小数库存并将停留设为零。能量至少 25 时解锁灵露挑战。能量在同一轮的多次到访间保留。

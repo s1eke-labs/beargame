@@ -1,56 +1,56 @@
-# Offline and time-skip implementation checkpoint
+# 离线与时间跳跃实现检查记录
 
-2026-10-08. Independently authored game logic, using factual observations from reference commit 781e379f79f1e7512d168849cba21ed111502644. No reference executable code, artwork or expressive interface text was reused.
+记录日期：2026-10-08。本篇说明本项目离线批处理与时间跳跃的已实现行为及验证范围。
 
-## Delivered modules
+## 已完成模块
 
-- `redshift.js`: resource, village, space and calendar batches, queue-boundary orchestration and offline furnace transfer.
-- `industrial-redshift.js`: closed-form pollution and aggregate steam automation; bridges the independently authored annual industrial hook.
-- `religion-redshift.js`: bulk corruption/debt thresholds, paradox chargeable days and full-duration Order of the Void.
-- `progression.js`: streamed annual time skips through `advanceYearsSteps`.
-- Core integration in `index.js` is owned and tested separately. Both sync offline simulation and asynchronous catchup consume the same redshift iterator. User time-jump actions use `actAsync` for responsive annual processing.
+- `src/engine/redshift.js`：资源、村庄、太空与日历批处理，队列边界编排，离线高炉热量转移。
+- `src/engine/industrial-redshift.js`：污染闭式解与蒸汽自动化汇总，连接年度工业事件。
+- `src/engine/religion-redshift.js`：批量腐化和债务阈值、悖论可结算日、完整时段的虚空教团。
+- `src/engine/progression.js`：通过 `advanceYearsSteps` 流式推进年度时间跳跃。
+- 核心 `src/engine/index.js` 单独集成与测试。同步离线模拟和异步追赶共用同一个折算迭代器，用户时间跳跃行动通过 `actAsync` 按年度处理并保持响应。
 
-## Offline sequence
+## 离线顺序
 
-Queue ETA is rounded upward to complete 400-day intervals, with a one-day minimum before rounding. Each economy segment processes resource rates, buildings, workshop engineers, village, space and religion. Only after those steps are remembered resource ceilings restored. Heat transfer and any furnace-driven years run before the queue receives one opportunity to complete a unit. An uncomputable queue head causes the whole remaining duration to be processed without a queue attempt.
+队列预计完成时间先设为至少一天，再向上取整至完整 400 天区间。每个经济段依次处理资源速率、建筑、工坊工程师、村庄、太空与宗教，之后才恢复记忆的资源上限。先完成热量转移与高炉触发的年份跳跃，再给队列一次完成一个单位的机会。无法计算队首完成时间时，直接处理全部剩余时段，不尝试队列。
 
-Calendar batching happens once after all economy segments. Season, day, weather, calendar tick and active-game tick counters remain unchanged; year increases by floor(total elapsed days/400), subject to the millennial challenge's year500 ceiling. Furnace shatters can independently move the calendar first. Festival duration, ordinary envoy discovery and elder-visit countdown do not get active-day replay in this path.
+全部经济段完成后只执行一次日历批处理。季节、日期、天气、日历刻和在线游戏刻保持不变；年份增加 `floor(总经过天数/400)`，受千年挑战第 500 年上限限制。高炉碎裂可提前独立移动日历。节庆时长、普通使者发现与长者到访倒计时不会在此路径逐日回放。
 
-Ordinary resource batches use cached gross output less household upkeep. Converter inputs and ambassador upkeep are excluded from that cache. Negative honey is skipped, and village bulk does not run starvation. Resources with no per-tick calculation flag are excluded. Temporary over-cap stock is available to automation before ceilings are restored. Existing over-cap stock sets its own preservation ceiling.
+普通资源批量使用缓存总产出减去家庭消耗，缓存排除转换器原料和使节供养。负蜂蜜变化跳过，村庄批处理不执行饥饿。无每刻计算标记的资源排除。恢复上限前，自动化可以使用临时超限库存；原有超限库存以自身数量作为保留上限。
 
-The workshop snapshot updates resource-dependent storage before engineering. Steam automation aggregates its allowed attempts from a local input balance, caps each attempt at the normal input capacity, orders plate/slab/beam crafting, and jams even when its extra automation switch is off. Pollution uses the constant-emission exponential solution, or a linear solution without dissipation. Offline GFLOPS generation remains disabled under the inspected default web profile; entanglers consume only the stock already available.
+工坊快照先更新资源相关仓储，再推进工程。蒸汽自动化从局部原料余额汇总允许的尝试，每次原料最多使用普通容量，按金属板、石板、木梁顺序制作；即使额外自动化开关关闭，也会卡滞。污染使用恒定排放指数解，无消散时用线性解。默认网页配置关闭离线算力生成，纠缠器只消耗已有库存。
 
-Calendar event counts are rounded statistical totals. Automatic observation uses its actual probability, without the active event timeout's inclusive one-percent floor. Meteor science intentionally excludes the academy meteor factor applied to mineral and iron rewards in this bulk path. The ivory batch shares one yield sample. Millennium paragon is exactly one per crossed boundary; the default path does not use the alternate grouped-year dark-paracosm bonus. Antimatter uses whole elapsed years and the cached energy condition. Void uses statistical paradox share. Crypto uses its independently implemented bounded log-return distribution approximation and one final correction.
+日历事件数使用取整后的统计总数。自动观测采用实际概率，不使用在线事件超时的包含等号比较所产生的 1% 下限。批处理陨石知识不含应用于矿物和铁的学院因子；象牙批处理共用一个产量样本。每跨千年边界恰好获得一典范，默认路径不使用分组年份的暗境额外奖励。反物质使用完整经过年数与缓存电力条件；虚空使用统计悖论占比；黑币使用有界对数收益分布近似，最后修正一次。
 
-A batch beginning on a negative paradox day retains that day. Ordinary resource batching explicitly allows paradox gains, but per-tick ambassador spending, pact stock deductions and beacon relic gains retain their respective negative-day gates. Village growth continues; job learning does not. The zero-rate and preserved-final-alicorn robustness exceptions are documented in `18-religion-redshift.md`.
+从负悖论日期开始的批处理保留该日期。普通资源批量明确允许悖论收益，但每刻使节支出、契约库存扣除和信标遗物收益仍遵循各自负日期限制。村庄成长继续，岗位学习停止。零速率和最后一只星翼鹿的保护见 `18-religion-redshift.md`。
 
-## Crystal and heat time jumps
+## 水晶与热量跳跃
 
-`advanceYearsSteps(ctx, count)` yields one completed annual boundary at a time as `{completedYears,totalYears}`. `advanceYears` uses the core's `runYearJump` when supplied, retaining the synchronous fallback for existing API consumers.
+`advanceYearsSteps(ctx,count)` 每完成一个年度边界，产出 `{completedYears,totalYears}`。`advanceYears` 在核心提供 `runYearJump` 时使用该入口，保留原有接口使用者的同步回退。
 
-The first interval uses only remaining days and the pre-jump cached production snapshot. Calendar season/day reset to spring/day0, while the existing day tick is preserved. Subsequent annual intervals refresh the production snapshot, so cycles, paragon, year-dependent effects and depleted stock affect the following year. Routes advance by the appropriate interval days.
+第一个区间仅使用剩余天数和跳跃前的缓存产率快照。季节和日期重置为春季第零天，已有日内刻保留。后续每年刷新产率，使周期、典范、年份效果和库存耗尽影响下一年。航线按区间对应天数推进。
 
-Every retrieval interval remembers ceilings, applies eligible net rates, runs chrono-engineer production when researched, restores ceilings and advances pollution for retrieval-scaled ticks. Void resonance independently invokes Order of the Void for the full skipped ticks. Annual rewards, elder opportunities, industrial unjamming/AI and alicornmancy are processed for each skipped year. The build queue is attempted once after the complete jump. The source of this final queue attempt is time.js:180–188 and 735–736.
+每个回收区间记忆容量上限、应用合格净速率、在已研究时运行时间工程师制作、恢复上限，并按回收倍率缩放的刻数推进污染。虚空共鸣独立按全部跳过刻数调用虚空教团。年度奖励、长者机会、工业解除卡滞与人工智能事件、星翼鹿法术都逐年执行。完整跳跃后尝试一次建造队列。
 
-The existing piecewise crystal-cost calculation was retained. Finite/saveable-range checks throw through the core's checkpoint rollback rather than committing a partial jump. Large actions should use the async API; the sync API deliberately retains its existing synchronous contract.
+保留已有分段水晶成本计算。有限数值与可保存范围检查通过核心检查点回滚抛错，不提交部分跳跃。大数量行动应使用异步接口，同步接口保留既有同步约定。
 
-## Durable checks
+## 回归检查
 
-`tests/redshift.test.mjs` has 25 independently calculated fixtures, including:
+`tests/redshift.test.mjs` 在本次记录中包含 25 项独立计算的样例，覆盖：
 
-- Cross-season offline freezing, whole-year flooring, millennium boundaries and capped challenge years
-- Cached converter output without fuel subtraction, delayed ceilings, no offline hunger, no new computing
-- One queue completion per yearly segment, blocked-head behavior and no early compounding
-- Ambassador whole-period funding, housing-limited growth and bulk skills
-- Exponential pollution, capped steam attempts and disabled-but-jammed automation
-- Statistical celestial, meteor and paradox rewards
-- Partial first shatter year, cycle transitions, year999 and year39999/40000, engineering, void resonance, annual AI and final queue processing
-- Offline furnace transfer, synchronous/asynchronous equivalence, import replay, operation locks and overflow rollback
+- 跨季离线冻结、整年向下取整、千年边界与挑战年份上限。
+- 缓存转换器输出但不扣燃料、延后恢复上限、离线无饥饿、不新增算力。
+- 每年分段仅完成一个队列项、队首阻塞、不提前复利。
+- 使节整段供养、住房限制的成长、批量技能。
+- 指数污染、限容量蒸汽尝试、自动化关闭仍卡滞。
+- 统计天象、陨石和悖论奖励。
+- 碎裂不完整首年、周期转换、第 999 年及第 39,999→40,000 年、工程、虚空共鸣、年度人工智能和最终队列处理。
+- 离线高炉转移、同步异步一致性、导入回放、操作锁和溢出回滚。
 
-`tests/religion-redshift.test.mjs` has 13 numeric fixtures plus a 2,880-combination safety/termination sweep. All 23 pre-existing progression tests also passed after integration at this checkpoint.
+`tests/religion-redshift.test.mjs` 包含 13 项数值样例和 2,880 组合的安全性、终止性扫描。集成后，原有 23 项发展系统测试在本次检查中也全部通过。
 
-## Verification limits
+## 验证边界
 
-These tests validate explicitly enumerated default-profile behavior. They are not exhaustive equivalence testing of every challenge combination, extreme imported state, optional feature flag, random sequence or every source cache-invalidation quirk. The game intentionally uses its own seeded random stream; identical upstream RNG histories are not promised. The crypto distribution is statistically aligned, rather than bit-identical to a different random implementation.
+这些测试验证明确列出的默认配置行为，不穷尽全部挑战组合、极端导入状态、可选开关、随机序列或缓存失效边界。游戏使用自身带种子的随机数流，随机验收基于分布与统计性质；黑币分布使用统计近似，不保证不同随机实现之间逐位相同。
 
-Core async wrappers yield between batch/annual steps with a 10ms target budget. An individual production snapshot or very large population pass remains indivisible, so pathological maximum-size imported populations can exceed that target within a single step. This is a responsiveness limitation, not a claim of strict real-time scheduling. Browser lifecycle, close/reopen and end-to-end save/export checks are owned by the separate QA pass.
+核心异步包装以十毫秒为目标预算，在批处理段和年度步骤之间让出执行权。单个生产快照或极大人口遍历仍不可拆分，极端导入人口可能使单步超过预算。这是响应性限制，不代表严格实时调度。浏览器生命周期、关闭再打开，以及端到端存档和导出仍需独立浏览器检查。

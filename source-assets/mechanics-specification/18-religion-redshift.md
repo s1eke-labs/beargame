@@ -1,62 +1,62 @@
-# Religion redshift: numeric behavior and independent implementation
+# 宗教离线折算：数值规则与实现
 
-Reference inspected: Kittens Game commit `781e379f79f1e7512d168849cba21ed111502644`, `js/religion.js:343–635` and `2870–2970`. This document records functional facts rather than source code or expressive text. The implementation is independently authored in `beargame/src/engine/religion-redshift.js`; regression fixtures live in `beargame/tests/religion-redshift.test.mjs`.
+本篇记录宗教批处理规则。实现位于 `src/engine/religion-redshift.js`，回归样例位于 `tests/religion-redshift.test.mjs`。
 
-## Two elapsed-time quantities
+## 两种经过时间
 
-The incoming duration is a day count and a tick count, normally ten ticks per day. If the paradox chance is positive, estimate the fraction of time in paradox as:
+输入时段包含天数和刻数，通常每天十刻。悖论概率为正时，估算悖论时间占比：
 
-`(10 + extra paradox days) / (10 + extra paradox days + 100 × max(1, 1 / paradox chance))`.
+`(10+额外悖论天数)/(10+额外悖论天数+100×max(1,1/悖论概率))`。
 
-Remove the floor of that fraction times the incoming days from chargeable days. Keep the incoming tick count intact. Thus pact upkeep receives fewer days, while corruption and Order of the Void receive all ticks. This is a statistical bulk rule and does not replay the active calendar's negative days.
+将该占比乘以输入天数后向下取整，从需结算天数中扣除；输入刻数保持不变。因此契约供养结算较少的天数，腐化与虚空教团仍获得全部刻数。这是统计批处理规则，不回放在线日历中的负日期。
 
-## Corruption and storage thresholds
+## 腐化与库存阈值
 
-The existing independently authored active-corruption factors also apply to the bulk path: base corruption effect, the Black Sky reward when that challenge is inactive, sorrow's square-root multiplier, and Feeding Frenzy's 0.9 multiplier. Above the storage threshold, multiply by `0.25 × (1 + corruption boost)`. The threshold is zero necrocorns normally and one with Feeding Frenzy; equality uses the faster rate.
+在线腐化的已有因子同样应用于批处理：基础腐化效果、未启用黑空挑战时的完成奖励、哀伤平方根倍率，以及盛宴馈赠的 0.9 倍率。超过库存阈值时，再乘以 `0.25×(1+腐化增强)`。阈值通常为零幽角鹿，有盛宴馈赠时为一；恰等于阈值时仍使用较快速率。
 
-Below the threshold, the number of new whole units needed to exceed it is `1 + floor(threshold − current stock)`. The transition tick is the ceiling of the missing corruption divided by the faster rate. A bulk interval includes fast-rate ticks through that transition and slow-rate ticks afterward.
+低于阈值时，为超过它需要的新完整单位数为 `1+floor(阈值−当前库存)`。转折刻为所缺腐化除以较快速率后向上取整。批处理区间直到转折刻为止都使用快速率，其后使用慢速率。
 
-Conversion exchanges whole alicorns for whole necrocorns while preserving a positive remainder in the input herd. The maximum exchange count is `ceil(alicorns) − 1`. Unspent corruption is limited to one after an exchange attempt. Consequently a herd of two leaves one; a herd of 2.3 leaves 0.3. An already empty herd does not clear previously stored corruption in the reference bulk path.
+转换以整只星翼鹿换取整只幽角鹿，并保留正的星翼鹿余量。最大转换数为 `ceil(星翼鹿数)−1`。尝试转换后，未用腐化最多保留一。因此两只鹿保留一只，2.3 只保留 0.3 只；若鹿群本来为空，批处理不清除此前储存的腐化。
 
-## Pact settlement and threshold rechecks
+## 契约结算与阈值复查
 
-Each pact normally costs 0.0005 necrocorns per chargeable day; Upfront Payment changes that to 0.00045. For an ordinary bulk interval, corruption and conversion precede settlement. The settlement function is shared with the independently authored daily model, with interval upkeep equal to daily upkeep times interval days.
+每份契约通常每个可结算日消耗 0.0005 幽角鹿，预付供养改为 0.00045。普通批处理先进行腐化和转换，再结算。结算函数与每日模型共用，区间供养为每日供养乘以区间天数。
 
-With positive debt, the requested stock payment is multiplied by `1 + 0.15 × (1 + recovery / 2)`. When stock cannot cover that request, ordinary upkeep is deducted instead and any shortage of ordinary upkeep increases debt. When stock can cover the request, debt falls by `ordinary upkeep × 0.15 × (1 + recovery)`, bounded below by zero. Stock deductions are also bounded below by zero. The two recovery factors intentionally differ.
+债务为正时，请求库存支付量乘以 `1+0.15×(1+恢复/2)`。库存不足以支付该请求时，只扣普通供养，普通供养的短缺部分增加债务。库存足够时，债务减少 `普通供养×0.15×(1+恢复)`，最低为零；库存扣除后也最低为零。这两种恢复系数有意不同。
 
-Continuous consumption may move stock from above the corruption threshold to below it. Bulk processing therefore rechecks after the estimated day when consumption would reach the threshold; when already below it, it rechecks after the first day containing the next upward crossing. Production within each such interval is still aggregated, so this is not an exact active-tick replay.
+持续消耗可能将库存从腐化阈值以上降至以下。因此批处理在预计消耗到达阈值的那一天之后复查；本来低于阈值时，在包含下一次向上越界的第一天之后复查。每个区间的生产仍汇总处理，不是精确逐刻回放。
 
-Siphoning leaves stored necrocorns untouched by upkeep. Instead, upkeep increases debt; generated whole units then repay the whole-number portion of that debt before any excess enters storage. Its projected crossing must therefore include whole debt accumulated by the candidate crossing tick. Fast and slow portions settle their allocated chargeable days before their respective conversion. The fast portion receives the floor of its proportional day allocation; the remainder belongs to the slow portion. The reference's debt-dominated projection guard is retained.
+引流偿约不通过供养扣除已有幽角鹿，改为增加债务；新产完整单位先偿还债务整数部分，剩余才进入库存。因此预计越界必须包含候选转折刻之前累积的完整债务。快速段和慢速段各自在转换前结算分配到的天数；快速段取得按比例天数的向下取整值，其余归慢速段。实现保留债务主导情况下的预测保护。
 
-Religion bulk itself does not invoke pact fracture. That remains a separate active progression behavior.
+宗教批处理自身不触发契约决裂；决裂仍由单独的在线发展流程处理。
 
-## Order of the Void
+## 虚空教团
 
-With the required perk, accumulated worship is increased by full elapsed ticks times faith production per tick times `0.1 × (1 + void resonance) × (1 + apocrypha bonus / 4)`. The exported `accumulateVoidOrder` helper supports the time-shatter integration separately. Its default production lookup ignores the current paradox state; callers control whether a shatter interval qualifies.
+拥有所需能力后，累计颂愿增加 `完整经过刻数×每刻信仰产出×0.1×(1+虚空共鸣)×(1+秘典加成/4)`。导出的 `accumulateVoidOrder` 辅助函数可单独用于碎裂集成。默认产率查询忽略当前悖论状态，调用者决定碎裂区间是否符合条件。
 
-## Independently calculated regression values
+## 独立计算的回归样例
 
-Unless noted, examples use 10 days, 100 ticks, 100 alicorns, zero necrocorns, zero corruption, zero debt, no modifiers, and corruption 0.1 per tick.
+除另有说明外，样例使用十天、100 刻、100 星翼鹿、零幽角鹿、零腐化、零债务、无修正，腐化速率为每刻 0.1。
 
-- Ordinary upward threshold crossing ends at 97 alicorns, 3 necrocorns, and 0.25 corruption.
-- Starting with one necrocorn ends at 98 alicorns, 3 necrocorns, and 0.5 corruption.
-- Feeding Frenzy ends at 97 alicorns, 3 necrocorns, and 0.8025 corruption.
-- Starting with two alicorns ends at one alicorn, one necrocorn, and one corruption.
-- Starting with 2.3 alicorns ends at 0.3 alicorns, two necrocorns, and one corruption.
-- An empty herd, initial corruption 0.7, debt 2, and one pact preserves corruption and ends at debt 2.005.
-- At 100 days and corruption 0.001 per tick, one pact with Siphoning and debt 1.2 ends at 99 alicorns, no necrocorns, no corruption, and debt 0.25.
-- At 100 days, no herd, three necrocorns, debt 2, one pact and no recovery bonus, stock ends at 2.9425 and debt at 1.9925.
-- At 110 days with paradox chance one, an empty herd and one pact incur debt 0.05. Order of the Void with faith production two still accumulates 220 worship.
-- At corruption 0.02 per tick, initial necrocorns 0.15 and 200 pacts, consumption crosses below the threshold and production later crosses back. The result is 99 alicorns, 0.125 necrocorns, 0.175 corruption and no debt.
-- With one pact, Siphoning and initial debt 1.2, the default duration ends at 96 alicorns, three necrocorns, zero corruption and debt 0.205.
+- 普通向上越界结束时：97 星翼鹿、3 幽角鹿、0.25 腐化。
+- 初始一只幽角鹿时：98 星翼鹿、3 幽角鹿、0.5 腐化。
+- 盛宴馈赠时：97 星翼鹿、3 幽角鹿、0.8025 腐化。
+- 初始两只星翼鹿时：一只星翼鹿、一只幽角鹿、一点腐化。
+- 初始 2.3 只星翼鹿时：0.3 星翼鹿、两只幽角鹿、一点腐化。
+- 空鹿群、初始腐化 0.7、债务 2、一份契约：保留腐化，债务变为 2.005。
+- 100 天、每刻腐化 0.001、一份契约、引流偿约、债务 1.2：99 星翼鹿、零幽角鹿、零腐化、债务 0.25。
+- 100 天、空鹿群、三只幽角鹿、债务 2、一份契约、无恢复加成：库存 2.9425，债务 1.9925。
+- 110 天、悖论概率 1、空鹿群、一份契约：债务增加 0.05；每刻信仰产出为 2 时，虚空教团仍积累 220 颂愿。
+- 每刻腐化 0.02、初始幽角鹿 0.15、200 份契约：消耗先越至阈值以下，生产随后向上越界；结果为 99 星翼鹿、0.125 幽角鹿、0.175 腐化、零债务。
+- 一份契约、引流偿约、初始债务 1.2，默认时长：96 星翼鹿、三只幽角鹿、零腐化、债务 0.205。
 
-The test suite also sweeps 2,880 combinations of herd, stock, pact count, corruption rate, debt and both relevant policies over 16,000 days. This checks numerical safety and termination, not equivalence to every upstream state.
+测试还在 16,000 天时段上扫描鹿群、库存、契约数、腐化速率、债务和两项相关政策的 2,880 种组合，检查数值安全和终止性，不代表穷尽全部游戏状态。
 
-## Explicit robustness differences
+## 稳健性边界
 
-Two narrow exceptional cases are intentionally safer than the inspected bulk implementation:
+两个特殊情况使用明确的保护规则：
 
-1. Zero corruption rate with Siphoning accrues upkeep without producing undefined numerical values. The regression starts at debt 1.2 with one pact and finishes ten days later at debt 1.205, with all stocks unchanged.
-2. A final preserved alicorn with a full corruption unit can place an estimated crossing at the current instant, preventing the reference loop from consuming remaining days. The independent implementation finishes the remaining upkeep after exhausting ticks. Starting with one alicorn, 0.15 necrocorns, 200 pacts and corruption 0.02 per tick ends ten days later with one alicorn, no necrocorns, corruption one and debt 0.85.
+1. 腐化速率为零且启用引流偿约时，继续累计供养，不产生无效数值。回归样例从债务 1.2、一份契约开始，十天后债务为 1.205，库存不变。
+2. 保留最后一只星翼鹿且腐化已满一时，预计越界可能落在当前时刻。实现耗尽刻数后继续完成剩余供养，避免循环无法推进。初始一只星翼鹿、0.15 幽角鹿、200 份契约、每刻腐化 0.02，十天后为一只星翼鹿、零幽角鹿、一点腐化、债务 0.85。
 
-These cases are not claimed as literal reproduction of the reference's invalid-number or nontermination behavior. No reference executable code, interface copy, descriptions or artwork are included in this implementation or audit.
+这些保护定义了零速率和无法继续转换时的有效行为，必须与普通数值回归一起保持。

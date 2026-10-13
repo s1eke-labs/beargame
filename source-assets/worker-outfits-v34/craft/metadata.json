@@ -1,12 +1,12 @@
 {
   "asset": "craft-atlas-v2.png",
-  "generated_with": "built-in image_gen",
+  "generated_with": "内置 image_gen",
   "image_size": [
     1536,
     1024
   ],
   "mode": "RGBA",
-  "layout": "3 columns by 2 rows; scholar, miner, engineer; ready above work",
+  "layout": "3 列、2 行；依次为学者熊、矿工熊和工程熊；准备姿态在上，工作姿态在下",
   "nominal_cell_size": [
     512,
     512
@@ -18,7 +18,7 @@
       254
     ],
     "fully_transparent_fraction": 0.5340614318847656,
-    "warning": "RGB in fully transparent pixels contains a dark cloudy pattern; alpha is zero there. Do not flatten or drop alpha. Preserve original RGBA."
+    "warning": "完全透明像素的 RGB 含有深色云雾状图案，但这些位置 alpha 为零。不要合并背景或丢弃透明通道，应保留原始 RGBA。"
   },
   "poses": [
     {
@@ -196,12 +196,12 @@
       ]
     }
   ],
-  "integration": "Use one shared scale for both poses of each job, align head_center_x and feet_baseline_y. Never independently fit based on tool bounds. Eye separation is about 73 pixels across all six figures. Nominal grid has y drift: visual eye line is around y176 then y654 (difference about 478), so per-pose anchors are authoritative.",
+  "integration": "每个职业的两个姿态使用共同缩放比例，对齐 head_center_x 与 feet_baseline_y。不要按照工具边界独立适配。全部六个角色的双眼间距约为 73 像素。名义网格存在 y 方向漂移：视觉眼线约在 y176 和 y654，相差约 478，因此应以各姿态锚点为准。",
   "inspection": {
     "complete_characters_and_props": true,
     "no_grid_or_text": true,
-    "head_identity": "Consistent with round simple white bear reference; tiny eyes/nose, short limbs, round ears, chunky near-black outline.",
-    "remaining_caveat": "Very mild pixel-level color variation and two-tone mineral rock remain from generation. No large shadow or backdrop exists in nonzero-alpha gutters."
+    "head_identity": "与圆润简洁的白熊形象参照一致：小眼睛和鼻子、短四肢、圆耳朵、粗近黑轮廓线。",
+    "remaining_caveat": "生成图保留极轻微的像素级色彩变化和双色矿石。具有非零透明度的间隔区域没有大片阴影或背景。"
   },
   "source_images": [
     "/workspace/scratch/2ea1830e5ccf/generated_images/exec-e949d3d7-8bf8-4f38-ace0-05ee0685bd8d.png",

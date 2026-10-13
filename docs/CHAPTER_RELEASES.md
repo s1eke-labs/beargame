@@ -1,54 +1,52 @@
-# Chapter publication architecture
+# 章节发布架构
 
-Public production builds are selected at build time. A browser flag is never a release boundary.
-The complete existing game source and original artwork remain in `src/engine`, `src/ui`, and `public/art`.
-Only selected standalone chapter modules and physically separated image pixels enter `dist`.
+公开版本的内容在构建时选择，浏览器开关不能作为发布边界。完整游戏源码和原始美术保留在 `src/engine`、`src/ui` 和 `public/art` 中，只有选定的独立章节模块及物理分离后的图片进入 `dist`。
 
-## Release sequence
+## 发布顺序
 
-1. Forest home: seven research items through construction; eleven buildings; forest survival, jobs, hunting, basic crafting and workshop improvements.
-2. Flourishing settlement: planned, pending dependency review and extracted implementation.
-3. Industrial era: planned, pending dependency review and extracted implementation.
-4. Space travel: planned, pending dependency review and extracted implementation.
-5. Time chapter: planned, pending dependency review and extracted implementation.
+1. 森林家园篇：截至建筑学的七项研究、十一种建筑，以及森林生存、职业、狩猎、基础制作和工坊升级。
+2. 繁荣聚落篇：规划中，等待依赖审查与独立实现提取。
+3. 工业时代篇：规划中，等待依赖审查与独立实现提取。
+4. 太空旅行篇：规划中，等待依赖审查与独立实现提取。
+5. 时间篇：规划中，等待依赖审查与独立实现提取。
 
-Only `forest` is publishable. Building any unfinished profile fails rather than accidentally publishing the full game. Later chapters must retain stable released IDs and the cumulative save family. A new profile becomes ready only after its own closure, emitted-build campaign, compatibility, and leakage tests pass. Full implementations still exist in the private source; they are not yet approved chapter artifacts.
+当前只有 `forest` 可发布。构建未完成的章节配置会直接失败，避免意外发布完整游戏。后续章节必须保留已发布的稳定标识符和累积式存档系列。新配置须通过依赖闭包、构建产物全流程回放、兼容性及内容泄漏测试，才能标记为可发布。完整实现仍保留在内部源码中，尚不属于获准发布的章节产物。
 
-## Commands
+## 命令
 
-- `npm run build`: forest release, staging first, verified before replacing `dist`.
-- `npm run build -- --chapter forest`: explicit profile selection.
-- `npm run build:full`: internal complete build in `.private-build/full`, never `dist`.
-- `npm run verify:release`: public build, source and release tests, static audit, and full private campaign regression.
+- `npm run build`：构建森林家园篇，先生成暂存产物，通过验证后再替换 `dist`。
+- `npm run build -- --chapter forest`：明确选择章节配置。
+- `npm run build:full`：将内部完整版本构建到 `.private-build/full`，不写入 `dist`。
+- `npm run verify:release`：执行公开构建、源码与发布测试、静态审计和内部完整版本的全流程回归。
 
-## Source of truth and extraction
+## 定义来源与提取
 
-`scripts/releases/profiles.mjs` is a private positive membership policy. `scripts/releases/catalog.mjs` derives released prices, rates and prerequisites from the original full source; no browser imports the original catalogue. Forest mechanics live in separate self-contained modules with parity tests against the full simulation. Extraction must preserve released numeric behavior. Future feature modules must not be imported through a nominally shared core.
+`scripts/releases/profiles.mjs` 维护内部发布白名单。`scripts/releases/catalog.mjs` 从完整源码推导已发布内容的价格、速率和前置条件，浏览器不会导入完整目录。森林规则位于自包含模块中，并通过与完整模拟引擎对照的测试。提取必须保留已发布规则的数值行为；后续功能不能借共用核心之名被提前导入。
 
-Retained baseline mechanics include seasonal weather, food consumption, happiness, skills, hunting rewards, mineral events and pollution where applicable. Later-specific storage fields and explorer combat effects are not part of this chapter. First-chapter hunting rewards remain even when later uses are excluded.
+保留的基础规则包括季节天气、食物消耗、幸福度、技能、狩猎奖励、矿物事件及适用时的污染。后续章节专用仓储字段和探索者战斗效果不属于本章。首章狩猎奖励仍然保留，即使其后续用途尚未开放。
 
-The ordered build queue is a baseline feature in the forest chapter. It starts with three slots, gains one after construction research, and includes only chapter-approved buildings, research after a library, and improvements after a workshop. Queued actions use current prices and the ordinary purchase path; one head unit advances per exact simulation tick, including offline replay. Older chapter saves without a queue load an empty queue without resetting progress. Later chapter work must preserve this released behavior rather than treat the queue as a future-only subsystem.
+顺序建造队列是森林家园篇的基础功能。初始容量为三格，完成建筑学后增加一格；可排入本章获准建筑，拥有图书馆后可排研究，拥有工坊后可排升级。队列使用当前价格和普通购买路径，每个精确模拟步最多推进队首一个单位，离线回放也遵循此规则。没有队列字段的旧章节存档加载为空队列，已有进度不重置。后续章节必须保留这一已发布行为。
 
-The forest art pack contains only approved standalone crops. An atlas that includes future pictures is private even if only one coordinate is used. Asset extraction is reproducible and verified by its build helper. No original atlas, full art metadata, documentation, source maps or private profile enters the release.
+森林美术包只包含获准的独立裁切图片。含后续章节图像的图集即使只使用其中一个坐标，也必须留在内部。美术提取过程可重复执行，并由构建辅助工具校验。原始图集、完整美术元数据、文档、源码映射和内部章节配置均不进入发布产物。
 
-## Release inventory
+## 发布文件清单
 
-`release-manifest.json` declares every released file with SHA-256 and byte length. The independent verifier checks exact inventory, approved paths, local references, selected catalog dependencies and excluded content. The manifest is an audit record, not a security boundary by itself. Private profile data and source assets are independently reviewed.
+`release-manifest.json` 声明每个发布文件的 SHA-256 和字节数。独立校验器检查完整文件库存、获准路径、本地引用、所选目录的依赖及应排除内容。清单用于审计，自身不能充当安全边界；内部章节配置和源素材仍需独立审查。
 
-Build output is prepared in `.private-build/release-stage`. Failed checks do not replace the previous valid `dist`. Publishing must use the verified artifact, not the whole checkout.
+构建先写入 `.private-build/release-stage`。检查失败不会替换先前有效的 `dist`。部署必须使用已验证的产物目录。
 
-## Saves and compatibility
+## 存档与兼容
 
-Use `beargame.chapters.save.v1`, separate from the old `beargame.save.v1`. The legacy bytes are never automatically overwritten or trimmed. Chapter saves have distinct `family`, schema/version and `contentLevel` headers. Reject incompatible newer or unknown saves before parsing their feature maps. Keep original bytes available for export. Namespaced ownership leases prevent two tabs from writing over each other.
+章节存档使用 `beargame.chapters.save.v1`，与旧版 `beargame.save.v1` 分开。旧存档字节不会被自动覆盖或裁剪。章节存档具有独立的 `family`、结构版本和 `contentLevel` 头部；解析功能映射前必须拒绝不兼容的新版本或未知存档，并保留原始字节以供导出。按命名空间隔离的所有权租约防止多个标签页互相覆盖。
 
-Current full legacy saves include all resource keys, even unused zeros; they cannot be treated as forest saves just because play progress looks early. Any future conversion requires a separately tested migration and explicit backup. No automatic downgrade is supported.
+完整版本的旧存档包含全部资源键，包括未使用的零值，不能因为游玩进度较早就将其视为森林存档。未来转换须有独立测试的迁移流程和明确备份，不支持自动降级。
 
-## Acceptance
+## 验收要求
 
-- Inspect emitted inventory and code/dependency closure.
-- Verify physical art crops and every referenced image.
-- Run legal-action chapter progression against emitted modules, plus save/load/offline/invalid-action tests.
-- Preserve full-source regression coverage and full campaign replay.
-- Test chapter upgrade compatibility before adding a new public chapter.
-- Check narrow-screen UI and actual deployed routes; a desktop narrow viewport is not a physical-phone performance test.
-- Check old excluded URLs after deployment where hosting permits. Prior public downloads cannot be recalled; v48 and earlier were complete public test builds.
+- 检查构建文件清单、代码和依赖闭包。
+- 验证实际裁切图片及所有图片引用。
+- 使用发布模块执行合法操作推进流程，并测试存档、加载、离线和无效操作。
+- 保留完整源码回归覆盖及全流程回放。
+- 新增公开章节前，验证章节升级兼容性。
+- 检查窄屏界面和实际部署路由；桌面窄视口不能代表实体手机性能。
+- 托管条件允许时，部署后检查旧版已排除的网址。既往公开下载无法收回；v48 及更早版本曾作为完整公开测试版本发布。

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "An original mobile-first bear civilization game, independently implemented from documented numeric mechanics.",
+  "description": "一款移动端优先、以小熊与蜂蜜为主题的中文增量文明游戏。",
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",

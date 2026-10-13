@@ -1,7 +1,7 @@
-Use case: illustration-story. Asset type: atlas of three calm vertical mobile bear game region backdrops.
-Create exactly THREE equal-width separate region background panels side by side, no gutters, no margins, no panel borders or labels. Entire image wide landscape 9:4, suggested 2304x1024. Each panel exactly one third width and full height, a 3:4 portrait. Divide precisely at one third and two thirds.
-The art belongs with a tiny white bear drawn as a round white shape with bold rounded black outlines, dot eyes and almost no detail. Draw BACKGROUNDS ONLY in the same simplified doodle picture-book vocabulary. Huge simple flat pastel shapes, chunky smooth but subdued olive-grey outlines, zero texture, low contrast for foreground bears. Sparse lollipop trees with 3 or 4 broad scallops, stubby honey trunks, two colors maximum. No characters or structures.
-LEFT woodland: pale sage-green clearing with 80% wide empty central open ground. A few large round sage trees frame top and lower corners. Short flat ivory trail only enters near top-left and bottom-right. One or two smooth oval grey pebbles at outer edge. No logs or stump props.
-MIDDLE river: pale sage clearing with at least 70% open center. A broad gently bending muted sky-blue river runs along right edge, taking only rightmost 20%. Only 3 short cream water ripple lines in entire river. Very sparse round green trees on left outer edges, 3 smooth oval stones near bank. No bridge or structures.
-RIGHT twilight: same expansive simple clearing and sparse edge trees, flat dusty muted teal ground, slightly darker subdued teal trees, a small pale cream crescent moon and exactly 4 tiny plain four-point stars across top edge. Calm pastel twilight that remains light enough for overlays. No glow, luminous particles or flowers.
-All centers completely empty and uniform enough for UI overlays. All forms broad and rounded. Cohesive sage, cream, honey palette with pale blue/lavender for twilight. No gradients, texture, grass blades, speckles, tiny flowers, leaf stippling, grain, painterly marks, realistic lighting, shadows, 3D, busy edge ornament, animals, bears, building props, labels, text or watermarks. Clean edge-to-edge production game backgrounds.
+用途：故事插画。资产类型：三张安静竖幅移动端小熊游戏区域背景的图集。
+创建严格三个等宽、独立、并排的区域背景面板，无间距、边距、面板边框或标签。整体为 9:4 宽横幅，建议 2304x1024。每栏严格占三分之一宽度和完整高度，为 3:4 竖幅。严格在三分之一和三分之二处分割。
+美术应匹配以圆白形状、粗圆黑线、点眼和极少细节绘制的小白熊。仅画背景，使用相同的简化涂鸦绘本语言。大块简单平涂粉彩形状、粗而平滑但柔和的橄榄灰线、零纹理、低对比，为前景小熊提供衬托。稀疏棒棒糖树有 3 或 4 个宽波瓣、短蜂蜜树干，最多两色。无角色或结构物。
+左栏林地：浅鼠尾草绿空地，中央 80% 是宽阔空地。少量大圆鼠尾草树围绕顶部和下角。短平涂象牙色小径仅从左上和右下附近进入。外缘一两颗平滑椭圆灰石。无原木或树桩道具。
+中栏河流：浅鼠尾草绿空地，中央至少 70% 开阔。一条宽而柔弯的低饱和天蓝河沿右缘，仅占最右 20%。整条河仅 3 条短奶油水波线。左外缘极少圆绿树，河岸附近 3 颗平滑椭圆石。无桥或结构物。
+右栏暮色：同样宽阔的简单空地和稀疏边缘树木，平涂灰调低饱和青绿地面，树木略深但柔和，顶缘一个浅奶油小月牙和严格 4 颗微小朴素四角星。暮色粉彩安静，亮度足以叠加游戏元素。无辉光、发光粒子或花朵。
+各栏中央完全空白且均匀，适合叠加界面。所有造型宽大圆润。统一鼠尾草绿、奶油色、蜂蜜色配色，暮色辅以浅蓝／薰衣草色。无渐变、纹理、草叶、斑点、小花、叶片点描、颗粒、绘画笔触、写实光照、阴影、3D、繁杂边饰、动物、小熊、建筑道具、标签、文字或水印。输出铺满边缘的干净正式游戏背景。

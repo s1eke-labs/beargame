@@ -1,6 +1,5 @@
 {
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
-  "scope": "Independent factual values only; no reference code, descriptions, or artwork. Catalog costs and ratios do not establish dynamic effect parity.",
+  "scope": "独立的数值测试夹具，记录目录费用与比例；静态数据一致不代表动态效果已完全验证。",
   "aliases": {
     "field": "hive",
     "concrate": "concrete",
@@ -19,7 +18,7 @@
           "honey": 10
         },
         "ratio": 1.12,
-        "source": "js/buildings.js:350"
+        "source": "独立数值基准：buildings/hive"
       },
       {
         "id": "hut",
@@ -27,7 +26,7 @@
           "wood": 5
         },
         "ratio": 2.5,
-        "source": "js/buildings.js:484"
+        "source": "独立数值基准：buildings/hut"
       },
       {
         "id": "library",
@@ -35,7 +34,7 @@
           "wood": 25
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:557"
+        "source": "独立数值基准：buildings/library"
       },
       {
         "id": "barn",
@@ -43,7 +42,7 @@
           "wood": 50
         },
         "ratio": 1.75,
-        "source": "js/buildings.js:792"
+        "source": "独立数值基准：buildings/barn"
       },
       {
         "id": "pasture",
@@ -52,7 +51,7 @@
           "wood": 10
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:369"
+        "source": "独立数值基准：buildings/pasture"
       },
       {
         "id": "aqueduct",
@@ -60,7 +59,7 @@
           "minerals": 75
         },
         "ratio": 1.12,
-        "source": "js/buildings.js:431"
+        "source": "独立数值基准：buildings/aqueduct"
       },
       {
         "id": "logHouse",
@@ -69,7 +68,7 @@
           "minerals": 250
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:509"
+        "source": "独立数值基准：buildings/logHouse"
       },
       {
         "id": "mansion",
@@ -79,7 +78,7 @@
           "steel": 75
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:532"
+        "source": "独立数值基准：buildings/mansion"
       },
       {
         "id": "academy",
@@ -89,7 +88,7 @@
           "science": 100
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:649"
+        "source": "独立数值基准：buildings/academy"
       },
       {
         "id": "observatory",
@@ -100,7 +99,7 @@
           "scaffold": 50
         },
         "ratio": 1.1,
-        "source": "js/buildings.js:685"
+        "source": "独立数值基准：buildings/observatory"
       },
       {
         "id": "biolab",
@@ -111,7 +110,7 @@
           "alloy": 25
         },
         "ratio": 1.1,
-        "source": "js/buildings.js:709"
+        "source": "独立数值基准：buildings/biolab"
       },
       {
         "id": "warehouse",
@@ -120,7 +119,7 @@
           "slab": 2
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:825"
+        "source": "独立数值基准：buildings/warehouse"
       },
       {
         "id": "harbor",
@@ -130,7 +129,7 @@
           "scaffold": 5
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:943"
+        "source": "独立数值基准：buildings/harbor"
       },
       {
         "id": "mine",
@@ -138,7 +137,7 @@
           "wood": 100
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:997"
+        "source": "独立数值基准：buildings/mine"
       },
       {
         "id": "quarry",
@@ -148,7 +147,7 @@
           "scaffold": 50
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1034"
+        "source": "独立数值基准：buildings/quarry"
       },
       {
         "id": "smelter",
@@ -156,7 +155,7 @@
           "minerals": 200
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1071"
+        "source": "独立数值基准：buildings/smelter"
       },
       {
         "id": "calciner",
@@ -167,7 +166,7 @@
           "blueprint": 1
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1154"
+        "source": "独立数值基准：buildings/calciner"
       },
       {
         "id": "steamworks",
@@ -177,7 +176,7 @@
           "blueprint": 1
         },
         "ratio": 1.25,
-        "source": "js/buildings.js:1281"
+        "source": "独立数值基准：buildings/steamworks"
       },
       {
         "id": "magneto",
@@ -187,7 +186,7 @@
           "blueprint": 1
         },
         "ratio": 1.25,
-        "source": "js/buildings.js:1390"
+        "source": "独立数值基准：buildings/magneto"
       },
       {
         "id": "lumberMill",
@@ -197,7 +196,7 @@
           "iron": 50
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1440"
+        "source": "独立数值基准：buildings/lumberMill"
       },
       {
         "id": "oilWell",
@@ -207,7 +206,7 @@
           "scaffold": 25
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1459"
+        "source": "独立数值基准：buildings/oilWell"
       },
       {
         "id": "workshop",
@@ -216,7 +215,7 @@
           "minerals": 400
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1509"
+        "source": "独立数值基准：buildings/workshop"
       },
       {
         "id": "factory",
@@ -226,7 +225,7 @@
           "concrete": 15
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1538"
+        "source": "独立数值基准：buildings/factory"
       },
       {
         "id": "reactor",
@@ -237,7 +236,7 @@
           "blueprint": 25
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1590"
+        "source": "独立数值基准：buildings/reactor"
       },
       {
         "id": "accelerator",
@@ -247,7 +246,7 @@
           "concrete": 125
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1640"
+        "source": "独立数值基准：buildings/accelerator"
       },
       {
         "id": "tradepost",
@@ -257,7 +256,7 @@
           "gold": 10
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1706"
+        "source": "独立数值基准：buildings/tradepost"
       },
       {
         "id": "mint",
@@ -267,7 +266,7 @@
           "plate": 200
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1731"
+        "source": "独立数值基准：buildings/mint"
       },
       {
         "id": "amphitheatre",
@@ -277,7 +276,7 @@
           "parchment": 3
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1842"
+        "source": "独立数值基准：buildings/amphitheatre"
       },
       {
         "id": "chapel",
@@ -287,7 +286,7 @@
           "parchment": 250
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1908"
+        "source": "独立数值基准：buildings/chapel"
       },
       {
         "id": "temple",
@@ -298,7 +297,7 @@
           "manuscript": 10
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:1945"
+        "source": "独立数值基准：buildings/temple"
       },
       {
         "id": "unicornPasture",
@@ -306,7 +305,7 @@
           "unicorns": 2
         },
         "ratio": 1.75,
-        "source": "js/buildings.js:2033"
+        "source": "独立数值基准：buildings/unicornPasture"
       },
       {
         "id": "ziggurat",
@@ -316,7 +315,7 @@
           "megalith": 50
         },
         "ratio": 1.25,
-        "source": "js/buildings.js:2063"
+        "source": "独立数值基准：buildings/ziggurat"
       },
       {
         "id": "chronosphere",
@@ -327,7 +326,7 @@
           "blueprint": 100
         },
         "ratio": 1.25,
-        "source": "js/buildings.js:2113"
+        "source": "独立数值基准：buildings/chronosphere"
       },
       {
         "id": "aiCore",
@@ -337,7 +336,7 @@
           "science": 500000
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:2138"
+        "source": "独立数值基准：buildings/aiCore"
       },
       {
         "id": "brewery",
@@ -348,7 +347,7 @@
           "parchment": 375
         },
         "ratio": 1.5,
-        "source": "js/buildings.js:1787"
+        "source": "独立数值基准：buildings/brewery"
       },
       {
         "id": "zebraOutpost",
@@ -356,7 +355,7 @@
           "bloodstone": 1
         },
         "ratio": 1.35,
-        "source": "js/buildings.js:2190"
+        "source": "独立数值基准：buildings/zebraOutpost"
       },
       {
         "id": "zebraWorkshop",
@@ -364,7 +363,7 @@
           "bloodstone": 5
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:2225"
+        "source": "独立数值基准：buildings/zebraWorkshop"
       },
       {
         "id": "zebraForge",
@@ -372,7 +371,7 @@
           "bloodstone": 50
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:2264"
+        "source": "独立数值基准：buildings/zebraForge"
       },
       {
         "id": "stasisPod",
@@ -382,7 +381,7 @@
           "void": 100
         },
         "ratio": 1.25,
-        "source": "js/buildings.js:2302"
+        "source": "独立数值基准：buildings/stasisPod"
       },
       {
         "id": "ivoryTemple",
@@ -391,7 +390,7 @@
           "ivory": 100
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:2326"
+        "source": "独立数值基准：buildings/ivoryTemple"
       }
     ],
     "science": [
@@ -400,105 +399,105 @@
         "cost": {
           "science": 30
         },
-        "source": "js/science.js:14"
+        "source": "独立数值基准：science/calendar"
       },
       {
         "id": "agriculture",
         "cost": {
           "science": 100
         },
-        "source": "js/science.js:26"
+        "source": "独立数值基准：science/agriculture"
       },
       {
         "id": "archery",
         "cost": {
           "science": 300
         },
-        "source": "js/science.js:39"
+        "source": "独立数值基准：science/archery"
       },
       {
         "id": "mining",
         "cost": {
           "science": 500
         },
-        "source": "js/science.js:51"
+        "source": "独立数值基准：science/mining"
       },
       {
         "id": "metal",
         "cost": {
           "science": 900
         },
-        "source": "js/science.js:63"
+        "source": "独立数值基准：science/metal"
       },
       {
         "id": "animal",
         "cost": {
           "science": 500
         },
-        "source": "js/science.js:74"
+        "source": "独立数值基准：science/animal"
       },
       {
         "id": "civil",
         "cost": {
           "science": 1500
         },
-        "source": "js/science.js:94"
+        "source": "独立数值基准：science/civil"
       },
       {
         "id": "math",
         "cost": {
           "science": 1000
         },
-        "source": "js/science.js:104"
+        "source": "独立数值基准：science/math"
       },
       {
         "id": "construction",
         "cost": {
           "science": 1300
         },
-        "source": "js/science.js:116"
+        "source": "独立数值基准：science/construction"
       },
       {
         "id": "engineering",
         "cost": {
           "science": 1500
         },
-        "source": "js/science.js:131"
+        "source": "独立数值基准：science/engineering"
       },
       {
         "id": "currency",
         "cost": {
           "science": 2200
         },
-        "source": "js/science.js:142"
+        "source": "独立数值基准：science/currency"
       },
       {
         "id": "writing",
         "cost": {
           "science": 3600
         },
-        "source": "js/science.js:153"
+        "source": "独立数值基准：science/writing"
       },
       {
         "id": "philosophy",
         "cost": {
           "science": 9500
         },
-        "source": "js/science.js:167"
+        "source": "独立数值基准：science/philosophy"
       },
       {
         "id": "machinery",
         "cost": {
           "science": 15000
         },
-        "source": "js/science.js:180"
+        "source": "独立数值基准：science/machinery"
       },
       {
         "id": "steel",
         "cost": {
           "science": 12000
         },
-        "source": "js/science.js:190"
+        "source": "独立数值基准：science/steel"
       },
       {
         "id": "theology",
@@ -506,7 +505,7 @@
           "science": 20000,
           "manuscript": 35
         },
-        "source": "js/science.js:201"
+        "source": "独立数值基准：science/theology"
       },
       {
         "id": "astronomy",
@@ -514,7 +513,7 @@
           "science": 28000,
           "manuscript": 65
         },
-        "source": "js/science.js:218"
+        "source": "独立数值基准：science/astronomy"
       },
       {
         "id": "navigation",
@@ -522,7 +521,7 @@
           "science": 35000,
           "manuscript": 100
         },
-        "source": "js/science.js:232"
+        "source": "独立数值基准：science/navigation"
       },
       {
         "id": "architecture",
@@ -530,7 +529,7 @@
           "science": 42000,
           "compendium": 10
         },
-        "source": "js/science.js:248"
+        "source": "独立数值基准：science/architecture"
       },
       {
         "id": "physics",
@@ -538,7 +537,7 @@
           "science": 50000,
           "compendium": 35
         },
-        "source": "js/science.js:262"
+        "source": "独立数值基准：science/physics"
       },
       {
         "id": "metaphysics",
@@ -546,7 +545,7 @@
           "science": 55000,
           "unobtainium": 5
         },
-        "source": "js/science.js:276"
+        "source": "独立数值基准：science/metaphysics"
       },
       {
         "id": "chemistry",
@@ -554,7 +553,7 @@
           "science": 60000,
           "compendium": 50
         },
-        "source": "js/science.js:285"
+        "source": "独立数值基准：science/chemistry"
       },
       {
         "id": "acoustics",
@@ -562,7 +561,7 @@
           "science": 60000,
           "compendium": 60
         },
-        "source": "js/science.js:299"
+        "source": "独立数值基准：science/acoustics"
       },
       {
         "id": "drama",
@@ -570,7 +569,7 @@
           "science": 90000,
           "parchment": 5000
         },
-        "source": "js/science.js:312"
+        "source": "独立数值基准：science/drama"
       },
       {
         "id": "archeology",
@@ -578,7 +577,7 @@
           "science": 65000,
           "compendium": 65
         },
-        "source": "js/science.js:324"
+        "source": "独立数值基准：science/archeology"
       },
       {
         "id": "electricity",
@@ -586,7 +585,7 @@
           "science": 75000,
           "compendium": 85
         },
-        "source": "js/science.js:341"
+        "source": "独立数值基准：science/electricity"
       },
       {
         "id": "biology",
@@ -594,7 +593,7 @@
           "science": 85000,
           "compendium": 100
         },
-        "source": "js/science.js:355"
+        "source": "独立数值基准：science/biology"
       },
       {
         "id": "biochemistry",
@@ -602,7 +601,7 @@
           "science": 145000,
           "compendium": 500
         },
-        "source": "js/science.js:371"
+        "source": "独立数值基准：science/biochemistry"
       },
       {
         "id": "genetics",
@@ -610,7 +609,7 @@
           "science": 190000,
           "compendium": 1500
         },
-        "source": "js/science.js:385"
+        "source": "独立数值基准：science/genetics"
       },
       {
         "id": "industrialization",
@@ -618,7 +617,7 @@
           "science": 100000,
           "blueprint": 25
         },
-        "source": "js/science.js:398"
+        "source": "独立数值基准：science/industrialization"
       },
       {
         "id": "mechanization",
@@ -626,7 +625,7 @@
           "science": 115000,
           "blueprint": 45
         },
-        "source": "js/science.js:412"
+        "source": "独立数值基准：science/mechanization"
       },
       {
         "id": "metalurgy",
@@ -634,7 +633,7 @@
           "science": 125000,
           "blueprint": 60
         },
-        "source": "js/science.js:428"
+        "source": "独立数值基准：science/metalurgy"
       },
       {
         "id": "combustion",
@@ -642,7 +641,7 @@
           "science": 115000,
           "blueprint": 45
         },
-        "source": "js/science.js:440"
+        "source": "独立数值基准：science/combustion"
       },
       {
         "id": "ecology",
@@ -650,7 +649,7 @@
           "science": 125000,
           "blueprint": 55
         },
-        "source": "js/science.js:454"
+        "source": "独立数值基准：science/ecology"
       },
       {
         "id": "electronics",
@@ -658,7 +657,7 @@
           "science": 135000,
           "blueprint": 70
         },
-        "source": "js/science.js:472"
+        "source": "独立数值基准：science/electronics"
       },
       {
         "id": "robotics",
@@ -666,7 +665,7 @@
           "science": 140000,
           "blueprint": 80
         },
-        "source": "js/science.js:490"
+        "source": "独立数值基准：science/robotics"
       },
       {
         "id": "ai",
@@ -674,7 +673,7 @@
           "science": 250000,
           "blueprint": 150
         },
-        "source": "js/science.js:505"
+        "source": "独立数值基准：science/ai"
       },
       {
         "id": "quantumCryptography",
@@ -682,7 +681,7 @@
           "science": 1250000,
           "relic": 1024
         },
-        "source": "js/science.js:519"
+        "source": "独立数值基准：science/quantumCryptography"
       },
       {
         "id": "blackchain",
@@ -690,7 +689,7 @@
           "science": 5000000,
           "relic": 4096
         },
-        "source": "js/science.js:531"
+        "source": "独立数值基准：science/blackchain"
       },
       {
         "id": "nuclearFission",
@@ -698,7 +697,7 @@
           "science": 150000,
           "blueprint": 100
         },
-        "source": "js/science.js:543"
+        "source": "独立数值基准：science/nuclearFission"
       },
       {
         "id": "rocketry",
@@ -706,7 +705,7 @@
           "science": 175000,
           "blueprint": 125
         },
-        "source": "js/science.js:557"
+        "source": "独立数值基准：science/rocketry"
       },
       {
         "id": "oilProcessing",
@@ -714,7 +713,7 @@
           "science": 215000,
           "blueprint": 150
         },
-        "source": "js/science.js:574"
+        "source": "独立数值基准：science/oilProcessing"
       },
       {
         "id": "sattelites",
@@ -722,7 +721,7 @@
           "science": 190000,
           "blueprint": 125
         },
-        "source": "js/science.js:587"
+        "source": "独立数值基准：science/sattelites"
       },
       {
         "id": "orbitalEngineering",
@@ -730,7 +729,7 @@
           "science": 250000,
           "blueprint": 250
         },
-        "source": "js/science.js:602"
+        "source": "独立数值基准：science/orbitalEngineering"
       },
       {
         "id": "thorium",
@@ -738,7 +737,7 @@
           "science": 375000,
           "blueprint": 375
         },
-        "source": "js/science.js:615"
+        "source": "独立数值基准：science/thorium"
       },
       {
         "id": "exogeology",
@@ -746,7 +745,7 @@
           "science": 275000,
           "blueprint": 250
         },
-        "source": "js/science.js:628"
+        "source": "独立数值基准：science/exogeology"
       },
       {
         "id": "advExogeology",
@@ -754,7 +753,7 @@
           "science": 325000,
           "blueprint": 350
         },
-        "source": "js/science.js:641"
+        "source": "独立数值基准：science/advExogeology"
       },
       {
         "id": "nanotechnology",
@@ -762,7 +761,7 @@
           "science": 200000,
           "blueprint": 150
         },
-        "source": "js/science.js:656"
+        "source": "独立数值基准：science/nanotechnology"
       },
       {
         "id": "superconductors",
@@ -770,7 +769,7 @@
           "science": 225000,
           "blueprint": 175
         },
-        "source": "js/science.js:669"
+        "source": "独立数值基准：science/superconductors"
       },
       {
         "id": "antimatter",
@@ -779,7 +778,7 @@
           "antimatter": 1,
           "relic": 1
         },
-        "source": "js/science.js:682"
+        "source": "独立数值基准：science/antimatter"
       },
       {
         "id": "terraformation",
@@ -787,7 +786,7 @@
           "science": 750000,
           "relic": 5
         },
-        "source": "js/science.js:696"
+        "source": "独立数值基准：science/terraformation"
       },
       {
         "id": "hydroponics",
@@ -795,7 +794,7 @@
           "science": 1000000,
           "relic": 25
         },
-        "source": "js/science.js:708"
+        "source": "独立数值基准：science/hydroponics"
       },
       {
         "id": "exogeophysics",
@@ -803,7 +802,7 @@
           "science": 25000000,
           "relic": 500
         },
-        "source": "js/science.js:720"
+        "source": "独立数值基准：science/exogeophysics"
       },
       {
         "id": "particlePhysics",
@@ -811,21 +810,21 @@
           "science": 185000,
           "blueprint": 135
         },
-        "source": "js/science.js:730"
+        "source": "独立数值基准：science/particlePhysics"
       },
       {
         "id": "dimensionalPhysics",
         "cost": {
           "science": 235000
         },
-        "source": "js/science.js:745"
+        "source": "独立数值基准：science/dimensionalPhysics"
       },
       {
         "id": "artificialGravity",
         "cost": {
           "science": 320000
         },
-        "source": "js/science.js:757"
+        "source": "独立数值基准：science/artificialGravity"
       },
       {
         "id": "chronophysics",
@@ -833,7 +832,7 @@
           "science": 250000,
           "timeCrystal": 5
         },
-        "source": "js/science.js:769"
+        "source": "独立数值基准：science/chronophysics"
       },
       {
         "id": "tachyonTheory",
@@ -842,7 +841,7 @@
           "timeCrystal": 25,
           "relic": 1
         },
-        "source": "js/science.js:783"
+        "source": "独立数值基准：science/tachyonTheory"
       },
       {
         "id": "cryptotheology",
@@ -850,7 +849,7 @@
           "science": 650000,
           "relic": 5
         },
-        "source": "js/science.js:797"
+        "source": "独立数值基准：science/cryptotheology"
       },
       {
         "id": "voidSpace",
@@ -859,7 +858,7 @@
           "timeCrystal": 30,
           "void": 100
         },
-        "source": "js/science.js:812"
+        "source": "独立数值基准：science/voidSpace"
       },
       {
         "id": "paradoxalKnowledge",
@@ -868,7 +867,7 @@
           "timeCrystal": 40,
           "void": 250
         },
-        "source": "js/science.js:833"
+        "source": "独立数值基准：science/paradoxalKnowledge"
       }
     ],
     "workshop": [
@@ -878,7 +877,7 @@
           "minerals": 275,
           "science": 100
         },
-        "source": "js/workshop.js:10"
+        "source": "独立数值基准：workshop/mineralHoes"
       },
       {
         "id": "ironHoes",
@@ -886,7 +885,7 @@
           "iron": 25,
           "science": 200
         },
-        "source": "js/workshop.js:24"
+        "source": "独立数值基准：workshop/ironHoes"
       },
       {
         "id": "mineralAxes",
@@ -894,7 +893,7 @@
           "minerals": 500,
           "science": 100
         },
-        "source": "js/workshop.js:37"
+        "source": "独立数值基准：workshop/mineralAxes"
       },
       {
         "id": "ironAxes",
@@ -902,7 +901,7 @@
           "iron": 50,
           "science": 200
         },
-        "source": "js/workshop.js:51"
+        "source": "独立数值基准：workshop/ironAxes"
       },
       {
         "id": "steelAxe",
@@ -910,7 +909,7 @@
           "science": 20000,
           "steel": 75
         },
-        "source": "js/workshop.js:62"
+        "source": "独立数值基准：workshop/steelAxe"
       },
       {
         "id": "titaniumAxe",
@@ -918,7 +917,7 @@
           "titanium": 10,
           "science": 38000
         },
-        "source": "js/workshop.js:135"
+        "source": "独立数值基准：workshop/titaniumAxe"
       },
       {
         "id": "alloyAxe",
@@ -926,7 +925,7 @@
           "science": 70000,
           "alloy": 25
         },
-        "source": "js/workshop.js:146"
+        "source": "独立数值基准：workshop/alloyAxe"
       },
       {
         "id": "unobtainiumAxe",
@@ -934,7 +933,7 @@
           "unobtainium": 75,
           "science": 125000
         },
-        "source": "js/workshop.js:159"
+        "source": "独立数值基准：workshop/unobtainiumAxe"
       },
       {
         "id": "reinforcedSaw",
@@ -942,7 +941,7 @@
           "iron": 1000,
           "science": 2500
         },
-        "source": "js/workshop.js:73"
+        "source": "独立数值基准：workshop/reinforcedSaw"
       },
       {
         "id": "steelSaw",
@@ -950,7 +949,7 @@
           "science": 52000,
           "steel": 750
         },
-        "source": "js/workshop.js:87"
+        "source": "独立数值基准：workshop/steelSaw"
       },
       {
         "id": "titaniumSaw",
@@ -958,7 +957,7 @@
           "titanium": 500,
           "science": 70000
         },
-        "source": "js/workshop.js:104"
+        "source": "独立数值基准：workshop/titaniumSaw"
       },
       {
         "id": "alloySaw",
@@ -966,7 +965,7 @@
           "science": 85000,
           "alloy": 75
         },
-        "source": "js/workshop.js:121"
+        "source": "独立数值基准：workshop/alloySaw"
       },
       {
         "id": "unobtainiumSaw",
@@ -974,7 +973,7 @@
           "unobtainium": 125,
           "science": 145000
         },
-        "source": "js/workshop.js:171"
+        "source": "独立数值基准：workshop/unobtainiumSaw"
       },
       {
         "id": "stoneBarns",
@@ -984,7 +983,7 @@
           "iron": 50,
           "science": 500
         },
-        "source": "js/workshop.js:187"
+        "source": "独立数值基准：workshop/stoneBarns"
       },
       {
         "id": "reinforcedBarns",
@@ -994,7 +993,7 @@
           "beam": 25,
           "slab": 10
         },
-        "source": "js/workshop.js:203"
+        "source": "独立数值基准：workshop/reinforcedBarns"
       },
       {
         "id": "titaniumBarns",
@@ -1004,7 +1003,7 @@
           "steel": 200,
           "scaffold": 250
         },
-        "source": "js/workshop.js:241"
+        "source": "独立数值基准：workshop/titaniumBarns"
       },
       {
         "id": "alloyBarns",
@@ -1013,7 +1012,7 @@
           "plate": 750,
           "alloy": 20
         },
-        "source": "js/workshop.js:257"
+        "source": "独立数值基准：workshop/alloyBarns"
       },
       {
         "id": "concreteBarns",
@@ -1022,7 +1021,7 @@
           "science": 100000,
           "concrete": 45
         },
-        "source": "js/workshop.js:272"
+        "source": "独立数值基准：workshop/concreteBarns"
       },
       {
         "id": "reinforcedWarehouses",
@@ -1032,7 +1031,7 @@
           "steel": 50,
           "scaffold": 25
         },
-        "source": "js/workshop.js:222"
+        "source": "独立数值基准：workshop/reinforcedWarehouses"
       },
       {
         "id": "titaniumWarehouses",
@@ -1042,7 +1041,7 @@
           "steel": 500,
           "scaffold": 500
         },
-        "source": "js/workshop.js:287"
+        "source": "独立数值基准：workshop/titaniumWarehouses"
       },
       {
         "id": "alloyWarehouses",
@@ -1051,7 +1050,7 @@
           "science": 90000,
           "alloy": 50
         },
-        "source": "js/workshop.js:303"
+        "source": "独立数值基准：workshop/alloyWarehouses"
       },
       {
         "id": "concreteWarehouses",
@@ -1060,7 +1059,7 @@
           "science": 100000,
           "concrete": 35
         },
-        "source": "js/workshop.js:318"
+        "source": "独立数值基准：workshop/concreteWarehouses"
       },
       {
         "id": "storageBunkers",
@@ -1069,7 +1068,7 @@
           "science": 25000,
           "concrete": 1250
         },
-        "source": "js/workshop.js:333"
+        "source": "独立数值基准：workshop/storageBunkers"
       },
       {
         "id": "silos",
@@ -1078,7 +1077,7 @@
           "steel": 125,
           "blueprint": 5
         },
-        "source": "js/workshop.js:649"
+        "source": "独立数值基准：workshop/silos"
       },
       {
         "id": "refrigeration",
@@ -1087,7 +1086,7 @@
           "science": 125000,
           "blueprint": 15
         },
-        "source": "js/workshop.js:667"
+        "source": "独立数值基准：workshop/refrigeration"
       },
       {
         "id": "advancedRefinement",
@@ -1095,7 +1094,7 @@
           "honey": 5000,
           "science": 500
         },
-        "source": "js/workshop.js:868"
+        "source": "独立数值基准：workshop/advancedRefinement"
       },
       {
         "id": "goldOre",
@@ -1104,7 +1103,7 @@
           "iron": 100,
           "science": 1000
         },
-        "source": "js/workshop.js:890"
+        "source": "独立数值基准：workshop/goldOre"
       },
       {
         "id": "deepMining",
@@ -1113,7 +1112,7 @@
           "science": 5000,
           "beam": 50
         },
-        "source": "js/workshop.js:996"
+        "source": "独立数值基准：workshop/deepMining"
       },
       {
         "id": "coalFurnace",
@@ -1123,7 +1122,7 @@
           "science": 5000,
           "beam": 35
         },
-        "source": "js/workshop.js:980"
+        "source": "独立数值基准：workshop/coalFurnace"
       },
       {
         "id": "geodesy",
@@ -1132,7 +1131,7 @@
           "science": 90000,
           "starchart": 500
         },
-        "source": "js/workshop.js:905"
+        "source": "独立数值基准：workshop/geodesy"
       },
       {
         "id": "miningDrill",
@@ -1141,7 +1140,7 @@
           "science": 100000,
           "steel": 750
         },
-        "source": "js/workshop.js:950"
+        "source": "独立数值基准：workshop/miningDrill"
       },
       {
         "id": "unobtainiumDrill",
@@ -1150,7 +1149,7 @@
           "science": 250000,
           "alloy": 1250
         },
-        "source": "js/workshop.js:964"
+        "source": "独立数值基准：workshop/unobtainiumDrill"
       },
       {
         "id": "register",
@@ -1158,7 +1157,7 @@
           "gold": 10,
           "science": 500
         },
-        "source": "js/workshop.js:920"
+        "source": "独立数值基准：workshop/register"
       },
       {
         "id": "bolas",
@@ -1167,7 +1166,7 @@
           "minerals": 250,
           "science": 1000
         },
-        "source": "js/workshop.js:737"
+        "source": "独立数值基准：workshop/bolas"
       },
       {
         "id": "huntingArmor",
@@ -1175,7 +1174,7 @@
           "iron": 750,
           "science": 2000
         },
-        "source": "js/workshop.js:755"
+        "source": "独立数值基准：workshop/huntingArmor"
       },
       {
         "id": "compositeBow",
@@ -1184,7 +1183,7 @@
           "iron": 100,
           "science": 500
         },
-        "source": "js/workshop.js:681"
+        "source": "独立数值基准：workshop/compositeBow"
       },
       {
         "id": "crossbow",
@@ -1192,14 +1191,14 @@
           "iron": 1500,
           "science": 12000
         },
-        "source": "js/workshop.js:702"
+        "source": "独立数值基准：workshop/crossbow"
       },
       {
         "id": "celestialMechanics",
         "cost": {
           "science": 250
         },
-        "source": "js/workshop.js:1440"
+        "source": "独立数值基准：workshop/celestialMechanics"
       },
       {
         "id": "astrolabe",
@@ -1208,7 +1207,7 @@
           "science": 25000,
           "starchart": 75
         },
-        "source": "js/workshop.js:1448"
+        "source": "独立数值基准：workshop/astrolabe"
       },
       {
         "id": "titaniumMirrors",
@@ -1217,7 +1216,7 @@
           "science": 20000,
           "starchart": 20
         },
-        "source": "js/workshop.js:1462"
+        "source": "独立数值基准：workshop/titaniumMirrors"
       },
       {
         "id": "unobtainiumReflectors",
@@ -1226,7 +1225,7 @@
           "science": 250000,
           "starchart": 750
         },
-        "source": "js/workshop.js:1479"
+        "source": "独立数值基准：workshop/unobtainiumReflectors"
       },
       {
         "id": "eludiumReflectors",
@@ -1234,7 +1233,7 @@
           "science": 250000,
           "eludium": 15
         },
-        "source": "js/workshop.js:1495"
+        "source": "独立数值基准：workshop/eludiumReflectors"
       },
       {
         "id": "cargoShips",
@@ -1242,7 +1241,7 @@
           "science": 55000,
           "blueprint": 15
         },
-        "source": "js/workshop.js:553"
+        "source": "独立数值基准：workshop/cargoShips"
       },
       {
         "id": "caravanserai",
@@ -1251,7 +1250,7 @@
           "science": 25000,
           "ivory": 10000
         },
-        "source": "js/workshop.js:808"
+        "source": "独立数值基准：workshop/caravanserai"
       },
       {
         "id": "seti",
@@ -1259,7 +1258,7 @@
           "titanium": 250,
           "science": 125000
         },
-        "source": "js/workshop.js:1748"
+        "source": "独立数值基准：workshop/seti"
       },
       {
         "id": "ironwood",
@@ -1268,7 +1267,7 @@
           "iron": 3000,
           "science": 30000
         },
-        "source": "js/workshop.js:598"
+        "source": "独立数值基准：workshop/ironwood"
       },
       {
         "id": "strenghtenBuild",
@@ -1276,7 +1275,7 @@
           "science": 100000,
           "concrete": 50
         },
-        "source": "js/workshop.js:930"
+        "source": "独立数值基准：workshop/strenghtenBuild"
       },
       {
         "id": "energyRifts",
@@ -1285,7 +1284,7 @@
           "uranium": 250,
           "science": 200000
         },
-        "source": "js/workshop.js:350"
+        "source": "独立数值基准：workshop/energyRifts"
       },
       {
         "id": "lhc",
@@ -1294,7 +1293,7 @@
           "science": 250000,
           "alloy": 150
         },
-        "source": "js/workshop.js:479"
+        "source": "独立数值基准：workshop/lhc"
       },
       {
         "id": "electrolyticSmelting",
@@ -1302,7 +1301,7 @@
           "titanium": 2000,
           "science": 100000
         },
-        "source": "js/workshop.js:1022"
+        "source": "独立数值基准：workshop/electrolyticSmelting"
       },
       {
         "id": "oxidation",
@@ -1310,7 +1309,7 @@
           "science": 100000,
           "steel": 5000
         },
-        "source": "js/workshop.js:1036"
+        "source": "独立数值基准：workshop/oxidation"
       },
       {
         "id": "steelPlants",
@@ -1319,7 +1318,7 @@
           "science": 140000,
           "gear": 750
         },
-        "source": "js/workshop.js:1050"
+        "source": "独立数值基准：workshop/steelPlants"
       },
       {
         "id": "automatedPlants",
@@ -1327,7 +1326,7 @@
           "science": 200000,
           "alloy": 750
         },
-        "source": "js/workshop.js:1065"
+        "source": "独立数值基准：workshop/automatedPlants"
       },
       {
         "id": "nuclearPlants",
@@ -1335,7 +1334,7 @@
           "uranium": 10000,
           "science": 250000
         },
-        "source": "js/workshop.js:1079"
+        "source": "独立数值基准：workshop/nuclearPlants"
       },
       {
         "id": "rotaryKiln",
@@ -1344,7 +1343,7 @@
           "science": 145000,
           "gear": 500
         },
-        "source": "js/workshop.js:1090"
+        "source": "独立数值基准：workshop/rotaryKiln"
       },
       {
         "id": "fluidizedReactors",
@@ -1352,7 +1351,7 @@
           "science": 175000,
           "alloy": 200
         },
-        "source": "js/workshop.js:1106"
+        "source": "独立数值基准：workshop/fluidizedReactors"
       },
       {
         "id": "nuclearSmelters",
@@ -1360,7 +1359,7 @@
           "uranium": 250,
           "science": 165000
         },
-        "source": "js/workshop.js:1121"
+        "source": "独立数值基准：workshop/nuclearSmelters"
       },
       {
         "id": "orbitalGeodesy",
@@ -1369,7 +1368,7 @@
           "science": 150000,
           "alloy": 1000
         },
-        "source": "js/workshop.js:1134"
+        "source": "独立数值基准：workshop/orbitalGeodesy"
       },
       {
         "id": "printingPress",
@@ -1377,7 +1376,7 @@
           "science": 7500,
           "gear": 45
         },
-        "source": "js/workshop.js:1150"
+        "source": "独立数值基准：workshop/printingPress"
       },
       {
         "id": "offsetPress",
@@ -1386,7 +1385,7 @@
           "science": 100000,
           "gear": 250
         },
-        "source": "js/workshop.js:1163"
+        "source": "独立数值基准：workshop/offsetPress"
       },
       {
         "id": "photolithography",
@@ -1396,7 +1395,7 @@
           "science": 250000,
           "alloy": 1250
         },
-        "source": "js/workshop.js:1178"
+        "source": "独立数值基准：workshop/photolithography"
       },
       {
         "id": "uplink",
@@ -1404,7 +1403,7 @@
           "science": 75000,
           "alloy": 1750
         },
-        "source": "js/workshop.js:1193"
+        "source": "独立数值基准：workshop/uplink"
       },
       {
         "id": "starlink",
@@ -1413,7 +1412,7 @@
           "science": 175000,
           "alloy": 5000
         },
-        "source": "js/workshop.js:1208"
+        "source": "独立数值基准：workshop/starlink"
       },
       {
         "id": "pumpjack",
@@ -1422,7 +1421,7 @@
           "science": 100000,
           "gear": 125
         },
-        "source": "js/workshop.js:1636"
+        "source": "独立数值基准：workshop/pumpjack"
       },
       {
         "id": "oilRefinery",
@@ -1431,7 +1430,7 @@
           "science": 125000,
           "gear": 500
         },
-        "source": "js/workshop.js:2008"
+        "source": "独立数值基准：workshop/oilRefinery"
       },
       {
         "id": "petri",
@@ -1439,7 +1438,7 @@
           "plastic": 250,
           "science": 65000
         },
-        "source": "js/workshop.js:1652"
+        "source": "独立数值基准：workshop/petri"
       },
       {
         "id": "biofuel",
@@ -1447,7 +1446,7 @@
           "titanium": 1250,
           "science": 150000
         },
-        "source": "js/workshop.js:1666"
+        "source": "独立数值基准：workshop/biofuel"
       },
       {
         "id": "internet",
@@ -1456,7 +1455,7 @@
           "uranium": 50,
           "science": 150000
         },
-        "source": "js/workshop.js:1786"
+        "source": "独立数值基准：workshop/internet"
       },
       {
         "id": "neuralNetworks",
@@ -1464,7 +1463,7 @@
           "titanium": 7500,
           "science": 200000
         },
-        "source": "js/workshop.js:1796"
+        "source": "独立数值基准：workshop/neuralNetworks"
       },
       {
         "id": "assistance",
@@ -1473,7 +1472,7 @@
           "steel": 10000,
           "gear": 250
         },
-        "source": "js/workshop.js:1810"
+        "source": "独立数值基准：workshop/assistance"
       },
       {
         "id": "enrichedUranium",
@@ -1482,7 +1481,7 @@
           "uranium": 150,
           "science": 175000
         },
-        "source": "js/workshop.js:1822"
+        "source": "独立数值基准：workshop/enrichedUranium"
       },
       {
         "id": "coldFusion",
@@ -1490,7 +1489,7 @@
           "science": 200000,
           "eludium": 25
         },
-        "source": "js/workshop.js:1837"
+        "source": "独立数值基准：workshop/coldFusion"
       },
       {
         "id": "thoriumReactors",
@@ -1498,7 +1497,7 @@
           "science": 400000,
           "thorium": 10000
         },
-        "source": "js/workshop.js:1851"
+        "source": "独立数值基准：workshop/thoriumReactors"
       },
       {
         "id": "astrophysicists",
@@ -1506,7 +1505,7 @@
           "unobtainium": 350,
           "science": 250000
         },
-        "source": "js/workshop.js:1924"
+        "source": "独立数值基准：workshop/astrophysicists"
       },
       {
         "id": "mWReactor",
@@ -1514,7 +1513,7 @@
           "science": 150000,
           "eludium": 50
         },
-        "source": "js/workshop.js:1937"
+        "source": "独立数值基准：workshop/mWReactor"
       },
       {
         "id": "unicornSelection",
@@ -1522,7 +1521,7 @@
           "titanium": 1500,
           "science": 175000
         },
-        "source": "js/workshop.js:1680"
+        "source": "独立数值基准：workshop/unicornSelection"
       },
       {
         "id": "stasisChambers",
@@ -1532,7 +1531,7 @@
           "timeCrystal": 1,
           "alloy": 200
         },
-        "source": "js/workshop.js:367"
+        "source": "独立数值基准：workshop/stasisChambers"
       },
       {
         "id": "voidEnergy",
@@ -1542,7 +1541,7 @@
           "timeCrystal": 2,
           "alloy": 250
         },
-        "source": "js/workshop.js:389"
+        "source": "独立数值基准：workshop/voidEnergy"
       },
       {
         "id": "darkEnergy",
@@ -1551,7 +1550,7 @@
           "timeCrystal": 3,
           "eludium": 75
         },
-        "source": "js/workshop.js:408"
+        "source": "独立数值基准：workshop/darkEnergy"
       },
       {
         "id": "chronoforge",
@@ -1560,7 +1559,7 @@
           "timeCrystal": 10,
           "relic": 5
         },
-        "source": "js/workshop.js:423"
+        "source": "独立数值基准：workshop/chronoforge"
       },
       {
         "id": "tachyonModerator",
@@ -1569,7 +1568,7 @@
           "gear": 500,
           "titanium": 250
         },
-        "source": "js/workshop.js:437"
+        "source": "独立数值基准：workshop/tachyonModerator"
       },
       {
         "id": "tachyonAccelerators",
@@ -1578,7 +1577,7 @@
           "timeCrystal": 10,
           "eludium": 125
         },
-        "source": "js/workshop.js:450"
+        "source": "独立数值基准：workshop/tachyonAccelerators"
       },
       {
         "id": "fluxCondensator",
@@ -1587,7 +1586,7 @@
           "timeCrystal": 5,
           "alloy": 250
         },
-        "source": "js/workshop.js:468"
+        "source": "独立数值基准：workshop/fluxCondensator"
       },
       {
         "id": "photovoltaic",
@@ -1595,7 +1594,7 @@
           "titanium": 5000,
           "science": 75000
         },
-        "source": "js/workshop.js:495"
+        "source": "独立数值基准：workshop/photovoltaic"
       },
       {
         "id": "thinFilm",
@@ -1604,7 +1603,7 @@
           "unobtainium": 200,
           "science": 125000
         },
-        "source": "js/workshop.js:509"
+        "source": "独立数值基准：workshop/thinFilm"
       },
       {
         "id": "qdot",
@@ -1613,7 +1612,7 @@
           "eludium": 200,
           "thorium": 1000
         },
-        "source": "js/workshop.js:524"
+        "source": "独立数值基准：workshop/qdot"
       },
       {
         "id": "solarSatellites",
@@ -1621,7 +1620,7 @@
           "science": 225000,
           "alloy": 750
         },
-        "source": "js/workshop.js:540"
+        "source": "独立数值基准：workshop/solarSatellites"
       },
       {
         "id": "barges",
@@ -1630,7 +1629,7 @@
           "science": 100000,
           "blueprint": 30
         },
-        "source": "js/workshop.js:568"
+        "source": "独立数值基准：workshop/barges"
       },
       {
         "id": "reactorVessel",
@@ -1639,7 +1638,7 @@
           "uranium": 125,
           "science": 135000
         },
-        "source": "js/workshop.js:583"
+        "source": "独立数值基准：workshop/reactorVessel"
       },
       {
         "id": "concreteHuts",
@@ -1648,7 +1647,7 @@
           "science": 125000,
           "concrete": 45
         },
-        "source": "js/workshop.js:613"
+        "source": "独立数值基准：workshop/concreteHuts"
       },
       {
         "id": "unobtainiumHuts",
@@ -1657,7 +1656,7 @@
           "unobtainium": 350,
           "science": 200000
         },
-        "source": "js/workshop.js:625"
+        "source": "独立数值基准：workshop/unobtainiumHuts"
       },
       {
         "id": "eludiumHuts",
@@ -1665,7 +1664,7 @@
           "science": 275000,
           "eludium": 125
         },
-        "source": "js/workshop.js:637"
+        "source": "独立数值基准：workshop/eludiumHuts"
       },
       {
         "id": "railgun",
@@ -1674,7 +1673,7 @@
           "science": 150000,
           "blueprint": 25
         },
-        "source": "js/workshop.js:717"
+        "source": "独立数值基准：workshop/railgun"
       },
       {
         "id": "steelArmor",
@@ -1682,7 +1681,7 @@
           "science": 10000,
           "steel": 50
         },
-        "source": "js/workshop.js:772"
+        "source": "独立数值基准：workshop/steelArmor"
       },
       {
         "id": "alloyArmor",
@@ -1690,7 +1689,7 @@
           "science": 50000,
           "alloy": 25
         },
-        "source": "js/workshop.js:784"
+        "source": "独立数值基准：workshop/alloyArmor"
       },
       {
         "id": "nanosuits",
@@ -1698,7 +1697,7 @@
           "science": 185000,
           "alloy": 250
         },
-        "source": "js/workshop.js:796"
+        "source": "独立数值基准：workshop/nanosuits"
       },
       {
         "id": "freightfulExchange",
@@ -1708,7 +1707,7 @@
           "titanium": 1000,
           "tanker": 5000
         },
-        "source": "js/workshop.js:824"
+        "source": "独立数值基准：workshop/freightfulExchange"
       },
       {
         "id": "transportSuperposition",
@@ -1718,7 +1717,7 @@
           "thorium": 25000,
           "tanker": 500000
         },
-        "source": "js/workshop.js:846"
+        "source": "独立数值基准：workshop/transportSuperposition"
       },
       {
         "id": "prospecting",
@@ -1726,7 +1725,7 @@
           "minerals": 1000,
           "science": 1000
         },
-        "source": "js/workshop.js:882"
+        "source": "独立数值基准：workshop/prospecting"
       },
       {
         "id": "pyrolysis",
@@ -1734,7 +1733,7 @@
           "science": 35000,
           "compendium": 5
         },
-        "source": "js/workshop.js:1011"
+        "source": "独立数值基准：workshop/pyrolysis"
       },
       {
         "id": "cryocomputing",
@@ -1742,7 +1741,7 @@
           "science": 125000,
           "eludium": 15
         },
-        "source": "js/workshop.js:1223"
+        "source": "独立数值基准：workshop/cryocomputing"
       },
       {
         "id": "machineLearning",
@@ -1751,7 +1750,7 @@
           "science": 175000,
           "eludium": 25
         },
-        "source": "js/workshop.js:1236"
+        "source": "独立数值基准：workshop/machineLearning"
       },
       {
         "id": "factoryAutomation",
@@ -1759,7 +1758,7 @@
           "science": 10000,
           "gear": 25
         },
-        "source": "js/workshop.js:1252"
+        "source": "独立数值基准：workshop/factoryAutomation"
       },
       {
         "id": "advancedAutomation",
@@ -1768,7 +1767,7 @@
           "gear": 75,
           "blueprint": 25
         },
-        "source": "js/workshop.js:1263"
+        "source": "独立数值基准：workshop/advancedAutomation"
       },
       {
         "id": "pneumaticPress",
@@ -1777,7 +1776,7 @@
           "gear": 30,
           "blueprint": 5
         },
-        "source": "js/workshop.js:1274"
+        "source": "独立数值基准：workshop/pneumaticPress"
       },
       {
         "id": "combustionEngine",
@@ -1786,7 +1785,7 @@
           "gear": 25,
           "blueprint": 5
         },
-        "source": "js/workshop.js:1285"
+        "source": "独立数值基准：workshop/combustionEngine"
       },
       {
         "id": "fuelInjectors",
@@ -1795,7 +1794,7 @@
           "science": 100000,
           "gear": 250
         },
-        "source": "js/workshop.js:1301"
+        "source": "独立数值基准：workshop/fuelInjectors"
       },
       {
         "id": "factoryLogistics",
@@ -1804,7 +1803,7 @@
           "science": 100000,
           "gear": 250
         },
-        "source": "js/workshop.js:1317"
+        "source": "独立数值基准：workshop/factoryLogistics"
       },
       {
         "id": "carbonSequestration",
@@ -1815,7 +1814,7 @@
           "steel": 4000,
           "alloy": 1000
         },
-        "source": "js/workshop.js:1331"
+        "source": "独立数值基准：workshop/carbonSequestration"
       },
       {
         "id": "factoryOptimization",
@@ -1824,7 +1823,7 @@
           "science": 75000,
           "gear": 125
         },
-        "source": "js/workshop.js:1347"
+        "source": "独立数值基准：workshop/factoryOptimization"
       },
       {
         "id": "factoryRobotics",
@@ -1833,7 +1832,7 @@
           "science": 100000,
           "gear": 250
         },
-        "source": "js/workshop.js:1361"
+        "source": "独立数值基准：workshop/factoryRobotics"
       },
       {
         "id": "spaceEngineers",
@@ -1841,7 +1840,7 @@
           "science": 225000,
           "alloy": 500
         },
-        "source": "js/workshop.js:1376"
+        "source": "独立数值基准：workshop/spaceEngineers"
       },
       {
         "id": "aiEngineers",
@@ -1850,7 +1849,7 @@
           "science": 35000,
           "eludium": 50
         },
-        "source": "js/workshop.js:1391"
+        "source": "独立数值基准：workshop/aiEngineers"
       },
       {
         "id": "chronoEngineers",
@@ -1859,7 +1858,7 @@
           "timeCrystal": 5,
           "eludium": 100
         },
-        "source": "js/workshop.js:1408"
+        "source": "独立数值基准：workshop/chronoEngineers"
       },
       {
         "id": "spaceManufacturing",
@@ -1867,7 +1866,7 @@
           "titanium": 125000,
           "science": 250000
         },
-        "source": "js/workshop.js:1425"
+        "source": "独立数值基准：workshop/spaceManufacturing"
       },
       {
         "id": "hydroPlantTurbines",
@@ -1875,7 +1874,7 @@
           "unobtainium": 125,
           "science": 250000
         },
-        "source": "js/workshop.js:1510"
+        "source": "独立数值基准：workshop/hydroPlantTurbines"
       },
       {
         "id": "amBases",
@@ -1883,7 +1882,7 @@
           "antimatter": 250,
           "eludium": 15
         },
-        "source": "js/workshop.js:1524"
+        "source": "独立数值基准：workshop/amBases"
       },
       {
         "id": "aiBases",
@@ -1891,7 +1890,7 @@
           "antimatter": 7500,
           "science": 750000
         },
-        "source": "js/workshop.js:1538"
+        "source": "独立数值基准：workshop/aiBases"
       },
       {
         "id": "amFission",
@@ -1900,7 +1899,7 @@
           "science": 525000,
           "thorium": 7500
         },
-        "source": "js/workshop.js:1549"
+        "source": "独立数值基准：workshop/amFission"
       },
       {
         "id": "amReactors",
@@ -1908,7 +1907,7 @@
           "antimatter": 750,
           "eludium": 35
         },
-        "source": "js/workshop.js:1561"
+        "source": "独立数值基准：workshop/amReactors"
       },
       {
         "id": "amReactorsMK2",
@@ -1916,7 +1915,7 @@
           "antimatter": 1750,
           "eludium": 70
         },
-        "source": "js/workshop.js:1578"
+        "source": "独立数值基准：workshop/amReactorsMK2"
       },
       {
         "id": "voidReactors",
@@ -1924,7 +1923,7 @@
           "antimatter": 2500,
           "void": 250
         },
-        "source": "js/workshop.js:1595"
+        "source": "独立数值基准：workshop/voidReactors"
       },
       {
         "id": "relicStation",
@@ -1932,7 +1931,7 @@
           "antimatter": 5000,
           "eludium": 100
         },
-        "source": "js/workshop.js:1609"
+        "source": "独立数值基准：workshop/relicStation"
       },
       {
         "id": "amDrive",
@@ -1940,7 +1939,7 @@
           "antimatter": 125,
           "science": 450000
         },
-        "source": "js/workshop.js:1623"
+        "source": "独立数值基准：workshop/amDrive"
       },
       {
         "id": "alicornStable",
@@ -1949,7 +1948,7 @@
           "gold": 100,
           "alicorn": 20
         },
-        "source": "js/workshop.js:1698"
+        "source": "独立数值基准：workshop/alicornStable"
       },
       {
         "id": "gmo",
@@ -1958,7 +1957,7 @@
           "titanium": 1500,
           "science": 175000
         },
-        "source": "js/workshop.js:1720"
+        "source": "独立数值基准：workshop/gmo"
       },
       {
         "id": "cadSystems",
@@ -1966,7 +1965,7 @@
           "titanium": 750,
           "science": 125000
         },
-        "source": "js/workshop.js:1737"
+        "source": "独立数值基准：workshop/cadSystems"
       },
       {
         "id": "logistics",
@@ -1975,7 +1974,7 @@
           "gear": 100,
           "scaffold": 1000
         },
-        "source": "js/workshop.js:1762"
+        "source": "独立数值基准：workshop/logistics"
       },
       {
         "id": "augumentation",
@@ -1984,7 +1983,7 @@
           "uranium": 50,
           "science": 150000
         },
-        "source": "js/workshop.js:1774"
+        "source": "独立数值基准：workshop/augumentation"
       },
       {
         "id": "enrichedThorium",
@@ -1992,7 +1991,7 @@
           "science": 500000,
           "thorium": 12500
         },
-        "source": "js/workshop.js:1869"
+        "source": "独立数值基准：workshop/enrichedThorium"
       },
       {
         "id": "hubbleTelescope",
@@ -2001,7 +2000,7 @@
           "science": 250000,
           "alloy": 1250
         },
-        "source": "js/workshop.js:1885"
+        "source": "独立数值基准：workshop/hubbleTelescope"
       },
       {
         "id": "satnav",
@@ -2009,7 +2008,7 @@
           "science": 200000,
           "alloy": 750
         },
-        "source": "js/workshop.js:1901"
+        "source": "独立数值基准：workshop/satnav"
       },
       {
         "id": "satelliteRadio",
@@ -2017,7 +2016,7 @@
           "science": 225000,
           "alloy": 5000
         },
-        "source": "js/workshop.js:1912"
+        "source": "独立数值基准：workshop/satelliteRadio"
       },
       {
         "id": "eludiumCracker",
@@ -2025,7 +2024,7 @@
           "science": 275000,
           "eludium": 250
         },
-        "source": "js/workshop.js:1949"
+        "source": "独立数值基准：workshop/eludiumCracker"
       },
       {
         "id": "thoriumEngine",
@@ -2036,7 +2035,7 @@
           "ship": 10000,
           "thorium": 100000
         },
-        "source": "js/workshop.js:1964"
+        "source": "独立数值基准：workshop/thoriumEngine"
       },
       {
         "id": "spiceNavigation",
@@ -2044,7 +2043,7 @@
           "science": 350000,
           "starchart": 500000
         },
-        "source": "js/workshop.js:1979"
+        "source": "独立数值基准：workshop/spiceNavigation"
       },
       {
         "id": "longRangeSpaceships",
@@ -2054,7 +2053,7 @@
           "alloy": 3500,
           "tanker": 500
         },
-        "source": "js/workshop.js:1992"
+        "source": "独立数值基准：workshop/longRangeSpaceships"
       },
       {
         "id": "oilDistillation",
@@ -2062,7 +2061,7 @@
           "titanium": 5000,
           "science": 175000
         },
-        "source": "js/workshop.js:2023"
+        "source": "独立数值基准：workshop/oilDistillation"
       },
       {
         "id": "factoryProcessing",
@@ -2071,7 +2070,7 @@
           "science": 195000,
           "concrete": 125
         },
-        "source": "js/workshop.js:2037"
+        "source": "独立数值基准：workshop/factoryProcessing"
       },
       {
         "id": "voidAspiration",
@@ -2079,7 +2078,7 @@
           "antimatter": 2000,
           "timeCrystal": 15
         },
-        "source": "js/workshop.js:2051"
+        "source": "独立数值基准：workshop/voidAspiration"
       },
       {
         "id": "distorsion",
@@ -2089,7 +2088,7 @@
           "timeCrystal": 25,
           "void": 1000
         },
-        "source": "js/workshop.js:2065"
+        "source": "独立数值基准：workshop/distorsion"
       },
       {
         "id": "turnSmoothly",
@@ -2099,7 +2098,7 @@
           "timeCrystal": 25,
           "void": 750
         },
-        "source": "js/workshop.js:2081"
+        "source": "独立数值基准：workshop/turnSmoothly"
       },
       {
         "id": "invisibleBlackHand",
@@ -2109,7 +2108,7 @@
           "void": 32,
           "blackcoin": 64
         },
-        "source": "js/workshop.js:2098"
+        "source": "独立数值基准：workshop/invisibleBlackHand"
       }
     ],
     "faith": [
@@ -2119,7 +2118,7 @@
           "faith": 100
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/solarchant"
       },
       {
         "id": "scholasticism",
@@ -2127,7 +2126,7 @@
           "faith": 250
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/scholasticism"
       },
       {
         "id": "goldenSpire",
@@ -2136,7 +2135,7 @@
           "faith": 350
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/goldenSpire"
       },
       {
         "id": "sunAltar",
@@ -2145,7 +2144,7 @@
           "faith": 500
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/sunAltar"
       },
       {
         "id": "stainedGlass",
@@ -2154,7 +2153,7 @@
           "faith": 500
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/stainedGlass"
       },
       {
         "id": "solarRevolution",
@@ -2163,7 +2162,7 @@
           "faith": 750
         },
         "ratio": null,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/solarRevolution"
       },
       {
         "id": "basilica",
@@ -2172,7 +2171,7 @@
           "faith": 1250
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/basilica"
       },
       {
         "id": "templars",
@@ -2181,7 +2180,7 @@
           "faith": 3500
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/templars"
       },
       {
         "id": "apocripha",
@@ -2190,7 +2189,7 @@
           "faith": 5000
         },
         "ratio": null,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/apocripha"
       },
       {
         "id": "transcendence",
@@ -2199,7 +2198,7 @@
           "faith": 7500
         },
         "ratio": null,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/transcendence"
       },
       {
         "id": "frescoes",
@@ -2209,7 +2208,7 @@
           "spice": 8000
         },
         "ratio": 2.5,
-        "source": "js/religion.js:1046–1254"
+        "source": "独立数值基准：faith/frescoes"
       }
     ],
     "missions": [
@@ -2221,7 +2220,7 @@
           "science": 100000,
           "starchart": 250
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/orbitalLaunch"
       },
       {
         "id": "moonMission",
@@ -2231,7 +2230,7 @@
           "science": 125000,
           "starchart": 500
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/moonMission"
       },
       {
         "id": "duneMission",
@@ -2241,7 +2240,7 @@
           "starchart": 1000,
           "kerosene": 75
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/duneMission"
       },
       {
         "id": "piscineMission",
@@ -2251,7 +2250,7 @@
           "starchart": 1500,
           "kerosene": 250
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/piscineMission"
       },
       {
         "id": "heliosMission",
@@ -2261,7 +2260,7 @@
           "starchart": 3000,
           "kerosene": 1250
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/heliosMission"
       },
       {
         "id": "terminusMission",
@@ -2271,7 +2270,7 @@
           "starchart": 2500,
           "kerosene": 750
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/terminusMission"
       },
       {
         "id": "kairoMission",
@@ -2281,7 +2280,7 @@
           "starchart": 5000,
           "kerosene": 7500
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/kairoMission"
       },
       {
         "id": "rorschachMission",
@@ -2291,7 +2290,7 @@
           "starchart": 15000,
           "kerosene": 25000
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/rorschachMission"
       },
       {
         "id": "yarnMission",
@@ -2301,7 +2300,7 @@
           "starchart": 7500,
           "kerosene": 12000
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/yarnMission"
       },
       {
         "id": "umbraMission",
@@ -2311,7 +2310,7 @@
           "kerosene": 25000,
           "thorium": 15000
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/umbraMission"
       },
       {
         "id": "charonMission",
@@ -2321,7 +2320,7 @@
           "kerosene": 35000,
           "thorium": 35000
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/charonMission"
       },
       {
         "id": "centaurusSystemMission",
@@ -2332,7 +2331,7 @@
           "kerosene": 50000,
           "thorium": 50000
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/centaurusSystemMission"
       },
       {
         "id": "furthestRingMission",
@@ -2342,7 +2341,7 @@
           "kerosene": 75000,
           "thorium": 75000
         },
-        "source": "js/space.js:23–209"
+        "source": "独立数值基准：missions/furthestRingMission"
       }
     ],
     "space": [
@@ -2354,7 +2353,7 @@
           "science": 75000
         },
         "ratio": 1.15,
-        "source": "js/space.js:215"
+        "source": "独立数值基准：space/spaceElevator"
       },
       {
         "id": "sattelite",
@@ -2365,7 +2364,7 @@
           "starchart": 325
         },
         "ratio": 1.08,
-        "source": "js/space.js:239"
+        "source": "独立数值基准：space/sattelite"
       },
       {
         "id": "spaceStation",
@@ -2376,7 +2375,7 @@
           "alloy": 750
         },
         "ratio": 1.12,
-        "source": "js/space.js:295"
+        "source": "独立数值基准：space/spaceStation"
       },
       {
         "id": "moonOutpost",
@@ -2389,7 +2388,7 @@
           "alloy": 750
         },
         "ratio": 1.12,
-        "source": "js/space.js:336"
+        "source": "独立数值基准：space/moonOutpost"
       },
       {
         "id": "moonBase",
@@ -2402,7 +2401,7 @@
           "concrete": 250
         },
         "ratio": 1.12,
-        "source": "js/space.js:377"
+        "source": "独立数值基准：space/moonBase"
       },
       {
         "id": "planetCracker",
@@ -2413,7 +2412,7 @@
           "kerosene": 50
         },
         "ratio": 1.18,
-        "source": "js/space.js:432"
+        "source": "独立数值基准：space/planetCracker"
       },
       {
         "id": "hydrofracturer",
@@ -2424,7 +2423,7 @@
           "kerosene": 100
         },
         "ratio": 1.18,
-        "source": "js/space.js:454"
+        "source": "独立数值基准：space/hydrofracturer"
       },
       {
         "id": "spiceRefinery",
@@ -2435,7 +2434,7 @@
           "kerosene": 125
         },
         "ratio": 1.15,
-        "source": "js/space.js:478"
+        "source": "独立数值基准：space/spiceRefinery"
       },
       {
         "id": "researchVessel",
@@ -2446,7 +2445,7 @@
           "kerosene": 250
         },
         "ratio": 1.15,
-        "source": "js/space.js:507"
+        "source": "独立数值基准：space/researchVessel"
       },
       {
         "id": "orbitalArray",
@@ -2457,7 +2456,7 @@
           "kerosene": 500
         },
         "ratio": 1.15,
-        "source": "js/space.js:533"
+        "source": "独立数值基准：space/orbitalArray"
       },
       {
         "id": "sunlifter",
@@ -2467,7 +2466,7 @@
           "kerosene": 2500
         },
         "ratio": 1.15,
-        "source": "js/space.js:561"
+        "source": "独立数值基准：space/sunlifter"
       },
       {
         "id": "containmentChamber",
@@ -2476,7 +2475,7 @@
           "kerosene": 2500
         },
         "ratio": 1.125,
-        "source": "js/space.js:582"
+        "source": "独立数值基准：space/containmentChamber"
       },
       {
         "id": "heatsink",
@@ -2487,7 +2486,7 @@
           "thorium": 12500
         },
         "ratio": 1.12,
-        "source": "js/space.js:604"
+        "source": "独立数值基准：space/heatsink"
       },
       {
         "id": "sunforge",
@@ -2498,7 +2497,7 @@
           "kerosene": 1250
         },
         "ratio": 1.12,
-        "source": "js/space.js:623"
+        "source": "独立数值基准：space/sunforge"
       },
       {
         "id": "cryostation",
@@ -2509,7 +2508,7 @@
           "kerosene": 500
         },
         "ratio": 1.12,
-        "source": "js/space.js:649"
+        "source": "独立数值基准：space/cryostation"
       },
       {
         "id": "spaceBeacon",
@@ -2520,7 +2519,7 @@
           "kerosene": 7500
         },
         "ratio": 1.15,
-        "source": "js/space.js:696"
+        "source": "独立数值基准：space/spaceBeacon"
       },
       {
         "id": "terraformingStation",
@@ -2530,7 +2529,7 @@
           "kerosene": 5000
         },
         "ratio": 1.25,
-        "source": "js/space.js:740"
+        "source": "独立数值基准：space/terraformingStation"
       },
       {
         "id": "hydroponics",
@@ -2539,7 +2538,7 @@
           "kerosene": 500
         },
         "ratio": 1.15,
-        "source": "js/space.js:766"
+        "source": "独立数值基准：space/hydroponics"
       },
       {
         "id": "hrHarvester",
@@ -2548,7 +2547,7 @@
           "relic": 25
         },
         "ratio": 1.15,
-        "source": "js/space.js:805"
+        "source": "独立数值基准：space/hrHarvester"
       },
       {
         "id": "entangler",
@@ -2558,7 +2557,7 @@
           "eludium": 5000
         },
         "ratio": 1.15,
-        "source": "js/space.js:859"
+        "source": "独立数值基准：space/entangler"
       },
       {
         "id": "tectonic",
@@ -2567,7 +2566,7 @@
           "thorium": 75000
         },
         "ratio": 1.25,
-        "source": "js/space.js:919"
+        "source": "独立数值基准：space/tectonic"
       },
       {
         "id": "moltenCore",
@@ -2576,7 +2575,7 @@
           "science": 25000000
         },
         "ratio": 1.25,
-        "source": "js/space.js:938"
+        "source": "独立数值基准：space/moltenCore"
       }
     ],
     "transcendence": [
@@ -2586,7 +2585,7 @@
           "relic": 100
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/blackObelisk"
       },
       {
         "id": "blackNexus",
@@ -2594,7 +2593,7 @@
           "relic": 5000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/blackNexus"
       },
       {
         "id": "blackCore",
@@ -2602,7 +2601,7 @@
           "relic": 10000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/blackCore"
       },
       {
         "id": "singularity",
@@ -2610,7 +2609,7 @@
           "relic": 25000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/singularity"
       },
       {
         "id": "blackLibrary",
@@ -2618,7 +2617,7 @@
           "relic": 30000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/blackLibrary"
       },
       {
         "id": "blackRadiance",
@@ -2626,7 +2625,7 @@
           "relic": 37500
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/blackRadiance"
       },
       {
         "id": "blazar",
@@ -2634,7 +2633,7 @@
           "relic": 50000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/blazar"
       },
       {
         "id": "darkNova",
@@ -2643,7 +2642,7 @@
           "void": 7500
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/darkNova"
       },
       {
         "id": "mausoleum",
@@ -2653,7 +2652,7 @@
           "necrocorn": 10
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/mausoleum"
       },
       {
         "id": "holyGenocide",
@@ -2662,7 +2661,7 @@
           "void": 25000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/holyGenocide"
       },
       {
         "id": "darkParacosm",
@@ -2672,7 +2671,7 @@
           "paragon": 8
         },
         "ratio": 1.75,
-        "source": "js/religion.js:1257–1480"
+        "source": "独立数值基准：transcendence/darkParacosm"
       }
     ],
     "mythic": [
@@ -2683,7 +2682,7 @@
           "tears": 5
         },
         "ratio": 1.15,
-        "source": "js/religion.js:636"
+        "source": "独立数值基准：mythic/unicornTomb"
       },
       {
         "id": "ivoryTower",
@@ -2692,7 +2691,7 @@
           "tears": 25
         },
         "ratio": 1.15,
-        "source": "js/religion.js:677"
+        "source": "独立数值基准：mythic/ivoryTower"
       },
       {
         "id": "ivoryCitadel",
@@ -2701,7 +2700,7 @@
           "tears": 50
         },
         "ratio": 1.15,
-        "source": "js/religion.js:703"
+        "source": "独立数值基准：mythic/ivoryCitadel"
       },
       {
         "id": "skyPalace",
@@ -2711,7 +2710,7 @@
           "megalith": 5
         },
         "ratio": 1.15,
-        "source": "js/religion.js:732"
+        "source": "独立数值基准：mythic/skyPalace"
       },
       {
         "id": "unicornUtopia",
@@ -2721,7 +2720,7 @@
           "tears": 5000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:780"
+        "source": "独立数值基准：mythic/unicornUtopia"
       },
       {
         "id": "sunspire",
@@ -2731,7 +2730,7 @@
           "tears": 25000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:832"
+        "source": "独立数值基准：mythic/sunspire"
       },
       {
         "id": "marker",
@@ -2742,7 +2741,7 @@
           "megalith": 750
         },
         "ratio": 1.15,
-        "source": "js/religion.js:879"
+        "source": "独立数值基准：mythic/marker"
       },
       {
         "id": "unicornGraveyard",
@@ -2751,7 +2750,7 @@
           "megalith": 1000
         },
         "ratio": 1.15,
-        "source": "js/religion.js:910"
+        "source": "独立数值基准：mythic/unicornGraveyard"
       },
       {
         "id": "unicornNecropolis",
@@ -2762,7 +2761,7 @@
           "megalith": 2500
         },
         "ratio": 1.15,
-        "source": "js/religion.js:930"
+        "source": "独立数值基准：mythic/unicornNecropolis"
       },
       {
         "id": "blackPyramid",
@@ -2773,7 +2772,7 @@
           "megalith": 2500
         },
         "ratio": 1.15,
-        "source": "js/religion.js:945"
+        "source": "独立数值基准：mythic/blackPyramid"
       }
     ],
     "crafts": [
@@ -2783,7 +2782,7 @@
           "honey": 100
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/wood"
       },
       {
         "id": "beam",
@@ -2791,7 +2790,7 @@
           "wood": 175
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/beam"
       },
       {
         "id": "slab",
@@ -2799,7 +2798,7 @@
           "minerals": 250
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/slab"
       },
       {
         "id": "plate",
@@ -2807,7 +2806,7 @@
           "iron": 125
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/plate"
       },
       {
         "id": "steel",
@@ -2816,7 +2815,7 @@
           "iron": 100
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/steel"
       },
       {
         "id": "concrete",
@@ -2825,7 +2824,7 @@
           "steel": 25
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/concrete"
       },
       {
         "id": "gear",
@@ -2833,7 +2832,7 @@
           "steel": 15
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/gear"
       },
       {
         "id": "alloy",
@@ -2842,7 +2841,7 @@
           "steel": 75
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/alloy"
       },
       {
         "id": "eludium",
@@ -2851,7 +2850,7 @@
           "alloy": 2500
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/eludium"
       },
       {
         "id": "scaffold",
@@ -2859,7 +2858,7 @@
           "beam": 50
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/scaffold"
       },
       {
         "id": "ship",
@@ -2869,7 +2868,7 @@
           "scaffold": 100
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/ship"
       },
       {
         "id": "tanker",
@@ -2879,7 +2878,7 @@
           "blueprint": 5
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/tanker"
       },
       {
         "id": "kerosene",
@@ -2887,7 +2886,7 @@
           "oil": 7500
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/kerosene"
       },
       {
         "id": "plastic",
@@ -2895,7 +2894,7 @@
           "oil": 1000
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/plastic"
       },
       {
         "id": "microchip",
@@ -2905,7 +2904,7 @@
           "spice": 750
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/microchip"
       },
       {
         "id": "parchment",
@@ -2913,7 +2912,7 @@
           "furs": 175
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/parchment"
       },
       {
         "id": "manuscript",
@@ -2922,7 +2921,7 @@
           "parchment": 25
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/manuscript"
       },
       {
         "id": "compendium",
@@ -2931,7 +2930,7 @@
           "manuscript": 55
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/compendium"
       },
       {
         "id": "blueprint",
@@ -2940,7 +2939,7 @@
           "compendium": 25
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/blueprint"
       },
       {
         "id": "thorium",
@@ -2948,7 +2947,7 @@
           "uranium": 250
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/thorium"
       },
       {
         "id": "megalith",
@@ -2958,7 +2957,7 @@
           "plate": 5
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/megalith"
       },
       {
         "id": "bloodstone",
@@ -2967,7 +2966,7 @@
           "relic": 10000
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/bloodstone"
       },
       {
         "id": "tMythril",
@@ -2977,7 +2976,7 @@
           "titanium": 500
         },
         "amount": 1,
-        "source": "js/workshop.js:2116–2349"
+        "source": "独立数值基准：crafts/tMythril"
       }
     ],
     "stages": [
@@ -2987,7 +2986,7 @@
           "titanium": 250
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:388–413"
+        "source": "独立数值基准：stages/pasture"
       },
       {
         "id": "aqueduct",
@@ -2997,7 +2996,7 @@
           "gear": 5
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:449–477"
+        "source": "独立数值基准：stages/aqueduct"
       },
       {
         "id": "library",
@@ -3007,7 +3006,7 @@
           "microchip": 5
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:576–641"
+        "source": "独立数值基准：stages/library"
       },
       {
         "id": "amphitheatre",
@@ -3016,7 +3015,7 @@
           "titanium": 75
         },
         "ratio": 1.18,
-        "source": "js/buildings.js:1867–1904"
+        "source": "独立数值基准：stages/amphitheatre"
       },
       {
         "id": "warehouse",
@@ -3028,7 +3027,7 @@
           "starchart": 100000
         },
         "ratio": 1.15,
-        "source": "js/buildings.js:849–928"
+        "source": "独立数值基准：stages/warehouse"
       }
     ]
   }

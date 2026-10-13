@@ -1,6 +1,6 @@
 {
   "asset": "semantic-buildings-simple.png",
-  "mode": "built-in image_gen__imagegen, transparent_background=true",
+  "mode": "内置 image_gen__imagegen，transparent_background=true",
   "original_generated_file": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-b734956e-6339-4916-b09e-fb22aaa750b2.png",
   "dimensions": [
     1536,
@@ -41,9 +41,9 @@
     "refinement-prompt.txt"
   ],
   "crop_metadata": "semantic-buildings-crops.json",
-  "crop_method": "Alpha >32 bounding box plus 3 pixels; six 256-pixel columns and row separators y=282,545,770. Re-measured crops intentionally replace prior crop locations.",
+  "crop_method": "alpha >32 的边界框外扩 3 像素；六列，每列 256 像素，行分界为 y=282,545,770。重新测量的裁切框替换此前裁切位置。",
   "sha256": "c86b055f2c13169201acfe5e8aba92fab56028c583af9e5349b132e150d6f2b8",
   "repo_modified": false,
   "deploy_performed": false,
-  "notes": "All 24 semantic identities and row-major ordering retained. No asset crosses a neighboring sprite. Each row is separate but some sprites extend beyond nominal y=256/512 grid lines, so use supplied re-measured crop boxes. RGB under transparent pixels contains generator backdrop colors, but actual alpha is zero across background. Preserve alpha on conversion."
+  "notes": "保留全部 24 个语义身份及按行排列顺序。资源没有跨入相邻精灵。各行彼此独立，但部分精灵超出名义 y=256/512 网格线，因此应使用提供的重新测量裁切框。透明像素下的 RGB 含有生成器背景颜色，但背景实际 alpha 均为零。格式转换时保留透明通道。"
 }

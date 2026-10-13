@@ -1,7 +1,7 @@
 {
   "asset": "civic-atlas.png",
   "source_raw_png": "/workspace/shared/beargame-outfits/civic/civic-atlas.png",
-  "generation_mode": "built-in image_gen",
+  "generation_mode": "内置 image_gen",
   "reference": "/workspace/scratch/2ea1830e5ccf/beargame/public/art/reference-bears-atlas.webp",
   "dimensions": [
     1536,
@@ -33,7 +33,7 @@
       0
     ]
   },
-  "coordinate_convention": "xyxy, right and bottom exclusive; baseline is last visible pixel row at alpha >127; estimates are measured from actual image pixels/visual inspection",
+  "coordinate_convention": "xyxy；右边界和下边界不包含在矩形内；基线为 alpha >127 的最后一行可见像素；估计值来自实际像素测量和视觉检查",
   "poses": [
     {
       "job": "priest",
@@ -247,17 +247,17 @@
     }
   ],
   "integration_notes": [
-    "Preserve raw source. Use paired common scale based on head/body, not individual outer prop bounding boxes.",
-    "Normalize each pose by body_anchor_head_center_x and feet_baseline_y. Do not use each equal grid cell center as its body anchor.",
-    "Recommended source crop boxes include approximately 8px padding around intentional sprite edge.",
-    "True alpha transparency verified, but some low-alpha 1..8 debris pixels remain in raw file. Max alpha is 254 from imagegen."
+    "保留原始源文件。配对帧应根据头部和身体采用共同缩放比例，不按各自道具外边框缩放。",
+    "使用 body_anchor_head_center_x 和 feet_baseline_y 规范化每个姿态。不要将等分网格单元的中心作为身体锚点。",
+    "建议源裁切框在有意绘制的精灵边缘周围保留约 8px 边距。",
+    "已验证真实透明通道，但原文件仍有少量 alpha 为 1..8 的碎屑像素。imagegen 生成结果的最大 alpha 为 254。"
   ],
   "identity_and_style_review": [
-    "Same original white round-faced bear identity is recognizable in all six sprites.",
-    "Correct outfits/props/actions: lavender short cape/lantern lift; sand vest/sample bag/raised rock inspection; burgundy scarf/scroll and greeting wave. No coins or pickaxes.",
-    "Pairs are close in size but not exact duplicated body/head silhouettes. Priest work head is shifted about 4px left; geologist work eyes/gaze turn right about 10px while head center remains stable.",
-    "Within-cell feet baselines differ by about 50px between atlas rows. Anchored cropping is required before animation.",
-    "Version 2 simplifies the rock facets. Some soft tonal variation remains inherent to generated raster; strict perfectly-flat palette is not guaranteed."
+    "全部六个精灵均可辨认出相同的原创圆脸白熊形象。",
+    "装束、道具与动作正确：浅紫短披风与举灯；沙色背心、样本袋与举石观察；酒红围巾、卷轴与挥手问候。没有硬币或镐。",
+    "配对角色大小接近，但身体和头部轮廓并非精确复制。祈愿熊的工作帧头部约向左移 4px；地质熊工作帧眼睛和视线约右移 10px，但头部中心保持稳定。",
+    "图集两行的单元内脚底基线相差约 50px。制作动画前必须按锚点裁切。",
+    "第 2 版简化了岩石切面。生成位图仍有轻微柔和色调变化，不能保证色板完全平涂。"
   ],
   "files": {
     "initial_atlas": "civic-atlas-v1.png",

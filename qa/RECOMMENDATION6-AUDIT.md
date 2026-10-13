@@ -1,58 +1,58 @@
-# Long-flow and mobile reliability audit
+# 长流程与移动端可靠性审计
 
-Date: 2026-10-10. This report covers the actual engine, actual application handlers in a controlled DOM, and cloud Node CPU measurements. It does **not** claim real iPhone/iOS Safari, touch hardware, browser rendering speed, or battery-life testing. Browser QA belongs to the separate visual review.
+日期：2026-10-10。本报告覆盖真实引擎、受控 DOM 中的真实应用事件处理器，以及云端 Node CPU 测量。报告未包含实体 iPhone、iOS Safari、触控硬件、浏览器渲染速度或续航测试；浏览器视觉检查单独进行。
 
-## Verified and corrected issue
+## 已验证并修正的问题
 
-A persisted page restore could award one absence twice. The reproducible handler sequence was hidden visibility → pagehide → 60-second absence → pageshow(persisted) and completed catch-up → visible visibility event. With 20 hives and 10 honey, this gave 1,135 honey after restore, then 2,260 after the visibility event. The page retained a stale `hiddenAt` interval.
+从浏览器缓存恢复页面时，同一段离线时间可能重复结算。可复现的事件顺序为：页面隐藏的可见性事件 → `pagehide` → 离开 60 秒 → `pageshow(persisted)` 并完成补算 → 页面可见的可见性事件。初始有 20 个蜂箱和 10 份蜂蜜时，恢复后蜂蜜为 1,135，随后的可见性事件又将其增加到 2,260。原因是页面保留了过期的 `hiddenAt` 时间区间。
 
-The parent implementation clears that stale interval before claiming/reloading on persisted pageshow. Both event orders now pass against the real app handlers. The fixture covers a plausible interrupted sequence; it does not establish which event order a particular Safari version emits.
+实现已在持久化页面的 `pageshow` 中、申请存档写入权和重新加载之前清除该过期区间。两种事件顺序现均通过真实事件处理器测试。测试数据覆盖一种可能发生的中断顺序，但不能据此确定某个 Safari 版本实际发出的事件顺序。
 
-## Automated reliability coverage
+## 自动化可靠性覆盖
 
-Run:
+运行命令：
 
 ```sh
 node --test qa/mobile-save-regressions.test.mjs qa/mobile-reload-regressions.test.mjs qa/mobile-lifecycle-audit.test.mjs
 ```
 
-Result: 21 tests passed, including eight new lifecycle checks:
+历史结果：21 项测试通过，其中包含八项新增的生命周期检查：
 
-- Ordinary hidden return and repeated visibility notification settle once
-- Both persisted pageshow/visibility orderings settle once
-- Paused and offline-disabled returns preserve resources
-- Returning stale pages cannot overwrite another active owner
-- Reduced-motion preference persists through reload without changing progression
-- Hidden pages stop active simulation and set the animation suppression class
+- 普通隐藏后返回和重复可见性通知均只结算一次。
+- 持久化页面的 `pageshow` 与可见性事件，两种先后顺序均只结算一次。
+- 暂停或关闭离线进度后返回，资源保持不变。
+- 返回的过期页面不能覆盖另一个活跃标签页拥有的存档。
+- 减少动态效果的偏好在重新加载后保留，且不改变游戏进度。
+- 隐藏页面停止主动模拟，并设置用于抑制动画的样式类。
 
-Existing regression coverage also protects read/write failures, quota errors, failed ownership, interrupted asynchronous catch-up, delayed cross-tab events, imports, and export size limits. The DOM harness verifies JavaScript effects and rendered strings, not real CSS animation, focus, layout, viewport safe areas, disk durability, OS process termination, or file-picker behavior.
+已有回归测试还覆盖读写失败、存储额度错误、写入权申请失败、异步补算中断、跨标签页事件延迟、导入和导出大小限制。DOM 测试工具验证 JavaScript 效果和渲染字符串，不验证真实 CSS 动画、焦点、布局、视口安全区域、磁盘持久性、操作系统终止进程或文件选择器行为。
 
-## Earned campaign replay
+## 正常操作推进回放
 
 ```sh
 node qa/campaign/replay.mjs --checkout .
 ```
 
-Result: all 15 stages, all 51,106 public API operations, and all expected checkpoint saves passed exactly. The lineage still reaches first space, chronophysics, time shatter, lunar supplies and challenge entry/exit; the independent branch verifies first prestige. Challenge completion and every late-game system are not covered.
+历史结果：全部 15 个阶段、51,106 次公开 API 操作和所有预期检查点存档均精确通过。连续推进链仍可达到首次太空探索、时空物理、穿越、月面补给，以及挑战开始和退出；独立分支验证首次轮回。未覆盖挑战完成和全部后期系统。
 
-## Long-term pacing findings
+## 长期节奏分析
 
-Reproduce journal analysis:
+复现操作日志分析：
 
 ```sh
 node qa/audit-campaign-pacing.mjs
 ```
 
-The 14-stage lineage (excluding the separate one-action prestige branch) contains 51,105 calls, including 30,074 offline-settlement calls (58.8%). The most repeated action calls are 7,441 shark trades, 5,480 hunts, and 4,262 parchment crafts. The time-crystal stage contains 186 waits and one action. Industrial/rocketry progression alone contains 8,847 waits and 4,137 shark trades.
+14 个连续阶段（不含仅一次操作的独立轮回分支）包含 51,105 次调用，其中 30,074 次为离线结算，占 58.8%。重复最多的操作为 7,441 次潮湾商团交易、5,480 次狩猎和 4,262 次纸页制作。时晶阶段包含 186 次等待和一次操作。仅工业与火箭阶段就包含 8,847 次等待和 4,137 次潮湾商团交易。
 
-The lineage requests 157,936,534 offline seconds, around 1,828 days, before runtime rounding/caps. This is an intentionally unoptimized planner using compressed simulation. It is **not** wall-clock test duration, credited simulation time, necessary player time, required UI taps, or a fair measure of normal human pacing. Existing detail dialogs already expose maximum-quantity actions; planner calls do not measure how well players discover or use these.
+连续推进链请求的离线时间合计 157,936,534 秒，约 1,828 天，该数值尚未经运行时取整和上限处理。这是使用压缩模拟、刻意未做策略优化的规划器记录，不能用来表示实际测试耗时、真正结算的模拟时间、必要玩家时长、必需界面点击次数或正常人工游玩的节奏。现有详情对话框已提供最大数量操作；规划器调用次数不能衡量玩家发现和使用这些操作的难易程度。
 
-Concrete conclusion: the recorded campaign proves reachability and state correctness, but cannot establish satisfying long-term pacing. The concentration of waiting, hunting/parchment production and shark trading identifies useful routes for a future fresh-player pacing session. No economy, cost, unlock, timing, offline or progression rule was changed by this audit.
+具体结论：该推进记录证明了流程可达和状态正确，不能证明长期节奏令人满意。等待、狩猎、纸页生产和潮湾商团交易的集中出现，为后续新玩家节奏测试提供了重点路线。本次审计未修改经济、费用、解锁、计时、离线或进度规则。
 
-Prior campaign caveats remain material: some earlier offline checkpoints starve in separate active-play tests; repaired later milestones survive full active years. Offline food treatment and rounded rare events differ from active play. Do not describe all earlier zero-death offline checkpoints as stable active-play saves.
+此前的流程限制仍需保留：一些早期离线检查点在单独的在线游玩测试中会发生饥饿；修正后的后期里程碑能够存活完整在线年。离线食物处理和稀有事件取整与在线游玩不同，不能将所有早期零死亡的离线检查点描述为稳定的在线存档。
 
-## CPU baseline
+## CPU 基线
 
-`recommendation6-node-performance.json` records a fresh run of `node qa/benchmark-long-game.mjs`: 30 timed samples after five warm-ups, synthetic all-research saves with 0/100/1,000 bears. At 1,000 bears, p95 was approximately 15.1 ms for a full snapshot, 0.54 ms for village HTML-string generation, and 1.76 ms for one active tick. The roster remains capped at 50 leadership cards and village markup is about 54.7k characters.
+历史产物 `recommendation6-node-performance.json` 记录了当时重新运行 `node qa/benchmark-long-game.mjs` 的结果：使用研究全部完成的合成存档，分别设置 0、100、1,000 只小熊，在五次预热后采集 30 个计时样本。1,000 只小熊时，完整快照的第 95 百分位耗时约为 15.1 毫秒，村落 HTML 字符串生成约为 0.54 毫秒，单次在线模拟步约为 1.76 毫秒。名册仍限制为 50 张领袖操作卡片，村落标记约为 54.7k 字符。该历史 JSON 产物当前未随仓库提供。
 
-These figures are diagnostic cloud Node observations, not regression thresholds or claims about phone frame rates. They exclude DOM insertion, layout, paint, compositing, real mobile CPU/thermal constraints, home-scene animations and battery use. Snapshot construction remains the dominant measured CPU operation. No fixed timing assertion was added, avoiding hardware-dependent flaky tests.
+这些数值用于诊断云端 Node 表现，不是回归阈值，也不代表手机帧率。测量未包含 DOM 插入、布局、绘制、合成、真实移动端 CPU 与温控约束、家园动画和电量消耗。构建快照仍是已测量操作中的主要 CPU 开销。本次未添加固定时间断言，避免因硬件差异引发不稳定测试。

@@ -1,21 +1,21 @@
-# Beargame independent mechanics specification
+# 小熊文明玩法规范
 
-Reference: Kittens Game checkout at commit `781e379f79f1e7512d168849cba21ed111502644`, inspected 2026-10-08. All line references in this directory are relative to that fixed checkout. The reference is a source of gameplay facts, numerical measurements and dependencies only. Its WET PAWS license is not permission to reuse code, descriptions, art, tables, or implementation. No reference source belongs in the deliverable. This specification is independently written; implementation architecture, UI text, illustrations and code must be original. It is not a legal opinion.
+本目录记录本项目的玩法规则、数值、依赖关系与验证边界。规则记录日期为 2026-10-08。数值规范、程序实现和界面表达分别维护；文档中列出规则不代表程序已经实现。
 
-## Confidence and implementation claims
+## 规则状态与实现声明
 
-- `VERIFIED`: directly inspected numeric/mechanical fact at the cited reference location.
-- `CATALOGUED`: existence and source location established, detailed behavior still needs inspection.
-- `UNVERIFIED`: insufficient source review or runtime comparison; never label equivalent.
-- A verified rule is not automatically an implemented rule. Engine/UI/QA workers own their implementation and test matrix. This directory intentionally does not assert that implementation is complete.
-- Primary goal is behavioral/numerical correspondence, including long-game systems, with original bear-world terminology. Reference identifiers used below are provenance handles, not required player-facing labels.
+- **已核实**：已确认的数值或机制，仍需对应实现与测试。
+- **已收录**：已确认机制存在，详细行为仍待核实。
+- **待核实**：规则检查或运行验证不足，不应宣称行为已经完整覆盖。
+- 实现和测试状态应以对应引擎、界面和检查记录为准。本目录不笼统宣称全部功能已经完成。
+- 目标是提供涵盖长期发展的完整玩法，并使用统一的小熊世界中文表达。代码标识符用于关联数据与实现，不要求成为玩家可见名称。
 
-## Original thematic mapping
+## 世界设定与术语
 
-A Chinese-language woodland bear civilization lives through the seasons. A hive produces honey. Bears eat honey and work in gathering, forestry, mining, scholarship and ritual. Catnip maps to honey; kitten maps to bear; field maps to beehive; farmer maps to beekeeper. Wood remains wood. The 100-food-to-1-wood initial action is a provisioned forest expedition: spend 100 honey to bring back 1 wood, not honey physically becoming wood. Its improved-refinement technology becomes expedition provisioning. Initial manual food gathering is collecting wild honey.
+小熊文明生活在四季更替的林地。蜂房产出蜂蜜，小熊消耗蜂蜜，并从事采集、林业、采矿、学术和仪式等工作。养蜂人负责蜂蜜生产。初始的“100 蜂蜜换取 1 木材”表示为森林远征准备口粮，而非将蜂蜜直接变成木材；相应的精炼升级使用“远征补给”主题。初始手动采集表示收集野生蜂蜜。
 
-Other ordinary materials retain their factual meanings in Chinese (wood, ore, iron, steel, coal, oil, science/knowledge, culture, faith). Fantasy resources and world names should receive coherent newly authored labels; do not use the reference's expressive descriptions. Unusual spellings in provenance handles (`concrate`, `compedium`, `sattelite`) need not become user-facing typos.
+木材、矿石、铁、钢、煤、石油、知识、文化与信仰等常见资源保留其中文含义。幻想资源与世界名称使用一致的原创命名。数据标识符中的历史拼写（如 `concrate`、`compedium`、`sattelite`）不应成为界面错字。
 
-## Practical engine separation
+## 引擎职责划分
 
-Keep progression facts distinct from the original simulation code. Recommended functional boundaries are: command validation; time advancement; effect aggregation; production/consumption; storage; prerequisites; craft transforms; trade and random events; celestial/faith/prestige state; persistence and migrations. Every command should return success/failure plus a reason without partially charging resources. Fractional resource costs and outputs are meaningful; do not round the internal model to displayed integers. UI cannot silently permit locked actions.
+玩法数据与模拟实现分离。建议按命令校验、时间推进、效果汇总、生产与消耗、仓储、前置条件、制作转换、贸易与随机事件、星象与信仰及传承状态、存档与迁移划分模块。命令应返回成功或失败及原因，失败不得部分扣费。资源成本与产出允许小数，内部计算不能提前取整为界面整数。界面不得绕过锁定条件。

@@ -1,13 +1,13 @@
-Use case: stylized-concept.
-Asset type: transparent 3-column by 2-row game character animation atlas.
-Reference image: the supplied white bear sprite sheet is the exact character identity and visual style to preserve. Create a NEW atlas with exactly SIX isolated figures in a rigorously aligned 3 x 2 arrangement. Do not reproduce the reference sheet layout.
+用途：风格化概念设计。
+资产类型：透明 3 列 x 2 行游戏角色动画图集。
+参考图片：所给白熊精灵图集提供必须精确保留的角色身份和视觉风格。创建新图集，严格对齐为 3 x 2，恰好六个独立角色。不要复制参考图集布局。
 
-All figures are the SAME simple white bear from the reference: large round white head, tiny black dot eyes, small black nose and little curved mouth, small round ears, compact white torso, very short stubby arms and legs, chunky near-black outline. Match the reference identity precisely. Same head and body proportions in every cell. Flat solid colors only: white/cream, muted sage, ochre, muted indigo, blue-gray and near-black. No shading, no gradients, no fur, no texture, no fabric realism, no little seams, no little buttons, no extra facial details.
+全部角色都是参考中的同一简洁白熊：大圆白头、小黑点眼、小黑鼻、小弯嘴、小圆耳、紧凑白躯干、很短粗的手脚、粗近黑轮廓。准确匹配参考身份。每格头身比例相同。只用平涂纯色：白／奶油、低饱和鼠尾草、赭、低饱和靛蓝、蓝灰、近黑。无阴影、渐变、毛发、纹理、写实布料、小接缝、小纽扣或额外五官细节。
 
-Grid layout: column 1 is scholar, column 2 is miner, column 3 is engineer. The top row is the ready pose; directly beneath in the bottom row is that same job's work pose. Each pair is suitable for a two-frame animation: head size, body size, head position, and foot baseline must match between the pair; only the arms, tool angle, or clearly described work action changes. Keep the complete character, all tools, and any work object inside its own cell. Generous clear transparent gutters, no touching or overlapping other cells, ample outer margin. Every bear is the same scale, never shrink a bear to fit a tool.
+网格布局：第 1 列学者，第 2 列矿工，第 3 列工程师。上排准备姿势，正下方为同职业工作姿势。每组适合两帧动画：头尺寸、身体尺寸、头位置、脚底基线须配对一致，仅改变手臂、工具角度或明确描述的工作动作。完整角色、全部工具和工作物件均留在所属格内。透明间距宽裕干净，不接触或重叠其他格，外边距充足。每只熊比例相同，绝不能为容纳工具而缩小熊。
 
-Column 1 scholar: a simple blue-gray short shoulder cape, showing white paws and feet. Hold a large open sage-green book at chest height. Top frame reading with the book open; bottom frame the same book and bear while one large cream page is lifted/turning. Quiet simple face. No hat.
-Column 2 miner: simple ochre mine-lamp cap, with both round white ears still visibly protruding. Cap has one simple round pale lamp. Broad, chunky pickaxe with ochre wood handle and blue-gray head; one small gray mineral chunk on ground next to bear, within the cell. Top frame pickaxe raised, bottom frame pickaxe swung down toward the SAME mineral chunk. Keep head and feet position stable, not a different-scale bear. No tiny sparks or dust effects.
-Column 3 engineer: plain muted indigo bib apron, very simple single large shape, no buttons or tiny straps/seams/details. A large blue-gray wrench held beside a short simple ochre workbench. Workbench remains in the same place in the pair and contains one large obvious nut. Top frame ready to turn wrench; bottom frame wrench rotated while working on the nut. Do not obscure the face or shrink the bear.
+第 1 列学者：简单蓝灰短披肩，露出白爪和白脚。在胸前持一本大的打开的鼠尾草绿书。上帧看打开的书；下帧同书同熊，仅一张大奶油书页抬起／翻动。安静简单表情。无帽。
+第 2 列矿工：简单赭色矿灯帽，两只圆白耳仍明显露出。帽上一个简单圆浅色灯。宽粗镐，赭木柄、蓝灰镐头；熊旁地上有一块小灰矿石，位于格内。上帧抬镐，下帧向同一矿石挥下。头和脚位置稳定，不能改变熊的比例。无微小火花或尘埃效果。
+第 3 列工程师：朴素低饱和靛蓝背带围裙，以一个简单大形状表现，无纽扣或细小带子／接缝／细节。手持大蓝灰扳手，旁有矮简单赭色工作台。两帧中工作台位置相同，台面有一个醒目大螺母。上帧准备转扳手，下帧扳手旋转、操作螺母。不遮脸、不缩小熊。
 
-Output: landscape aspect ratio 3:2, exactly 3 columns and 2 rows, six full-body characters total. Actual alpha-transparent background and transparent gutters. No visible grid, no panels, no labels, no lettering, no watermark, no backdrop, no ground shadow, no checkerboard drawn into pixels. Every character and prop has a clean chunky black outline, like an extremely simple flat-color friendly game sticker.
+输出：3:2 横幅，严格 3 列 2 行，共六个全身角色。背景和间距实际透明。无可见网格、面板、标签、文字、水印、背景、地面阴影或画入像素的棋盘格。所有角色和道具都有干净粗黑描边，如极简平涂友好游戏贴纸。

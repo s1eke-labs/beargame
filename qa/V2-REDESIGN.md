@@ -1,16 +1,16 @@
-# Beargame v2 mobile redesign
+# Beargame v2 移动端改版
 
-Requested changes: simplify mobile UI, remove undiscovered technology/building catalogs, make actual graphical growth primary, and match the user's prior 自嘲熊历险记 art direction.
+改版目标：简化移动端界面，隐藏尚未发现的科技和建筑目录，以可见的场景成长为核心，并统一采用纸张与墨线风格的小熊插画。
 
-- Entire main viewport is a portrait illustrated world, with compact resource HUD, contextual actions and progressive navigation.
-- Building/research selections use compact illustrated tiles in a bottom sheet. Descriptions, effects, management and full costs remain in detail sheets.
-- Unlocked but unaffordable options remain visible. Locked never-owned options are omitted, not greyed out. The unusual gate-free ivory temple is additionally withheld until its required rare materials are discovered, including queue options.
-- Completed research and advanced queues/rosters are collapsed. All existing engine systems/actions and save keys remain unchanged.
-- All 40 base building types are mapped to stable district slots. Six types per scene page; every occupied page is reachable. Quantities show up to three representative copies plus actual count; population controls resident sprites.
-- Scenery and animations are retained across ordinary one-second refreshes. Detail disclosure, keyboard focus, sheet scroll and independent horizontal strips survive refreshes.
-- Portrait and short-height CSS, safe areas, touch targets, reduced motion and single-column specialist cards are included.
-- New generated paper/ink assets were visually inspected, all 32 crops checked and sprite alpha verified after WebP compression.
+- 主视口完整呈现竖屏插画世界，配有紧凑的资源信息栏、情境操作和随进度开放的导航。
+- 建筑和研究使用底部面板内的紧凑插画卡片；说明、效果、管理操作和完整费用保留在详情面板中。
+- 已解锁但资源不足的选项保持可见；尚未解锁且从未拥有的选项直接隐藏。没有常规解锁门槛的白枝研磨堂还需等到所需稀有材料被发现后才显示，队列选项也遵循该规则。
+- 已完成的研究及高级队列、名册默认收起。所有现有引擎系统、操作和存档键保持不变。
+- 全部 40 种基础建筑映射到稳定的区域位置。每个场景页展示六种建筑，所有已占用页面均可到达。每种建筑最多展示三个代表实例并附实际数量；居民精灵数量由人口控制。
+- 普通的一秒刷新保留场景和动画。详情展开状态、键盘焦点、面板滚动位置和独立的横向列表在刷新后保持不变。
+- 包含竖屏及短屏 CSS、安全区域、触控目标、减少动态效果和单列专业人员卡片。
+- 新生成的纸张和墨线资源已做视觉检查，全部 32 个裁切结果均已检查，并在 WebP 压缩后验证精灵透明通道。
 
-Verification: full engine and actual-handler DOM suites plus new mobile progressive-disclosure tests. No game-engine source files changed.
+验证记录：运行完整引擎测试、真实事件处理器 DOM 测试，以及新增的移动端渐进展示测试。本轮改版未修改游戏引擎源码。
 
-Limitation: Chromium could not launch in this cloud environment: process-singleton socket() Operation not permitted, both normal launch and the normal escalated retry. No browser security/sandbox flags were weakened. Neither real browser layout screenshots nor iPhone touch testing were completed. CSS/DOM checks are not represented as device validation.
+限制：当时的云端环境无法启动 Chromium，普通启动和按流程申请提升权限后的重试均遇到 `process-singleton socket() Operation not permitted`。未降低浏览器安全或沙箱限制。真实浏览器布局截图和 iPhone 触控测试均未完成，CSS 和 DOM 检查不能代表设备验证。

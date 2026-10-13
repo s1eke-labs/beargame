@@ -1,6 +1,6 @@
-Use case: illustration-story.
-Asset type: ONE continuous long portrait forest map background for the Beargame scrolling game, ideally 1024 x 3072, or the tallest portrait available.
-Primary request: Create a single coherent tall forest clearing seen in simple overhead storybook map perspective. One unbroken pale cream walking path gently snakes from the bottom edge to the top edge, with three or four broad irregular bends over the full image height. Wide open flat grass clearings alternate on either side of the path for future buildings, but DO NOT draw buildings or marked lots.
-Style/medium: Simple friendly bear picture-book art, thick rounded dark olive-brown outlines, flat muted sage and soft yellow-green grass, restrained round scalloped green tree crowns with little ochre trunks. Clean very minimal illustration, subtle paper softness only. Match the visual reference in the conversation in spirit: large uncomplicated shapes, cream path, warm outlined trees, open grass.
-Composition: A continuous connected landscape occupying the whole tall canvas. Sparse small clusters of trees sit mostly cropped along the left and right outer edges. The middle 70% is spacious with broad uninterrupted grass on both sides of the modest-width path. Path remains similar width from bottom to top, with no perspective horizon. No landscape boundary across the width. Consistent grass color throughout.
-Constraints: Entire image will be stretched once across the full scrolling map and NEVER repeated. Draw one unified landscape, NOT multiple tiles, atlas cells, separate strips, repeating panels, mirrored segments or a collage. Absolutely no horizontal joins, bands, bars, borders, crosswise roads, cut lines, repeated sections, or visual dividers. No branches in path. No buildings, bears, animals, characters, text, labels, UI, icons, pins, lot markers, sky, horizon, water or decorative objects. Minimal sparse details only. Opaque background.
+用途：故事插画。
+资产类型：用于本游戏滚动地图的一张连续长竖幅森林背景，理想尺寸为 1024 x 3072，或可用的最高竖幅尺寸。
+主要要求：以简洁的俯视绘本地图视角，绘制一片连贯的高幅森林空地。一条不断开的浅奶油色步道从底边蜿蜒至顶边，在整张图的高度内形成三到四个宽阔、不规则的弯道。道路两侧交替出现宽敞平坦的草地空地，供以后放置建筑，但不要绘制建筑或地块标记。
+风格与媒介：简洁友好的小熊绘本画风，粗而圆润的深橄榄棕色轮廓，平涂低饱和鼠尾草绿与柔和黄绿色草地，克制的圆润波瓣状绿色树冠和小赭色树干。插画干净、极简，仅保留轻微纸张柔和质感。遵循对话中视觉参考的气质：大而简单的形状、奶油色道路、暖色描边树木、开阔草地。
+构图：连续相连的景观铺满整张高幅画布。稀疏的小树丛主要位于左右外缘并被边缘裁切。中间 70% 保持宽敞，中等偏窄的道路两侧保留大片完整草地。道路从底到顶宽度基本一致，不出现透视地平线。不出现横贯画布的景观边界。全图草地颜色一致。
+约束：整张图片只会被一次性拉伸铺满完整滚动地图，绝不重复铺设。必须是一张统一景观，不能分成多个瓦片、图集单元、独立条带、重复面板、镜像段或拼贴。绝不出现横向接缝、色带、横条、边框、横穿道路、裁切线、重复区段或视觉分隔。道路不分叉。不出现建筑、小熊、动物、角色、文字、标签、界面、图标、图钉、地块标记、天空、地平线、水或装饰物。仅保留极少且稀疏的细节。背景不透明。

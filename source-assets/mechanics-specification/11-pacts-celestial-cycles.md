@@ -1,47 +1,46 @@
-# Pacts and celestial-cycle contract
+# 契约与星象周期规则
 
-## Pacts: normal default-enabled feature
+## 契约
 
-VERIFIED`js/religion.js:1388–1427,1488–1491,2448–2543,2573–3010`;`js/science.js:1147–1174,2055–2158`.
+契约属于默认启用功能。以下规则已核实。可用槽位来自每座陵墓，通常每座 1 个；激进排外政策使每座再加 1 个并额外增加 5 个，再扣除已购买的普通契约数量。决裂移除可用槽位。六种普通契约每次都花费 100 遗物，价格倍率为 1，要求有可用槽位，每份每天消耗 0.0005 幽角鹿。预付供养将每日消耗改为 0.00045，每次购买另需 2 幽角鹿，并避免立即产生债务。没有预付供养时，每份新契约立即增加 0.5 债务，不会等到库存耗尽才开始欠债。
 
-Pacts are enabled on all reference platforms. Available slots come from each mausoleum (normally1; radical-xenophobia policy adds1per mausoleum) plus5from that policy, minus purchased ordinary pact count. Fracture removes available slots. Six ordinary pact types each cost100relics per purchase, with price multiplier1(no escalating cost), require an available slot, and consume.0005necrocorn/day each. Upfront-payment policy changes upkeep to.00045/day, adds2necrocorns to each purchase, and prevents immediate debt. Without it, every purchased ordinary pact immediately adds.5debt. There is no automatic delay until stocks first run dry.
+每份契约在金字塔、阶位和债务倍率前的基础效果为：
 
-Per-pact effect bases, before pyramid/tier/debt multiplication:
-- 净林之约(cleansing): storage+.0005; debt-recovery+.003.
-- 重塑之约(destruction): production+.0005; debt-recovery−.0001.
-- 静默之约(extermination): faith+.001.
-- 澄明之约(purity): debt-recovery+.005; black-library boost+.0005; space contribution to compendia limit+.001.
-- 秘艺之约(arcane): craft+.001; universal engineering-tier knowledge+.1.
-- 星史之约(chronicler): annual resource ratio+.003; dark-harvester ratio+.1; time ratio+.1.
+- 净林之约（`cleansing`）：仓储 +0.0005；债务恢复 +0.003。
+- 重塑之约（`destruction`）：生产 +0.0005；债务恢复 −0.0001。
+- 静默之约（`extermination`）：信仰 +0.001。
+- 澄明之约（`purity`）：债务恢复 +0.005；黑图书馆增强 +0.0005；纲要上限的太空贡献 +0.001。
+- 秘艺之约（`arcane`）：制作 +0.001；通用工程阶位知识 +0.1。
+- 星史之约（`chronicler`）：年度资源倍率 +0.003；暗收割器倍率 +0.1；时间倍率 +0.1。
 
-For black-pyramid-mediated effects, aggregate each pact effect across its count, multiply bymax(T−24,1), then debt factorQ, then effective black pyramid count. Black-library bonus also multiplies bygraveyardBaseBlackLibraryBonus(.02)×(1+graveyardCount). Debt-recovery is excluded from tier/debt scaling but still arises through the pyramid effect. The directly aggregatedumbraBoostRatio is distinct from pyramid scaling. Black-sky completion gives one effective extra pyramid outside its challenge. These distinctions avoid applying the same boost twice.
+经黑金字塔生效的效果，先按契约数量汇总，乘以 `max(T−24,1)`、债务系数 Q 及有效黑金字塔数。黑图书馆加成还乘以墓园基础加成 `0.02×(1+墓园数)`。债务恢复不受阶位和债务缩放，但仍通过金字塔效果产生。直接汇总的 `umbraBoostRatio` 与金字塔缩放不同。完成黑空挑战后，挑战未启用时额外算一座有效金字塔。这些区别用于避免重复加成。
 
-Debt factorQ is0if fractured or debt≥50;1if debt≤smallDebtExemption; otherwise1−(debt−exemption)/(50−exemption). Exemption0normally,5with siphoning. All applicable pact benefits weaken continuously with debt; no binary on/off simplification.
+发生决裂或债务至少 50 时 Q=0；债务不超过小额豁免时 Q=1；其余为 `1−(债务−豁免)/(50−豁免)`。豁免通常为零，引流偿约时为 5。适用契约收益会随债务连续减弱，不能简化为二元开关。
 
-For a normal daily upkeep amountU>0and current debtD:
-- No debt: spendU; any uncovered portion becomes debt.
-- Debt and sufficient stock: spending amountU×[1+.15(1+R/2)], while debt decreasesU×.15(1+R), clamped at0. HereR is the aggregated deficit-recovery effect. These are intentionally different formula factors in the source.
-- If stocks cannot afford the increased spending, addmax(U−stock,0)to debt and attempt only the baseUspend, clamped by resource handling.
-- Siphoning replaces daily stock spending with+Udebt/day. Newly corrupted necrocorns repayfloor(debt)one unit each before entering stock; positive fractional debt remains.
-- Pay-debt action costsceil(D)necrocorns, clearsD, consumes no pact slot, and does not create a lasting pact count. It is available only whenD>0.
+设普通每日供养 U>0，当前债务 D：
 
-AtD≥50daily fracture clears all bears' job skills, removes all alicorns, clears debt and all ordinary pact counts, and permanently marks fracture for the current run. It disables new slots and applies−.5global storage,−.5global production,−.5faith modifiers via its own effects. This is an irreversible gameplay-state consequence until reset, distinct from simply running out of a resource.
+- 无债务时支付 U，不足部分转为债务。
+- 有债务且库存足够时，花费 `U×[1+0.15×(1+R/2)]`，债务减少 `U×0.15×(1+R)`，最低为零；R 为汇总的赤字恢复效果。这两个公式中的恢复系数有意不同。
+- 库存无法支付增加后的金额时，债务增加 `max(U−库存,0)`，只尝试支付基础 U，并按资源处理限制扣除量。
+- 引流偿约将每日库存支付改为每天增加 U 债务。新腐化的幽角鹿先逐只偿还 `floor(债务)`，再进入库存；正的小数债务保留。
+- 偿债行动花费 `ceil(D)` 幽角鹿，清空 D，不占契约槽位，也不留下契约数量；仅在 D>0 时可用。
 
-Three mutually exclusive policies all require a mausoleum and marker, and cost1necrocorn:
-- 引流偿约(siphoning): exemption5; new necrocorn production services debt instead of fractional daily stock spending.
-- 盛宴馈赠(feeding frenzy): corruption interference−.1; elder-feed bonusUDR(unspentSlots,50); raises owned-necrocorn slowdown threshold from0to1.
-- 预付供养(upfront payment): additional2necrocorn purchase cost per future pact,10%lower daily upkeep; adopting it also requires/pays2×existingActivePacts plus policy cost. Existing debt remains. Karma happiness contribution receives max(Q,.1)multiplier.
+每日检查到 D≥50 时触发决裂：清空所有小熊的岗位技能，移除全部星翼鹿，清空债务和普通契约数量，并在本轮永久记录决裂。决裂禁用新槽位，通过自身效果降低全局仓储、全局生产和信仰各 0.5。这一状态持续到重置，不能视为普通资源耗尽。
 
-Unused pact slots can produce karma tally every millennium. WithNeligible population>35andSfree slots>0, addresetKarmaTally(N)×UDR(.0001×max(1+.1(T−25),1)×S,100)per millennium. This uses the nonlinear karma tally rules before converting to visible karma.
+三项互斥政策都要求陵墓和标记碑，基础成本均为 1 幽角鹿：
 
-Fixtures: one newly purchased ordinary pact from zero debt givesD=.5,Q=.99without exemption. One pact atD=1,R=0with enough stock consumes.000575necrocorn/day and repays.000075debt/day. With no stock it adds.0005debt/day. PayD=.2costs1necro and clears debt. AtT=26,2cleansing pacts,3effective pyramids,D=0, storage bonus=.0005×2×2×3=.006.
+- 引流偿约（`siphoning`）：小额豁免 5，新增幽角鹿优先偿债，替代每日小数库存支付。
+- 盛宴馈赠（`feedingFrenzy`）：腐化干扰 −0.1，长者喂养加成为 `UDR(未用槽位,50)`，幽角鹿库存减速阈值由 0 升为 1。
+- 预付供养（`upfrontPayment`）：未来每份契约额外花费 2 幽角鹿，每日供养降低 10%。采用政策时，还需支付 `2×现有生效契约数`，已有债务不消失。业力的幸福度贡献乘以 `max(Q,0.1)`。
 
-## Cycles
+闲置槽位可在每个千年边界生成业力计数。有效人口 N>35 且空闲槽位 S>0 时，每千年增加 `resetKarmaTally(N)×UDR(0.0001×max(1+0.1×(T−25),1)×S,100)`。先应用非线性业力计数规则，再转换成可见业力。
 
-VERIFIED`js/calendar.js:55–214,301–307,321–353,1006–1021`;`js/prestige.js:304–323`.
+验算：零债务时购买一份普通契约，D=0.5，无豁免时 Q=0.99。一份契约、D=1、R=0 且库存充足时，每天花费 0.000575 幽角鹿并偿还 0.000075 债务；无库存时每天增加 0.0005 债务。D=0.2 时偿债消耗 1 幽角鹿并清空债务。T=26、两份净林之约、三座有效金字塔、D=0 时，仓储加成为 `0.0005×2×2×3=0.006`。
 
-There are10cycles of5years each, a50-year era. Fixed order: charon,umbra,yarn,helios,cath,redmoon,dune,piscine,terminus,kairo. They advance with calendar years, including time travel. Numerology(50paragon) enables the selected space-building effect multipliers. Numeromancy(250paragon, unlocked by numerology) applies cycle festival resource multipliers only while a festival is active; the affected gross resource flow also multiplies by1+festivalRatio. Ordinary base festival happiness/growth effects are separate.
+## 星象周期
 
-The independent matrix is in12-cycles-facts.json. Its effect multipliers are applied once to the appropriate building effect, not repeatedly to an already-modified cached value. Festival multipliers target resource production before consumption, not the entire net rate. Validate multi-year jumps, cycle boundaries, toggled buildings, and festival ending within offline simulation.
+共有十个周期，每个五年，组成五十年的纪元。代码标识顺序固定为 `charon`、`umbra`、`yarn`、`helios`、`cath`、`redmoon`、`dune`、`piscine`、`terminus`、`kairo`。它们随年份推进，包括时间跳跃。数字学需 50 典范，启用指定太空建筑效果倍率；数字术需 250 典范、由数字学解锁，仅在节庆期间启用周期资源倍率，适用总资源产出还乘以 `1+festivalRatio`。普通节庆的幸福度与成长效果单独计算。
 
-Examples: normal moon outpost .007unobtainium/tick becomes.0063incharon and.0084inredmoon with numerology. Solar collectors30power become45inhelios and15interminus. Inredmoon with numeromancy+festival and no extra festivalRatio, eligible unobtainium production doubles; consumption does not double.
+周期矩阵见 `12-cycles-facts.json`。倍率只应用一次于对应建筑效果，不能对已修正缓存重复应用。节庆倍率作用于消耗前的资源生产，不作用于整个净速率。应验证跨年跳跃、周期边界、建筑开关以及离线期间节庆结束。
+
+验算：启用数字学后，月球前哨的普通 0.007 稀星矿/刻在 `charon` 周期变为 0.0063，在 `redmoon` 变为 0.0084。太阳能集热器的 30 电力在 `helios` 变为 45，在 `terminus` 变为 15。具有数字术并处于节庆的 `redmoon` 周期中，无额外节庆倍率时，适用稀星矿生产翻倍，消耗不翻倍。

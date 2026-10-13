@@ -1,16 +1,121 @@
 {
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
-  "scope": "All 8 special workshop upgrades, independently authored factual records. These are default-mainline content, not the beta village map. Dynamic implementation remains subject to tests.",
+  "scope": "记录全部 8 项特殊工坊升级，属于默认主线内容。动态实现仍须通过测试验证。",
   "upgrades": [
-    {"referenceKey":"darkRevolution","name":"条纹传承","cost":{"bloodstone":15,"science":100},"availableAfter":"building:zebraWorkshop","impact":{"outpostPreparationIronWill":1,"outpostPreparationNormal":0.1},"opens":["zebraTrappers"],"source":"js/workshop.js:2354; js/buildings.js:2204"},
-    {"referenceKey":"darkBrew","name":"夜蜜酿法","cost":{"bloodstone":1,"parchment":3000,"science":100},"availableAfter":"building:brewery","impact":{"festivalZebraArrivalMultiplier":"2 + festivalArrivalRatio"},"source":"js/workshop.js:2371; js/calendar.js:634"},
-    {"referenceKey":"zebraTrappers","name":"条纹猎营","cost":{"science":1000,"alloy":100,"tMythril":10},"availableAfter":"special:darkRevolution","impact":{"preparationRatio":1},"opens":["reforgedOutposts"],"source":"js/workshop.js:2382"},
-    {"referenceKey":"reforgedOutposts","name":"前哨重铸","cost":{"science":1500,"coal":10000,"bloodstone":50,"tMythril":10},"availableAfter":"special:zebraTrappers","impact":{"forgeTotalPreparationRatio":"floor(forgeCount / 10)"},"source":"js/workshop.js:2400; js/buildings.js:2286"},
-    {"referenceKey":"whispers","name":"白枝密语","cost":{"tMythril":5},"availableAfter":"building:zebraForge","impact":{"ivoryTempleAutomationEnabled":true},"source":"js/workshop.js:2419; js/buildings.js:2348–2378"},
-    {"referenceKey":"minerologyDepartment","name":"陨石研究室","cost":{"science":75000,"compedium":75},"availableAfter":"research:archeology","impact":{"academyMeteorBonus":0.01},"opens":["bloodstoneInstitute"],"source":"js/workshop.js:2431; js/buildings.js:667"},
-    {"referenceKey":"bloodstoneInstitute","name":"赤晶研究所","cost":{"science":85000,"blueprint":50,"bloodstone":25,"tMythril":10},"availableAfter":"special:minerologyDepartment","impact":{"totalBloodstoneRatio":"0.01 * limitedDR(activeZebraWorkshops * (IronWill ? 1 : 0.1) * zebraCapacity, 41 + zebraPreparations)"},"opens":["rangefinders"],"source":"js/workshop.js:2450; js/buildings.js:2243–2252"},
-    {"referenceKey":"rangefinders","name":"远距测量仪","cost":{"science":100000,"tMythril":50,"microchip":25},"availableAfter":"special:bloodstoneInstitute AND workshop:railgun","impact":{"bloodstoneRatioPerForge":0.01},"source":"js/workshop.js:2468–2482; js/buildings.js:2291"}
+    {
+      "referenceKey": "darkRevolution",
+      "name": "条纹传承",
+      "cost": {
+        "bloodstone": 15,
+        "science": 100
+      },
+      "availableAfter": "building:zebraWorkshop",
+      "impact": {
+        "outpostPreparationIronWill": 1,
+        "outpostPreparationNormal": 0.1
+      },
+      "opens": [
+        "zebraTrappers"
+      ]
+    },
+    {
+      "referenceKey": "darkBrew",
+      "name": "夜蜜酿法",
+      "cost": {
+        "bloodstone": 1,
+        "parchment": 3000,
+        "science": 100
+      },
+      "availableAfter": "building:brewery",
+      "impact": {
+        "festivalZebraArrivalMultiplier": "2 + festivalArrivalRatio"
+      }
+    },
+    {
+      "referenceKey": "zebraTrappers",
+      "name": "条纹猎营",
+      "cost": {
+        "science": 1000,
+        "alloy": 100,
+        "tMythril": 10
+      },
+      "availableAfter": "special:darkRevolution",
+      "impact": {
+        "preparationRatio": 1
+      },
+      "opens": [
+        "reforgedOutposts"
+      ]
+    },
+    {
+      "referenceKey": "reforgedOutposts",
+      "name": "前哨重铸",
+      "cost": {
+        "science": 1500,
+        "coal": 10000,
+        "bloodstone": 50,
+        "tMythril": 10
+      },
+      "availableAfter": "special:zebraTrappers",
+      "impact": {
+        "forgeTotalPreparationRatio": "floor(forgeCount / 10)"
+      }
+    },
+    {
+      "referenceKey": "whispers",
+      "name": "白枝密语",
+      "cost": {
+        "tMythril": 5
+      },
+      "availableAfter": "building:zebraForge",
+      "impact": {
+        "ivoryTempleAutomationEnabled": true
+      }
+    },
+    {
+      "referenceKey": "minerologyDepartment",
+      "name": "陨石研究室",
+      "cost": {
+        "science": 75000,
+        "compedium": 75
+      },
+      "availableAfter": "research:archeology",
+      "impact": {
+        "academyMeteorBonus": 0.01
+      },
+      "opens": [
+        "bloodstoneInstitute"
+      ]
+    },
+    {
+      "referenceKey": "bloodstoneInstitute",
+      "name": "赤晶研究所",
+      "cost": {
+        "science": 85000,
+        "blueprint": 50,
+        "bloodstone": 25,
+        "tMythril": 10
+      },
+      "availableAfter": "special:minerologyDepartment",
+      "impact": {
+        "totalBloodstoneRatio": "0.01 * limitedDR(activeZebraWorkshops * (IronWill ? 1 : 0.1) * zebraCapacity, 41 + zebraPreparations)"
+      },
+      "opens": [
+        "rangefinders"
+      ]
+    },
+    {
+      "referenceKey": "rangefinders",
+      "name": "远距测量仪",
+      "cost": {
+        "science": 100000,
+        "tMythril": 50,
+        "microchip": 25
+      },
+      "availableAfter": "special:bloodstoneInstitute 且 workshop:railgun",
+      "impact": {
+        "bloodstoneRatioPerForge": 0.01
+      }
+    }
   ],
-  "reachability": "Archery opens zebraOutpost/zebraWorkshop/zebraForge construction. Iron Will provides zebra hunters; at least 10 current zebras enable bloodstone hunting (first bloodstone chance 5%, later 0.5%, multiplied by 1+bloodstoneRatio). Bloodstone establishes the special-building chain. The source's zebraRequired metadata has no consumer in JavaScript and must not be treated as an invented hard gate. Stasis pods increase zebra capacity later. Mainline feature flags do not disable these upgrades.",
-  "source": "js/science.js:38–48; js/village.js:1060–1078; js/calendar.js:613–650; js/buildings.js:2190–2386"
+  "reachability": "弓术开放 zebraOutpost、zebraWorkshop、zebraForge 建造。钢铁意志提供条纹猎手；当前至少 10 位条纹居民时开放血石狩猎，首块概率 5%，之后为 0.5%，均乘 (1 + bloodstoneRatio)。血石建立特殊建筑链。zebraRequired 元数据未见 JavaScript 使用入口，不能据此虚构硬门槛。后续静滞舱增加条纹居民容量，主线功能开关不禁用这些升级。"
 }

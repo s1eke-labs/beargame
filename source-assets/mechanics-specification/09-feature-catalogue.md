@@ -1,708 +1,792 @@
-# Feature coverage index
+# 功能目录索引
 
-Every entry below has an established source identity/location. This is not a claim of implementation or numeric parity. Detailed verified subsets are covered by the other documents. All other items are explicitly CATALOGUED / UNVERIFIED. Conditional feature flags, retired nodes and stage variants require special care.
+本索引依据 Beargame 当前的引擎目录整理，列出中文名称、实际代码标识符和本仓库中的定义位置。总目录入口为 [catalog.js](../../src/engine/catalog.js)。标识符用于查找实现和解释存档，保留代码中的拼写。
 
-## resources (60)
+条目存在于目录，不代表其全部动态效果、界面交互和完成路径都已验证。标记为未启用的条目不能视为可用功能；其余条目仍需满足解锁、资源、挑战及当前状态等运行时条件。已测试范围与限制见[质量验证结果](../../qa/RESULTS.md)和[全流程质量验证](../../qa/FULL_FLOW_QA.md)。
 
-- catnip — js/resources.js:22
-- wood — js/resources.js:29
-- minerals — js/resources.js:37
-- coal — js/resources.js:44
-- iron — js/resources.js:52
-- titanium — js/resources.js:60
-- gold — js/resources.js:68
-- oil — js/resources.js:76
-- uranium — js/resources.js:84
-- unobtainium — js/resources.js:93
-- antimatter — js/resources.js:108
-- manpower — js/resources.js:119
-- science — js/resources.js:127
-- culture — js/resources.js:135
-- faith — js/resources.js:143
-- kittens — js/resources.js:151
-- zebras — js/resources.js:158
-- starchart — js/resources.js:165
-- temporalFlux — js/resources.js:173
-- gflops — js/resources.js:180
-- hashrates — js/resources.js:188
-- furs — js/resources.js:200
-- ivory — js/resources.js:209
-- spice — js/resources.js:218
-- unicorns — js/resources.js:227
-- alicorn — js/resources.js:236
-- necrocorn — js/resources.js:245
-- tears — js/resources.js:253
-- karma — js/resources.js:259
-- paragon — js/resources.js:265
-- burnedParagon — js/resources.js:272
-- timeCrystal — js/resources.js:279
-- sorrow — js/resources.js:286
-- relic — js/resources.js:293
-- void — js/resources.js:308
-- elderBox — js/resources.js:321
-- wrappingPaper — js/resources.js:336
-- blackcoin — js/resources.js:350
-- bloodstone — js/resources.js:364
-- tMythril — js/resources.js:378
-- beam — js/resources.js:397
-- slab — js/resources.js:403
-- plate — js/resources.js:408
-- steel — js/resources.js:414
-- concrate — js/resources.js:423
-- gear — js/resources.js:429
-- alloy — js/resources.js:436
-- eludium — js/resources.js:444
-- scaffold — js/resources.js:452
-- ship — js/resources.js:458
-- tanker — js/resources.js:464
-- kerosene — js/resources.js:470
-- plastic — js/resources.js:478
-- microchip — js/resources.js:485
-- parchment — js/resources.js:492
-- manuscript — js/resources.js:498
-- compedium — js/resources.js:505
-- blueprint — js/resources.js:511
-- thorium — js/resources.js:519
-- megalith — js/resources.js:529
+## 资源（59 项）
 
-## buildings (40)
+定义位置：[catalog.js](../../src/engine/catalog.js)、[progression-catalog.js](../../src/engine/progression-catalog.js)。人口保存在小熊数组中，不计入资源目录。
 
-- field — js/buildings.js:349
-- pasture — js/buildings.js:368
-- aqueduct — js/buildings.js:430
-- hut — js/buildings.js:483
-- logHouse — js/buildings.js:508
-- mansion — js/buildings.js:531
-- library — js/buildings.js:556
-- academy — js/buildings.js:648
-- observatory — js/buildings.js:684
-- biolab — js/buildings.js:708
-- barn — js/buildings.js:791
-- warehouse — js/buildings.js:824
-- harbor — js/buildings.js:942
-- mine — js/buildings.js:996
-- quarry — js/buildings.js:1033
-- smelter — js/buildings.js:1070
-- calciner — js/buildings.js:1153
-- steamworks — js/buildings.js:1280
-- magneto — js/buildings.js:1389
-- lumberMill — js/buildings.js:1439
-- oilWell — js/buildings.js:1458
-- workshop — js/buildings.js:1508
-- factory — js/buildings.js:1537
-- reactor — js/buildings.js:1589
-- accelerator — js/buildings.js:1639
-- tradepost — js/buildings.js:1705
-- mint — js/buildings.js:1730
-- brewery — js/buildings.js:1786
-- amphitheatre — js/buildings.js:1841
-- chapel — js/buildings.js:1907
-- temple — js/buildings.js:1944
-- unicornPasture — js/buildings.js:2032
-- ziggurat — js/buildings.js:2062
-- chronosphere — js/buildings.js:2112
-- aiCore — js/buildings.js:2137
-- zebraOutpost — js/buildings.js:2189
-- zebraWorkshop — js/buildings.js:2224
-- zebraForge — js/buildings.js:2263
-- stasisPod — js/buildings.js:2301
-- ivoryTemple — js/buildings.js:2326
+| 名称 | 代码标识符 |
+| --- | --- |
+| 条纹猎手 | `zebras` |
+| 蜂蜜 | `honey` |
+| 木材 | `wood` |
+| 矿石 | `minerals` |
+| 铁 | `iron` |
+| 煤 | `coal` |
+| 金 | `gold` |
+| 钛 | `titanium` |
+| 石油 | `oil` |
+| 铀 | `uranium` |
+| 月晶 | `unobtainium` |
+| 反物质 | `antimatter` |
+| 活力 | `manpower` |
+| 知识 | `science` |
+| 文化 | `culture` |
+| 信仰 | `faith` |
+| 毛皮 | `furs` |
+| 象牙 | `ivory` |
+| 香料 | `spice` |
+| 木梁 | `beam` |
+| 石板 | `slab` |
+| 铁板 | `plate` |
+| 钢 | `steel` |
+| 混凝土 | `concrete` |
+| 齿轮 | `gear` |
+| 合金 | `alloy` |
+| 星合金 | `eludium` |
+| 脚手架 | `scaffold` |
+| 船 | `ship` |
+| 油轮 | `tanker` |
+| 纸页 | `parchment` |
+| 手稿 | `manuscript` |
+| 典籍 | `compendium` |
+| 蓝图 | `blueprint` |
+| 煤油 | `kerosene` |
+| 巨石 | `megalith` |
+| 星图 | `starchart` |
+| 时晶 | `timeCrystal` |
+| 遗珍 | `relic` |
+| 泪石 | `sorrow` |
+| 黑金 | `blackcoin` |
+| 业力 | `karma` |
+| 传承 | `paragon` |
+| 余烬传承 | `burnedParagon` |
+| 时流 | `temporalFlux` |
+| 虚空 | `void` |
+| 灵鹿 | `unicorns` |
+| 塑料 | `plastic` |
+| 微芯片 | `microchip` |
+| 钍 | `thorium` |
+| 血石 | `bloodstone` |
+| 秘银 | `tMythril` |
+| 算力 | `gflops` |
+| 密钥算量 | `hashrates` |
+| 远古礼盒 | `elderBox` |
+| 礼盒绸纸 | `wrappingPaper` |
+| 灵露 | `tears` |
+| 星翼鹿 | `alicorn` |
+| 夜影鹿 | `necrocorn` |
 
-## research (62)
+## 建筑（40 项）
 
-- calendar — js/science.js:13
-- agriculture — js/science.js:25
-- archery — js/science.js:38
-- mining — js/science.js:50
-- metal — js/science.js:62
-- animal — js/science.js:73
-- brewery — js/science.js:84
-- civil — js/science.js:93
-- math — js/science.js:103
-- construction — js/science.js:115
-- engineering — js/science.js:130
-- currency — js/science.js:141
-- writing — js/science.js:152
-- philosophy — js/science.js:166
-- machinery — js/science.js:179
-- steel — js/science.js:189
-- theology — js/science.js:200
-- astronomy — js/science.js:217
-- navigation — js/science.js:231
-- architecture — js/science.js:247
-- physics — js/science.js:261
-- metaphysics — js/science.js:275
-- chemistry — js/science.js:284
-- acoustics — js/science.js:298
-- drama — js/science.js:311
-- archeology — js/science.js:323
-- electricity — js/science.js:340
-- biology — js/science.js:354
-- biochemistry — js/science.js:370
-- genetics — js/science.js:384
-- industrialization — js/science.js:397
-- mechanization — js/science.js:411
-- metalurgy — js/science.js:427
-- combustion — js/science.js:439
-- ecology — js/science.js:453
-- electronics — js/science.js:471
-- robotics — js/science.js:489
-- ai — js/science.js:504
-- quantumCryptography — js/science.js:518
-- blackchain — js/science.js:530
-- nuclearFission — js/science.js:542
-- rocketry — js/science.js:556
-- oilProcessing — js/science.js:573
-- sattelites — js/science.js:586
-- orbitalEngineering — js/science.js:601
-- thorium — js/science.js:614
-- exogeology — js/science.js:627
-- advExogeology — js/science.js:640
-- nanotechnology — js/science.js:655
-- superconductors — js/science.js:668
-- antimatter — js/science.js:681
-- terraformation — js/science.js:695
-- hydroponics — js/science.js:707
-- exogeophysics — js/science.js:719
-- particlePhysics — js/science.js:729
-- dimensionalPhysics — js/science.js:744
-- artificialGravity — js/science.js:756
-- chronophysics — js/science.js:768
-- tachyonTheory — js/science.js:782
-- cryptotheology — js/science.js:796
-- voidSpace — js/science.js:811
-- paradoxalKnowledge — js/science.js:832
+定义位置：[core-catalog.js](../../src/engine/core-catalog.js)、[building-stages.js](../../src/engine/building-stages.js)。
 
-## policies (64)
+| 名称 | 代码标识符 |
+| --- | --- |
+| 蜂箱 | `hive` |
+| 树洞熊舍 | `hut` |
+| 林间书屋 | `library` |
+| 蜜粮仓 | `barn` |
+| 花间食圃 | `pasture` |
+| 林泉水渠 | `aqueduct` |
+| 木屋 | `logHouse` |
+| 山岭公馆 | `mansion` |
+| 山林学院 | `academy` |
+| 观星台 | `observatory` |
+| 花木实验室 | `biolab` |
+| 工料库 | `warehouse` |
+| 河湾港 | `harbor` |
+| 石矿井 | `mine` |
+| 山岩采场 | `quarry` |
+| 铸铁炉 | `smelter` |
+| 焙烧炉 | `calciner` |
+| 蒸汽工坊 | `steamworks` |
+| 林原发电机 | `magneto` |
+| 木材工场 | `lumberMill` |
+| 深林油井 | `oilWell` |
+| 手作坊 | `workshop` |
+| 精工厂 | `factory` |
+| 晶能反应堆 | `reactor` |
+| 微粒加速环 | `accelerator` |
+| 林间驿站 | `tradepost` |
+| 林币铸坊 | `mint` |
+| 山谷剧场 | `amphitheatre` |
+| 花灯祈堂 | `chapel` |
+| 山灵神殿 | `temple` |
+| 灵鹿花苑 | `unicornPasture` |
+| 叠石祭坛 | `ziggurat` |
+| 时光蜜球 | `chronosphere` |
+| 森智核心 | `aiCore` |
+| 蜜酿坊 | `brewery` |
+| 条纹前哨 | `zebraOutpost` |
+| 条纹工房 | `zebraWorkshop` |
+| 条纹熔炉 | `zebraForge` |
+| 条纹休眠舱 | `stasisPod` |
+| 白枝研磨堂 | `ivoryTemple` |
 
-- liberty — js/science.js:855
-- tradition — js/science.js:875
-- monarchy — js/science.js:895
-- authocracy — js/science.js:914
-- republic — js/science.js:948
-- socialism — js/science.js:966
-- scientificCommunism — js/science.js:991
-- liberalism — js/science.js:1010
-- communism — js/science.js:1028
-- fascism — js/science.js:1048
-- technocracy — js/science.js:1067
-- theocracy — js/science.js:1082
-- expansionism — js/science.js:1096
-- transkittenism — js/science.js:1111
-- necrocracy — js/science.js:1130
-- radicalXenophobia — js/science.js:1145
-- diplomacy — js/science.js:1175
-- isolationism — js/science.js:1191
-- zebraRelationsAppeasement — js/science.js:1207
-- zebraRelationsBellicosity — js/science.js:1221
-- knowledgeSharing — js/science.js:1235
-- culturalExchange — js/science.js:1251
-- bigStickPolicy — js/science.js:1267
-- cityOnAHill — js/science.js:1283
-- outerSpaceTreaty — js/science.js:1299
-- militarizeSpace — js/science.js:1315
-- lizardRelationsEcologists — js/science.js:1335
-- lizardRelationsPriests — js/science.js:1370
-- lizardRelationsDiplomats — js/science.js:1391
-- sharkRelationsScribes — js/science.js:1408
-- sharkRelationsMerchants — js/science.js:1423
-- sharkRelationsBotanists — js/science.js:1445
-- griffinRelationsMetallurgists — js/science.js:1479
-- griffinRelationsScouts — js/science.js:1496
-- griffinRelationsMachinists — js/science.js:1513
-- nagaRelationsMasons — js/science.js:1533
-- nagaRelationsCultists — js/science.js:1553
-- nagaRelationsArchitects — js/science.js:1573
-- spiderRelationsGeologists — js/science.js:1600
-- spiderRelationsChemists — js/science.js:1626
-- spiderRelationsPaleontologists — js/science.js:1656
-- dragonRelationsPhysicists — js/science.js:1674
-- dragonRelationsAstrologers — js/science.js:1695
-- dragonRelationsDynamicists — js/science.js:1718
-- stoicism — js/science.js:1742
-- epicurianism — js/science.js:1762
-- carnivale — js/science.js:1778
-- extravagance — js/science.js:1792
-- rationing — js/science.js:1806
-- frugality — js/science.js:1820
-- rationality — js/science.js:1836
-- mysticism — js/science.js:1850
-- stripMining — js/science.js:1866
-- clearCutting — js/science.js:1884
-- environmentalism — js/science.js:1902
-- sustainability — js/science.js:1919
-- fullIndustrialization — js/science.js:1937
-- conservation — js/science.js:1958
-- openWoodlands — js/science.js:1975
-- cryochamberExtraction — js/science.js:1998
-- terraformingInsight — js/science.js:2013
-- siphoning — js/science.js:2054
-- feedingFrenzy — js/science.js:2078
-- upfrontPayment — js/science.js:2108
+## 建筑改建（5 项）
 
-## workshop (143)
+定义位置：[building-stages.js](../../src/engine/building-stages.js)。改建沿用原建筑标识符，由阶段字段区分方案；不额外计入建筑种类。
 
-- mineralHoes — js/workshop.js:9
-- ironHoes — js/workshop.js:23
-- mineralAxes — js/workshop.js:36
-- ironAxes — js/workshop.js:50
-- steelAxe — js/workshop.js:61
-- reinforcedSaw — js/workshop.js:72
-- steelSaw — js/workshop.js:86
-- titaniumSaw — js/workshop.js:103
-- alloySaw — js/workshop.js:120
-- titaniumAxe — js/workshop.js:134
-- alloyAxe — js/workshop.js:145
-- unobtainiumAxe — js/workshop.js:158
-- unobtainiumSaw — js/workshop.js:170
-- stoneBarns — js/workshop.js:186
-- reinforcedBarns — js/workshop.js:202
-- reinforcedWarehouses — js/workshop.js:221
-- titaniumBarns — js/workshop.js:240
-- alloyBarns — js/workshop.js:256
-- concreteBarns — js/workshop.js:271
-- titaniumWarehouses — js/workshop.js:286
-- alloyWarehouses — js/workshop.js:302
-- concreteWarehouses — js/workshop.js:317
-- storageBunkers — js/workshop.js:332
-- energyRifts — js/workshop.js:349
-- stasisChambers — js/workshop.js:366
-- voidEnergy — js/workshop.js:388
-- darkEnergy — js/workshop.js:407
-- chronoforge — js/workshop.js:422
-- tachyonModerator — js/workshop.js:436
-- tachyonAccelerators — js/workshop.js:449
-- fluxCondensator — js/workshop.js:467
-- lhc — js/workshop.js:478
-- photovoltaic — js/workshop.js:494
-- thinFilm — js/workshop.js:508
-- qdot — js/workshop.js:523
-- solarSatellites — js/workshop.js:539
-- cargoShips — js/workshop.js:552
-- barges — js/workshop.js:567
-- reactorVessel — js/workshop.js:582
-- ironwood — js/workshop.js:597
-- concreteHuts — js/workshop.js:612
-- unobtainiumHuts — js/workshop.js:624
-- eludiumHuts — js/workshop.js:636
-- silos — js/workshop.js:648
-- refrigeration — js/workshop.js:666
-- compositeBow — js/workshop.js:680
-- crossbow — js/workshop.js:701
-- railgun — js/workshop.js:716
-- bolas — js/workshop.js:736
-- huntingArmor — js/workshop.js:754
-- steelArmor — js/workshop.js:771
-- alloyArmor — js/workshop.js:783
-- nanosuits — js/workshop.js:795
-- caravanserai — js/workshop.js:807
-- freightfulExchange — js/workshop.js:823
-- transportSuperposition — js/workshop.js:845
-- advancedRefinement — js/workshop.js:867
-- prospecting — js/workshop.js:881
-- goldOre — js/workshop.js:889
-- geodesy — js/workshop.js:904
-- register — js/workshop.js:919
-- strenghtenBuild — js/workshop.js:929
-- miningDrill — js/workshop.js:949
-- unobtainiumDrill — js/workshop.js:963
-- coalFurnace — js/workshop.js:979
-- deepMining — js/workshop.js:995
-- pyrolysis — js/workshop.js:1010
-- electrolyticSmelting — js/workshop.js:1021
-- oxidation — js/workshop.js:1035
-- steelPlants — js/workshop.js:1049
-- automatedPlants — js/workshop.js:1064
-- nuclearPlants — js/workshop.js:1078
-- rotaryKiln — js/workshop.js:1089
-- fluidizedReactors — js/workshop.js:1105
-- nuclearSmelters — js/workshop.js:1120
-- orbitalGeodesy — js/workshop.js:1133
-- printingPress — js/workshop.js:1149
-- offsetPress — js/workshop.js:1162
-- photolithography — js/workshop.js:1177
-- uplink — js/workshop.js:1192
-- starlink — js/workshop.js:1207
-- cryocomputing — js/workshop.js:1222
-- machineLearning — js/workshop.js:1235
-- factoryAutomation — js/workshop.js:1251
-- advancedAutomation — js/workshop.js:1262
-- pneumaticPress — js/workshop.js:1273
-- combustionEngine — js/workshop.js:1284
-- fuelInjectors — js/workshop.js:1300
-- factoryLogistics — js/workshop.js:1316
-- carbonSequestration — js/workshop.js:1330
-- factoryOptimization — js/workshop.js:1346
-- factoryRobotics — js/workshop.js:1360
-- spaceEngineers — js/workshop.js:1375
-- aiEngineers — js/workshop.js:1390
-- chronoEngineers — js/workshop.js:1407
-- spaceManufacturing — js/workshop.js:1424
-- celestialMechanics — js/workshop.js:1439
-- astrolabe — js/workshop.js:1447
-- titaniumMirrors — js/workshop.js:1461
-- unobtainiumReflectors — js/workshop.js:1478
-- eludiumReflectors — js/workshop.js:1494
-- hydroPlantTurbines — js/workshop.js:1509
-- amBases — js/workshop.js:1523
-- aiBases — js/workshop.js:1537
-- amFission — js/workshop.js:1548
-- amReactors — js/workshop.js:1560
-- amReactorsMK2 — js/workshop.js:1577
-- voidReactors — js/workshop.js:1594
-- relicStation — js/workshop.js:1608
-- amDrive — js/workshop.js:1622
-- pumpjack — js/workshop.js:1635
-- petri — js/workshop.js:1651
-- biofuel — js/workshop.js:1665
-- unicornSelection — js/workshop.js:1679
-- alicornStable — js/workshop.js:1696
-- gmo — js/workshop.js:1719
-- cadSystems — js/workshop.js:1736
-- seti — js/workshop.js:1747
-- logistics — js/workshop.js:1761
-- augumentation — js/workshop.js:1773
-- internet — js/workshop.js:1785
-- neuralNetworks — js/workshop.js:1795
-- assistance — js/workshop.js:1809
-- enrichedUranium — js/workshop.js:1821
-- coldFusion — js/workshop.js:1836
-- thoriumReactors — js/workshop.js:1850
-- enrichedThorium — js/workshop.js:1868
-- hubbleTelescope — js/workshop.js:1884
-- satnav — js/workshop.js:1900
-- satelliteRadio — js/workshop.js:1911
-- astrophysicists — js/workshop.js:1923
-- mWReactor — js/workshop.js:1936
-- eludiumCracker — js/workshop.js:1948
-- thoriumEngine — js/workshop.js:1963
-- spiceNavigation — js/workshop.js:1978
-- longRangeSpaceships — js/workshop.js:1991
-- oilRefinery — js/workshop.js:2007
-- oilDistillation — js/workshop.js:2022
-- factoryProcessing — js/workshop.js:2036
-- voidAspiration — js/workshop.js:2050
-- distorsion — js/workshop.js:2064
-- turnSmoothly — js/workshop.js:2080
-- invisibleBlackHand — js/workshop.js:2097
+| 名称 | 代码标识符 |
+| --- | --- |
+| 花原太阳能板 | `pasture` |
+| 林泉水电站 | `aqueduct` |
+| 林间数据馆 | `library` |
+| 山谷广播塔 | `amphitheatre` |
+| 林星港 | `warehouse` |
 
-## recipes (23)
+## 研究（61 项）
 
-- wood — js/workshop.js:2116
-- beam — js/workshop.js:2126
-- slab — js/workshop.js:2135
-- plate — js/workshop.js:2144
-- steel — js/workshop.js:2153
-- concrate — js/workshop.js:2163
-- gear — js/workshop.js:2173
-- alloy — js/workshop.js:2182
-- eludium — js/workshop.js:2192
-- scaffold — js/workshop.js:2202
-- ship — js/workshop.js:2211
-- tanker — js/workshop.js:2225
-- kerosene — js/workshop.js:2239
-- plastic — js/workshop.js:2248
-- microchip — js/workshop.js:2257
-- parchment — js/workshop.js:2268
-- manuscript — js/workshop.js:2277
-- compedium — js/workshop.js:2287
-- blueprint — js/workshop.js:2297
-- thorium — js/workshop.js:2307
-- megalith — js/workshop.js:2316
-- bloodstone — js/workshop.js:2327
-- tMythril — js/workshop.js:2337
+定义位置：[core-catalog.js](../../src/engine/core-catalog.js)。
 
-## zebraWorkshop (8)
+| 名称 | 代码标识符 | 状态说明 |
+| --- | --- | --- |
+| 四季历法 | `calendar` | 按游戏进度和操作条件开放 |
+| 养蜂学 | `agriculture` | 按游戏进度和操作条件开放 |
+| 林间狩猎 | `archery` | 按游戏进度和操作条件开放 |
+| 采矿学 | `mining` | 按游戏进度和操作条件开放 |
+| 冶金入门 | `metal` | 按游戏进度和操作条件开放 |
+| 山林共生 | `animal` | 按游戏进度和操作条件开放 |
+| 聚落制度 | `civil` | 按游戏进度和操作条件开放 |
+| 数量学 | `math` | 按游戏进度和操作条件开放 |
+| 营造学 | `construction` | 按游戏进度和操作条件开放 |
+| 水利工程 | `engineering` | 按游戏进度和操作条件开放 |
+| 货币 | `currency` | 按游戏进度和操作条件开放 |
+| 文字 | `writing` | 按游戏进度和操作条件开放 |
+| 林间哲思 | `philosophy` | 按游戏进度和操作条件开放 |
+| 机械 | `machinery` | 按游戏进度和操作条件开放 |
+| 炼钢 | `steel` | 按游戏进度和操作条件开放 |
+| 山灵学 | `theology` | 按游戏进度和操作条件开放 |
+| 天文学 | `astronomy` | 按游戏进度和操作条件开放 |
+| 航海 | `navigation` | 按游戏进度和操作条件开放 |
+| 建筑学 | `architecture` | 按游戏进度和操作条件开放 |
+| 物理学 | `physics` | 按游戏进度和操作条件开放 |
+| 超验思辨 | `metaphysics` | 按游戏进度和操作条件开放 |
+| 化学 | `chemistry` | 按游戏进度和操作条件开放 |
+| 声学 | `acoustics` | 按游戏进度和操作条件开放 |
+| 戏剧 | `drama` | 按游戏进度和操作条件开放 |
+| 地层考察 | `archeology` | 按游戏进度和操作条件开放 |
+| 电学 | `electricity` | 按游戏进度和操作条件开放 |
+| 生物学 | `biology` | 按游戏进度和操作条件开放 |
+| 生物化学 | `biochemistry` | 按游戏进度和操作条件开放 |
+| 遗传学 | `genetics` | 按游戏进度和操作条件开放 |
+| 工业化 | `industrialization` | 按游戏进度和操作条件开放 |
+| 机械化 | `mechanization` | 按游戏进度和操作条件开放 |
+| 精密冶金 | `metalurgy` | 按游戏进度和操作条件开放 |
+| 燃烧学 | `combustion` | 按游戏进度和操作条件开放 |
+| 生态学 | `ecology` | 按游戏进度和操作条件开放 |
+| 电子学 | `electronics` | 按游戏进度和操作条件开放 |
+| 自动机械 | `robotics` | 按游戏进度和操作条件开放 |
+| 森林智算 | `ai` | 按游戏进度和操作条件开放 |
+| 量子密语 | `quantumCryptography` | 按游戏进度和操作条件开放 |
+| 幽晶链 | `blackchain` | 按游戏进度和操作条件开放 |
+| 核裂变 | `nuclearFission` | 按游戏进度和操作条件开放 |
+| 飞天工程 | `rocketry` | 按游戏进度和操作条件开放 |
+| 燃料精炼 | `oilProcessing` | 按游戏进度和操作条件开放 |
+| 卫星学 | `sattelites` | 按游戏进度和操作条件开放 |
+| 轨道工程 | `orbitalEngineering` | 按游戏进度和操作条件开放 |
+| 钍能研究 | `thorium` | 按游戏进度和操作条件开放 |
+| 异星地质 | `exogeology` | 按游戏进度和操作条件开放 |
+| 深空地质 | `advExogeology` | 按游戏进度和操作条件开放 |
+| 纳米技术 | `nanotechnology` | 按游戏进度和操作条件开放 |
+| 超导 | `superconductors` | 按游戏进度和操作条件开放 |
+| 反物质 | `antimatter` | 按游戏进度和操作条件开放 |
+| 异星造林 | `terraformation` | 按游戏进度和操作条件开放 |
+| 星际水培 | `hydroponics` | 按游戏进度和操作条件开放 |
+| 深空物理 | `exogeophysics` | 按游戏进度和操作条件开放 |
+| 粒子物理 | `particlePhysics` | 按游戏进度和操作条件开放 |
+| 维度物理 | `dimensionalPhysics` | 按游戏进度和操作条件开放 |
+| 人工引力 | `artificialGravity` | 目录保留，当前未启用 |
+| 时序物理 | `chronophysics` | 按游戏进度和操作条件开放 |
+| 超光理论 | `tachyonTheory` | 按游戏进度和操作条件开放 |
+| 隐秘神学 | `cryptotheology` | 按游戏进度和操作条件开放 |
+| 虚空领域 | `voidSpace` | 按游戏进度和操作条件开放 |
+| 悖论知识 | `paradoxalKnowledge` | 按游戏进度和操作条件开放 |
 
-- darkRevolution — js/workshop.js:2353
-- darkBrew — js/workshop.js:2369
-- zebraTrappers — js/workshop.js:2380
-- reforgedOutposts — js/workshop.js:2398
-- whispers — js/workshop.js:2416
-- minerologyDepartment — js/workshop.js:2430
-- bloodstoneInstitute — js/workshop.js:2448
-- rangefinders — js/workshop.js:2466
+## 政策（61 项）
 
-## mythicFaith (10)
+定义位置：[policy-catalog.js](../../src/engine/policy-catalog.js)。
 
-- unicornTomb — js/religion.js:635
-- ivoryTower — js/religion.js:676
-- ivoryCitadel — js/religion.js:702
-- skyPalace — js/religion.js:731
-- unicornUtopia — js/religion.js:779
-- sunspire — js/religion.js:831
-- marker — js/religion.js:878
-- unicornGraveyard — js/religion.js:909
-- unicornNecropolis — js/religion.js:929
-- blackPyramid — js/religion.js:944
+| 名称 | 代码标识符 |
+| --- | --- |
+| 开放蜂巢 | `liberty` |
+| 旧林手札 | `tradition` |
+| 长老继任 | `monarchy` |
+| 独任领熊 | `authocracy` |
+| 全营议事 | `republic` |
+| 共享蜜罐 | `socialism` |
+| 小工坊约定 | `scientificCommunism` |
+| 自由商路 | `liberalism` |
+| 集体工场 | `communism` |
+| 严整营地 | `fascism` |
+| 智识议会 | `technocracy` |
+| 星愿议会 | `theocracy` |
+| 远林开拓 | `expansionism` |
+| 机心共生 | `transkittenism` |
+| 黑晶领航 | `necrocracy` |
+| 闭门星约 | `radicalXenophobia` |
+| 结伴远行 | `diplomacy` |
+| 守林互市 | `isolationism` |
+| 条纹善邻 | `zebraRelationsAppeasement` |
+| 条纹竞逐 | `zebraRelationsBellicosity` |
+| 互寄学报 | `knowledgeSharing` |
+| 互访艺集 | `culturalExchange` |
+| 商路护卫 | `bigStickPolicy` |
+| 山丘艺城 | `cityOnAHill` |
+| 星空公约 | `outerSpaceTreaty` |
+| 轨道守望 | `militarizeSpace` |
+| 绿叶护林员 | `lizardRelationsEcologists` |
+| 绿叶星愿师 | `lizardRelationsPriests` |
+| 绿叶调停员 | `lizardRelationsDiplomats` |
+| 潮湾抄写员 | `sharkRelationsScribes` |
+| 潮湾行商员 | `sharkRelationsMerchants` |
+| 潮湾育林员 | `sharkRelationsBotanists` |
+| 云翼炼钢员 | `griffinRelationsMetallurgists` |
+| 云翼巡林员 | `griffinRelationsScouts` |
+| 云翼机修员 | `griffinRelationsMachinists` |
+| 盘藤砌石员 | `nagaRelationsMasons` |
+| 盘藤祭仪员 | `nagaRelationsCultists` |
+| 盘藤设计员 | `nagaRelationsArchitects` |
+| 丝谷地质员 | `spiderRelationsGeologists` |
+| 丝谷调配员 | `spiderRelationsChemists` |
+| 丝谷寻化石员 | `spiderRelationsPaleontologists` |
+| 焰岭物理员 | `dragonRelationsPhysicists` |
+| 焰岭观星员 | `dragonRelationsAstrologers` |
+| 焰岭动力员 | `dragonRelationsDynamicists` |
+| 节用蜜罐 | `stoicism` |
+| 林间享乐 | `epicurianism` |
+| 花蜜庆典 | `carnivale` |
+| 丰盛蜜宴 | `extravagance` |
+| 蜜粮配给 | `rationing` |
+| 勤俭工坊 | `frugality` |
+| 实证手札 | `rationality` |
+| 林梦手札 | `mysticism` |
+| 深层采石 | `stripMining` |
+| 密林轮伐 | `clearCutting` |
+| 蜂林守护 | `environmentalism` |
+| 循生工艺 | `sustainability` |
+| 全营开工 | `fullIndustrialization` |
+| 保育林区 | `conservation` |
+| 开放林区 | `openWoodlands` |
+| 回收休眠仓 | `cryochamberExtraction` |
+| 新生星球 | `terraformingInsight` |
 
-## faith (11)
+## 工坊升级（143 项）
 
-- solarchant — js/religion.js:1046
-- scholasticism — js/religion.js:1062
-- goldenSpire — js/religion.js:1082
-- sunAltar — js/religion.js:1103
-- stainedGlass — js/religion.js:1123
-- solarRevolution — js/religion.js:1143
-- basilica — js/religion.js:1159
-- templars — js/religion.js:1179
-- apocripha — js/religion.js:1199
-- transcendence — js/religion.js:1212
-- frescoes — js/religion.js:1228
+定义位置：[workshop-catalog.js](../../src/engine/workshop-catalog.js)。
 
-## transcendence (11)
+| 名称 | 代码标识符 | 状态说明 |
+| --- | --- | --- |
+| 石质蜂铲 | `mineralHoes` | 按游戏进度和操作条件开放 |
+| 铁质蜂铲 | `ironHoes` | 按游戏进度和操作条件开放 |
+| 石斧 | `mineralAxes` | 按游戏进度和操作条件开放 |
+| 铁斧 | `ironAxes` | 按游戏进度和操作条件开放 |
+| 钢斧 | `steelAxe` | 按游戏进度和操作条件开放 |
+| 钛斧 | `titaniumAxe` | 按游戏进度和操作条件开放 |
+| 合金斧 | `alloyAxe` | 按游戏进度和操作条件开放 |
+| 月晶斧 | `unobtainiumAxe` | 目录保留，当前未启用 |
+| 加固锯 | `reinforcedSaw` | 按游戏进度和操作条件开放 |
+| 钢锯 | `steelSaw` | 按游戏进度和操作条件开放 |
+| 钛锯 | `titaniumSaw` | 按游戏进度和操作条件开放 |
+| 合金锯 | `alloySaw` | 按游戏进度和操作条件开放 |
+| 月晶锯 | `unobtainiumSaw` | 目录保留，当前未启用 |
+| 石砌蜜仓 | `stoneBarns` | 按游戏进度和操作条件开放 |
+| 加固蜜仓 | `reinforcedBarns` | 按游戏进度和操作条件开放 |
+| 钛骨蜜仓 | `titaniumBarns` | 按游戏进度和操作条件开放 |
+| 合金蜜仓 | `alloyBarns` | 按游戏进度和操作条件开放 |
+| 混凝土蜜仓 | `concreteBarns` | 按游戏进度和操作条件开放 |
+| 加固工料库 | `reinforcedWarehouses` | 按游戏进度和操作条件开放 |
+| 钛骨工料库 | `titaniumWarehouses` | 按游戏进度和操作条件开放 |
+| 合金工料库 | `alloyWarehouses` | 按游戏进度和操作条件开放 |
+| 混凝土工料库 | `concreteWarehouses` | 按游戏进度和操作条件开放 |
+| 地下储物洞 | `storageBunkers` | 按游戏进度和操作条件开放 |
+| 密封蜜罐 | `silos` | 按游戏进度和操作条件开放 |
+| 冷藏 | `refrigeration` | 按游戏进度和操作条件开放 |
+| 精细补给 | `advancedRefinement` | 按游戏进度和操作条件开放 |
+| 金矿分离 | `goldOre` | 按游戏进度和操作条件开放 |
+| 深层采煤 | `deepMining` | 按游戏进度和操作条件开放 |
+| 煤炭烧制 | `coalFurnace` | 按游戏进度和操作条件开放 |
+| 大地测量 | `geodesy` | 按游戏进度和操作条件开放 |
+| 矿用钻机 | `miningDrill` | 按游戏进度和操作条件开放 |
+| 月晶钻机 | `unobtainiumDrill` | 按游戏进度和操作条件开放 |
+| 熊口名册 | `register` | 按游戏进度和操作条件开放 |
+| 投索 | `bolas` | 按游戏进度和操作条件开放 |
+| 护林甲 | `huntingArmor` | 按游戏进度和操作条件开放 |
+| 复合弓 | `compositeBow` | 按游戏进度和操作条件开放 |
+| 林地弩 | `crossbow` | 按游戏进度和操作条件开放 |
+| 天体运行 | `celestialMechanics` | 按游戏进度和操作条件开放 |
+| 星盘 | `astrolabe` | 按游戏进度和操作条件开放 |
+| 钛镜 | `titaniumMirrors` | 按游戏进度和操作条件开放 |
+| 月晶反光镜 | `unobtainiumReflectors` | 按游戏进度和操作条件开放 |
+| 星辉反光镜 | `eludiumReflectors` | 按游戏进度和操作条件开放 |
+| 货船扩装 | `cargoShips` | 按游戏进度和操作条件开放 |
+| 商队客栈 | `caravanserai` | 按游戏进度和操作条件开放 |
+| 全天观星 | `seti` | 按游戏进度和操作条件开放 |
+| 铁骨木屋 | `ironwood` | 按游戏进度和操作条件开放 |
+| 结构加固 | `strenghtenBuild` | 按游戏进度和操作条件开放 |
+| 储能裂隙 | `energyRifts` | 按游戏进度和操作条件开放 |
+| 大型粒子环 | `lhc` | 按游戏进度和操作条件开放 |
+| 电解冶炼 | `electrolyticSmelting` | 按游戏进度和操作条件开放 |
+| 氧化焙烧 | `oxidation` | 按游戏进度和操作条件开放 |
+| 炼钢车间 | `steelPlants` | 按游戏进度和操作条件开放 |
+| 自动炼钢 | `automatedPlants` | 按游戏进度和操作条件开放 |
+| 核能炼钢 | `nuclearPlants` | 按游戏进度和操作条件开放 |
+| 旋转窑 | `rotaryKiln` | 按游戏进度和操作条件开放 |
+| 流化反应器 | `fluidizedReactors` | 按游戏进度和操作条件开放 |
+| 核能熔炼 | `nuclearSmelters` | 按游戏进度和操作条件开放 |
+| 轨道测地 | `orbitalGeodesy` | 按游戏进度和操作条件开放 |
+| 林间印刷 | `printingPress` | 按游戏进度和操作条件开放 |
+| 胶版印刷 | `offsetPress` | 按游戏进度和操作条件开放 |
+| 光刻印刷 | `photolithography` | 按游戏进度和操作条件开放 |
+| 知识联网 | `uplink` | 按游戏进度和操作条件开放 |
+| 星网联结 | `starlink` | 按游戏进度和操作条件开放 |
+| 抽油机械 | `pumpjack` | 按游戏进度和操作条件开放 |
+| 石油精制 | `oilRefinery` | 按游戏进度和操作条件开放 |
+| 培养皿 | `petri` | 按游戏进度和操作条件开放 |
+| 花木燃料 | `biofuel` | 按游戏进度和操作条件开放 |
+| 山林互联 | `internet` | 按游戏进度和操作条件开放 |
+| 神经网络 | `neuralNetworks` | 按游戏进度和操作条件开放 |
+| 劳作助手 | `assistance` | 按游戏进度和操作条件开放 |
+| 浓缩铀 | `enrichedUranium` | 按游戏进度和操作条件开放 |
+| 冷核聚变 | `coldFusion` | 按游戏进度和操作条件开放 |
+| 钍反应堆 | `thoriumReactors` | 按游戏进度和操作条件开放 |
+| 星空学者 | `astrophysicists` | 按游戏进度和操作条件开放 |
+| 微型月站反应堆 | `mWReactor` | 按游戏进度和操作条件开放 |
+| 灵鹿选育 | `unicornSelection` | 按游戏进度和操作条件开放 |
+| 静滞储仓 | `stasisChambers` | 按游戏进度和操作条件开放 |
+| 虚空储能 | `voidEnergy` | 按游戏进度和操作条件开放 |
+| 暗能储仓 | `darkEnergy` | 按游戏进度和操作条件开放 |
+| 时晶锻艺 | `chronoforge` | 按游戏进度和操作条件开放 |
+| 时流调节器 | `tachyonModerator` | 按游戏进度和操作条件开放 |
+| 超光加速器 | `tachyonAccelerators` | 按游戏进度和操作条件开放 |
+| 时流凝聚 | `fluxCondensator` | 按游戏进度和操作条件开放 |
+| 光伏薄板 | `photovoltaic` | 按游戏进度和操作条件开放 |
+| 柔性薄膜 | `thinFilm` | 按游戏进度和操作条件开放 |
+| 量子光点 | `qdot` | 按游戏进度和操作条件开放 |
+| 光能蜂舟 | `solarSatellites` | 按游戏进度和操作条件开放 |
+| 载煤驳船 | `barges` | 按游戏进度和操作条件开放 |
+| 动力船舱 | `reactorVessel` | 按游戏进度和操作条件开放 |
+| 石骨熊舍 | `concreteHuts` | 按游戏进度和操作条件开放 |
+| 月晶熊舍 | `unobtainiumHuts` | 按游戏进度和操作条件开放 |
+| 星辉熊舍 | `eludiumHuts` | 按游戏进度和操作条件开放 |
+| 电磁猎弩 | `railgun` | 按游戏进度和操作条件开放 |
+| 钢制护林甲 | `steelArmor` | 按游戏进度和操作条件开放 |
+| 合金护林甲 | `alloyArmor` | 按游戏进度和操作条件开放 |
+| 纳米护林衣 | `nanosuits` | 按游戏进度和操作条件开放 |
+| 星港货运 | `freightfulExchange` | 按游戏进度和操作条件开放 |
+| 叠态运输 | `transportSuperposition` | 按游戏进度和操作条件开放 |
+| 陨石勘测 | `prospecting` | 按游戏进度和操作条件开放 |
+| 木材热解 | `pyrolysis` | 按游戏进度和操作条件开放 |
+| 低温计算 | `cryocomputing` | 按游戏进度和操作条件开放 |
+| 林智学习 | `machineLearning` | 按游戏进度和操作条件开放 |
+| 蒸汽自动化 | `factoryAutomation` | 按游戏进度和操作条件开放 |
+| 双季自动化 | `advancedAutomation` | 按游戏进度和操作条件开放 |
+| 气动压机 | `pneumaticPress` | 按游戏进度和操作条件开放 |
+| 内燃机 | `combustionEngine` | 按游戏进度和操作条件开放 |
+| 燃料喷射 | `fuelInjectors` | 按游戏进度和操作条件开放 |
+| 厂区调度 | `factoryLogistics` | 按游戏进度和操作条件开放 |
+| 碳素封存 | `carbonSequestration` | 按游戏进度和操作条件开放 |
+| 工艺优化 | `factoryOptimization` | 按游戏进度和操作条件开放 |
+| 机械工匠 | `factoryRobotics` | 按游戏进度和操作条件开放 |
+| 轨道工匠 | `spaceEngineers` | 按游戏进度和操作条件开放 |
+| 森智工匠 | `aiEngineers` | 按游戏进度和操作条件开放 |
+| 时序工匠 | `chronoEngineers` | 按游戏进度和操作条件开放 |
+| 星际制造 | `spaceManufacturing` | 按游戏进度和操作条件开放 |
+| 水轮改良 | `hydroPlantTurbines` | 按游戏进度和操作条件开放 |
+| 反物质基地 | `amBases` | 按游戏进度和操作条件开放 |
+| 森智基地 | `aiBases` | 按游戏进度和操作条件开放 |
+| 反物质分解 | `amFission` | 按游戏进度和操作条件开放 |
+| 星能反应炉 | `amReactors` | 按游戏进度和操作条件开放 |
+| 星能反应炉二型 | `amReactorsMK2` | 按游戏进度和操作条件开放 |
+| 虚空反应炉 | `voidReactors` | 按游戏进度和操作条件开放 |
+| 古物信标站 | `relicStation` | 按游戏进度和操作条件开放 |
+| 星质推进器 | `amDrive` | 按游戏进度和操作条件开放 |
+| 云鹿居 | `alicornStable` | 按游戏进度和操作条件开放 |
+| 蜜源改良 | `gmo` | 按游戏进度和操作条件开放 |
+| 辅助制图 | `cadSystems` | 按游戏进度和操作条件开放 |
+| 协同劳作 | `logistics` | 按游戏进度和操作条件开放 |
+| 感知增强 | `augumentation` | 按游戏进度和操作条件开放 |
+| 浓缩钍 | `enrichedThorium` | 按游戏进度和操作条件开放 |
+| 深空望远镜 | `hubbleTelescope` | 按游戏进度和操作条件开放 |
+| 卫星导航 | `satnav` | 按游戏进度和操作条件开放 |
+| 星空广播 | `satelliteRadio` | 按游戏进度和操作条件开放 |
+| 星辉裂岩机 | `eludiumCracker` | 按游戏进度和操作条件开放 |
+| 钍能引擎 | `thoriumEngine` | 按游戏进度和操作条件开放 |
+| 星香导航 | `spiceNavigation` | 目录保留，当前未启用 |
+| 远航星舟 | `longRangeSpaceships` | 目录保留，当前未启用 |
+| 分馏工艺 | `oilDistillation` | 按游戏进度和操作条件开放 |
+| 工厂精炼 | `factoryProcessing` | 按游戏进度和操作条件开放 |
+| 虚空收集 | `voidAspiration` | 按游戏进度和操作条件开放 |
+| 时空偏折 | `distorsion` | 按游戏进度和操作条件开放 |
+| 时流顺行 | `turnSmoothly` | 按游戏进度和操作条件开放 |
+| 暗市调律 | `invisibleBlackHand` | 按游戏进度和操作条件开放 |
 
-- blackObelisk — js/religion.js:1258
-- blackNexus — js/religion.js:1275
-- blackCore — js/religion.js:1292
-- singularity — js/religion.js:1306
-- blackLibrary — js/religion.js:1320
-- blackRadiance — js/religion.js:1334
-- blazar — js/religion.js:1348
-- darkNova — js/religion.js:1370
-- mausoleum — js/religion.js:1387
-- holyGenocide — js/religion.js:1430
-- darkParacosm — js/religion.js:1460
+## 条纹工艺（8 项）
 
-## pacts (8)
+定义位置：[tribal-workshop.js](../../src/engine/tribal-workshop.js)。这 8 项同样包含在工坊总目录中，工坊合计 151 项。
 
-- pactOfCleansing — js/religion.js:2577
-- pactOfDestruction — js/religion.js:2601
-- pactOfExtermination — js/religion.js:2625
-- pactOfPurity — js/religion.js:2644
-- pactOfArcane — js/religion.js:2670
-- pactOfChronicler — js/religion.js:2692
-- payDebt — js/religion.js:2718
-- fractured — js/religion.js:2752
+| 名称 | 代码标识符 |
+| --- | --- |
+| 条纹传承 | `darkRevolution` |
+| 夜蜜酿法 | `darkBrew` |
+| 条纹猎营 | `zebraTrappers` |
+| 前哨重铸 | `reforgedOutposts` |
+| 白枝密语 | `whispers` |
+| 陨石研究室 | `minerologyDepartment` |
+| 赤晶研究所 | `bloodstoneInstitute` |
+| 远距测量仪 | `rangefinders` |
 
-## missions (13)
+## 制作配方（23 项）
 
-- orbitalLaunch — js/space.js:23
-- moonMission — js/space.js:37
-- duneMission — js/space.js:51
-- piscineMission — js/space.js:66
-- heliosMission — js/space.js:80
-- terminusMission — js/space.js:94
-- kairoMission — js/space.js:108
-- rorschachMission — js/space.js:122
-- yarnMission — js/space.js:135
-- umbraMission — js/space.js:149
-- charonMission — js/space.js:163
-- centaurusSystemMission — js/space.js:176
-- furthestRingMission — js/space.js:192
+定义位置：[core-catalog.js](../../src/engine/core-catalog.js)。
 
-## planets (12)
+| 名称 | 代码标识符 |
+| --- | --- |
+| 林地采木 | `wood` |
+| 木梁 | `beam` |
+| 石板 | `slab` |
+| 铁板 | `plate` |
+| 钢 | `steel` |
+| 混凝土 | `concrete` |
+| 齿轮 | `gear` |
+| 合金 | `alloy` |
+| 星合金 | `eludium` |
+| 脚手架 | `scaffold` |
+| 船 | `ship` |
+| 油轮 | `tanker` |
+| 煤油 | `kerosene` |
+| 塑料 | `plastic` |
+| 微芯片 | `microchip` |
+| 纸页 | `parchment` |
+| 手稿 | `manuscript` |
+| 典籍 | `compendium` |
+| 蓝图 | `blueprint` |
+| 钍 | `thorium` |
+| 巨石 | `megalith` |
+| 血石 | `bloodstone` |
+| 秘银 | `tMythril` |
 
-- cath — js/space.js:210
-- moon — js/space.js:331
-- dune — js/space.js:427
-- piscine — js/space.js:502
-- helios — js/space.js:556
-- terminus — js/space.js:644
-- kairo — js/space.js:690
-- yarn — js/space.js:734
-- umbra — js/space.js:799
-- charon — js/space.js:853
-- centaurusSystem — js/space.js:913
-- furthestRing — js/space.js:956
+## 信仰升级（11 项）
 
-## spaceBuildings (24)
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
 
-- spaceElevator — js/space.js:214 — cath
-- sattelite — js/space.js:238 — cath
-- spaceStation — js/space.js:294 — cath
-- moonOutpost — js/space.js:335 — moon
-- moonBase — js/space.js:376 — moon
-- planetCracker — js/space.js:431 — dune
-- hydrofracturer — js/space.js:453 — dune
-- spiceRefinery — js/space.js:477 — dune
-- researchVessel — js/space.js:506 — piscine
-- orbitalArray — js/space.js:532 — piscine
-- sunlifter — js/space.js:560 — helios
-- containmentChamber — js/space.js:581 — helios
-- heatsink — js/space.js:603 — helios
-- sunforge — js/space.js:622 — helios
-- cryostation — js/space.js:648 — terminus
-- spaceBeacon — js/space.js:695 — kairo
-- terraformingStation — js/space.js:739 — yarn
-- hydroponics — js/space.js:765 — yarn
-- hrHarvester — js/space.js:804 — umbra
-- navigationRelay — js/space.js:827 — umbra
-- spaceShuttle — js/space.js:839 — umbra
-- entangler — js/space.js:858 — charon
-- tectonic — js/space.js:918 — centaurusSystem
-- moltenCore — js/space.js:937 — centaurusSystem
+| 名称 | 代码标识符 |
+| --- | --- |
+| 晨光祈歌 | `solarchant` |
+| 神殿研习 | `scholasticism` |
+| 金蜜尖塔 | `goldenSpire` |
+| 朝日坛 | `sunAltar` |
+| 彩光窗 | `stainedGlass` |
+| 日耀启明 | `solarRevolution` |
+| 群山礼堂 | `basilica` |
+| 守林誓约 | `templars` |
+| 灵悟手记 | `apocripha` |
+| 升华之路 | `transcendence` |
+| 山灵壁画 | `frescoes` |
 
-## chronoforge (8)
+## 超越升级（11 项）
 
-- temporalBattery — js/time.js:315
-- blastFurnace — js/time.js:327
-- timeBoiler — js/time.js:394
-- controlledDelay — js/time.js:424
-- temporalAccelerator — js/time.js:445
-- temporalImpedance — js/time.js:468
-- ressourceRetrieval — js/time.js:484
-- temporalPress — js/time.js:497
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
 
-## voidspace (6)
+| 名称 | 代码标识符 |
+| --- | --- |
+| 夜晶碑 | `blackObelisk` |
+| 暗光汇点 | `blackNexus` |
+| 幽晶核 | `blackCore` |
+| 群星奇点 | `singularity` |
+| 夜林藏书馆 | `blackLibrary` |
+| 静夜光辉 | `blackRadiance` |
+| 远星脉冲 | `blazar` |
+| 暗星新生 | `darkNova` |
+| 长眠星庭 | `mausoleum` |
+| 族群升格 | `holyGenocide` |
+| 镜外森林 | `darkParacosm` |
 
-- cryochambers — js/time.js:531
-- usedCryochambers — js/time.js:555
-- voidHoover — js/time.js:578
-- voidRift — js/time.js:592
-- chronocontrol — js/time.js:608
-- voidResonator — js/time.js:633
+## 灵鹿祭仪设施（10 项）
 
-## challenges (10)
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
 
-- ironWill — js/challenges.js:43
-- winterIsComing — js/challenges.js:49
-- anarchy — js/challenges.js:86
-- energy — js/challenges.js:115
-- atheism — js/challenges.js:149
-- 1000Years — js/challenges.js:188
-- blackSky — js/challenges.js:229
-- pacifism — js/challenges.js:260
-- unicornTears — js/challenges.js:332
-- postApocalypse — js/challenges.js:457
+| 名称 | 代码标识符 |
+| --- | --- |
+| 灵鹿石冢 | `unicornTomb` |
+| 白枝高塔 | `ivoryTower` |
+| 白枝城垣 | `ivoryCitadel` |
+| 云巅灵宫 | `skyPalace` |
+| 灵鹿乐土 | `unicornUtopia` |
+| 朝阳灵柱 | `sunspire` |
+| 幽林界碑 | `marker` |
+| 灵鹿静园 | `unicornGraveyard` |
+| 静夜鹿城 | `unicornNecropolis` |
+| 夜蜜金字塔 | `blackPyramid` |
 
-## prestigePerks (40)
+## 约定（6 项）
 
-- engeneering — js/prestige.js:4
-- codexVox — js/prestige.js:18
-- codexLogos — js/prestige.js:32
-- codexAgrum — js/prestige.js:48
-- megalomania — js/prestige.js:61
-- blackCodex — js/prestige.js:72
-- codexLeviathanianus — js/prestige.js:82
-- goldenRatio — js/prestige.js:91
-- divineProportion — js/prestige.js:105
-- vitruvianFeline — js/prestige.js:119
-- renaissance — js/prestige.js:132
-- diplomacy — js/prestige.js:143
-- zebraDiplomacy — js/prestige.js:163
-- zebraCovenant — js/prestige.js:173
-- navigationDiplomacy — js/prestige.js:183
-- ambassadors — js/prestige.js:190
-- treaties — js/prestige.js:201
-- chronomancy — js/prestige.js:220
-- astromancy — js/prestige.js:231
-- unicornmancy — js/prestige.js:240
-- alicornmancy — js/prestige.js:251
-- anachronomancy — js/prestige.js:262
-- carnivals — js/prestige.js:269
-- willenfluff — js/prestige.js:280
-- pawgan — js/prestige.js:293
-- numerology — js/prestige.js:303
-- numeromancy — js/prestige.js:313
-- malkuth — js/prestige.js:325
-- yesod — js/prestige.js:338
-- hod — js/prestige.js:351
-- netzach — js/prestige.js:364
-- tiferet — js/prestige.js:378
-- gevurah — js/prestige.js:392
-- chesed — js/prestige.js:406
-- binah — js/prestige.js:420
-- chokhmah — js/prestige.js:434
-- keter — js/prestige.js:448
-- voidOrder — js/prestige.js:461
-- adjustmentBureau — js/prestige.js:468
-- ascoh — js/prestige.js:480
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
 
-## achievements (31)
+| 名称 | 代码标识符 |
+| --- | --- |
+| 净林之约 | `pactOfCleansing` |
+| 重塑之约 | `pactOfDestruction` |
+| 静默之约 | `pactOfExtermination` |
+| 澄明之约 | `pactOfPurity` |
+| 秘艺之约 | `pactOfArcane` |
+| 星史之约 | `pactOfChronicler` |
 
-- theElderLegacy — js/achievements.js:6
-- unicornConspiracy — js/achievements.js:16
-- uniception — js/achievements.js:23
-- sinsOfEmpire — js/achievements.js:30
-- anachronox — js/achievements.js:37
-- deadSpace — js/achievements.js:44
-- sadnessAbyss — js/achievements.js:51
-- ironWill — js/achievements.js:58
-- uberkatzhen — js/achievements.js:65
-- hundredYearsSolitude — js/achievements.js:72
-- soilUptuned — js/achievements.js:79
-- atlasUnmeowed — js/achievements.js:86
-- meowMeowRevolution — js/achievements.js:93
-- spaceOddity — js/achievements.js:100
-- jupiterAscending — js/achievements.js:111
-- veryLargeArray — js/achievements.js:122
-- shadowOfTheColossus — js/achievements.js:129
-- sunGod — js/achievements.js:136
-- heartOfDarkness — js/achievements.js:143
-- winterIsComing — js/achievements.js:150
-- youMonster — js/achievements.js:158
-- superUnethicalClimax — js/achievements.js:170
-- systemShock — js/achievements.js:178
-- lotusMachine — js/achievements.js:187
-- serenity — js/achievements.js:194
-- utopiaProject — js/achievements.js:206
-- deathStranding — js/achievements.js:217
-- cathammer — js/achievements.js:224
-- eternalBacchanalia — js/achievements.js:235
-- challenger — js/achievements.js:247
-- betterSafeThanSorry — js/achievements.js:258
+## 约定策略（3 项）
 
-## badges (21)
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
 
-- lotus — js/achievements.js:276
-- ivoryTower — js/achievements.js:285
-- useless — js/achievements.js:291
-- beta — js/achievements.js:301
-- silentHill — js/achievements.js:312
-- evergreen — js/achievements.js:320
-- deadSpace — js/achievements.js:325
-- reginaNoctis — js/achievements.js:334
-- ghostInTheMachine — js/achievements.js:342
-- abOwo — js/achievements.js:347
-- cleanPaws — js/achievements.js:352
-- sequenceBreak — js/achievements.js:357
-- fantasticFurColor — js/achievements.js:365
-- whatYearIsIt — js/achievements.js:374
-- tardis — js/achievements.js:379
-- wheredThisComeFrom — js/achievements.js:384
-- lostDates — js/achievements.js:389
-- buffet — js/achievements.js:400
-- newHome — js/achievements.js:408
-- betterSafeThanSorry — js/achievements.js:419
-- soLongAndThanksForAllTheHay — js/achievements.js:425
+| 名称 | 代码标识符 |
+| --- | --- |
+| 引流偿约 | `siphoning` |
+| 盛宴馈赠 | `feedingFrenzy` |
+| 预付供养 | `upfrontPayment` |
 
-## jobs (9)
+## 约定状态（1 项）
 
-- woodcutter — js/village.js:14
-- farmer — js/village.js:26
-- scholar — js/village.js:36
-- hunter — js/village.js:55
-- miner — js/village.js:66
-- priest — js/village.js:77
-- geologist — js/village.js:102
-- engineer — js/village.js:154
-- ambassador — js/village.js:162
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。此条目表示状态，不是可购买设施。
 
-## biomes (13)
+| 名称 | 代码标识符 | 状态说明 |
+| --- | --- | --- |
+| 约定破裂 | `fractured` | 本轮供养债务曾达到 50，约定已破裂；重建后恢复。 |
 
-- village — js/village.js:1896
-- plains — js/village.js:1914
-- hills — js/village.js:1944
-- forest — js/village.js:1962
-- boneForest — js/village.js:1990
-- rainForest — js/village.js:2003
-- mountain — js/village.js:2014
-- volcano — js/village.js:2039
-- desert — js/village.js:2054
-- bloodDesert — js/village.js:2071
-- swamp — js/village.js:2084
-- cath — js/village.js:2099
-- redmoon — js/village.js:2108
+## 太空任务（13 项）
 
-## tradingPartners (8)
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。任务目录包含航路与前置条件；抵达和建设仍需满足运行时条件。
 
-- lizards — js/diplomacy.js:18
-- sharks — js/diplomacy.js:63
-- griffins — js/diplomacy.js:114
-- nagas — js/diplomacy.js:159
-- zebras — js/diplomacy.js:212
-- spiders — js/diplomacy.js:274
-- dragons — js/diplomacy.js:317
-- leviathans — js/diplomacy.js:337
+| 名称 | 代码标识符 |
+| --- | --- |
+| 初探星空 | `orbitalLaunch` |
+| 月林之旅 | `moonMission` |
+| 远赴沙海 | `duneMission` |
+| 探访潮星 | `piscineMission` |
+| 近日前哨 | `heliosMission` |
+| 冰境航行 | `terminusMission` |
+| 访寻微星 | `kairoMission` |
+| 深空回声 | `rorschachMission` |
+| 翠星远征 | `yarnMission` |
+| 暗隙探航 | `umbraMission` |
+| 遥望冥岸 | `charonMission` |
+| 双星归途 | `centaurusSystemMission` |
+| 极远星环 | `furthestRingMission` |
 
+## 太空设施（22 项）
+
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 登星藤梯 | `spaceElevator` |
+| 巡天蜂舟 | `sattelite` |
+| 轨道熊屋 | `spaceStation` |
+| 月林采晶站 | `moonOutpost` |
+| 月林基地 | `moonBase` |
+| 星岩采集器 | `planetCracker` |
+| 深砂油泵 | `hydrofracturer` |
+| 星香提炼站 | `spiceRefinery` |
+| 潮星研究船 | `researchVessel` |
+| 环星阵列 | `orbitalArray` |
+| 采日环 | `sunlifter` |
+| 星质储舱 | `containmentChamber` |
+| 散热翼 | `heatsink` |
+| 日焰锻台 | `sunforge` |
+| 冰境仓站 | `cryostation` |
+| 远星灯塔 | `spaceBeacon` |
+| 翠星造林站 | `terraformingStation` |
+| 星际蜜园 | `hydroponics` |
+| 暗隙能量帆 | `hrHarvester` |
+| 量子织机 | `entangler` |
+| 地脉发电站 | `tectonic` |
+| 熔核井 | `moltenCore` |
+
+## 时光设施（13 项）
+
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 时流蓄池 | `temporalBattery` |
+| 时焰熔炉 | `blastFurnace` |
+| 时焰锅炉 | `timeBoiler` |
+| 节律闸门 | `controlledDelay` |
+| 时轮增幅器 | `temporalAccelerator` |
+| 远时缓冲器 | `temporalImpedance` |
+| 旧年采集器 | `ressourceRetrieval` |
+| 时页压机 | `temporalPress` |
+| 冬眠舱 | `cryochambers` |
+| 空境采集器 | `voidHoover` |
+| 空境裂隙 | `voidRift` |
+| 时序锚点 | `chronocontrol` |
+| 空境共鸣器 | `voidResonator` |
+
+## 挑战（10 项）
+
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。列入目录不代表所有挑战完成路径均已测试。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 独行森林 | `ironWill` |
+| 漫长寒冬 | `winterIsComing` |
+| 自在熊群 | `anarchy` |
+| 紧缺能源 | `energy` |
+| 无星长夜 | `atheism` |
+| 千年之旅 | `1000Years` |
+| 无光天幕 | `blackSky` |
+| 和平山林 | `pacifism` |
+| 灵露试炼 | `unicornTears` |
+| 余灰复苏 | `postApocalypse` |
+
+## 传承能力（40 项）
+
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 营建记忆 | `engeneering` |
+| 口述蜜典 | `codexVox` |
+| 思辨蜜典 | `codexLogos` |
+| 星野蜜典 | `codexAgrum` |
+| 远古回声 | `megalomania` |
+| 夜色蜜典 | `blackCodex` |
+| 巨鲸蜜典 | `codexLeviathanianus` |
+| 金蜜比例 | `goldenRatio` |
+| 星愿比例 | `divineProportion` |
+| 熊掌比例 | `vitruvianFeline` |
+| 林地新生 | `renaissance` |
+| 林间善意 | `diplomacy` |
+| 草原约定 | `zebraDiplomacy` |
+| 草原盟誓 | `zebraCovenant` |
+| 海路盟誓 | `navigationDiplomacy` |
+| 远行使者 | `ambassadors` |
+| 营地条约 | `treaties` |
+| 时轮记忆 | `chronomancy` |
+| 星迹记忆 | `astromancy` |
+| 灵鹿记忆 | `unicornmancy` |
+| 星翼记忆 | `alicornmancy` |
+| 逆时记忆 | `anachronomancy` |
+| 蜜林嘉年华 | `carnivals` |
+| 星序规律 | `numerology` |
+| 星序共鸣 | `numeromancy` |
+| 绒毛呼唤 | `willenfluff` |
+| 熊掌召集 | `pawgan` |
+| 空境低语 | `voidOrder` |
+| 远行试炼 | `adjustmentBureau` |
+| 储备明鉴 | `ascoh` |
+| 传承环 1 | `malkuth` |
+| 传承环 2 | `yesod` |
+| 传承环 3 | `hod` |
+| 传承环 4 | `netzach` |
+| 传承环 5 | `tiferet` |
+| 传承环 6 | `gevurah` |
+| 传承环 7 | `chesed` |
+| 传承环 8 | `binah` |
+| 传承环 9 | `chokhmah` |
+| 传承环 10 | `keter` |
+
+## 成就（31 项）
+
+定义位置：[achievements.js](../../src/engine/achievements.js)。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 花径上的新邻居 | `forestGuest` |
+| 捧住一滴星露 | `dewKeepsake` |
+| 树冠以上的来客 | `wingedGuest` |
+| 月影中的脚步 | `nightGuest` |
+| 把时光装进蜜罐 | `crystalMemory` |
+| 百颗沉静的心愿 | `hundredStones` |
+| 并肩巡过山林 | `stripedCompany` |
+| 独自敲开的山门 | `loneQuarry` |
+| 独自码好的木箱 | `loneStore` |
+| 四十五片花圃 | `loneMeadow` |
+| 林中第一声汽笛 | `loneSteam` |
+| 为独行点亮电灯 | `lonePower` |
+| 一熊的精工蓝图 | `loneFactory` |
+| 独行者的月光信 | `loneMoon` |
+| 第二个春天前的远行 | `earlyOrbit` |
+| 百座望星台 | `watchfulForest` |
+| 一张床与高高石阶 | `oneBedTemple` |
+| 山林捧起的曙光 | `brightWishes` |
+| 带回一缕温柔 | `rememberedKindness` |
+| 每只熊都在家 | `safeHaven` |
+| 蜜香满林 | `joyfulGrove` |
+| 森林尽头还有星星 | `outermostTrail` |
+| 四万圈年轮 | `fortyMillennia` |
+| 百年花灯长明 | `longCelebration` |
+| 五条山路的归来者 | `manyJourneys` |
+| 先为明天种树 | `clearTomorrow` |
+| 记住十个空床位 | `tenEmptyBeds` |
+| 山林的沉重记录 | `hundredEmptyBeds` |
+| 停不下来的采蜜爪 | `racingPaws` |
+| 不肯离开的森智 | `stubbornCore` |
+| 旧冬日的蜜封 | `winterArchive` |
+
+## 徽记（21 项）
+
+定义位置：[achievements.js](../../src/engine/achievements.js)。需要在线服务的徽记仍应以运行时可用状态为准。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 木屑围裙 | `woodSpecialist` |
+| 慢悠悠的领队 | `easygoingLeader` |
+| 花色披肩 | `colorfulLeader` |
+| 归林五十次 | `fiftyReturns` |
+| 独行夜归 | `loneNightReturn` |
+| 日历夹缝里的新家 | `betweenDays` |
+| 不带猎队的商旅 | `gentleExchange` |
+| 千熊露天营 | `unhousedThousand` |
+| 五百盏地上花灯 | `moonlessHerd` |
+| 绕过月亮的航线 | `duneDetour` |
+| 先走进时光 | `clockBeforeRocket` |
+| 解开打结的年轮 | `untieTime` |
+| 比旧蜜罐更满 | `overflowingReturn` |
+| 借走的五年 | `fiveBorrowedYears` |
+| 远古商队的盛宴 | `elderBanquet` |
+| 翠星上的大熊村 | `farawayHomes` |
+| 四十二对星翼 | `fortyTwoWings` |
+| 试走的新林径 | `previewTrail` |
+| 没有新告示的一天 | `quietNotice` |
+| 留住一颗故障火星 | `caughtSpark` |
+| 旧册中的青林印 | `oldClearSky` |
+
+## 职业（9 项）
+
+定义位置：[catalog.js](../../src/engine/catalog.js)、[diplomacy.js](../../src/engine/diplomacy.js)、[engineer-automation.js](../../src/engine/engineer-automation.js)。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 伐木熊 | `woodcutter` |
+| 养蜂熊 | `farmer` |
+| 学者熊 | `scholar` |
+| 巡林熊 | `hunter` |
+| 矿工熊 | `miner` |
+| 祈愿熊 | `priest` |
+| 地质熊 | `geologist` |
+| 使节熊 | `ambassador` |
+| 工程熊 | `engineer` |
+
+## 商团（8 项）
+
+定义位置：[trade-catalog.js](../../src/engine/trade-catalog.js)。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 绿叶商团 | `lizards` |
+| 潮湾商团 | `sharks` |
+| 云翼商团 | `griffins` |
+| 盘藤商团 | `nagas` |
+| 条纹商团 | `zebras` |
+| 丝谷商团 | `spiders` |
+| 焰岭商团 | `dragons` |
+| 星海来客 | `leviathans` |
+
+## 星象周期（10 项）
+
+定义位置：[progression-catalog.js](../../src/engine/progression-catalog.js)。周期影响建筑和节庆产出，不等同于可航行目的地清单。
+
+| 名称 | 代码标识符 |
+| --- | --- |
+| 冥岸星轮 | `charon` |
+| 暗隙星轮 | `umbra` |
+| 翠星轮 | `yarn` |
+| 朝日星轮 | `helios` |
+| 故林星轮 | `cath` |
+| 月林星轮 | `redmoon` |
+| 沙海星轮 | `dune` |
+| 潮星轮 | `piscine` |
+| 冰境星轮 | `terminus` |
+| 微光星轮 | `kairo` |

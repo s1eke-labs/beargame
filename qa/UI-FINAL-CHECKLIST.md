@@ -1,12 +1,12 @@
-# Final interface integration checklist
+# 界面整合最终检查清单
 
-- Expose the real leadership roster/actions, policies, building sell/stage actions, build queue and engineer automation when their engine contracts are ready. Use bounded/paginated rosters for large villages.
-- Expose multi-challenge selection/start and reserve reclaim from the actual progression model. Preserve clear reset confirmations.
-- Render the rule coverage as readable Chinese implemented/partial/unavailable lists, never raw JSON or a falsely empty partial list.
-- Keep body copy 16px, regular mobile controls/resource labels/costs 14px, and secondary text at least 12px. Preserve the parent's typography fixes.
-- On short phones around 375×667, ensure the first honey-gather action is visible above the fixed navigation without scrolling. The current tall introduction plus forest board may push it below the fold; compact the home introduction/board responsively, rather than removing the game action.
-- Preserve resource/filter scroll offsets, input selection, active pointer gestures and independent dialog DOM through timed refreshes.
-- Display space travel in actual game days or seconds, not raw route units; use the progression-provided converted values and account for acceleration.
-- Keep all actual operations behind the same engine eligibility rules, including WebMCP. No empty or misleading buttons.
-- Include Beargame in the browser title/identity, with 蜜林 as its Chinese theme; credit the actual fixed public reference without claiming source-code reuse or complete unverified parity.
-- Re-run the actual-handler DOM harness and render/layout tests after integration. No supported browser or phone visual validation is currently available; do not describe source/DOM checks as device QA.
+- 引擎接口准备就绪后，展示真实的领袖名册及操作、政策、建筑出售和阶段升级、建造队列及工程师自动化。大型村落的名册应限制单页数量或分页。
+- 根据实际进度模型开放多挑战选择、开始和储备回收，并保留清楚的重置确认。
+- 将规则覆盖情况展示为易读的中文列表，分别列出已实现、部分实现和不可用的内容。不要直接展示原始 JSON，也不要错误地将部分实现列表显示为空。
+- 正文保持 16px，移动端常规控件、资源名称和费用保持 14px，次要文字至少 12px。保留现有排版修复。
+- 在约 375×667 的短屏手机上，确保首次采集蜂蜜操作无需滚动即可显示在固定导航栏上方。当前较高的介绍区和森林场景可能将其挤出首屏，应响应式压缩家园介绍和场景，保留采集操作。
+- 定时刷新时保留资源和筛选列表的滚动位置、输入选择、正在进行的指针手势，以及独立的对话框 DOM。
+- 太空旅行时间应显示为实际游戏天数或秒数，使用进度模块提供的换算值并考虑加速效果。
+- 所有实际操作，包括 WebMCP 调用，都必须遵循相同的引擎资格规则。不得出现空操作或误导性按钮。
+- 浏览器标题和产品标识包含 Beargame，中文主题使用“蜜林”。功能说明应与本项目实际支持的内容一致。
+- 整合后重新运行真实事件处理器的 DOM 测试工具及渲染、布局测试。此清单记录时尚无受支持的浏览器或手机视觉验证；不能把源码或 DOM 检查描述为设备实测。

@@ -1,37 +1,39 @@
-# Offline redshift: functional facts, independently described
+# 离线折算规则核查
 
-Reference 781e379f79f1e7512d168849cba21ed111502644. No source functions are included here.
+本篇记录离线批处理的功能规则。记录时的实现状态见文末，后续集成结果见 `19-redshift-implementation.md`。
 
-## Entry and queue boundaries
+## 入口与队列边界
 
-`js/time.js:190–310`: web redshift defaults off; round real elapsed milliseconds / 2000 to whole days, ignore fewer than 3 days, limit to 4000 days (10 years), or 16000 days when year >=1000 or positive paragon. Default QUEUE_REDSHIFT=true. Ask queue for a computable head-item ETA. If computable, raise ETA to at least one day and round upward to a multiple of400 days. Batch only that many days, or the remaining offset if smaller; process queue once after each such segment. If no computable ETA, batch all remaining days without processing queue. Economy batches do not move the calendar. After all economy segments, run one calendar batch for the entire elapsed-day amount.
+网页离线折算默认关闭。将真实经过毫秒数除以 2,000 并取整为天，少于三天则忽略；通常限制为 4,000 天，即十年，年份至少 1,000 或典范为正时限制为 16,000 天。默认启用 `QUEUE_REDSHIFT`。
 
-Economy order: refresh current resource/effect caches; resource bulk; optional calendar bulk (disabled by queue-redshift wrapper); building bulk; workshop bulk; village bulk; space bulk; religion bulk; restore limits; transfer time heat to furnace and possibly shatter all whole100heat batches. This differs from active-tick manager ordering.
+先获取队首项目可计算的预计完成时间；若可计算，先限制为至少一天，再向上取整到 400 天的倍数。批量处理该天数或更短的剩余时段，每段之后处理队列一次；无法计算时，将剩余时间一次处理完，不尝试队列。经济批处理不移动日历，全部经济段结束后再对总天数执行一次日历批处理。
 
-## Resource bulk
+经济顺序为：刷新资源和效果缓存；资源批处理；可选日历批处理（队列折算包装层中禁用）；建筑；工坊；村庄；太空；宗教；恢复上限；将时间热量转入高炉，必要时按每 100 热量执行全部整份碎裂。此顺序不同于在线逐刻管理器顺序。
 
-`js/resources.js:843–873`, `game.js:4563–4623`: use cached ordinary per-tick production, multiplied by days×10. The cache excludes converter consumption and ambassador upkeep; only resources tagged calculatePerTick contribute. Negative honey is specifically skipped, so ordinary offline deficit does not consume food or trigger starvation. Temporarily allow overflow. For each changed capped resource remember max(old amount,old cap), then enforce that remembered ceiling after the other economy managers. This allows bulk craft automation to consume temporary overflow. Existing overcap amounts are not destroyed by merely loading.
+## 资源批处理
 
-## Calendar bulk
+使用普通每刻生产缓存乘以 `天数×10`。缓存不含转换器原料消耗与使节供养，仅处理标记 `calculatePerTick` 的资源。负蜂蜜净产出明确跳过，因此普通离线赤字不消耗食物，也不引起饥饿。暂时允许溢出；对每个发生变化的有上限资源记住 `max(旧库存,旧容量)`，等其他经济管理器执行后再恢复该上限。这样制作自动化可使用临时溢出，原有超限库存也不会仅因加载而消失。
 
-`js/calendar.js:730–932`: bulk does not iterate daily/season callbacks. It preserves current season, day, weather and tick, and advances year by floor(days/400). Thousand-years challenge cannot advance beyond year500 through this path. Astronomical event count is round(days×dailyEventChance×autoChance), with exact auto probability (unlike active timeout's inclusive integer1% floor). Science per observed event25×celestialMultiplier×(1+scienceRatio); celestialMultiplier1.2normal/1.6IronWill; astronomy also gives one chart per event.
+## 日历批处理
 
-Meteor count=round(days×(.001×chanceScale+(IW?.004:0))). Minerals per meteor=(50+25×mineralsRatio)×(IW?1.1×(1+mineralsPolicyRatio/3):1)×(1+academyMeteorBonus). Prospecting gives5×(1+academyMeteorBonus)iron. Celestial mechanics gives15×(1+scienceRatio)science per meteor; bulk source does not apply academyMeteorBonus to this science term.
+不逐次调用每日和每季回调，保留当前季节、日、天气与刻，年份增加 `floor(天数/400)`。千年挑战在此路径不能超过第 500 年。天文事件数为 `round(天数×每日事件概率×自动观测概率)`，使用精确自动概率，不采用在线超时整数比较的 1% 下限。每次观测奖励 `25×天体倍率×(1+scienceRatio)` 知识，天体倍率普通为 1.2、坚毅为 1.6；天文学另提供每次一张星图。
 
-Under IW archery, when unicorn stock<2: round(days×.00017×unicornChanceScale)unicorns. Under pacifism animal research separately gives the same. IW visitors already>0 and below cap gain round(days×.005), no darkBrew/festival multiplier in this bulk path. Rifts give500×round(days×riftChance×unicornChanceScale)unicorns; unlike daily path no religion-ratio bonus. Alicorns give round(days×alicornChance×(1+LDR(alicornPerTickRatio,1.2))). Ivory meteors give a single uniform integer0..1499 yield sample shared across round(days×ivoryMeteorChance×unicornChanceScale)events:250+sample×(1+ivoryMeteorRatio).
+陨石数为 `round(天数×(0.001×概率缩放+坚毅模式下的0.004))`。每次矿物为 `(50+25×mineralsRatio)×坚毅模式下的[1.1×(1+mineralsPolicyRatio/3)]×(1+academyMeteorBonus)`；普通模式中坚毅项取 1。勘探提供 `5×(1+academyMeteorBonus)` 铁。天体力学每次提供 `15×(1+scienceRatio)` 知识，此批处理知识项不应用学院陨石加成。
 
-Antimatter annual production ×floor(days/400), only with nonnegative energy. Relic per-day output ×days. Paradox statistical time share=(10+extraDays)/[(10+extraDays)+100×max(1,1/chance)]. Grant floor(statisticalVoidPerDay×days×share). Calendar does not enter a negative day. Crypto price receives a bulk distribution approximation and then one final correction. Each crossed1000-year boundary gives1paragon in this specific offline path; pacts receive their millennium karma hook. Alicornmancy uses crossed2-year boundaries. No ordinary envoy discovery/elder duration decrement or yearly elder-arrival event is invoked by this calendar fastForward path.
+坚毅模式已研究箭术且灵鹿库存小于 2 时，获得 `round(天数×0.00017×灵鹿概率缩放)` 灵鹿；和平挑战中的动物研究也单独提供同样效果。坚毅访客已大于零且未满上限时，增加 `round(天数×0.005)`，此路径不应用暗酿或节庆倍率。裂隙提供 `500×round(天数×riftChance×灵鹿概率缩放)` 灵鹿，不使用每日路径的宗教倍率加成。星翼鹿提供 `round(天数×alicornChance×(1+LDR(alicornPerTickRatio,1.2)))`。象牙流星数为 `round(天数×ivoryMeteorChance×灵鹿概率缩放)`；全部事件共享一次 0..1499 均匀整数样本，每次收益为 `250+样本×(1+ivoryMeteorRatio)`。
 
-## Other economy managers
+电力不短缺时，反物质为年度产量乘以 `floor(天数/400)`；遗物为每日产量乘以天数。悖论统计时间占比为 `(10+额外天数)/[(10+额外天数)+100×max(1,1/概率)]`，虚空奖励为 `floor(统计每日虚空×天数×占比)`，日历不因此进入负日期。黑币价格使用批量分布近似，最后修正一次。此离线路径每跨一个千年边界提供一典范，并调用契约千年业力；星翼鹿法术按跨越的两年边界计算。不触发普通使者发现、长者停留递减或年度长者到访。
 
-Building pollution (`buildings3045–3060`) solves a constant-emission exponential: equilibrium=emission/dissipation, result=equilibrium+(start-equilibrium)×exp(-dissipation×ticks), clamp>=0. Zero dissipation uses linear current pollution rate×ticks. GFLOPS bulk is a separate option defaultfalse (`settings138–140`), so default offline cores do not generate new computing.
+## 其他经济管理器
 
-Steam automation (`buildings3068–3145`) gets floor(days/(advancedAutomation?200:400))attempts per segment. Each attempt needs current input>=.98cap, and crafts floor(min(current,cap)×min(.9,.02×(steamCount+1))/recipeInput). Deduct each attempted batch from a local running input total, then execute each aggregate craft. Order plates, slabs, beams. If any scheduled crafts exist, jam before checking whether automation is enabled.
+建筑污染用恒定排放的指数解：`平衡值=排放/消散系数`，`结果=平衡值+(初值−平衡值)×exp(−消散系数×刻数)`，最低为零。消散系数为零时，使用当前污染速率乘以刻数的线性计算。离线算力生成是默认关闭的单独选项，因此默认离线核心不生成新算力。
 
-Workshop bulk (`workshop2829–2910`) updates compendium/manuscript caps and runs engineer progress with times=days×10. Village bulk (`village529–535,3226–3335`) pays whole-period ambassador upkeep proportionally and then advances growth/skills in one step; new bears are added only to housing capacity. No village hunger routine is called here. Job learning is multiplied by elapsed ticks; neural shared learning and unused-skill loss likewise use elapsed ticks.
+蒸汽自动化每段获得 `floor(天数/(高级自动化时的200，否则400))` 次尝试。每次要求当前原料至少达到容量的 98%，制作次数为 `floor(min(当前量,容量)×min(0.9,0.02×(蒸汽工坊数+1))/配方原料量)`。从局部滚动原料总量扣除每批，再执行各项汇总制作，顺序为金属板、石板、木梁。只要存在计划制作，就先卡滞，再检查自动化开关。
 
-Space bulk (`space1147–1172`) advances routeDays by days×routeSpeed, then converts min(existing GFLOPS,.1×entanglers×ticks×cycle)into hashes. Religion bulk (`religion343–365`) computes average paradox share to reduce corruption days; it separately calls the order-of-void accumulation with full ticks. Detailed necrocorn bulk branches still require independent transcription before claiming exact late-game redshift.
+工坊先更新纲要和手稿容量，再按 `天数×10` 推进工程进度。村庄按整个时段同比例支付使节供养，然后一次性推进成长和技能，新小熊最多增加到住房容量；不调用饥饿例程。岗位学习、神经共享学习及未使用技能衰减都乘以经过刻数。
 
-## Implementation boundary
+太空按 `天数×航线速度` 推进航线，再将 `min(已有算力,0.1×纠缠器数×刻数×周期倍率)` 转为哈希。宗教按平均悖论占比调整结算天数，腐化与虚空教团仍使用完整刻数；具体双时间量与幽角鹿分支见 `18-religion-redshift.md`。
 
-The current engine remains an exact active-tick offline replay at audit time; these facts are not a claim of implementation. The async operation lock, unchanged persisted checkpoint during progress, chunk yielding and failure rollback must remain regardless of the eventual bulk implementation.
+## 实现与运行约束
+
+本次核查时，引擎仍按在线逐刻回放处理离线；以上是待实现的批处理规则，不是完成声明。后续已实现范围见 `19-redshift-implementation.md`。无论采用哪种推进方式，都必须保留异步操作锁、推进期间不变的持久化检查点、分块让出执行权和失败回滚。

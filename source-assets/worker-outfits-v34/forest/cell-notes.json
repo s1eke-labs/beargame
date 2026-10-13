@@ -1,7 +1,7 @@
 {
   "asset": "forest-atlas-v1.png",
   "sourceGeneratedImage": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-200f9a97-1fc5-4863-bcfd-9accfb37b265.png",
-  "generationMode": "built-in image_gen",
+  "generationMode": "内置 image_gen",
   "size": [
     1536,
     1024
@@ -23,9 +23,9 @@
       0,
       254
     ],
-    "note": "True alpha. Faint alpha values of 1–3 occur beyond primary silhouettes. Most interior alpha is 253–254. Dark preview shading predominantly corresponds to transparent background RGB."
+    "note": "真实透明通道。主要轮廓外存在值为 1–3 的微弱 alpha 像素。内部大多数 alpha 为 253–254。深色预览阴影主要对应透明背景的 RGB 值。"
   },
-  "registrationRule": "Use identical scale on every pose and align reported head center X / foot baseline Y to the same destination anchor. Do not fit each outer silhouette independently. Stump, axe, hats, honeycomb and arms change outer bounds.",
+  "registrationRule": "每个姿态使用相同缩放比例，并将报告的头部中心 X 和脚底基线 Y 对齐到同一目标锚点。不要按照每个外轮廓独立适配。树桩、斧头、帽子、蜂巢和手臂会改变外边界。",
   "poses": [
     {
       "role": "woodcutter",
@@ -54,7 +54,7 @@
       ],
       "headCenterX": 252,
       "footBaselineY": 961,
-      "anchorNote": "Use visible left foot baseline; the stump extends to y≈978. Its edge overlaps measurement region of right foot."
+      "anchorNote": "使用可见左脚的基线；树桩延伸至 y≈978，其边缘与右脚测量区域重叠。"
     },
     {
       "role": "hunter",
@@ -115,18 +115,18 @@
   ],
   "visualReview": {
     "correct": [
-      "Six complete white-bear drawings with required three outfits and tool changes.",
-      "Woodcutter raises/lowers short broad axe toward stump; no carried log.",
-      "Hunter lowers/raises binoculars; no weapon.",
-      "Beekeeper raises honeycomb frame; face remains unobscured and there is no mesh.",
-      "Both ears visible, tiny eyes/nose/mouth, short limbs, chunky dark outlines."
+      "六幅完整白熊图，包含要求的三种装束与工具变化。",
+      "伐木熊向树桩举起或放下短宽斧头，没有搬运原木。",
+      "巡林熊放下或举起望远镜，没有武器。",
+      "养蜂熊举起蜂巢框，面部没有遮挡，也没有防蜂网。",
+      "双耳可见，眼睛、鼻子和嘴巴小巧，四肢短，轮廓线粗深。"
     ],
     "caveats": [
-      "Bottom-row body anchors are about 24 px higher relative to equal 512 px cells; explicit registration is required.",
-      "Hunter cape opens in raised-arm frame; body/head scale remains similar, but cape topology changes.",
-      "Hats, tools and aprons contain some mild smooth tonal variation, softer than strictly flat reference palette.",
-      "Some alpha 1–3 edge/background speckles and alpha 253–254 interiors; inspect final compositing.",
-      "First woodcutter axe almost touches right cell boundary x=510, while following hunter begins about x=590."
+      "相对于等高 512px 单元，底行身体锚点约高 24px，必须明确对齐。",
+      "巡林熊在抬臂帧中披风展开；身体和头部比例相近，但披风形状改变。",
+      "帽子、工具和围裙存在轻微平滑色调变化，比严格平涂的参照色板更柔和。",
+      "部分边缘和背景杂点的 alpha 为 1–3，内部为 253–254；需检查最终合成。",
+      "首个伐木熊的斧头几乎触及右侧单元边界 x=510，而相邻巡林熊约从 x=590 开始。"
     ]
   }
 }

@@ -1,5 +1,5 @@
-Use case: precise-object-edit.
-Edit this exact six-bear game sprite atlas to fix production defects while preserving its six poses, job outfits, tools, layout and friendly white bear identity.
-PRIMARY CORRECTION: Completely REMOVE all cloudy gray/black haze, glow, drop shadows, gradients, translucent backgrounds, soft shading and texture anywhere. The blank spaces and gutters around sprites must be absolutely empty alpha=0. The bear interiors and props must have fully opaque, perfectly uniform solid flat fills and a crisp chunky near-black outline. There must be no halo whatsoever outside the antialiased outer edge. Do NOT paint a checkerboard. True transparent image.
-SECOND CORRECTION: The lower middle miner must have the exact same upright, untilted head, hat and face placement as the upper middle miner relative to its 512×512 cell, same scale and feet baseline. It still holds the pickaxe down toward the mineral chunk. In every column keep the two heads/body the exact same size and center. All six feet must sit on the same corresponding relative baseline per 512×512 cell. Scholar page turn and engineer wrench turning remain.
-Keep the overall 1536×1024 canvas, 3 columns and 2 rows, six 512×512 cells. Do not enlarge sprites into gutters. Maintain all full figures, tools, and workbench within the original cells. Identical minimal flat white bear character style: round head, tiny black eyes/nose/mouth, short limbs, round ears. Keep simple blue-gray scholar cape, ochre miner cap and indigo engineer apron. No text or grid.
+用途：精确物体编辑。
+编辑这张准确的六熊游戏精灵图集，修复正式素材缺陷，同时保留六种姿势、职业服装、工具、布局和友好白熊身份。
+主要修正：彻底去除所有位置的云状灰／黑雾、辉光、投影、渐变、半透明背景、柔和阴影和纹理。精灵周围空白和间距必须完全为空，alpha=0。小熊内部及道具必须完全不透明、纯色填充完全均匀，近黑粗轮廓清晰。抗锯齿外缘以外不得有任何光晕。不要画棋盘格。图片必须真正透明。
+第二修正：中下矿工相对于所属 512×512 格的头、帽、五官位置，必须与中上矿工完全相同，头直立、不倾斜，比例和脚底基线一致。仍然手持向矿石块放低的镐。每列两帧的头／身尺寸和中心完全相同。所有六只熊的脚位于各自 512×512 格内相同相对基线上。保留学者翻页和工程师转扳手动作。
+保留整体 1536×1024 画布、3 列 2 行和六个 512×512 单元格。不把精灵放大到间距中。完整角色、工具和工作台均位于原格内。白熊采用相同极简平涂风格：圆头、小黑眼／鼻／嘴、短四肢、圆耳。保留简单蓝灰学者斗篷、赭色矿工帽和靛蓝工程师围裙。无文字或网格。

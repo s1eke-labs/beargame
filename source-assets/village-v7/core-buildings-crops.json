@@ -6,7 +6,7 @@
   "rows": 2,
   "alphaThreshold": 8,
   "cropPadding": 10,
-  "notes": "Crop coordinates are source-image pixels; use supplied alpha-aware crops instead of arithmetic grid clipping. Generated RGBA alpha preserved. Each crop has 10px padding around its main alpha silhouette.",
+  "notes": "裁切坐标使用源图像像素；请使用提供的、依据透明通道测量的裁切框，不要按算术网格裁切。保留生成图的 RGBA 透明通道。每个裁切框在主要透明通道轮廓外保留 10px 边距。",
   "crops": {
     "bearHut": {
       "x": 38,

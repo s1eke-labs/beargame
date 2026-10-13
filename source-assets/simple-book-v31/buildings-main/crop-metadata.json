@@ -1,8 +1,8 @@
 {
-  "tool": "built-in image_gen.imagegen",
-  "format": "RGBA PNG; originals unchanged",
-  "rectangleConvention": "x,y,width,height; right and bottom exclusive",
-  "method": "Connected components at alpha > 8; select 8 dominant sprites, associate every disconnected alpha > 8 component to its nearest dominant sprite, union all component bounds, add 1-pixel safe margin. Verify every alpha > 8 pixel is included exactly once and no foreground from another sprite is included. Raw alpha 1\u20133 background noise is deliberately excluded; no image pixels were modified.",
+  "tool": "内置 image_gen.imagegen",
+  "format": "RGBA PNG；原图未修改",
+  "rectangleConvention": "x,y,width,height；右边界和下边界不包含在矩形内",
+  "method": "在 alpha >8 时提取连通区域；选择 8 个主要精灵，将每个分离的 alpha >8 区域关联到最近的主要精灵，合并所有区域边界并添加 1 像素安全边距。验证每个 alpha >8 像素都恰好包含一次，且不包含其他精灵的前景。刻意排除 alpha 为 1–3 的原始背景噪点；未修改图像像素。",
   "assets": {
     "painted-home.png": {
       "width": 1774,
@@ -406,7 +406,7 @@
         255
       ],
       "fullyTransparentPixelCount": 784087,
-      "note": "Every pixel with alpha > 8 is included in recommendedVisualBounds. The raw entire-alpha rectangle is much larger due to alpha=1 ghost speckles; raw PNG remains intact."
+      "note": "每个 alpha >8 的像素都包含在 recommendedVisualBounds 中。由于 alpha=1 的残影杂点，包含全部透明通道像素的原始矩形大得多；原始 PNG 保持完整。"
     }
   }
 }

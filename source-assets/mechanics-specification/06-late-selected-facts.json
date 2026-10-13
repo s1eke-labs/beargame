@@ -1,6 +1,5 @@
 {
   "schema": "beargame.authored.late-facts.v1",
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
   "religion": [
     {
       "referenceKey": "solarchant",
@@ -11,8 +10,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "scholasticism",
@@ -23,8 +21,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "goldenSpire",
@@ -36,8 +33,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "sunAltar",
@@ -49,8 +45,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "stainedGlass",
@@ -62,8 +57,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "solarRevolution",
@@ -75,8 +69,7 @@
       },
       "repeatAfterTranscendence": false,
       "repeatCostMultiplier": null,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "basilica",
@@ -88,8 +81,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "templars",
@@ -101,8 +93,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "apocripha",
@@ -114,8 +105,7 @@
       },
       "repeatAfterTranscendence": false,
       "repeatCostMultiplier": null,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "transcendence",
@@ -127,8 +117,7 @@
       },
       "repeatAfterTranscendence": false,
       "repeatCostMultiplier": null,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     },
     {
       "referenceKey": "frescoes",
@@ -141,8 +130,7 @@
       },
       "repeatAfterTranscendence": true,
       "repeatCostMultiplier": 2.5,
-      "source": "js/religion.js:1046–1254",
-      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+      "status": "已验证价格与解锁数据，神殿及动态效果另行规定。"
     }
   ],
   "missions": [
@@ -158,8 +146,7 @@
       "destination": "cath",
       "opens": [
         "moonMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "moonMission",
@@ -174,8 +161,7 @@
       "opens": [
         "duneMission",
         "piscineMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "duneMission",
@@ -189,8 +175,7 @@
       "destination": "dune",
       "opens": [
         "heliosMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "piscineMission",
@@ -204,8 +189,7 @@
       "destination": "piscine",
       "opens": [
         "terminusMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "heliosMission",
@@ -219,8 +203,7 @@
       "destination": "helios",
       "opens": [
         "yarnMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "terminusMission",
@@ -235,8 +218,7 @@
       "opens": [
         "heliosMission",
         "kairoMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "kairoMission",
@@ -250,8 +232,7 @@
       "destination": "kairo",
       "opens": [
         "rorschachMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "rorschachMission",
@@ -265,8 +246,7 @@
       "destination": null,
       "opens": [
         "centaurusSystemMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "yarnMission",
@@ -280,8 +260,7 @@
       "destination": "yarn",
       "opens": [
         "umbraMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "umbraMission",
@@ -295,8 +274,7 @@
       "destination": "umbra",
       "opens": [
         "charonMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "charonMission",
@@ -308,8 +286,7 @@
         "thorium": 35000
       },
       "destination": "charon",
-      "opens": [],
-      "source": "js/space.js:23–209"
+      "opens": []
     },
     {
       "referenceKey": "centaurusSystemMission",
@@ -324,8 +301,7 @@
       "destination": "centaurusSystem",
       "opens": [
         "furthestRingMission"
-      ],
-      "source": "js/space.js:23–209"
+      ]
     },
     {
       "referenceKey": "furthestRingMission",
@@ -337,8 +313,7 @@
         "thorium": 75000
       },
       "destination": "furthestRing",
-      "opens": [],
-      "source": "js/space.js:23–209"
+      "opens": []
     }
   ],
   "spaceConstruction": [
@@ -360,8 +335,7 @@
         "spaceRatio": 0.01,
         "oilReductionRatio": 0.05,
         "prodTransferBonus": 0.001
-      },
-      "source": "js/space.js:215"
+      }
     },
     {
       "referenceKey": "sattelite",
@@ -382,8 +356,7 @@
         "starchartPerTickBaseSpace": 0.001,
         "energyDemand": 1
       },
-      "source": "js/space.js:239",
-      "caveat": "Solar satellites replaces1power demand with1power supply; black sky changes charts."
+      "caveat": "太阳能卫星将 1 点电力需求替换为 1 点供给；黑暗天空挑战会改变星图规则。"
     },
     {
       "referenceKey": "spaceStation",
@@ -404,8 +377,7 @@
         "housing": 2,
         "energyDemand": 10
       },
-      "source": "js/space.js:295",
-      "caveat": "Builds housing and breaks Iron Will."
+      "caveat": "提供住房并结束钢铁意志。"
     },
     {
       "referenceKey": "moonOutpost",
@@ -425,8 +397,7 @@
         "uraniumConsumption": 0.35,
         "unobtainiumPerTickSpace": 0.007,
         "energyDemand": 5
-      },
-      "source": "js/space.js:336"
+      }
     },
     {
       "referenceKey": "moonBase",
@@ -453,8 +424,7 @@
         "unobtainiumCapacity": 150,
         "energyDemand": 10
       },
-      "source": "js/space.js:377",
-      "caveat": "amBases reduces demand to5; AI and spaceport modify storage."
+      "caveat": "amBases 将需求降至 5；人工智能与太空港会调整仓储。"
     },
     {
       "referenceKey": "planetCracker",
@@ -472,8 +442,7 @@
         "uraniumPerTickSpace": 0.3,
         "uraniumCapacity": 1750
       },
-      "caveat": "Output×(1+crackerRatio); capacity×(1+planetCrackerStorageBonus).",
-      "source": "js/space.js:432"
+      "caveat": "产出乘 (1 + crackerRatio)；容量乘 (1 + planetCrackerStorageBonus)。"
     },
     {
       "referenceKey": "hydrofracturer",
@@ -490,8 +459,7 @@
       "effects": {
         "oilPerTickAutoprodSpace": 0.5
       },
-      "caveat": "",
-      "source": "js/space.js:454"
+      "caveat": ""
     },
     {
       "referenceKey": "spiceRefinery",
@@ -508,8 +476,7 @@
       "effects": {
         "spicePerTickAutoprodSpace": 0.025
       },
-      "caveat": "",
-      "source": "js/space.js:478"
+      "caveat": ""
     },
     {
       "referenceKey": "researchVessel",
@@ -527,8 +494,7 @@
         "scienceCapacity": 10000,
         "starchartPerTickBaseSpace": 0.01
       },
-      "caveat": "Science capacity×(1+spaceScienceRatio); blackSky removes charts.",
-      "source": "js/space.js:507"
+      "caveat": "科学容量乘 (1 + spaceScienceRatio)；blackSky 移除星图。"
     },
     {
       "referenceKey": "orbitalArray",
@@ -546,8 +512,7 @@
         "spaceRatio": 0.02,
         "energyDemand": 20
       },
-      "caveat": "",
-      "source": "js/space.js:533"
+      "caveat": ""
     },
     {
       "referenceKey": "sunlifter",
@@ -564,8 +529,7 @@
         "antimatterPerYear": 1,
         "energySupply": 30
       },
-      "caveat": "Antimatter is annual, with energy sufficiency checks; never implement as1/tick.",
-      "source": "js/space.js:561"
+      "caveat": "反物质按年产生，并检查能源是否充足；不能实现为每步产生 1。"
     },
     {
       "referenceKey": "containmentChamber",
@@ -581,8 +545,7 @@
         "antimatterCapacity": 100,
         "energyDemand": 50
       },
-      "caveat": "Each heatsink adds2%to capacity,1%to demand.",
-      "source": "js/space.js:582"
+      "caveat": "每个散热器增加 2% 容量和 1% 需求。"
     },
     {
       "referenceKey": "heatsink",
@@ -600,8 +563,7 @@
         "containmentCapacityRatio": 0.02,
         "containmentDemandRatio": 0.01
       },
-      "caveat": "",
-      "source": "js/space.js:604"
+      "caveat": ""
     },
     {
       "referenceKey": "sunforge",
@@ -618,8 +580,7 @@
       "effects": {
         "baseMetalCapacityRatio": 0.01
       },
-      "caveat": "",
-      "source": "js/space.js:623"
+      "caveat": ""
     },
     {
       "referenceKey": "cryostation",
@@ -643,8 +604,7 @@
         "uraniumCapacity": 5000,
         "unobtainiumCapacity": 750
       },
-      "caveat": "All capacities×(1+cryostationStorageBonus), then applicable cycle/global modifiers.",
-      "source": "js/space.js:649"
+      "caveat": "全部容量先乘 (1 + cryostationStorageBonus)，再应用适用的星轮与全局修正。"
     },
     {
       "referenceKey": "spaceBeacon",
@@ -662,8 +622,7 @@
         "scienceCapacity": 25000,
         "starchartPerTickBaseSpace": 0.025
       },
-      "caveat": "Science cap×(1+spaceScienceRatio); relic/day=beaconRelicsPerDay×(1+relicRefineRatio×effectiveBlackPyramids×.1)×min(antimatterCapacity/5000,1)×(1+.25hashLevel).",
-      "source": "js/space.js:696"
+      "caveat": "科学容量乘 (1 + spaceScienceRatio)；每日遗物 = beaconRelicsPerDay × (1 + relicRefineRatio × effectiveBlackPyramids × 0.1) × min(antimatterCapacity / 5000, 1) × (1 + 0.25 × hashLevel)。"
     },
     {
       "referenceKey": "terraformingStation",
@@ -681,8 +640,7 @@
       "effects": {
         "housing": 1
       },
-      "caveat": "Housing per unit1+UDR(activeHydroponics,100).",
-      "source": "js/space.js:740"
+      "caveat": "每座住房为 1 + UDR(activeHydroponics, 100)。"
     },
     {
       "referenceKey": "hydroponics",
@@ -700,8 +658,7 @@
         "honeyRatio": 0.025,
         "honeyCapacityRatio": 0.1
       },
-      "caveat": "Housing interaction nonlinear:100gardens→+1housing per station;300→+2.",
-      "source": "js/space.js:766"
+      "caveat": "住房交互为非线性：100 座花园使每个空间站增加 1 住房，300 座增加 2。"
     },
     {
       "referenceKey": "hrHarvester",
@@ -716,8 +673,7 @@
       "effects": {
         "energySupply": 1
       },
-      "caveat": "Power=(1+.01UDR(max(darkFutureYears,0),.075))×(1+umbraBoostRatio).",
-      "source": "js/space.js:805"
+      "caveat": "功率 = (1 + 0.01 × UDR(max(darkFutureYears, 0), 0.075)) × (1 + umbraBoostRatio)。"
     },
     {
       "referenceKey": "navigationRelay",
@@ -730,8 +686,7 @@
       },
       "ratio": 1.2,
       "effects": {},
-      "caveat": "SOURCE PLACEHOLDER: requiredTech=false, no effects, unavailable in default mainline. Exclude rather than pretend functional.",
-      "source": "js/space.js:828"
+      "caveat": "占位定义：requiredTech=false，没有效果，默认主线不可用；应排除，不能显示为已完成功能。"
     },
     {
       "referenceKey": "spaceShuttle",
@@ -744,8 +699,7 @@
       },
       "ratio": 1.15,
       "effects": {},
-      "caveat": "SOURCE PLACEHOLDER: requiredTech=false, no effects, unavailable in default mainline. Exclude rather than pretend functional.",
-      "source": "js/space.js:840"
+      "caveat": "占位定义：requiredTech=false，没有效果，默认主线不可用；应排除，不能显示为已完成功能。"
     },
     {
       "referenceKey": "entangler",
@@ -764,8 +718,7 @@
         "gflopsConsumption": 0.1,
         "energyDemand": 25
       },
-      "caveat": "Consumed gflops becomes hashrates1:1. Hash level=max(0,floor(log(hashrates/1000)/log1.6)); next threshold1000×1.6^(level+1). Level is global, not multiplied by machine count.",
-      "source": "js/space.js:859"
+      "caveat": "消耗的 gflops 按 1:1 转为 hashrates。哈希等级 = max(0, floor(log(hashrates / 1000) / log(1.6)))；下一阈值为 1000 × 1.6^(level + 1)。等级属于全局，不乘设备数量。"
     },
     {
       "referenceKey": "tectonic",
@@ -782,8 +735,7 @@
       "effects": {
         "energySupply": 25
       },
-      "caveat": "Power×(1+tectonicBonus).",
-      "source": "js/space.js:919"
+      "caveat": "功率乘 (1 + tectonicBonus)。"
     },
     {
       "referenceKey": "moltenCore",
@@ -800,8 +752,7 @@
       "effects": {
         "tectonicBonus": 0.05
       },
-      "caveat": "",
-      "source": "js/space.js:938"
+      "caveat": ""
     }
   ],
   "transcendence": [
@@ -816,8 +767,7 @@
       "effects": {
         "solarLimitPerTier": 0.05
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "blackNexus",
@@ -830,8 +780,7 @@
       "effects": {
         "relicRefineRatio": 1
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "blackCore",
@@ -844,8 +793,7 @@
       "effects": {
         "sorrowCapacity": 1
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "singularity",
@@ -858,8 +806,7 @@
       "effects": {
         "globalResourceRatio": 0.1
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "blackLibrary",
@@ -872,8 +819,7 @@
       "effects": {
         "compendiaTTBoostRatio": 0.02
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "blackRadiance",
@@ -886,8 +832,7 @@
       "effects": {
         "blsCorruptionRatio": 0.0012
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "blazar",
@@ -901,8 +846,7 @@
         "timeRatio": 0.1,
         "rrRatio": 0.02
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "darkNova",
@@ -916,8 +860,7 @@
       "effects": {
         "energyProductionRatio": 0.02
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "mausoleum",
@@ -932,8 +875,7 @@
       "effects": {
         "pactsAvailable": 1
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "holyGenocide",
@@ -948,8 +890,7 @@
         "maxKittensRatio": -0.01,
         "simScalingRatio": 0.02
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     },
     {
       "referenceKey": "darkParacosm",
@@ -964,11 +905,10 @@
       "effects": {
         "milleninumParagon": 1
       },
-      "source": "js/religion.js:1257–1480",
-      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+      "caveat": "Mausoleum 与 darkParacosm 受功能开关控制；darkParacosm 的声望原料比例为 2；神圣人口缩放存在启用状态例外。"
     }
   ],
-  "warning": "Independently transcribed selected factual quantities. Incomplete dynamic effects and feature flags must not be represented as complete implementation.",
+  "warning": "本文件记录选定规则数值；不完整的动态效果与功能开关说明不能被视为完整实现。",
   "routes": [
     {
       "referenceKey": "cath",
@@ -1031,7 +971,7 @@
       "baseDays": 725000000
     }
   ],
-  "scopeNote": "24/24space identities represented;22functional default-mainline definitions and2explicit placeholders. Costs/basic effects verified; cycle/policy/challenge/resource-transfer interplay still needs tests.",
+  "scopeNote": "列出全部 24 项太空条目，其中 22 项为默认主线功能定义，2 项为明确占位。费用和基础效果已核对，星轮、政策、挑战与资源转移的交互仍需测试。",
   "mythicFaith": [
     {
       "referenceKey": "unicornTomb",
@@ -1045,8 +985,7 @@
         "unicornsRatioReligion": 0.05
       },
       "availableAfter": "ziggurat",
-      "caveat": "Default mythic upgrade; opensivoryTower; unicornTears completion adds faith cap formula.",
-      "source": "js/religion.js:636"
+      "caveat": "默认神话升级，开放 ivoryTower；完成 unicornTears 后增加信仰容量公式。"
     },
     {
       "referenceKey": "ivoryTower",
@@ -1061,8 +1000,7 @@
         "riftChance": 0.0005
       },
       "availableAfter": "unicornTomb",
-      "caveat": "OpensivoryCitadel.",
-      "source": "js/religion.js:677"
+      "caveat": "开放 ivoryCitadel。"
     },
     {
       "referenceKey": "ivoryCitadel",
@@ -1077,8 +1015,7 @@
         "ivoryMeteorChance": 0.0005
       },
       "availableAfter": "ivoryTower",
-      "caveat": "OpensskyPalace.",
-      "source": "js/religion.js:703"
+      "caveat": "开放 skyPalace。"
     },
     {
       "referenceKey": "skyPalace",
@@ -1097,8 +1034,7 @@
         "ivoryMeteorRatio": 0.05
       },
       "availableAfter": "ivoryCitadel",
-      "caveat": "Alicorn passive rate only after first alicorn exists OR alicornmancy; opensunicornUtopia.",
-      "source": "js/religion.js:732"
+      "caveat": "仅在已拥有首只 alicorn 或完成 alicornmancy 后产生被动天角兽；开放 unicornUtopia。"
     },
     {
       "referenceKey": "unicornUtopia",
@@ -1117,8 +1053,7 @@
         "ivoryMeteorRatio": 0.15
       },
       "availableAfter": "skyPalace",
-      "caveat": "Same passive prerequisite; openssunspire.",
-      "source": "js/religion.js:780"
+      "caveat": "沿用相同被动生产前置条件；开放 sunspire。"
     },
     {
       "referenceKey": "sunspire",
@@ -1137,8 +1072,7 @@
         "ivoryMeteorRatio": 0.5
       },
       "availableAfter": "unicornUtopia",
-      "caveat": "Same passive prerequisite.",
-      "source": "js/religion.js:832"
+      "caveat": "沿用相同被动生产前置条件。"
     },
     {
       "referenceKey": "marker",
@@ -1154,8 +1088,7 @@
         "corruptionPerTick": 1e-06
       },
       "availableAfter": "perk:megalomania",
-      "caveat": "BlackSky reward modifies corruption; late faction/event unlock must be verified.",
-      "source": "js/religion.js:879"
+      "caveat": "BlackSky 奖励修正腐化；后期阵营与事件解锁仍需验证。"
     },
     {
       "referenceKey": "unicornGraveyard",
@@ -1170,8 +1103,7 @@
         "blackLibraryBonus": 0.02
       },
       "availableAfter": "perk:blackCodex",
-      "caveat": "OpensunicornNecropolis.",
-      "source": "js/religion.js:910"
+      "caveat": "开放 unicornNecropolis。"
     },
     {
       "referenceKey": "unicornNecropolis",
@@ -1187,8 +1119,7 @@
         "corruptionBoostRatio": 0.1
       },
       "availableAfter": "unicornGraveyard",
-      "caveat": "",
-      "source": "js/religion.js:930"
+      "caveat": ""
     },
     {
       "referenceKey": "blackPyramid",
@@ -1202,8 +1133,7 @@
       "ratio": 1.15,
       "effects": {},
       "availableAfter": "perk:megalomania",
-      "caveat": "Core of elder arrivals/relic refinement/pacts; effects dynamically depend on selected pacts and debt, not free flat production.",
-      "source": "js/religion.js:945"
+      "caveat": "用于长者到来、遗物精炼与契约；效果动态取决于所选契约和债务，不提供无条件固定产出。"
     }
   ],
   "transforms": [
@@ -1214,8 +1144,7 @@
       "output": {
         "tears": "activeZiggurats"
       },
-      "gate": "religionTab and activeZiggurats>0",
-      "source": "js/religion.js:65–68,1535–1545"
+      "gate": "religionTab 且 activeZiggurats > 0"
     },
     {
       "input": {
@@ -1223,8 +1152,7 @@
       },
       "output": {
         "timeCrystal": "1+tcRefineRatio"
-      },
-      "source": "js/religion.js:3059–3070"
+      }
     },
     {
       "input": {
@@ -1233,9 +1161,8 @@
       "output": {
         "sorrow": 1
       },
-      "gate": "blackPyramid unlocked",
-      "source": "js/religion.js:3083–3094",
-      "caveat": "Capacity and sorrow conversion-price behavior must be checked."
+      "gate": "blackPyramid 已解锁",
+      "caveat": "容量与悲伤资源的转换价格行为仍需检查。"
     },
     {
       "input": {
@@ -1243,8 +1170,7 @@
       },
       "output": {
         "relic": "1+relicRefineRatio×effectiveBlackPyramids"
-      },
-      "source": "js/religion.js:3096–3111"
+      }
     }
   ]
 }

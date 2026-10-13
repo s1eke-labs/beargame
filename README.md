@@ -1,71 +1,71 @@
-# Beargame · 蜜林小熊文明
+# 蜜林小熊文明
 
-A new, independently written Chinese bear-and-honey incremental civilization game. It is a playable game interface, not a marketing page. Original generated raster artwork, plain JavaScript ES modules, no accounts, backend, analytics, runtime dependencies or external fonts.
+蜜林小熊文明（Beargame）是一款以小熊与蜂蜜为主题的中文增量文明游戏，采用原创生成插画和原生 JavaScript 模块。游戏在浏览器本地运行，无需账号、后端、统计服务、运行时依赖或外部字体。
 
-## Chapter release builds
+## 章节发布
 
-Public `dist` now contains only the forest chapter. The complete original game source remains intact for internal development. See [chapter release architecture](docs/CHAPTER_RELEASES.md) for the release boundaries, save compatibility, asset isolation and verification requirements. Later profiles fail closed until their content is reviewed and extracted.
+公开发布目录 `dist/` 仅包含森林家园篇。完整游戏源码保留在仓库中供内部开发。发布边界、存档兼容、美术隔离和验收要求见[章节发布架构](docs/CHAPTER_RELEASES.md)。后续章节须完成内容审查和独立提取后才能构建发布。
 
-## Run and build
+## 运行与构建
 
-Use Node.js 24.19.0 for release verification and CI; historical campaign fixtures require this verified runtime. The scripts use import.meta.dirname, so compatibility with earlier Node.js versions is not claimed. The deployed game itself needs only a modern browser. The chapter asset verification also requires Python 3 with Pillow; these are build-time tools only. No browser runtime dependencies are needed.
+发布验收与持续集成使用 Node.js 24.19.0，历史全流程存档夹具也以此运行环境为准。脚本使用 `import.meta.dirname`，不承诺兼容更早的 Node.js 版本。章节美术校验还需要 Python 3 和 Pillow，均仅用于构建；发布后的游戏只需要现代浏览器。
 
 ```sh
-npm run dev         # full-source internal preview on http://localhost:4173
-npm run check
-npm test           # after npm run build; includes source and emitted-release checks
-npm run verify     # syntax, chapter build, full CPU tests and release leakage audit
-npm run build       # forest-only public static site in dist/
-npm run build:full  # internal complete build in .private-build/full (not published)
-npm run preview     # serve dist locally
+npm run dev         # 在 http://localhost:4173 预览内部完整源码
+npm run check       # 检查 JavaScript 语法
+npm test            # 先运行 npm run build；覆盖源码与发布产物
+npm run verify      # 语法、章节构建、CPU 测试和发布内容泄漏审计
+npm run build       # 将森林家园篇静态站点构建到 dist/
+npm run build:full  # 将内部完整版本构建到 .private-build/full，不用于发布
+npm run preview     # 在本地预览 dist/
 ```
 
-Serve the directory over HTTP; directly opening index.html as a file may block browser module imports. The production build contains only index.html, static source modules, and artwork. It does not require an npm server in production.
+请通过 HTTP 服务访问；直接打开 `index.html` 可能导致浏览器阻止模块导入。生产产物只包含入口页面、静态模块和美术资源，无需在服务器上运行 npm。
 
-## Complete-source gameplay reference
+## 完整开发版本玩法
 
-The sections below document the complete development game; not every system is present in the public forest chapter.
+以下说明面向完整开发版本，部分系统尚未包含在公开的森林家园篇中。
 
-## Playing
+- **家园**：采集蜂蜜，查看已建造的设施和当前推荐进度。
+- **建造**：建设生产、仓储和社区设施，查看引擎计算的费用与前置条件；提供详情页出售、五类建筑阶段切换确认、顺序队列、独立自动化、能源和污染信息。
+- **研究**：查看研究、工坊升级和政策路线，以及实际费用、前置条件和互斥选择。
+- **小熊**：管理人口、住房、幸福度、职业和节庆；领袖名册支持搜索，每页显示 25 位居民，可任命、撤职和晋升，也可分配工程师配方。季节礼物仅在实际持有礼盒且满足日历条件时显示。
+- **更多**：制作、贸易、使馆与大使、长者供养、黑币兑换、信仰与契约、太空路线、声望重置、时间操作、多挑战选择和储备回收。可叠加的崇拜升级与行星设施支持确认后出售。森林纪念册展示实际成就、星标里程碑和徽章，并遵循隐藏记录及外部服务不可用时的展示规则。所有门槛与效果由规则引擎提供；未发现的选项隐藏，已解锁但资源不足的选项仍可见。
+- 点击资源可查看库存、容量和净产量。
+- 设置提供暂停、主动开启离线生产、减少动态效果、本地保存、JSON 导出和确认后导入。
+- 当前版本已停用玩家操作撤销；已完成的操作不能通过撤销接口恢复。事务失败回滚与结算恢复仍然有效。
 
-- 家园: gather honey immediately, inspect real built structures, see the current next step.
-- 建造: production, storage and community buildings with engine-derived current costs and prerequisites; detail-sheet selling, five destructive stage-change confirmations, sequential queues, independent automation, energy and pollution.
-- 研究: research, workshop upgrades and all policy routes, with engine-provided costs, requirements and mutually exclusive choices.
-- 小熊: population, housing, happiness, job assignment and festivals; searchable leadership roster with 25 residents per page, appointment/removal/promotion, and specialist engineer recipe allocation. Seasonal gift cards appear only when actual box inventory and the engine’s calendar eligibility allow opening.
-- 更多: crafting, trade, embassies and ambassadors, elder feeding, blackcoin exchange, faith and pacts, space routes, confirmed sales of eligible stackable worship upgrades and planetary facilities, prestige, time actions, multi-challenge selection and reserve reclaim. 森林纪念册 presents real achievements, starred milestones and badges while respecting hidden records and unavailable external-service conditions. Gates and effects come from the rules engine, and undiscovered choices are hidden; unlocked but unaffordable choices remain visible.
-- Tap any resource to inspect stored quantity, capacity and net production.
-- Settings contain pause, opt-in offline production, reduced motion, local saving, JSON export and confirmed import.
-- Eligible actions expose a 20-second engine-validated undo notice. Only the latest eligible action is recorded; spent outputs can prevent reversal, and the temporary record does not survive reloading.
+进度每 15 秒、非采集操作之后以及离开页面时保存到浏览器。清理浏览器数据或更换设备前，请导出备份。长时间跳跃使用独立的异步结算对话框，显示进度并锁定状态修改；开始前保存操作前状态，计算失败时可安全重新加载。`localStorage` 所有权租约防止两个标签页同时模拟或覆盖存档，另一标签页会显示只读提示并提供主动接管入口。
 
-Local progress is saved in the browser every 15 seconds, after non-gather actions and on leaving the page. Export a backup before clearing browser data or switching devices. Long time jumps use a separate asynchronous calculation dialog with progress and locked mutations; pre-operation state is saved before starting, and a failed calculation can safely reload. A localStorage ownership lease prevents two tabs from actively simulating or overwriting progress simultaneously; the other tab displays a read-only notice with explicit takeover.
+导入、声望重置、开始挑战、出售建筑、切换建筑阶段、政策选择、全部库存兑换、清空队列和破坏性的信仰或声望转换均需确认。队列候选项每页 12 项，已入队条目每页 25 项。绘本场景将已拥有的建筑分配到稳定的分区位置，每页显示六种建筑。生产版本不提供测试控件、开发捷径或加速开局。
 
-Import, prestige reset, challenge start, building sell/stage changes, policy choices, full-stock currency exchanges, clearing a queue and destructive faith/prestige conversions require confirmation. Queue options are shown 12 per page and queued entries 25 per page; the storybook scene assigns every owned building to a stable district slot, with six types per scene page. No test controls, developer shortcuts or accelerated-start game are exposed in production.
+## 目录结构
 
-## Structure
+- `src/engine/`：规则引擎、经过校验的版本化存档和统一生成的状态快照，详见[引擎接口](src/engine/API.md)。
+- `src/ui/render.js`、`src/ui/advanced.js`：经过转义的 HTML 视图、中文文案、分页名册与队列、操作卡片及规则覆盖说明。
+- `src/main.js`：事件分发、时钟、对话框、存档界面和跨标签页协调。
+- `src/styles/main.css`：移动端优先的触控布局、桌面导航、安全区域、减少动态效果和键盘焦点样式。
+- `public/art/`：生成的林间空地插画及透明建筑、资源图集。
+- `src/ui/art-data.js`：实测裁切矩形，界面直接使用图集中的单幅插画。
+- `src/ui/webmcp.js`：检测支持后注册可选的 WebMCP 工具 `read_game_state`、`gather_honey` 和 `build`；修改状态时走界面共用的校验路径，不暴露破坏性的存档或重置操作。
+- `tests/`、`qa/`：引擎、存档、公式、纯界面函数、HTML 结构和 WebMCP 桩测试。
 
-- `src/engine/`: independent mechanical implementation, validated/versioned persistence and centrally derived snapshots. See `src/engine/API.md`.
-- `src/ui/render.js` and `src/ui/advanced.js`: escaped HTML views, original Chinese copy, bounded rosters/queues, action cards and readable Chinese rule-coverage lists.
-- `src/main.js`: event routing, clock, dialogs, persistence UI and cross-tab coordination.
-- `src/styles/main.css`: mobile-first touch layout, desktop navigation, safe areas, reduced motion and visible keyboard focus.
-- `public/art/`: original generated clearing and transparent building/resource raster atlases.
-- `src/ui/art-data.js`: measured crop rectangles; individual illustrations are displayed directly from the raster atlases. No generated scene substitute or CSS-drawn village.
-- `src/ui/webmcp.js`: optional feature-detected WebMCP `read_game_state`, `gather_honey` and `build`. Mutations use the same validated action route as the UI; destructive save/reset actions are not exposed.
-- `tests/` and `qa/`: engine, persistence, formulas, pure UI, structural markup and WebMCP-stub checks.
+## 规则与美术记录
 
-## Rules and authorship
+本项目包含浏览器本地模拟引擎、中文界面和森林插画场景。游戏内帮助说明功能及已知限制，存档使用带版本号的 Beargame 格式。
 
-Beargame includes a browser-local simulation engine, Chinese interface and illustrated forest setting. Gameplay features and known limitations are described in the in-game help. Saves use the versioned Beargame format.
+美术生成、处理过程和裁切记录见[美术素材记录](ART_PROVENANCE.md)及 `public/art/asset-manifest.json`。
 
-All three primary art images were newly generated for this project. See `ART_PROVENANCE.md` and `public/art/asset-manifest.json` for the source and measured sprite bounds.
+## 验证范围与限制
 
-## Verification limits
+CPU 检查覆盖规则引擎、存档、纯视图函数、HTML 标签配对、输入转义、受控 DOM 夹具中的真实应用事件处理，以及使用桩实现的可选 WebMCP 注册。`npm run verify` 还会重新构建独立发布版本并检查生产资源和模块的本地引用。
 
-CPU checks cover the mechanical engine, saving, pure view functions, HTML balance, input escaping, actual app event handlers against a controlled DOM fixture, and optional WebMCP registration using a stub. npm run verify additionally rebuilds the standalone distribution and validates local production asset/import links. Short-phone CSS explicitly compacts the home introduction and forest scene below 740px viewport height, preserving the gather action and 16px primary-action text. The available environment did not provide an authorized working browser, so touch-device screenshots, actual browser layout and registration in a WebMCP-capable browser are not claimed as verified. Responsive source checks are not a substitute for a real-device visual pass.
+高度低于 740 像素时，手机样式会压缩家园介绍和森林场景，保留采集操作与 16 像素主操作文字。部分早期检查未提供可用的浏览器会话；2026-10-10 已进行有限的云端 Chrome 操作与窄屏检查，详见[全流程质量验证](qa/FULL_FLOW_QA.md)。实体手机、真实触控体验和支持 WebMCP 的浏览器注册仍未验证，响应式源码检查不能替代实机视觉验收。
 
-## Mobile-first storybook revision (v2)
+## 移动端绘本界面（v2）
 
-The Oct 9 redesign uses the user’s prior 自嘲熊历险记 as its visual reference. The main viewport is a portrait world with small resource controls, image-led construction, progressive navigation and compact bottom sheets. Completed research and specialist management are disclosed contextually. All mechanics and save identities remain unchanged. See qa/V2-REDESIGN.md for verification and the explicit browser/device QA limitation.
+2026 年 10 月 9 日的改版采用简洁的纸墨绘本风格，以竖屏世界、小型资源控件、插画建造、渐进式导航和紧凑底部面板组织界面。已完成研究与专职管理按上下文显示，规则和存档标识保持稳定。验证记录及浏览器、设备验收限制见[界面改版记录](qa/V2-REDESIGN.md)。
 
-## EdgeOne deployment
+## 部署
 
-Pushes to `master` run the full release verification and deploy only the approved forest `dist/`. Set the repository Actions secret `EDGEONE_API_TOKEN`; the project name follows the repository name. See [source recovery and deployment notes](docs/SOURCE_RECOVERY.md). The development test domain is https://beargame.demo.001208.xyz; DNS and EdgeOne custom-domain setup are separate from the workflow.
+推送到 `master` 后，工作流执行完整发布验收，并只部署已获准的森林家园篇 `dist/`。需要设置仓库 Actions 密钥 `EDGEONE_API_TOKEN`，部署项目名沿用仓库名。详见[源码恢复与部署说明](docs/SOURCE_RECOVERY.md)。开发测试域名为 https://beargame.demo.001208.xyz；DNS 和 EdgeOne 自定义域名需单独配置。

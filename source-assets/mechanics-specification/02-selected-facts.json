@@ -1,7 +1,6 @@
 {
   "schema": "beargame.independently-authored.selected-facts.v1",
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
-  "warning": "Original factual transcription with selected scope; not reference implementation or complete reference data. Every runtime equivalence claim needs tests.",
+  "warning": "本文件记录选定范围的规则数据，不代表完整规则或实现；运行时是否符合规则须通过测试确认。",
   "buildings": [
     {
       "referenceKey": "field",
@@ -14,8 +13,7 @@
       "normalEffects": {
         "honeyPerTick": 0.125
       },
-      "source": "js/buildings.js:350",
-      "caveats": "Season/weather scales this building output."
+      "caveats": "季节和天气会按比例调整该建筑的产出。"
     },
     {
       "referenceKey": "hut",
@@ -29,7 +27,6 @@
         "housing": 2,
         "manpowerCapacity": 75
       },
-      "source": "js/buildings.js:484",
       "caveats": ""
     },
     {
@@ -45,8 +42,7 @@
         "scienceCapacity": 250,
         "cultureCapacity": 10
       },
-      "source": "js/buildings.js:557",
-      "caveats": "Unlocks science and scholar. Later data-center stage is a different contract."
+      "caveats": "解锁科学与学者；后续数据中心阶段使用另一套规则。"
     },
     {
       "referenceKey": "barn",
@@ -65,7 +61,6 @@
         "titaniumCapacity": 2,
         "goldCapacity": 10
       },
-      "source": "js/buildings.js:792",
       "caveats": ""
     },
     {
@@ -80,8 +75,7 @@
       "normalEffects": {
         "honeyDemandRatio": -0.005
       },
-      "source": "js/buildings.js:369",
-      "caveats": "Demand reductions use limited diminishing returns. Later solar stage replaces effects."
+      "caveats": "需求减免使用有限递减收益；后续太阳能阶段替换效果。"
     },
     {
       "referenceKey": "aqueduct",
@@ -94,8 +88,7 @@
       "normalEffects": {
         "honeyRatio": 0.03
       },
-      "source": "js/buildings.js:431",
-      "caveats": "Later hydroelectric stage replaces effects."
+      "caveats": "后续水电阶段替换效果。"
     },
     {
       "referenceKey": "logHouse",
@@ -110,7 +103,6 @@
         "housing": 1,
         "manpowerCapacity": 50
       },
-      "source": "js/buildings.js:509",
       "caveats": ""
     },
     {
@@ -127,7 +119,6 @@
         "housing": 1,
         "manpowerCapacity": 50
       },
-      "source": "js/buildings.js:532",
       "caveats": ""
     },
     {
@@ -146,7 +137,6 @@
         "cultureCapacity": 25,
         "skillXpPerTick": 0.0005
       },
-      "source": "js/buildings.js:649",
       "caveats": ""
     },
     {
@@ -166,8 +156,7 @@
         "starChance": 0.002,
         "starAutoChance": 0.01
       },
-      "source": "js/buildings.js:685",
-      "caveats": "Science capacity becomes1500 with astrolabe; other observatory upgrades multiply both science effects."
+      "caveats": "星盘使科学容量达到 1500；其他天文台升级同时放大两类科学效果。"
     },
     {
       "referenceKey": "biolab",
@@ -185,8 +174,7 @@
         "refineRatio": 0.1,
         "scienceCapacity": 1500
       },
-      "source": "js/buildings.js:709",
-      "caveats": "Additional capacity, biofuel and energy effects require calculation; not fully specified."
+      "caveats": "附加容量、生物燃料与能源效果需要计算，此处尚未完整规定。"
     },
     {
       "referenceKey": "warehouse",
@@ -205,8 +193,7 @@
         "titaniumCapacity": 10,
         "goldCapacity": 5
       },
-      "source": "js/buildings.js:825",
-      "caveats": "No honey capacity initially; silos adds750. Later spaceport stage separate."
+      "caveats": "初始不增加蜂蜜容量；筒仓增加 750。后续太空港阶段另行规定。"
     },
     {
       "referenceKey": "harbor",
@@ -227,8 +214,7 @@
         "titaniumCapacity": 50,
         "goldCapacity": 25
       },
-      "source": "js/buildings.js:943",
-      "caveats": "Cargo-ship and storage upgrades modify capacities."
+      "caveats": "货船与仓储升级会调整容量。"
     },
     {
       "referenceKey": "mine",
@@ -242,8 +228,7 @@
         "mineralsRatio": 0.2,
         "pollutionPerTick": 0.08
       },
-      "source": "js/buildings.js:997",
-      "caveats": "Unlocks miner. DeepMining adds .003coal/tick; ecology enables toggle."
+      "caveats": "解锁矿工；DeepMining 每步增加 0.003 煤，生态学开放开关。"
     },
     {
       "referenceKey": "quarry",
@@ -260,8 +245,7 @@
         "coalPerTick": 0.015,
         "pollutionPerTick": 0.25
       },
-      "source": "js/buildings.js:1034",
-      "caveats": "OrbitalGeodesy adds .0005uranium/tick."
+      "caveats": "OrbitalGeodesy 每步增加 0.0005 铀。"
     },
     {
       "referenceKey": "smelter",
@@ -277,8 +261,7 @@
         "ironPerTick": 0.02,
         "pollutionPerTick": 0.15
       },
-      "source": "js/buildings.js:1071",
-      "caveats": "GoldOre adds .001gold/tick; CoalFurnace .005coal/tick; NuclearSmelters .0015titanium/tick; insufficient inputs throttle all outputs."
+      "caveats": "GoldOre 每步增加 0.001 金，CoalFurnace 增加 0.005 煤，NuclearSmelters 增加 0.0015 钛；原料不足会按比例缩减全部产出。"
     },
     {
       "referenceKey": "calciner",
@@ -299,8 +282,7 @@
         "energyDemand": 1,
         "pollutionPerTick": 1
       },
-      "source": "js/buildings.js:1154",
-      "caveats": "Upgrades alter iron and titanium with different multipliers; optional steel conversion separate."
+      "caveats": "升级对铁与钛使用不同倍率；可选的钢转换另行处理。"
     },
     {
       "referenceKey": "steamworks",
@@ -318,8 +300,7 @@
         "magnetoBoost": 0.15,
         "pollutionPerTick": 1
       },
-      "source": "js/buildings.js:1281",
-      "caveats": "Coal penalty is a single enabled-system multiplier, not -.8 per building. PrintingPress .0005manuscript/tick each; successive press upgrades multiply4 each."
+      "caveats": "煤惩罚是整个已启用系统的一次倍率，不是每栋建筑减少 0.8。PrintingPress 每座每步生产 0.0005 手稿，后续印刷升级各乘 4。"
     },
     {
       "referenceKey": "magneto",
@@ -337,8 +318,7 @@
         "productionRatio": 0.02,
         "pollutionPerTick": 5
       },
-      "source": "js/buildings.js:1390",
-      "caveats": "Excludes honey and direct oil bonus; steamworks boost this production effect."
+      "caveats": "不包含蜂蜜和直接石油加成；蒸汽工坊会放大此生产效果。"
     },
     {
       "referenceKey": "lumberMill",
@@ -353,8 +333,7 @@
       "normalEffects": {
         "woodRatio": 0.1
       },
-      "source": "js/buildings.js:1440",
-      "caveats": "Saw bonuses modify .1 by1+sawBonus."
+      "caveats": "锯加成将 0.1 修改为 0.1 × (1 + sawBonus)。"
     },
     {
       "referenceKey": "oilWell",
@@ -370,8 +349,7 @@
         "oilPerTick": 0.02,
         "oilCapacity": 1500
       },
-      "source": "js/buildings.js:1459",
-      "caveats": "Pumpjack and extraction upgrades require further dynamic rules."
+      "caveats": "抽油机和提取升级需要补充动态规则。"
     },
     {
       "referenceKey": "workshop",
@@ -385,7 +363,6 @@
       "normalEffects": {
         "craftRatio": 0.06
       },
-      "source": "js/buildings.js:1509",
       "caveats": ""
     },
     {
@@ -401,8 +378,7 @@
       "normalEffects": {
         "craftRatio": 0.05
       },
-      "source": "js/buildings.js:1538",
-      "caveats": "Engineer slots, energy, pollution and environmental modifiers require dynamic rules."
+      "caveats": "工程师名额、能源、污染与环境修正需要动态规则。"
     },
     {
       "referenceKey": "reactor",
@@ -421,8 +397,7 @@
         "uraniumCapacity": 250,
         "energySupply": 10
       },
-      "source": "js/buildings.js:1590",
-      "caveats": "Excludes honey/uranium production bonus; supply shortages disable."
+      "caveats": "不包含蜂蜜与铀的生产加成；补给不足时停用。"
     },
     {
       "referenceKey": "accelerator",
@@ -439,8 +414,7 @@
         "uraniumPerTick": 0.0025,
         "energyDemand": 2
       },
-      "source": "js/buildings.js:1640",
-      "caveats": "Storage upgrades and LHC science capacity are additional."
+      "caveats": "仓储升级和大型强子对撞机的科学容量另行计算。"
     },
     {
       "referenceKey": "tradepost",
@@ -458,8 +432,7 @@
         "ivoryDemandRatio": -0.04,
         "spiceDemandRatio": -0.04
       },
-      "source": "js/buildings.js:1706",
-      "caveats": "Caravanserai adds .0035standing each."
+      "caveats": "Caravanserai 每座增加 0.0035 友好度。"
     },
     {
       "referenceKey": "mint",
@@ -478,8 +451,7 @@
         "ivoryPerTick": 0.0021,
         "goldCapacity": 100
       },
-      "source": "js/buildings.js:1731",
-      "caveats": "Actual fur/ivory output also depends on manpower capacity; do not treat listed baseline as complete output formula."
+      "caveats": "实际毛皮与象牙产出还取决于劳动力容量，不能将这里的基础值当作完整公式。"
     },
     {
       "referenceKey": "amphitheatre",
@@ -496,8 +468,7 @@
         "culturePerTick": 0.005,
         "cultureCapacity": 50
       },
-      "source": "js/buildings.js:1842",
-      "caveats": "Later broadcast stage separate."
+      "caveats": "后续广播阶段另行规定。"
     },
     {
       "referenceKey": "chapel",
@@ -514,8 +485,7 @@
         "faithPerTick": 0.005,
         "cultureCapacity": 200
       },
-      "source": "js/buildings.js:1908",
-      "caveats": "Atheism removes faith; frescoes adds karma-dependent faith capacity."
+      "caveats": "无神论移除信仰；壁画增加取决于业力的信仰容量。"
     },
     {
       "referenceKey": "temple",
@@ -532,8 +502,7 @@
         "culturePerTick": 0.1,
         "faithCapacity": 100
       },
-      "source": "js/buildings.js:1945",
-      "caveats": "Theology adds .0015faith/tick. Many religion upgrades add effects; atheism radically changes this building."
+      "caveats": "神学每步增加 0.0015 信仰；多项宗教升级会添加效果，无神论显著改变该建筑。"
     },
     {
       "referenceKey": "unicornPasture",
@@ -547,8 +516,7 @@
         "honeyDemandRatio": -0.0015,
         "unicornsPerTick": 0.001
       },
-      "source": "js/buildings.js:2033",
-      "caveats": "Unicorn tears challenge adds capacity restriction."
+      "caveats": "独角兽泪挑战增加容量限制。"
     },
     {
       "referenceKey": "ziggurat",
@@ -563,8 +531,7 @@
       "normalEffects": {
         "cultureCapacityRatio": 0.08
       },
-      "source": "js/buildings.js:2063",
-      "caveats": "Enables mythic-faith branch; sacrifice tears output scales with count."
+      "caveats": "开放神话信仰分支；献祭泪水产出随数量增长。"
     },
     {
       "referenceKey": "chronosphere",
@@ -582,7 +549,6 @@
         "temporalParadoxChance": 0.01,
         "energyDemand": 20
       },
-      "source": "js/buildings.js:2113",
       "caveats": ""
     },
     {
@@ -598,8 +564,7 @@
       "normalEffects": {
         "gflopsPerTick": 0.02
       },
-      "source": "js/buildings.js:2138",
-      "caveats": "Total power at n active units is n×(3n+5)/4; special AI level/sale restrictions."
+      "caveats": "n 个启用单位的总功率为 n × (3n + 5) / 4；人工智能等级与出售另有限制。"
     },
     {
       "referenceKey": "brewery",
@@ -618,8 +583,7 @@
         "festivalRatio": 0.01,
         "festivalArrivalRatio": 0.001
       },
-      "source": "js/buildings.js:1787",
-      "caveats": "Input shortage throttles all benefits;opensdarkBrew special upgrade."
+      "caveats": "输入不足会按比例缩减全部收益；开放 darkBrew 特殊升级。"
     },
     {
       "referenceKey": "zebraOutpost",
@@ -633,8 +597,7 @@
         "manpowerCapacity": 5,
         "hunterRatio": 0.05
       },
-      "source": "js/buildings.js:2190",
-      "caveats": "Source zebraRequired5 metadata has no JS consumer found; do not invent enforcement. DarkRevolution preparations1IronWill or.1normal, modified bypreparationRatio."
+      "caveats": "zebraRequired5 元数据未发现执行入口，不能据此虚构门槛。DarkRevolution 在钢铁意志下准备度为 1，普通状态为 0.1，并受 preparationRatio 修正。"
     },
     {
       "referenceKey": "zebraWorkshop",
@@ -647,8 +610,7 @@
       "normalEffects": {
         "manpowerCapacity": 25
       },
-      "source": "js/buildings.js:2225",
-      "caveats": "OpensdarkRevolution. zebraRequired10 appears unused. BloodstoneInstitute production formula requires detailed special-upgrade implementation."
+      "caveats": "开放 darkRevolution；zebraRequired10 未见实际使用。BloodstoneInstitute 的生产公式需要详细的特殊升级实现。"
     },
     {
       "referenceKey": "zebraForge",
@@ -662,8 +624,7 @@
         "manpowerCapacity": 50,
         "tMythrilCraftRatio": 0.01
       },
-      "source": "js/buildings.js:2264",
-      "caveats": "Opensbloodstone/tMythrilrecipes+whispers. zebraRequired50 appears unused. ReforgedOutposts totalpreparationRatio=floor(count/10);Rangefinders+.01bloodstoneRatio each."
+      "caveats": "开放 bloodstone 与 tMythril 配方及 whispers；zebraRequired50 未见实际使用。ReforgedOutposts 的总 preparationRatio 为 floor(count / 10)；Rangefinders 每级增加 0.01 bloodstoneRatio。"
     },
     {
       "referenceKey": "stasisPod",
@@ -678,8 +639,7 @@
       "normalEffects": {
         "zebrasCapacity": 1
       },
-      "source": "js/buildings.js:2302",
-      "caveats": "If zebraCap<10 replace1tMythril with100eludium. zebraRequired1 appears unused."
+      "caveats": "若 zebraCap < 10，将 1 tMythril 替换为 100 eludium；zebraRequired1 未见实际使用。"
     },
     {
       "referenceKey": "ivoryTemple",
@@ -695,8 +655,7 @@
         "mineralsPerTick": 1,
         "manpowerCapacity": 10
       },
-      "source": "js/buildings.js:2326",
-      "caveats": "Visible at10%first costs. Whispers automation replaces conversion with200ivory+2titanium+.00002alicorn→2minerals+.00005tMythril per tick; shortage throttle."
+      "caveats": "达到首份费用的 10% 时可见。Whispers 自动化将转换替换为每步消耗 200 ivory、2 titanium、0.00002 alicorn，产出 2 minerals、0.00005 tMythril；短缺时按比例缩减。"
     }
   ],
   "research": [
@@ -712,8 +671,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:14",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "agriculture",
@@ -732,8 +690,7 @@
         "farmer"
       ],
       "opensCrafts": [],
-      "source": "js/science.js:26",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "archery",
@@ -749,8 +706,7 @@
         "hunter"
       ],
       "opensCrafts": [],
-      "source": "js/science.js:39",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "mining",
@@ -767,8 +723,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:51",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "metal",
@@ -782,8 +737,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:63",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "animal",
@@ -802,8 +756,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:74",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "civil",
@@ -817,8 +770,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:94",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "math",
@@ -832,8 +784,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:104",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "construction",
@@ -852,8 +803,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:116",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "engineering",
@@ -869,8 +819,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:131",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "currency",
@@ -884,8 +833,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:142",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "writing",
@@ -905,8 +853,7 @@
       "opensCrafts": [
         "parchment"
       ],
-      "source": "js/science.js:153",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "philosophy",
@@ -924,8 +871,7 @@
       "opensCrafts": [
         "compedium"
       ],
-      "source": "js/science.js:167",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "machinery",
@@ -939,8 +885,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:180",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "steel",
@@ -954,8 +899,7 @@
       "opensCrafts": [
         "steel"
       ],
-      "source": "js/science.js:190",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "theology",
@@ -973,8 +917,7 @@
         "priest"
       ],
       "opensCrafts": [],
-      "source": "js/science.js:201",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "astronomy",
@@ -991,8 +934,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:218",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "navigation",
@@ -1013,8 +955,7 @@
       "opensCrafts": [
         "ship"
       ],
-      "source": "js/science.js:232",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "architecture",
@@ -1032,8 +973,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:248",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "physics",
@@ -1052,8 +992,7 @@
       "opensCrafts": [
         "blueprint"
       ],
-      "source": "js/science.js:262",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "metaphysics",
@@ -1066,8 +1005,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:276",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "chemistry",
@@ -1085,8 +1023,7 @@
       "opensCrafts": [
         "alloy"
       ],
-      "source": "js/science.js:285",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "acoustics",
@@ -1103,8 +1040,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:299",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "drama",
@@ -1119,8 +1055,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:312",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "archeology",
@@ -1139,8 +1074,7 @@
         "geologist"
       ],
       "opensCrafts": [],
-      "source": "js/science.js:324",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "electricity",
@@ -1157,8 +1091,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:341",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "biology",
@@ -1177,8 +1110,7 @@
       "opensCrafts": [
         "plastic"
       ],
-      "source": "js/science.js:355",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "biochemistry",
@@ -1193,8 +1125,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:371",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "genetics",
@@ -1207,8 +1138,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:385",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "industrialization",
@@ -1225,8 +1155,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:398",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "mechanization",
@@ -1247,8 +1176,7 @@
       "opensCrafts": [
         "concrate"
       ],
-      "source": "js/science.js:412",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "metalurgy",
@@ -1261,8 +1189,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:428",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "combustion",
@@ -1277,8 +1204,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:440",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "ecology",
@@ -1291,8 +1217,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:454",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "electronics",
@@ -1311,8 +1236,7 @@
       "opensCrafts": [
         "microchip"
       ],
-      "source": "js/science.js:472",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "robotics",
@@ -1329,8 +1253,7 @@
       "opensCrafts": [
         "tanker"
       ],
-      "source": "js/science.js:490",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "ai",
@@ -1347,8 +1270,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:505",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "quantumCryptography",
@@ -1363,8 +1285,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:519",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "blackchain",
@@ -1377,8 +1298,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:531",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "nuclearFission",
@@ -1396,8 +1316,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:543",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "rocketry",
@@ -1413,8 +1332,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:557",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "oilProcessing",
@@ -1429,8 +1347,7 @@
       "opensCrafts": [
         "kerosene"
       ],
-      "source": "js/science.js:574",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "sattelites",
@@ -1445,8 +1362,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:587",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "orbitalEngineering",
@@ -1462,8 +1378,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:602",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "thorium",
@@ -1478,8 +1393,7 @@
       "opensCrafts": [
         "thorium"
       ],
-      "source": "js/science.js:615",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "exogeology",
@@ -1494,8 +1408,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:628",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "advExogeology",
@@ -1510,8 +1423,7 @@
       "opensCrafts": [
         "eludium"
       ],
-      "source": "js/science.js:641",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "nanotechnology",
@@ -1526,8 +1438,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:656",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "superconductors",
@@ -1542,8 +1453,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:669",
-      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+      "scope": "此处列出部分功能依赖，政策和工坊关联另列目录。"
     },
     {
       "referenceKey": "antimatter",
@@ -1559,8 +1469,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:682",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "terraformation",
@@ -1575,8 +1484,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:696",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "hydroponics",
@@ -1591,8 +1499,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:708",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "exogeophysics",
@@ -1605,8 +1512,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:720",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "particlePhysics",
@@ -1624,8 +1530,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:730",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "dimensionalPhysics",
@@ -1637,8 +1542,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:745",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "artificialGravity",
@@ -1650,8 +1554,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:757",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "chronophysics",
@@ -1669,8 +1572,7 @@
       ],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:769",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "tachyonTheory",
@@ -1686,8 +1588,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:783",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "cryptotheology",
@@ -1700,8 +1601,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:797",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "voidSpace",
@@ -1717,8 +1617,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:812",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     },
     {
       "referenceKey": "paradoxalKnowledge",
@@ -1732,8 +1631,7 @@
       "opensBuildings": [],
       "opensJobs": [],
       "opensCrafts": [],
-      "source": "js/science.js:833",
-      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+      "scope": "此处列出部分依赖，详细升级和太空解锁仍需验证。"
     }
   ],
   "recipes": [
@@ -1745,7 +1643,6 @@
       "baseOutput": 1,
       "engineerTier": 1,
       "engineerDifficulty": 1,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "separate-refinement"
     },
     {
@@ -1756,7 +1653,6 @@
       "baseOutput": 1,
       "engineerTier": 1,
       "engineerDifficulty": 1,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1767,7 +1663,6 @@
       "baseOutput": 1,
       "engineerTier": 1,
       "engineerDifficulty": 1,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1778,7 +1673,6 @@
       "baseOutput": 1,
       "engineerTier": 1,
       "engineerDifficulty": 4,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1790,7 +1684,6 @@
       "baseOutput": 1,
       "engineerTier": 2,
       "engineerDifficulty": 4,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1802,7 +1695,6 @@
       "baseOutput": 1,
       "engineerTier": 4,
       "engineerDifficulty": 9,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1813,7 +1705,6 @@
       "baseOutput": 1,
       "engineerTier": 3,
       "engineerDifficulty": 5,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1825,7 +1716,6 @@
       "baseOutput": 1,
       "engineerTier": 4,
       "engineerDifficulty": 7,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1837,7 +1727,6 @@
       "baseOutput": 1,
       "engineerTier": 5,
       "engineerDifficulty": 300,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1848,7 +1737,6 @@
       "baseOutput": 1,
       "engineerTier": 2,
       "engineerDifficulty": 2,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1861,7 +1749,6 @@
       "baseOutput": 1,
       "engineerTier": 3,
       "engineerDifficulty": 20,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1874,7 +1761,6 @@
       "baseOutput": 1,
       "engineerTier": 5,
       "engineerDifficulty": 20,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1885,7 +1771,6 @@
       "baseOutput": 1,
       "engineerTier": 2,
       "engineerDifficulty": 5,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1896,7 +1781,6 @@
       "baseOutput": 1,
       "engineerTier": 2,
       "engineerDifficulty": 5,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1909,7 +1793,6 @@
       "baseOutput": 1,
       "engineerTier": 3,
       "engineerDifficulty": 20,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1920,7 +1803,6 @@
       "baseOutput": 1,
       "engineerTier": 1,
       "engineerDifficulty": 1,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1932,7 +1814,6 @@
       "baseOutput": 1,
       "engineerTier": 2,
       "engineerDifficulty": 2,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1944,7 +1825,6 @@
       "baseOutput": 1,
       "engineerTier": 3,
       "engineerDifficulty": 5,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1956,7 +1836,6 @@
       "baseOutput": 1,
       "engineerTier": 3,
       "engineerDifficulty": 10,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1967,7 +1846,6 @@
       "baseOutput": 1,
       "engineerTier": 3,
       "engineerDifficulty": 5,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1980,7 +1858,6 @@
       "baseOutput": 1,
       "engineerTier": 3,
       "engineerDifficulty": 5,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -1992,7 +1869,6 @@
       "baseOutput": 1,
       "engineerTier": 5,
       "engineerDifficulty": 7500,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     },
     {
@@ -2005,7 +1881,6 @@
       "baseOutput": 1,
       "engineerTier": 7,
       "engineerDifficulty": 10000,
-      "source": "js/workshop.js:2116–2349",
       "bonus": "standard-craft"
     }
   ],
@@ -2027,15 +1902,14 @@
     "stoneBarns",
     "reinforcedBarns"
   ],
-  "initialCraftSource": "js/workshop.js:2542–2573",
   "excludedResearch": [
     {
       "referenceKey": "brewery",
-      "reason": "Retired research node; present in source but intentionally disconnected."
+      "reason": "已退役研究节点，保留定义但有意断开解锁路径。"
     },
     {
       "referenceKey": "artificialGravity",
-      "reason": "Exists but unlocking depends on SPACE_EXPL feature flag; do not expose by unconditional edge."
+      "reason": "存在定义，但解锁依赖 SPACE_EXPL 功能开关；不能无条件开放。"
     }
   ],
   "buildingStages": [
@@ -2051,8 +1925,7 @@
       "normalEffects": {
         "energySupply": 2
       },
-      "source": "js/buildings.js:388–413",
-      "caveat": "Winter×.75;summer÷.75;solarFarmRatio/summerchallenge/season-specific bonuses also apply."
+      "caveat": "冬季乘 0.75，夏季除以 0.75；还应用 solarFarmRatio、夏季挑战及季节专属加成。"
     },
     {
       "base": "aqueduct",
@@ -2068,8 +1941,7 @@
       "normalEffects": {
         "energySupply": 5
       },
-      "source": "js/buildings.js:449–477",
-      "caveat": "Supply×(1+hydroPlantRatio)."
+      "caveat": "电力供给乘 (1 + hydroPlantRatio)。"
     },
     {
       "base": "library",
@@ -2089,8 +1961,7 @@
         "cultureCapacity": 250,
         "energyDemand": 2
       },
-      "source": "js/buildings.js:576–641",
-      "caveat": "Observatory/libraryRatio,biolab uplink,AI,cryocomputing dynamic modifiers apply."
+      "caveat": "应用天文台、libraryRatio、生物实验室上行链路、人工智能和低温计算动态修正。"
     },
     {
       "base": "amphitheatre",
@@ -2107,8 +1978,7 @@
         "culturePerTick": 1,
         "cultureCapacity": 300
       },
-      "source": "js/buildings.js:1867–1904",
-      "caveat": "Culture output/cap multiplied byclamp(energySupply/energyDemand,1,1.75),rounded down.001,and1+satellites×broadcastTowerRatio."
+      "caveat": "文化产出与容量乘 clamp(energySupply / energyDemand, 1, 1.75)，向下取整到 0.001，再乘 (1 + satellites × broadcastTowerRatio)。"
     },
     {
       "base": "warehouse",
@@ -2128,9 +1998,8 @@
         "planetCrackerStorageBonus": 0.0085,
         "cryostationStorageBonus": 0.0085
       },
-      "source": "js/buildings.js:849–928",
-      "caveat": "Charts have extra1.35^count price factor(total1.5525^count).Power total5nforn≤10,else.5n(n−9)+45. FreightfulExchange automation grants.5tradeVolume each, transportSuperposition addsanother.5."
+      "caveat": "星图另有 1.35^count 价格因子，总计 1.5525^count；n ≤ 10 时总功率为 5n，否则为 0.5n(n − 9) + 45。FreightfulExchange 自动化每座提供 0.5 tradeVolume，transportSuperposition 再增加 0.5。"
     }
   ],
-  "stageChangeRule": "Sourcebuildings3532–3574: sell all old-stage units at current refund percentage, switch stage, set built/active count0; new-stage units must be purchased separately. It is not a free1:1upgrade."
+  "stageChangeRule": "按当前返还比例出售全部旧阶段建筑，切换阶段并将建成与启用数量归零；新阶段建筑须另行购买，不是免费的一对一升级。"
 }

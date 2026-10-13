@@ -1,39 +1,39 @@
-# Faith, sky travel and time
+# 信仰、星空旅行与时间
 
-## Faith pools and actions
+## 信仰数值与行动
 
-VERIFIED `js/religion.js:1535–1703`. Keep spendable faith F, accumulated worship W, epiphany E and transcendence tier T as separate quantities. Original Chinese display suggestions: 信仰、颂愿、灵悟、升华阶位.
+以下规则已核实。可消耗信仰 F、累计颂愿 W、灵悟 E、升华阶位 T 必须分别保存。
 
-- Praise: W gains F×(1+A), where A=.05×(√(1+80E)−1). Leave F at.0001.
-- Adore: E gains W/1,000,000×(T+1)^2×B and W becomes.01. T counts as zero unless the transcendence upgrade is owned. Normal manual B=1.01 (`js/religion.js:3157`); passive reset path uses B=1.
-- Solar revolution requires its purchased upgrade. Raw production bonus is(√(1+.008W)−1)/200. Apply limited diminishing returns with limit10+additionalLimit+(T if atheism completed), then multiply by1+faithSolarRevolutionBoost. This is a bonus, so production multiplier is1+bonus.
-- Transcend price total at tier T: C(T)=.05×(e^T/10)×(e^T/10+1). Next price C(T+1)−C(T). Transcendence upgrade required; E must be strictly greater than price. Deduct next price and increment T once. It does not clear all epiphany.
-- Religion upgrades become visible at a W threshold but are paid using spendable faith and usually gold. Repeated purchases use2.5 price growth when transcendence makes them stackable; several remain single purchases.
-- Sacrifice2,500灵鹿(unicorns) for one灵露(tears) per active叠石祭坛(ziggurat). Requires the faith tab and an active altar.
-- Sky creatures, corruption, dark-creature upkeep/debt, relic refining, black structures, pacts, and post-apocalypse population scaling are separate systems; they are not represented by a generic faith multiplier.
+- 赞颂使 W 增加 `F×(1+A)`，其中 `A=0.05×(√(1+80E)−1)`，F 留为 0.0001。
+- 崇敬使 E 增加 `W/1,000,000×(T+1)^2×B`，W 变为 0.01。未拥有升华升级时 T 按零计算。普通手动操作 B=1.01，被动重置路径 B=1。
+- 太阳革命需要购买对应升级。原始生产加成为 `(√(1+0.008W)−1)/200`。先按 `10+额外限值+无神挑战完成时的T` 进行有限递减，再乘以 `1+faithSolarRevolutionBoost`。这是加成值，最终生产倍率为 `1+加成`。
+- 升华阶位 T 的累计价格为 `C(T)=0.05×(e^T/10)×(e^T/10+1)`，下次价格为 `C(T+1)−C(T)`。需要升华升级，且 E 必须严格大于价格。扣除下次价格后，T 增加一次，不清空全部灵悟。
+- 宗教升级在颂愿达到阈值后显示，但使用可消耗信仰和通常所需的黄金支付。升华允许叠加时，重复购买的价格倍率为 2.5；部分升级仍只能购买一次。
+- 每献祭 2,500 灵鹿（`unicorns`），每座启用的叠石祭坛（`ziggurat`）产出一份灵露（`tears`）。需要信仰页签和启用的祭坛。
+- 天界生物、腐化、幽暗生物供养与债务、遗物精炼、黑暗建筑、契约及末日人口缩放均是独立系统，不能统一用一个信仰倍率表示。
 
-Fixtures: Praise100faith with E=0 gives+100W and F=.0001. E=.1 gives A=.1, so praise100 gives+110W. Adore1,000,000W at T=0/B=1 gives+1E; at T=2 gives+9E. Solar revolution at W=1,000 gives.01 bonus; at W=1,000,000 givesapproximately.44224 bonus before special effects. Transcend tier0→1 costs.01178593719 epiphany (verify numeric tolerance via C formula).
+验算：E=0 时赞颂 100 信仰，W 增加 100，F=0.0001。E=0.1 时 A=0.1，赞颂 100 得到 110 W。以 B=1 崇敬 1,000,000 W，T=0 时增加 1 E，T=2 时增加 9 E。太阳革命在 W=1,000 时加成为 0.01；W=1,000,000 时，在特殊效果前约为 0.44224。阶位 0→1 消耗 0.01178593719 灵悟，应通过 C 公式校验容差。
 
-## Space architecture
+## 太空系统
 
-VERIFIED `js/space.js:23–209,211–435`. Rocketry unlocks the space tab, not all missions. Each mission has a cost, prerequisites and a destination; destination discovery/reach status and route travel time are separate. Space buildings require reached planets and sometimes additional research. They use independent geometric price growth. Space production has a dedicated multiplier path: do not multiply every output by village happiness or normal paragon production.
+火箭学解锁太空页签，不直接解锁全部任务。每个任务有成本、前置条件和目的地；目的地发现、到达状态及航线行程分别记录。太空建筑要求到达对应星球，有时还需额外研究，并采用独立等比价格。太空生产拥有专用倍率路径，不能全部乘以村庄幸福度或普通典范生产加成。
 
-All13mission costs and edges plus selected reachable-space construction facts are in06-late-selected-facts.json. The full24-space-building checklist is in09-feature-catalogue. All12planet entries, their route times, cyclic celestial effects, orbital production/power/capacities and travel speed must be considered. Listing a destination does not prove gameplay to it is implemented.
+全部 13 个任务的成本和依赖，以及部分可达太空建筑数值见 `06-late-selected-facts.json`。当前运行时的 13 项任务与 22 个可用太空建筑清单见 `09-feature-catalogue.md`；数值规范另保留两个默认禁用的建筑占位。12 个星球条目、行程、星象周期效果、轨道生产、电力、容量和旅行速度均需考虑。列出目的地不代表已经实现前往该处的玩法。
 
-Critical reachability sequence: astronomy→starcharts→navigation→ships/trade→titanium→industrial science/storage→rocketry→orbitalLaunch→moonMission→moonOutpost→unobtainium→spaceElevator/advanced storage→deep-space missions. Chronophysics also needs time crystals from the mythic-faith progression; relabeling a moon button is not a substitute for that chain.
+关键可达链为：天文学→星图→航海→船只与贸易→钛→工业科学与仓储→火箭学→轨道发射→月球任务→月球前哨→稀星矿→太空电梯与高级仓储→深空任务。时空物理还需要神话信仰路线中的时间水晶；只修改月球按钮名称不能满足这条发展链。
 
-## Time systems (partial verified contract)
+## 时间系统：部分已核实规则
 
-`js/time.js:315–652`: temporal batteries start at5timeCrystals, grow1.25 per purchase, add750temporal-flux capacity. Base flux cap3,000ticks(10minutes). Blast furnace starts25timeCrystals+5relics, growth1.25, heat-transfer.02/tick, heat capacity100 before upgrades. Furnace automation uses100heat per crystal shatter and respects controlled delay. Other chronoforge and void-space units are catalogued with exact locations; costs/effects are not yet fully specified here.
+时间电池初始成本 5 时间水晶，每次购买价格乘以 1.25，增加 750 时间通量容量。基础通量上限为 3,000 刻，即 10 分钟。高炉初始成本为 25 时间水晶和 5 遗物，价格倍率 1.25，传热 0.02/刻，升级前热容量 100。高炉自动化每碎裂一枚水晶消耗 100 热量，并遵守受控延迟。其他时铸与虚空设施已收录，但本篇尚未完整规定成本和效果。
 
-Time acceleration and crystal shattering are distinct actions. One alters simulation speed at temporal-flux cost; the other advances years and adds heat, with resource-retrieval, dark-future and challenge adjustments. Using a fixed amount of ordinary seconds for shatter without those rules is an approximation. Cryochambers and used chambers affect reset persistence and repair. Temporal paradoxes generate void and modify calendar progression. These need their own mechanics and tests.
+时间加速与水晶碎裂是独立行动：前者消耗时间通量改变模拟速度；后者推进年份并增加热量，同时应用资源回收、黑暗未来及挑战修正。以固定普通秒数替代碎裂且忽略这些规则只能视为近似。休眠舱与使用过的舱室影响重置保留和修复。时间悖论产生虚空并改变日历推进。以上机制需要独立测试。
 
-## Feature-flag caveats
+## 功能开关
 
-Artificial gravity exists as research but its predecessor edge is added only with SPACE_EXPL (`js/science.js:2169–2178`). Mausoleum/pacts and dark paracosm also have source feature flags. Explicitly choose the reference configuration being emulated; otherwise no single universal completeness claim is meaningful.
+人造重力虽有研究定义，但前置依赖仅在 `SPACE_EXPL` 启用时加入。陵墓契约和暗境也有独立开关。规则覆盖与验收必须明确采用的配置；默认配置见 `15-default-profile-and-handoff.md`。
 
-## Corruption and mythic chain
+## 腐化与神话发展链
 
-VERIFIED`js/religion.js:182–188,218–303,362–394`. With any alicorn stock, each marker supplies.000001corruption progress/tick (before its challenge modifier). If necrocorns exceed the existence threshold, multiply by.25×(1+corruptionBoostRatio). Threshold is0 normally,1with feeding-frenzy policy. Then multiply by1+√(sorrow×blsCorruptionRatio) and1+necrocornCorruptionInterference. When progress reaches1, one alicorn becomes one necrocorn, but the reference preserves a positive remainder of alicorns: maximum convertible isceil(alicornStock)−1. If conversion cannot proceed, progress is capped at1. Siphoning directs new necrocorns to outstanding pact debt before stock accumulation.
+持有星翼鹿（`alicorn`）时，每座标记碑基础提供 0.000001 腐化进度/刻，再应用挑战修正。幽角鹿（`necrocorn`）库存超过存在阈值时，乘以 `0.25×(1+corruptionBoostRatio)`。阈值通常为 0，盛宴馈赠政策下为 1。随后乘以 `1+√(sorrow×blsCorruptionRatio)` 和 `1+necrocornCorruptionInterference`。进度达到 1 时，一只星翼鹿转为一只幽角鹿，但必须保留正的星翼鹿余量：最多转换 `ceil(星翼鹿库存)−1`。无法继续转换时，进度最多保留 1。引流偿约会优先将新增幽角鹿用于偿付契约债务。
 
-10mythic structure factual costs/effects and transforms now appear in06-late-selected-facts.json. Their default initial unlock is onlyunicornTomb, then tower→citadel→palace→utopia→spire. Marker/graveyard/pyramid dynamic gates remain labelledunverified until read. Palette and divine-creature names are original suggestions, not copied artwork or text.
+十种神话建筑的成本、效果与转换见 `06-late-selected-facts.json`。默认初始只解锁 `unicornTomb`，随后为高塔→城塞→宫殿→理想乡→日尖塔。标记碑、墓园与金字塔的动态条件仍需核实。

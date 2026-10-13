@@ -1,43 +1,38 @@
-# Build queue and engineering mechanics
+# 建造队列与工程师规则
 
-These modules are independently authored implementations of functional and numeric facts verified against reference commit 781e379f. No source functions, text, art or data tables were copied. Names and Chinese explanation are original.
+本文记录完整开发版本的队列、工程师和自动化规则；公开章节的范围见[章节发布架构](docs/CHAPTER_RELEASES.md)。
 
-## Ordered queue
+## 顺序队列
 
-- Queue and offline queue support belong to the default profile.
-- Capacity: floor((3 + construction's 1 + workshop queue-cap effects + active AI cores + hash level) × (1 + queue-cap ratio)). Technocracy gives a ratio of 0.2, not two fixed places. The five engineer upgrades add 1, 2, 2, 3 and 3 places. Hash level is nonnegative floor(log(hashrates / 1000) / log(1.6)).
-- Every unit in grouped entries uses a slot. Adjacent copies of the same repeatable item are combined. Single-use categories enqueue one at a time. Orders may be moved, reduced, removed or explicitly cleared.
-- Enqueueing reserves and spends nothing. The first entry is evaluated at its current price and gates. One unit is processed per normal simulation tick. Insufficient resources, storage or temporary gates keep the head in place, without spending. Completed, incompatible policy or invalid entries are skipped. Current building stage prices are used, rather than stale queued prices.
-- Queue categories: buildings initially; research and policies after a library; regular upgrades after a workshop; worship after a temple outside atheism; ancient religion after a ziggurat; striped upgrades after a striped workshop; missions after rocketry; space buildings after a satellite or reached planet; transcendence after cryptotheology; chronoforge after its upgrade; void structures after void-space research or used cryochambers.
-- Embassy queues additionally require writing, a known embassy-capable partner, and either ambassadors or big-stick policy. Treaties unlocks the dynamically cheapest partner. Embassy culture costs scale by 1.15 per level, with embassy-cost reduction and fake-bought effects applied.
-- No automatic sacrifices, reset, market trades, or challenge activation can be enqueued.
-- Source unlocks, current order and remaining counts are saved. New runs clear the queue.
-- ETA combines base net production with average engineer ingredient consumption and output, rounds crafted resources to whole engineer cycles, and rejects impossible storage or nonpositive production. The offline backend owns segment timing and invokes the same purchase path; the queue never bypasses affordability.
+- 默认配置支持队列及离线队列。
+- 容量为 `floor((3 + 建筑学提供的 1 格 + 工坊队列容量效果 + 启用的人工智能核心数 + 哈希等级) × (1 + 队列容量比例))`。技术官僚制提供 0.2 的比例加成；五项工程师升级分别增加 1、2、2、3、3 格。哈希等级为不小于零的 `floor(log(hashrates / 1000) / log(1.6))`。
+- 合并条目中的每个单位占一格。相邻的同类可重复条目合并，一次性类别每次排入一个。订单可移动、减量、移除或经明确操作清空。
+- 入队不预留或消耗资源。队首按当前价格和条件判断，每个普通模拟步处理一个单位。资源、容量不足或临时条件不满足时保留队首且不扣款；已完成、政策不兼容或无效条目会跳过。建筑使用当前阶段价格。
+- 建筑初始可入队；拥有图书馆后可排研究和政策，拥有工坊后可排普通升级；非无神论状态且有神殿时可排崇拜，有金字塔后可排远古信仰，有条纹工坊后可排条纹升级；火箭学后可排任务，有卫星或到达行星后可排太空建筑，隐秘神学后可排超越，有相应升级后可排时间锻炉，虚空研究完成或拥有已用冷冻舱后可排虚空建筑。
+- 使馆队列还要求文字、已知且支持使馆的伙伴，以及大使或大棒政策。条约动态解锁最便宜的伙伴。使馆文化成本每级乘 1.15，并应用使馆成本减免和虚拟购买数量效果。
+- 不能将自动献祭、重置、市场交易或挑战激活加入队列。
+- 解锁状态、当前顺序和剩余数量会保存；新一轮游戏清空队列。
+- 预计等待时间结合基础净产量与工程师平均原料消耗、产出，将制作资源向上取整到完整工程周期；容量不足或净产量不为正时判定无法完成。离线结算负责区间时序并调用相同购买路径，队列不能绕过支付检查。
 
-Source coordinates: time.js 2032–2750, science.js 122 and 1077, workshop.js 1353–1417; category unlock calls in buildings.js, science.js, diplomacy.js, space.js and workshop.js. Embassy costs: diplomacy.js 1582–1588.
+## 专职工程师
 
-## Specialist engineers
+- 机械化开放工程师职业，每座工厂提供一个工程师名额，包括停用工厂。拆除工厂会收紧名额，优先释放空闲工程师。每位专职人员必须是现有工程师小熊，分配不能生成或重复计入人口。
+- 每位工程师每步的名义制作次数为：`(1 + 配方自动化加成) × (1 − 0.15 × 缺少的等级数) × (1 + 有效技能加成) × 幸福度因子 × 领袖倍率 × 工程层级因子 × 神圣人口因子 × 神经网络因子 / (3000 × 配方难度)`。
+- 幸福度和领袖只影响正贡献。七阶配方的新手可能产生负贡献，该负值不应用这两项倍率。
+- 等级匹配、无技能、普通幸福度的工程师，在其他加成前每点难度需 600 秒。超过配方层级不额外提速。技能阈值、技能与大师技能效果、领袖和幸福度与其他职业共用。无政府状态取消技能加成，神经网络使工程速度翻倍。
+- 层级因子由该层级研究效果与 `UniversalKnowHow` 相加得到，仅在总和恰好为零时回退到 1。因此单独的 0.1 通用加成得到 0.1。反物质裂变只给星合金专职配方的自动化因子增加 0.25。
+- 进度按配方保存，重新分配时保留。普通进度在 `[0,1)`；严重低于配方等级时可出现负中间值。尚未完成整次制作时，需要持有相应比例的原料才能推进，但不扣除。完成时按可负担比例决定整数制作次数，同次制作的全部原料一起扣除，产出应用普通制作加成。
+- 输入容量不足时无法完成配方，除非已有超容量库存足以支付。依赖配方的容量也参与判断。产出受容量裁切，已满仓的产品仍可能消耗原料，界面需显示警告。
+- 未分配配方的工程师不获得当前职业经验。解雇、死亡、重置或名额减少不能留下虚构的专职人数。重置清空配方进度；保留的小熊返回时没有职业或专长。
 
-- Mechanization opens the engineering job. Each built factory provides one engineer slot, including disabled factories. Removing factories enforces the lower slot limit, releasing idle engineers first. Each specialist is an actual existing engineer bear; assignment cannot create or double-count population.
-- For each assigned worker, nominal crafts per tick are:
-  (1 + recipe automation bonus) × (1 − 0.15 × missing ranks) × (1 + effective skill bonus) × happiness factor × leader multiplier × engineering tier factor × holy population factor × neural-network factor / (3000 × recipe difficulty).
-- Happiness and leadership apply to positive worker contributions only. Negative tier-seven novice contributions keep their sign without these multipliers.
-- A matched-rank, unskilled, ordinarily happy engineer takes 600 seconds per difficulty point before bonuses. Rank above the recipe tier gives no extra speed. Existing skill thresholds, skill and master-skill effects, leadership and happiness are shared with other jobs. Anarchy removes skill bonuses. Neural networks doubles engineer speed.
-- The tier factor is tier-specific research effects plus UniversalKnowHow; it falls back to 1 only when the sum is exactly zero. Therefore a 0.1 universal bonus by itself is 0.1, not 1.1. Antimatter fission adds 0.25 only to the eludium specialist's automation factor.
-- Progress is per recipe and retained when assignments change. Ordinary progress is in [0,1); the source also permits a negative intermediate value for a severely under-ranked specialist. Before a whole craft is ready, proportional ingredients must be present for progress to advance, but they are not spent. At completion, the affordable portion determines whole crafts. All ingredients for each whole craft are deducted together; normal crafting bonuses determine output.
-- Input storage too small for a recipe prevents completion, except where above-cap retained stock already covers the price. Dependency recipes' storage constraints also count. Output is clipped to its capacity as in the reference; capped products can consume ingredients. The UI exposes this warning.
-- Empty-specialty engineers do not gain their active job's experience. Firing, death, reset or lost slots cannot leave a counted phantom specialist. Reset clears recipe progress; retained bears return without jobs or specialties.
+## 边界与界面
 
-Source coordinates: village.js 328–330, 468–471, 690–723, 3304, 3518–3666; workshop.js 2116–2349, 2633–2704 and 2710–2750, 2880–2915; religion.js 1558–1573.
+- 仅抑制相邻的一次性重复条目；被其他条目隔开的重复项仍可排入，到达队首时若已完成则无偿丢弃。
+- 七阶配方新手保留负中间速度。非正贡献跳过幸福度和领袖加成；每次从 `max(原进度, 0)` 开始，因此负结果可保存但不会无限累积。
+- 整次制作边界的浮点比较包含微小容差，避免恰好 600 秒的制作因二进制舍入多等一步。
+- 当前版本已停用已完成操作的撤销。购买前移除队列条目仍是独立操作。
+- 前端通过明确按钮和数量控件操作。
 
-## Boundary and interface notes
+## 集成验证
 
-- Duplicate one-time entries are suppressed only when adjacent. A later duplicate separated by another entry remains queued, then is discarded without paying again if already completed.
-- Tier-seven novice specialists preserve the reference negative intermediate speed. Nonpositive contributions skip happiness/leader boosts; each pass starts from max(previous progress, 0), so a negative result can be saved but does not accumulate indefinitely.
-- Float comparisons include a tiny tolerance at whole-craft boundaries, so an exact 600-second unit does not wait an extra tick due to binary rounding.
-- Supported completed actions have the separately implemented 20-second runtime undo slot. Queue removal before purchase remains a distinct action.
-- The frontend uses explicit buttons and quantity controls rather than source desktop keyboard modifiers.
-
-## Integration verification
-
-`tests/automation.test.mjs` checks base rates, every multiplicative factor, specialist accounting, atomic ingredient consumption, partial stalls, input and output caps, job-cap reductions, queue capacity/ordering/grouping, current prices, source gates, strict save parsing, embassy escalation, Technocracy, actual mission purchases, and offline lock/equivalence behavior. Engine-owned redshift tests additionally define compressed offline scheduling behavior.
+`tests/automation.test.mjs` 覆盖基础速率、各乘法因子、专职人数、原料原子扣除、部分停滞、输入输出容量、职业名额缩减、队列容量与顺序、条目合并、当前价格、解锁条件、严格存档解析、使馆成本递增、技术官僚制、实际任务购买及离线锁定与一致性。引擎离线结算测试另行规定压缩调度行为。

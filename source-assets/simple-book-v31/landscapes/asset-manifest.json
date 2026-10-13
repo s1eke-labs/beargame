@@ -1,6 +1,6 @@
 {
-  "generationMode": "built-in image_gen",
-  "style": "simple rounded bear picture-book, sparse outlined flat-shape terrain",
+  "generationMode": "内置 image_gen",
+  "style": "简洁圆润的小熊绘本风格，稀疏轮廓线与平涂形状地形",
   "files": [
     {
       "file": "home-clearing.png",
@@ -8,7 +8,7 @@
       "width": 1086,
       "height": 1448,
       "original": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-28c3e61b-e919-4604-be59-bd1a07c34555.png",
-      "notes": "Portrait home terrain. Spacious open ground and branching cream paths. No baked buildings or bears."
+      "notes": "竖幅家园地形。开阔空地与分岔的奶油色小路，没有预先画入的建筑或小熊。"
     },
     {
       "file": "worlds-atlas.png",
@@ -17,11 +17,29 @@
       "height": 1024,
       "original": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-66304c8f-df01-43a4-a272-8b374d1c5d67.png",
       "panels": [
-        {"name": "world-settlement", "x": 0, "y": 0, "width": 512, "height": 1024},
-        {"name": "world-industrial", "x": 512, "y": 0, "width": 512, "height": 1024},
-        {"name": "world-stellar", "x": 1024, "y": 0, "width": 512, "height": 1024}
+        {
+          "name": "world-settlement",
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 1024
+        },
+        {
+          "name": "world-industrial",
+          "x": 512,
+          "y": 0,
+          "width": 512,
+          "height": 1024
+        },
+        {
+          "name": "world-stellar",
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 1024
+        }
       ],
-      "notes": "Each world has six large empty zones for separate landmark overlays. Settlement river/roads, industrial canal/rail, stellar linked islands. No landmark buildings or characters."
+      "notes": "每个世界包含六个大型空白区域，用于叠加独立地标。聚落包含河流和道路，工业区包含运河和铁轨，星空区由岛屿相连。没有地标建筑或角色。"
     },
     {
       "file": "regions-atlas.png",
@@ -30,11 +48,29 @@
       "height": 836,
       "original": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-d3b134d3-9bc7-4a93-b1f0-630eb63c976c.png",
       "panels": [
-        {"name": "region-woodland", "x": 0, "y": 0, "width": 627, "height": 836},
-        {"name": "region-river", "x": 627, "y": 0, "width": 627, "height": 836},
-        {"name": "region-twilight", "x": 1254, "y": 0, "width": 627, "height": 836}
+        {
+          "name": "region-woodland",
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 836
+        },
+        {
+          "name": "region-river",
+          "x": 627,
+          "y": 0,
+          "width": 627,
+          "height": 836
+        },
+        {
+          "name": "region-twilight",
+          "x": 1254,
+          "y": 0,
+          "width": 627,
+          "height": 836
+        }
       ],
-      "notes": "Very thin generated vertical separation lines at panel edges. When cropping for integration, trim 1-2 pixels at interior vertical boundaries. Sparse edge trees and open centers. No bears, buildings or UI."
+      "notes": "面板边缘有生成的极细竖向分隔线。整合裁切时，在内部竖直边界裁掉 1–2 像素。边缘树木稀疏，中央开阔。没有小熊、建筑或界面。"
     }
   ],
   "qa": {
@@ -42,6 +78,6 @@
     "noBakedBearsOrBuildings": true,
     "noTextOrWatermarks": true,
     "grassNoiseAndLeafStipplingRemoved": true,
-    "minorDeviation": "A subtle smooth color wash remains despite flat-color instruction; no granular painterly texture."
+    "minorDeviation": "尽管要求平涂，仍保留轻微平滑色彩晕染；没有颗粒状绘画纹理。"
   }
 }

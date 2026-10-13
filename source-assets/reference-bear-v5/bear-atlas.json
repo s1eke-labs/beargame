@@ -651,12 +651,12 @@
     }
   },
   "notes": [
-    "All crops are integer source pixels. x/y are top-left and width/height are dimensions.",
-    "Use crops, not percentage grid offsets: generated atlas dimensions are 1254 x 1254, so conceptual cells are 313.5px.",
-    "Animation pairs share identical crop width/height and anchor/baseline offsets. Do not scale frames independently.",
-    "Source anchor x is median center of white upper-head pixels, source anchor y is bottom edge of visible alpha >=128 silhouette.",
-    "Recommended crops enclose all alpha >=8 pixels plus 3px, excluding near-invisible low-alpha generation speckles in gutters. All nonzero-alpha cell bounds are supplied separately.",
-    "Original alpha is untouched. White fill is visually solid but generated interiors are mostly alpha 253-254, not uniformly 255. No alpha repair or background compositing was done."
+    "所有裁切坐标均为源图像整数像素。x/y 表示左上角，width/height 表示宽高。",
+    "使用裁切框，不使用百分比网格偏移：生成图集为 1254×1254，因此概念单元宽高为 313.5px。",
+    "动画配对帧共用相同的裁切宽高、锚点和基线偏移。不要对各帧独立缩放。",
+    "源锚点 x 为头部上半区白色像素中心的中位数，源锚点 y 为 alpha >=128 的可见轮廓底边。",
+    "建议裁切框包围全部 alpha >=8 的像素并外扩 3px，排除间隔中几乎不可见的低透明度生成杂点。所有非零透明度的单元边界另行提供。",
+    "原始透明通道未经修改。白色填充视觉上实心，但生成图像内部的 alpha 多为 253–254，并非统一为 255。未修复透明通道或合成背景。"
   ],
   "validation": {
     "alphaMin": 0,

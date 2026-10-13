@@ -1,17 +1,17 @@
-# Independent QA scope
+# 独立质量验证范围
 
-These checks evaluate the independently implemented Beargame. The private reference checkout is not executed or included in delivery. The numeric reference is fixed at 781e379f79f1e7512d168849cba21ed111502644; the factual specification is maintained separately.
+这些检查面向 Beargame 的游戏规则、存档安全和界面行为。验证应以本项目的功能约定、数据目录和可复现操作为依据。
 
-## Required checks
+## 必须检查的内容
 
-- Empty new-game quantities and exact base storage; first prices, geometric batches, discounts, storage multiplication.
-- Tick/day/season conversion, hive weather/season factors, worker production, happiness and worker-only extra food consumption, arrivals and starvation.
-- Action prerequisites, craft ratios, research/upgrade effects, exchange probabilities and resource conservation; detect unavailable/decorative late-game systems.
-- Safe atomic actions under insufficient resources and invalid counts; finite values under unusual elapsed time and malformed import.
-- Export/import round-trip, version validation, save corruption preservation, storage failures, offline progression bounds, duplicate catch-up, same-tab and cross-tab conflicts.
-- Real UI dispatch wiring, reset/challenge/import confirmations, tab routing, and mobile/desktop visual layout if supported browser access is actually available.
-- Static file hashes and source-window duplicate checks, asset origin audit, original copy and correct license acknowledgment.
+- 新游戏的资源和建筑数量为空，基础仓储精确；首次价格、等比批量购买、折扣和仓储倍率正确。
+- 模拟步、日期和季节之间的换算，以及蜂箱的天气和季节系数、工人产出、幸福度、仅工人承担的额外食物消耗、居民到来和饥饿机制。
+- 操作前置条件、制作比例、研究和升级效果、交易概率及资源守恒；识别尚不可用或仅有展示的后期系统。
+- 资源不足和数量无效时的原子操作；异常时间跨度和畸形导入下的数值有限性。
+- 导出导入往返、版本校验、损坏存档保留、存储失败、离线进度边界、重复补算、同标签页和跨标签页冲突。
+- 真实界面的事件分发，重置、挑战和导入确认，标签页路由；有受支持的浏览器访问条件时，检查移动端和桌面端视觉布局。
+- 静态文件哈希、资源来源、文案和许可证说明。
 
-## Reporting standard
+## 报告规范
 
-A present card is not a working system. A passing independent engine fixture is not proof of total equivalence to the reference. Report exercised, unexercised, approximate and absent systems separately. Browser-denied or unavailable cases are not passing cases. Do not bypass browser/socket access restrictions.
+界面上存在卡片不代表对应系统已经可用，独立引擎测试通过也不代表所有功能都已验证。应分别报告已测试、未测试、近似实现和缺失的系统。浏览器访问被拒绝或不可用时，不能将相关检查记为通过，也不能绕过浏览器或套接字访问限制。

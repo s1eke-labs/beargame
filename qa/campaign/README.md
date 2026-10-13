@@ -1,44 +1,44 @@
-# Earned normal-action progression campaign
+# 正常操作推进验证
 
-This is an opt-in deterministic engine QA campaign. It starts from `createGame({storage:null, now:1, seed:17})`, then uses only public `act`, `simulate`, `tick`, export and validated import APIs. No resource seeding, unlock flags, state edits, developer multiplier or runtime monkey-patch advances the game.
+这是一套需主动运行的确定性引擎验证流程。从 `createGame({storage:null, now:1, seed:17})` 开始，仅使用公开的 `act`、`simulate`、`tick`、导出及经过校验的导入 API。推进过程不注入资源、不设置解锁标记、不编辑状态，也不使用开发倍率或运行时补丁。
 
-## Run
+## 运行方法
 
-From the checkout root:
+在项目根目录运行：
 
 ```sh
 node qa/campaign/replay.mjs --checkout .
 ```
 
-The checkout defaults to the current directory when it contains `src/engine/index.js`, otherwise to two directories above this runner. `--checkout /path/to/beargame` overrides it. A targeted stage can be reproduced from its documented, earned parent checkpoint:
+当前目录包含 `src/engine/index.js` 时，默认使用该目录；否则使用运行脚本上溯两级的目录。可通过 `--checkout /path/to/beargame` 指定项目位置。单个阶段可以从文档记录的、通过正常操作取得的父检查点复现：
 
 ```sh
 node qa/campaign/replay.mjs --checkout . --stage first-time-shatter
 ```
 
-The full run is deliberately separate from fast unit tests. It prints one compact result per stage. Every replayed public operation must succeed; rejected planner probes that did not advance state are kept outside the compact success-path journals. Assertions check population, deaths, calendar, researched technologies, purchased space facilities, reset counters and finite nonnegative resources. Exported state must exactly match the recorded checkpoint, not merely resemble it. SHA-256 checks protect checkpoint integrity. Gzipped journals retain the exact method, argument list and original call number. At each lineage-stage boundary, the runner exports and reimports the state actually produced by the preceding stage; it does not substitute the expected checkpoint in a full lineage replay. The independently labeled prestige branch starts from its previously verified earned parent. The challenge-ready intermediate checkpoint is checked at its exact journal call.
+完整回放有意与快速单元测试分开，每个阶段输出一条简短结果。每次回放的公开操作都必须成功；规划器中被拒绝且未推进状态的尝试不包含在精简的成功路径日志中。断言检查人口、死亡数、日历、已研究科技、已购买太空设施、重置次数，以及资源是否有限且非负。导出状态必须与记录的检查点精确匹配。SHA-256 校验保护检查点完整性；gzip 压缩日志保留准确的方法、参数列表和原始调用编号。每个连续阶段交界处，运行器会导出并重新导入上一阶段实际生成的状态；完整连续回放不会用预期检查点替换实际结果。单独标注的轮回分支从此前已验证的正常操作父检查点开始。挑战准备就绪的中间检查点会在对应的准确日志调用位置接受检查。
 
-## Proven scope
+## 已证明的范围
 
-The fourteen-stage lineage covers blank opening, production/storage/crafting, research through chronophysics, ordinary trade, faith and praise, steamworks manuscript automation, industrial research, a first orbital launch, unicorn/alicorn rituals, earned time crystals, one successful year shatter, lunar mining, metaphysics, and winter-challenge start/exit. A separate first-prestige branch imports the survival-tested time checkpoint and performs an ordinary confirmed reset. The default run executes all fourteen lineage stages plus this one-action branch: 51,106 successful public calls. Challenge completion is not claimed.
+14 个连续阶段覆盖空档开局、生产、仓储、制作、研究至时空物理、普通交易、信仰与赞颂、蒸汽工坊手稿自动化、工业研究、首次轨道发射、灵鹿与天角鹿仪式、正常取得时晶、一次成功的年度穿越、月面采矿、形而上学，以及冬季挑战开始和退出。单独的首次轮回分支导入经过生存验证的时光检查点，并执行正常确认的重置。默认运行包含全部 14 个连续阶段和这个单次操作分支，共 51,106 次成功的公开调用。此流程未证明挑战完成。
 
-## Important limitations
+## 主要限制
 
-- Most waiting uses the documented compressed offline API. The recorded calls ordinarily advance up to 8,000 real seconds each; two explicit 32,000-second settlements use the documented larger limit available after year 1,000. This compresses a very long, intentionally unoptimized in-game campaign. It is not a pacing or speedrun benchmark.
-- Offline settlement intentionally ignores negative honey balance and rounds some events. Earlier planner checkpoints were food-deficient. The original faith/trade/electricity checkpoints starved during separate 800-second active audits. Those earlier zero-death offline statistics do **not** demonstrate continuous active survival.
-- The `repair-active-survival` stage fixes jobs and builds aqueducts/pastures using legitimately earned stock, then performs sixteen `tick(50)` calls. Later space and time stages also perform full 800-second active-year checks. These repaired checks retain all bears with no deaths. The saved earlier checkpoints are included only to preserve truthful reproducible lineage.
-- The initial caravan does not arrive during the compressed offline-only opening; one ordinary active day discovers it after its year threshold. This is documented here as an offline/live behavior difference, not as a fixed issue or a player softlock.
-- A sky palace's first alicorn event is rounded to zero in an 8,000-second offline batch. A permitted 32,000-second batch establishes the first alicorn, enabling passive production. Sacrificing the entire herd can require establishing it again.
-- At the very late campaign year, shattering one year costs more than one crystal. The successful action pays its current dynamic cost. An earlier failed fuel attempt is excluded from this success-path journal and preserved in the research work directory.
-- This is not all-content coverage: no claim is made about every research, faith upgrade, space destination, time upgrade or challenge completion. Browser interaction is covered separately.
+- 大部分等待使用已记录的压缩离线 API。普通记录每次最多推进 8,000 个现实秒；两次明确的 32,000 秒结算使用第 1,000 年后可用的更高上限。这压缩了一段非常漫长且刻意未优化的游戏流程，不能作为节奏或速通基准。
+- 离线结算有意忽略负蜂蜜余额，并对部分事件取整。早期规划器检查点存在食物不足；原始信仰、交易和电力检查点在单独的 800 秒在线审计中发生饥饿。这些早期零死亡的离线统计不能证明持续在线生存。
+- `repair-active-survival` 阶段使用正常获得的库存调整分工、建造水渠和食圃，然后执行 16 次 `tick(50)`。后续太空和时光阶段也进行完整的 800 秒在线年检查。修正后的检查保留全部小熊且没有死亡。保留较早的检查点，仅用于维持真实、可复现的推进链。
+- 初始商旅不会在仅使用压缩离线结算的开局中抵达；达到年份门槛后，再经过一个普通在线日即可发现。这是一项离线和在线行为差异，此处未将其记为已修复问题或玩家流程卡死。
+- 空中宫殿首次产生天角鹿的事件，在 8,000 秒离线批次中被取整为零。允许的 32,000 秒批次可取得首只天角鹿，从而开启被动产出。献祭整个群体后可能需要重新取得首只。
+- 在流程后期的极高年份，穿越一年需要不止一枚时晶。成功操作支付当时的动态费用。此前一次因燃料不足而失败的尝试未包含在成功路径日志中；原始记录将其保存在研究工作目录，该目录未随本仓库提供。
+- 此流程未覆盖全部内容：没有证明每项研究、信仰升级、太空目的地、时间升级或挑战完成路径。浏览器交互另行验证。
 
-The deterministic time option fixes only the save timestamp and seasonal-gift date; elapsed production is obtained exclusively through the recorded public time APIs.
+确定性时间选项仅固定存档时间戳和季节礼物日期；生产经过的时间全部来自日志记录的公开时间 API。
 
-## Review checkpoints
+## 复核检查点
 
-- `first-time-shatter.save.json`: 94 bears, chronophysics and a successful shatter, after a full active-year survival check. This is the stable late-game browser fixture.
-- `challenge-ready.save.json`: earned lunar mining/metaphysics and adjustmentBureau, immediately before challenge entry.
-- `challenge-start-and-exit.save.json`: the fresh post-exit state; two resets, no active selected challenge.
-- `first-prestige.save.json`: independent ordinary first-reset result from the stable time checkpoint.
+- `first-time-shatter.save.json`：94 只小熊，已完成时空物理研究和一次成功穿越，并经过完整在线年的生存检查。这是稳定的后期浏览器测试存档。
+- `challenge-ready.save.json`：已通过正常操作取得月面采矿、形而上学及 `adjustmentBureau`，处于进入挑战之前。
+- `challenge-start-and-exit.save.json`：退出挑战后的新状态；经历两次重置，没有已选择并激活的挑战。
+- `first-prestige.save.json`：从稳定时光检查点进行普通首次重置的独立结果。
 
-The original raw journals, adaptive planner iterations, deliberately rejected probes, and active-starvation diagnostics remain in the research work directory. The compact bundle contains only the reproducible advancement lineage and clearly labeled branch.
+原始日志、自适应规划器的迭代过程、刻意被拒绝的尝试和在线饥饿诊断，按历史记录保存在未随本仓库提供的研究工作目录中。当前精简包仅包含可复现的推进链和明确标注的分支。

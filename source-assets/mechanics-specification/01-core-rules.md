@@ -1,66 +1,60 @@
-# Core rule contract (VERIFIED unless explicitly marked)
+# 核心规则约定
 
-## Clock and seasons
+除明确标记外，本篇规则均已核实；规则状态不代表实现状态。
 
-Reference: `game.js:2289`, `js/calendar.js:7–42,217–218,427–444,1167–1203`.
+## 时钟与季节
 
-The normal simulation runs at 5 ticks per second. A game day is 10 ticks (2 real seconds), a season is 100 days (200 real seconds), and a year is four seasons (800 real seconds). Season order is spring, summer, autumn, winter. For honey-producing buildings the four base multipliers are 1.5, 1, 1, 0.25. Warm weather adds 0.15 and cold weather subtracts 0.15 from the season multiplier. The beekeeper job's output is added after this weather adjustment and is not itself season-adjusted. Challenge/policy exceptions exist and are separately catalogued.
+常规模拟每秒运行 5 个逻辑刻。一天为 10 刻，即现实 2 秒；一季为 100 天，即现实 200 秒；一年为四季，即现实 800 秒。季节顺序为春、夏、秋、冬。蜂蜜建筑的四季基础倍率依次为 1.5、1、1、0.25。暖天气增加 0.15，冷天气减少 0.15。养蜂人的产出在天气调整之后加入，自身不受季节倍率影响。挑战与政策例外另行记录。
 
-Persist a fractional day/tick remainder, exact quantities, and arrival progress. Offline time must traverse season boundaries, storage bounds, starvation, job changes, and unlock conditions; multiplying one current net rate by all elapsed time is not equivalent. Exact reference offline compression and event treatment remain UNVERIFIED.
+存档需保留日与刻的小数余量、精确资源数量和迁入进度。在线推进需要处理季节边界、容量限制、饥饿、岗位变更和解锁条件。离线推进使用单独的批处理规则，详见 `17-redshift-audit.md` 和 `19-redshift-implementation.md`；不能将当前净速率直接乘以全部离线时间，并视为完整的逐刻模拟。
 
-## Starting storage
+## 初始仓储
 
-Reference `js/buildings.js:2388–2407`.
+蜂蜜 5,000；木材 200；矿物 250；煤 60；铁 50；钛 2；黄金 10；石油 1,500；铀 250；稀星矿 150；反物质 100；劳力 100；知识 250；文化 100；信仰 100。
 
-Honey 5,000; wood 200; minerals 250; coal 60; iron 50; titanium 2; gold 10; oil 1,500; uranium 250; unobtainium 150; antimatter 100; workforce/manpower 100; science 250; culture 100; faith 100. Capacity is not initial quantity. Other resources are not automatically capped by this list. Ordinary production cannot push a capped resource past its current capacity; imported saves and special overflow cases need separate tests.
+这些数值为容量，而非初始库存。未列出的资源不因此自动拥有上限。常规生产不得超过当前容量；导入存档与特殊溢出情况需单独验证。
 
-## Bears, arrival, consumption and morale
+## 小熊、迁入、消耗与幸福度
 
-References `js/village.js:7–9,395–461,631–687,810–823,933–1016,3228–3251`; `game.js:3800–3813`.
+- 初始人口和住房容量均为零。一间小屋提供两个床位。
+- 有空闲床位且人口未挨饿时，迁入进度每刻增加 0.01；达到 1 时迁入一只小熊。基础迁入间隔为 100 刻，即 20 秒。住房满员时清空剩余进度，不得在满员期间积攒迁入。
+- 成长效果将基础速率乘以 `1 + 成长加成`；节庆期间再乘以 `2 + 额外节庆迁入加成`。污染与挑战的合并减速除数大于 1 时，再除以该值。
+- 每只小熊基础消耗 0.85 蜂蜜/刻。幸福度超过 100% 时，工作小熊的消耗增加。设人口为 N、工作数为 W、幸福度比例为 H，在没有其他修正时，需求量为 `0.85 × [N + W × max(H−1,0)]`。空闲小熊保持基础消耗。
+- 适用时，每只小熊另消耗毛皮 0.01、象牙 0.007、香料 0.001/刻。这些是奢侈品消耗，不替代食物。
+- 幸福度百分点为 `max(25, 100 − 2×max(N−5,0) + 10×L + 30×节庆生效 + 业力 + 其他效果 − 2×max(N−住房,0))`，其中 L 为持有的非常见奢侈品种类数。人口不满减免会调整人口惩罚；还存在稀有品专属及通用奢侈品修正。礼盒与其包装纸不能重复计数。
+- 幸福度只乘以正向岗位产出，不乘以建筑食物产出。
+- 若蜂蜜加上预计下一次净变化为负，迁入停止。饥饿死亡数量取决于取整后的短缺量，最多一只，并有 25 刻死亡冷却。小于 0.5 的微小短缺不会立即导致死亡。更新顺序与冷却递减必须验证。
+- 个体经验、技能、阶位、领袖、议员状态、岗位上限、工程专精、使节、政策及挑战例外应分别处理，不能由基础人口汇总模型推定为已完成。
 
-- Initial population is zero and initial housing capacity zero. A hut adds two spaces.
-- While space remains and the population is not starving, arrival progress grows by 0.01 each tick. At one unit of progress a bear arrives. Thus base immigration is one bear every 100 ticks/20 seconds. At full housing clear remaining progress; do not accumulate arrivals behind a full population cap.
-- Growth effects multiply the .01 rate by (1 + growth bonus). An active festival multiplies it by (2 + extra festival-arrival bonus). Pollution/challenge slowdown divides the rate if its combined divisor exceeds one.
-- Each bear consumes .85 honey per tick before demand modifiers. Happiness over 100% raises consumption of working bears: with N bears, W workers, morale H as a fraction, no special modifiers, demand magnitude is `.85 × [N + W × max(H−1,0)]`. Idle bears retain base consumption.
-- Every bear also consumes .01 furs, .007 ivory, .001 spice per tick when applicable. These are luxury-resource sinks, not food substitutes.
-- Base happiness in percentage points: `max(25, 100 − 2×max(N−5,0) + 10×L + 30×festivalActive + karma + otherEffects − 2×max(N−housing,0))`, where L is the number of possessed non-common luxury types. Population-unhappiness reductions modify the population penalty; uncommon-specific and general luxury modifiers exist. A present box and its wrapping paper do not double-count together.
-- Only positive job production is multiplied by happiness. Building food production is not multiplied by happiness.
-- If honey plus the predicted next net change is negative, arrival stops. The reference's death quantity is capped at one bear and depends on rounded shortfall, with a 25-tick death cooldown. A tiny negative shortfall below .5 is not immediately a death. Exact update ordering and cooldown decrement are important test targets.
-- Advanced systems: individually tracked experience, skills, ranks, leaders, senators, job caps, engineering specialties, ambassadors, policies, and challenge exceptions are real requirements, not implied complete by this base aggregate model.
+## 岗位基础产出
 
-## Jobs: base output per bear per tick
+每只小熊每刻的基础产出：伐木工 0.018 木材；养蜂人 1 蜂蜜；学者 0.035 知识；猎人 0.06 劳力；矿工 0.05 矿物；祭司 0.0015 信仰；地质学家 0.015 煤。工程师积累制作进度，不使用简单资源速率；使节提供贸易效果并消耗供养资源。
 
-Reference `js/village.js:15–203`.
+测地学增加 0.0075 煤和 0.0008 黄金。采矿钻机增加 0.010 煤和 0.0005 黄金；后续稀星矿钻机增加 0.015 煤和 0.0005 黄金。研究测地学前，钻机不能产金。全部升级后的地质学家基础产出为 0.0475 煤和 0.0018 黄金/刻。天体物理学家使学者额外产出 0.0001 星图/刻。技能、领袖与阶位加成先于幸福度应用。
 
-Forester .018 wood; beekeeper 1 honey; scholar .035 science; hunter .06 manpower; miner .05 minerals; ritual keeper .0015 faith; geologist .015 coal. Engineer has crafting progress rather than a simple resource rate. Ambassador has trade effects and upkeep.
+## 生产顺序
 
-Geodesy adds .0075 coal and .0008 gold. Mining drill adds .010 coal and .0005 gold; the later unobtainium drill adds .015 coal and .0005 gold. Drills cannot produce gold until geodesy. Fully upgraded geologist base: .0475 coal and .0018 gold/tick. Astrophysicists give scholars an additional .0001 starchart/tick. Skills and leader/rank bonuses precede happiness.
+前期常规生产先将季节调整后的建筑基础产出与含岗位升级的工作产出相加，再乘以资源通用生产倍率，最后扣除人口与资源需求。蜂蜜公式为 `[0.125×蜂房数×季节倍率 + 养蜂人数×H×(1+养蜂加成)]×(1+0.03×引水渠数) − 蜂蜜需求`。技能可以进一步调整劳动部分。
 
-## Production order
+后期顺序同样影响结果：太空基础产出在季节修正前并入建筑基础产出；村庄产出和岗位加成随后加入；依次应用全局、资源、宗教、超级倍率、典范和污染效果；自动建筑产出在后续指定位置加入。磁电机、反应堆、信仰和宇宙背景效果仅作用于指定资源类别；直接转换与太空自动生产使用不同路径。节庆周期修正在后期固定每刻增量之前，政策与契约倍率在消耗之前。不能将这些路径合并为一个通用倍率。常规核心公式已核实，后期例外交互需专门验证。
 
-Reference `game.js:3666–3834`.
+## 等比价格与递减减免
 
-For early normal play: seasonal building-base production + job production with job upgrades, then multiply resource-wide production ratios, then subtract population/resource demand. For honey this is `[.125×hives×season + beekeepers×H×(1+beekeeperBonus)]×(1+.03×aqueducts) − honeyDemand`. Skills can further modify worker contribution.
+无例外规则时，已购买 n 次物品的单份成本为每项基础成本乘以 `ratio^n`。保留小数成本，例如第二间小屋需要 12.5 木材。追加 k 份的批量成本为 `base×ratio^n×(ratio^k−1)/(ratio−1)`。建筑和资源专属折扣均乘以该值。额外虚拟购买次数与挑战例外另行处理。
 
-Long-game order matters: space-base output joins building base before season; village output and job bonuses join afterward; global/resource/religion/super multipliers then paragon then pollution apply; automated building production enters at later points; magnetos/reactors/faith/cosmic background effects act on specified resource families; direct conversions and space autoproduction follow different paths; festival-cycle modifiers precede late fixed per-tick additions; policies and pact ratios precede consumption. These cannot all be collapsed into one generic multiplier without changing outcomes. Core normal-play formula is verified; every exceptional long-game interaction requires dedicated validation.
+有限递减减免在限值 L 的 75% 以内完全生效。当幅度 x 大于 `0.75L` 时，有效幅度为 `L − (0.25L)^2/(x−0.5L)`，保留输入符号。L=1 时：0.75→0.75、1→0.875、1.5→0.9375。因此原始 100% 减免并不会使成本归零。
 
-## Geometric prices and diminishing reductions
+## 核心验算样例
 
-Reference `js/buildings.js:2589–2624`; `game.js:2726–2746`.
+以下均为常规玩法，未提及的加成均为零。
 
-Without exceptional rules, an item bought n times costs base price × ratio^n for each ingredient. Retain fractional costs, including huts at 12.5 wood for purchase two. Batch cost for k additional copies is base×ratio^n×(ratio^k−1)/(ratio−1). Building- and resource-specific discounts both multiply this amount. Extra phantom purchase counts and challenge exceptions exist.
-
-Limited diminishing reduction has full strength through 75% of its limit L. For magnitude x above .75L, the effective magnitude is `L − (.25L)^2/(x−.5L)`. Preserve the original sign. This is a mathematical rule, not a request to port the reference implementation. Example at L=1: input .75→.75; 1→.875; 1.5→.9375. A 100% raw reduction does not make costs zero.
-
-## Core fixtures (normal play; all unmentioned bonuses zero)
-
-1. One hive, no bears: honey/tick spring .1875; summer .125; autumn .125; winter .03125. Warm winter .05; cold winter .0125.
-2. Ten hives, two bears, one beekeeper, H=1: spring +1.175 honey/tick; summer +.55; winter −.3875.
-3. Ten hives, two bears, one beekeeper, H=1.1: spring +1.190 honey/tick. Gross 2.975, consumption 1.785.
-4. Two foresters, H=1, no skills: .036 wood/tick = .18/second. One library gives a scholar .0385 science/tick.
-5. Hive first three individual honey costs: 10, 11.2, 12.544. Total first ten: 175.487350695.
-6. Two huts add four housing spaces and 150 manpower capacity. First two cost 17.5 wood total.
-7. 6 bears, no luxuries: H=.98. 6 bears with one luxury: H=1.08. 100 bears without bonuses: floor .25.
-8. Start .00 immigration progress, free housing, no starvation: .50 after 50 ticks; one arrival after 100 ticks (floating arithmetic tolerance required).
-9. One barn adds 5,000 honey, 200 wood, 250 minerals, 60 coal, 50 iron, 2 titanium, 10 gold capacity. Total with base storage doubles those caps.
-10. At .06 craft bonus, 175 wood becomes 1.06 beams. Honey provisioning remains 100 honey→1 wood until its separate refinement upgrade.
+1. 一个蜂房、没有小熊：春季 0.1875 蜂蜜/刻，夏秋各 0.125，冬季 0.03125；暖冬 0.05，冷冬 0.0125。
+2. 十个蜂房、两只小熊、一名养蜂人、H=1：春季净增 1.175 蜂蜜/刻，夏季 0.55，冬季 −0.3875。
+3. 同上但 H=1.1：春季净增 1.190；总产出 2.975，消耗 1.785。
+4. 两名伐木工、H=1、无技能：0.036 木材/刻，即每秒 0.18。一座图书馆使一名学者产出 0.0385 知识/刻。
+5. 前三个蜂房的独立蜂蜜成本为 10、11.2、12.544；前十个合计 175.487350695。
+6. 两间小屋增加四个床位及 150 劳力容量，总成本 17.5 木材。
+7. 六只小熊、无奢侈品：H=0.98；有一种奢侈品：H=1.08。100 只小熊且无加成时，最低为 0.25。
+8. 迁入进度从 0 开始、有空房且不挨饿：50 刻后为 0.50，100 刻后迁入一只，检查时需允许浮点误差。
+9. 一座谷仓增加蜂蜜 5,000、木材 200、矿物 250、煤 60、铁 50、钛 2、黄金 10 容量；加上基础仓储后，这些容量翻倍。
+10. 制作加成为 0.06 时，175 木材制作 1.06 木梁。独立的补给升级前，森林远征仍为 100 蜂蜜换取 1 木材。

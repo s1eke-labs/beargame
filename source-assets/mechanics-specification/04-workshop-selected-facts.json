@@ -1,6 +1,5 @@
 {
-  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
-  "scope": "143/143workshop identities with independently authored cost/gate/essential-effect records.139 normally potentially reachable,2source-unreachable legacy axes/saws,2default-disabled space-exploration upgrades. Full dynamic interactions and exact unlock handlers require tests; these are not143verified implementations.",
+  "scope": "记录全部 143 项工坊升级的费用、门槛与基本效果；其中 139 项通常可达，2 项旧斧锯升级没有普通解锁路径，2 项太空探索升级默认关闭。完整动态交互与精确解锁行为仍需测试，不能将此目录视为 143 项实现均已验证。",
   "upgrades": [
     {
       "referenceKey": "mineralHoes",
@@ -15,8 +14,7 @@
       },
       "opens": [
         "ironHoes"
-      ],
-      "source": "js/workshop.js:10"
+      ]
     },
     {
       "referenceKey": "ironHoes",
@@ -29,8 +27,7 @@
       "impact": {
         "honeyJobRatio": 0.3
       },
-      "opens": [],
-      "source": "js/workshop.js:24"
+      "opens": []
     },
     {
       "referenceKey": "mineralAxes",
@@ -45,8 +42,7 @@
       },
       "opens": [
         "ironAxes"
-      ],
-      "source": "js/workshop.js:37"
+      ]
     },
     {
       "referenceKey": "ironAxes",
@@ -59,8 +55,7 @@
       "impact": {
         "woodJobRatio": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:51"
+      "opens": []
     },
     {
       "referenceKey": "steelAxe",
@@ -73,8 +68,7 @@
       "impact": {
         "woodJobRatio": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:62"
+      "opens": []
     },
     {
       "referenceKey": "titaniumAxe",
@@ -87,8 +81,7 @@
       "impact": {
         "woodJobRatio": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:135"
+      "opens": []
     },
     {
       "referenceKey": "alloyAxe",
@@ -101,8 +94,7 @@
       "impact": {
         "woodJobRatio": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:146"
+      "opens": []
     },
     {
       "referenceKey": "unobtainiumAxe",
@@ -111,13 +103,12 @@
         "unobtainium": 75,
         "science": 125000
       },
-      "availableAfter": "NO NORMAL UNLOCK FOUND",
+      "availableAfter": "未找到普通解锁路径",
       "impact": {
         "woodJobRatio": 0.5
       },
       "opens": [],
-      "source": "js/workshop.js:159",
-      "caveat": "Reference declarations exist but no unlock reference in any JavaScript file; do not invent predecessor."
+      "caveat": "存在声明但未找到 JavaScript 解锁入口，不应虚构前置节点。"
     },
     {
       "referenceKey": "reinforcedSaw",
@@ -130,8 +121,7 @@
       "impact": {
         "lumberMillRatio": 0.2
       },
-      "opens": [],
-      "source": "js/workshop.js:73"
+      "opens": []
     },
     {
       "referenceKey": "steelSaw",
@@ -146,8 +136,7 @@
       },
       "opens": [
         "titaniumSaw"
-      ],
-      "source": "js/workshop.js:87"
+      ]
     },
     {
       "referenceKey": "titaniumSaw",
@@ -162,8 +151,7 @@
       },
       "opens": [
         "alloySaw"
-      ],
-      "source": "js/workshop.js:104"
+      ]
     },
     {
       "referenceKey": "alloySaw",
@@ -176,8 +164,7 @@
       "impact": {
         "lumberMillRatio": 0.15
       },
-      "opens": [],
-      "source": "js/workshop.js:121"
+      "opens": []
     },
     {
       "referenceKey": "unobtainiumSaw",
@@ -186,13 +173,12 @@
         "unobtainium": 125,
         "science": 145000
       },
-      "availableAfter": "NO NORMAL UNLOCK FOUND",
+      "availableAfter": "未找到普通解锁路径",
       "impact": {
         "lumberMillRatio": 0.25
       },
       "opens": [],
-      "source": "js/workshop.js:171",
-      "caveat": "Reference declarations exist but no unlock reference in any JavaScript file; do not invent predecessor."
+      "caveat": "存在声明但未找到 JavaScript 解锁入口，不应虚构前置节点。"
     },
     {
       "referenceKey": "stoneBarns",
@@ -207,8 +193,7 @@
       "impact": {
         "barnRatio": 0.75
       },
-      "opens": [],
-      "source": "js/workshop.js:187"
+      "opens": []
     },
     {
       "referenceKey": "reinforcedBarns",
@@ -225,8 +210,7 @@
       },
       "opens": [
         "titaniumBarns"
-      ],
-      "source": "js/workshop.js:203"
+      ]
     },
     {
       "referenceKey": "titaniumBarns",
@@ -241,8 +225,7 @@
       "impact": {
         "barnRatio": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:241"
+      "opens": []
     },
     {
       "referenceKey": "alloyBarns",
@@ -256,8 +239,7 @@
       "impact": {
         "barnRatio": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:257"
+      "opens": []
     },
     {
       "referenceKey": "concreteBarns",
@@ -271,8 +253,7 @@
       "impact": {
         "barnRatio": 0.75
       },
-      "opens": [],
-      "source": "js/workshop.js:272"
+      "opens": []
     },
     {
       "referenceKey": "reinforcedWarehouses",
@@ -289,8 +270,7 @@
       },
       "opens": [
         "ironwood"
-      ],
-      "source": "js/workshop.js:222"
+      ]
     },
     {
       "referenceKey": "titaniumWarehouses",
@@ -305,8 +285,7 @@
       "impact": {
         "warehouseRatio": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:287"
+      "opens": []
     },
     {
       "referenceKey": "alloyWarehouses",
@@ -320,8 +299,7 @@
       "impact": {
         "warehouseRatio": 0.45
       },
-      "opens": [],
-      "source": "js/workshop.js:303"
+      "opens": []
     },
     {
       "referenceKey": "concreteWarehouses",
@@ -335,8 +313,7 @@
       "impact": {
         "warehouseRatio": 0.35
       },
-      "opens": [],
-      "source": "js/workshop.js:318"
+      "opens": []
     },
     {
       "referenceKey": "storageBunkers",
@@ -350,8 +327,7 @@
       "impact": {
         "warehouseRatio": 0.2
       },
-      "opens": [],
-      "source": "js/workshop.js:333"
+      "opens": []
     },
     {
       "referenceKey": "silos",
@@ -368,8 +344,7 @@
       },
       "opens": [
         "titaniumWarehouses"
-      ],
-      "source": "js/workshop.js:649"
+      ]
     },
     {
       "referenceKey": "refrigeration",
@@ -383,8 +358,7 @@
       "impact": {
         "honeyCapacityRatio": 0.75
       },
-      "opens": [],
-      "source": "js/workshop.js:667"
+      "opens": []
     },
     {
       "referenceKey": "advancedRefinement",
@@ -397,8 +371,7 @@
       "impact": {
         "honeyPerWood": 50
       },
-      "opens": [],
-      "source": "js/workshop.js:868"
+      "opens": []
     },
     {
       "referenceKey": "goldOre",
@@ -412,8 +385,7 @@
       "impact": {
         "smelterGoldPerTick": 0.001
       },
-      "opens": [],
-      "source": "js/workshop.js:890"
+      "opens": []
     },
     {
       "referenceKey": "deepMining",
@@ -427,8 +399,7 @@
       "impact": {
         "mineCoalPerTick": 0.003
       },
-      "opens": [],
-      "source": "js/workshop.js:996"
+      "opens": []
     },
     {
       "referenceKey": "coalFurnace",
@@ -443,8 +414,7 @@
       "impact": {
         "smelterCoalPerTick": 0.005
       },
-      "opens": [],
-      "source": "js/workshop.js:980"
+      "opens": []
     },
     {
       "referenceKey": "geodesy",
@@ -460,8 +430,7 @@
         "geologistGoldAdd": 0.0008,
         "drillGoldEnabled": true
       },
-      "opens": [],
-      "source": "js/workshop.js:905"
+      "opens": []
     },
     {
       "referenceKey": "miningDrill",
@@ -476,8 +445,7 @@
         "geologistCoalAdd": 0.01,
         "geologistGoldAdd": 0.0005
       },
-      "opens": [],
-      "source": "js/workshop.js:950"
+      "opens": []
     },
     {
       "referenceKey": "unobtainiumDrill",
@@ -492,8 +460,7 @@
         "geologistCoalAdd": 0.015,
         "geologistGoldAdd": 0.0005
       },
-      "opens": [],
-      "source": "js/workshop.js:964"
+      "opens": []
     },
     {
       "referenceKey": "register",
@@ -506,8 +473,7 @@
       "impact": {
         "leadershipEnabled": true
       },
-      "opens": [],
-      "source": "js/workshop.js:920"
+      "opens": []
     },
     {
       "referenceKey": "bolas",
@@ -522,8 +488,7 @@
         "hunterRatio": 1,
         "explorerAtk": 2
       },
-      "opens": [],
-      "source": "js/workshop.js:737"
+      "opens": []
     },
     {
       "referenceKey": "huntingArmor",
@@ -537,8 +502,7 @@
         "hunterRatio": 2,
         "explorerDef": 2
       },
-      "opens": [],
-      "source": "js/workshop.js:755"
+      "opens": []
     },
     {
       "referenceKey": "compositeBow",
@@ -553,8 +517,7 @@
         "manpowerJobRatio": 0.5,
         "explorerAtk": 5
       },
-      "opens": [],
-      "source": "js/workshop.js:681"
+      "opens": []
     },
     {
       "referenceKey": "crossbow",
@@ -568,8 +531,7 @@
         "manpowerJobRatio": 0.25,
         "explorerAtk": 10
       },
-      "opens": [],
-      "source": "js/workshop.js:702"
+      "opens": []
     },
     {
       "referenceKey": "celestialMechanics",
@@ -581,8 +543,7 @@
       "impact": {
         "observedScienceMultiplier": 1.2
       },
-      "opens": [],
-      "source": "js/workshop.js:1440"
+      "opens": []
     },
     {
       "referenceKey": "astrolabe",
@@ -596,8 +557,7 @@
       "impact": {
         "observatoryBaseScienceCapacity": 1500
       },
-      "opens": [],
-      "source": "js/workshop.js:1448"
+      "opens": []
     },
     {
       "referenceKey": "titaniumMirrors",
@@ -611,8 +571,7 @@
       "impact": {
         "libraryRatio": 0.02
       },
-      "opens": [],
-      "source": "js/workshop.js:1462"
+      "opens": []
     },
     {
       "referenceKey": "unobtainiumReflectors",
@@ -626,8 +585,7 @@
       "impact": {
         "libraryRatio": 0.02
       },
-      "opens": [],
-      "source": "js/workshop.js:1479"
+      "opens": []
     },
     {
       "referenceKey": "eludiumReflectors",
@@ -640,8 +598,7 @@
       "impact": {
         "libraryRatio": 0.02
       },
-      "opens": [],
-      "source": "js/workshop.js:1495"
+      "opens": []
     },
     {
       "referenceKey": "cargoShips",
@@ -654,8 +611,7 @@
       "impact": {
         "harborRatioPerShip": 0.01
       },
-      "opens": [],
-      "source": "js/workshop.js:553"
+      "opens": []
     },
     {
       "referenceKey": "caravanserai",
@@ -665,12 +621,11 @@
         "science": 25000,
         "ivory": 10000
       },
-      "availableAfter": "navigation OR discover:zebras",
+      "availableAfter": "navigation 或 discover:zebras",
       "impact": {
         "tradepostStanding": 0.0035
       },
-      "opens": [],
-      "source": "js/workshop.js:808"
+      "opens": []
     },
     {
       "referenceKey": "seti",
@@ -683,8 +638,7 @@
       "impact": {
         "autoObserve": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1748"
+      "opens": []
     },
     {
       "referenceKey": "ironwood",
@@ -700,8 +654,7 @@
       },
       "opens": [
         "silos"
-      ],
-      "source": "js/workshop.js:598"
+      ]
     },
     {
       "referenceKey": "strenghtenBuild",
@@ -719,8 +672,7 @@
         "concreteWarehouses",
         "concreteBarns",
         "concreteHuts"
-      ],
-      "source": "js/workshop.js:930"
+      ]
     },
     {
       "referenceKey": "energyRifts",
@@ -737,8 +689,7 @@
       "opens": [
         "stasisChambers",
         "tachyonAccelerators"
-      ],
-      "source": "js/workshop.js:350"
+      ]
     },
     {
       "referenceKey": "lhc",
@@ -752,8 +703,7 @@
       "impact": {
         "acceleratorScienceCapacity": 2500
       },
-      "opens": [],
-      "source": "js/workshop.js:479"
+      "opens": []
     },
     {
       "referenceKey": "electrolyticSmelting",
@@ -766,8 +716,7 @@
       "impact": {
         "smelterRatio": 0.95
       },
-      "opens": [],
-      "source": "js/workshop.js:1022"
+      "opens": []
     },
     {
       "referenceKey": "oxidation",
@@ -780,8 +729,7 @@
       "impact": {
         "calcinerRatio": 0.95
       },
-      "opens": [],
-      "source": "js/workshop.js:1036"
+      "opens": []
     },
     {
       "referenceKey": "steelPlants",
@@ -797,8 +745,7 @@
       },
       "opens": [
         "automatedPlants"
-      ],
-      "source": "js/workshop.js:1050"
+      ]
     },
     {
       "referenceKey": "automatedPlants",
@@ -813,8 +760,7 @@
       },
       "opens": [
         "nuclearPlants"
-      ],
-      "source": "js/workshop.js:1065"
+      ]
     },
     {
       "referenceKey": "nuclearPlants",
@@ -827,8 +773,7 @@
       "impact": {
         "calcinerSteelReactorBonus": 0.02
       },
-      "opens": [],
-      "source": "js/workshop.js:1079"
+      "opens": []
     },
     {
       "referenceKey": "rotaryKiln",
@@ -842,8 +787,7 @@
       "impact": {
         "calcinerRatio": 0.75
       },
-      "opens": [],
-      "source": "js/workshop.js:1090"
+      "opens": []
     },
     {
       "referenceKey": "fluidizedReactors",
@@ -856,8 +800,7 @@
       "impact": {
         "calcinerRatio": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:1106"
+      "opens": []
     },
     {
       "referenceKey": "nuclearSmelters",
@@ -870,8 +813,7 @@
       "impact": {
         "smelterTitaniumPerTick": 0.0015
       },
-      "opens": [],
-      "source": "js/workshop.js:1121"
+      "opens": []
     },
     {
       "referenceKey": "orbitalGeodesy",
@@ -885,8 +827,7 @@
       "impact": {
         "quarryUraniumPerTick": 0.0005
       },
-      "opens": [],
-      "source": "js/workshop.js:1134"
+      "opens": []
     },
     {
       "referenceKey": "printingPress",
@@ -899,8 +840,7 @@
       "impact": {
         "steamManuscriptPerTick": 0.0005
       },
-      "opens": [],
-      "source": "js/workshop.js:1150"
+      "opens": []
     },
     {
       "referenceKey": "offsetPress",
@@ -914,8 +854,7 @@
       "impact": {
         "steamManuscriptMultiplier": 4
       },
-      "opens": [],
-      "source": "js/workshop.js:1163"
+      "opens": []
     },
     {
       "referenceKey": "photolithography",
@@ -930,8 +869,7 @@
       "impact": {
         "steamManuscriptMultiplier": 4
       },
-      "opens": [],
-      "source": "js/workshop.js:1178"
+      "opens": []
     },
     {
       "referenceKey": "uplink",
@@ -945,8 +883,7 @@
         "uplinkDCRatio": 0.01,
         "uplinkLabRatio": 0.01
       },
-      "opens": [],
-      "source": "js/workshop.js:1193"
+      "opens": []
     },
     {
       "referenceKey": "starlink",
@@ -960,8 +897,7 @@
       "impact": {
         "uplinkLabRatio": 0.01
       },
-      "opens": [],
-      "source": "js/workshop.js:1208"
+      "opens": []
     },
     {
       "referenceKey": "pumpjack",
@@ -975,8 +911,7 @@
       "impact": {
         "oilWellRatio": 0.45
       },
-      "opens": [],
-      "source": "js/workshop.js:1636"
+      "opens": []
     },
     {
       "referenceKey": "oilRefinery",
@@ -990,8 +925,7 @@
       "impact": {
         "oilWellRatio": 0.35
       },
-      "opens": [],
-      "source": "js/workshop.js:2008"
+      "opens": []
     },
     {
       "referenceKey": "petri",
@@ -1005,8 +939,7 @@
         "biolabCompendiumCraftRatio": 0.01,
         "biolabCompendiumGlobalCraftRatio": 0.001
       },
-      "opens": [],
-      "source": "js/workshop.js:1652"
+      "opens": []
     },
     {
       "referenceKey": "biofuel",
@@ -1021,8 +954,7 @@
         "biolabOilPerTick": 0.02,
         "biolabEnergyDemand": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:1666"
+      "opens": []
     },
     {
       "referenceKey": "internet",
@@ -1036,8 +968,7 @@
       "impact": {
         "populationScaledSkillLearning": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1786"
+      "opens": []
     },
     {
       "referenceKey": "neuralNetworks",
@@ -1050,8 +981,7 @@
       "impact": {
         "crossJobSkillLearning": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1796"
+      "opens": []
     },
     {
       "referenceKey": "assistance",
@@ -1065,8 +995,7 @@
       "impact": {
         "honeyDemandWorkerRatioGlobal": -0.25
       },
-      "opens": [],
-      "source": "js/workshop.js:1810"
+      "opens": []
     },
     {
       "referenceKey": "enrichedUranium",
@@ -1080,8 +1009,7 @@
       "impact": {
         "uraniumRatio": 0.25
       },
-      "opens": [],
-      "source": "js/workshop.js:1822"
+      "opens": []
     },
     {
       "referenceKey": "coldFusion",
@@ -1094,8 +1022,7 @@
       "impact": {
         "reactorEnergyRatio": 0.25
       },
-      "opens": [],
-      "source": "js/workshop.js:1837"
+      "opens": []
     },
     {
       "referenceKey": "thoriumReactors",
@@ -1111,8 +1038,7 @@
       },
       "opens": [
         "enrichedThorium"
-      ],
-      "source": "js/workshop.js:1851"
+      ]
     },
     {
       "referenceKey": "astrophysicists",
@@ -1125,8 +1051,7 @@
       "impact": {
         "scholarStarchartPerTick": 0.0001
       },
-      "opens": [],
-      "source": "js/workshop.js:1924"
+      "opens": []
     },
     {
       "referenceKey": "mWReactor",
@@ -1139,8 +1064,7 @@
       "impact": {
         "lunarOutpostRatio": 0.75
       },
-      "opens": [],
-      "source": "js/workshop.js:1937"
+      "opens": []
     },
     {
       "referenceKey": "unicornSelection",
@@ -1153,8 +1077,7 @@
       "impact": {
         "unicornsGlobalRatio": 0.25
       },
-      "opens": [],
-      "source": "js/workshop.js:1680"
+      "opens": []
     },
     {
       "referenceKey": "stasisChambers",
@@ -1165,14 +1088,13 @@
         "timeCrystal": 1,
         "alloy": 200
       },
-      "availableAfter": "energyRifts AND chronophysics",
+      "availableAfter": "energyRifts 且 chronophysics",
       "impact": {
         "acceleratorRatio": 0.95
       },
       "opens": [
         "voidEnergy"
-      ],
-      "source": "js/workshop.js:367"
+      ]
     },
     {
       "referenceKey": "voidEnergy",
@@ -1189,8 +1111,7 @@
       },
       "opens": [
         "darkEnergy"
-      ],
-      "source": "js/workshop.js:389"
+      ]
     },
     {
       "referenceKey": "darkEnergy",
@@ -1204,8 +1125,7 @@
       "impact": {
         "acceleratorRatio": 2.5
       },
-      "opens": [],
-      "source": "js/workshop.js:408"
+      "opens": []
     },
     {
       "referenceKey": "chronoforge",
@@ -1219,8 +1139,7 @@
       "impact": {
         "chronoforgeEnabled": true
       },
-      "opens": [],
-      "source": "js/workshop.js:423"
+      "opens": []
     },
     {
       "referenceKey": "tachyonModerator",
@@ -1234,8 +1153,7 @@
       "impact": {
         "controlledDelayEnabled": true
       },
-      "opens": [],
-      "source": "js/workshop.js:437"
+      "opens": []
     },
     {
       "referenceKey": "tachyonAccelerators",
@@ -1245,12 +1163,11 @@
         "timeCrystal": 10,
         "eludium": 125
       },
-      "availableAfter": "energyRifts AND tachyonTheory",
+      "availableAfter": "energyRifts 且 tachyonTheory",
       "impact": {
         "acceleratorRatio": 5
       },
-      "opens": [],
-      "source": "js/workshop.js:450"
+      "opens": []
     },
     {
       "referenceKey": "fluxCondensator",
@@ -1264,8 +1181,7 @@
       "impact": {
         "craftedResetRetentionEnabled": true
       },
-      "opens": [],
-      "source": "js/workshop.js:468"
+      "opens": []
     },
     {
       "referenceKey": "photovoltaic",
@@ -1278,8 +1194,7 @@
       "impact": {
         "solarFarmRatio": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:495"
+      "opens": []
     },
     {
       "referenceKey": "thinFilm",
@@ -1293,8 +1208,7 @@
       "impact": {
         "solarFarmSeasonRatio": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:509"
+      "opens": []
     },
     {
       "referenceKey": "qdot",
@@ -1308,8 +1222,7 @@
       "impact": {
         "solarFarmSeasonRatio": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:524"
+      "opens": []
     },
     {
       "referenceKey": "solarSatellites",
@@ -1323,8 +1236,7 @@
         "satelliteEnergySupply": 1,
         "satelliteEnergyDemand": 0
       },
-      "opens": [],
-      "source": "js/workshop.js:540"
+      "opens": []
     },
     {
       "referenceKey": "barges",
@@ -1338,8 +1250,7 @@
       "impact": {
         "harborCoalRatio": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:568"
+      "opens": []
     },
     {
       "referenceKey": "reactorVessel",
@@ -1353,8 +1264,7 @@
       "impact": {
         "shipLimit": 0.05
       },
-      "opens": [],
-      "source": "js/workshop.js:583"
+      "opens": []
     },
     {
       "referenceKey": "concreteHuts",
@@ -1368,8 +1278,7 @@
       "impact": {
         "hutPriceRatio": -0.3
       },
-      "opens": [],
-      "source": "js/workshop.js:613"
+      "opens": []
     },
     {
       "referenceKey": "unobtainiumHuts",
@@ -1383,8 +1292,7 @@
       "impact": {
         "hutPriceRatio": -0.25
       },
-      "opens": [],
-      "source": "js/workshop.js:625"
+      "opens": []
     },
     {
       "referenceKey": "eludiumHuts",
@@ -1397,8 +1305,7 @@
       "impact": {
         "hutPriceRatio": -0.1
       },
-      "opens": [],
-      "source": "js/workshop.js:637"
+      "opens": []
     },
     {
       "referenceKey": "railgun",
@@ -1415,8 +1322,7 @@
       },
       "opens": [
         "special:rangefinders"
-      ],
-      "source": "js/workshop.js:717"
+      ]
     },
     {
       "referenceKey": "steelArmor",
@@ -1430,8 +1336,7 @@
         "hunterRatio": 0.5,
         "explorerDef": 5
       },
-      "opens": [],
-      "source": "js/workshop.js:772"
+      "opens": []
     },
     {
       "referenceKey": "alloyArmor",
@@ -1445,8 +1350,7 @@
         "hunterRatio": 0.5,
         "explorerDef": 10
       },
-      "opens": [],
-      "source": "js/workshop.js:784"
+      "opens": []
     },
     {
       "referenceKey": "nanosuits",
@@ -1460,8 +1364,7 @@
         "hunterRatio": 0.5,
         "explorerDef": 20
       },
-      "opens": [],
-      "source": "js/workshop.js:796"
+      "opens": []
     },
     {
       "referenceKey": "freightfulExchange",
@@ -1478,8 +1381,7 @@
       },
       "opens": [
         "transportSuperposition"
-      ],
-      "source": "js/workshop.js:824"
+      ]
     },
     {
       "referenceKey": "transportSuperposition",
@@ -1490,12 +1392,11 @@
         "thorium": 25000,
         "tanker": 500000
       },
-      "availableAfter": "freightfulExchange AND dimensionalPhysics",
+      "availableAfter": "freightfulExchange 且 dimensionalPhysics",
       "impact": {
         "spaceportAdditionalTradeVolume": 0.5
       },
-      "opens": [],
-      "source": "js/workshop.js:846"
+      "opens": []
     },
     {
       "referenceKey": "prospecting",
@@ -1508,8 +1409,7 @@
       "impact": {
         "meteorIronEnabled": true
       },
-      "opens": [],
-      "source": "js/workshop.js:882"
+      "opens": []
     },
     {
       "referenceKey": "pyrolysis",
@@ -1522,8 +1422,7 @@
       "impact": {
         "coalSuperRatio": 0.2
       },
-      "opens": [],
-      "source": "js/workshop.js:1011"
+      "opens": []
     },
     {
       "referenceKey": "cryocomputing",
@@ -1536,8 +1435,7 @@
       "impact": {
         "dataCenterEnergyDemand": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:1223"
+      "opens": []
     },
     {
       "referenceKey": "machineLearning",
@@ -1551,8 +1449,7 @@
       "impact": {
         "dataCenterAIRatio": 0.1
       },
-      "opens": [],
-      "source": "js/workshop.js:1236"
+      "opens": []
     },
     {
       "referenceKey": "factoryAutomation",
@@ -1565,8 +1462,7 @@
       "impact": {
         "steamworksAutomationEnabled": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1252"
+      "opens": []
     },
     {
       "referenceKey": "advancedAutomation",
@@ -1580,8 +1476,7 @@
       "impact": {
         "steamworksAutumnUnjam": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1263"
+      "opens": []
     },
     {
       "referenceKey": "pneumaticPress",
@@ -1595,8 +1490,7 @@
       "impact": {
         "steamworksPlateAutomation": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1274"
+      "opens": []
     },
     {
       "referenceKey": "combustionEngine",
@@ -1610,8 +1504,7 @@
       "impact": {
         "coalRatioGlobalReduction": 0.2
       },
-      "opens": [],
-      "source": "js/workshop.js:1285"
+      "opens": []
     },
     {
       "referenceKey": "fuelInjectors",
@@ -1625,8 +1518,7 @@
       "impact": {
         "coalRatioGlobalReduction": 0.2
       },
-      "opens": [],
-      "source": "js/workshop.js:1301"
+      "opens": []
     },
     {
       "referenceKey": "factoryLogistics",
@@ -1640,8 +1532,7 @@
       "impact": {
         "factoryCraftRatio": 0.06
       },
-      "opens": [],
-      "source": "js/workshop.js:1317"
+      "opens": []
     },
     {
       "referenceKey": "carbonSequestration",
@@ -1657,8 +1548,7 @@
       "impact": {
         "factoryCleanupAutomation": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1331"
+      "opens": []
     },
     {
       "referenceKey": "factoryOptimization",
@@ -1674,8 +1564,7 @@
         "t2CraftRatio": 2,
         "queueCap": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:1347"
+      "opens": []
     },
     {
       "referenceKey": "factoryRobotics",
@@ -1692,8 +1581,7 @@
         "t3CraftRatio": 2,
         "queueCap": 2
       },
-      "opens": [],
-      "source": "js/workshop.js:1361"
+      "opens": []
     },
     {
       "referenceKey": "spaceEngineers",
@@ -1710,8 +1598,7 @@
         "t4CraftRatio": 2,
         "queueCap": 2
       },
-      "opens": [],
-      "source": "js/workshop.js:1376"
+      "opens": []
     },
     {
       "referenceKey": "aiEngineers",
@@ -1730,8 +1617,7 @@
         "t5CraftRatio": 2,
         "queueCap": 3
       },
-      "opens": [],
-      "source": "js/workshop.js:1391"
+      "opens": []
     },
     {
       "referenceKey": "chronoEngineers",
@@ -1750,8 +1636,7 @@
         "t5CraftRatio": 2,
         "queueCap": 3
       },
-      "opens": [],
-      "source": "js/workshop.js:1408"
+      "opens": []
     },
     {
       "referenceKey": "spaceManufacturing",
@@ -1764,8 +1649,7 @@
       "impact": {
         "factorySpaceMultiplierFactor": 0.75
       },
-      "opens": [],
-      "source": "js/workshop.js:1425"
+      "opens": []
     },
     {
       "referenceKey": "hydroPlantTurbines",
@@ -1778,8 +1662,7 @@
       "impact": {
         "hydroPlantRatio": 0.15
       },
-      "opens": [],
-      "source": "js/workshop.js:1510"
+      "opens": []
     },
     {
       "referenceKey": "amBases",
@@ -1794,8 +1677,7 @@
       },
       "opens": [
         "aiBases"
-      ],
-      "source": "js/workshop.js:1524"
+      ]
     },
     {
       "referenceKey": "aiBases",
@@ -1808,8 +1690,7 @@
       "impact": {
         "moonBaseCapacityPerAI": 0.1
       },
-      "opens": [],
-      "source": "js/workshop.js:1538"
+      "opens": []
     },
     {
       "referenceKey": "amFission",
@@ -1823,8 +1704,7 @@
       "impact": {
         "eludiumAutomationBonus": 0.25
       },
-      "opens": [],
-      "source": "js/workshop.js:1549"
+      "opens": []
     },
     {
       "referenceKey": "amReactors",
@@ -1839,8 +1719,7 @@
       },
       "opens": [
         "amReactorsMK2"
-      ],
-      "source": "js/workshop.js:1561"
+      ]
     },
     {
       "referenceKey": "amReactorsMK2",
@@ -1855,8 +1734,7 @@
       },
       "opens": [
         "voidReactors"
-      ],
-      "source": "js/workshop.js:1578"
+      ]
     },
     {
       "referenceKey": "voidReactors",
@@ -1869,8 +1747,7 @@
       "impact": {
         "spaceScienceRatio": 4
       },
-      "opens": [],
-      "source": "js/workshop.js:1595"
+      "opens": []
     },
     {
       "referenceKey": "relicStation",
@@ -1883,8 +1760,7 @@
       "impact": {
         "beaconRelicsPerDay": 0.01
       },
-      "opens": [],
-      "source": "js/workshop.js:1609"
+      "opens": []
     },
     {
       "referenceKey": "amDrive",
@@ -1897,8 +1773,7 @@
       "impact": {
         "routeSpeed": 25
       },
-      "opens": [],
-      "source": "js/workshop.js:1623"
+      "opens": []
     },
     {
       "referenceKey": "alicornStable",
@@ -1908,12 +1783,11 @@
         "gold": 100,
         "alicorn": 20
       },
-      "availableAfter": "unicornTears challenge only",
+      "availableAfter": "仅限 unicornTears 挑战",
       "impact": {
         "alicornCapacity": 0.2
       },
-      "opens": [],
-      "source": "js/workshop.js:1698"
+      "opens": []
     },
     {
       "referenceKey": "gmo",
@@ -1927,8 +1801,7 @@
       "impact": {
         "biofuelRatio": 0.6
       },
-      "opens": [],
-      "source": "js/workshop.js:1720"
+      "opens": []
     },
     {
       "referenceKey": "cadSystems",
@@ -1941,8 +1814,7 @@
       "impact": {
         "cadBlueprintCraftRatio": 0.01
       },
-      "opens": [],
-      "source": "js/workshop.js:1737"
+      "opens": []
     },
     {
       "referenceKey": "logistics",
@@ -1956,8 +1828,7 @@
       "impact": {
         "skillMultiplier": 0.15
       },
-      "opens": [],
-      "source": "js/workshop.js:1762"
+      "opens": []
     },
     {
       "referenceKey": "augumentation",
@@ -1971,8 +1842,7 @@
       "impact": {
         "skillMultiplier": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:1774"
+      "opens": []
     },
     {
       "referenceKey": "enrichedThorium",
@@ -1985,8 +1855,7 @@
       "impact": {
         "reactorThoriumPerTick": 0.0125
       },
-      "opens": [],
-      "source": "js/workshop.js:1869"
+      "opens": []
     },
     {
       "referenceKey": "hubbleTelescope",
@@ -2002,8 +1871,7 @@
       },
       "opens": [
         "satnav"
-      ],
-      "source": "js/workshop.js:1885"
+      ]
     },
     {
       "referenceKey": "satnav",
@@ -2016,8 +1884,7 @@
       "impact": {
         "satnavRatio": 0.0125
       },
-      "opens": [],
-      "source": "js/workshop.js:1901"
+      "opens": []
     },
     {
       "referenceKey": "satelliteRadio",
@@ -2030,8 +1897,7 @@
       "impact": {
         "broadcastTowerRatio": 0.005
       },
-      "opens": [],
-      "source": "js/workshop.js:1912"
+      "opens": []
     },
     {
       "referenceKey": "eludiumCracker",
@@ -2044,8 +1910,7 @@
       "impact": {
         "crackerRatio": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:1949"
+      "opens": []
     },
     {
       "referenceKey": "thoriumEngine",
@@ -2061,8 +1926,7 @@
       "impact": {
         "routeSpeed": 50
       },
-      "opens": [],
-      "source": "js/workshop.js:1964"
+      "opens": []
     },
     {
       "referenceKey": "spiceNavigation",
@@ -2071,12 +1935,11 @@
         "science": 350000,
         "starchart": 500000
       },
-      "availableAfter": "artificialGravity;DEFAULT DISABLED",
+      "availableAfter": "artificialGravity；默认关闭",
       "impact": {
         "navigationRelayUnlocked": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1979"
+      "opens": []
     },
     {
       "referenceKey": "longRangeSpaceships",
@@ -2087,12 +1950,11 @@
         "alloy": 3500,
         "tanker": 500
       },
-      "availableAfter": "artificialGravity;DEFAULT DISABLED",
+      "availableAfter": "artificialGravity；默认关闭",
       "impact": {
         "spaceShuttleUnlocked": true
       },
-      "opens": [],
-      "source": "js/workshop.js:1992"
+      "opens": []
     },
     {
       "referenceKey": "oilDistillation",
@@ -2105,8 +1967,7 @@
       "impact": {
         "oilWellRatio": 0.75
       },
-      "opens": [],
-      "source": "js/workshop.js:2023"
+      "opens": []
     },
     {
       "referenceKey": "factoryProcessing",
@@ -2120,8 +1981,7 @@
       "impact": {
         "factoryRefineRatio": 0.05
       },
-      "opens": [],
-      "source": "js/workshop.js:2037"
+      "opens": []
     },
     {
       "referenceKey": "voidAspiration",
@@ -2135,8 +1995,7 @@
         "voidHooverUnlocked": true,
         "voidRiftUnlocked": true
       },
-      "opens": [],
-      "source": "js/workshop.js:2051"
+      "opens": []
     },
     {
       "referenceKey": "distorsion",
@@ -2151,8 +2010,7 @@
       "impact": {
         "temporalParadoxDayBonus": 2
       },
-      "opens": [],
-      "source": "js/workshop.js:2065"
+      "opens": []
     },
     {
       "referenceKey": "turnSmoothly",
@@ -2167,8 +2025,7 @@
       "impact": {
         "temporalFluxProductionChronosphere": 1
       },
-      "opens": [],
-      "source": "js/workshop.js:2081"
+      "opens": []
     },
     {
       "referenceKey": "invisibleBlackHand",
@@ -2183,8 +2040,7 @@
       "impact": {
         "blackcoinPriceRuleChanges": true
       },
-      "opens": [],
-      "source": "js/workshop.js:2098"
+      "opens": []
     }
   ]
 }

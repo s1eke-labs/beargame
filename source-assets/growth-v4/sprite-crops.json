@@ -5,7 +5,7 @@
     "columns": 4,
     "rows": 3
   },
-  "coordinateConvention": "Top-left x/y in atlas pixels; width/height positive; crops have 4px safety margin around main connected alpha > 8 silhouette. Nonuniform measured crops avoid clipping sprites at nominal grid boundaries.",
+  "coordinateConvention": "x/y 为图集像素中的左上角坐标，width/height 为正数；裁切框在主要 alpha >8 连通轮廓外保留 4px 安全边距。使用实测的不均匀裁切框，避免在名义网格边界截断精灵。",
   "assets": {
     "building-growth-atlas.webp": {
       "width": 1448,
@@ -15,7 +15,7 @@
       "alphaPreserved": true,
       "alphaMin": 0,
       "alphaMax": 255,
-      "encoding": "WebP quality 90, method 6; alpha exact and verified pixel-for-pixel",
+      "encoding": "WebP 质量 90、方法 6；透明通道精确保留，并已逐像素验证",
       "png": "building-growth-atlas.png"
     },
     "worker-roles-atlas.webp": {
@@ -26,7 +26,7 @@
       "alphaPreserved": true,
       "alphaMin": 0,
       "alphaMax": 255,
-      "encoding": "WebP quality 90, method 6; alpha exact and verified pixel-for-pixel",
+      "encoding": "WebP 质量 90、方法 6；透明通道精确保留，并已逐像素验证",
       "png": "worker-roles-atlas.png"
     }
   },
