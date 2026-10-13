@@ -1,0 +1,244 @@
+{
+  "job": {
+    "source": "source-assets/simple-book-v31/buildings-main/painted-utilities.png",
+    "columns": 4,
+    "rows": 2,
+    "keys": [
+      "aqueduct",
+      "quarry",
+      "mint",
+      "chapel",
+      "unicornPasture",
+      "ziggurat",
+      "biolab",
+      "modernWarehouse"
+    ],
+    "cell": 384,
+    "sheet": "utilities",
+    "output": "painted-utilities.webp",
+    "registry": "src/ui/painted-buildings.js",
+    "export": "paintedBuildings",
+    "merge": true,
+    "aliases": {},
+    "sourceCrops": {
+      "aqueduct": {
+        "x": 43,
+        "y": 181,
+        "width": 409,
+        "height": 289
+      },
+      "quarry": {
+        "x": 471,
+        "y": 123,
+        "width": 399,
+        "height": 344
+      },
+      "mint": {
+        "x": 908,
+        "y": 128,
+        "width": 407,
+        "height": 344
+      },
+      "chapel": {
+        "x": 1402,
+        "y": 91,
+        "width": 331,
+        "height": 379
+      },
+      "unicornPasture": {
+        "x": 14,
+        "y": 581,
+        "width": 415,
+        "height": 286
+      },
+      "ziggurat": {
+        "x": 461,
+        "y": 543,
+        "width": 409,
+        "height": 323
+      },
+      "biolab": {
+        "x": 899,
+        "y": 546,
+        "width": 419,
+        "height": 315
+      },
+      "modernWarehouse": {
+        "x": 1361,
+        "y": 541,
+        "width": 408,
+        "height": 316
+      }
+    }
+  },
+  "crops": [
+    {
+      "key": "aqueduct",
+      "sourceCell": [
+        43,
+        181,
+        452,
+        470
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        408,
+        288
+      ],
+      "crop": {
+        "x": 16,
+        "y": 68,
+        "width": 352,
+        "height": 248
+      }
+    },
+    {
+      "key": "quarry",
+      "sourceCell": [
+        471,
+        123,
+        870,
+        467
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        397,
+        343
+      ],
+      "crop": {
+        "x": 400,
+        "y": 40,
+        "width": 352,
+        "height": 304
+      }
+    },
+    {
+      "key": "mint",
+      "sourceCell": [
+        908,
+        128,
+        1315,
+        472
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        406,
+        343
+      ],
+      "crop": {
+        "x": 784,
+        "y": 43,
+        "width": 352,
+        "height": 297
+      }
+    },
+    {
+      "key": "chapel",
+      "sourceCell": [
+        1402,
+        91,
+        1733,
+        470
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        330,
+        378
+      ],
+      "crop": {
+        "x": 1190,
+        "y": 16,
+        "width": 307,
+        "height": 352
+      }
+    },
+    {
+      "key": "unicornPasture",
+      "sourceCell": [
+        14,
+        581,
+        429,
+        867
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        414,
+        285
+      ],
+      "crop": {
+        "x": 16,
+        "y": 455,
+        "width": 352,
+        "height": 242
+      }
+    },
+    {
+      "key": "ziggurat",
+      "sourceCell": [
+        461,
+        543,
+        870,
+        866
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        408,
+        321
+      ],
+      "crop": {
+        "x": 400,
+        "y": 437,
+        "width": 352,
+        "height": 277
+      }
+    },
+    {
+      "key": "biolab",
+      "sourceCell": [
+        899,
+        546,
+        1318,
+        861
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        418,
+        314
+      ],
+      "crop": {
+        "x": 784,
+        "y": 444,
+        "width": 352,
+        "height": 264
+      }
+    },
+    {
+      "key": "modernWarehouse",
+      "sourceCell": [
+        1361,
+        541,
+        1769,
+        857
+      ],
+      "alphaBounds": [
+        2,
+        1,
+        406,
+        315
+      ],
+      "crop": {
+        "x": 1168,
+        "y": 439,
+        "width": 352,
+        "height": 274
+      }
+    }
+  ]
+}

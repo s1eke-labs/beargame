@@ -1,0 +1,412 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "format": "RGBA PNG; originals unchanged",
+  "rectangleConvention": "x,y,width,height; right and bottom exclusive",
+  "method": "Connected components at alpha > 8; select 8 dominant sprites, associate every disconnected alpha > 8 component to its nearest dominant sprite, union all component bounds, add 1-pixel safe margin. Verify every alpha > 8 pixel is included exactly once and no foreground from another sprite is included. Raw alpha 1\u20133 background noise is deliberately excluded; no image pixels were modified.",
+  "assets": {
+    "painted-home.png": {
+      "width": 1774,
+      "height": 887,
+      "bytes": 1394869,
+      "sha256": "74b051619b6d2530ea1093123d105d8fbb10d0e03447c303082149d2a9bf5937",
+      "grid": {
+        "columns": 4,
+        "rows": 2
+      },
+      "fullyTransparentPixelCount": 713338,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rawEntireAlphaBounds": {
+        "x": 12,
+        "y": 17,
+        "width": 1751,
+        "height": 842
+      },
+      "validation": {
+        "beehive": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 49976,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "bearHut": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 112726,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "library": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 120842,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "barn": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 112889,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "apiary": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 87585,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "expandedHut": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 109652,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "expandedLibrary": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 121950,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "granary": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 118205,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        }
+      }
+    },
+    "painted-workplaces.png": {
+      "width": 1774,
+      "height": 887,
+      "bytes": 1389041,
+      "sha256": "f63a9d00f6473dcae1a6fa466e169302e839879c286d1a71c4ef667f3fc29102",
+      "grid": {
+        "columns": 4,
+        "rows": 2
+      },
+      "fullyTransparentPixelCount": 666792,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rawEntireAlphaBounds": {
+        "x": 0,
+        "y": 21,
+        "width": 1766,
+        "height": 852
+      },
+      "validation": {
+        "logyard": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 113821,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "mine": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 94023,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "forge": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 119222,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "warehouse": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 120199,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "academy": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 105948,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "observatory": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 108383,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "factory": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 112059,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "expandedLumberyard": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 107118,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        }
+      }
+    },
+    "painted-expedition.png": {
+      "width": 1774,
+      "height": 887,
+      "bytes": 1283788,
+      "sha256": "579924aa54d56447195fb1ab9b2d9b7f6c1fd28f6ee0d956300b4d4a0b5276f1",
+      "grid": {
+        "columns": 4,
+        "rows": 2
+      },
+      "fullyTransparentPixelCount": 749247,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rawEntireAlphaBounds": {
+        "x": 21,
+        "y": 0,
+        "width": 1740,
+        "height": 887
+      },
+      "validation": {
+        "shrine": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 95737,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "market": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 82413,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "launchpad": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 96500,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "timegate": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 87474,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "loghouse": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 103736,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "manor": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 112333,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "expandedWorkshop": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 106083,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "expandedWarehouse": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 106112,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        }
+      }
+    },
+    "painted-utilities.png": {
+      "width": 1774,
+      "height": 887,
+      "bytes": 1156415,
+      "sha256": "c19703bc4dbbbb498faeb4364a32aa703d384dd4d9c17b1966735d1a6fecfd21",
+      "grid": {
+        "columns": 4,
+        "rows": 2
+      },
+      "fullyTransparentPixelCount": 831481,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "rawEntireAlphaBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1774,
+        "height": 873
+      },
+      "validation": {
+        "aqueduct": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 81785,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "quarry": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 83770,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "mint": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 105283,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "chapel": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 77814,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "unicornPasture": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 81370,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "ziggurat": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 74411,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "biolab": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 101682,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        },
+        "modernWarehouse": {
+          "allMeaningfulPixelsIncluded": true,
+          "otherSpriteMeaningfulPixelsIncluded": false,
+          "foregroundPixels": 97804,
+          "sourceAlphaRange": [
+            0,
+            255
+          ]
+        }
+      }
+    },
+    "workshop-soft.png": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 960477,
+      "sha256": "e7367d60beae9ef1712a1fe1ed4a90e498c0b1fc97b267fcaeefd59806519c40",
+      "rawEntireAlphaBounds": {
+        "x": 0,
+        "y": 89,
+        "width": 1230,
+        "height": 1165
+      },
+      "recommendedVisualBounds": {
+        "x": 44,
+        "y": 203,
+        "width": 1184,
+        "height": 903
+      },
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 784087,
+      "note": "Every pixel with alpha > 8 is included in recommendedVisualBounds. The raw entire-alpha rectangle is much larger due to alpha=1 ghost speckles; raw PNG remains intact."
+    }
+  }
+}

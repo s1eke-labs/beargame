@@ -1,0 +1,497 @@
+[
+  {
+    "sheet": "home",
+    "sprites": {
+      "beehive": {
+        "source_box": [
+          0,
+          0,
+          420,
+          416
+        ],
+        "source_alpha_bbox": [
+          115,
+          142,
+          331,
+          383
+        ],
+        "crop": {
+          "x": 84,
+          "y": 127,
+          "width": 216,
+          "height": 241
+        }
+      },
+      "bearHut": {
+        "source_box": [
+          420,
+          0,
+          878,
+          416
+        ],
+        "source_alpha_bbox": [
+          63,
+          80,
+          387,
+          395
+        ],
+        "crop": {
+          "x": 414,
+          "y": 53,
+          "width": 324,
+          "height": 315
+        }
+      },
+      "library": {
+        "source_box": [
+          878,
+          0,
+          1335,
+          416
+        ],
+        "source_alpha_bbox": [
+          38,
+          96,
+          412,
+          399
+        ],
+        "crop": {
+          "x": 784,
+          "y": 83,
+          "width": 352,
+          "height": 285
+        }
+      },
+      "barn": {
+        "source_box": [
+          1335,
+          0,
+          1774,
+          416
+        ],
+        "source_alpha_bbox": [
+          24,
+          81,
+          394,
+          398
+        ],
+        "crop": {
+          "x": 1168,
+          "y": 66,
+          "width": 352,
+          "height": 302
+        }
+      },
+      "apiary": {
+        "source_box": [
+          0,
+          416,
+          420,
+          887
+        ],
+        "source_alpha_bbox": [
+          15,
+          108,
+          404,
+          412
+        ],
+        "crop": {
+          "x": 16,
+          "y": 477,
+          "width": 352,
+          "height": 275
+        }
+      },
+      "expandedHut": {
+        "source_box": [
+          420,
+          416,
+          878,
+          887
+        ],
+        "source_alpha_bbox": [
+          17,
+          43,
+          452,
+          402
+        ],
+        "crop": {
+          "x": 400,
+          "y": 461,
+          "width": 352,
+          "height": 291
+        }
+      },
+      "expandedLibrary": {
+        "source_box": [
+          878,
+          416,
+          1335,
+          887
+        ],
+        "source_alpha_bbox": [
+          4,
+          67,
+          451,
+          422
+        ],
+        "crop": {
+          "x": 784,
+          "y": 472,
+          "width": 352,
+          "height": 280
+        }
+      },
+      "granary": {
+        "source_box": [
+          1335,
+          416,
+          1774,
+          887
+        ],
+        "source_alpha_bbox": [
+          14,
+          19,
+          425,
+          426
+        ],
+        "crop": {
+          "x": 1168,
+          "y": 403,
+          "width": 352,
+          "height": 349
+        }
+      }
+    }
+  },
+  {
+    "sheet": "workplaces",
+    "sprites": {
+      "logyard": {
+        "source_box": [
+          0,
+          0,
+          456,
+          425
+        ],
+        "source_alpha_bbox": [
+          11,
+          51,
+          451,
+          421
+        ],
+        "crop": {
+          "x": 16,
+          "y": 72,
+          "width": 352,
+          "height": 296
+        }
+      },
+      "mine": {
+        "source_box": [
+          456,
+          0,
+          888,
+          425
+        ],
+        "source_alpha_bbox": [
+          4,
+          73,
+          423,
+          423
+        ],
+        "crop": {
+          "x": 400,
+          "y": 74,
+          "width": 352,
+          "height": 294
+        }
+      },
+      "forge": {
+        "source_box": [
+          888,
+          0,
+          1332,
+          425
+        ],
+        "source_alpha_bbox": [
+          3,
+          53,
+          434,
+          420
+        ],
+        "crop": {
+          "x": 784,
+          "y": 68,
+          "width": 352,
+          "height": 300
+        }
+      },
+      "warehouse": {
+        "source_box": [
+          1332,
+          0,
+          1774,
+          425
+        ],
+        "source_alpha_bbox": [
+          2,
+          65,
+          428,
+          417
+        ],
+        "crop": {
+          "x": 1168,
+          "y": 77,
+          "width": 352,
+          "height": 291
+        }
+      },
+      "academy": {
+        "source_box": [
+          0,
+          425,
+          456,
+          887
+        ],
+        "source_alpha_bbox": [
+          10,
+          8,
+          441,
+          415
+        ],
+        "crop": {
+          "x": 16,
+          "y": 420,
+          "width": 352,
+          "height": 332
+        }
+      },
+      "observatory": {
+        "source_box": [
+          456,
+          425,
+          888,
+          887
+        ],
+        "source_alpha_bbox": [
+          5,
+          21,
+          421,
+          412
+        ],
+        "crop": {
+          "x": 400,
+          "y": 421,
+          "width": 352,
+          "height": 331
+        }
+      },
+      "factory": {
+        "source_box": [
+          888,
+          425,
+          1332,
+          887
+        ],
+        "source_alpha_bbox": [
+          2,
+          9,
+          444,
+          414
+        ],
+        "crop": {
+          "x": 784,
+          "y": 429,
+          "width": 352,
+          "height": 323
+        }
+      },
+      "expandedLumberyard": {
+        "source_box": [
+          1332,
+          425,
+          1774,
+          887
+        ],
+        "source_alpha_bbox": [
+          0,
+          76,
+          432,
+          412
+        ],
+        "crop": {
+          "x": 1168,
+          "y": 478,
+          "width": 352,
+          "height": 274
+        }
+      }
+    }
+  },
+  {
+    "sheet": "expedition",
+    "sprites": {
+      "shrine": {
+        "source_box": [
+          0,
+          0,
+          444,
+          444
+        ],
+        "source_alpha_bbox": [
+          40,
+          65,
+          397,
+          417
+        ],
+        "crop": {
+          "x": 16,
+          "y": 21,
+          "width": 352,
+          "height": 347
+        }
+      },
+      "market": {
+        "source_box": [
+          444,
+          0,
+          887,
+          444
+        ],
+        "source_alpha_bbox": [
+          57,
+          102,
+          415,
+          416
+        ],
+        "crop": {
+          "x": 400,
+          "y": 59,
+          "width": 352,
+          "height": 309
+        }
+      },
+      "launchpad": {
+        "source_box": [
+          887,
+          0,
+          1331,
+          444
+        ],
+        "source_alpha_bbox": [
+          51,
+          57,
+          400,
+          419
+        ],
+        "crop": {
+          "x": 790,
+          "y": 16,
+          "width": 339,
+          "height": 352
+        }
+      },
+      "timegate": {
+        "source_box": [
+          1331,
+          0,
+          1774,
+          444
+        ],
+        "source_alpha_bbox": [
+          45,
+          95,
+          412,
+          420
+        ],
+        "crop": {
+          "x": 1168,
+          "y": 56,
+          "width": 352,
+          "height": 312
+        }
+      },
+      "loghouse": {
+        "source_box": [
+          0,
+          444,
+          444,
+          887
+        ],
+        "source_alpha_bbox": [
+          31,
+          57,
+          403,
+          391
+        ],
+        "crop": {
+          "x": 16,
+          "y": 436,
+          "width": 352,
+          "height": 316
+        }
+      },
+      "manor": {
+        "source_box": [
+          444,
+          444,
+          887,
+          887
+        ],
+        "source_alpha_bbox": [
+          17,
+          23,
+          425,
+          392
+        ],
+        "crop": {
+          "x": 400,
+          "y": 434,
+          "width": 352,
+          "height": 318
+        }
+      },
+      "expandedWorkshop": {
+        "source_box": [
+          887,
+          444,
+          1331,
+          887
+        ],
+        "source_alpha_bbox": [
+          17,
+          32,
+          429,
+          391
+        ],
+        "crop": {
+          "x": 784,
+          "y": 445,
+          "width": 352,
+          "height": 307
+        }
+      },
+      "expandedWarehouse": {
+        "source_box": [
+          1331,
+          444,
+          1774,
+          887
+        ],
+        "source_alpha_bbox": [
+          19,
+          38,
+          431,
+          387
+        ],
+        "crop": {
+          "x": 1168,
+          "y": 454,
+          "width": 352,
+          "height": 298
+        }
+      }
+    }
+  }
+]

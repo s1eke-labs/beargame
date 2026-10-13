@@ -1,0 +1,19 @@
+{
+  "name": "honeywood-bear-civilization",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An original mobile-first bear civilization game, independently implemented from documented numeric mechanics.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "test": "node --test tests/*.test.mjs qa/*.test.mjs",
+    "check": "node --check src/main.js && node --check src/ui/render.js && node --check src/ui/advanced.js && node --check src/ui/icons.js && node --check src/ui/webmcp.js",
+    "verify": "npm run check && npm run build && npm test && node scripts/verify-assets.mjs && node scripts/verify-chapter.mjs",
+    "test:campaign": "node qa/campaign/replay.mjs --checkout .",
+    "verify:release": "npm run verify && npm run check:chapter && npm run test:campaign",
+    "build:full": "node scripts/build-full.mjs",
+    "check:chapter": "node --check src/chapters/forest/engine.js && node --check src/chapters/forest/main.js && node --check src/chapters/forest/save.js"
+  }
+}

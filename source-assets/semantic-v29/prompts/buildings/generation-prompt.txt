@@ -1,0 +1,35 @@
+Use case: stylized-concept.
+Create ONE transparent sprite ATLAS for Beargame: exactly 24 DISTINCT original hand-painted building sprites arranged in EXACTLY 6 COLUMNS AND 4 ROWS. Landscape 3:2 image, ideally 1536x1024. Invisible equal grid, every sprite centered in its cell, generous transparent gutters, no object crossing cell boundary. No labels, no text, no numbers, no bears, no people, no border, no checkerboard.
+Style: cozy crisp hand-painted fantasy town game sprites viewed three-quarter isometric, cream stone, honey wood, sage green roofs where appropriate, fine warm brown contour lines, little moss and flowers, warm amber highlights, softly shaded detailed illustrated materials. Strong readable silhouette. Transparent background throughout, each cutout isolated.
+EXTREMELY IMPORTANT: draw every requested structure once in this precise row-major order and no generic house repetitions. Each subject has a clearly DIFFERENT silhouette and functional props.
+ROW 1 left to right:
+1 pasture: low fenced rectangular flower-and-vegetable garden plots, lots of planted rows, no hive and no building.
+2 amphitheatre: wide semicircular stepped open-air timber seating curving around an uncovered small stage.
+3 harbor: timber dock on a small isolated patch of turquoise water, little cream sailboat and tall dock crane.
+4 tradepost: low canvas caravan merchant stall with colorful fabric awnings and crates.
+5 steamworks: exposed brass steam engine mill with enormous flywheel and one tall chimney, irregular industrial silhouette.
+6 magneto: standalone copper coil electricity generator with two tall coils and blue arcing electricity.
+ROW 2 left to right:
+7 calciner: squat circular cream-stone lime kiln round furnace, open orange glowing mouth.
+8 oilWell: tall skeletal honeywood oil drilling rig with obvious long rocking pumpjack arm.
+9 accelerator: large horizontal circular scientific accelerator ring machinery on four supports.
+10 reactor: broad pale domed power reactor flanked by two curved cooling towers.
+11 aiCore: tall glowing turquoise glass cylindrical computation core with copper rings.
+12 dataCenter: open rectangular server pavilion exposing rows of dark upright server racks beneath a low flat sage roof.
+ROW 3 left to right:
+13 solarFarm: broad array of six blue solar panels on tilted metal frames, NO house.
+14 hydroPlant: short curved stone dam with flowing blue water and a wooden waterwheel powerhouse.
+15 broadcastTower: extremely slender tall lattice radio mast with antenna dish and tiny control box at base.
+16 zebraOutpost: two small striped cream-and-charcoal canvas camp tents with a banner.
+17 zebraWorkshop: wide open-air cream-and-charcoal striped awning above visible wooden workbenches and tools.
+18 zebraForge: squat desert forge with an arched terracotta kiln and anvil.
+ROW 4 left to right:
+19 stasisPod: tilted elongated glowing glass sleep capsule station with metal supports, no occupant.
+20 ivoryTemple: tall pale ivory spiral shrine, sculpted helical spire on a round stepped base.
+21 brewery: cluster of three large rounded copper brewing vats, pipes and wooden barrel platform.
+22 modernPasture: long advanced greenhouse with curved transparent green glass roof and plants.
+23 modernAqueduct: chunky stone and steel water-pump station with exposed large blue pipes and spillway.
+24 modernAmphitheatre: modern broadcasting performance hall with broad curved stage canopy and two speakers/antennae.
+Keep perfect six-column four-row layout, same visual scale across the atlas. All 24 isolated silhouettes fully visible with room around them.
+
+Built-in image_gen used. Original generation followed by gutter-adjustment edit; both PNGs retained. Edit requested each sprite fit the central 190x190 area of each 256x256 cell, preserving designs and order. Generator improved spacing but did not strictly honor all gutters. IvoryTemple needs custom crop x270..510, y738..996 to retain its tip.

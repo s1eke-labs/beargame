@@ -1,0 +1,202 @@
+{
+  "buildings-atlas": {
+    "atlasWidth": 1254,
+    "atlasHeight": 1254,
+    "beehive": {
+      "x": 67,
+      "y": 91,
+      "width": 215,
+      "height": 209
+    },
+    "cottage": {
+      "x": 341,
+      "y": 63,
+      "width": 267,
+      "height": 239
+    },
+    "library": {
+      "x": 632,
+      "y": 57,
+      "width": 292,
+      "height": 245
+    },
+    "barn": {
+      "x": 947,
+      "y": 69,
+      "width": 271,
+      "height": 232
+    },
+    "lumberyard": {
+      "x": 30,
+      "y": 393,
+      "width": 282,
+      "height": 198
+    },
+    "mine": {
+      "x": 330,
+      "y": 376,
+      "width": 296,
+      "height": 233
+    },
+    "workshop": {
+      "x": 642,
+      "y": 362,
+      "width": 282,
+      "height": 244
+    },
+    "forge": {
+      "x": 946,
+      "y": 352,
+      "width": 279,
+      "height": 257
+    },
+    "warehouse": {
+      "x": 29,
+      "y": 673,
+      "width": 286,
+      "height": 224
+    },
+    "shrine": {
+      "x": 348,
+      "y": 647,
+      "width": 251,
+      "height": 261
+    },
+    "observatory": {
+      "x": 637,
+      "y": 656,
+      "width": 271,
+      "height": 246
+    },
+    "academy": {
+      "x": 937,
+      "y": 638,
+      "width": 295,
+      "height": 262
+    },
+    "market": {
+      "x": 41,
+      "y": 957,
+      "width": 270,
+      "height": 237
+    },
+    "factory": {
+      "x": 331,
+      "y": 936,
+      "width": 286,
+      "height": 260
+    },
+    "launchpad": {
+      "x": 645,
+      "y": 948,
+      "width": 268,
+      "height": 247
+    },
+    "portal": {
+      "x": 941,
+      "y": 945,
+      "width": 284,
+      "height": 252
+    }
+  },
+  "resources-atlas": {
+    "atlasWidth": 1254,
+    "atlasHeight": 1254,
+    "honey": {
+      "x": 32,
+      "y": 57,
+      "width": 255,
+      "height": 245
+    },
+    "wood": {
+      "x": 329,
+      "y": 69,
+      "width": 286,
+      "height": 220
+    },
+    "stone": {
+      "x": 646,
+      "y": 75,
+      "width": 270,
+      "height": 225
+    },
+    "iron": {
+      "x": 965,
+      "y": 68,
+      "width": 256,
+      "height": 235
+    },
+    "coal": {
+      "x": 22,
+      "y": 362,
+      "width": 276,
+      "height": 232
+    },
+    "gold": {
+      "x": 331,
+      "y": 370,
+      "width": 266,
+      "height": 211
+    },
+    "science": {
+      "x": 632,
+      "y": 368,
+      "width": 308,
+      "height": 225
+    },
+    "culture": {
+      "x": 961,
+      "y": 380,
+      "width": 273,
+      "height": 209
+    },
+    "faith": {
+      "x": 43,
+      "y": 674,
+      "width": 225,
+      "height": 216
+    },
+    "bear": {
+      "x": 328,
+      "y": 630,
+      "width": 283,
+      "height": 291
+    },
+    "plank": {
+      "x": 640,
+      "y": 680,
+      "width": 290,
+      "height": 215
+    },
+    "steel": {
+      "x": 953,
+      "y": 689,
+      "width": 288,
+      "height": 209
+    },
+    "gear": {
+      "x": 31,
+      "y": 946,
+      "width": 261,
+      "height": 268
+    },
+    "crystal": {
+      "x": 340,
+      "y": 934,
+      "width": 251,
+      "height": 283
+    },
+    "starChart": {
+      "x": 641,
+      "y": 944,
+      "width": 289,
+      "height": 274
+    },
+    "berries": {
+      "x": 980,
+      "y": 965,
+      "width": 250,
+      "height": 238
+    }
+  }
+}

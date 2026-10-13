@@ -1,0 +1,272 @@
+{
+  "semantic-resources-b": {
+    "relic": {
+      "x": 57,
+      "y": 55,
+      "width": 176,
+      "height": 206
+    },
+    "blackcoin": {
+      "x": 301,
+      "y": 62,
+      "width": 191,
+      "height": 190
+    },
+    "void": {
+      "x": 549,
+      "y": 59,
+      "width": 196,
+      "height": 196
+    },
+    "temporalFlux": {
+      "x": 814,
+      "y": 49,
+      "width": 168,
+      "height": 214
+    },
+    "furnaceHeat": {
+      "x": 1062,
+      "y": 51,
+      "width": 189,
+      "height": 209
+    },
+    "tears": {
+      "x": 1339,
+      "y": 70,
+      "width": 135,
+      "height": 187
+    },
+    "sorrow": {
+      "x": 75,
+      "y": 317,
+      "width": 129,
+      "height": 182
+    },
+    "unicorns": {
+      "x": 294,
+      "y": 285,
+      "width": 223,
+      "height": 216
+    },
+    "alicorn": {
+      "x": 537,
+      "y": 289,
+      "width": 219,
+      "height": 212
+    },
+    "necrocorn": {
+      "x": 782,
+      "y": 286,
+      "width": 227,
+      "height": 217
+    },
+    "zebras": {
+      "x": 1052,
+      "y": 299,
+      "width": 226,
+      "height": 204
+    },
+    "bloodstone": {
+      "x": 1321,
+      "y": 308,
+      "width": 171,
+      "height": 183
+    },
+    "tMythril": {
+      "x": 43,
+      "y": 557,
+      "width": 186,
+      "height": 168
+    },
+    "gflops": {
+      "x": 297,
+      "y": 532,
+      "width": 198,
+      "height": 194
+    },
+    "hashrates": {
+      "x": 540,
+      "y": 523,
+      "width": 223,
+      "height": 214
+    },
+    "plastic": {
+      "x": 797,
+      "y": 561,
+      "width": 210,
+      "height": 157
+    },
+    "microchip": {
+      "x": 1066,
+      "y": 540,
+      "width": 177,
+      "height": 181
+    },
+    "catnip": {
+      "x": 1315,
+      "y": 532,
+      "width": 192,
+      "height": 200
+    },
+    "energy": {
+      "x": 69,
+      "y": 766,
+      "width": 135,
+      "height": 202
+    },
+    "happiness": {
+      "x": 279,
+      "y": 752,
+      "width": 229,
+      "height": 220
+    },
+    "beam": {
+      "x": 542,
+      "y": 770,
+      "width": 202,
+      "height": 189
+    },
+    "steel": {
+      "x": 793,
+      "y": 785,
+      "width": 207,
+      "height": 174
+    },
+    "gear": {
+      "x": 1049,
+      "y": 762,
+      "width": 212,
+      "height": 210
+    },
+    "starchart": {
+      "x": 1313,
+      "y": 773,
+      "width": 203,
+      "height": 195
+    }
+  },
+  "semantic-resources-extra": {
+    "tanker": {
+      "x": 75,
+      "y": 159,
+      "width": 596,
+      "height": 425
+    },
+    "megalith": {
+      "x": 764,
+      "y": 73,
+      "width": 379,
+      "height": 533
+    },
+    "karma": {
+      "x": 95,
+      "y": 660,
+      "width": 500,
+      "height": 481
+    },
+    "burnedParagon": {
+      "x": 675,
+      "y": 684,
+      "width": 527,
+      "height": 474
+    }
+  },
+  "resources-atlas": {
+    "honey": {
+      "x": 51,
+      "y": 83,
+      "width": 232,
+      "height": 226
+    },
+    "wood": {
+      "x": 341,
+      "y": 91,
+      "width": 267,
+      "height": 211
+    },
+    "stone": {
+      "x": 660,
+      "y": 102,
+      "width": 246,
+      "height": 202
+    },
+    "iron": {
+      "x": 970,
+      "y": 91,
+      "width": 240,
+      "height": 217
+    },
+    "coal": {
+      "x": 39,
+      "y": 373,
+      "width": 249,
+      "height": 215
+    },
+    "gold": {
+      "x": 339,
+      "y": 381,
+      "width": 261,
+      "height": 206
+    },
+    "science": {
+      "x": 638,
+      "y": 381,
+      "width": 299,
+      "height": 207
+    },
+    "culture": {
+      "x": 962,
+      "y": 394,
+      "width": 255,
+      "height": 199
+    },
+    "faith": {
+      "x": 50,
+      "y": 678,
+      "width": 213,
+      "height": 207
+    },
+    "bear": {
+      "x": 361,
+      "y": 643,
+      "width": 212,
+      "height": 264
+    },
+    "plank": {
+      "x": 651,
+      "y": 686,
+      "width": 274,
+      "height": 203
+    },
+    "steel": {
+      "x": 956,
+      "y": 683,
+      "width": 267,
+      "height": 209
+    },
+    "gear": {
+      "x": 39,
+      "y": 945,
+      "width": 245,
+      "height": 245
+    },
+    "crystal": {
+      "x": 346,
+      "y": 936,
+      "width": 246,
+      "height": 257
+    },
+    "star": {
+      "x": 660,
+      "y": 938,
+      "width": 266,
+      "height": 251
+    },
+    "berries": {
+      "x": 977,
+      "y": 960,
+      "width": 246,
+      "height": 234
+    }
+  }
+}

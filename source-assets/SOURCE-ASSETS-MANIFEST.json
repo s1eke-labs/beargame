@@ -1,0 +1,182 @@
+{
+  "scope": "Original generated image masters and independently authored factual mechanics documents. No reference repository source code or original artwork. Kept outside public dist.",
+  "files": [
+    {
+      "path": "generated-art/asset-manifest.json",
+      "bytes": 8567,
+      "sha256": "8b1e10cc46c2f8b675f86bd700e7c3d79ed3a0b7a0ccb7ec7514a623d0d6dc16"
+    },
+    {
+      "path": "generated-art/originals/buildings-atlas.png",
+      "bytes": 2604415,
+      "sha256": "78224a1e6f2cc6247beec397a5a6eff52a553c6b67d15a5b81999bd3243a411e"
+    },
+    {
+      "path": "generated-art/originals/forest-clearing.png",
+      "bytes": 3303909,
+      "sha256": "20448a1331540d4b7ab821f9ac4ea82aaf33d1b375cd8fb039cacdc9a4140260"
+    },
+    {
+      "path": "generated-art/originals/resources-atlas.png",
+      "bytes": 1697274,
+      "sha256": "e54dd2b383a233ca054bc4968e2c2f51144c52ae63d8b3d165e52d0c15721dcc"
+    },
+    {
+      "path": "generated-art/prompts.json",
+      "bytes": 6074,
+      "sha256": "47a6765f7311aa00640e26cd99c0f633b780fb8f4607f948317c62bc694d3b7b"
+    },
+    {
+      "path": "mechanics-specification/00-scope-and-provenance.md",
+      "bytes": 2932,
+      "sha256": "9a6a2369ac6b9d046992ed6b60e3c80129e63f56f7f08d6d193c67e4590b1213"
+    },
+    {
+      "path": "mechanics-specification/01-core-rules.md",
+      "bytes": 7738,
+      "sha256": "6c50b17b4a8be16b204288a7d117f150b212cf5b04f7cbf9b5fc4ac971eb5294"
+    },
+    {
+      "path": "mechanics-specification/02-selected-facts.json",
+      "bytes": 55621,
+      "sha256": "1550e9824dcd6218582ecae590c53edc065ab87d7e400bd937b1db063f091781"
+    },
+    {
+      "path": "mechanics-specification/03-population-crafting-prestige.md",
+      "bytes": 5740,
+      "sha256": "442e4d88c6d36d185eff8d64e2d1e0fc1caa4bb2b3526dde208eccd9a847f147"
+    },
+    {
+      "path": "mechanics-specification/04-workshop-selected-facts.json",
+      "bytes": 49650,
+      "sha256": "0ab902109ee891dd3e118d46f4bb5a1fa03bdc850392e14dbb9fed2a72084984"
+    },
+    {
+      "path": "mechanics-specification/05-faith-space-rules.md",
+      "bytes": 5704,
+      "sha256": "c38ee1c4a384101790abff79dc241b3c912d5e1f522879567a06951d0ee031ac"
+    },
+    {
+      "path": "mechanics-specification/06-late-selected-facts.json",
+      "bytes": 32569,
+      "sha256": "ee418cce03fe79f923393692f45812a374adfc7a9430aeea6aec605a20d91e39"
+    },
+    {
+      "path": "mechanics-specification/07-trade-and-events.md",
+      "bytes": 5994,
+      "sha256": "42d8d1ac5eedfc51aa8163cf8718ad842461af2b74b85a559604ab5cac1f597e"
+    },
+    {
+      "path": "mechanics-specification/08-trade-selected-facts.json",
+      "bytes": 5688,
+      "sha256": "e87647c812ae2184a1d288641b6da5d25685800c3da7f23e360e81f97c208b1d"
+    },
+    {
+      "path": "mechanics-specification/09-feature-catalogue.json",
+      "bytes": 100470,
+      "sha256": "6f005aa6ae3e212c69019fdb5e1b71d5b0e2719a0926110feea66a8644d7f9fb"
+    },
+    {
+      "path": "mechanics-specification/09-feature-catalogue.md",
+      "bytes": 24671,
+      "sha256": "ec9582867936857971d2c5797666fafc08ffd634e088baf16a3deaa35a0c58a6"
+    },
+    {
+      "path": "mechanics-specification/10-industry-storage-pollution.md",
+      "bytes": 7184,
+      "sha256": "c8b27e4a429ed82cc3223de5374c02383c55c4f05d99d74fc55e1ef33cb366d4"
+    },
+    {
+      "path": "mechanics-specification/11-pacts-celestial-cycles.md",
+      "bytes": 5901,
+      "sha256": "b105ae8e5e36b0f0fdf44057f2ad465c5487fd6d9ba1b51401d24604acbb16d7"
+    },
+    {
+      "path": "mechanics-specification/12-cycles-facts.json",
+      "bytes": 7252,
+      "sha256": "3815068df1963e076e18f565e4f064bfbfa3b44917eda3c3a99b80c828c96e09"
+    },
+    {
+      "path": "mechanics-specification/13-special-workshop-facts.json",
+      "bytes": 3203,
+      "sha256": "4c435b54b2c038d971ab052cac6c32976e8978701355e76edb8ccb36455424a4"
+    },
+    {
+      "path": "mechanics-specification/14-challenge-handoff.md",
+      "bytes": 9963,
+      "sha256": "af02e4054e5020fe7e355e03aaa002c889aa125faca6e5e21f7f48ee68fcdf15"
+    },
+    {
+      "path": "mechanics-specification/15-default-profile-and-handoff.md",
+      "bytes": 6502,
+      "sha256": "c5b4001fa2ea30a9146445117bd74576b3091e99369c309b4512257f4a5daab3"
+    },
+    {
+      "path": "mechanics-specification/16-late-audit.md",
+      "bytes": 13049,
+      "sha256": "0c8884c76a28805924ab2c3c6e8a3dcb783d2d7e508cf9fa964827e7c43fdf22"
+    },
+    {
+      "path": "mechanics-specification/17-progression-handoff.md",
+      "bytes": 5418,
+      "sha256": "e3e44b3ae0b12ccdcf1bbaa0e04366e0d20f94bcf220c73d7267d77d0e27bb30"
+    },
+    {
+      "path": "mechanics-specification/17-redshift-audit.md",
+      "bytes": 6117,
+      "sha256": "3a6416eeef3f659afe725ae576f073c67b21b1b2acc91334912a5c37dcf4fc9e"
+    },
+    {
+      "path": "mechanics-specification/18-achievements-facts.md",
+      "bytes": 11895,
+      "sha256": "633e39633b3e34773d534510f567c9f913ee336f3a7b3fd0dfa4c8fb3f8e20fd"
+    },
+    {
+      "path": "mechanics-specification/18-religion-redshift.md",
+      "bytes": 7222,
+      "sha256": "ffca08ae1ec985b29535ab7debaa721d01e629ed01a500c18aa5aad247941ba7"
+    },
+    {
+      "path": "mechanics-specification/19-redshift-implementation.md",
+      "bytes": 7395,
+      "sha256": "c9fe6935d4ba7938f1998cf9039cb2ae9176f17cfbc1a58cf5455d6cc67f6383"
+    },
+    {
+      "path": "mechanics-specification/manifest.json",
+      "bytes": 2829,
+      "sha256": "3e818a92b18ed5f73c673030457c979b6a67dd865bd6a3e7d70016848075b7ec"
+    },
+    {
+      "path": "storybook-v2/buildings-atlas.png",
+      "bytes": 1385445,
+      "sha256": "fba01c44d817864f45a405eab919ed02bd4a881c0f409e57e8f84f7558a11279"
+    },
+    {
+      "path": "storybook-v2/crops.json",
+      "bytes": 3185,
+      "sha256": "8459de19ea5b90d1d263603018fc404d527913ae05d3f89ac4c776989ab6453f"
+    },
+    {
+      "path": "storybook-v2/manifest.json",
+      "bytes": 11330,
+      "sha256": "9eb3410793e8c4d388e16c69136c9ee7bcc7ead7b42e81cdab74244d398007d3"
+    },
+    {
+      "path": "storybook-v2/provenance.json",
+      "bytes": 7682,
+      "sha256": "7cb4a3f82d1c581b021b6e26bd4651d64034fa45f19be23975e9cc69cf7e8d76"
+    },
+    {
+      "path": "storybook-v2/resources-atlas.png",
+      "bytes": 1129498,
+      "sha256": "402642c6e920ad05cbd5fac9f9cc42b369eda39fa2287ee773cd173727c8c549"
+    },
+    {
+      "path": "storybook-v2/village-terrain.png",
+      "bytes": 2224537,
+      "sha256": "bfffc0d913ddce34b9e84e6f61cf75fb80fb8e2440ddafc1bcb03d2712c6bdd6"
+    }
+  ],
+  "fileCount": 35,
+  "totalBytes": 12772623
+}

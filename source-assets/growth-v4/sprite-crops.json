@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "generatedAssetCount": 2,
+  "layout": {
+    "columns": 4,
+    "rows": 3
+  },
+  "coordinateConvention": "Top-left x/y in atlas pixels; width/height positive; crops have 4px safety margin around main connected alpha > 8 silhouette. Nonuniform measured crops avoid clipping sprites at nominal grid boundaries.",
+  "assets": {
+    "building-growth-atlas.webp": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 388514,
+      "sha256": "daeb29237ebe1bc830d0a6b0759dc9ea24171932c6752572b288f4d678c4be0c",
+      "alphaPreserved": true,
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "encoding": "WebP quality 90, method 6; alpha exact and verified pixel-for-pixel",
+      "png": "building-growth-atlas.png"
+    },
+    "worker-roles-atlas.webp": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 267932,
+      "sha256": "a1c11587a16facabf5ff601d971786ab91f9d4d1d18b9234b6f14b44194c3509",
+      "alphaPreserved": true,
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "encoding": "WebP quality 90, method 6; alpha exact and verified pixel-for-pixel",
+      "png": "worker-roles-atlas.png"
+    }
+  },
+  "crops": {
+    "building-growth-atlas": {
+      "apiaryExpanded": {
+        "x": 17,
+        "y": 120,
+        "width": 338,
+        "height": 231,
+        "row": 0,
+        "column": 0,
+        "contentBounds": {
+          "x": 21,
+          "y": 124,
+          "width": 330,
+          "height": 223
+        }
+      },
+      "bearHutExpanded": {
+        "x": 379,
+        "y": 81,
+        "width": 333,
+        "height": 276,
+        "row": 0,
+        "column": 1,
+        "contentBounds": {
+          "x": 383,
+          "y": 85,
+          "width": 325,
+          "height": 268
+        }
+      },
+      "loghouse": {
+        "x": 729,
+        "y": 126,
+        "width": 321,
+        "height": 232,
+        "row": 0,
+        "column": 2,
+        "contentBounds": {
+          "x": 733,
+          "y": 130,
+          "width": 313,
+          "height": 224
+        }
+      },
+      "manor": {
+        "x": 1068,
+        "y": 79,
+        "width": 361,
+        "height": 280,
+        "row": 0,
+        "column": 3,
+        "contentBounds": {
+          "x": 1072,
+          "y": 83,
+          "width": 353,
+          "height": 272
+        }
+      },
+      "libraryExpanded": {
+        "x": 16,
+        "y": 388,
+        "width": 348,
+        "height": 328,
+        "row": 1,
+        "column": 0,
+        "contentBounds": {
+          "x": 20,
+          "y": 392,
+          "width": 340,
+          "height": 320
+        }
+      },
+      "academyAdvanced": {
+        "x": 381,
+        "y": 411,
+        "width": 335,
+        "height": 297,
+        "row": 1,
+        "column": 1,
+        "contentBounds": {
+          "x": 385,
+          "y": 415,
+          "width": 327,
+          "height": 289
+        }
+      },
+      "logyardExpanded": {
+        "x": 727,
+        "y": 492,
+        "width": 328,
+        "height": 221,
+        "row": 1,
+        "column": 2,
+        "contentBounds": {
+          "x": 731,
+          "y": 496,
+          "width": 320,
+          "height": 213
+        }
+      },
+      "barnExpanded": {
+        "x": 1068,
+        "y": 427,
+        "width": 368,
+        "height": 282,
+        "row": 1,
+        "column": 3,
+        "contentBounds": {
+          "x": 1072,
+          "y": 431,
+          "width": 360,
+          "height": 274
+        }
+      },
+      "workshopExpanded": {
+        "x": 22,
+        "y": 775,
+        "width": 345,
+        "height": 256,
+        "row": 2,
+        "column": 0,
+        "contentBounds": {
+          "x": 26,
+          "y": 779,
+          "width": 337,
+          "height": 248
+        }
+      },
+      "smelter": {
+        "x": 398,
+        "y": 728,
+        "width": 331,
+        "height": 301,
+        "row": 2,
+        "column": 1,
+        "contentBounds": {
+          "x": 402,
+          "y": 732,
+          "width": 323,
+          "height": 293
+        }
+      },
+      "factoryAdvanced": {
+        "x": 736,
+        "y": 759,
+        "width": 345,
+        "height": 269,
+        "row": 2,
+        "column": 2,
+        "contentBounds": {
+          "x": 740,
+          "y": 763,
+          "width": 337,
+          "height": 261
+        }
+      },
+      "launchpadAdvanced": {
+        "x": 1106,
+        "y": 733,
+        "width": 324,
+        "height": 296,
+        "row": 2,
+        "column": 3,
+        "contentBounds": {
+          "x": 1110,
+          "y": 737,
+          "width": 316,
+          "height": 288
+        }
+      }
+    },
+    "worker-roles-atlas": {
+      "logCarry": {
+        "x": 70,
+        "y": 31,
+        "width": 249,
+        "height": 318,
+        "row": 0,
+        "column": 0,
+        "contentBounds": {
+          "x": 74,
+          "y": 35,
+          "width": 241,
+          "height": 310
+        }
+      },
+      "logLift": {
+        "x": 416,
+        "y": 30,
+        "width": 311,
+        "height": 319,
+        "row": 0,
+        "column": 1,
+        "contentBounds": {
+          "x": 420,
+          "y": 34,
+          "width": 303,
+          "height": 311
+        }
+      },
+      "walkRight": {
+        "x": 790,
+        "y": 28,
+        "width": 239,
+        "height": 321,
+        "row": 0,
+        "column": 2,
+        "contentBounds": {
+          "x": 794,
+          "y": 32,
+          "width": 231,
+          "height": 313
+        }
+      },
+      "honeyStand": {
+        "x": 1144,
+        "y": 23,
+        "width": 229,
+        "height": 329,
+        "row": 0,
+        "column": 3,
+        "contentBounds": {
+          "x": 1148,
+          "y": 27,
+          "width": 221,
+          "height": 321
+        }
+      },
+      "honeyTend": {
+        "x": 68,
+        "y": 389,
+        "width": 255,
+        "height": 308,
+        "row": 1,
+        "column": 0,
+        "contentBounds": {
+          "x": 72,
+          "y": 393,
+          "width": 247,
+          "height": 300
+        }
+      },
+      "honeyCarry": {
+        "x": 412,
+        "y": 381,
+        "width": 261,
+        "height": 315,
+        "row": 1,
+        "column": 1,
+        "contentBounds": {
+          "x": 416,
+          "y": 385,
+          "width": 253,
+          "height": 307
+        }
+      },
+      "readBook": {
+        "x": 786,
+        "y": 395,
+        "width": 251,
+        "height": 305,
+        "row": 1,
+        "column": 2,
+        "contentBounds": {
+          "x": 790,
+          "y": 399,
+          "width": 243,
+          "height": 297
+        }
+      },
+      "turnPage": {
+        "x": 1153,
+        "y": 395,
+        "width": 256,
+        "height": 305,
+        "row": 1,
+        "column": 3,
+        "contentBounds": {
+          "x": 1157,
+          "y": 399,
+          "width": 248,
+          "height": 297
+        }
+      },
+      "pickaxeDown": {
+        "x": 84,
+        "y": 741,
+        "width": 247,
+        "height": 325,
+        "row": 2,
+        "column": 0,
+        "contentBounds": {
+          "x": 88,
+          "y": 745,
+          "width": 239,
+          "height": 317
+        }
+      },
+      "pickaxeLift": {
+        "x": 388,
+        "y": 727,
+        "width": 271,
+        "height": 333,
+        "row": 2,
+        "column": 1,
+        "contentBounds": {
+          "x": 392,
+          "y": 731,
+          "width": 263,
+          "height": 325
+        }
+      },
+      "wrenchDown": {
+        "x": 804,
+        "y": 742,
+        "width": 204,
+        "height": 324,
+        "row": 2,
+        "column": 2,
+        "contentBounds": {
+          "x": 808,
+          "y": 746,
+          "width": 196,
+          "height": 316
+        }
+      },
+      "wrenchLift": {
+        "x": 1136,
+        "y": 741,
+        "width": 281,
+        "height": 325,
+        "row": 2,
+        "column": 3,
+        "contentBounds": {
+          "x": 1140,
+          "y": 745,
+          "width": 273,
+          "height": 317
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "width": 1774,
+  "height": 887,
+  "crops": {
+    "hive": {
+      "x": 59,
+      "y": 98,
+      "width": 605,
+      "height": 693
+    },
+    "apiary": {
+      "x": 824,
+      "y": 94,
+      "width": 917,
+      "height": 717
+    }
+  }
+}

@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createGame,catalog} from '../src/engine/index.js';
+import {createState,serialize} from '../src/engine/save.js';
+import {page,recipePanel,buildingLocator,sceneGroups,world} from '../src/ui/render.js';
+import {engineeringPanel} from '../src/ui/advanced.js';
+
+function fixture(){const s=createState(29,0);for(const c of catalog.science)s.science[c.id]=true;for(const b of catalog.buildings)s.buildings[b.id]=1;s.ironWill=false;return createGame({storage:null,save:serialize(s,0),now:0}).snapshot();}
+const ui={page:'more',system:'crafts',district:'village',region:'',regionSite:'',recipeChoice:'beam'};
+test('workshop leads with recipes and only the selected engineer allocation',()=>{const vm=fixture(),html=page(vm,ui);assert.ok(html.indexOf('recipe-picker')<html.indexOf('recipe-engineering'));assert.match(html,/<details class="fold-section recipe-engineering" data-fold="engineering-beam">/);assert.match(html,/data-act="engineerAssign" data-id="beam"/);assert.doesNotMatch(html,/data-act="engineerAssign" data-id="slab"/);assert.match(html,/data-recipe-choice="slab"/);assert.match(html,/data-detail="crafts:beam"/);});
+test('changing recipe exposes exactly the matching automation controls',()=>{const vm=fixture(),html=recipePanel(vm,{recipeChoice:'slab'});assert.match(html,/data-act="engineerAssign" data-id="slab"/);assert.doesNotMatch(html,/data-act="engineerAssign" data-id="beam"/);assert.match(html,/data-fold="engineering-slab"/);});
+test('recipe controls retain one, ten, and explicitly confirmed maximum crafting',()=>{const html=recipePanel(fixture(),ui);assert.match(html,/data-act="craft" data-id="beam"/);assert.match(html,/data-act="craft" data-id="beam" data-amount="10"/);assert.match(html,/data-act="craft" data-id="beam" data-amount="max"[^>]*data-confirm="[^"]+"/);assert.match(html,/每次所需原料/);assert.match(html,/aria-label="制作木梁十次，消耗/);});
+test('full engineer overview stays available without requiring recipe selection',()=>{const html=engineeringPanel(fixture(),{folded:true});assert.match(html,/data-fold="engineering-all"/);assert.match(html,/data-act="engineerAssign" data-id="beam"/);assert.match(html,/data-act="engineerAssign" data-id="slab"/);});
+test('locator includes all and only facilities in its own region, including late physical sites',()=>{const vm=fixture();for(const group of sceneGroups(vm)){const html=buildingLocator(group);assert.equal((html.match(/data-locate-building=/g)||[]).length,group.cards.length);for(const b of group.cards)assert.ok(html.includes(`data-locate-building="${b.id}" data-locate-section="${b.section}"`));assert.match(world(vm,{page:'home',district:group.id}),/building-locator/);}});
+test('empty map needs no locator and names are escaped',()=>{assert.equal(buildingLocator({id:'village',cards:[]}), '');const html=buildingLocator({id:'village',label:'家园',cards:[{id:'hive',section:'buildings',name:'<img onerror="oops">',owned:1}]});assert.doesNotMatch(html,/<img/);assert.match(html,/&lt;img/);});

@@ -1,0 +1,132 @@
+{
+  "job": {
+    "source": "source-assets/simple-book-v31/resources-b/semantic-resources-extra.png",
+    "columns": 2,
+    "rows": 2,
+    "outputColumns": 6,
+    "keys": [
+      "tanker",
+      "megalith",
+      "karma",
+      "burnedParagon"
+    ],
+    "cell": 256,
+    "sheet": "semantic-resources-extra",
+    "output": "semantic-resources-extra.webp",
+    "registry": "src/ui/semantic-resources.js",
+    "export": "semanticResources",
+    "merge": true,
+    "sourceCrops": {
+      "tanker": {
+        "x": 75,
+        "y": 159,
+        "width": 596,
+        "height": 425
+      },
+      "megalith": {
+        "x": 764,
+        "y": 73,
+        "width": 379,
+        "height": 533
+      },
+      "karma": {
+        "x": 95,
+        "y": 660,
+        "width": 500,
+        "height": 481
+      },
+      "burnedParagon": {
+        "x": 675,
+        "y": 684,
+        "width": 527,
+        "height": 474
+      }
+    }
+  },
+  "crops": [
+    {
+      "key": "tanker",
+      "sourceCell": [
+        75,
+        159,
+        671,
+        584
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        592,
+        421
+      ],
+      "crop": {
+        "x": 16,
+        "y": 48,
+        "width": 224,
+        "height": 159
+      }
+    },
+    {
+      "key": "megalith",
+      "sourceCell": [
+        764,
+        73,
+        1143,
+        606
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        375,
+        529
+      ],
+      "crop": {
+        "x": 305,
+        "y": 16,
+        "width": 158,
+        "height": 224
+      }
+    },
+    {
+      "key": "karma",
+      "sourceCell": [
+        95,
+        660,
+        595,
+        1141
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        496,
+        477
+      ],
+      "crop": {
+        "x": 528,
+        "y": 20,
+        "width": 224,
+        "height": 215
+      }
+    },
+    {
+      "key": "burnedParagon",
+      "sourceCell": [
+        675,
+        684,
+        1202,
+        1158
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        523,
+        470
+      ],
+      "crop": {
+        "x": 784,
+        "y": 27,
+        "width": 224,
+        "height": 201
+      }
+    }
+  ]
+}

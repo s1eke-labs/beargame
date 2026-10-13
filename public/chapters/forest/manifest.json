@@ -1,0 +1,357 @@
+{
+  "chapter": "forest",
+  "version": 1,
+  "totalBytes": 2496506,
+  "files": [
+    {
+      "path": "bears/idleFront.webp",
+      "bytes": 22940,
+      "sha256": "5bd7eec2885de211534e5f92afd6ccab401d5b68d9d07fa89bb8dae8d3082e06",
+      "width": 202,
+      "height": 270
+    },
+    {
+      "path": "bears/wave.webp",
+      "bytes": 22494,
+      "sha256": "af38b6f3f838e0e8553a69843ae381ef653731209185828dc4b644b90dd31c5e",
+      "width": 216,
+      "height": 265
+    },
+    {
+      "path": "buildings/barn.webp",
+      "bytes": 87456,
+      "sha256": "bb1cdfd56c6cb2f93595a046804340aab08605e024a64875bcb5bbbbb0ccc1ea",
+      "width": 352,
+      "height": 293
+    },
+    {
+      "path": "buildings/hive.webp",
+      "bytes": 57732,
+      "sha256": "43919e9606178adfdb5a58813b407a9a29a3845d9f0aab547e78fafbd5dcb88c",
+      "width": 246,
+      "height": 274
+    },
+    {
+      "path": "buildings/hut.webp",
+      "bytes": 103014,
+      "sha256": "68a13329e05094044b311b263cfb4131a8184b930352fe1081c2e2cba50dd7f8",
+      "width": 352,
+      "height": 344
+    },
+    {
+      "path": "buildings/library.webp",
+      "bytes": 96458,
+      "sha256": "41ae8f09674e3485af3bc213f57cddfb47838285c5c2f6cf8a34fa386966720b",
+      "width": 352,
+      "height": 290
+    },
+    {
+      "path": "buildings/logHouse.webp",
+      "bytes": 86516,
+      "sha256": "a116094767ec2c71be6a9b29fa7688042d509ec1cee761002a13b650acb33f36",
+      "width": 352,
+      "height": 310
+    },
+    {
+      "path": "buildings/lumberMill.webp",
+      "bytes": 80296,
+      "sha256": "6395671e29c4f4dcc65fd664fe52d7881bb047053fb1e54ae0af2b2f2fc4f2c4",
+      "width": 352,
+      "height": 311
+    },
+    {
+      "path": "buildings/mine.webp",
+      "bytes": 70412,
+      "sha256": "6b0dd336c43c1ad7a84bad469691304a56d2000345a26b62af985f8149ff71e0",
+      "width": 352,
+      "height": 264
+    },
+    {
+      "path": "buildings/pasture.webp",
+      "bytes": 38120,
+      "sha256": "9be2ba4c4831e19b2a4a20d9cf04846c7362a76e6049f9eb8b43a392f2cd14d3",
+      "width": 219,
+      "height": 173
+    },
+    {
+      "path": "buildings/smelter.webp",
+      "bytes": 85212,
+      "sha256": "23aea20f1812085088f4370867fbb35aded7f80b1c4034c3a496c7edee769709",
+      "width": 352,
+      "height": 314
+    },
+    {
+      "path": "buildings/warehouse.webp",
+      "bytes": 85140,
+      "sha256": "45997d83810ecbc337f8b8efea6f5200d47a43c701c68bacdcbba6a76aa6f906",
+      "width": 352,
+      "height": 293
+    },
+    {
+      "path": "buildings/workshop.webp",
+      "bytes": 45186,
+      "sha256": "44699be624d0caaf432a1ca60a1768d5d60ac0716c24c804e930a60f66514e37",
+      "width": 512,
+      "height": 390
+    },
+    {
+      "path": "growth/barn.webp",
+      "bytes": 98416,
+      "sha256": "89821aef1190b58988591981ca278dc147b7a81c0b7ba00bc111754a54ac67ed",
+      "width": 352,
+      "height": 311
+    },
+    {
+      "path": "growth/hive.webp",
+      "bytes": 85276,
+      "sha256": "4c9b27460c0178e85b29388597510d44eba217ce7e689af33e311ce4c2299788",
+      "width": 352,
+      "height": 253
+    },
+    {
+      "path": "growth/hut.webp",
+      "bytes": 105130,
+      "sha256": "ea94d27ecfd362abdfdc961c07044a43e8149ea25036044abd63da60a414de3b",
+      "width": 352,
+      "height": 299
+    },
+    {
+      "path": "growth/library.webp",
+      "bytes": 103304,
+      "sha256": "ea0ab8c1f4ec064a840b48667f917c0a5437a598efef02b9642f5b4b7a070792",
+      "width": 352,
+      "height": 286
+    },
+    {
+      "path": "growth/lumberMill.webp",
+      "bytes": 88502,
+      "sha256": "611b6be1dab4d77a9c8c6565468e8b31f17c8ddc2d2b4249a1288b3031a02186",
+      "width": 352,
+      "height": 270
+    },
+    {
+      "path": "growth/warehouse.webp",
+      "bytes": 81358,
+      "sha256": "c93f3c0632406fb68cdd49cb3c892f061316b8dc00d0d6244e90e0d91acc0946",
+      "width": 352,
+      "height": 288
+    },
+    {
+      "path": "growth/workshop.webp",
+      "bytes": 82560,
+      "sha256": "e2bde61db0c8a7fdf76ce180e807d82de602a92752384b16b6c3fba015ab0e9c",
+      "width": 352,
+      "height": 281
+    },
+    {
+      "path": "research/agriculture.webp",
+      "bytes": 29918,
+      "sha256": "7c38ff2e217d3781512f549a5ae277572b3f6660860f961c27ea547e46d7c5eb",
+      "width": 182,
+      "height": 169
+    },
+    {
+      "path": "research/animal.webp",
+      "bytes": 36666,
+      "sha256": "83ebd60276492c0d3fef68582c64bd0b24f73efd48db09ed45462c7a248ecde4",
+      "width": 186,
+      "height": 184
+    },
+    {
+      "path": "research/archery.webp",
+      "bytes": 42284,
+      "sha256": "eb36a35b0a29a7bb8872598558a99c3a2c00abd1cf17becd798090cfbb5c6a95",
+      "width": 220,
+      "height": 202
+    },
+    {
+      "path": "research/calendar.webp",
+      "bytes": 42970,
+      "sha256": "473ba99a2548eba031cbef2cb6e8b52e0cbdcde9d5e9c31d20f8164e631d8c29",
+      "width": 210,
+      "height": 198
+    },
+    {
+      "path": "research/construction.webp",
+      "bytes": 34246,
+      "sha256": "87e674f7edc1e6b2d120b165e40b71eeed0faa5088561ecc69d3d62aa3648f71",
+      "width": 193,
+      "height": 188
+    },
+    {
+      "path": "research/metal.webp",
+      "bytes": 27712,
+      "sha256": "bb1bbd803cd536ee0272d420c0a339e33c143d99be43cd6462e4045f49a723d2",
+      "width": 191,
+      "height": 198
+    },
+    {
+      "path": "research/mining.webp",
+      "bytes": 29790,
+      "sha256": "bdaae761fad7ee8690cfbb9dc8fa81f1c012e3bf2ba498f67aa7d3ef8a833a3e",
+      "width": 195,
+      "height": 185
+    },
+    {
+      "path": "resources/beam.webp",
+      "bytes": 21936,
+      "sha256": "a44befde4c2f052d05387f1256b832bdb05ca1f63dba86316dba675f12eaed5b",
+      "width": 194,
+      "height": 181
+    },
+    {
+      "path": "resources/furs.webp",
+      "bytes": 34838,
+      "sha256": "58d7024bffed4ca1e1db89cf56080c3d9237ad9b2bba955a9a3d4822ad66cee4",
+      "width": 224,
+      "height": 167
+    },
+    {
+      "path": "resources/honey.webp",
+      "bytes": 38550,
+      "sha256": "7411762eaf5ee3c8686035ce2c6b0218804b7ed2de27ca51ab494e4fd39882b7",
+      "width": 224,
+      "height": 218
+    },
+    {
+      "path": "resources/iron.webp",
+      "bytes": 18960,
+      "sha256": "14bd985b542b548c0aae7594b20a18fc05b5054abb7b2eaade754446181ea2af",
+      "width": 232,
+      "height": 209
+    },
+    {
+      "path": "resources/ivory.webp",
+      "bytes": 21954,
+      "sha256": "981441292aeb9db080590aacca0fe0776ee7d5ae073d0273be5b984c8f9bb45e",
+      "width": 184,
+      "height": 183
+    },
+    {
+      "path": "resources/manpower.webp",
+      "bytes": 32270,
+      "sha256": "eeddeb8bab544b53b773de0740aab09129f1810873422cfea1acc557b363baf8",
+      "width": 175,
+      "height": 202
+    },
+    {
+      "path": "resources/minerals.webp",
+      "bytes": 20104,
+      "sha256": "c08b2b8009edabe7b4df42029ca57c30c283ff197c45646b7cd0974334a49424",
+      "width": 238,
+      "height": 194
+    },
+    {
+      "path": "resources/science.webp",
+      "bytes": 47602,
+      "sha256": "cebffa300117f831701de161d8dc9ad912e3da5787c18b7d20cd7178c8ee184d",
+      "width": 281,
+      "height": 192
+    },
+    {
+      "path": "resources/slab.webp",
+      "bytes": 16030,
+      "sha256": "398519e66af9132e6a16e53ad562244276959b24caaf283dd89702731855e394",
+      "width": 213,
+      "height": 159
+    },
+    {
+      "path": "resources/unicorns.webp",
+      "bytes": 26714,
+      "sha256": "aee8b555d695207824f56cecfb33a50c2b2a6ff8eef35555f910b040b2551999",
+      "width": 215,
+      "height": 208
+    },
+    {
+      "path": "resources/wood.webp",
+      "bytes": 44568,
+      "sha256": "650f611834bff569a1b50517474f302e4ebfd88e61c4dd5a9c0a68f031e2f930",
+      "width": 259,
+      "height": 203
+    },
+    {
+      "path": "scenery/background.webp",
+      "bytes": 68632,
+      "sha256": "ba18ee091e33b499a08547b455e53469582d809af4f05dcf6771491ce41ead21",
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "path": "scenery/loading.webp",
+      "bytes": 12232,
+      "sha256": "14dcb31ce1ced2dd104c60b16c4b5141401dd3f76f5984e2f5a0e1f06f0ef800",
+      "width": 128,
+      "height": 160
+    },
+    {
+      "path": "workers/farmer-ready.webp",
+      "bytes": 37074,
+      "sha256": "4df1765fe0109d1d8f08eea50080f19d7b7068c4a253a9dc61d63d94bdd008da",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/farmer-work.webp",
+      "bytes": 37536,
+      "sha256": "ce21cbff9d33833c5d4a607fc21247f2988cdd02fda0e5207377f4c02d79b735",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/hunter-ready.webp",
+      "bytes": 29978,
+      "sha256": "c13834363ce4bccdca5bd7c23dbadd52277ac317407727e96ca3e980d36a836e",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/hunter-work.webp",
+      "bytes": 30940,
+      "sha256": "b62877d9c83c46bbf7bf2dd8234c1733b22dbdb583aa3efd93d37bba12278ef3",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/miner-ready.webp",
+      "bytes": 35198,
+      "sha256": "fffb46e5afefcb023151d1681988c6333fd49d1f37b7ae08e727b636b6d25570",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/miner-work.webp",
+      "bytes": 34470,
+      "sha256": "ebbf11bfa8f24d646060f0909c0149bfb0760314e33007fa0443a33afcf5cbfc",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/scholar-ready.webp",
+      "bytes": 25388,
+      "sha256": "a5a0a782491b74eec4c1fbcab99037b2406291a2f16265029a209e25e9981c77",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/scholar-work.webp",
+      "bytes": 26412,
+      "sha256": "42bffe92c98a6b7ce8cb58a6ac9d3169e9ff08e1bf99520244e98d1de569e7dd",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/woodcutter-ready.webp",
+      "bytes": 34416,
+      "sha256": "1252e1ec6f9d26d321f0dcdb898a6621c9544a8e91935c48650b236b3138c5d6",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "workers/woodcutter-work.webp",
+      "bytes": 31596,
+      "sha256": "bd23cd0d048270b5bee51a4ba2357204a6256d644a6274cf480afad952253eae",
+      "width": 256,
+      "height": 256
+    }
+  ]
+}

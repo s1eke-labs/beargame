@@ -1,0 +1,210 @@
+{
+  "painted-home.png": {
+    "beehive": {
+      "x": 90,
+      "y": 183,
+      "width": 248,
+      "height": 276
+    },
+    "bearHut": {
+      "x": 447,
+      "y": 65,
+      "width": 406,
+      "height": 395
+    },
+    "library": {
+      "x": 891,
+      "y": 104,
+      "width": 430,
+      "height": 356
+    },
+    "barn": {
+      "x": 1330,
+      "y": 92,
+      "width": 431,
+      "height": 359
+    },
+    "apiary": {
+      "x": 14,
+      "y": 574,
+      "width": 390,
+      "height": 281
+    },
+    "expandedHut": {
+      "x": 442,
+      "y": 498,
+      "width": 424,
+      "height": 360
+    },
+    "expandedLibrary": {
+      "x": 887,
+      "y": 503,
+      "width": 435,
+      "height": 354
+    },
+    "granary": {
+      "x": 1329,
+      "y": 474,
+      "width": 433,
+      "height": 383
+    }
+  },
+  "painted-workplaces.png": {
+    "logyard": {
+      "x": 13,
+      "y": 87,
+      "width": 427,
+      "height": 379
+    },
+    "mine": {
+      "x": 456,
+      "y": 156,
+      "width": 416,
+      "height": 313
+    },
+    "forge": {
+      "x": 888,
+      "y": 87,
+      "width": 423,
+      "height": 380
+    },
+    "warehouse": {
+      "x": 1341,
+      "y": 111,
+      "width": 422,
+      "height": 352
+    },
+    "academy": {
+      "x": 21,
+      "y": 465,
+      "width": 417,
+      "height": 399
+    },
+    "observatory": {
+      "x": 486,
+      "y": 486,
+      "width": 371,
+      "height": 376
+    },
+    "factory": {
+      "x": 896,
+      "y": 482,
+      "width": 438,
+      "height": 387
+    },
+    "expandedLumberyard": {
+      "x": 1335,
+      "y": 538,
+      "width": 429,
+      "height": 329
+    }
+  },
+  "painted-expedition.png": {
+    "shrine": {
+      "x": 34,
+      "y": 118,
+      "width": 377,
+      "height": 370
+    },
+    "market": {
+      "x": 481,
+      "y": 162,
+      "width": 379,
+      "height": 312
+    },
+    "launchpad": {
+      "x": 924,
+      "y": 81,
+      "width": 377,
+      "height": 396
+    },
+    "timegate": {
+      "x": 1381,
+      "y": 150,
+      "width": 345,
+      "height": 325
+    },
+    "loghouse": {
+      "x": 23,
+      "y": 523,
+      "width": 400,
+      "height": 352
+    },
+    "manor": {
+      "x": 466,
+      "y": 521,
+      "width": 412,
+      "height": 350
+    },
+    "expandedWorkshop": {
+      "x": 905,
+      "y": 527,
+      "width": 424,
+      "height": 341
+    },
+    "expandedWarehouse": {
+      "x": 1347,
+      "y": 531,
+      "width": 412,
+      "height": 338
+    }
+  },
+  "painted-utilities.png": {
+    "aqueduct": {
+      "x": 43,
+      "y": 181,
+      "width": 409,
+      "height": 289
+    },
+    "quarry": {
+      "x": 471,
+      "y": 123,
+      "width": 399,
+      "height": 344
+    },
+    "mint": {
+      "x": 908,
+      "y": 128,
+      "width": 407,
+      "height": 344
+    },
+    "chapel": {
+      "x": 1402,
+      "y": 91,
+      "width": 331,
+      "height": 379
+    },
+    "unicornPasture": {
+      "x": 14,
+      "y": 581,
+      "width": 415,
+      "height": 286
+    },
+    "ziggurat": {
+      "x": 461,
+      "y": 543,
+      "width": 409,
+      "height": 323
+    },
+    "biolab": {
+      "x": 899,
+      "y": 546,
+      "width": 419,
+      "height": 315
+    },
+    "modernWarehouse": {
+      "x": 1361,
+      "y": 541,
+      "width": 408,
+      "height": 316
+    }
+  },
+  "workshop-soft.png": {
+    "workshop": {
+      "x": 44,
+      "y": 203,
+      "width": 1184,
+      "height": 903
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "asset": "forest-atlas-v1.png",
+  "sourceGeneratedImage": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-200f9a97-1fc5-4863-bcfd-9accfb37b265.png",
+  "generationMode": "built-in image_gen",
+  "size": [
+    1536,
+    1024
+  ],
+  "layout": {
+    "columns": 3,
+    "rows": 2,
+    "cellSize": [
+      512,
+      512
+    ],
+    "topRow": "ready",
+    "bottomRow": "work"
+  },
+  "transparency": {
+    "mode": "RGBA",
+    "fullyTransparentPixels": 892627,
+    "alphaRange": [
+      0,
+      254
+    ],
+    "note": "True alpha. Faint alpha values of 1–3 occur beyond primary silhouettes. Most interior alpha is 253–254. Dark preview shading predominantly corresponds to transparent background RGB."
+  },
+  "registrationRule": "Use identical scale on every pose and align reported head center X / foot baseline Y to the same destination anchor. Do not fit each outer silhouette independently. Stump, axe, hats, honeycomb and arms change outer bounds.",
+  "poses": [
+    {
+      "role": "woodcutter",
+      "frame": "ready",
+      "column": 0,
+      "row": 0,
+      "safeCropXYWH": [
+        100,
+        35,
+        412,
+        455
+      ],
+      "headCenterX": 252,
+      "footBaselineY": 473
+    },
+    {
+      "role": "woodcutter",
+      "frame": "work",
+      "column": 0,
+      "row": 1,
+      "safeCropXYWH": [
+        100,
+        528,
+        362,
+        458
+      ],
+      "headCenterX": 252,
+      "footBaselineY": 961,
+      "anchorNote": "Use visible left foot baseline; the stump extends to y≈978. Its edge overlaps measurement region of right foot."
+    },
+    {
+      "role": "hunter",
+      "frame": "ready",
+      "column": 1,
+      "row": 0,
+      "safeCropXYWH": [
+        580,
+        40,
+        376,
+        444
+      ],
+      "headCenterX": 769,
+      "footBaselineY": 473
+    },
+    {
+      "role": "hunter",
+      "frame": "work",
+      "column": 1,
+      "row": 1,
+      "safeCropXYWH": [
+        580,
+        523,
+        377,
+        448
+      ],
+      "headCenterX": 769,
+      "footBaselineY": 960
+    },
+    {
+      "role": "beekeeper",
+      "frame": "ready",
+      "column": 2,
+      "row": 0,
+      "safeCropXYWH": [
+        1079,
+        31,
+        386,
+        453
+      ],
+      "headCenterX": 1273,
+      "footBaselineY": 473
+    },
+    {
+      "role": "beekeeper",
+      "frame": "work",
+      "column": 2,
+      "row": 1,
+      "safeCropXYWH": [
+        1079,
+        516,
+        413,
+        456
+      ],
+      "headCenterX": 1273,
+      "footBaselineY": 961
+    }
+  ],
+  "visualReview": {
+    "correct": [
+      "Six complete white-bear drawings with required three outfits and tool changes.",
+      "Woodcutter raises/lowers short broad axe toward stump; no carried log.",
+      "Hunter lowers/raises binoculars; no weapon.",
+      "Beekeeper raises honeycomb frame; face remains unobscured and there is no mesh.",
+      "Both ears visible, tiny eyes/nose/mouth, short limbs, chunky dark outlines."
+    ],
+    "caveats": [
+      "Bottom-row body anchors are about 24 px higher relative to equal 512 px cells; explicit registration is required.",
+      "Hunter cape opens in raised-arm frame; body/head scale remains similar, but cape topology changes.",
+      "Hats, tools and aprons contain some mild smooth tonal variation, softer than strictly flat reference palette.",
+      "Some alpha 1–3 edge/background speckles and alpha 253–254 interiors; inspect final compositing.",
+      "First woodcutter axe almost touches right cell boundary x=510, while following hunter begins about x=590."
+    ]
+  }
+}

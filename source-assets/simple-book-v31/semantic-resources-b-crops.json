@@ -1,0 +1,692 @@
+{
+  "job": {
+    "source": "source-assets/simple-book-v31/resources-b/semantic-resources-b.png",
+    "columns": 6,
+    "rows": 4,
+    "outputColumns": 6,
+    "keys": [
+      "relic",
+      "blackcoin",
+      "void",
+      "temporalFlux",
+      "furnaceHeat",
+      "tears",
+      "sorrow",
+      "unicorns",
+      "alicorn",
+      "necrocorn",
+      "zebras",
+      "bloodstone",
+      "tMythril",
+      "gflops",
+      "hashrates",
+      "plastic",
+      "microchip",
+      "catnip",
+      "energy",
+      "happiness",
+      "beam",
+      "steel",
+      "gear",
+      "starchart"
+    ],
+    "cell": 256,
+    "sheet": "semantic-resources-b",
+    "output": "semantic-resources-b.webp",
+    "registry": "src/ui/semantic-resources.js",
+    "export": "semanticResources",
+    "merge": true,
+    "sourceCrops": {
+      "relic": {
+        "x": 57,
+        "y": 55,
+        "width": 176,
+        "height": 206
+      },
+      "blackcoin": {
+        "x": 301,
+        "y": 62,
+        "width": 191,
+        "height": 190
+      },
+      "void": {
+        "x": 549,
+        "y": 59,
+        "width": 196,
+        "height": 196
+      },
+      "temporalFlux": {
+        "x": 814,
+        "y": 49,
+        "width": 168,
+        "height": 214
+      },
+      "furnaceHeat": {
+        "x": 1062,
+        "y": 51,
+        "width": 189,
+        "height": 209
+      },
+      "tears": {
+        "x": 1339,
+        "y": 70,
+        "width": 135,
+        "height": 187
+      },
+      "sorrow": {
+        "x": 75,
+        "y": 317,
+        "width": 129,
+        "height": 182
+      },
+      "unicorns": {
+        "x": 294,
+        "y": 285,
+        "width": 223,
+        "height": 216
+      },
+      "alicorn": {
+        "x": 537,
+        "y": 289,
+        "width": 219,
+        "height": 212
+      },
+      "necrocorn": {
+        "x": 782,
+        "y": 286,
+        "width": 227,
+        "height": 217
+      },
+      "zebras": {
+        "x": 1052,
+        "y": 299,
+        "width": 226,
+        "height": 204
+      },
+      "bloodstone": {
+        "x": 1321,
+        "y": 308,
+        "width": 171,
+        "height": 183
+      },
+      "tMythril": {
+        "x": 43,
+        "y": 557,
+        "width": 186,
+        "height": 168
+      },
+      "gflops": {
+        "x": 297,
+        "y": 532,
+        "width": 198,
+        "height": 194
+      },
+      "hashrates": {
+        "x": 540,
+        "y": 523,
+        "width": 223,
+        "height": 214
+      },
+      "plastic": {
+        "x": 797,
+        "y": 561,
+        "width": 210,
+        "height": 157
+      },
+      "microchip": {
+        "x": 1066,
+        "y": 540,
+        "width": 177,
+        "height": 181
+      },
+      "catnip": {
+        "x": 1315,
+        "y": 532,
+        "width": 192,
+        "height": 200
+      },
+      "energy": {
+        "x": 69,
+        "y": 766,
+        "width": 135,
+        "height": 202
+      },
+      "happiness": {
+        "x": 279,
+        "y": 752,
+        "width": 229,
+        "height": 220
+      },
+      "beam": {
+        "x": 542,
+        "y": 770,
+        "width": 202,
+        "height": 189
+      },
+      "steel": {
+        "x": 793,
+        "y": 785,
+        "width": 207,
+        "height": 174
+      },
+      "gear": {
+        "x": 1049,
+        "y": 762,
+        "width": 212,
+        "height": 210
+      },
+      "starchart": {
+        "x": 1313,
+        "y": 773,
+        "width": 203,
+        "height": 195
+      }
+    }
+  },
+  "crops": [
+    {
+      "key": "relic",
+      "sourceCell": [
+        57,
+        55,
+        233,
+        261
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        172,
+        202
+      ],
+      "crop": {
+        "x": 44,
+        "y": 29,
+        "width": 168,
+        "height": 198
+      }
+    },
+    {
+      "key": "blackcoin",
+      "sourceCell": [
+        301,
+        62,
+        492,
+        252
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        188,
+        186
+      ],
+      "crop": {
+        "x": 292,
+        "y": 37,
+        "width": 184,
+        "height": 182
+      }
+    },
+    {
+      "key": "void",
+      "sourceCell": [
+        549,
+        59,
+        745,
+        255
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        192,
+        192
+      ],
+      "crop": {
+        "x": 546,
+        "y": 34,
+        "width": 188,
+        "height": 188
+      }
+    },
+    {
+      "key": "temporalFlux",
+      "sourceCell": [
+        814,
+        49,
+        982,
+        263
+      ],
+      "alphaBounds": [
+        4,
+        3,
+        164,
+        210
+      ],
+      "crop": {
+        "x": 816,
+        "y": 24,
+        "width": 160,
+        "height": 207
+      }
+    },
+    {
+      "key": "furnaceHeat",
+      "sourceCell": [
+        1062,
+        51,
+        1251,
+        260
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        185,
+        206
+      ],
+      "crop": {
+        "x": 1061,
+        "y": 27,
+        "width": 181,
+        "height": 202
+      }
+    },
+    {
+      "key": "tears",
+      "sourceCell": [
+        1339,
+        70,
+        1474,
+        257
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        131,
+        183
+      ],
+      "crop": {
+        "x": 1344,
+        "y": 38,
+        "width": 127,
+        "height": 179
+      }
+    },
+    {
+      "key": "sorrow",
+      "sourceCell": [
+        75,
+        317,
+        204,
+        499
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        125,
+        178
+      ],
+      "crop": {
+        "x": 67,
+        "y": 297,
+        "width": 121,
+        "height": 174
+      }
+    },
+    {
+      "key": "unicorns",
+      "sourceCell": [
+        294,
+        285,
+        517,
+        501
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        219,
+        212
+      ],
+      "crop": {
+        "x": 276,
+        "y": 280,
+        "width": 215,
+        "height": 208
+      }
+    },
+    {
+      "key": "alicorn",
+      "sourceCell": [
+        537,
+        289,
+        756,
+        501
+      ],
+      "alphaBounds": [
+        4,
+        3,
+        215,
+        208
+      ],
+      "crop": {
+        "x": 534,
+        "y": 281,
+        "width": 211,
+        "height": 205
+      }
+    },
+    {
+      "key": "necrocorn",
+      "sourceCell": [
+        782,
+        286,
+        1009,
+        503
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        223,
+        213
+      ],
+      "crop": {
+        "x": 786,
+        "y": 279,
+        "width": 219,
+        "height": 209
+      }
+    },
+    {
+      "key": "zebras",
+      "sourceCell": [
+        1052,
+        299,
+        1278,
+        503
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        222,
+        200
+      ],
+      "crop": {
+        "x": 1043,
+        "y": 286,
+        "width": 218,
+        "height": 196
+      }
+    },
+    {
+      "key": "bloodstone",
+      "sourceCell": [
+        1321,
+        308,
+        1492,
+        491
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        167,
+        179
+      ],
+      "crop": {
+        "x": 1326,
+        "y": 296,
+        "width": 163,
+        "height": 175
+      }
+    },
+    {
+      "key": "tMythril",
+      "sourceCell": [
+        43,
+        557,
+        229,
+        725
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        182,
+        164
+      ],
+      "crop": {
+        "x": 39,
+        "y": 560,
+        "width": 178,
+        "height": 160
+      }
+    },
+    {
+      "key": "gflops",
+      "sourceCell": [
+        297,
+        532,
+        495,
+        726
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        194,
+        190
+      ],
+      "crop": {
+        "x": 289,
+        "y": 547,
+        "width": 190,
+        "height": 186
+      }
+    },
+    {
+      "key": "hashrates",
+      "sourceCell": [
+        540,
+        523,
+        763,
+        737
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        219,
+        210
+      ],
+      "crop": {
+        "x": 532,
+        "y": 537,
+        "width": 215,
+        "height": 206
+      }
+    },
+    {
+      "key": "plastic",
+      "sourceCell": [
+        797,
+        561,
+        1007,
+        718
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        206,
+        153
+      ],
+      "crop": {
+        "x": 795,
+        "y": 565,
+        "width": 202,
+        "height": 149
+      }
+    },
+    {
+      "key": "microchip",
+      "sourceCell": [
+        1066,
+        540,
+        1243,
+        721
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        173,
+        177
+      ],
+      "crop": {
+        "x": 1067,
+        "y": 553,
+        "width": 169,
+        "height": 173
+      }
+    },
+    {
+      "key": "catnip",
+      "sourceCell": [
+        1315,
+        532,
+        1507,
+        732
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        188,
+        196
+      ],
+      "crop": {
+        "x": 1316,
+        "y": 544,
+        "width": 184,
+        "height": 192
+      }
+    },
+    {
+      "key": "energy",
+      "sourceCell": [
+        69,
+        766,
+        204,
+        968
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        131,
+        198
+      ],
+      "crop": {
+        "x": 64,
+        "y": 799,
+        "width": 127,
+        "height": 194
+      }
+    },
+    {
+      "key": "happiness",
+      "sourceCell": [
+        279,
+        752,
+        508,
+        972
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        225,
+        216
+      ],
+      "crop": {
+        "x": 273,
+        "y": 790,
+        "width": 221,
+        "height": 212
+      }
+    },
+    {
+      "key": "beam",
+      "sourceCell": [
+        542,
+        770,
+        744,
+        959
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        198,
+        185
+      ],
+      "crop": {
+        "x": 543,
+        "y": 805,
+        "width": 194,
+        "height": 181
+      }
+    },
+    {
+      "key": "steel",
+      "sourceCell": [
+        793,
+        785,
+        1000,
+        959
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        203,
+        170
+      ],
+      "crop": {
+        "x": 796,
+        "y": 813,
+        "width": 199,
+        "height": 166
+      }
+    },
+    {
+      "key": "gear",
+      "sourceCell": [
+        1049,
+        762,
+        1261,
+        972
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        208,
+        206
+      ],
+      "crop": {
+        "x": 1050,
+        "y": 795,
+        "width": 204,
+        "height": 202
+      }
+    },
+    {
+      "key": "starchart",
+      "sourceCell": [
+        1313,
+        773,
+        1516,
+        968
+      ],
+      "alphaBounds": [
+        4,
+        4,
+        199,
+        191
+      ],
+      "crop": {
+        "x": 1310,
+        "y": 802,
+        "width": 195,
+        "height": 187
+      }
+    }
+  ]
+}

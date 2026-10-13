@@ -1,0 +1,247 @@
+{
+  "job": {
+    "source": "source-assets/simple-book-v31/buildings-main/painted-expedition.png",
+    "columns": 4,
+    "rows": 2,
+    "keys": [
+      "shrine",
+      "market",
+      "launchpad",
+      "timegate",
+      "loghouse",
+      "manor",
+      "expandedWorkshop",
+      "expandedWarehouse"
+    ],
+    "cell": 384,
+    "sheet": "expedition",
+    "output": "painted-expedition.webp",
+    "registry": "src/ui/painted-buildings.js",
+    "export": "paintedBuildings",
+    "merge": true,
+    "aliases": {
+      "logHouse": "loghouse",
+      "mansion": "manor"
+    },
+    "sourceCrops": {
+      "shrine": {
+        "x": 34,
+        "y": 118,
+        "width": 377,
+        "height": 370
+      },
+      "market": {
+        "x": 481,
+        "y": 162,
+        "width": 379,
+        "height": 312
+      },
+      "launchpad": {
+        "x": 924,
+        "y": 81,
+        "width": 377,
+        "height": 396
+      },
+      "timegate": {
+        "x": 1381,
+        "y": 150,
+        "width": 345,
+        "height": 325
+      },
+      "loghouse": {
+        "x": 23,
+        "y": 523,
+        "width": 400,
+        "height": 352
+      },
+      "manor": {
+        "x": 466,
+        "y": 521,
+        "width": 412,
+        "height": 350
+      },
+      "expandedWorkshop": {
+        "x": 905,
+        "y": 527,
+        "width": 424,
+        "height": 341
+      },
+      "expandedWarehouse": {
+        "x": 1347,
+        "y": 531,
+        "width": 412,
+        "height": 338
+      }
+    }
+  },
+  "crops": [
+    {
+      "key": "shrine",
+      "sourceCell": [
+        34,
+        118,
+        411,
+        488
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        375,
+        369
+      ],
+      "crop": {
+        "x": 16,
+        "y": 19,
+        "width": 352,
+        "height": 346
+      }
+    },
+    {
+      "key": "market",
+      "sourceCell": [
+        481,
+        162,
+        860,
+        474
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        378,
+        311
+      ],
+      "crop": {
+        "x": 400,
+        "y": 47,
+        "width": 352,
+        "height": 289
+      }
+    },
+    {
+      "key": "launchpad",
+      "sourceCell": [
+        924,
+        81,
+        1301,
+        477
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        376,
+        395
+      ],
+      "crop": {
+        "x": 792,
+        "y": 16,
+        "width": 335,
+        "height": 352
+      }
+    },
+    {
+      "key": "timegate",
+      "sourceCell": [
+        1381,
+        150,
+        1726,
+        475
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        344,
+        324
+      ],
+      "crop": {
+        "x": 1172,
+        "y": 30,
+        "width": 343,
+        "height": 323
+      }
+    },
+    {
+      "key": "loghouse",
+      "sourceCell": [
+        23,
+        523,
+        423,
+        875
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        399,
+        351
+      ],
+      "crop": {
+        "x": 16,
+        "y": 421,
+        "width": 352,
+        "height": 310
+      }
+    },
+    {
+      "key": "manor",
+      "sourceCell": [
+        466,
+        521,
+        878,
+        871
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        411,
+        349
+      ],
+      "crop": {
+        "x": 400,
+        "y": 426,
+        "width": 352,
+        "height": 299
+      }
+    },
+    {
+      "key": "expandedWorkshop",
+      "sourceCell": [
+        905,
+        527,
+        1329,
+        868
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        423,
+        338
+      ],
+      "crop": {
+        "x": 784,
+        "y": 435,
+        "width": 352,
+        "height": 281
+      }
+    },
+    {
+      "key": "expandedWarehouse",
+      "sourceCell": [
+        1347,
+        531,
+        1759,
+        869
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        411,
+        337
+      ],
+      "crop": {
+        "x": 1168,
+        "y": 432,
+        "width": 352,
+        "height": 288
+      }
+    }
+  ]
+}

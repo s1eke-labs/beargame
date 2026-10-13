@@ -1,0 +1,692 @@
+{
+  "job": {
+    "source": "source-assets/simple-book-v31/research-resources-a/research-subjects.png",
+    "columns": 6,
+    "rows": 4,
+    "outputColumns": 6,
+    "keys": [
+      "seasons",
+      "agriculture",
+      "hunting",
+      "mining",
+      "metallurgy",
+      "husbandry",
+      "society",
+      "mathematics",
+      "construction",
+      "hydraulics",
+      "currency",
+      "writing",
+      "philosophy",
+      "machinery",
+      "chemistry",
+      "astronomy",
+      "navigation",
+      "electricity",
+      "biology",
+      "industry",
+      "computing",
+      "nuclear",
+      "space",
+      "time"
+    ],
+    "cell": 256,
+    "sheet": "research-subjects",
+    "output": "research-subjects.webp",
+    "registry": "src/ui/research-art.js",
+    "export": "researchArt",
+    "merge": true,
+    "sourceCrops": {
+      "seasons": {
+        "x": 44,
+        "y": 58,
+        "width": 221,
+        "height": 209
+      },
+      "agriculture": {
+        "x": 301,
+        "y": 72,
+        "width": 193,
+        "height": 181
+      },
+      "hunting": {
+        "x": 517,
+        "y": 44,
+        "width": 231,
+        "height": 213
+      },
+      "mining": {
+        "x": 802,
+        "y": 58,
+        "width": 207,
+        "height": 197
+      },
+      "metallurgy": {
+        "x": 1066,
+        "y": 47,
+        "width": 202,
+        "height": 210
+      },
+      "husbandry": {
+        "x": 1301,
+        "y": 59,
+        "width": 198,
+        "height": 196
+      },
+      "society": {
+        "x": 38,
+        "y": 300,
+        "width": 210,
+        "height": 190
+      },
+      "mathematics": {
+        "x": 297,
+        "y": 302,
+        "width": 187,
+        "height": 188
+      },
+      "construction": {
+        "x": 541,
+        "y": 294,
+        "width": 204,
+        "height": 199
+      },
+      "hydraulics": {
+        "x": 784,
+        "y": 298,
+        "width": 226,
+        "height": 201
+      },
+      "currency": {
+        "x": 1048,
+        "y": 298,
+        "width": 225,
+        "height": 202
+      },
+      "writing": {
+        "x": 1302,
+        "y": 304,
+        "width": 195,
+        "height": 191
+      },
+      "philosophy": {
+        "x": 28,
+        "y": 536,
+        "width": 225,
+        "height": 198
+      },
+      "machinery": {
+        "x": 294,
+        "y": 540,
+        "width": 212,
+        "height": 186
+      },
+      "chemistry": {
+        "x": 549,
+        "y": 544,
+        "width": 200,
+        "height": 183
+      },
+      "astronomy": {
+        "x": 801,
+        "y": 531,
+        "width": 213,
+        "height": 199
+      },
+      "navigation": {
+        "x": 1067,
+        "y": 527,
+        "width": 185,
+        "height": 213
+      },
+      "electricity": {
+        "x": 1305,
+        "y": 528,
+        "width": 193,
+        "height": 207
+      },
+      "biology": {
+        "x": 47,
+        "y": 760,
+        "width": 203,
+        "height": 214
+      },
+      "industry": {
+        "x": 287,
+        "y": 757,
+        "width": 218,
+        "height": 214
+      },
+      "computing": {
+        "x": 548,
+        "y": 771,
+        "width": 201,
+        "height": 199
+      },
+      "nuclear": {
+        "x": 804,
+        "y": 766,
+        "width": 195,
+        "height": 210
+      },
+      "space": {
+        "x": 1044,
+        "y": 772,
+        "width": 263,
+        "height": 203
+      },
+      "time": {
+        "x": 1338,
+        "y": 764,
+        "width": 142,
+        "height": 210
+      }
+    }
+  },
+  "crops": [
+    {
+      "key": "seasons",
+      "sourceCell": [
+        44,
+        58,
+        265,
+        267
+      ],
+      "alphaBounds": [
+        5,
+        6,
+        215,
+        204
+      ],
+      "crop": {
+        "x": 23,
+        "y": 29,
+        "width": 210,
+        "height": 198
+      }
+    },
+    {
+      "key": "agriculture",
+      "sourceCell": [
+        301,
+        72,
+        494,
+        253
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        188,
+        175
+      ],
+      "crop": {
+        "x": 293,
+        "y": 43,
+        "width": 182,
+        "height": 169
+      }
+    },
+    {
+      "key": "hunting",
+      "sourceCell": [
+        517,
+        44,
+        748,
+        257
+      ],
+      "alphaBounds": [
+        5,
+        6,
+        225,
+        208
+      ],
+      "crop": {
+        "x": 530,
+        "y": 27,
+        "width": 220,
+        "height": 202
+      }
+    },
+    {
+      "key": "mining",
+      "sourceCell": [
+        802,
+        58,
+        1009,
+        255
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        201,
+        191
+      ],
+      "crop": {
+        "x": 798,
+        "y": 35,
+        "width": 195,
+        "height": 185
+      }
+    },
+    {
+      "key": "metallurgy",
+      "sourceCell": [
+        1066,
+        47,
+        1268,
+        257
+      ],
+      "alphaBounds": [
+        5,
+        6,
+        196,
+        204
+      ],
+      "crop": {
+        "x": 1056,
+        "y": 29,
+        "width": 191,
+        "height": 198
+      }
+    },
+    {
+      "key": "husbandry",
+      "sourceCell": [
+        1301,
+        59,
+        1499,
+        255
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        192,
+        190
+      ],
+      "crop": {
+        "x": 1315,
+        "y": 36,
+        "width": 186,
+        "height": 184
+      }
+    },
+    {
+      "key": "society",
+      "sourceCell": [
+        38,
+        300,
+        248,
+        490
+      ],
+      "alphaBounds": [
+        6,
+        5,
+        204,
+        184
+      ],
+      "crop": {
+        "x": 29,
+        "y": 294,
+        "width": 198,
+        "height": 179
+      }
+    },
+    {
+      "key": "mathematics",
+      "sourceCell": [
+        297,
+        302,
+        484,
+        490
+      ],
+      "alphaBounds": [
+        6,
+        5,
+        181,
+        182
+      ],
+      "crop": {
+        "x": 296,
+        "y": 295,
+        "width": 175,
+        "height": 177
+      }
+    },
+    {
+      "key": "construction",
+      "sourceCell": [
+        541,
+        294,
+        745,
+        493
+      ],
+      "alphaBounds": [
+        5,
+        5,
+        198,
+        193
+      ],
+      "crop": {
+        "x": 543,
+        "y": 290,
+        "width": 193,
+        "height": 188
+      }
+    },
+    {
+      "key": "hydraulics",
+      "sourceCell": [
+        784,
+        298,
+        1010,
+        499
+      ],
+      "alphaBounds": [
+        6,
+        5,
+        221,
+        195
+      ],
+      "crop": {
+        "x": 788,
+        "y": 289,
+        "width": 215,
+        "height": 190
+      }
+    },
+    {
+      "key": "currency",
+      "sourceCell": [
+        1048,
+        298,
+        1273,
+        500
+      ],
+      "alphaBounds": [
+        6,
+        5,
+        220,
+        196
+      ],
+      "crop": {
+        "x": 1045,
+        "y": 288,
+        "width": 214,
+        "height": 191
+      }
+    },
+    {
+      "key": "writing",
+      "sourceCell": [
+        1302,
+        304,
+        1497,
+        495
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        189,
+        185
+      ],
+      "crop": {
+        "x": 1316,
+        "y": 294,
+        "width": 183,
+        "height": 179
+      }
+    },
+    {
+      "key": "philosophy",
+      "sourceCell": [
+        28,
+        536,
+        253,
+        734
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        219,
+        192
+      ],
+      "crop": {
+        "x": 21,
+        "y": 547,
+        "width": 213,
+        "height": 186
+      }
+    },
+    {
+      "key": "machinery",
+      "sourceCell": [
+        294,
+        540,
+        506,
+        726
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        207,
+        181
+      ],
+      "crop": {
+        "x": 283,
+        "y": 552,
+        "width": 201,
+        "height": 175
+      }
+    },
+    {
+      "key": "chemistry",
+      "sourceCell": [
+        549,
+        544,
+        749,
+        727
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        194,
+        177
+      ],
+      "crop": {
+        "x": 546,
+        "y": 554,
+        "width": 188,
+        "height": 171
+      }
+    },
+    {
+      "key": "astronomy",
+      "sourceCell": [
+        801,
+        531,
+        1014,
+        730
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        207,
+        193
+      ],
+      "crop": {
+        "x": 795,
+        "y": 546,
+        "width": 201,
+        "height": 187
+      }
+    },
+    {
+      "key": "navigation",
+      "sourceCell": [
+        1067,
+        527,
+        1252,
+        740
+      ],
+      "alphaBounds": [
+        5,
+        6,
+        179,
+        207
+      ],
+      "crop": {
+        "x": 1065,
+        "y": 539,
+        "width": 174,
+        "height": 201
+      }
+    },
+    {
+      "key": "electricity",
+      "sourceCell": [
+        1305,
+        528,
+        1498,
+        735
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        188,
+        201
+      ],
+      "crop": {
+        "x": 1317,
+        "y": 542,
+        "width": 182,
+        "height": 195
+      }
+    },
+    {
+      "key": "biology",
+      "sourceCell": [
+        47,
+        760,
+        250,
+        974
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        197,
+        208
+      ],
+      "crop": {
+        "x": 32,
+        "y": 795,
+        "width": 191,
+        "height": 202
+      }
+    },
+    {
+      "key": "industry",
+      "sourceCell": [
+        287,
+        757,
+        505,
+        971
+      ],
+      "alphaBounds": [
+        5,
+        6,
+        212,
+        208
+      ],
+      "crop": {
+        "x": 280,
+        "y": 795,
+        "width": 207,
+        "height": 202
+      }
+    },
+    {
+      "key": "computing",
+      "sourceCell": [
+        548,
+        771,
+        749,
+        970
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        195,
+        193
+      ],
+      "crop": {
+        "x": 545,
+        "y": 802,
+        "width": 189,
+        "height": 187
+      }
+    },
+    {
+      "key": "nuclear",
+      "sourceCell": [
+        804,
+        766,
+        999,
+        976
+      ],
+      "alphaBounds": [
+        6,
+        5,
+        190,
+        204
+      ],
+      "crop": {
+        "x": 804,
+        "y": 796,
+        "width": 184,
+        "height": 199
+      }
+    },
+    {
+      "key": "space",
+      "sourceCell": [
+        1044,
+        772,
+        1307,
+        975
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        258,
+        197
+      ],
+      "crop": {
+        "x": 1040,
+        "y": 811,
+        "width": 224,
+        "height": 170
+      }
+    },
+    {
+      "key": "time",
+      "sourceCell": [
+        1338,
+        764,
+        1480,
+        974
+      ],
+      "alphaBounds": [
+        6,
+        6,
+        137,
+        204
+      ],
+      "crop": {
+        "x": 1342,
+        "y": 797,
+        "width": 131,
+        "height": 198
+      }
+    }
+  ]
+}

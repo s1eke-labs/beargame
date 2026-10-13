@@ -1,0 +1,2190 @@
+{
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "scope": "143/143workshop identities with independently authored cost/gate/essential-effect records.139 normally potentially reachable,2source-unreachable legacy axes/saws,2default-disabled space-exploration upgrades. Full dynamic interactions and exact unlock handlers require tests; these are not143verified implementations.",
+  "upgrades": [
+    {
+      "referenceKey": "mineralHoes",
+      "name": "石质蜂铲",
+      "cost": {
+        "minerals": 275,
+        "science": 100
+      },
+      "availableAfter": "initial",
+      "impact": {
+        "honeyJobRatio": 0.5
+      },
+      "opens": [
+        "ironHoes"
+      ],
+      "source": "js/workshop.js:10"
+    },
+    {
+      "referenceKey": "ironHoes",
+      "name": "铁质蜂铲",
+      "cost": {
+        "iron": 25,
+        "science": 200
+      },
+      "availableAfter": "initial",
+      "impact": {
+        "honeyJobRatio": 0.3
+      },
+      "opens": [],
+      "source": "js/workshop.js:24"
+    },
+    {
+      "referenceKey": "mineralAxes",
+      "name": "石斧",
+      "cost": {
+        "minerals": 500,
+        "science": 100
+      },
+      "availableAfter": "initial",
+      "impact": {
+        "woodJobRatio": 0.7
+      },
+      "opens": [
+        "ironAxes"
+      ],
+      "source": "js/workshop.js:37"
+    },
+    {
+      "referenceKey": "ironAxes",
+      "name": "铁斧",
+      "cost": {
+        "iron": 50,
+        "science": 200
+      },
+      "availableAfter": "initial",
+      "impact": {
+        "woodJobRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:51"
+    },
+    {
+      "referenceKey": "steelAxe",
+      "name": "钢斧",
+      "cost": {
+        "science": 20000,
+        "steel": 75
+      },
+      "availableAfter": "steel",
+      "impact": {
+        "woodJobRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:62"
+    },
+    {
+      "referenceKey": "titaniumAxe",
+      "name": "钛斧",
+      "cost": {
+        "titanium": 10,
+        "science": 38000
+      },
+      "availableAfter": "navigation",
+      "impact": {
+        "woodJobRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:135"
+    },
+    {
+      "referenceKey": "alloyAxe",
+      "name": "合金斧",
+      "cost": {
+        "science": 70000,
+        "alloy": 25
+      },
+      "availableAfter": "chemistry",
+      "impact": {
+        "woodJobRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:146"
+    },
+    {
+      "referenceKey": "unobtainiumAxe",
+      "name": "月晶斧",
+      "cost": {
+        "unobtainium": 75,
+        "science": 125000
+      },
+      "availableAfter": "NO NORMAL UNLOCK FOUND",
+      "impact": {
+        "woodJobRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:159",
+      "caveat": "Reference declarations exist but no unlock reference in any JavaScript file; do not invent predecessor."
+    },
+    {
+      "referenceKey": "reinforcedSaw",
+      "name": "加固锯",
+      "cost": {
+        "iron": 1000,
+        "science": 2500
+      },
+      "availableAfter": "construction",
+      "impact": {
+        "lumberMillRatio": 0.2
+      },
+      "opens": [],
+      "source": "js/workshop.js:73"
+    },
+    {
+      "referenceKey": "steelSaw",
+      "name": "钢锯",
+      "cost": {
+        "science": 52000,
+        "steel": 750
+      },
+      "availableAfter": "physics",
+      "impact": {
+        "lumberMillRatio": 0.2
+      },
+      "opens": [
+        "titaniumSaw"
+      ],
+      "source": "js/workshop.js:87"
+    },
+    {
+      "referenceKey": "titaniumSaw",
+      "name": "钛锯",
+      "cost": {
+        "titanium": 500,
+        "science": 70000
+      },
+      "availableAfter": "upgrade:steelSaw",
+      "impact": {
+        "lumberMillRatio": 0.15
+      },
+      "opens": [
+        "alloySaw"
+      ],
+      "source": "js/workshop.js:104"
+    },
+    {
+      "referenceKey": "alloySaw",
+      "name": "合金锯",
+      "cost": {
+        "science": 85000,
+        "alloy": 75
+      },
+      "availableAfter": "upgrade:titaniumSaw",
+      "impact": {
+        "lumberMillRatio": 0.15
+      },
+      "opens": [],
+      "source": "js/workshop.js:121"
+    },
+    {
+      "referenceKey": "unobtainiumSaw",
+      "name": "月晶锯",
+      "cost": {
+        "unobtainium": 125,
+        "science": 145000
+      },
+      "availableAfter": "NO NORMAL UNLOCK FOUND",
+      "impact": {
+        "lumberMillRatio": 0.25
+      },
+      "opens": [],
+      "source": "js/workshop.js:171",
+      "caveat": "Reference declarations exist but no unlock reference in any JavaScript file; do not invent predecessor."
+    },
+    {
+      "referenceKey": "stoneBarns",
+      "name": "石砌蜜仓",
+      "cost": {
+        "wood": 1000,
+        "minerals": 750,
+        "iron": 50,
+        "science": 500
+      },
+      "availableAfter": "initial",
+      "impact": {
+        "barnRatio": 0.75
+      },
+      "opens": [],
+      "source": "js/workshop.js:187"
+    },
+    {
+      "referenceKey": "reinforcedBarns",
+      "name": "加固蜜仓",
+      "cost": {
+        "iron": 100,
+        "science": 800,
+        "beam": 25,
+        "slab": 10
+      },
+      "availableAfter": "initial",
+      "impact": {
+        "barnRatio": 0.8
+      },
+      "opens": [
+        "titaniumBarns"
+      ],
+      "source": "js/workshop.js:203"
+    },
+    {
+      "referenceKey": "titaniumBarns",
+      "name": "钛骨蜜仓",
+      "cost": {
+        "titanium": 25,
+        "science": 60000,
+        "steel": 200,
+        "scaffold": 250
+      },
+      "availableAfter": "upgrade:reinforcedBarns",
+      "impact": {
+        "barnRatio": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:241"
+    },
+    {
+      "referenceKey": "alloyBarns",
+      "name": "合金蜜仓",
+      "cost": {
+        "science": 75000,
+        "plate": 750,
+        "alloy": 20
+      },
+      "availableAfter": "chemistry",
+      "impact": {
+        "barnRatio": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:257"
+    },
+    {
+      "referenceKey": "concreteBarns",
+      "name": "混凝土蜜仓",
+      "cost": {
+        "titanium": 2000,
+        "science": 100000,
+        "concrate": 45
+      },
+      "availableAfter": "upgrade:strenghtenBuild",
+      "impact": {
+        "barnRatio": 0.75
+      },
+      "opens": [],
+      "source": "js/workshop.js:272"
+    },
+    {
+      "referenceKey": "reinforcedWarehouses",
+      "name": "加固工料库",
+      "cost": {
+        "science": 15000,
+        "plate": 50,
+        "steel": 50,
+        "scaffold": 25
+      },
+      "availableAfter": "steel",
+      "impact": {
+        "warehouseRatio": 0.25
+      },
+      "opens": [
+        "ironwood"
+      ],
+      "source": "js/workshop.js:222"
+    },
+    {
+      "referenceKey": "titaniumWarehouses",
+      "name": "钛骨工料库",
+      "cost": {
+        "titanium": 50,
+        "science": 70000,
+        "steel": 500,
+        "scaffold": 500
+      },
+      "availableAfter": "upgrade:silos",
+      "impact": {
+        "warehouseRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:287"
+    },
+    {
+      "referenceKey": "alloyWarehouses",
+      "name": "合金工料库",
+      "cost": {
+        "titanium": 750,
+        "science": 90000,
+        "alloy": 50
+      },
+      "availableAfter": "chemistry",
+      "impact": {
+        "warehouseRatio": 0.45
+      },
+      "opens": [],
+      "source": "js/workshop.js:303"
+    },
+    {
+      "referenceKey": "concreteWarehouses",
+      "name": "混凝土工料库",
+      "cost": {
+        "titanium": 1250,
+        "science": 100000,
+        "concrate": 35
+      },
+      "availableAfter": "upgrade:strenghtenBuild",
+      "impact": {
+        "warehouseRatio": 0.35
+      },
+      "opens": [],
+      "source": "js/workshop.js:318"
+    },
+    {
+      "referenceKey": "storageBunkers",
+      "name": "地下储物洞",
+      "cost": {
+        "unobtainium": 500,
+        "science": 25000,
+        "concrate": 1250
+      },
+      "availableAfter": "exogeology",
+      "impact": {
+        "warehouseRatio": 0.2
+      },
+      "opens": [],
+      "source": "js/workshop.js:333"
+    },
+    {
+      "referenceKey": "silos",
+      "name": "密封蜜罐",
+      "cost": {
+        "science": 50000,
+        "steel": 125,
+        "blueprint": 5
+      },
+      "availableAfter": "upgrade:ironwood",
+      "impact": {
+        "warehouseHoneyCapacity": 750,
+        "barnHoneyScale": 0.25
+      },
+      "opens": [
+        "titaniumWarehouses"
+      ],
+      "source": "js/workshop.js:649"
+    },
+    {
+      "referenceKey": "refrigeration",
+      "name": "冷藏",
+      "cost": {
+        "titanium": 2500,
+        "science": 125000,
+        "blueprint": 15
+      },
+      "availableAfter": "electronics",
+      "impact": {
+        "honeyCapacityRatio": 0.75
+      },
+      "opens": [],
+      "source": "js/workshop.js:667"
+    },
+    {
+      "referenceKey": "advancedRefinement",
+      "name": "精细补给",
+      "cost": {
+        "honey": 5000,
+        "science": 500
+      },
+      "availableAfter": "construction",
+      "impact": {
+        "honeyPerWood": 50
+      },
+      "opens": [],
+      "source": "js/workshop.js:868"
+    },
+    {
+      "referenceKey": "goldOre",
+      "name": "金矿分离",
+      "cost": {
+        "minerals": 800,
+        "iron": 100,
+        "science": 1000
+      },
+      "availableAfter": "currency",
+      "impact": {
+        "smelterGoldPerTick": 0.001
+      },
+      "opens": [],
+      "source": "js/workshop.js:890"
+    },
+    {
+      "referenceKey": "deepMining",
+      "name": "深层采煤",
+      "cost": {
+        "iron": 1200,
+        "science": 5000,
+        "beam": 50
+      },
+      "availableAfter": "steel",
+      "impact": {
+        "mineCoalPerTick": 0.003
+      },
+      "opens": [],
+      "source": "js/workshop.js:996"
+    },
+    {
+      "referenceKey": "coalFurnace",
+      "name": "煤炭烧制",
+      "cost": {
+        "minerals": 5000,
+        "iron": 2000,
+        "science": 5000,
+        "beam": 35
+      },
+      "availableAfter": "steel",
+      "impact": {
+        "smelterCoalPerTick": 0.005
+      },
+      "opens": [],
+      "source": "js/workshop.js:980"
+    },
+    {
+      "referenceKey": "geodesy",
+      "name": "大地测量",
+      "cost": {
+        "titanium": 250,
+        "science": 90000,
+        "starchart": 500
+      },
+      "availableAfter": "archeology",
+      "impact": {
+        "geologistCoalAdd": 0.0075,
+        "geologistGoldAdd": 0.0008,
+        "drillGoldEnabled": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:905"
+    },
+    {
+      "referenceKey": "miningDrill",
+      "name": "矿用钻机",
+      "cost": {
+        "titanium": 1750,
+        "science": 100000,
+        "steel": 750
+      },
+      "availableAfter": "metalurgy",
+      "impact": {
+        "geologistCoalAdd": 0.01,
+        "geologistGoldAdd": 0.0005
+      },
+      "opens": [],
+      "source": "js/workshop.js:950"
+    },
+    {
+      "referenceKey": "unobtainiumDrill",
+      "name": "月晶钻机",
+      "cost": {
+        "unobtainium": 250,
+        "science": 250000,
+        "alloy": 1250
+      },
+      "availableAfter": "exogeology",
+      "impact": {
+        "geologistCoalAdd": 0.015,
+        "geologistGoldAdd": 0.0005
+      },
+      "opens": [],
+      "source": "js/workshop.js:964"
+    },
+    {
+      "referenceKey": "register",
+      "name": "熊口名册",
+      "cost": {
+        "gold": 10,
+        "science": 500
+      },
+      "availableAfter": "writing",
+      "impact": {
+        "leadershipEnabled": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:920"
+    },
+    {
+      "referenceKey": "bolas",
+      "name": "投索",
+      "cost": {
+        "wood": 50,
+        "minerals": 250,
+        "science": 1000
+      },
+      "availableAfter": "mining",
+      "impact": {
+        "hunterRatio": 1,
+        "explorerAtk": 2
+      },
+      "opens": [],
+      "source": "js/workshop.js:737"
+    },
+    {
+      "referenceKey": "huntingArmor",
+      "name": "护林甲",
+      "cost": {
+        "iron": 750,
+        "science": 2000
+      },
+      "availableAfter": "metal",
+      "impact": {
+        "hunterRatio": 2,
+        "explorerDef": 2
+      },
+      "opens": [],
+      "source": "js/workshop.js:755"
+    },
+    {
+      "referenceKey": "compositeBow",
+      "name": "复合弓",
+      "cost": {
+        "wood": 200,
+        "iron": 100,
+        "science": 500
+      },
+      "availableAfter": "construction",
+      "impact": {
+        "manpowerJobRatio": 0.5,
+        "explorerAtk": 5
+      },
+      "opens": [],
+      "source": "js/workshop.js:681"
+    },
+    {
+      "referenceKey": "crossbow",
+      "name": "林地弩",
+      "cost": {
+        "iron": 1500,
+        "science": 12000
+      },
+      "availableAfter": "machinery",
+      "impact": {
+        "manpowerJobRatio": 0.25,
+        "explorerAtk": 10
+      },
+      "opens": [],
+      "source": "js/workshop.js:702"
+    },
+    {
+      "referenceKey": "celestialMechanics",
+      "name": "天体运行",
+      "cost": {
+        "science": 250
+      },
+      "availableAfter": "math",
+      "impact": {
+        "observedScienceMultiplier": 1.2
+      },
+      "opens": [],
+      "source": "js/workshop.js:1440"
+    },
+    {
+      "referenceKey": "astrolabe",
+      "name": "星盘",
+      "cost": {
+        "titanium": 5,
+        "science": 25000,
+        "starchart": 75
+      },
+      "availableAfter": "navigation",
+      "impact": {
+        "observatoryBaseScienceCapacity": 1500
+      },
+      "opens": [],
+      "source": "js/workshop.js:1448"
+    },
+    {
+      "referenceKey": "titaniumMirrors",
+      "name": "钛镜",
+      "cost": {
+        "titanium": 15,
+        "science": 20000,
+        "starchart": 20
+      },
+      "availableAfter": "navigation",
+      "impact": {
+        "libraryRatio": 0.02
+      },
+      "opens": [],
+      "source": "js/workshop.js:1462"
+    },
+    {
+      "referenceKey": "unobtainiumReflectors",
+      "name": "月晶反光镜",
+      "cost": {
+        "unobtainium": 75,
+        "science": 250000,
+        "starchart": 750
+      },
+      "availableAfter": "exogeology",
+      "impact": {
+        "libraryRatio": 0.02
+      },
+      "opens": [],
+      "source": "js/workshop.js:1479"
+    },
+    {
+      "referenceKey": "eludiumReflectors",
+      "name": "星辉反光镜",
+      "cost": {
+        "science": 250000,
+        "eludium": 15
+      },
+      "availableAfter": "advExogeology",
+      "impact": {
+        "libraryRatio": 0.02
+      },
+      "opens": [],
+      "source": "js/workshop.js:1495"
+    },
+    {
+      "referenceKey": "cargoShips",
+      "name": "货船扩装",
+      "cost": {
+        "science": 55000,
+        "blueprint": 15
+      },
+      "availableAfter": "navigation",
+      "impact": {
+        "harborRatioPerShip": 0.01
+      },
+      "opens": [],
+      "source": "js/workshop.js:553"
+    },
+    {
+      "referenceKey": "caravanserai",
+      "name": "商队客栈",
+      "cost": {
+        "gold": 250,
+        "science": 25000,
+        "ivory": 10000
+      },
+      "availableAfter": "navigation OR discover:zebras",
+      "impact": {
+        "tradepostStanding": 0.0035
+      },
+      "opens": [],
+      "source": "js/workshop.js:808"
+    },
+    {
+      "referenceKey": "seti",
+      "name": "全天观星",
+      "cost": {
+        "titanium": 250,
+        "science": 125000
+      },
+      "availableAfter": "electronics",
+      "impact": {
+        "autoObserve": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1748"
+    },
+    {
+      "referenceKey": "ironwood",
+      "name": "铁骨木屋",
+      "cost": {
+        "wood": 15000,
+        "iron": 3000,
+        "science": 30000
+      },
+      "availableAfter": "upgrade:reinforcedWarehouses",
+      "impact": {
+        "hutPriceRatio": -0.5
+      },
+      "opens": [
+        "silos"
+      ],
+      "source": "js/workshop.js:598"
+    },
+    {
+      "referenceKey": "strenghtenBuild",
+      "name": "结构加固",
+      "cost": {
+        "science": 100000,
+        "concrate": 50
+      },
+      "availableAfter": "mechanization",
+      "impact": {
+        "barnRatio": 0.05,
+        "warehouseRatio": 0.05
+      },
+      "opens": [
+        "concreteWarehouses",
+        "concreteBarns",
+        "concreteHuts"
+      ],
+      "source": "js/workshop.js:930"
+    },
+    {
+      "referenceKey": "energyRifts",
+      "name": "储能裂隙",
+      "cost": {
+        "titanium": 7500,
+        "uranium": 250,
+        "science": 200000
+      },
+      "availableAfter": "dimensionalPhysics",
+      "impact": {
+        "acceleratorCapacitiesEnabled": true
+      },
+      "opens": [
+        "stasisChambers",
+        "tachyonAccelerators"
+      ],
+      "source": "js/workshop.js:350"
+    },
+    {
+      "referenceKey": "lhc",
+      "name": "大型粒子环",
+      "cost": {
+        "unobtainium": 100,
+        "science": 250000,
+        "alloy": 150
+      },
+      "availableAfter": "dimensionalPhysics",
+      "impact": {
+        "acceleratorScienceCapacity": 2500
+      },
+      "opens": [],
+      "source": "js/workshop.js:479"
+    },
+    {
+      "referenceKey": "electrolyticSmelting",
+      "name": "电解冶炼",
+      "cost": {
+        "titanium": 2000,
+        "science": 100000
+      },
+      "availableAfter": "metalurgy",
+      "impact": {
+        "smelterRatio": 0.95
+      },
+      "opens": [],
+      "source": "js/workshop.js:1022"
+    },
+    {
+      "referenceKey": "oxidation",
+      "name": "氧化焙烧",
+      "cost": {
+        "science": 100000,
+        "steel": 5000
+      },
+      "availableAfter": "metalurgy",
+      "impact": {
+        "calcinerRatio": 0.95
+      },
+      "opens": [],
+      "source": "js/workshop.js:1036"
+    },
+    {
+      "referenceKey": "steelPlants",
+      "name": "炼钢车间",
+      "cost": {
+        "titanium": 3500,
+        "science": 140000,
+        "gear": 750
+      },
+      "availableAfter": "robotics",
+      "impact": {
+        "calcinerSteelRatio": 0.1
+      },
+      "opens": [
+        "automatedPlants"
+      ],
+      "source": "js/workshop.js:1050"
+    },
+    {
+      "referenceKey": "automatedPlants",
+      "name": "自动炼钢",
+      "cost": {
+        "science": 200000,
+        "alloy": 750
+      },
+      "availableAfter": "upgrade:steelPlants",
+      "impact": {
+        "calcinerSteelCraftRatio": 0.25
+      },
+      "opens": [
+        "nuclearPlants"
+      ],
+      "source": "js/workshop.js:1065"
+    },
+    {
+      "referenceKey": "nuclearPlants",
+      "name": "核能炼钢",
+      "cost": {
+        "uranium": 10000,
+        "science": 250000
+      },
+      "availableAfter": "upgrade:automatedPlants",
+      "impact": {
+        "calcinerSteelReactorBonus": 0.02
+      },
+      "opens": [],
+      "source": "js/workshop.js:1079"
+    },
+    {
+      "referenceKey": "rotaryKiln",
+      "name": "旋转窑",
+      "cost": {
+        "titanium": 5000,
+        "science": 145000,
+        "gear": 500
+      },
+      "availableAfter": "robotics",
+      "impact": {
+        "calcinerRatio": 0.75
+      },
+      "opens": [],
+      "source": "js/workshop.js:1090"
+    },
+    {
+      "referenceKey": "fluidizedReactors",
+      "name": "流化反应器",
+      "cost": {
+        "science": 175000,
+        "alloy": 200
+      },
+      "availableAfter": "nanotechnology",
+      "impact": {
+        "calcinerRatio": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1106"
+    },
+    {
+      "referenceKey": "nuclearSmelters",
+      "name": "核能熔炼",
+      "cost": {
+        "uranium": 250,
+        "science": 165000
+      },
+      "availableAfter": "nuclearFission",
+      "impact": {
+        "smelterTitaniumPerTick": 0.0015
+      },
+      "opens": [],
+      "source": "js/workshop.js:1121"
+    },
+    {
+      "referenceKey": "orbitalGeodesy",
+      "name": "轨道测地",
+      "cost": {
+        "oil": 35000,
+        "science": 150000,
+        "alloy": 1000
+      },
+      "availableAfter": "sattelites",
+      "impact": {
+        "quarryUraniumPerTick": 0.0005
+      },
+      "opens": [],
+      "source": "js/workshop.js:1134"
+    },
+    {
+      "referenceKey": "printingPress",
+      "name": "林间印刷",
+      "cost": {
+        "science": 7500,
+        "gear": 45
+      },
+      "availableAfter": "machinery",
+      "impact": {
+        "steamManuscriptPerTick": 0.0005
+      },
+      "opens": [],
+      "source": "js/workshop.js:1150"
+    },
+    {
+      "referenceKey": "offsetPress",
+      "name": "胶版印刷",
+      "cost": {
+        "oil": 15000,
+        "science": 100000,
+        "gear": 250
+      },
+      "availableAfter": "combustion",
+      "impact": {
+        "steamManuscriptMultiplier": 4
+      },
+      "opens": [],
+      "source": "js/workshop.js:1163"
+    },
+    {
+      "referenceKey": "photolithography",
+      "name": "光刻印刷",
+      "cost": {
+        "oil": 50000,
+        "uranium": 250,
+        "science": 250000,
+        "alloy": 1250
+      },
+      "availableAfter": "sattelites",
+      "impact": {
+        "steamManuscriptMultiplier": 4
+      },
+      "opens": [],
+      "source": "js/workshop.js:1178"
+    },
+    {
+      "referenceKey": "uplink",
+      "name": "知识联网",
+      "cost": {
+        "science": 75000,
+        "alloy": 1750
+      },
+      "availableAfter": "sattelites",
+      "impact": {
+        "uplinkDCRatio": 0.01,
+        "uplinkLabRatio": 0.01
+      },
+      "opens": [],
+      "source": "js/workshop.js:1193"
+    },
+    {
+      "referenceKey": "starlink",
+      "name": "星网联结",
+      "cost": {
+        "oil": 25000,
+        "science": 175000,
+        "alloy": 5000
+      },
+      "availableAfter": "orbitalEngineering",
+      "impact": {
+        "uplinkLabRatio": 0.01
+      },
+      "opens": [],
+      "source": "js/workshop.js:1208"
+    },
+    {
+      "referenceKey": "pumpjack",
+      "name": "抽油机械",
+      "cost": {
+        "titanium": 250,
+        "science": 100000,
+        "gear": 125
+      },
+      "availableAfter": "mechanization",
+      "impact": {
+        "oilWellRatio": 0.45
+      },
+      "opens": [],
+      "source": "js/workshop.js:1636"
+    },
+    {
+      "referenceKey": "oilRefinery",
+      "name": "石油精制",
+      "cost": {
+        "titanium": 1250,
+        "science": 125000,
+        "gear": 500
+      },
+      "availableAfter": "combustion",
+      "impact": {
+        "oilWellRatio": 0.35
+      },
+      "opens": [],
+      "source": "js/workshop.js:2008"
+    },
+    {
+      "referenceKey": "petri",
+      "name": "培养皿",
+      "cost": {
+        "plastic": 250,
+        "science": 65000
+      },
+      "availableAfter": "biology",
+      "impact": {
+        "biolabCompendiumCraftRatio": 0.01,
+        "biolabCompendiumGlobalCraftRatio": 0.001
+      },
+      "opens": [],
+      "source": "js/workshop.js:1652"
+    },
+    {
+      "referenceKey": "biofuel",
+      "name": "花木燃料",
+      "cost": {
+        "titanium": 1250,
+        "science": 150000
+      },
+      "availableAfter": "biochemistry",
+      "impact": {
+        "biolabHoneyConsumption": 1,
+        "biolabOilPerTick": 0.02,
+        "biolabEnergyDemand": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1666"
+    },
+    {
+      "referenceKey": "internet",
+      "name": "山林互联",
+      "cost": {
+        "titanium": 5000,
+        "uranium": 50,
+        "science": 150000
+      },
+      "availableAfter": "electronics",
+      "impact": {
+        "populationScaledSkillLearning": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1786"
+    },
+    {
+      "referenceKey": "neuralNetworks",
+      "name": "神经网络",
+      "cost": {
+        "titanium": 7500,
+        "science": 200000
+      },
+      "availableAfter": "ai",
+      "impact": {
+        "crossJobSkillLearning": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1796"
+    },
+    {
+      "referenceKey": "assistance",
+      "name": "劳作助手",
+      "cost": {
+        "science": 100000,
+        "steel": 10000,
+        "gear": 250
+      },
+      "availableAfter": "robotics",
+      "impact": {
+        "honeyDemandWorkerRatioGlobal": -0.25
+      },
+      "opens": [],
+      "source": "js/workshop.js:1810"
+    },
+    {
+      "referenceKey": "enrichedUranium",
+      "name": "浓缩铀",
+      "cost": {
+        "titanium": 7500,
+        "uranium": 150,
+        "science": 175000
+      },
+      "availableAfter": "particlePhysics",
+      "impact": {
+        "uraniumRatio": 0.25
+      },
+      "opens": [],
+      "source": "js/workshop.js:1822"
+    },
+    {
+      "referenceKey": "coldFusion",
+      "name": "冷核聚变",
+      "cost": {
+        "science": 200000,
+        "eludium": 25
+      },
+      "availableAfter": "superconductors",
+      "impact": {
+        "reactorEnergyRatio": 0.25
+      },
+      "opens": [],
+      "source": "js/workshop.js:1837"
+    },
+    {
+      "referenceKey": "thoriumReactors",
+      "name": "钍反应堆",
+      "cost": {
+        "science": 400000,
+        "thorium": 10000
+      },
+      "availableAfter": "thorium",
+      "impact": {
+        "reactorThoriumPerTick": -0.05,
+        "reactorEnergyRatio": 0.25
+      },
+      "opens": [
+        "enrichedThorium"
+      ],
+      "source": "js/workshop.js:1851"
+    },
+    {
+      "referenceKey": "astrophysicists",
+      "name": "星空学者",
+      "cost": {
+        "unobtainium": 350,
+        "science": 250000
+      },
+      "availableAfter": "orbitalEngineering",
+      "impact": {
+        "scholarStarchartPerTick": 0.0001
+      },
+      "opens": [],
+      "source": "js/workshop.js:1924"
+    },
+    {
+      "referenceKey": "mWReactor",
+      "name": "微型月站反应堆",
+      "cost": {
+        "science": 150000,
+        "eludium": 50
+      },
+      "availableAfter": "advExogeology",
+      "impact": {
+        "lunarOutpostRatio": 0.75
+      },
+      "opens": [],
+      "source": "js/workshop.js:1937"
+    },
+    {
+      "referenceKey": "unicornSelection",
+      "name": "灵鹿选育",
+      "cost": {
+        "titanium": 1500,
+        "science": 175000
+      },
+      "availableAfter": "genetics",
+      "impact": {
+        "unicornsGlobalRatio": 0.25
+      },
+      "opens": [],
+      "source": "js/workshop.js:1680"
+    },
+    {
+      "referenceKey": "stasisChambers",
+      "name": "静滞储仓",
+      "cost": {
+        "uranium": 2000,
+        "science": 235000,
+        "timeCrystal": 1,
+        "alloy": 200
+      },
+      "availableAfter": "energyRifts AND chronophysics",
+      "impact": {
+        "acceleratorRatio": 0.95
+      },
+      "opens": [
+        "voidEnergy"
+      ],
+      "source": "js/workshop.js:367"
+    },
+    {
+      "referenceKey": "voidEnergy",
+      "name": "虚空储能",
+      "cost": {
+        "uranium": 2500,
+        "science": 275000,
+        "timeCrystal": 2,
+        "alloy": 250
+      },
+      "availableAfter": "upgrade:stasisChambers",
+      "impact": {
+        "acceleratorRatio": 0.75
+      },
+      "opens": [
+        "darkEnergy"
+      ],
+      "source": "js/workshop.js:389"
+    },
+    {
+      "referenceKey": "darkEnergy",
+      "name": "暗能储仓",
+      "cost": {
+        "science": 350000,
+        "timeCrystal": 3,
+        "eludium": 75
+      },
+      "availableAfter": "upgrade:voidEnergy",
+      "impact": {
+        "acceleratorRatio": 2.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:408"
+    },
+    {
+      "referenceKey": "chronoforge",
+      "name": "时晶锻艺",
+      "cost": {
+        "science": 500000,
+        "timeCrystal": 10,
+        "relic": 5
+      },
+      "availableAfter": "tachyonTheory",
+      "impact": {
+        "chronoforgeEnabled": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:423"
+    },
+    {
+      "referenceKey": "tachyonModerator",
+      "name": "时流调节器",
+      "cost": {
+        "science": 16000,
+        "gear": 500,
+        "titanium": 250
+      },
+      "availableAfter": "chronoforge:blastFurnace",
+      "impact": {
+        "controlledDelayEnabled": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:437"
+    },
+    {
+      "referenceKey": "tachyonAccelerators",
+      "name": "超光加速器",
+      "cost": {
+        "science": 500000,
+        "timeCrystal": 10,
+        "eludium": 125
+      },
+      "availableAfter": "energyRifts AND tachyonTheory",
+      "impact": {
+        "acceleratorRatio": 5
+      },
+      "opens": [],
+      "source": "js/workshop.js:450"
+    },
+    {
+      "referenceKey": "fluxCondensator",
+      "name": "时流凝聚",
+      "cost": {
+        "unobtainium": 5000,
+        "timeCrystal": 5,
+        "alloy": 250
+      },
+      "availableAfter": "chronophysics",
+      "impact": {
+        "craftedResetRetentionEnabled": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:468"
+    },
+    {
+      "referenceKey": "photovoltaic",
+      "name": "光伏薄板",
+      "cost": {
+        "titanium": 5000,
+        "science": 75000
+      },
+      "availableAfter": "nanotechnology",
+      "impact": {
+        "solarFarmRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:495"
+    },
+    {
+      "referenceKey": "thinFilm",
+      "name": "柔性薄膜",
+      "cost": {
+        "uranium": 1000,
+        "unobtainium": 200,
+        "science": 125000
+      },
+      "availableAfter": "sattelites",
+      "impact": {
+        "solarFarmSeasonRatio": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:509"
+    },
+    {
+      "referenceKey": "qdot",
+      "name": "量子光点",
+      "cost": {
+        "science": 175000,
+        "eludium": 200,
+        "thorium": 1000
+      },
+      "availableAfter": "thorium",
+      "impact": {
+        "solarFarmSeasonRatio": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:524"
+    },
+    {
+      "referenceKey": "solarSatellites",
+      "name": "光能蜂舟",
+      "cost": {
+        "science": 225000,
+        "alloy": 750
+      },
+      "availableAfter": "orbitalEngineering",
+      "impact": {
+        "satelliteEnergySupply": 1,
+        "satelliteEnergyDemand": 0
+      },
+      "opens": [],
+      "source": "js/workshop.js:540"
+    },
+    {
+      "referenceKey": "barges",
+      "name": "载煤驳船",
+      "cost": {
+        "titanium": 1500,
+        "science": 100000,
+        "blueprint": 30
+      },
+      "availableAfter": "industrialization",
+      "impact": {
+        "harborCoalRatio": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:568"
+    },
+    {
+      "referenceKey": "reactorVessel",
+      "name": "动力船舱",
+      "cost": {
+        "titanium": 5000,
+        "uranium": 125,
+        "science": 135000
+      },
+      "availableAfter": "nuclearFission",
+      "impact": {
+        "shipLimit": 0.05
+      },
+      "opens": [],
+      "source": "js/workshop.js:583"
+    },
+    {
+      "referenceKey": "concreteHuts",
+      "name": "石骨熊舍",
+      "cost": {
+        "titanium": 3000,
+        "science": 125000,
+        "concrate": 45
+      },
+      "availableAfter": "upgrade:strenghtenBuild",
+      "impact": {
+        "hutPriceRatio": -0.3
+      },
+      "opens": [],
+      "source": "js/workshop.js:613"
+    },
+    {
+      "referenceKey": "unobtainiumHuts",
+      "name": "月晶熊舍",
+      "cost": {
+        "titanium": 15000,
+        "unobtainium": 350,
+        "science": 200000
+      },
+      "availableAfter": "exogeology",
+      "impact": {
+        "hutPriceRatio": -0.25
+      },
+      "opens": [],
+      "source": "js/workshop.js:625"
+    },
+    {
+      "referenceKey": "eludiumHuts",
+      "name": "星辉熊舍",
+      "cost": {
+        "science": 275000,
+        "eludium": 125
+      },
+      "availableAfter": "advExogeology",
+      "impact": {
+        "hutPriceRatio": -0.1
+      },
+      "opens": [],
+      "source": "js/workshop.js:637"
+    },
+    {
+      "referenceKey": "railgun",
+      "name": "电磁猎弩",
+      "cost": {
+        "titanium": 5000,
+        "science": 150000,
+        "blueprint": 25
+      },
+      "availableAfter": "particlePhysics",
+      "impact": {
+        "manpowerJobRatio": 0.25,
+        "explorerAtk": 20
+      },
+      "opens": [
+        "special:rangefinders"
+      ],
+      "source": "js/workshop.js:717"
+    },
+    {
+      "referenceKey": "steelArmor",
+      "name": "钢制护林甲",
+      "cost": {
+        "science": 10000,
+        "steel": 50
+      },
+      "availableAfter": "steel",
+      "impact": {
+        "hunterRatio": 0.5,
+        "explorerDef": 5
+      },
+      "opens": [],
+      "source": "js/workshop.js:772"
+    },
+    {
+      "referenceKey": "alloyArmor",
+      "name": "合金护林甲",
+      "cost": {
+        "science": 50000,
+        "alloy": 25
+      },
+      "availableAfter": "chemistry",
+      "impact": {
+        "hunterRatio": 0.5,
+        "explorerDef": 10
+      },
+      "opens": [],
+      "source": "js/workshop.js:784"
+    },
+    {
+      "referenceKey": "nanosuits",
+      "name": "纳米护林衣",
+      "cost": {
+        "science": 185000,
+        "alloy": 250
+      },
+      "availableAfter": "nanotechnology",
+      "impact": {
+        "hunterRatio": 0.5,
+        "explorerDef": 20
+      },
+      "opens": [],
+      "source": "js/workshop.js:796"
+    },
+    {
+      "referenceKey": "freightfulExchange",
+      "name": "星港货运",
+      "cost": {
+        "science": 450000,
+        "eludium": 100,
+        "titanium": 1000,
+        "tanker": 5000
+      },
+      "availableAfter": "advExogeology",
+      "impact": {
+        "spaceportTradeAutomation": true
+      },
+      "opens": [
+        "transportSuperposition"
+      ],
+      "source": "js/workshop.js:824"
+    },
+    {
+      "referenceKey": "transportSuperposition",
+      "name": "叠态运输",
+      "cost": {
+        "science": 500000,
+        "eludium": 1500,
+        "thorium": 25000,
+        "tanker": 500000
+      },
+      "availableAfter": "freightfulExchange AND dimensionalPhysics",
+      "impact": {
+        "spaceportAdditionalTradeVolume": 0.5
+      },
+      "opens": [],
+      "source": "js/workshop.js:846"
+    },
+    {
+      "referenceKey": "prospecting",
+      "name": "陨石勘测",
+      "cost": {
+        "minerals": 1000,
+        "science": 1000
+      },
+      "availableAfter": "metal",
+      "impact": {
+        "meteorIronEnabled": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:882"
+    },
+    {
+      "referenceKey": "pyrolysis",
+      "name": "木材热解",
+      "cost": {
+        "science": 35000,
+        "compedium": 5
+      },
+      "availableAfter": "physics",
+      "impact": {
+        "coalSuperRatio": 0.2
+      },
+      "opens": [],
+      "source": "js/workshop.js:1011"
+    },
+    {
+      "referenceKey": "cryocomputing",
+      "name": "低温计算",
+      "cost": {
+        "science": 125000,
+        "eludium": 15
+      },
+      "availableAfter": "superconductors",
+      "impact": {
+        "dataCenterEnergyDemand": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1223"
+    },
+    {
+      "referenceKey": "machineLearning",
+      "name": "林智学习",
+      "cost": {
+        "antimatter": 125,
+        "science": 175000,
+        "eludium": 25
+      },
+      "availableAfter": "ai",
+      "impact": {
+        "dataCenterAIRatio": 0.1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1236"
+    },
+    {
+      "referenceKey": "factoryAutomation",
+      "name": "蒸汽自动化",
+      "cost": {
+        "science": 10000,
+        "gear": 25
+      },
+      "availableAfter": "machinery",
+      "impact": {
+        "steamworksAutomationEnabled": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1252"
+    },
+    {
+      "referenceKey": "advancedAutomation",
+      "name": "双季自动化",
+      "cost": {
+        "science": 100000,
+        "gear": 75,
+        "blueprint": 25
+      },
+      "availableAfter": "industrialization",
+      "impact": {
+        "steamworksAutumnUnjam": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1263"
+    },
+    {
+      "referenceKey": "pneumaticPress",
+      "name": "气动压机",
+      "cost": {
+        "science": 20000,
+        "gear": 30,
+        "blueprint": 5
+      },
+      "availableAfter": "physics",
+      "impact": {
+        "steamworksPlateAutomation": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1274"
+    },
+    {
+      "referenceKey": "combustionEngine",
+      "name": "内燃机",
+      "cost": {
+        "science": 20000,
+        "gear": 25,
+        "blueprint": 5
+      },
+      "availableAfter": "steel",
+      "impact": {
+        "coalRatioGlobalReduction": 0.2
+      },
+      "opens": [],
+      "source": "js/workshop.js:1285"
+    },
+    {
+      "referenceKey": "fuelInjectors",
+      "name": "燃料喷射",
+      "cost": {
+        "oil": 20000,
+        "science": 100000,
+        "gear": 250
+      },
+      "availableAfter": "combustion",
+      "impact": {
+        "coalRatioGlobalReduction": 0.2
+      },
+      "opens": [],
+      "source": "js/workshop.js:1301"
+    },
+    {
+      "referenceKey": "factoryLogistics",
+      "name": "厂区调度",
+      "cost": {
+        "titanium": 2000,
+        "science": 100000,
+        "gear": 250
+      },
+      "availableAfter": "electronics",
+      "impact": {
+        "factoryCraftRatio": 0.06
+      },
+      "opens": [],
+      "source": "js/workshop.js:1317"
+    },
+    {
+      "referenceKey": "carbonSequestration",
+      "name": "碳素封存",
+      "cost": {
+        "titanium": 1250,
+        "science": 75000,
+        "gear": 125,
+        "steel": 4000,
+        "alloy": 1000
+      },
+      "availableAfter": "ecology",
+      "impact": {
+        "factoryCleanupAutomation": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1331"
+    },
+    {
+      "referenceKey": "factoryOptimization",
+      "name": "工艺优化",
+      "cost": {
+        "titanium": 1250,
+        "science": 75000,
+        "gear": 125
+      },
+      "availableAfter": "electronics",
+      "impact": {
+        "t1CraftRatio": 10,
+        "t2CraftRatio": 2,
+        "queueCap": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1347"
+    },
+    {
+      "referenceKey": "factoryRobotics",
+      "name": "机械工匠",
+      "cost": {
+        "titanium": 2500,
+        "science": 100000,
+        "gear": 250
+      },
+      "availableAfter": "robotics",
+      "impact": {
+        "t1CraftRatio": 10,
+        "t2CraftRatio": 5,
+        "t3CraftRatio": 2,
+        "queueCap": 2
+      },
+      "opens": [],
+      "source": "js/workshop.js:1361"
+    },
+    {
+      "referenceKey": "spaceEngineers",
+      "name": "轨道工匠",
+      "cost": {
+        "science": 225000,
+        "alloy": 500
+      },
+      "availableAfter": "orbitalEngineering",
+      "impact": {
+        "t1CraftRatio": 10,
+        "t2CraftRatio": 5,
+        "t3CraftRatio": 2,
+        "t4CraftRatio": 2,
+        "queueCap": 2
+      },
+      "opens": [],
+      "source": "js/workshop.js:1376"
+    },
+    {
+      "referenceKey": "aiEngineers",
+      "name": "森智工匠",
+      "cost": {
+        "antimatter": 500,
+        "science": 35000,
+        "eludium": 50
+      },
+      "availableAfter": "ai",
+      "impact": {
+        "t1CraftRatio": 10,
+        "t2CraftRatio": 5,
+        "t3CraftRatio": 5,
+        "t4CraftRatio": 2,
+        "t5CraftRatio": 2,
+        "queueCap": 3
+      },
+      "opens": [],
+      "source": "js/workshop.js:1391"
+    },
+    {
+      "referenceKey": "chronoEngineers",
+      "name": "时序工匠",
+      "cost": {
+        "science": 500000,
+        "timeCrystal": 5,
+        "eludium": 100
+      },
+      "availableAfter": "tachyonTheory",
+      "impact": {
+        "t1CraftRatio": 10,
+        "t2CraftRatio": 5,
+        "t3CraftRatio": 2,
+        "t4CraftRatio": 2,
+        "t5CraftRatio": 2,
+        "queueCap": 3
+      },
+      "opens": [],
+      "source": "js/workshop.js:1408"
+    },
+    {
+      "referenceKey": "spaceManufacturing",
+      "name": "星际制造",
+      "cost": {
+        "titanium": 125000,
+        "science": 250000
+      },
+      "availableAfter": "superconductors",
+      "impact": {
+        "factorySpaceMultiplierFactor": 0.75
+      },
+      "opens": [],
+      "source": "js/workshop.js:1425"
+    },
+    {
+      "referenceKey": "hydroPlantTurbines",
+      "name": "水轮改良",
+      "cost": {
+        "unobtainium": 125,
+        "science": 250000
+      },
+      "availableAfter": "exogeology",
+      "impact": {
+        "hydroPlantRatio": 0.15
+      },
+      "opens": [],
+      "source": "js/workshop.js:1510"
+    },
+    {
+      "referenceKey": "amBases",
+      "name": "反物质基地",
+      "cost": {
+        "antimatter": 250,
+        "eludium": 15
+      },
+      "availableAfter": "antimatter",
+      "impact": {
+        "moonBaseEnergyDemand": 5
+      },
+      "opens": [
+        "aiBases"
+      ],
+      "source": "js/workshop.js:1524"
+    },
+    {
+      "referenceKey": "aiBases",
+      "name": "森智基地",
+      "cost": {
+        "antimatter": 7500,
+        "science": 750000
+      },
+      "availableAfter": "upgrade:amBases",
+      "impact": {
+        "moonBaseCapacityPerAI": 0.1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1538"
+    },
+    {
+      "referenceKey": "amFission",
+      "name": "反物质分解",
+      "cost": {
+        "antimatter": 175,
+        "science": 525000,
+        "thorium": 7500
+      },
+      "availableAfter": "antimatter",
+      "impact": {
+        "eludiumAutomationBonus": 0.25
+      },
+      "opens": [],
+      "source": "js/workshop.js:1549"
+    },
+    {
+      "referenceKey": "amReactors",
+      "name": "星能反应炉",
+      "cost": {
+        "antimatter": 750,
+        "eludium": 35
+      },
+      "availableAfter": "antimatter",
+      "impact": {
+        "spaceScienceRatio": 0.95
+      },
+      "opens": [
+        "amReactorsMK2"
+      ],
+      "source": "js/workshop.js:1561"
+    },
+    {
+      "referenceKey": "amReactorsMK2",
+      "name": "星能反应炉二型",
+      "cost": {
+        "antimatter": 1750,
+        "eludium": 70
+      },
+      "availableAfter": "upgrade:amReactors",
+      "impact": {
+        "spaceScienceRatio": 1.5
+      },
+      "opens": [
+        "voidReactors"
+      ],
+      "source": "js/workshop.js:1578"
+    },
+    {
+      "referenceKey": "voidReactors",
+      "name": "虚空反应炉",
+      "cost": {
+        "antimatter": 2500,
+        "void": 250
+      },
+      "availableAfter": "upgrade:amReactorsMK2",
+      "impact": {
+        "spaceScienceRatio": 4
+      },
+      "opens": [],
+      "source": "js/workshop.js:1595"
+    },
+    {
+      "referenceKey": "relicStation",
+      "name": "古物信标站",
+      "cost": {
+        "antimatter": 5000,
+        "eludium": 100
+      },
+      "availableAfter": "cryptotheology",
+      "impact": {
+        "beaconRelicsPerDay": 0.01
+      },
+      "opens": [],
+      "source": "js/workshop.js:1609"
+    },
+    {
+      "referenceKey": "amDrive",
+      "name": "星质推进器",
+      "cost": {
+        "antimatter": 125,
+        "science": 450000
+      },
+      "availableAfter": "antimatter",
+      "impact": {
+        "routeSpeed": 25
+      },
+      "opens": [],
+      "source": "js/workshop.js:1623"
+    },
+    {
+      "referenceKey": "alicornStable",
+      "name": "云鹿居",
+      "cost": {
+        "wood": 3000,
+        "gold": 100,
+        "alicorn": 20
+      },
+      "availableAfter": "unicornTears challenge only",
+      "impact": {
+        "alicornCapacity": 0.2
+      },
+      "opens": [],
+      "source": "js/workshop.js:1698"
+    },
+    {
+      "referenceKey": "gmo",
+      "name": "蜜源改良",
+      "cost": {
+        "honey": 1000000,
+        "titanium": 1500,
+        "science": 175000
+      },
+      "availableAfter": "genetics",
+      "impact": {
+        "biofuelRatio": 0.6
+      },
+      "opens": [],
+      "source": "js/workshop.js:1720"
+    },
+    {
+      "referenceKey": "cadSystems",
+      "name": "辅助制图",
+      "cost": {
+        "titanium": 750,
+        "science": 125000
+      },
+      "availableAfter": "electronics",
+      "impact": {
+        "cadBlueprintCraftRatio": 0.01
+      },
+      "opens": [],
+      "source": "js/workshop.js:1737"
+    },
+    {
+      "referenceKey": "logistics",
+      "name": "协同劳作",
+      "cost": {
+        "science": 100000,
+        "gear": 100,
+        "scaffold": 1000
+      },
+      "availableAfter": "industrialization",
+      "impact": {
+        "skillMultiplier": 0.15
+      },
+      "opens": [],
+      "source": "js/workshop.js:1762"
+    },
+    {
+      "referenceKey": "augumentation",
+      "name": "感知增强",
+      "cost": {
+        "titanium": 5000,
+        "uranium": 50,
+        "science": 150000
+      },
+      "availableAfter": "nanotechnology",
+      "impact": {
+        "skillMultiplier": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1774"
+    },
+    {
+      "referenceKey": "enrichedThorium",
+      "name": "浓缩钍",
+      "cost": {
+        "science": 500000,
+        "thorium": 12500
+      },
+      "availableAfter": "upgrade:thoriumReactors",
+      "impact": {
+        "reactorThoriumPerTick": 0.0125
+      },
+      "opens": [],
+      "source": "js/workshop.js:1869"
+    },
+    {
+      "referenceKey": "hubbleTelescope",
+      "name": "深空望远镜",
+      "cost": {
+        "oil": 50000,
+        "science": 250000,
+        "alloy": 1250
+      },
+      "availableAfter": "orbitalEngineering",
+      "impact": {
+        "starchartGlobalRatio": 0.3
+      },
+      "opens": [
+        "satnav"
+      ],
+      "source": "js/workshop.js:1885"
+    },
+    {
+      "referenceKey": "satnav",
+      "name": "卫星导航",
+      "cost": {
+        "science": 200000,
+        "alloy": 750
+      },
+      "availableAfter": "upgrade:hubbleTelescope",
+      "impact": {
+        "satnavRatio": 0.0125
+      },
+      "opens": [],
+      "source": "js/workshop.js:1901"
+    },
+    {
+      "referenceKey": "satelliteRadio",
+      "name": "星空广播",
+      "cost": {
+        "science": 225000,
+        "alloy": 5000
+      },
+      "availableAfter": "orbitalEngineering",
+      "impact": {
+        "broadcastTowerRatio": 0.005
+      },
+      "opens": [],
+      "source": "js/workshop.js:1912"
+    },
+    {
+      "referenceKey": "eludiumCracker",
+      "name": "星辉裂岩机",
+      "cost": {
+        "science": 275000,
+        "eludium": 250
+      },
+      "availableAfter": "advExogeology",
+      "impact": {
+        "crackerRatio": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:1949"
+    },
+    {
+      "referenceKey": "thoriumEngine",
+      "name": "钍能引擎",
+      "cost": {
+        "science": 400000,
+        "gear": 40000,
+        "alloy": 2000,
+        "ship": 10000,
+        "thorium": 100000
+      },
+      "availableAfter": "thorium",
+      "impact": {
+        "routeSpeed": 50
+      },
+      "opens": [],
+      "source": "js/workshop.js:1964"
+    },
+    {
+      "referenceKey": "spiceNavigation",
+      "name": "星香导航",
+      "cost": {
+        "science": 350000,
+        "starchart": 500000
+      },
+      "availableAfter": "artificialGravity;DEFAULT DISABLED",
+      "impact": {
+        "navigationRelayUnlocked": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1979"
+    },
+    {
+      "referenceKey": "longRangeSpaceships",
+      "name": "远航星舟",
+      "cost": {
+        "science": 440000,
+        "gear": 90000,
+        "alloy": 3500,
+        "tanker": 500
+      },
+      "availableAfter": "artificialGravity;DEFAULT DISABLED",
+      "impact": {
+        "spaceShuttleUnlocked": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:1992"
+    },
+    {
+      "referenceKey": "oilDistillation",
+      "name": "分馏工艺",
+      "cost": {
+        "titanium": 5000,
+        "science": 175000
+      },
+      "availableAfter": "rocketry",
+      "impact": {
+        "oilWellRatio": 0.75
+      },
+      "opens": [],
+      "source": "js/workshop.js:2023"
+    },
+    {
+      "referenceKey": "factoryProcessing",
+      "name": "工厂精炼",
+      "cost": {
+        "titanium": 7500,
+        "science": 195000,
+        "concrate": 125
+      },
+      "availableAfter": "oilProcessing",
+      "impact": {
+        "factoryRefineRatio": 0.05
+      },
+      "opens": [],
+      "source": "js/workshop.js:2037"
+    },
+    {
+      "referenceKey": "voidAspiration",
+      "name": "虚空收集",
+      "cost": {
+        "antimatter": 2000,
+        "timeCrystal": 15
+      },
+      "availableAfter": "voidSpace",
+      "impact": {
+        "voidHooverUnlocked": true,
+        "voidRiftUnlocked": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:2051"
+    },
+    {
+      "referenceKey": "distorsion",
+      "name": "时空偏折",
+      "cost": {
+        "antimatter": 2000,
+        "science": 300000,
+        "timeCrystal": 25,
+        "void": 1000
+      },
+      "availableAfter": "paradoxalKnowledge",
+      "impact": {
+        "temporalParadoxDayBonus": 2
+      },
+      "opens": [],
+      "source": "js/workshop.js:2065"
+    },
+    {
+      "referenceKey": "turnSmoothly",
+      "name": "时流顺行",
+      "cost": {
+        "unobtainium": 100000,
+        "temporalFlux": 6500,
+        "timeCrystal": 25,
+        "void": 750
+      },
+      "availableAfter": "voidspace:chronocontrol",
+      "impact": {
+        "temporalFluxProductionChronosphere": 1
+      },
+      "opens": [],
+      "source": "js/workshop.js:2081"
+    },
+    {
+      "referenceKey": "invisibleBlackHand",
+      "name": "暗市调律",
+      "cost": {
+        "temporalFlux": 4096,
+        "timeCrystal": 128,
+        "void": 32,
+        "blackcoin": 64
+      },
+      "availableAfter": "blackchain",
+      "impact": {
+        "blackcoinPriceRuleChanges": true
+      },
+      "opens": [],
+      "source": "js/workshop.js:2098"
+    }
+  ]
+}

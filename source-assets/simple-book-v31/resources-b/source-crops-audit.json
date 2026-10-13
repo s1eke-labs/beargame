@@ -1,0 +1,542 @@
+{
+  "method": "Complete-image connected components of alpha > 16; detached components assigned to nearest actual principal silhouette rectangle; final boxes include 4px padding for antialiased edges. No nominal grid clipping. PNG pixels and alpha unchanged.",
+  "atlases": {
+    "semantic-resources-b": {
+      "relic": {
+        "alpha_gt_16_bounds": [
+          61,
+          59,
+          229,
+          257
+        ],
+        "component_count": 1,
+        "component_areas": [
+          24221
+        ]
+      },
+      "blackcoin": {
+        "alpha_gt_16_bounds": [
+          305,
+          66,
+          488,
+          248
+        ],
+        "component_count": 1,
+        "component_areas": [
+          26179
+        ]
+      },
+      "void": {
+        "alpha_gt_16_bounds": [
+          553,
+          63,
+          741,
+          251
+        ],
+        "component_count": 1,
+        "component_areas": [
+          27932
+        ]
+      },
+      "temporalFlux": {
+        "alpha_gt_16_bounds": [
+          818,
+          53,
+          978,
+          259
+        ],
+        "component_count": 1,
+        "component_areas": [
+          27426
+        ]
+      },
+      "furnaceHeat": {
+        "alpha_gt_16_bounds": [
+          1066,
+          55,
+          1247,
+          256
+        ],
+        "component_count": 2,
+        "component_areas": [
+          23822,
+          1
+        ]
+      },
+      "tears": {
+        "alpha_gt_16_bounds": [
+          1343,
+          74,
+          1470,
+          253
+        ],
+        "component_count": 1,
+        "component_areas": [
+          15063
+        ]
+      },
+      "sorrow": {
+        "alpha_gt_16_bounds": [
+          79,
+          321,
+          200,
+          495
+        ],
+        "component_count": 1,
+        "component_areas": [
+          14084
+        ]
+      },
+      "unicorns": {
+        "alpha_gt_16_bounds": [
+          298,
+          289,
+          513,
+          497
+        ],
+        "component_count": 1,
+        "component_areas": [
+          24952
+        ]
+      },
+      "alicorn": {
+        "alpha_gt_16_bounds": [
+          541,
+          293,
+          752,
+          497
+        ],
+        "component_count": 1,
+        "component_areas": [
+          28915
+        ]
+      },
+      "necrocorn": {
+        "alpha_gt_16_bounds": [
+          786,
+          290,
+          1005,
+          499
+        ],
+        "component_count": 1,
+        "component_areas": [
+          24403
+        ]
+      },
+      "zebras": {
+        "alpha_gt_16_bounds": [
+          1056,
+          303,
+          1274,
+          499
+        ],
+        "component_count": 1,
+        "component_areas": [
+          24731
+        ]
+      },
+      "bloodstone": {
+        "alpha_gt_16_bounds": [
+          1325,
+          312,
+          1488,
+          487
+        ],
+        "component_count": 1,
+        "component_areas": [
+          19713
+        ]
+      },
+      "tMythril": {
+        "alpha_gt_16_bounds": [
+          47,
+          561,
+          225,
+          721
+        ],
+        "component_count": 1,
+        "component_areas": [
+          17073
+        ]
+      },
+      "gflops": {
+        "alpha_gt_16_bounds": [
+          301,
+          536,
+          491,
+          722
+        ],
+        "component_count": 1,
+        "component_areas": [
+          27420
+        ]
+      },
+      "hashrates": {
+        "alpha_gt_16_bounds": [
+          544,
+          527,
+          759,
+          733
+        ],
+        "component_count": 1,
+        "component_areas": [
+          21356
+        ]
+      },
+      "plastic": {
+        "alpha_gt_16_bounds": [
+          801,
+          565,
+          1003,
+          714
+        ],
+        "component_count": 1,
+        "component_areas": [
+          19563
+        ]
+      },
+      "microchip": {
+        "alpha_gt_16_bounds": [
+          1070,
+          544,
+          1239,
+          717
+        ],
+        "component_count": 1,
+        "component_areas": [
+          21510
+        ]
+      },
+      "catnip": {
+        "alpha_gt_16_bounds": [
+          1319,
+          536,
+          1503,
+          728
+        ],
+        "component_count": 1,
+        "component_areas": [
+          22532
+        ]
+      },
+      "energy": {
+        "alpha_gt_16_bounds": [
+          73,
+          770,
+          200,
+          964
+        ],
+        "component_count": 1,
+        "component_areas": [
+          11884
+        ]
+      },
+      "happiness": {
+        "alpha_gt_16_bounds": [
+          283,
+          756,
+          504,
+          968
+        ],
+        "component_count": 1,
+        "component_areas": [
+          28362
+        ]
+      },
+      "beam": {
+        "alpha_gt_16_bounds": [
+          546,
+          774,
+          740,
+          955
+        ],
+        "component_count": 1,
+        "component_areas": [
+          21128
+        ]
+      },
+      "steel": {
+        "alpha_gt_16_bounds": [
+          797,
+          789,
+          996,
+          955
+        ],
+        "component_count": 1,
+        "component_areas": [
+          21046
+        ]
+      },
+      "gear": {
+        "alpha_gt_16_bounds": [
+          1053,
+          766,
+          1257,
+          968
+        ],
+        "component_count": 1,
+        "component_areas": [
+          25904
+        ]
+      },
+      "starchart": {
+        "alpha_gt_16_bounds": [
+          1317,
+          777,
+          1512,
+          964
+        ],
+        "component_count": 1,
+        "component_areas": [
+          25958
+        ]
+      }
+    },
+    "semantic-resources-extra": {
+      "tanker": {
+        "alpha_gt_16_bounds": [
+          79,
+          163,
+          667,
+          580
+        ],
+        "component_count": 1,
+        "component_areas": [
+          148754
+        ]
+      },
+      "megalith": {
+        "alpha_gt_16_bounds": [
+          768,
+          77,
+          1139,
+          602
+        ],
+        "component_count": 1,
+        "component_areas": [
+          127902
+        ]
+      },
+      "karma": {
+        "alpha_gt_16_bounds": [
+          99,
+          664,
+          591,
+          1137
+        ],
+        "component_count": 1,
+        "component_areas": [
+          135042
+        ]
+      },
+      "burnedParagon": {
+        "alpha_gt_16_bounds": [
+          679,
+          688,
+          1198,
+          1154
+        ],
+        "component_count": 3,
+        "component_areas": [
+          125030,
+          1524,
+          1267
+        ]
+      }
+    },
+    "resources-atlas": {
+      "honey": {
+        "alpha_gt_16_bounds": [
+          55,
+          87,
+          279,
+          305
+        ],
+        "component_count": 1,
+        "component_areas": [
+          40222
+        ]
+      },
+      "wood": {
+        "alpha_gt_16_bounds": [
+          345,
+          95,
+          604,
+          298
+        ],
+        "component_count": 1,
+        "component_areas": [
+          37526
+        ]
+      },
+      "stone": {
+        "alpha_gt_16_bounds": [
+          664,
+          106,
+          902,
+          300
+        ],
+        "component_count": 1,
+        "component_areas": [
+          33872
+        ]
+      },
+      "iron": {
+        "alpha_gt_16_bounds": [
+          974,
+          95,
+          1206,
+          304
+        ],
+        "component_count": 1,
+        "component_areas": [
+          34173
+        ]
+      },
+      "coal": {
+        "alpha_gt_16_bounds": [
+          43,
+          377,
+          284,
+          584
+        ],
+        "component_count": 1,
+        "component_areas": [
+          33315
+        ]
+      },
+      "gold": {
+        "alpha_gt_16_bounds": [
+          343,
+          385,
+          596,
+          583
+        ],
+        "component_count": 1,
+        "component_areas": [
+          30523
+        ]
+      },
+      "science": {
+        "alpha_gt_16_bounds": [
+          642,
+          385,
+          933,
+          584
+        ],
+        "component_count": 1,
+        "component_areas": [
+          46314
+        ]
+      },
+      "culture": {
+        "alpha_gt_16_bounds": [
+          966,
+          398,
+          1213,
+          589
+        ],
+        "component_count": 1,
+        "component_areas": [
+          34127
+        ]
+      },
+      "faith": {
+        "alpha_gt_16_bounds": [
+          54,
+          682,
+          259,
+          881
+        ],
+        "component_count": 1,
+        "component_areas": [
+          25478
+        ]
+      },
+      "bear": {
+        "alpha_gt_16_bounds": [
+          365,
+          647,
+          569,
+          903
+        ],
+        "component_count": 1,
+        "component_areas": [
+          42736
+        ]
+      },
+      "plank": {
+        "alpha_gt_16_bounds": [
+          655,
+          690,
+          921,
+          885
+        ],
+        "component_count": 1,
+        "component_areas": [
+          30016
+        ]
+      },
+      "steel": {
+        "alpha_gt_16_bounds": [
+          960,
+          687,
+          1219,
+          888
+        ],
+        "component_count": 1,
+        "component_areas": [
+          35082
+        ]
+      },
+      "gear": {
+        "alpha_gt_16_bounds": [
+          43,
+          949,
+          280,
+          1186
+        ],
+        "component_count": 1,
+        "component_areas": [
+          36655
+        ]
+      },
+      "crystal": {
+        "alpha_gt_16_bounds": [
+          350,
+          940,
+          588,
+          1189
+        ],
+        "component_count": 1,
+        "component_areas": [
+          37674
+        ]
+      },
+      "star": {
+        "alpha_gt_16_bounds": [
+          664,
+          942,
+          922,
+          1185
+        ],
+        "component_count": 1,
+        "component_areas": [
+          49884
+        ]
+      },
+      "berries": {
+        "alpha_gt_16_bounds": [
+          981,
+          964,
+          1219,
+          1190
+        ],
+        "component_count": 1,
+        "component_areas": [
+          38166
+        ]
+      }
+    }
+  }
+}

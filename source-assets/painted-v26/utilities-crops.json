@@ -1,0 +1,162 @@
+{
+  "aqueduct": {
+    "source_box": [
+      0,
+      0,
+      458,
+      452
+    ],
+    "source_alpha_bbox": [
+      92,
+      152,
+      394,
+      388
+    ],
+    "crop": {
+      "x": 41,
+      "y": 132,
+      "width": 302,
+      "height": 236
+    }
+  },
+  "quarry": {
+    "source_box": [
+      458,
+      0,
+      893,
+      452
+    ],
+    "source_alpha_bbox": [
+      72,
+      128,
+      384,
+      383
+    ],
+    "crop": {
+      "x": 420,
+      "y": 113,
+      "width": 312,
+      "height": 255
+    }
+  },
+  "mint": {
+    "source_box": [
+      893,
+      0,
+      1346,
+      452
+    ],
+    "source_alpha_bbox": [
+      75,
+      131,
+      383,
+      395
+    ],
+    "crop": {
+      "x": 806,
+      "y": 104,
+      "width": 308,
+      "height": 264
+    }
+  },
+  "chapel": {
+    "source_box": [
+      1346,
+      0,
+      1774,
+      452
+    ],
+    "source_alpha_bbox": [
+      87,
+      102,
+      349,
+      398
+    ],
+    "crop": {
+      "x": 1213,
+      "y": 72,
+      "width": 262,
+      "height": 296
+    }
+  },
+  "unicornPasture": {
+    "source_box": [
+      0,
+      452,
+      458,
+      887
+    ],
+    "source_alpha_bbox": [
+      82,
+      79,
+      403,
+      326
+    ],
+    "crop": {
+      "x": 31,
+      "y": 505,
+      "width": 321,
+      "height": 247
+    }
+  },
+  "ziggurat": {
+    "source_box": [
+      458,
+      452,
+      893,
+      887
+    ],
+    "source_alpha_bbox": [
+      87,
+      77,
+      371,
+      323
+    ],
+    "crop": {
+      "x": 434,
+      "y": 506,
+      "width": 284,
+      "height": 246
+    }
+  },
+  "biolab": {
+    "source_box": [
+      893,
+      452,
+      1346,
+      887
+    ],
+    "source_alpha_bbox": [
+      69,
+      73,
+      382,
+      327
+    ],
+    "crop": {
+      "x": 803,
+      "y": 498,
+      "width": 313,
+      "height": 254
+    }
+  },
+  "modernWarehouse": {
+    "source_box": [
+      1346,
+      452,
+      1774,
+      887
+    ],
+    "source_alpha_bbox": [
+      73,
+      74,
+      382,
+      321
+    ],
+    "crop": {
+      "x": 1189,
+      "y": 505,
+      "width": 309,
+      "height": 247
+    }
+  }
+}

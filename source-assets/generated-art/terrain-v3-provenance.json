@@ -1,0 +1,64 @@
+{
+  "asset": "Beargame v3 revised storybook terrain",
+  "generator": "built-in image_gen.imagegen",
+  "generation_calls": 1,
+  "generation_id": "exec-a88607b4-3046-41da-83a0-912b4b35fe9c",
+  "generated_source_path": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-a88607b4-3046-41da-83a0-912b4b35fe9c.png",
+  "generation_date_utc": "2026-10-09",
+  "source_images": [
+    {
+      "role": "primary style reference",
+      "path": "/workspace/shared/bear-reference/cover-illustration.webp"
+    },
+    {
+      "role": "sprite compatibility reference",
+      "path": "/workspace/scratch/2ea1830e5ccf/beargame/public/art/buildings-atlas.webp"
+    },
+    {
+      "role": "redesign target",
+      "path": "/workspace/scratch/2ea1830e5ccf/beargame/public/art/forest-clearing.webp"
+    }
+  ],
+  "prompt_file": "/workspace/shared/beargame-v3/art/terrain-v3-prompt.txt",
+  "prompt": "Use case: style-transfer.\nAsset type: one replacement portrait game terrain background, exactly 4:5 aspect ratio, 1024 by 1280 pixels if available, opaque PNG. This is background art alone, not a mockup or screenshot.\nInput images: Image 1 is the original illustrated cover, the PRIMARY STYLE REFERENCE. Image 2 is the existing building sprite atlas, a supporting style reference so later overlaid sprites belong naturally in this environment. Image 3 is the old terrain to redesign; use its gentle landscape idea only, NOT its continuous green lawn or narrow vertical aspect ratio.\nPrimary request: Redesign the old terrain as a calm, warm ivory-paper storybook village clearing. Match image 1's spare, bold, slightly wobbly charcoal ink contours, rounded simple forms, and flat muted sage and soft butter-yellow accents. The majority of the entire canvas, especially playable ground, must remain warm near-white paper. Flat hand-drawn illustration with only the slightest paper grain; absolutely no watercolor wash, realistic shading, 3D, gradients, or photorealism.\nComposition: a very shallow, understated hill line across the upper fifth, with a few rounded sage tree and shrub shapes clustered along left and right outside edges. Keep substantial calm ivory sky near the top. A narrow soft pale-yellow winding footpath enters near the bottom center, gently forks toward left and right and quietly connects four IMPLIED locations, then wanders into the distant upper clearing. Ground remains nearly white, with only small very pale sage patches near perimeter foliage. The path should add the feeling of a coherent small settlement without overwhelming the paper ground.\nGameplay placement: four unobtrusive wide, clean, almost-white open building positions in a 2 by 2 arrangement within the central 60 percent. Keep upper-left and upper-right open areas around x=28% and x=72%, y=39%, and lower-left and lower-right at x=28% and x=72%, y=66%. Each open area should accommodate a later 22%-wide house sprite without intersecting trees, rocks or busy lines. These are unmarked natural clearings, NOT circles, discs, pedestals, platforms, frames or visible plots. Paths can pass just below their implied feet, around y=45% and y=73%, rather than through the middle. Keep the very center between them open.\nEnvironment accents: only a few small chunky outlined shrubs, stones, or tiny butter-yellow flowers near the extreme side edges. Keep leaf detail simple and sparse. Bottom 15 percent is especially quiet warm paper, with no large foliage or accents and only the narrow pale path allowed, reserved for real resident sprites placed later by the game.\nImportant: deliver just ONE full-bleed landscape artwork. No buildings of any kind, no castles, no bears, no characters, no animals, no atlas grid, no labels, no text, no UI, no HUD, no logos, no watermark, no map pins, no fake sprite shadows. Avoid a vast featureless green lawn. Avoid heavy outlines stretching horizontally through the clean placement zones. The restrained warm white and charcoal cover style must be unmistakable.\n",
+  "postprocessing": "Source copied intact. Production PNG and WebP normalized from 1122x1402 to exact 1024x1280 using Lanczos; no repainting, compositing, masking or additional generated variants. WebP RGB quality 88, method 6.",
+  "webp_mean_absolute_channel_error": [
+    0.8575462341308594,
+    0.7883277893066406,
+    1.10087890625
+  ],
+  "bright_low_chroma_pixel_fraction": 0.7565643310546875,
+  "files": [
+    {
+      "path": "/workspace/shared/beargame-v3/art/forest-clearing-v3-source.png",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "bytes": 1770213,
+      "sha256": "b3e74f2355adae5d6ac73a3007b96e85e4950474f480114befbe38a05aabfcec",
+      "mode": "RGB"
+    },
+    {
+      "path": "/workspace/shared/beargame-v3/art/forest-clearing-v3.png",
+      "dimensions": [
+        1024,
+        1280
+      ],
+      "bytes": 1280686,
+      "sha256": "797b5a55d32e7524fa68915829fe4f1b89a0371dc0f5293ce4d42041f02aee01",
+      "mode": "RGB"
+    },
+    {
+      "path": "/workspace/shared/beargame-v3/art/forest-clearing-v3.webp",
+      "dimensions": [
+        1024,
+        1280
+      ],
+      "bytes": 60416,
+      "sha256": "8dd99668fc522d5cd3d3c5c70fe0a928bde10454b5d596df81838d6d37d10ab0",
+      "mode": "RGB"
+    }
+  ],
+  "visual_review": "Ivory paper dominant; muted sage outlined perimeter trees/hills; pale yellow branching paths; four unobstructed building areas; no buildings, bears, text or UI. Bottom 15% mostly quiet except center path and sparse small grass strokes. The center fork has somewhat more weight than requested, but stays between placement regions."
+}

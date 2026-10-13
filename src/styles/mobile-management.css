@@ -1,0 +1,28 @@
+/* Keep the map and chosen recipe in front; management is disclosed on demand. */
+.simple-book .world-board .world-toolbar{overflow:visible;position:relative;z-index:80}
+.building-locator{position:relative;flex:0 0 auto;align-self:center;color:var(--ink)}
+.building-locator>summary{min-height:44px;display:flex;align-items:center;justify-content:center;gap:4px;padding:6px 8px;list-style:none;cursor:pointer;font-size:12px;white-space:nowrap;border-radius:10px}
+.building-locator>summary::-webkit-details-marker{display:none}
+.building-locator>summary .icon{width:18px;height:18px}
+.building-locator[open]>summary{background:#e8e3d0}
+.building-locator-menu{position:absolute;right:0;top:100%;z-index:90;width:min(260px,calc(100vw - 32px));max-height:min(48dvh,320px);overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;padding:6px;background:var(--paper,#fff8e8);border:1px solid var(--line,#c9c5b2);border-radius:12px;box-shadow:0 8px 22px #26372726}
+.building-locator-menu>button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:44px;padding:8px 10px;background:none;border:0;border-radius:8px;text-align:left;font-size:14px;color:inherit}
+.building-locator-menu>button:hover,.building-locator-menu>button:focus-visible{background:#e8ecd9}
+.building-locator-menu small{font-size:12px;white-space:nowrap}
+.recipe-workbench{min-width:0}
+.recipe-unit-cost{margin:12px 0 5px;font-size:12px;color:var(--muted,#637055)}
+.recipe-batch{display:flex;gap:8px;margin-top:8px}
+.recipe-batch>button{flex:1;min-width:0;min-height:44px;font-size:14px}
+.recipe-details{display:flex;align-items:center;gap:5px;min-height:44px;font-size:13px}
+.recipe-details .icon{width:16px;height:16px}
+.recipe-engineering>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px}
+.recipe-engineering>summary::before{content:'▸';font-size:12px}
+.recipe-engineering[open]>summary::before{content:'▾'}
+.recipe-engineering>summary>span{margin-left:auto;font-size:12px;font-weight:400;white-space:nowrap}
+.recipe-engineering .engineering-panel{margin-top:4px}
+.recipe-workbench .recipe-engineering .card-grid{grid-template-columns:minmax(0,1fr)}
+.recipe-workbench .recipe-engineering .card-main{display:flex;gap:8px;align-items:center}
+.recipe-workbench .recipe-engineering .card-main>.atlas{flex:0 0 46px;width:46px;height:46px}
+.recipe-engineering .job-batch{flex-wrap:wrap}
+.recipe-engineering .job-batch>button{min-height:44px}
+@media(max-width:360px){.building-locator>summary{padding:6px}.building-locator>summary .icon{display:none}.recipe-engineering>summary{gap:5px}}

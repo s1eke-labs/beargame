@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f6f0">
+  <meta name="description" content="从一滴蜂蜜开始，和小熊一起建造森林文明。原创画面、本地存档、适合手机的增量经营游戏。">
+  <title>Beargame · 蜜林小熊文明</title>
+  <link rel="preload" as="image" data-game-asset href="./art/loading-bear.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/forest-long-map.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/reference-bears-atlas.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/worker-outfits.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/resources-atlas.webp">
+  <style>.loading-screen{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#eaf0dc;color:#334b35;font-family:system-ui;text-align:center}.loading-screen [hidden]{display:none}.loading-screen button{min-height:44px;padding:10px 24px}</style>
+  <link rel="preload" as="image" data-game-asset href="./art/region-woodland.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/region-river.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/region-twilight.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/workshop-soft.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/painted-home.webp">
+<link rel="preload" as="image" data-game-asset href="./art/painted-workplaces.webp">
+<link rel="preload" as="image" data-game-asset href="./art/painted-expedition.webp">
+  <link rel="preload" as="image" data-game-asset href="./art/painted-utilities.webp">
+  <link rel="modulepreload" href="./src/main.js">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./art/semantic-resources-a.webp" as="image">
+  <link rel="preload" href="./art/semantic-resources-b.webp" as="image">
+  <link rel="preload" href="./art/semantic-resources-extra.webp" as="image">
+  <link rel="preload" href="./art/semantic-buildings.webp" as="image">
+  <link rel="preload" href="./art/research-subjects.webp" as="image">
+  <link rel="preload" href="./art/explore-settlement-long.webp" as="image">
+  <link rel="preload" href="./art/explore-industrial-long.webp" as="image">
+  <link rel="preload" href="./art/explore-stellar-long.webp" as="image">
+  <link rel="stylesheet" href="./src/styles/main.css">
+  <link rel="stylesheet" href="./src/styles/scene.css">
+  <link rel="stylesheet" href="./src/styles/game-ui.css">
+  <link rel="stylesheet" href="./src/styles/storybook.css">
+  <link rel="stylesheet" href="./src/styles/semantic-world.css">
+  <link rel="stylesheet" href="./src/styles/simple-book.css">
+  <link rel="stylesheet" href="./src/styles/visible-growth.css">
+  <link rel="stylesheet" href="./src/styles/bear-life.css">
+  <link rel="stylesheet" href="./src/styles/mobile-management.css">
+  <link rel="stylesheet" href="./src/styles/story-moments.css">
+  <link rel="stylesheet" href="./src/styles/more-hub.css">
+</head>
+<body class="simple-book">
+  <section id="loading-screen" class="loading-screen" role="status" aria-label="正在加载蜜林">
+    <div class="loading-stage" aria-hidden="true"><span class="loading-shadow"></span><div class="loading-bear"></div><span class="loading-leaf leaf-one"></span><span class="loading-leaf leaf-two"></span></div><h1>蜜林</h1>
+    <p id="loading-label">正在准备家园…</p><progress id="loading-progress" max="7" value="0" aria-label="加载进度"></progress><div class="loading-track" aria-hidden="true"><span id="loading-fill"></span></div>
+    <button id="loading-retry" onclick="location.reload()" hidden>重新加载</button>
+    <noscript>请启用 JavaScript 后进入家园。</noscript>
+  </section>
+  <div id="app" aria-hidden="true"></div>
+  <div id="growth-feedback" class="growth-feedback" role="status" aria-live="polite"></div>
+  <div id="story-moment" class="story-moment-slot"></div>
+  <div id="dialog-root"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="announcer" class="sr-only" aria-live="polite"></div>
+  <script type="module" src="./src/boot.js" onerror="document.getElementById('loading-label').textContent='加载中断，请检查网络后重试。';document.getElementById('loading-retry').hidden=false"></script>
+</body>
+</html>

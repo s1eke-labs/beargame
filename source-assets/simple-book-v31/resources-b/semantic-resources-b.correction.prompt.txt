@@ -1,0 +1,9 @@
+Use case: precise-object-edit.
+Edit the SECOND IMAGE, the 6-column 4-row resource icon atlas. The FIRST IMAGE is only the white bear STYLE REFERENCE.
+Keep exact atlas geometry, dimensions 1536x1024, all 24 cell positions and all object identities. Preserve every icon's silhouette except the zebra horn described below.
+Make ONE style cleanup pass so the atlas is a completely flat matte children's picture-book doodle sprite sheet:
+- The zebra at row 2, column 5 must be a regular zebra WITHOUT ANY HORN. Remove the little conical horn on its forehead, preserve its two ordinary ears, white body, black stripes, small muzzle and four stubby legs.
+- Remove white shine dashes on both teardrops and the blue hourglass, remove bevel and gloss marks on ingots and nodes, remove all gradients throughout. Use plain single-color matte fills bounded by the existing chunky near-black outlines. Simple two-color faces are okay for ingots. Dark gray processors should be one uniform flat color.
+- Simplify the two purple catnip flower heads to round purple disks with only a tiny dot center; keep leaves sage.
+- Keep the background and all empty holes/gaps ACTUALLY TRANSPARENT with clean alpha. No shadows, NO COLORED AURAS, NO GLOW, no visible background color whatsoever. Preserve alpha transparency. Do not draw black background or a checkerboard.
+Exact contents stay: row 1 gold relic, black coin, purple swirl, blue hourglass, fire, blue tear; row 2 red tear, white unicorn, white winged unicorn, purple necrocorn, HORNLESS ZEBRA, red gem; row 3 blue ingot, processor, four connected blue nodes, cream pellets, green chip, catnip; row 4 yellow bolt, smiley sun, wooden beam, gray steel ingot, gear, star scroll. No text. Keep every icon centered in its own 256x256 cell with transparent gutters.

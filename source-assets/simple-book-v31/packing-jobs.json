@@ -1,0 +1,1199 @@
+[
+  {
+    "source": "source-assets/simple-book-v31/buildings-main/painted-home.png",
+    "columns": 4,
+    "rows": 2,
+    "keys": [
+      "beehive",
+      "bearHut",
+      "library",
+      "barn",
+      "apiary",
+      "expandedHut",
+      "expandedLibrary",
+      "granary"
+    ],
+    "cell": 384,
+    "sheet": "home",
+    "output": "painted-home.webp",
+    "registry": "src/ui/painted-buildings.js",
+    "export": "paintedBuildings",
+    "merge": true,
+    "aliases": {
+      "hive": "beehive",
+      "expandedGranary": "granary"
+    },
+    "sourceCrops": {
+      "beehive": {
+        "x": 90,
+        "y": 183,
+        "width": 248,
+        "height": 276
+      },
+      "bearHut": {
+        "x": 447,
+        "y": 65,
+        "width": 406,
+        "height": 395
+      },
+      "library": {
+        "x": 891,
+        "y": 104,
+        "width": 430,
+        "height": 356
+      },
+      "barn": {
+        "x": 1330,
+        "y": 92,
+        "width": 431,
+        "height": 359
+      },
+      "apiary": {
+        "x": 14,
+        "y": 574,
+        "width": 390,
+        "height": 281
+      },
+      "expandedHut": {
+        "x": 442,
+        "y": 498,
+        "width": 424,
+        "height": 360
+      },
+      "expandedLibrary": {
+        "x": 887,
+        "y": 503,
+        "width": 435,
+        "height": 354
+      },
+      "granary": {
+        "x": 1329,
+        "y": 474,
+        "width": 433,
+        "height": 383
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/buildings-main/painted-workplaces.png",
+    "columns": 4,
+    "rows": 2,
+    "keys": [
+      "logyard",
+      "mine",
+      "forge",
+      "warehouse",
+      "academy",
+      "observatory",
+      "factory",
+      "expandedLumberyard"
+    ],
+    "cell": 384,
+    "sheet": "workplaces",
+    "output": "painted-workplaces.webp",
+    "registry": "src/ui/painted-buildings.js",
+    "export": "paintedBuildings",
+    "merge": true,
+    "aliases": {
+      "lumberyard": "logyard",
+      "smelter": "forge"
+    },
+    "sourceCrops": {
+      "logyard": {
+        "x": 13,
+        "y": 87,
+        "width": 427,
+        "height": 379
+      },
+      "mine": {
+        "x": 456,
+        "y": 156,
+        "width": 416,
+        "height": 313
+      },
+      "forge": {
+        "x": 888,
+        "y": 87,
+        "width": 423,
+        "height": 380
+      },
+      "warehouse": {
+        "x": 1341,
+        "y": 111,
+        "width": 422,
+        "height": 352
+      },
+      "academy": {
+        "x": 21,
+        "y": 465,
+        "width": 417,
+        "height": 399
+      },
+      "observatory": {
+        "x": 486,
+        "y": 486,
+        "width": 371,
+        "height": 376
+      },
+      "factory": {
+        "x": 896,
+        "y": 482,
+        "width": 438,
+        "height": 387
+      },
+      "expandedLumberyard": {
+        "x": 1335,
+        "y": 538,
+        "width": 429,
+        "height": 329
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/buildings-main/painted-expedition.png",
+    "columns": 4,
+    "rows": 2,
+    "keys": [
+      "shrine",
+      "market",
+      "launchpad",
+      "timegate",
+      "loghouse",
+      "manor",
+      "expandedWorkshop",
+      "expandedWarehouse"
+    ],
+    "cell": 384,
+    "sheet": "expedition",
+    "output": "painted-expedition.webp",
+    "registry": "src/ui/painted-buildings.js",
+    "export": "paintedBuildings",
+    "merge": true,
+    "aliases": {
+      "logHouse": "loghouse",
+      "mansion": "manor"
+    },
+    "sourceCrops": {
+      "shrine": {
+        "x": 34,
+        "y": 118,
+        "width": 377,
+        "height": 370
+      },
+      "market": {
+        "x": 481,
+        "y": 162,
+        "width": 379,
+        "height": 312
+      },
+      "launchpad": {
+        "x": 924,
+        "y": 81,
+        "width": 377,
+        "height": 396
+      },
+      "timegate": {
+        "x": 1381,
+        "y": 150,
+        "width": 345,
+        "height": 325
+      },
+      "loghouse": {
+        "x": 23,
+        "y": 523,
+        "width": 400,
+        "height": 352
+      },
+      "manor": {
+        "x": 466,
+        "y": 521,
+        "width": 412,
+        "height": 350
+      },
+      "expandedWorkshop": {
+        "x": 905,
+        "y": 527,
+        "width": 424,
+        "height": 341
+      },
+      "expandedWarehouse": {
+        "x": 1347,
+        "y": 531,
+        "width": 412,
+        "height": 338
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/buildings-main/painted-utilities.png",
+    "columns": 4,
+    "rows": 2,
+    "keys": [
+      "aqueduct",
+      "quarry",
+      "mint",
+      "chapel",
+      "unicornPasture",
+      "ziggurat",
+      "biolab",
+      "modernWarehouse"
+    ],
+    "cell": 384,
+    "sheet": "utilities",
+    "output": "painted-utilities.webp",
+    "registry": "src/ui/painted-buildings.js",
+    "export": "paintedBuildings",
+    "merge": true,
+    "aliases": {},
+    "sourceCrops": {
+      "aqueduct": {
+        "x": 43,
+        "y": 181,
+        "width": 409,
+        "height": 289
+      },
+      "quarry": {
+        "x": 471,
+        "y": 123,
+        "width": 399,
+        "height": 344
+      },
+      "mint": {
+        "x": 908,
+        "y": 128,
+        "width": 407,
+        "height": 344
+      },
+      "chapel": {
+        "x": 1402,
+        "y": 91,
+        "width": 331,
+        "height": 379
+      },
+      "unicornPasture": {
+        "x": 14,
+        "y": 581,
+        "width": 415,
+        "height": 286
+      },
+      "ziggurat": {
+        "x": 461,
+        "y": 543,
+        "width": 409,
+        "height": 323
+      },
+      "biolab": {
+        "x": 899,
+        "y": 546,
+        "width": 419,
+        "height": 315
+      },
+      "modernWarehouse": {
+        "x": 1361,
+        "y": 541,
+        "width": 408,
+        "height": 316
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/buildings-advanced/semantic-buildings-simple.png",
+    "columns": 6,
+    "rows": 4,
+    "outputColumns": 6,
+    "keys": [
+      "pasture",
+      "amphitheatre",
+      "harbor",
+      "tradepost",
+      "steamworks",
+      "magneto",
+      "calciner",
+      "oilWell",
+      "accelerator",
+      "reactor",
+      "aiCore",
+      "dataCenter",
+      "solarFarm",
+      "hydroPlant",
+      "broadcastTower",
+      "zebraOutpost",
+      "zebraWorkshop",
+      "zebraForge",
+      "stasisPod",
+      "ivoryTemple",
+      "brewery",
+      "modernPasture",
+      "modernAqueduct",
+      "modernAmphitheatre"
+    ],
+    "cell": 256,
+    "sheet": "semantic-buildings",
+    "output": "semantic-buildings.webp",
+    "registry": "src/ui/semantic-buildings.js",
+    "export": "semanticBuildings",
+    "merge": true,
+    "sourceCrops": {
+      "pasture": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 30,
+          "y": 88,
+          "width": 224,
+          "height": 179
+        }
+      },
+      "amphitheatre": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 285,
+          "y": 80,
+          "width": 212,
+          "height": 179
+        }
+      },
+      "harbor": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 534,
+          "y": 54,
+          "width": 229,
+          "height": 218
+        }
+      },
+      "tradepost": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 782,
+          "y": 82,
+          "width": 217,
+          "height": 185
+        }
+      },
+      "steamworks": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1027,
+          "y": 40,
+          "width": 237,
+          "height": 235
+        }
+      },
+      "magneto": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1304,
+          "y": 91,
+          "width": 208,
+          "height": 173
+        }
+      },
+      "calciner": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 27,
+          "y": 291,
+          "width": 224,
+          "height": 228
+        }
+      },
+      "oilWell": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 286,
+          "y": 301,
+          "width": 213,
+          "height": 232
+        }
+      },
+      "accelerator": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 530,
+          "y": 340,
+          "width": 234,
+          "height": 183
+        }
+      },
+      "reactor": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 791,
+          "y": 306,
+          "width": 220,
+          "height": 228
+        }
+      },
+      "aiCore": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1053,
+          "y": 316,
+          "width": 197,
+          "height": 224
+        }
+      },
+      "dataCenter": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1293,
+          "y": 346,
+          "width": 216,
+          "height": 185
+        }
+      },
+      "solarFarm": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 32,
+          "y": 578,
+          "width": 220,
+          "height": 184
+        }
+      },
+      "hydroPlant": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 288,
+          "y": 570,
+          "width": 224,
+          "height": 192
+        }
+      },
+      "broadcastTower": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 563,
+          "y": 554,
+          "width": 167,
+          "height": 209
+        }
+      },
+      "zebraOutpost": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 768,
+          "y": 593,
+          "width": 239,
+          "height": 170
+        }
+      },
+      "zebraWorkshop": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1030,
+          "y": 560,
+          "width": 236,
+          "height": 202
+        }
+      },
+      "zebraForge": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1288,
+          "y": 546,
+          "width": 219,
+          "height": 216
+        }
+      },
+      "stasisPod": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 24,
+          "y": 777,
+          "width": 212,
+          "height": 220
+        }
+      },
+      "ivoryTemple": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 285,
+          "y": 778,
+          "width": 210,
+          "height": 218
+        }
+      },
+      "brewery": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 534,
+          "y": 777,
+          "width": 221,
+          "height": 212
+        }
+      },
+      "modernPasture": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 776,
+          "y": 808,
+          "width": 233,
+          "height": 175
+        }
+      },
+      "modernAqueduct": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1044,
+          "y": 799,
+          "width": 220,
+          "height": 194
+        }
+      },
+      "modernAmphitheatre": {
+        "sheet": "semantic-buildings",
+        "width": 1536,
+        "height": 1024,
+        "crop": {
+          "x": 1290,
+          "y": 797,
+          "width": 227,
+          "height": 183
+        }
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/research-resources-a/semantic-resources-a.png",
+    "columns": 6,
+    "rows": 4,
+    "outputColumns": 6,
+    "keys": [
+      "manpower",
+      "furs",
+      "ivory",
+      "paragon",
+      "unobtainium",
+      "titanium",
+      "oil",
+      "elderBox",
+      "wrappingPaper",
+      "slab",
+      "plate",
+      "scaffold",
+      "concrete",
+      "alloy",
+      "eludium",
+      "ship",
+      "parchment",
+      "manuscript",
+      "compendium",
+      "blueprint",
+      "uranium",
+      "thorium",
+      "kerosene",
+      "antimatter"
+    ],
+    "cell": 256,
+    "sheet": "semantic-resources-a",
+    "output": "semantic-resources-a.webp",
+    "registry": "src/ui/semantic-resources.js",
+    "export": "semanticResources",
+    "merge": true,
+    "sourceCrops": {
+      "manpower": {
+        "x": 45,
+        "y": 58,
+        "width": 187,
+        "height": 213
+      },
+      "furs": {
+        "x": 272,
+        "y": 86,
+        "width": 238,
+        "height": 181
+      },
+      "ivory": {
+        "x": 546,
+        "y": 69,
+        "width": 194,
+        "height": 194
+      },
+      "paragon": {
+        "x": 775,
+        "y": 70,
+        "width": 241,
+        "height": 201
+      },
+      "unobtainium": {
+        "x": 1055,
+        "y": 82,
+        "width": 212,
+        "height": 189
+      },
+      "titanium": {
+        "x": 1305,
+        "y": 99,
+        "width": 212,
+        "height": 166
+      },
+      "oil": {
+        "x": 51,
+        "y": 305,
+        "width": 168,
+        "height": 209
+      },
+      "elderBox": {
+        "x": 283,
+        "y": 312,
+        "width": 216,
+        "height": 201
+      },
+      "wrappingPaper": {
+        "x": 532,
+        "y": 317,
+        "width": 230,
+        "height": 200
+      },
+      "slab": {
+        "x": 790,
+        "y": 333,
+        "width": 225,
+        "height": 171
+      },
+      "plate": {
+        "x": 1047,
+        "y": 316,
+        "width": 221,
+        "height": 197
+      },
+      "scaffold": {
+        "x": 1295,
+        "y": 305,
+        "width": 223,
+        "height": 219
+      },
+      "concrete": {
+        "x": 36,
+        "y": 544,
+        "width": 216,
+        "height": 211
+      },
+      "alloy": {
+        "x": 282,
+        "y": 564,
+        "width": 235,
+        "height": 186
+      },
+      "eludium": {
+        "x": 545,
+        "y": 564,
+        "width": 215,
+        "height": 175
+      },
+      "ship": {
+        "x": 797,
+        "y": 534,
+        "width": 215,
+        "height": 222
+      },
+      "parchment": {
+        "x": 1043,
+        "y": 551,
+        "width": 229,
+        "height": 205
+      },
+      "manuscript": {
+        "x": 1298,
+        "y": 563,
+        "width": 223,
+        "height": 188
+      },
+      "compendium": {
+        "x": 33,
+        "y": 774,
+        "width": 205,
+        "height": 212
+      },
+      "blueprint": {
+        "x": 273,
+        "y": 786,
+        "width": 244,
+        "height": 204
+      },
+      "uranium": {
+        "x": 540,
+        "y": 786,
+        "width": 218,
+        "height": 199
+      },
+      "thorium": {
+        "x": 791,
+        "y": 792,
+        "width": 217,
+        "height": 192
+      },
+      "kerosene": {
+        "x": 1064,
+        "y": 780,
+        "width": 179,
+        "height": 207
+      },
+      "antimatter": {
+        "x": 1295,
+        "y": 770,
+        "width": 207,
+        "height": 224
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/resources-b/semantic-resources-b.png",
+    "columns": 6,
+    "rows": 4,
+    "outputColumns": 6,
+    "keys": [
+      "relic",
+      "blackcoin",
+      "void",
+      "temporalFlux",
+      "furnaceHeat",
+      "tears",
+      "sorrow",
+      "unicorns",
+      "alicorn",
+      "necrocorn",
+      "zebras",
+      "bloodstone",
+      "tMythril",
+      "gflops",
+      "hashrates",
+      "plastic",
+      "microchip",
+      "catnip",
+      "energy",
+      "happiness",
+      "beam",
+      "steel",
+      "gear",
+      "starchart"
+    ],
+    "cell": 256,
+    "sheet": "semantic-resources-b",
+    "output": "semantic-resources-b.webp",
+    "registry": "src/ui/semantic-resources.js",
+    "export": "semanticResources",
+    "merge": true,
+    "sourceCrops": {
+      "relic": {
+        "x": 57,
+        "y": 55,
+        "width": 176,
+        "height": 206
+      },
+      "blackcoin": {
+        "x": 301,
+        "y": 62,
+        "width": 191,
+        "height": 190
+      },
+      "void": {
+        "x": 549,
+        "y": 59,
+        "width": 196,
+        "height": 196
+      },
+      "temporalFlux": {
+        "x": 814,
+        "y": 49,
+        "width": 168,
+        "height": 214
+      },
+      "furnaceHeat": {
+        "x": 1062,
+        "y": 51,
+        "width": 189,
+        "height": 209
+      },
+      "tears": {
+        "x": 1339,
+        "y": 70,
+        "width": 135,
+        "height": 187
+      },
+      "sorrow": {
+        "x": 75,
+        "y": 317,
+        "width": 129,
+        "height": 182
+      },
+      "unicorns": {
+        "x": 294,
+        "y": 285,
+        "width": 223,
+        "height": 216
+      },
+      "alicorn": {
+        "x": 537,
+        "y": 289,
+        "width": 219,
+        "height": 212
+      },
+      "necrocorn": {
+        "x": 782,
+        "y": 286,
+        "width": 227,
+        "height": 217
+      },
+      "zebras": {
+        "x": 1052,
+        "y": 299,
+        "width": 226,
+        "height": 204
+      },
+      "bloodstone": {
+        "x": 1321,
+        "y": 308,
+        "width": 171,
+        "height": 183
+      },
+      "tMythril": {
+        "x": 43,
+        "y": 557,
+        "width": 186,
+        "height": 168
+      },
+      "gflops": {
+        "x": 297,
+        "y": 532,
+        "width": 198,
+        "height": 194
+      },
+      "hashrates": {
+        "x": 540,
+        "y": 523,
+        "width": 223,
+        "height": 214
+      },
+      "plastic": {
+        "x": 797,
+        "y": 561,
+        "width": 210,
+        "height": 157
+      },
+      "microchip": {
+        "x": 1066,
+        "y": 540,
+        "width": 177,
+        "height": 181
+      },
+      "catnip": {
+        "x": 1315,
+        "y": 532,
+        "width": 192,
+        "height": 200
+      },
+      "energy": {
+        "x": 69,
+        "y": 766,
+        "width": 135,
+        "height": 202
+      },
+      "happiness": {
+        "x": 279,
+        "y": 752,
+        "width": 229,
+        "height": 220
+      },
+      "beam": {
+        "x": 542,
+        "y": 770,
+        "width": 202,
+        "height": 189
+      },
+      "steel": {
+        "x": 793,
+        "y": 785,
+        "width": 207,
+        "height": 174
+      },
+      "gear": {
+        "x": 1049,
+        "y": 762,
+        "width": 212,
+        "height": 210
+      },
+      "starchart": {
+        "x": 1313,
+        "y": 773,
+        "width": 203,
+        "height": 195
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/resources-b/semantic-resources-extra.png",
+    "columns": 2,
+    "rows": 2,
+    "outputColumns": 6,
+    "keys": [
+      "tanker",
+      "megalith",
+      "karma",
+      "burnedParagon"
+    ],
+    "cell": 256,
+    "sheet": "semantic-resources-extra",
+    "output": "semantic-resources-extra.webp",
+    "registry": "src/ui/semantic-resources.js",
+    "export": "semanticResources",
+    "merge": true,
+    "sourceCrops": {
+      "tanker": {
+        "x": 75,
+        "y": 159,
+        "width": 596,
+        "height": 425
+      },
+      "megalith": {
+        "x": 764,
+        "y": 73,
+        "width": 379,
+        "height": 533
+      },
+      "karma": {
+        "x": 95,
+        "y": 660,
+        "width": 500,
+        "height": 481
+      },
+      "burnedParagon": {
+        "x": 675,
+        "y": 684,
+        "width": 527,
+        "height": 474
+      }
+    }
+  },
+  {
+    "source": "source-assets/simple-book-v31/research-resources-a/research-subjects.png",
+    "columns": 6,
+    "rows": 4,
+    "outputColumns": 6,
+    "keys": [
+      "seasons",
+      "agriculture",
+      "hunting",
+      "mining",
+      "metallurgy",
+      "husbandry",
+      "society",
+      "mathematics",
+      "construction",
+      "hydraulics",
+      "currency",
+      "writing",
+      "philosophy",
+      "machinery",
+      "chemistry",
+      "astronomy",
+      "navigation",
+      "electricity",
+      "biology",
+      "industry",
+      "computing",
+      "nuclear",
+      "space",
+      "time"
+    ],
+    "cell": 256,
+    "sheet": "research-subjects",
+    "output": "research-subjects.webp",
+    "registry": "src/ui/research-art.js",
+    "export": "researchArt",
+    "merge": true,
+    "sourceCrops": {
+      "seasons": {
+        "x": 44,
+        "y": 58,
+        "width": 221,
+        "height": 209
+      },
+      "agriculture": {
+        "x": 301,
+        "y": 72,
+        "width": 193,
+        "height": 181
+      },
+      "hunting": {
+        "x": 517,
+        "y": 44,
+        "width": 231,
+        "height": 213
+      },
+      "mining": {
+        "x": 802,
+        "y": 58,
+        "width": 207,
+        "height": 197
+      },
+      "metallurgy": {
+        "x": 1066,
+        "y": 47,
+        "width": 202,
+        "height": 210
+      },
+      "husbandry": {
+        "x": 1301,
+        "y": 59,
+        "width": 198,
+        "height": 196
+      },
+      "society": {
+        "x": 38,
+        "y": 300,
+        "width": 210,
+        "height": 190
+      },
+      "mathematics": {
+        "x": 297,
+        "y": 302,
+        "width": 187,
+        "height": 188
+      },
+      "construction": {
+        "x": 541,
+        "y": 294,
+        "width": 204,
+        "height": 199
+      },
+      "hydraulics": {
+        "x": 784,
+        "y": 298,
+        "width": 226,
+        "height": 201
+      },
+      "currency": {
+        "x": 1048,
+        "y": 298,
+        "width": 225,
+        "height": 202
+      },
+      "writing": {
+        "x": 1302,
+        "y": 304,
+        "width": 195,
+        "height": 191
+      },
+      "philosophy": {
+        "x": 28,
+        "y": 536,
+        "width": 225,
+        "height": 198
+      },
+      "machinery": {
+        "x": 294,
+        "y": 540,
+        "width": 212,
+        "height": 186
+      },
+      "chemistry": {
+        "x": 549,
+        "y": 544,
+        "width": 200,
+        "height": 183
+      },
+      "astronomy": {
+        "x": 801,
+        "y": 531,
+        "width": 213,
+        "height": 199
+      },
+      "navigation": {
+        "x": 1067,
+        "y": 527,
+        "width": 185,
+        "height": 213
+      },
+      "electricity": {
+        "x": 1305,
+        "y": 528,
+        "width": 193,
+        "height": 207
+      },
+      "biology": {
+        "x": 47,
+        "y": 760,
+        "width": 203,
+        "height": 214
+      },
+      "industry": {
+        "x": 287,
+        "y": 757,
+        "width": 218,
+        "height": 214
+      },
+      "computing": {
+        "x": 548,
+        "y": 771,
+        "width": 201,
+        "height": 199
+      },
+      "nuclear": {
+        "x": 804,
+        "y": 766,
+        "width": 195,
+        "height": 210
+      },
+      "space": {
+        "x": 1044,
+        "y": 772,
+        "width": 263,
+        "height": 203
+      },
+      "time": {
+        "x": 1338,
+        "y": 764,
+        "width": 142,
+        "height": 210
+      }
+    }
+  }
+]

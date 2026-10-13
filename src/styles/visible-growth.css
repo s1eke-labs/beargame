@@ -1,0 +1,17 @@
+/* Growth belongs to the lot, never the building's position or opacity. */
+.simple-book .building-surroundings{position:absolute;inset:0;display:block;pointer-events:none;z-index:0;animation:none!important;transition:none!important}
+.simple-book .building-surroundings>svg{display:block;width:100%;height:100%;overflow:visible}
+.simple-book .placed-building:has(.building-surroundings) .building-cluster{z-index:1}
+.simple-book .placed-building:has(.building-surroundings) .building-label{z-index:2}
+.simple-book .placed-building:has(.building-surroundings)>.building-ground{opacity:0}
+.simple-book .placed-building:has(.building-surroundings):before{display:none}
+/* Era backdrops use the same quiet, continuous storybook terrain as exploration.
+   Only scenery changes: map height, fixed lots and camera position are untouched. */
+.simple-book .world-board.era-settlement .continuous-map{background-image:url('../../art/explore-settlement-long.webp')}
+.simple-book .world-board.era-industrial .continuous-map{background-image:url('../../art/explore-industrial-long.webp')}
+.simple-book .world-board.era-stellar .continuous-map{background-image:url('../../art/explore-stellar-long.webp')}
+.simple-book .world-board.era-industrial .lot-path{stroke:#d5c9a8}
+.simple-book .world-board.era-stellar .lot-clearing{fill:#d8dfc5}
+/* Decorations are static even when work continues; no glitter or build replay. */
+@media(prefers-reduced-motion:reduce){.building-surroundings,.building-surroundings *{animation:none!important;transition:none!important}}
+.motion-reduced .building-surroundings,.motion-reduced .building-surroundings *{animation:none!important;transition:none!important}

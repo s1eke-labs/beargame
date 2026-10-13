@@ -1,0 +1,313 @@
+{
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "source": "js/calendar.js:55–214,321–353",
+  "cycleYears": 5,
+  "cycles": [
+    {
+      "referenceKey": "charon",
+      "name": "冥岸星轮",
+      "buildingMultipliers": [
+        {
+          "building": "moonOutpost",
+          "effect": "unobtainiumPerTickSpace",
+          "factor": 0.9
+        },
+        {
+          "building": "entangler",
+          "effect": "gflopsConsumption",
+          "factor": 2
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "honey": 1.5,
+        "wood": 1.5,
+        "minerals": 1.5
+      }
+    },
+    {
+      "referenceKey": "umbra",
+      "name": "暗隙星轮",
+      "buildingMultipliers": [
+        {
+          "building": "hydrofracturer",
+          "effect": "oilPerTickAutoprodSpace",
+          "factor": 0.75
+        },
+        {
+          "building": "planetCracker",
+          "effect": "uraniumPerTickSpace",
+          "factor": 0.9
+        },
+        {
+          "building": "hrHarvester",
+          "effect": "energySupply",
+          "factor": 1.5
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "coal": 1.5,
+        "iron": 1.5,
+        "titanium": 1.5,
+        "gold": 1.5
+      }
+    },
+    {
+      "referenceKey": "yarn",
+      "name": "翠星轮",
+      "buildingMultipliers": [
+        {
+          "building": "hydroponics",
+          "effect": "honeyRatio",
+          "factor": 2
+        },
+        {
+          "building": "researchVessel",
+          "effect": "starchartPerTickBaseSpace",
+          "factor": 0.5
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "culture": 2
+      }
+    },
+    {
+      "referenceKey": "helios",
+      "name": "朝日星轮",
+      "buildingMultipliers": [
+        {
+          "building": "cryostation",
+          "effect": "woodCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "cryostation",
+          "effect": "mineralsCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "cryostation",
+          "effect": "coalCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "cryostation",
+          "effect": "ironCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "cryostation",
+          "effect": "titaniumCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "cryostation",
+          "effect": "oilCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "cryostation",
+          "effect": "uraniumCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "cryostation",
+          "effect": "unobtainiumCapacity",
+          "factor": 0.9
+        },
+        {
+          "building": "sunlifter",
+          "effect": "energySupply",
+          "factor": 1.5
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "faith": 2,
+        "unicorns": 1.25
+      }
+    },
+    {
+      "referenceKey": "cath",
+      "name": "故林星轮",
+      "buildingMultipliers": [
+        {
+          "building": "spaceStation",
+          "effect": "scienceRatio",
+          "factor": 1.5
+        },
+        {
+          "building": "sattelite",
+          "effect": "observatoryRatio",
+          "factor": 2
+        },
+        {
+          "building": "sattelite",
+          "effect": "starchartPerTickBaseSpace",
+          "factor": 2
+        },
+        {
+          "building": "spaceBeacon",
+          "effect": "starchartPerTickBaseSpace",
+          "factor": 0.1
+        },
+        {
+          "building": "spaceElevator",
+          "effect": "prodTransferBonus",
+          "factor": 2
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "manpower": 2
+      }
+    },
+    {
+      "referenceKey": "redmoon",
+      "name": "月林星轮",
+      "buildingMultipliers": [
+        {
+          "building": "moonOutpost",
+          "effect": "unobtainiumPerTickSpace",
+          "factor": 1.2
+        },
+        {
+          "building": "entangler",
+          "effect": "gflopsConsumption",
+          "factor": 0.5
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "unobtainium": 2
+      }
+    },
+    {
+      "referenceKey": "dune",
+      "name": "沙海星轮",
+      "buildingMultipliers": [
+        {
+          "building": "hydrofracturer",
+          "effect": "oilPerTickAutoprodSpace",
+          "factor": 1.5
+        },
+        {
+          "building": "planetCracker",
+          "effect": "uraniumPerTickSpace",
+          "factor": 1.1
+        },
+        {
+          "building": "hrHarvester",
+          "effect": "energySupply",
+          "factor": 0.75
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "uranium": 2
+      }
+    },
+    {
+      "referenceKey": "piscine",
+      "name": "潮星轮",
+      "buildingMultipliers": [
+        {
+          "building": "hydroponics",
+          "effect": "honeyRatio",
+          "factor": 0.5
+        },
+        {
+          "building": "researchVessel",
+          "effect": "starchartPerTickBaseSpace",
+          "factor": 1.5
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "science": 2
+      }
+    },
+    {
+      "referenceKey": "terminus",
+      "name": "冰境星轮",
+      "buildingMultipliers": [
+        {
+          "building": "cryostation",
+          "effect": "woodCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "cryostation",
+          "effect": "mineralsCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "cryostation",
+          "effect": "coalCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "cryostation",
+          "effect": "ironCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "cryostation",
+          "effect": "titaniumCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "cryostation",
+          "effect": "oilCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "cryostation",
+          "effect": "uraniumCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "cryostation",
+          "effect": "unobtainiumCapacity",
+          "factor": 1.2
+        },
+        {
+          "building": "sunlifter",
+          "effect": "energySupply",
+          "factor": 0.5
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "oil": 2
+      }
+    },
+    {
+      "referenceKey": "kairo",
+      "name": "微光星轮",
+      "buildingMultipliers": [
+        {
+          "building": "spaceStation",
+          "effect": "scienceRatio",
+          "factor": 0.75
+        },
+        {
+          "building": "sattelite",
+          "effect": "observatoryRatio",
+          "factor": 0.75
+        },
+        {
+          "building": "sattelite",
+          "effect": "starchartPerTickBaseSpace",
+          "factor": 0.75
+        },
+        {
+          "building": "spaceBeacon",
+          "effect": "starchartPerTickBaseSpace",
+          "factor": 5
+        },
+        {
+          "building": "spaceElevator",
+          "effect": "prodTransferBonus",
+          "factor": 0.5
+        }
+      ],
+      "festivalResourceMultipliers": {
+        "starchart": 5
+      }
+    }
+  ]
+}

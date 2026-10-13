@@ -1,0 +1,195 @@
+/* v6.0 — the bear's drawing language is the world's drawing language.
+   Rounded dark contours, quiet flat fills, no simulated wood/paper or metallic UI. */
+.simple-book{
+ --paper:#fff9ec;--surface:#fffdf6;--ink:#30382f;--muted:#65735c;
+ --line:#b8c5a5;--forest:#50674b;--green:#93ac7e;--amber:#f1cc67;
+ --game-paper:#fff9ec;--game-deep:#e2ebce;--game-ink:#30382f;
+ --book-outline:#414936;--book-grass:#dfebcb;--book-shadow:#b9c99f;
+ background:#e1ebd2;color:var(--ink);
+ font-family:"Arial Rounded MT Bold","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+.simple-book h1,.simple-book h2,.simple-book .mobile-brand>span:last-child{font-family:inherit;letter-spacing:.015em}
+.simple-book .app-shell,.simple-book .topbar,.simple-book .resource-ribbon{background:var(--paper)}
+.simple-book .topbar{color:var(--ink)}
+.simple-book .resource-ribbon{border-bottom:2px solid #b4c29d}
+.simple-book .resource-tile{background:transparent;border:0;box-shadow:none}
+.simple-book .all-resources{background:#e4edcf;border:2px solid var(--book-outline);border-radius:15px}
+.simple-book .icon{stroke-width:2.2}
+.simple-book .bottom-nav{background:var(--paper);border-top:2px solid var(--book-outline);box-shadow:none;justify-content:space-around}
+.simple-book .bottom-nav>button{color:var(--muted);border-radius:16px;max-width:150px}
+.simple-book .bottom-nav>button.active{color:var(--ink);background:#e6edcf}
+.simple-book .bottom-nav>button.active .nav-token{background:none;transform:none;filter:none}
+.simple-book .bottom-nav>button.active:after{background:var(--book-outline);height:3px;width:18px;bottom:0}
+.simple-book .nav-token{filter:none}
+.simple-book .world-toolbar,.simple-book .status-strip{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.simple-book .world-scene,.simple-book .panel-view .world-scene{background-color:var(--book-grass)}
+.simple-book .building-copy>.painted-building,.simple-book .building-copy>.atlas,
+.simple-book .regional-facility>.atlas,.simple-book .region-landmark>.atlas,
+.simple-book .district-site>.atlas,.simple-book .job-diorama>.job-workplace,
+.simple-book .world-scene .reference-bear-art,.simple-book .regional-map .reference-bear-art,
+.simple-book .job-diorama .reference-bear-art,.simple-book .job-diorama>.job-bear,
+.simple-book .worker-body,.simple-book .research-path .semantic-research{filter:none!important}
+.simple-book .building-ground{background:#b7ca9977;height:14%;width:78%;left:11%;box-shadow:none}
+.simple-book .building-ground .door-path{background:#ecdbb0;box-shadow:none;border-radius:50%;height:140%}
+.simple-book .building-label,.simple-book .panel-view .building-label{background:#fffbed;border:1.5px solid var(--book-outline);border-radius:9px;color:var(--ink)}
+.simple-book .building-count{background:#f1cc67;color:var(--ink);border:1.5px solid var(--book-outline);box-shadow:none}
+.simple-book .scene-worker:before,.simple-book .regional-worker:before{background:#a2b58c77;filter:none;height:4px}
+.simple-book .next-step{background:var(--paper);box-shadow:none;border-color:var(--line)}
+.simple-book .gather-button,.simple-book .refine-button{border:2px solid var(--book-outline);box-shadow:0 3px 0 var(--book-outline);border-radius:17px;color:var(--ink)}
+.simple-book .gather-button{background:var(--amber)}
+.simple-book .refine-button{background:#e3eccf}
+.simple-book .gather-button:active,.simple-book .refine-button:active{box-shadow:none}
+/* One clean notebook surface; the picture remains the dominant content. */
+.simple-book .game-sheet,.simple-book .panel-view .game-sheet,
+.simple-book .sheet-build,.simple-book .panel-view .sheet-build{
+ background:var(--paper);border:2px solid var(--book-outline);border-bottom:0;box-shadow:none;color:var(--ink);border-radius:22px 22px 0 0;
+}
+.simple-book .game-sheet-body,.simple-book .sheet-build .game-sheet-body,
+.simple-book .sheet-research .game-sheet-body,.simple-book .sheet-village .game-sheet-body{
+ background:var(--paper);color:var(--ink);
+}
+.simple-book .page-heading,.simple-book .sheet-research .page-heading,.simple-book .sheet-village .page-heading,
+.simple-book .world-map-header,.simple-book .region-header,.simple-book .dialog-header,
+.simple-book .region-action-panel>header{background:#e3eccf;color:var(--ink);border-bottom:2px solid var(--book-outline);box-shadow:none}
+.simple-book .page-heading h1{letter-spacing:.03em}
+.simple-book .page-heading .icon-button,.simple-book .dialog-header .icon-button,
+.simple-book .region-action-panel>header button{color:var(--ink)}
+.simple-book .construction-workbench{background-image:none}
+.simple-book .sheet-build .build-showcase>.atlas{filter:none}
+.simple-book .sheet-build .blueprint-caption p,.simple-book .construction-owned,
+.simple-book .growth-stage-note{color:var(--muted)}
+.simple-book .construction-management{background:#e7eed8;color:var(--ink);border-top:1px solid var(--line)}
+.simple-book .sheet-build .building-option,.simple-book .recipe-option{
+ background:#f4f1df;color:var(--ink);border:2px solid #a5b392;box-shadow:none;border-radius:14px;
+}
+.simple-book .sheet-build .building-option.selected,.simple-book .recipe-option.selected{
+ background:#fae5a1;border:2px solid var(--book-outline);box-shadow:0 2px 0 var(--book-outline);
+}
+.simple-book .sheet-build .building-option small{background:#fffbed;color:var(--ink);border-radius:6px}
+.simple-book .sheet-build .construction-tray .filter-pill,.simple-book .filter-pill,.simple-book .segmented button{color:var(--muted)}
+.simple-book .sheet-build .construction-tray .filter-pill.selected,.simple-book .filter-pill.selected,
+.simple-book .segmented button.selected{color:var(--ink);background:#e3eccf;border-color:var(--book-outline);border-radius:10px 10px 0 0}
+.simple-book .buy-button,.simple-book .primary-button,.simple-book .sheet-build .build-purchase>.buy-button{
+ background:var(--amber);color:var(--ink);border:2px solid var(--book-outline);box-shadow:0 2px 0 var(--book-outline);border-radius:13px;
+}
+.simple-book .buy-button[aria-disabled=true],.simple-book .buy-button.unavailable,
+.simple-book .primary-button[aria-disabled=true],.simple-book .sheet-build .build-purchase>.buy-button[aria-disabled=true]{
+ background:#e8eadb;color:#68745f;border-color:#a7b093;box-shadow:0 2px 0 #a7b093;
+}
+.simple-book .decision-cost small,.simple-book .sheet-build .decision-cost small{color:var(--muted)}
+.simple-book .decision-cost.short small,.simple-book .cost.short{color:#995037}
+.simple-book .research-path>.discovery-card{background:#fffdf6;border:2px solid #a6b68f;border-radius:16px;box-shadow:none}
+.simple-book .research-path .card-illustration{background:#edf2df;border-radius:45%}
+.simple-book .notebook-intro,.simple-book .notebook-intro small{color:var(--muted)}
+.simple-book .village-overview{background:none;border-color:var(--line)}
+.simple-book .job-card{background:var(--surface);border:2px solid #a6b68f;border-radius:17px;box-shadow:none}
+.simple-book .job-diorama{background-image:url('../../art/region-woodland.webp');border-color:var(--line)}
+.simple-book .stepper>.icon-button{background:#e3eccf;border:2px solid var(--book-outline);box-shadow:none;border-radius:14px}
+/* World and close-up maps share the same quiet, flat terrain. */
+.simple-book .area-preview,.simple-book .terrain-twilight .area-preview{background:#dce8c3;border:2px solid #9fb48b;filter:none;box-shadow:none}
+.simple-book .terrain-twilight .area-preview{background:#dce4ee;border-color:#9aaebc}
+.simple-book .area-road{background:#f1deb0;box-shadow:none}
+.simple-book .terrain-river .area-river{background:#abd7df}
+.simple-book .geographic-region strong{background:var(--paper);border:1.5px solid var(--book-outline);border-radius:10px;color:var(--ink)}
+.simple-book .geographic-region small{background:var(--paper);color:var(--muted);border-radius:5px}
+.simple-book .district-summary,.simple-book .district-map.era-stellar .district-summary{background:#fff9ecef;color:var(--muted)}
+.simple-book .district-map.era-industrial{background-image:url('../../art/region-woodland.webp')}
+.simple-book .district-map.era-stellar{background-image:url('../../art/region-twilight.webp')}
+.simple-book .district-floor:before{background:#efddb5}
+.simple-book .district-building-ground{background:#aec49766;height:12px}
+.simple-book .district-site>b{background:var(--paper);border:1.5px solid var(--book-outline);border-radius:9px;color:var(--ink)}
+.simple-book .district-site>small{background:#f4d482;color:var(--ink);border:1px solid var(--book-outline)}
+.simple-book .world-system-shortcuts,.simple-book .world-map-tools,.simple-book .district-actions{background:var(--paper);border-color:var(--line);color:var(--ink)}
+.simple-book .region-header button,.simple-book .district-system-button,.simple-book .district-direct-title button{background:#e3eccf;border:2px solid var(--book-outline);color:var(--ink);border-radius:13px}
+.simple-book .regional-quick-action{background:#fae5a1;border:2px solid var(--book-outline);color:var(--ink);box-shadow:none}
+.simple-book .region-action-panel{background:var(--paper);border:2px solid var(--book-outline);box-shadow:none}
+.simple-book .region-action-body{background:var(--paper);color:var(--ink)}
+.simple-book .game-item{background:none;box-shadow:none;border-color:var(--line)}
+.simple-book .system-metrics>div{background:#e8eedb;border-color:#94a67f}
+.simple-book .dialog-backdrop{background:#34412a66;backdrop-filter:none}
+.simple-book .dialog{background:var(--paper);border:2px solid var(--book-outline);box-shadow:0 4px 0 #41493644}
+.simple-book .dialog-body{background:var(--paper)}
+.simple-book .detail-hero,.simple-book .effect-box{background:#eaf0db;box-shadow:none;border-color:var(--line)}
+.simple-book .growth-feedback{background:var(--paper);color:var(--ink);border-color:var(--book-outline);box-shadow:0 3px 0 #41493644}
+.simple-book .loading-screen{background:var(--paper);color:var(--ink)}
+.simple-book .loading-screen progress{height:12px;border:2px solid var(--book-outline);background:#e3eccf;border-radius:9px}
+.simple-book .loading-screen progress::-webkit-progress-bar{background:#e3eccf}
+.simple-book .loading-screen progress::-webkit-progress-value{background:var(--amber)}
+.simple-book .loading-screen progress::-moz-progress-bar{background:var(--amber)}
+@media(min-width:761px){.simple-book .panel-view .game-sheet{border-bottom:2px solid var(--book-outline);border-radius:22px}}
+/* Contrast audit: controls previously meant for dark wood panels. */
+.simple-book .topbar-right>.icon-button,.simple-book .sheet-close{color:var(--ink);background:none}
+.simple-book .sheet-build .capacity-note,.simple-book .region-action-panel .catalog-toggle{color:var(--muted)}
+.simple-book .sheet-build .build-purchase{background:#edf1dd;border-color:var(--line);box-shadow:none}
+.simple-book .sheet-build .build-purchase .cost{color:var(--ink)}
+.simple-book .sheet-build .build-purchase .cost.short{color:#995037}
+.simple-book .sheet-close,.simple-book .sheet-build .sheet-close{color:var(--ink);background:var(--paper);border:2px solid var(--book-outline);border-radius:50%;box-shadow:none}
+.simple-book .sheet-build .building-picker{background:#e8eed9;box-shadow:none;border-color:var(--line)}
+.simple-book .construction-management>summary{background:#e7eed8;color:var(--ink)}
+.simple-book .management-count{background:#f4d482;color:var(--ink);border-color:var(--book-outline)}
+.simple-book .management-hint,.simple-book .construction-management:not([open])>summary:after{color:var(--muted)}
+.simple-book .home-controls{background:var(--paper)}
+.simple-book .nav-token>.atlas,.simple-book .resource-tile>.atlas,.simple-book .system-icon>.atlas{filter:none}
+.simple-book .geographic-region strong{box-shadow:none}
+.simple-book .refine-button[aria-disabled=true],.simple-book .regional-quick-action[aria-disabled=true]{background:#e8eadb;color:#68745f;border-color:#a7b093;box-shadow:none}
+.simple-book .work-ember{box-shadow:none}
+/* A lone regional action fills its dock on narrow phones too. */
+.simple-book .district-actions>.district-system-button:only-child{max-width:none;flex:1;white-space:nowrap}
+/* Occupational poses own the movement; the anchored body never drifts or mirrors. */
+.outfit-bear-art{container-type:size;position:relative;overflow:visible}
+.outfit-bear-art>.atlas-sprite{background-image:url('../../art/worker-outfits.webp');flex-shrink:0}
+.simple-book .is-working .worker-body{animation:none!important;transform:none}
+.simple-book .worker-woodcutter.is-working .frame-a{transform:none}
+
+/* Buildings stay anchored and opaque; production lives only in local details. */
+.simple-book .placed-building,.simple-book .placed-building .building-cluster,
+.simple-book .placed-building .building-copy,.simple-book .placed-building .building-copy>.atlas,
+.simple-book .regional-facility>.atlas{animation:none!important;transition:none!important}
+.simple-book .placed-building .building-cluster{opacity:1}
+
+/* A district is one continuous, fixed-lot map, never a sequence of pages. */
+.simple-book .world-board .world-toolbar{display:flex;padding:0 8px;overflow:hidden}
+.simple-book .world-board .scene-tabs{flex:1;min-width:0;scrollbar-width:none;gap:4px}
+.simple-book .world-board .scene-tabs>button{flex-shrink:0;padding:5px 12px}
+.simple-book .world-board .world-scene{overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;touch-action:pan-y;scrollbar-width:thin;background:none;border-radius:0}
+.simple-book .continuous-map{position:relative;width:100%;height:var(--map-height);min-height:100%;isolation:isolate;background:#c7d999 url('../../art/forest-long-map.webp') center top/cover no-repeat}
+.simple-book .continuous-map .settlement-stage,.simple-book .continuous-map .resident-lane{position:absolute;inset:0;display:block;height:100%;pointer-events:none}
+.simple-book .continuous-map .placed-building{position:absolute;left:var(--x);top:var(--y);width:43%;height:155px;max-width:190px;max-height:none;transform:translate(-50%,-85%);pointer-events:auto}
+.simple-book .continuous-map .scene-worker{top:var(--worker-y);left:var(--worker-x);transform:translate(-50%,-80%);pointer-events:auto}
+.simple-book .continuous-map .resident-status{right:12px;bottom:14px;pointer-events:auto}
+.simple-book .continuous-map .scene-atmosphere{display:none}
+.simple-book .continuous-map .resident-lane{z-index:10000}
+
+/* One stable bear drawing: continuous breathing, never hard-cut sprite poses. */
+.simple-book .loading-screen{opacity:1;transition:opacity .28s ease-out}
+.simple-book .loading-screen.loading-complete{opacity:0;pointer-events:none}
+.simple-book .loading-stage{position:relative;width:180px;height:185px;display:grid;place-items:center}
+.simple-book .loading-bear{position:relative;background-position:0 0;transform-origin:50% 92%;animation:bear-breathe 2.8s cubic-bezier(.45,0,.55,1) infinite;will-change:transform}
+.simple-book .loading-shadow{position:absolute;bottom:12px;width:78px;height:10px;background:#b7c59e;border-radius:50%;animation:bear-shadow 2.8s ease-in-out infinite}
+.simple-book .loading-leaf{position:absolute;width:13px;height:21px;background:#adc18d;border:2px solid #394735;border-radius:90% 0 90% 0;animation:leaf-float 4s ease-in-out infinite}
+.simple-book .leaf-one{left:4px;top:50px;--leaf-tilt:-25deg}
+.simple-book .leaf-two{right:2px;top:94px;--leaf-tilt:28deg;animation-delay:-2s;background:#efd58b}
+.simple-book .loading-screen progress{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);border:0}
+.simple-book .loading-track{width:180px;height:12px;border:2px solid var(--book-outline);border-radius:9px;background:#e3eccf;overflow:hidden}
+.simple-book #loading-fill{display:block;height:100%;width:0;background:var(--amber);border-radius:6px;transition:width .24s ease-out}
+@keyframes bear-breathe{0%,100%{transform:translateY(0) rotate(-1deg) scale(1)}50%{transform:translateY(-4px) rotate(1deg) scale(1.015)}}
+@keyframes bear-shadow{0%,100%{transform:scaleX(1);opacity:.5}50%{transform:scaleX(.9);opacity:.35}}
+@keyframes leaf-float{0%,100%{transform:translateY(0) rotate(var(--leaf-tilt))}50%{transform:translateY(-9px) rotate(calc(var(--leaf-tilt) + 12deg))}}
+@media(prefers-reduced-motion:reduce){.simple-book .loading-bear,.simple-book .loading-shadow,.simple-book .loading-leaf{animation:none}.simple-book .loading-screen,.simple-book #loading-fill{transition:none}}
+/* Exploration prioritizes terrain and destinations; utilities are on demand. */
+.simple-book .world-map-header{position:relative;min-height:48px;flex:0 0 48px;display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:0 56px 0 14px;gap:8px}
+.simple-book .world-map-header h1{font-size:15px;margin:0;white-space:nowrap}
+.simple-book .explore-more{min-height:44px;min-width:64px;padding:4px 8px;border:0;background:transparent;font-size:13px}
+.simple-book .world-map-canvas{background-image:url('../../art/forest-long-map.webp');background-size:cover;background-position:center top;background-repeat:no-repeat}
+.simple-book .era-settlement .world-map-canvas{background-image:url('../../art/explore-settlement-long.webp')}
+.simple-book .era-industrial .world-map-canvas{background-image:url('../../art/explore-industrial-long.webp')}
+.simple-book .era-stellar .world-map-canvas{background-image:url('../../art/explore-stellar-long.webp')}
+.simple-book .world-region.geographic-region{min-height:172px}
+.simple-book .area-preview{height:126px}
+.simple-book .area-building-0{left:31%;top:0;width:88px;height:88px}
+.simple-book .area-building-1{left:5%;top:35%;width:74px;height:74px}
+.simple-book .area-building-2{left:58%;top:35%;width:74px;height:74px}
+.simple-book .explore-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:8px 0}
+.simple-book .explore-menu button,.simple-book .explore-fallback button{display:flex;align-items:center;justify-content:center;gap:9px;min-height:56px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#eef0db}
+.simple-book .explore-menu .icon{width:22px;height:22px}
+.simple-book .explore-fallback{margin-top:14px}.simple-book .explore-fallback h3{font-size:13px;font-weight:500}.simple-book .explore-fallback button{width:100%;justify-content:space-between;margin-top:6px}

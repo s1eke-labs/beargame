@@ -1,0 +1,72 @@
+{
+  "mode": "built-in imagegen",
+  "generation_calls": 1,
+  "source_generated_path": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-e7038556-4eab-4da6-8bf9-5975764a5406.png",
+  "original_atlas_path": "/workspace/shared/region-scenes/regional-scenes-atlas.png",
+  "atlas_dimensions": [
+    1881,
+    836
+  ],
+  "prompt_path": "/workspace/shared/region-scenes/prompt.txt",
+  "reference_images_inspected": [
+    "/workspace/scratch/2ea1830e5ccf/beargame/public/art/forest-clearing.webp",
+    "/workspace/scratch/2ea1830e5ccf/beargame/public/art/core-buildings-atlas.webp"
+  ],
+  "prompt": "Use case: illustration-story.\nAsset type: one game-background atlas containing THREE separate portrait environment panels.\nCreate ONE landscape image, intended dimensions 2304 x 1024 (overall 9:4 aspect ratio), partitioned into exactly THREE equal-width vertical columns side by side. Each individual column is a separate portrait 3:4 background. The dividing lines are exactly at one-third and two-thirds of the full canvas; panels touch with no gutters, borders, labels, or overlap. Each environment is independently framed and does not continue into its neighbor.\n\nStyle: simple cozy storybook game art, bold dark charcoal-brown ink outlines, rounded scalloped tree foliage, flat softly textured colors, very restrained cel shading. Match an illustrated bear-village game: sage and olive green trees, pale cream paths, honey-tan logs. Clean simplified shapes, not detailed painting, not photorealism. Elevated map-like view similar to a children's illustrated forest clearing, with ground filling most of each panel. Keep detailed vegetation and landmarks confined to the outer edges.\n\nLEFT COLUMN: a warm woodland workshop clearing. Light sage grassy open ground. Chunky rounded trees form a loose frame near top, side, and bottom edges. Small stacks of cut logs with round honey-colored ends appear ONLY beside the outer left and right edges, never in the middle. A thin cream path may follow an edge. No workshop building.\nCENTER COLUMN: a peaceful riverside trading clearing. Warm pale green open ground. A narrow turquoise-blue river follows the far RIGHT edge of this column, with a tiny simple wooden footbridge near that outer edge, leaving the center unobstructed. Rounded willow-like trees and reeds stay at the outer edges. No market, stalls, docks, cargo, or buildings.\nRIGHT COLUMN: a twilight sacred and stargazing grove. Bluegreen twilight sky visible as a narrow opening along the TOP edge behind trees, with small glowing golden and mint stars along the top and upper side edges. Muted teal/sage open ground remains clearly visible rather than dark. Rounded deep-teal trees and a few softly glowing plants frame the edges. No temple, altar, shrine, telescope, or buildings.\n\nComposition constraint for EACH column: reserve its central 60% as broad continuous OPEN EMPTY GROUND for clickable building sprites that will be added later. Do not draw building hotspots, circles, pads, foundations, grid lines, icons, or interface. The center should be very calm and low-detail with at most a few tiny grass marks. Strongest visual details stay in the outer 20% margins. All three panels have the same camera angle, ink line weight, cozy graphic simplicity, and general ground brightness. No characters, animals, buildings, text, letters, numbers, UI, watermark, shadows shaped like buildings, or photorealistic rendering.\n",
+  "derivation": "Three equal 627-pixel columns cropped with Pillow, encoded as WebP quality 92. No compositional edits.",
+  "assets": [
+    {
+      "name": "woodland-workshop-clearing",
+      "path": "/workspace/shared/region-scenes/woodland-workshop-clearing.webp",
+      "dimensions": [
+        627,
+        836
+      ],
+      "crop_box": [
+        0,
+        0,
+        627,
+        836
+      ],
+      "bytes": 139862
+    },
+    {
+      "name": "riverside-trading-clearing",
+      "path": "/workspace/shared/region-scenes/riverside-trading-clearing.webp",
+      "dimensions": [
+        627,
+        836
+      ],
+      "crop_box": [
+        627,
+        0,
+        1254,
+        836
+      ],
+      "bytes": 151198
+    },
+    {
+      "name": "twilight-stargazing-grove",
+      "path": "/workspace/shared/region-scenes/twilight-stargazing-grove.webp",
+      "dimensions": [
+        627,
+        836
+      ],
+      "crop_box": [
+        1254,
+        0,
+        1881,
+        836
+      ],
+      "bytes": 142854
+    }
+  ],
+  "visual_validation": {
+    "separate_equal_columns": true,
+    "portrait_3_to_4": true,
+    "central_ground_open": true,
+    "no_buildings_characters_text_ui": true,
+    "distinct_regions": true,
+    "style_note": "Ink-outlined cozy storybook style with more foliage texture than existing forest clearing; no photorealism."
+  }
+}

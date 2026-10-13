@@ -1,0 +1,199 @@
+{
+  "version": 40,
+  "styleReference": "小熊简笔绘本",
+  "originalBearRetained": true,
+  "assets": {
+    "building-growth-atlas.webp": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 388514,
+      "sha256": "daeb29237ebe1bc830d0a6b0759dc9ea24171932c6752572b288f4d678c4be0c"
+    },
+    "buildings-atlas.webp": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 295346,
+      "sha256": "dae8beacd17efabebe9a23bba56a211cae45f0580f464b713e854185c41f22cd"
+    },
+    "core-buildings-atlas.webp": {
+      "width": 1774,
+      "height": 887,
+      "bytes": 238262,
+      "sha256": "9a42617039f0bb718c516029b6a881a85e239ac8e73f6e04e02d0aa2628be507"
+    },
+    "exploration-map.webp": {
+      "width": 512,
+      "height": 1024,
+      "bytes": 39544,
+      "sha256": "df3a58c502fb7c6955da75a98bb852a437f0be368ea2608087363c854c8e8de2"
+    },
+    "forest-clearing-painted.webp": {
+      "width": 1086,
+      "height": 1448,
+      "bytes": 69332,
+      "sha256": "e739242a84cac0c177e50b8a45b761f260b3b7ec964b13eadf0827b5d00028c4"
+    },
+    "forest-clearing.webp": {
+      "width": 1086,
+      "height": 1448,
+      "bytes": 69332,
+      "sha256": "e739242a84cac0c177e50b8a45b761f260b3b7ec964b13eadf0827b5d00028c4"
+    },
+    "loading-bear.webp": {
+      "width": 256,
+      "height": 160,
+      "bytes": 22648,
+      "sha256": "b1194f05cce4f38bfbeb5c422eeb300ae37e2de57a016aadd856f814afcd918d"
+    },
+    "painted-expedition.webp": {
+      "width": 1536,
+      "height": 768,
+      "bytes": 261892,
+      "sha256": "2fe8d4e02af8a794618cd688db12622fe58fdfb51f6112a7818a0675eeb47001"
+    },
+    "painted-home.webp": {
+      "width": 1536,
+      "height": 768,
+      "bytes": 261594,
+      "sha256": "af510a5f3aa4be44140a0e3b5c343cb310868b82131b0b588b491526d1ab730e"
+    },
+    "painted-utilities.webp": {
+      "width": 1536,
+      "height": 768,
+      "bytes": 217968,
+      "sha256": "619a22a8ada353958930235b76ca501c22292d90e5906da52a3fc0c2cd2127ed"
+    },
+    "painted-workplaces.webp": {
+      "width": 1536,
+      "height": 768,
+      "bytes": 247720,
+      "sha256": "bd89f942b97247afccda6433b8ba0c28c4677ab1cf3d32af8f44437c7190a3af"
+    },
+    "reference-bears-atlas.webp": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 248002,
+      "sha256": "2195be611122dd09e594f391452c1e9e74ec300b4a07959e455412c42007dd2d"
+    },
+    "region-river.webp": {
+      "width": 623,
+      "height": 836,
+      "bytes": 12946,
+      "sha256": "11815f37cee36b2f1290aaf0eafe7e1061432b31bb4503bb99bd26bd32ca1b57"
+    },
+    "region-twilight.webp": {
+      "width": 623,
+      "height": 836,
+      "bytes": 10658,
+      "sha256": "b3840b9f36177270dd94d96df9293bc46d673bb6ed3d7e9863b45645f467e9aa"
+    },
+    "region-woodland.webp": {
+      "width": 623,
+      "height": 836,
+      "bytes": 12314,
+      "sha256": "1f4b6c0fcce649178eac907651764db2c1c3fcb2fdfc4721f230fc8f4aebb11e"
+    },
+    "research-subjects.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 370750,
+      "sha256": "e900668dd9e52819f7dd159a91bf208f0fcf7e654eb4fbd628317a49ab0f56f8"
+    },
+    "resources-atlas.webp": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 228632,
+      "sha256": "4ed514681b29d5a36f6b45d3867e220a38938e3a607693d350f615b5bae508b5"
+    },
+    "semantic-buildings.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 409248,
+      "sha256": "cef5b639333a8dbb46d008140b721e548f9f023cb2ceb3467726b9b5315fba31"
+    },
+    "semantic-resources-a.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 291292,
+      "sha256": "9bb12ba73920a32a53232af78356684da2ab57cec4d9f09fc31b82a4ff00fdd7"
+    },
+    "semantic-resources-b.webp": {
+      "width": 1536,
+      "height": 1024,
+      "bytes": 270884,
+      "sha256": "f5874dc3e5cd03178b3d3a8dc0f7c9d72d27d512aa1d3a35ecb3b775700fdc12"
+    },
+    "semantic-resources-extra.webp": {
+      "width": 1536,
+      "height": 256,
+      "bytes": 57704,
+      "sha256": "4fc4f358e4d09abfd28796bc28f2d0f4319a6adbeff288adbeb707ddfc8c87ab"
+    },
+    "wooden-hives.webp": {
+      "width": 1774,
+      "height": 887,
+      "bytes": 181892,
+      "sha256": "ec1e3f5645345b49b2c07f75637fc5643a43bcbc8363b296d36eec9870075400"
+    },
+    "worker-roles-atlas.webp": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 267932,
+      "sha256": "a1c11587a16facabf5ff601d971786ab91f9d4d1d18b9234b6f14b44194c3509"
+    },
+    "workshop-soft.webp": {
+      "width": 512,
+      "height": 390,
+      "bytes": 45186,
+      "sha256": "44699be624d0caaf432a1ca60a1768d5d60ac0716c24c804e930a60f66514e37"
+    },
+    "world-industrial.webp": {
+      "width": 512,
+      "height": 1024,
+      "bytes": 57636,
+      "sha256": "7da4300838251b50ac1c1be3e39c30d689fe09309a521ecc5c1d0588bb71513c"
+    },
+    "world-settlement.webp": {
+      "width": 512,
+      "height": 1024,
+      "bytes": 39544,
+      "sha256": "df3a58c502fb7c6955da75a98bb852a437f0be368ea2608087363c854c8e8de2"
+    },
+    "world-stellar.webp": {
+      "width": 512,
+      "height": 1024,
+      "bytes": 39066,
+      "sha256": "48b4294b3030dc63c371b1764301adec36193c58c2c63c6f73414687ebe84589"
+    },
+    "worker-outfits.webp": {
+      "width": 1536,
+      "height": 768,
+      "bytes": 243124,
+      "sha256": "d62b8e6b637c8ab2f47a75b8ae4a17c1e19fd5d8b955aa3091a847c9a103e967"
+    },
+    "forest-long-map.webp": {
+      "width": 724,
+      "height": 2172,
+      "bytes": 68632,
+      "sha256": "ba18ee091e33b499a08547b455e53469582d809af4f05dcf6771491ce41ead21"
+    },
+    "explore-settlement-long.webp": {
+      "width": 724,
+      "height": 2172,
+      "bytes": 78940,
+      "sha256": "658164c83ff791001654c09c2bc2e2442b2a75b6dbf4a708a1b20de7702854aa"
+    },
+    "explore-industrial-long.webp": {
+      "width": 724,
+      "height": 2172,
+      "bytes": 118992,
+      "sha256": "546b899bf56ee3d275ceda63f0d77c59eeb7f8c4625b5fd88c0a311b1723f03e"
+    },
+    "explore-stellar-long.webp": {
+      "width": 725,
+      "height": 2167,
+      "bytes": 77220,
+      "sha256": "f04cb0adfbae4f385710f442d8fbf907ba41ca43a305ab444ce3176d4b73bdb8"
+    }
+  }
+}

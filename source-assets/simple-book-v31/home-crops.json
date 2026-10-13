@@ -1,0 +1,247 @@
+{
+  "job": {
+    "source": "source-assets/simple-book-v31/buildings-main/painted-home.png",
+    "columns": 4,
+    "rows": 2,
+    "keys": [
+      "beehive",
+      "bearHut",
+      "library",
+      "barn",
+      "apiary",
+      "expandedHut",
+      "expandedLibrary",
+      "granary"
+    ],
+    "cell": 384,
+    "sheet": "home",
+    "output": "painted-home.webp",
+    "registry": "src/ui/painted-buildings.js",
+    "export": "paintedBuildings",
+    "merge": true,
+    "aliases": {
+      "hive": "beehive",
+      "expandedGranary": "granary"
+    },
+    "sourceCrops": {
+      "beehive": {
+        "x": 90,
+        "y": 183,
+        "width": 248,
+        "height": 276
+      },
+      "bearHut": {
+        "x": 447,
+        "y": 65,
+        "width": 406,
+        "height": 395
+      },
+      "library": {
+        "x": 891,
+        "y": 104,
+        "width": 430,
+        "height": 356
+      },
+      "barn": {
+        "x": 1330,
+        "y": 92,
+        "width": 431,
+        "height": 359
+      },
+      "apiary": {
+        "x": 14,
+        "y": 574,
+        "width": 390,
+        "height": 281
+      },
+      "expandedHut": {
+        "x": 442,
+        "y": 498,
+        "width": 424,
+        "height": 360
+      },
+      "expandedLibrary": {
+        "x": 887,
+        "y": 503,
+        "width": 435,
+        "height": 354
+      },
+      "granary": {
+        "x": 1329,
+        "y": 474,
+        "width": 433,
+        "height": 383
+      }
+    }
+  },
+  "crops": [
+    {
+      "key": "beehive",
+      "sourceCell": [
+        90,
+        183,
+        338,
+        459
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        247,
+        275
+      ],
+      "crop": {
+        "x": 69,
+        "y": 55,
+        "width": 246,
+        "height": 274
+      }
+    },
+    {
+      "key": "bearHut",
+      "sourceCell": [
+        447,
+        65,
+        853,
+        460
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        403,
+        394
+      ],
+      "crop": {
+        "x": 400,
+        "y": 20,
+        "width": 352,
+        "height": 344
+      }
+    },
+    {
+      "key": "library",
+      "sourceCell": [
+        891,
+        104,
+        1321,
+        460
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        429,
+        354
+      ],
+      "crop": {
+        "x": 784,
+        "y": 47,
+        "width": 352,
+        "height": 290
+      }
+    },
+    {
+      "key": "barn",
+      "sourceCell": [
+        1330,
+        92,
+        1761,
+        451
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        430,
+        358
+      ],
+      "crop": {
+        "x": 1168,
+        "y": 45,
+        "width": 352,
+        "height": 293
+      }
+    },
+    {
+      "key": "apiary",
+      "sourceCell": [
+        14,
+        574,
+        404,
+        855
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        389,
+        280
+      ],
+      "crop": {
+        "x": 16,
+        "y": 449,
+        "width": 352,
+        "height": 253
+      }
+    },
+    {
+      "key": "expandedHut",
+      "sourceCell": [
+        442,
+        498,
+        866,
+        858
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        423,
+        359
+      ],
+      "crop": {
+        "x": 400,
+        "y": 426,
+        "width": 352,
+        "height": 299
+      }
+    },
+    {
+      "key": "expandedLibrary",
+      "sourceCell": [
+        887,
+        503,
+        1322,
+        857
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        434,
+        353
+      ],
+      "crop": {
+        "x": 784,
+        "y": 433,
+        "width": 352,
+        "height": 286
+      }
+    },
+    {
+      "key": "granary",
+      "sourceCell": [
+        1329,
+        474,
+        1762,
+        857
+      ],
+      "alphaBounds": [
+        1,
+        1,
+        432,
+        382
+      ],
+      "crop": {
+        "x": 1168,
+        "y": 420,
+        "width": 352,
+        "height": 311
+      }
+    }
+  ]
+}

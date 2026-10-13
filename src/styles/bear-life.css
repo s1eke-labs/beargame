@@ -1,0 +1,23 @@
+/* Quiet resident moments: only inner frames and tiny props move. Anchor/hit
+   target transforms are deliberately inherited from the stable scene layout. */
+.bear-life{--life-wood:#dbc39c;--life-honey:#ead28f;--life-leaf:#b9c9a3;--life-stone:#c6c9bb;position:absolute;inset:0;pointer-events:none;color:#74674e}
+.bear-life-prop{position:absolute;right:-7px;bottom:5px;width:28px;height:21px;overflow:visible;fill:#fff7e5;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.bear-life-leaf{position:absolute;left:2px;top:1px;width:11px;height:11px;fill:var(--life-leaf);stroke:currentColor;stroke-width:1;stroke-linecap:round;opacity:0;transform:rotate(-15deg)}
+.bear-life-detail{transform-origin:15px 18px}
+.scene-worker:has(.bear-life[data-life-state="working"]) .frame-a{animation:bear-life-ready 7.2s steps(1,end) infinite;animation-delay:var(--worker-delay)}
+.scene-worker:has(.bear-life[data-life-state="working"]) .frame-b{animation:bear-life-action 7.2s steps(1,end) infinite;animation-delay:var(--worker-delay)}
+.life-scholar[data-life-state="working"] .bear-life-detail{animation:bear-life-page 7.2s ease-in-out infinite;animation-delay:var(--worker-delay)}
+.bear-life[data-life-state="resting"] .bear-life-leaf{opacity:.75;animation:bear-life-breeze 9s ease-in-out infinite;animation-delay:var(--worker-delay)}
+/* Props read as things kept beside a resident, without covering their count. */
+.scene-worker .worker-count{z-index:2}
+@keyframes bear-life-ready{0%,66%,100%{opacity:1}72%,92%{opacity:0}}
+@keyframes bear-life-action{0%,66%,100%{opacity:0}72%,92%{opacity:1}}
+@keyframes bear-life-page{0%,62%,100%{transform:rotate(0)}76%,87%{transform:rotate(-12deg)}}
+@keyframes bear-life-breeze{0%,65%,100%{transform:translateY(0) rotate(-15deg)}78%,88%{transform:translateY(-2px) rotate(8deg)}}
+.scene-paused .bear-life *,.scene-hidden .bear-life *,.motion-reduced .bear-life *,
+.bear-life[data-life-state="paused"] *{animation:none!important}
+.scene-paused .scene-worker .worker-frame,.scene-hidden .scene-worker .worker-frame,.motion-reduced .scene-worker .worker-frame{animation:none!important}
+.scene-paused .scene-worker .frame-a,.scene-hidden .scene-worker .frame-a,.motion-reduced .scene-worker .frame-a{opacity:1}
+.scene-paused .scene-worker .frame-b,.scene-hidden .scene-worker .frame-b,.motion-reduced .scene-worker .frame-b{opacity:0}
+@media(prefers-reduced-motion:reduce){.bear-life *,.scene-worker .worker-frame{animation:none!important}.scene-worker .frame-a{opacity:1}.scene-worker .frame-b{opacity:0}}
+.bear-talk{text-align:center;padding:4px 8px 10px}.bear-talk>.atlas{display:block;width:110px;height:120px;margin:0 auto 8px}.bear-talk h3{margin:8px 0;font-size:20px}.bear-talk small{color:var(--muted,#657055)}.bear-talk p{margin:20px 0;padding:16px;background:#f3efd9;border:1px solid #d2cfb7;border-radius:18px 18px 18px 5px;font-size:15px;line-height:1.8;text-align:left}

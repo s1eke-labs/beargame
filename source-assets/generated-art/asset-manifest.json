@@ -1,0 +1,330 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "originalsPreserved": true,
+  "creativeEdits": false,
+  "encoding": "ImageMagick WebP; RGB quality 84 background, RGBA quality 88 atlases; alpha-quality 100",
+  "atlasNote": "Generated spacing is uneven. Use these pixel crop rectangles instead of equal 4x4 CSS cells. Bounds include a two-pixel edge around substantial alpha, without significant neighboring sprite pixels. Faint generator alpha speckles are not part of the subjects.",
+  "recommendedDisplay": "Fit each crop in a square at 88-90% of available side, preserving crop aspect ratio. Put contact baseline at bottom for buildings.",
+  "assets": {
+    "buildings-atlas": {
+      "original": "/workspace/scratch/2ea1830e5ccf/beargame-art/originals/buildings-atlas.png",
+      "web": "/workspace/scratch/2ea1830e5ccf/beargame-art/web/buildings-atlas.webp",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "webBytes": 643576,
+      "alphaPreservedExactly": true,
+      "sprites": {
+        "beehive": {
+          "index": 0,
+          "x": 18,
+          "y": 51,
+          "width": 281,
+          "height": 254,
+          "aspect": 1.1063,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "bearHut": {
+          "index": 1,
+          "x": 320,
+          "y": 36,
+          "width": 288,
+          "height": 269,
+          "aspect": 1.07063,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "logyard": {
+          "index": 2,
+          "x": 631,
+          "y": 45,
+          "width": 296,
+          "height": 262,
+          "aspect": 1.12977,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "barn": {
+          "index": 3,
+          "x": 946,
+          "y": 46,
+          "width": 292,
+          "height": 263,
+          "aspect": 1.11027,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "warehouse": {
+          "index": 4,
+          "x": 13,
+          "y": 326,
+          "width": 294,
+          "height": 273,
+          "aspect": 1.07692,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "library": {
+          "index": 5,
+          "x": 328,
+          "y": 324,
+          "width": 290,
+          "height": 284,
+          "aspect": 1.02113,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "workshop": {
+          "index": 6,
+          "x": 640,
+          "y": 326,
+          "width": 295,
+          "height": 280,
+          "aspect": 1.05357,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "forge": {
+          "index": 7,
+          "x": 947,
+          "y": 331,
+          "width": 296,
+          "height": 275,
+          "aspect": 1.07636,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "mine": {
+          "index": 8,
+          "x": 17,
+          "y": 627,
+          "width": 298,
+          "height": 269,
+          "aspect": 1.10781,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "academy": {
+          "index": 9,
+          "x": 330,
+          "y": 613,
+          "width": 277,
+          "height": 300,
+          "aspect": 0.92333,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "market": {
+          "index": 10,
+          "x": 633,
+          "y": 644,
+          "width": 298,
+          "height": 255,
+          "aspect": 1.16863,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "shrine": {
+          "index": 11,
+          "x": 950,
+          "y": 625,
+          "width": 287,
+          "height": 291,
+          "aspect": 0.98625,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "observatory": {
+          "index": 12,
+          "x": 15,
+          "y": 915,
+          "width": 285,
+          "height": 307,
+          "aspect": 0.92834,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "factory": {
+          "index": 13,
+          "x": 330,
+          "y": 912,
+          "width": 288,
+          "height": 304,
+          "aspect": 0.94737,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "launchpad": {
+          "index": 14,
+          "x": 636,
+          "y": 919,
+          "width": 295,
+          "height": 302,
+          "aspect": 0.97682,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "timegate": {
+          "index": 15,
+          "x": 953,
+          "y": 924,
+          "width": 288,
+          "height": 297,
+          "aspect": 0.9697,
+          "neighborPixelsAboveAlpha32": 0
+        }
+      }
+    },
+    "resources-atlas": {
+      "original": "/workspace/scratch/2ea1830e5ccf/beargame-art/originals/resources-atlas.png",
+      "web": "/workspace/scratch/2ea1830e5ccf/beargame-art/web/resources-atlas.webp",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "webBytes": 391230,
+      "alphaPreservedExactly": true,
+      "sprites": {
+        "honey": {
+          "index": 0,
+          "x": 53,
+          "y": 72,
+          "width": 233,
+          "height": 239,
+          "aspect": 0.9749,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "wood": {
+          "index": 1,
+          "x": 345,
+          "y": 89,
+          "width": 275,
+          "height": 231,
+          "aspect": 1.19048,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "stone": {
+          "index": 2,
+          "x": 663,
+          "y": 85,
+          "width": 251,
+          "height": 231,
+          "aspect": 1.08658,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "iron": {
+          "index": 3,
+          "x": 961,
+          "y": 110,
+          "width": 256,
+          "height": 196,
+          "aspect": 1.30612,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "coal": {
+          "index": 4,
+          "x": 39,
+          "y": 386,
+          "width": 264,
+          "height": 216,
+          "aspect": 1.22222,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "gold": {
+          "index": 5,
+          "x": 350,
+          "y": 372,
+          "width": 245,
+          "height": 230,
+          "aspect": 1.06522,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "science": {
+          "index": 6,
+          "x": 639,
+          "y": 366,
+          "width": 281,
+          "height": 251,
+          "aspect": 1.11952,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "culture": {
+          "index": 7,
+          "x": 957,
+          "y": 373,
+          "width": 253,
+          "height": 227,
+          "aspect": 1.11454,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "gear": {
+          "index": 8,
+          "x": 59,
+          "y": 659,
+          "width": 247,
+          "height": 250,
+          "aspect": 0.988,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "crystal": {
+          "index": 9,
+          "x": 358,
+          "y": 641,
+          "width": 237,
+          "height": 268,
+          "aspect": 0.88433,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "faith": {
+          "index": 10,
+          "x": 664,
+          "y": 645,
+          "width": 245,
+          "height": 269,
+          "aspect": 0.91078,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "star": {
+          "index": 11,
+          "x": 969,
+          "y": 668,
+          "width": 234,
+          "height": 220,
+          "aspect": 1.06364,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "bear": {
+          "index": 12,
+          "x": 53,
+          "y": 951,
+          "width": 262,
+          "height": 232,
+          "aspect": 1.12931,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "berries": {
+          "index": 13,
+          "x": 360,
+          "y": 942,
+          "width": 250,
+          "height": 243,
+          "aspect": 1.02881,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "plank": {
+          "index": 14,
+          "x": 645,
+          "y": 960,
+          "width": 270,
+          "height": 220,
+          "aspect": 1.22727,
+          "neighborPixelsAboveAlpha32": 0
+        },
+        "steel": {
+          "index": 15,
+          "x": 964,
+          "y": 962,
+          "width": 247,
+          "height": 215,
+          "aspect": 1.14884,
+          "neighborPixelsAboveAlpha32": 0
+        }
+      }
+    },
+    "forest-clearing": {
+      "original": "/workspace/scratch/2ea1830e5ccf/beargame-art/originals/forest-clearing.png",
+      "web": "/workspace/scratch/2ea1830e5ccf/beargame-art/web/forest-clearing.webp",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "transparent": false,
+      "webBytes": 446898
+    }
+  },
+  "webTotalBytes": 1481704
+}

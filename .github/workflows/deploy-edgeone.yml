@@ -1,0 +1,75 @@
+name: Deploy to EdgeOne
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Let an in-flight deployment finish before starting another one.
+concurrency:
+  group: edgeone-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      EDGEONE_PROJECT_NAME: ${{ github.event.repository.name }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.19.0'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install pinned image verification dependency
+        shell: bash
+        run: |
+          python3 -m venv "$RUNNER_TEMP/beargame-build-venv"
+          "$RUNNER_TEMP/beargame-build-venv/bin/python" -m pip install --disable-pip-version-check Pillow==12.3.0
+          echo "$RUNNER_TEMP/beargame-build-venv/bin" >> "$GITHUB_PATH"
+
+      - name: Verify approved chapter and complete game regressions
+        run: npm run verify:release
+
+      - name: Install EdgeOne CLI
+        run: npm install --global edgeone@1.6.41
+
+      - name: Skip superseded commits
+        id: latest
+        shell: bash
+        run: |
+          latest_sha="$(git ls-remote --exit-code origin refs/heads/master | cut -f1)"
+          if [[ "$GITHUB_SHA" == "$latest_sha" ]]; then
+            echo 'deploy=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'A newer master commit exists; skipping this deployment.'
+          fi
+
+      - name: Deploy to EdgeOne production
+        if: steps.latest.outputs.deploy == 'true'
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "$EDGEONE_API_TOKEN" ]]; then
+            echo '::error::Add the EDGEONE_API_TOKEN repository secret in Settings > Secrets and variables > Actions.'
+            exit 1
+          fi
+          edgeone makers deploy ./dist \
+            --name "$EDGEONE_PROJECT_NAME" \
+            --token "$EDGEONE_API_TOKEN" \
+            --env production

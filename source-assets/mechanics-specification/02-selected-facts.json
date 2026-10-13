@@ -1,0 +1,2136 @@
+{
+  "schema": "beargame.independently-authored.selected-facts.v1",
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "warning": "Original factual transcription with selected scope; not reference implementation or complete reference data. Every runtime equivalence claim needs tests.",
+  "buildings": [
+    {
+      "referenceKey": "field",
+      "name": "蜂箱",
+      "firstCost": {
+        "honey": 10
+      },
+      "priceMultiplier": 1.12,
+      "availableAfter": "initial",
+      "normalEffects": {
+        "honeyPerTick": 0.125
+      },
+      "source": "js/buildings.js:350",
+      "caveats": "Season/weather scales this building output."
+    },
+    {
+      "referenceKey": "hut",
+      "name": "树洞熊舍",
+      "firstCost": {
+        "wood": 5
+      },
+      "priceMultiplier": 2.5,
+      "availableAfter": "initial",
+      "normalEffects": {
+        "housing": 2,
+        "manpowerCapacity": 75
+      },
+      "source": "js/buildings.js:484",
+      "caveats": ""
+    },
+    {
+      "referenceKey": "library",
+      "name": "林间书屋",
+      "firstCost": {
+        "wood": 25
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "initial",
+      "normalEffects": {
+        "scienceRatio": 0.1,
+        "scienceCapacity": 250,
+        "cultureCapacity": 10
+      },
+      "source": "js/buildings.js:557",
+      "caveats": "Unlocks science and scholar. Later data-center stage is a different contract."
+    },
+    {
+      "referenceKey": "barn",
+      "name": "蜜粮仓",
+      "firstCost": {
+        "wood": 50
+      },
+      "priceMultiplier": 1.75,
+      "availableAfter": "agriculture",
+      "normalEffects": {
+        "honeyCapacity": 5000,
+        "woodCapacity": 200,
+        "mineralsCapacity": 250,
+        "coalCapacity": 60,
+        "ironCapacity": 50,
+        "titaniumCapacity": 2,
+        "goldCapacity": 10
+      },
+      "source": "js/buildings.js:792",
+      "caveats": ""
+    },
+    {
+      "referenceKey": "pasture",
+      "name": "花间食圃",
+      "firstCost": {
+        "honey": 100,
+        "wood": 10
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "animal",
+      "normalEffects": {
+        "honeyDemandRatio": -0.005
+      },
+      "source": "js/buildings.js:369",
+      "caveats": "Demand reductions use limited diminishing returns. Later solar stage replaces effects."
+    },
+    {
+      "referenceKey": "aqueduct",
+      "name": "林泉水渠",
+      "firstCost": {
+        "minerals": 75
+      },
+      "priceMultiplier": 1.12,
+      "availableAfter": "engineering",
+      "normalEffects": {
+        "honeyRatio": 0.03
+      },
+      "source": "js/buildings.js:431",
+      "caveats": "Later hydroelectric stage replaces effects."
+    },
+    {
+      "referenceKey": "logHouse",
+      "name": "木屋",
+      "firstCost": {
+        "wood": 200,
+        "minerals": 250
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "construction",
+      "normalEffects": {
+        "housing": 1,
+        "manpowerCapacity": 50
+      },
+      "source": "js/buildings.js:509",
+      "caveats": ""
+    },
+    {
+      "referenceKey": "mansion",
+      "name": "山岭公馆",
+      "firstCost": {
+        "titanium": 25,
+        "slab": 185,
+        "steel": 75
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "architecture",
+      "normalEffects": {
+        "housing": 1,
+        "manpowerCapacity": 50
+      },
+      "source": "js/buildings.js:532",
+      "caveats": ""
+    },
+    {
+      "referenceKey": "academy",
+      "name": "山林学院",
+      "firstCost": {
+        "wood": 50,
+        "minerals": 70,
+        "science": 100
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "math",
+      "normalEffects": {
+        "scienceRatio": 0.2,
+        "scienceCapacity": 500,
+        "cultureCapacity": 25,
+        "skillXpPerTick": 0.0005
+      },
+      "source": "js/buildings.js:649",
+      "caveats": ""
+    },
+    {
+      "referenceKey": "observatory",
+      "name": "观星台",
+      "firstCost": {
+        "iron": 750,
+        "science": 1000,
+        "slab": 35,
+        "scaffold": 50
+      },
+      "priceMultiplier": 1.1,
+      "availableAfter": "astronomy",
+      "normalEffects": {
+        "scienceRatio": 0.25,
+        "scienceCapacity": 1000,
+        "starChance": 0.002,
+        "starAutoChance": 0.01
+      },
+      "source": "js/buildings.js:685",
+      "caveats": "Science capacity becomes1500 with astrolabe; other observatory upgrades multiply both science effects."
+    },
+    {
+      "referenceKey": "biolab",
+      "name": "花木实验室",
+      "firstCost": {
+        "science": 1500,
+        "slab": 100,
+        "plastic": 15,
+        "alloy": 25
+      },
+      "priceMultiplier": 1.1,
+      "availableAfter": "biology",
+      "normalEffects": {
+        "scienceRatio": 0.35,
+        "refineRatio": 0.1,
+        "scienceCapacity": 1500
+      },
+      "source": "js/buildings.js:709",
+      "caveats": "Additional capacity, biofuel and energy effects require calculation; not fully specified."
+    },
+    {
+      "referenceKey": "warehouse",
+      "name": "工料库",
+      "firstCost": {
+        "beam": 1.5,
+        "slab": 2
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "construction",
+      "normalEffects": {
+        "woodCapacity": 150,
+        "mineralsCapacity": 200,
+        "coalCapacity": 30,
+        "ironCapacity": 25,
+        "titaniumCapacity": 10,
+        "goldCapacity": 5
+      },
+      "source": "js/buildings.js:825",
+      "caveats": "No honey capacity initially; silos adds750. Later spaceport stage separate."
+    },
+    {
+      "referenceKey": "harbor",
+      "name": "河湾港",
+      "firstCost": {
+        "slab": 50,
+        "plate": 75,
+        "scaffold": 5
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "navigation",
+      "normalEffects": {
+        "honeyCapacity": 2500,
+        "woodCapacity": 700,
+        "mineralsCapacity": 950,
+        "coalCapacity": 100,
+        "ironCapacity": 150,
+        "titaniumCapacity": 50,
+        "goldCapacity": 25
+      },
+      "source": "js/buildings.js:943",
+      "caveats": "Cargo-ship and storage upgrades modify capacities."
+    },
+    {
+      "referenceKey": "mine",
+      "name": "石矿井",
+      "firstCost": {
+        "wood": 100
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "mining",
+      "normalEffects": {
+        "mineralsRatio": 0.2,
+        "pollutionPerTick": 0.08
+      },
+      "source": "js/buildings.js:997",
+      "caveats": "Unlocks miner. DeepMining adds .003coal/tick; ecology enables toggle."
+    },
+    {
+      "referenceKey": "quarry",
+      "name": "山岩采场",
+      "firstCost": {
+        "slab": 1000,
+        "steel": 125,
+        "scaffold": 50
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "archeology",
+      "normalEffects": {
+        "mineralsRatio": 0.35,
+        "coalPerTick": 0.015,
+        "pollutionPerTick": 0.25
+      },
+      "source": "js/buildings.js:1034",
+      "caveats": "OrbitalGeodesy adds .0005uranium/tick."
+    },
+    {
+      "referenceKey": "smelter",
+      "name": "铸铁炉",
+      "firstCost": {
+        "minerals": 200
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "metal",
+      "normalEffects": {
+        "woodConsumption": 0.05,
+        "mineralsConsumption": 0.1,
+        "ironPerTick": 0.02,
+        "pollutionPerTick": 0.15
+      },
+      "source": "js/buildings.js:1071",
+      "caveats": "GoldOre adds .001gold/tick; CoalFurnace .005coal/tick; NuclearSmelters .0015titanium/tick; insufficient inputs throttle all outputs."
+    },
+    {
+      "referenceKey": "calciner",
+      "name": "焙烧炉",
+      "firstCost": {
+        "titanium": 15,
+        "oil": 500,
+        "steel": 100,
+        "blueprint": 1
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "chemistry",
+      "normalEffects": {
+        "mineralsConsumption": 1.5,
+        "oilConsumption": 0.024,
+        "ironPerTick": 0.15,
+        "titaniumPerTick": 0.0005,
+        "energyDemand": 1,
+        "pollutionPerTick": 1
+      },
+      "source": "js/buildings.js:1154",
+      "caveats": "Upgrades alter iron and titanium with different multipliers; optional steel conversion separate."
+    },
+    {
+      "referenceKey": "steamworks",
+      "name": "蒸汽工坊",
+      "firstCost": {
+        "steel": 65,
+        "gear": 20,
+        "blueprint": 1
+      },
+      "priceMultiplier": 1.25,
+      "availableAfter": "machinery",
+      "normalEffects": {
+        "coalRatio": -0.8,
+        "energySupply": 1,
+        "magnetoBoost": 0.15,
+        "pollutionPerTick": 1
+      },
+      "source": "js/buildings.js:1281",
+      "caveats": "Coal penalty is a single enabled-system multiplier, not -.8 per building. PrintingPress .0005manuscript/tick each; successive press upgrades multiply4 each."
+    },
+    {
+      "referenceKey": "magneto",
+      "name": "林原发电机",
+      "firstCost": {
+        "gear": 5,
+        "alloy": 10,
+        "blueprint": 1
+      },
+      "priceMultiplier": 1.25,
+      "availableAfter": "electricity",
+      "normalEffects": {
+        "oilConsumption": 0.05,
+        "energySupply": 5,
+        "productionRatio": 0.02,
+        "pollutionPerTick": 5
+      },
+      "source": "js/buildings.js:1390",
+      "caveats": "Excludes honey and direct oil bonus; steamworks boost this production effect."
+    },
+    {
+      "referenceKey": "lumberMill",
+      "name": "木材工场",
+      "firstCost": {
+        "wood": 100,
+        "minerals": 250,
+        "iron": 50
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "construction",
+      "normalEffects": {
+        "woodRatio": 0.1
+      },
+      "source": "js/buildings.js:1440",
+      "caveats": "Saw bonuses modify .1 by1+sawBonus."
+    },
+    {
+      "referenceKey": "oilWell",
+      "name": "深林油井",
+      "firstCost": {
+        "steel": 50,
+        "gear": 25,
+        "scaffold": 25
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "chemistry",
+      "normalEffects": {
+        "oilPerTick": 0.02,
+        "oilCapacity": 1500
+      },
+      "source": "js/buildings.js:1459",
+      "caveats": "Pumpjack and extraction upgrades require further dynamic rules."
+    },
+    {
+      "referenceKey": "workshop",
+      "name": "手作坊",
+      "firstCost": {
+        "wood": 100,
+        "minerals": 400
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "mining",
+      "normalEffects": {
+        "craftRatio": 0.06
+      },
+      "source": "js/buildings.js:1509",
+      "caveats": ""
+    },
+    {
+      "referenceKey": "factory",
+      "name": "精工厂",
+      "firstCost": {
+        "titanium": 2000,
+        "plate": 2500,
+        "concrate": 15
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "mechanization",
+      "normalEffects": {
+        "craftRatio": 0.05
+      },
+      "source": "js/buildings.js:1538",
+      "caveats": "Engineer slots, energy, pollution and environmental modifiers require dynamic rules."
+    },
+    {
+      "referenceKey": "reactor",
+      "name": "晶能反应堆",
+      "firstCost": {
+        "titanium": 3500,
+        "plate": 5000,
+        "concrate": 50,
+        "blueprint": 25
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "nuclearFission",
+      "normalEffects": {
+        "uraniumConsumption": 0.001,
+        "productionRatio": 0.05,
+        "uraniumCapacity": 250,
+        "energySupply": 10
+      },
+      "source": "js/buildings.js:1590",
+      "caveats": "Excludes honey/uranium production bonus; supply shortages disable."
+    },
+    {
+      "referenceKey": "accelerator",
+      "name": "微粒加速环",
+      "firstCost": {
+        "titanium": 7500,
+        "uranium": 25,
+        "concrate": 125
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "particlePhysics",
+      "normalEffects": {
+        "titaniumConsumption": 0.015,
+        "uraniumPerTick": 0.0025,
+        "energyDemand": 2
+      },
+      "source": "js/buildings.js:1640",
+      "caveats": "Storage upgrades and LHC science capacity are additional."
+    },
+    {
+      "referenceKey": "tradepost",
+      "name": "林间驿站",
+      "firstCost": {
+        "wood": 500,
+        "minerals": 200,
+        "gold": 10
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "currency",
+      "normalEffects": {
+        "tradeRatio": 0.015,
+        "fursDemandRatio": -0.04,
+        "ivoryDemandRatio": -0.04,
+        "spiceDemandRatio": -0.04
+      },
+      "source": "js/buildings.js:1706",
+      "caveats": "Caravanserai adds .0035standing each."
+    },
+    {
+      "referenceKey": "mint",
+      "name": "林币铸坊",
+      "firstCost": {
+        "minerals": 5000,
+        "gold": 500,
+        "plate": 200
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "architecture",
+      "normalEffects": {
+        "goldConsumption": 0.005,
+        "manpowerConsumption": 0.75,
+        "fursPerTick": 0.00875,
+        "ivoryPerTick": 0.0021,
+        "goldCapacity": 100
+      },
+      "source": "js/buildings.js:1731",
+      "caveats": "Actual fur/ivory output also depends on manpower capacity; do not treat listed baseline as complete output formula."
+    },
+    {
+      "referenceKey": "amphitheatre",
+      "name": "山谷剧场",
+      "firstCost": {
+        "wood": 200,
+        "minerals": 1200,
+        "parchment": 3
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "writing",
+      "normalEffects": {
+        "unhappinessRatio": -0.048,
+        "culturePerTick": 0.005,
+        "cultureCapacity": 50
+      },
+      "source": "js/buildings.js:1842",
+      "caveats": "Later broadcast stage separate."
+    },
+    {
+      "referenceKey": "chapel",
+      "name": "花灯祈堂",
+      "firstCost": {
+        "minerals": 2000,
+        "culture": 250,
+        "parchment": 250
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "acoustics",
+      "normalEffects": {
+        "culturePerTick": 0.05,
+        "faithPerTick": 0.005,
+        "cultureCapacity": 200
+      },
+      "source": "js/buildings.js:1908",
+      "caveats": "Atheism removes faith; frescoes adds karma-dependent faith capacity."
+    },
+    {
+      "referenceKey": "temple",
+      "name": "山灵神殿",
+      "firstCost": {
+        "gold": 50,
+        "slab": 25,
+        "plate": 15,
+        "manuscript": 10
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "philosophy",
+      "normalEffects": {
+        "culturePerTick": 0.1,
+        "faithCapacity": 100
+      },
+      "source": "js/buildings.js:1945",
+      "caveats": "Theology adds .0015faith/tick. Many religion upgrades add effects; atheism radically changes this building."
+    },
+    {
+      "referenceKey": "unicornPasture",
+      "name": "灵鹿花苑",
+      "firstCost": {
+        "unicorns": 2
+      },
+      "priceMultiplier": 1.75,
+      "availableAfter": "animal",
+      "normalEffects": {
+        "honeyDemandRatio": -0.0015,
+        "unicornsPerTick": 0.001
+      },
+      "source": "js/buildings.js:2033",
+      "caveats": "Unicorn tears challenge adds capacity restriction."
+    },
+    {
+      "referenceKey": "ziggurat",
+      "name": "叠石祭坛",
+      "firstCost": {
+        "scaffold": 50,
+        "blueprint": 1,
+        "megalith": 50
+      },
+      "priceMultiplier": 1.25,
+      "availableAfter": "construction",
+      "normalEffects": {
+        "cultureCapacityRatio": 0.08
+      },
+      "source": "js/buildings.js:2063",
+      "caveats": "Enables mythic-faith branch; sacrifice tears output scales with count."
+    },
+    {
+      "referenceKey": "chronosphere",
+      "name": "时光蜜球",
+      "firstCost": {
+        "unobtainium": 2500,
+        "science": 250000,
+        "timeCrystal": 1,
+        "blueprint": 100
+      },
+      "priceMultiplier": 1.25,
+      "availableAfter": "chronophysics",
+      "normalEffects": {
+        "resetResourceRetention": 0.015,
+        "temporalParadoxChance": 0.01,
+        "energyDemand": 20
+      },
+      "source": "js/buildings.js:2113",
+      "caveats": ""
+    },
+    {
+      "referenceKey": "aiCore",
+      "name": "森智核心",
+      "firstCost": {
+        "antimatter": 125,
+        "microchip": 25,
+        "science": 500000
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "ai",
+      "normalEffects": {
+        "gflopsPerTick": 0.02
+      },
+      "source": "js/buildings.js:2138",
+      "caveats": "Total power at n active units is n×(3n+5)/4; special AI level/sale restrictions."
+    },
+    {
+      "referenceKey": "brewery",
+      "name": "蜜酿坊",
+      "firstCost": {
+        "wood": 1000,
+        "culture": 750,
+        "spice": 5,
+        "parchment": 375
+      },
+      "priceMultiplier": 1.5,
+      "availableAfter": "drama",
+      "normalEffects": {
+        "honeyConsumption": 1,
+        "spiceConsumption": 0.1,
+        "festivalRatio": 0.01,
+        "festivalArrivalRatio": 0.001
+      },
+      "source": "js/buildings.js:1787",
+      "caveats": "Input shortage throttles all benefits;opensdarkBrew special upgrade."
+    },
+    {
+      "referenceKey": "zebraOutpost",
+      "name": "条纹前哨",
+      "firstCost": {
+        "bloodstone": 1
+      },
+      "priceMultiplier": 1.35,
+      "availableAfter": "archery",
+      "normalEffects": {
+        "manpowerCapacity": 5,
+        "hunterRatio": 0.05
+      },
+      "source": "js/buildings.js:2190",
+      "caveats": "Source zebraRequired5 metadata has no JS consumer found; do not invent enforcement. DarkRevolution preparations1IronWill or.1normal, modified bypreparationRatio."
+    },
+    {
+      "referenceKey": "zebraWorkshop",
+      "name": "条纹工房",
+      "firstCost": {
+        "bloodstone": 5
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "archery",
+      "normalEffects": {
+        "manpowerCapacity": 25
+      },
+      "source": "js/buildings.js:2225",
+      "caveats": "OpensdarkRevolution. zebraRequired10 appears unused. BloodstoneInstitute production formula requires detailed special-upgrade implementation."
+    },
+    {
+      "referenceKey": "zebraForge",
+      "name": "条纹熔炉",
+      "firstCost": {
+        "bloodstone": 50
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "archery",
+      "normalEffects": {
+        "manpowerCapacity": 50,
+        "tMythrilCraftRatio": 0.01
+      },
+      "source": "js/buildings.js:2264",
+      "caveats": "Opensbloodstone/tMythrilrecipes+whispers. zebraRequired50 appears unused. ReforgedOutposts totalpreparationRatio=floor(count/10);Rangefinders+.01bloodstoneRatio each."
+    },
+    {
+      "referenceKey": "stasisPod",
+      "name": "条纹休眠舱",
+      "firstCost": {
+        "tMythril": 1,
+        "timeCrystal": 2,
+        "void": 100
+      },
+      "priceMultiplier": 1.25,
+      "availableAfter": "chronophysics",
+      "normalEffects": {
+        "zebrasCapacity": 1
+      },
+      "source": "js/buildings.js:2302",
+      "caveats": "If zebraCap<10 replace1tMythril with100eludium. zebraRequired1 appears unused."
+    },
+    {
+      "referenceKey": "ivoryTemple",
+      "name": "白枝研磨堂",
+      "firstCost": {
+        "tMythril": 1,
+        "ivory": 100
+      },
+      "priceMultiplier": 1.15,
+      "availableAfter": "initial",
+      "normalEffects": {
+        "ivoryConsumption": 100,
+        "mineralsPerTick": 1,
+        "manpowerCapacity": 10
+      },
+      "source": "js/buildings.js:2326",
+      "caveats": "Visible at10%first costs. Whispers automation replaces conversion with200ivory+2titanium+.00002alicorn→2minerals+.00005tMythril per tick; shortage throttle."
+    }
+  ],
+  "research": [
+    {
+      "referenceKey": "calendar",
+      "name": "四季历法",
+      "cost": {
+        "science": 30
+      },
+      "opensResearch": [
+        "agriculture"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:14",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "agriculture",
+      "name": "养蜂学",
+      "cost": {
+        "science": 100
+      },
+      "opensResearch": [
+        "mining",
+        "archery"
+      ],
+      "opensBuildings": [
+        "barn"
+      ],
+      "opensJobs": [
+        "farmer"
+      ],
+      "opensCrafts": [],
+      "source": "js/science.js:26",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "archery",
+      "name": "林间狩猎",
+      "cost": {
+        "science": 300
+      },
+      "opensResearch": [
+        "animal"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [
+        "hunter"
+      ],
+      "opensCrafts": [],
+      "source": "js/science.js:39",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "mining",
+      "name": "采矿学",
+      "cost": {
+        "science": 500
+      },
+      "opensResearch": [
+        "metal"
+      ],
+      "opensBuildings": [
+        "mine",
+        "workshop"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:51",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "metal",
+      "name": "冶金入门",
+      "cost": {
+        "science": 900
+      },
+      "opensResearch": [],
+      "opensBuildings": [
+        "smelter"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:63",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "animal",
+      "name": "山林共生",
+      "cost": {
+        "science": 500
+      },
+      "opensResearch": [
+        "civil",
+        "math",
+        "construction"
+      ],
+      "opensBuildings": [
+        "pasture",
+        "unicornPasture"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:74",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "civil",
+      "name": "聚落制度",
+      "cost": {
+        "science": 1500
+      },
+      "opensResearch": [
+        "currency"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:94",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "math",
+      "name": "数量学",
+      "cost": {
+        "science": 1000
+      },
+      "opensResearch": [],
+      "opensBuildings": [
+        "academy"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:104",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "construction",
+      "name": "营造学",
+      "cost": {
+        "science": 1300
+      },
+      "opensResearch": [
+        "engineering"
+      ],
+      "opensBuildings": [
+        "logHouse",
+        "warehouse",
+        "lumberMill",
+        "ziggurat"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:116",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "engineering",
+      "name": "水利工程",
+      "cost": {
+        "science": 1500
+      },
+      "opensResearch": [
+        "writing"
+      ],
+      "opensBuildings": [
+        "aqueduct"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:131",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "currency",
+      "name": "货币",
+      "cost": {
+        "science": 2200
+      },
+      "opensResearch": [],
+      "opensBuildings": [
+        "tradepost"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:142",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "writing",
+      "name": "文字",
+      "cost": {
+        "science": 3600
+      },
+      "opensResearch": [
+        "philosophy",
+        "machinery",
+        "steel"
+      ],
+      "opensBuildings": [
+        "amphitheatre"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [
+        "parchment"
+      ],
+      "source": "js/science.js:153",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "philosophy",
+      "name": "林间哲思",
+      "cost": {
+        "science": 9500
+      },
+      "opensResearch": [
+        "theology"
+      ],
+      "opensBuildings": [
+        "temple"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [
+        "compedium"
+      ],
+      "source": "js/science.js:167",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "machinery",
+      "name": "机械",
+      "cost": {
+        "science": 15000
+      },
+      "opensResearch": [],
+      "opensBuildings": [
+        "steamworks"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:180",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "steel",
+      "name": "炼钢",
+      "cost": {
+        "science": 12000
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [
+        "steel"
+      ],
+      "source": "js/science.js:190",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "theology",
+      "name": "山灵学",
+      "cost": {
+        "science": 20000,
+        "manuscript": 35
+      },
+      "opensResearch": [
+        "astronomy",
+        "cryptotheology"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [
+        "priest"
+      ],
+      "opensCrafts": [],
+      "source": "js/science.js:201",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "astronomy",
+      "name": "天文学",
+      "cost": {
+        "science": 28000,
+        "manuscript": 65
+      },
+      "opensResearch": [
+        "navigation"
+      ],
+      "opensBuildings": [
+        "observatory"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:218",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "navigation",
+      "name": "航海",
+      "cost": {
+        "science": 35000,
+        "manuscript": 100
+      },
+      "opensResearch": [
+        "physics",
+        "archeology",
+        "architecture"
+      ],
+      "opensBuildings": [
+        "harbor"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [
+        "ship"
+      ],
+      "source": "js/science.js:232",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "architecture",
+      "name": "建筑学",
+      "cost": {
+        "science": 42000,
+        "compedium": 10
+      },
+      "opensResearch": [
+        "acoustics"
+      ],
+      "opensBuildings": [
+        "mansion",
+        "mint"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:248",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "physics",
+      "name": "物理学",
+      "cost": {
+        "science": 50000,
+        "compedium": 35
+      },
+      "opensResearch": [
+        "chemistry",
+        "electricity",
+        "metaphysics"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [
+        "blueprint"
+      ],
+      "source": "js/science.js:262",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "metaphysics",
+      "name": "超验思辨",
+      "cost": {
+        "science": 55000,
+        "unobtainium": 5
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:276",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "chemistry",
+      "name": "化学",
+      "cost": {
+        "science": 60000,
+        "compedium": 50
+      },
+      "opensResearch": [],
+      "opensBuildings": [
+        "calciner",
+        "oilWell"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [
+        "alloy"
+      ],
+      "source": "js/science.js:285",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "acoustics",
+      "name": "声学",
+      "cost": {
+        "science": 60000,
+        "compedium": 60
+      },
+      "opensResearch": [
+        "drama"
+      ],
+      "opensBuildings": [
+        "chapel"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:299",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "drama",
+      "name": "戏剧",
+      "cost": {
+        "science": 90000,
+        "parchment": 5000
+      },
+      "opensResearch": [],
+      "opensBuildings": [
+        "brewery"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:312",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "archeology",
+      "name": "地层考察",
+      "cost": {
+        "science": 65000,
+        "compedium": 65
+      },
+      "opensResearch": [
+        "biology"
+      ],
+      "opensBuildings": [
+        "quarry"
+      ],
+      "opensJobs": [
+        "geologist"
+      ],
+      "opensCrafts": [],
+      "source": "js/science.js:324",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "electricity",
+      "name": "电学",
+      "cost": {
+        "science": 75000,
+        "compedium": 85
+      },
+      "opensResearch": [
+        "industrialization"
+      ],
+      "opensBuildings": [
+        "magneto"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:341",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "biology",
+      "name": "生物学",
+      "cost": {
+        "science": 85000,
+        "compedium": 100
+      },
+      "opensResearch": [
+        "biochemistry"
+      ],
+      "opensBuildings": [
+        "biolab"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [
+        "plastic"
+      ],
+      "source": "js/science.js:355",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "biochemistry",
+      "name": "生物化学",
+      "cost": {
+        "science": 145000,
+        "compedium": 500
+      },
+      "opensResearch": [
+        "genetics"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:371",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "genetics",
+      "name": "遗传学",
+      "cost": {
+        "science": 190000,
+        "compedium": 1500
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:385",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "industrialization",
+      "name": "工业化",
+      "cost": {
+        "science": 100000,
+        "blueprint": 25
+      },
+      "opensResearch": [
+        "mechanization",
+        "metalurgy",
+        "combustion"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:398",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "mechanization",
+      "name": "机械化",
+      "cost": {
+        "science": 115000,
+        "blueprint": 45
+      },
+      "opensResearch": [
+        "electronics"
+      ],
+      "opensBuildings": [
+        "factory"
+      ],
+      "opensJobs": [
+        "engineer"
+      ],
+      "opensCrafts": [
+        "concrate"
+      ],
+      "source": "js/science.js:412",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "metalurgy",
+      "name": "精密冶金",
+      "cost": {
+        "science": 125000,
+        "blueprint": 60
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:428",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "combustion",
+      "name": "燃烧学",
+      "cost": {
+        "science": 115000,
+        "blueprint": 45
+      },
+      "opensResearch": [
+        "ecology"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:440",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "ecology",
+      "name": "生态学",
+      "cost": {
+        "science": 125000,
+        "blueprint": 55
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:454",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "electronics",
+      "name": "电子学",
+      "cost": {
+        "science": 135000,
+        "blueprint": 70
+      },
+      "opensResearch": [
+        "nuclearFission",
+        "rocketry",
+        "robotics"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [
+        "microchip"
+      ],
+      "source": "js/science.js:472",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "robotics",
+      "name": "自动机械",
+      "cost": {
+        "science": 140000,
+        "blueprint": 80
+      },
+      "opensResearch": [
+        "ai"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [
+        "tanker"
+      ],
+      "source": "js/science.js:490",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "ai",
+      "name": "森林智算",
+      "cost": {
+        "science": 250000,
+        "blueprint": 150
+      },
+      "opensResearch": [
+        "quantumCryptography"
+      ],
+      "opensBuildings": [
+        "aiCore"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:505",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "quantumCryptography",
+      "name": "量子密语",
+      "cost": {
+        "science": 1250000,
+        "relic": 1024
+      },
+      "opensResearch": [
+        "blackchain"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:519",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "blackchain",
+      "name": "幽晶链",
+      "cost": {
+        "science": 5000000,
+        "relic": 4096
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:531",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "nuclearFission",
+      "name": "核裂变",
+      "cost": {
+        "science": 150000,
+        "blueprint": 100
+      },
+      "opensResearch": [
+        "nanotechnology",
+        "particlePhysics"
+      ],
+      "opensBuildings": [
+        "reactor"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:543",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "rocketry",
+      "name": "飞天工程",
+      "cost": {
+        "science": 175000,
+        "blueprint": 125
+      },
+      "opensResearch": [
+        "sattelites",
+        "oilProcessing"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:557",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "oilProcessing",
+      "name": "燃料精炼",
+      "cost": {
+        "science": 215000,
+        "blueprint": 150
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [
+        "kerosene"
+      ],
+      "source": "js/science.js:574",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "sattelites",
+      "name": "卫星学",
+      "cost": {
+        "science": 190000,
+        "blueprint": 125
+      },
+      "opensResearch": [
+        "orbitalEngineering"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:587",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "orbitalEngineering",
+      "name": "轨道工程",
+      "cost": {
+        "science": 250000,
+        "blueprint": 250
+      },
+      "opensResearch": [
+        "exogeology",
+        "thorium"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:602",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "thorium",
+      "name": "钍能研究",
+      "cost": {
+        "science": 375000,
+        "blueprint": 375
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [
+        "thorium"
+      ],
+      "source": "js/science.js:615",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "exogeology",
+      "name": "异星地质",
+      "cost": {
+        "science": 275000,
+        "blueprint": 250
+      },
+      "opensResearch": [
+        "advExogeology"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:628",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "advExogeology",
+      "name": "深空地质",
+      "cost": {
+        "science": 325000,
+        "blueprint": 350
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [
+        "eludium"
+      ],
+      "source": "js/science.js:641",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "nanotechnology",
+      "name": "纳米技术",
+      "cost": {
+        "science": 200000,
+        "blueprint": 150
+      },
+      "opensResearch": [
+        "superconductors"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:656",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "superconductors",
+      "name": "超导",
+      "cost": {
+        "science": 225000,
+        "blueprint": 175
+      },
+      "opensResearch": [
+        "antimatter"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:669",
+      "scope": "Selected functional dependencies; policies/workshop links separately catalogued."
+    },
+    {
+      "referenceKey": "antimatter",
+      "name": "反物质",
+      "cost": {
+        "science": 500000,
+        "antimatter": 1,
+        "relic": 1
+      },
+      "opensResearch": [
+        "terraformation"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:682",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "terraformation",
+      "name": "异星造林",
+      "cost": {
+        "science": 750000,
+        "relic": 5
+      },
+      "opensResearch": [
+        "hydroponics"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:696",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "hydroponics",
+      "name": "星际水培",
+      "cost": {
+        "science": 1000000,
+        "relic": 25
+      },
+      "opensResearch": [
+        "exogeophysics"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:708",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "exogeophysics",
+      "name": "深空物理",
+      "cost": {
+        "science": 25000000,
+        "relic": 500
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:720",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "particlePhysics",
+      "name": "粒子物理",
+      "cost": {
+        "science": 185000,
+        "blueprint": 135
+      },
+      "opensResearch": [
+        "chronophysics",
+        "dimensionalPhysics"
+      ],
+      "opensBuildings": [
+        "accelerator"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:730",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "dimensionalPhysics",
+      "name": "维度物理",
+      "cost": {
+        "science": 235000
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:745",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "artificialGravity",
+      "name": "人工引力",
+      "cost": {
+        "science": 320000
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:757",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "chronophysics",
+      "name": "时序物理",
+      "cost": {
+        "science": 250000,
+        "timeCrystal": 5
+      },
+      "opensResearch": [
+        "tachyonTheory"
+      ],
+      "opensBuildings": [
+        "chronosphere",
+        "stasisPod"
+      ],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:769",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "tachyonTheory",
+      "name": "超光理论",
+      "cost": {
+        "science": 750000,
+        "timeCrystal": 25,
+        "relic": 1
+      },
+      "opensResearch": [
+        "voidSpace"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:783",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "cryptotheology",
+      "name": "隐秘神学",
+      "cost": {
+        "science": 650000,
+        "relic": 5
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:797",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "voidSpace",
+      "name": "虚空领域",
+      "cost": {
+        "science": 800000,
+        "timeCrystal": 30,
+        "void": 100
+      },
+      "opensResearch": [
+        "paradoxalKnowledge"
+      ],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:812",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    },
+    {
+      "referenceKey": "paradoxalKnowledge",
+      "name": "悖论知识",
+      "cost": {
+        "science": 1000000,
+        "timeCrystal": 40,
+        "void": 250
+      },
+      "opensResearch": [],
+      "opensBuildings": [],
+      "opensJobs": [],
+      "opensCrafts": [],
+      "source": "js/science.js:833",
+      "scope": "Selected dependencies; detailed upgrade and space unlocks must be verified."
+    }
+  ],
+  "recipes": [
+    {
+      "product": "wood",
+      "inputs": {
+        "honey": 100
+      },
+      "baseOutput": 1,
+      "engineerTier": 1,
+      "engineerDifficulty": 1,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "separate-refinement"
+    },
+    {
+      "product": "beam",
+      "inputs": {
+        "wood": 175
+      },
+      "baseOutput": 1,
+      "engineerTier": 1,
+      "engineerDifficulty": 1,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "slab",
+      "inputs": {
+        "minerals": 250
+      },
+      "baseOutput": 1,
+      "engineerTier": 1,
+      "engineerDifficulty": 1,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "plate",
+      "inputs": {
+        "iron": 125
+      },
+      "baseOutput": 1,
+      "engineerTier": 1,
+      "engineerDifficulty": 4,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "steel",
+      "inputs": {
+        "coal": 100,
+        "iron": 100
+      },
+      "baseOutput": 1,
+      "engineerTier": 2,
+      "engineerDifficulty": 4,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "concrate",
+      "inputs": {
+        "slab": 2500,
+        "steel": 25
+      },
+      "baseOutput": 1,
+      "engineerTier": 4,
+      "engineerDifficulty": 9,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "gear",
+      "inputs": {
+        "steel": 15
+      },
+      "baseOutput": 1,
+      "engineerTier": 3,
+      "engineerDifficulty": 5,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "alloy",
+      "inputs": {
+        "titanium": 10,
+        "steel": 75
+      },
+      "baseOutput": 1,
+      "engineerTier": 4,
+      "engineerDifficulty": 7,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "eludium",
+      "inputs": {
+        "unobtainium": 1000,
+        "alloy": 2500
+      },
+      "baseOutput": 1,
+      "engineerTier": 5,
+      "engineerDifficulty": 300,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "scaffold",
+      "inputs": {
+        "beam": 50
+      },
+      "baseOutput": 1,
+      "engineerTier": 2,
+      "engineerDifficulty": 2,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "ship",
+      "inputs": {
+        "starchart": 25,
+        "plate": 150,
+        "scaffold": 100
+      },
+      "baseOutput": 1,
+      "engineerTier": 3,
+      "engineerDifficulty": 20,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "tanker",
+      "inputs": {
+        "alloy": 1250,
+        "ship": 200,
+        "blueprint": 5
+      },
+      "baseOutput": 1,
+      "engineerTier": 5,
+      "engineerDifficulty": 20,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "kerosene",
+      "inputs": {
+        "oil": 7500
+      },
+      "baseOutput": 1,
+      "engineerTier": 2,
+      "engineerDifficulty": 5,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "plastic",
+      "inputs": {
+        "oil": 1000
+      },
+      "baseOutput": 1,
+      "engineerTier": 2,
+      "engineerDifficulty": 5,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "microchip",
+      "inputs": {
+        "plastic": 50,
+        "gold": 1000,
+        "spice": 750
+      },
+      "baseOutput": 1,
+      "engineerTier": 3,
+      "engineerDifficulty": 20,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "parchment",
+      "inputs": {
+        "furs": 175
+      },
+      "baseOutput": 1,
+      "engineerTier": 1,
+      "engineerDifficulty": 1,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "manuscript",
+      "inputs": {
+        "culture": 400,
+        "parchment": 25
+      },
+      "baseOutput": 1,
+      "engineerTier": 2,
+      "engineerDifficulty": 2,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "compedium",
+      "inputs": {
+        "science": 9000,
+        "manuscript": 55
+      },
+      "baseOutput": 1,
+      "engineerTier": 3,
+      "engineerDifficulty": 5,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "blueprint",
+      "inputs": {
+        "science": 25000,
+        "compedium": 25
+      },
+      "baseOutput": 1,
+      "engineerTier": 3,
+      "engineerDifficulty": 10,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "thorium",
+      "inputs": {
+        "uranium": 250
+      },
+      "baseOutput": 1,
+      "engineerTier": 3,
+      "engineerDifficulty": 5,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "megalith",
+      "inputs": {
+        "beam": 25,
+        "slab": 50,
+        "plate": 5
+      },
+      "baseOutput": 1,
+      "engineerTier": 3,
+      "engineerDifficulty": 5,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "bloodstone",
+      "inputs": {
+        "timeCrystal": 5000,
+        "relic": 10000
+      },
+      "baseOutput": 1,
+      "engineerTier": 5,
+      "engineerDifficulty": 7500,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    },
+    {
+      "product": "tMythril",
+      "inputs": {
+        "bloodstone": 5,
+        "ivory": 1000,
+        "titanium": 500
+      },
+      "baseOutput": 1,
+      "engineerTier": 7,
+      "engineerDifficulty": 10000,
+      "source": "js/workshop.js:2116–2349",
+      "bonus": "standard-craft"
+    }
+  ],
+  "initialCrafts": [
+    "wood",
+    "beam",
+    "slab",
+    "plate",
+    "gear",
+    "scaffold",
+    "manuscript",
+    "megalith"
+  ],
+  "initialWorkshopOptions": [
+    "mineralHoes",
+    "ironHoes",
+    "mineralAxes",
+    "ironAxes",
+    "stoneBarns",
+    "reinforcedBarns"
+  ],
+  "initialCraftSource": "js/workshop.js:2542–2573",
+  "excludedResearch": [
+    {
+      "referenceKey": "brewery",
+      "reason": "Retired research node; present in source but intentionally disconnected."
+    },
+    {
+      "referenceKey": "artificialGravity",
+      "reason": "Exists but unlocking depends on SPACE_EXPL feature flag; do not expose by unconditional edge."
+    }
+  ],
+  "buildingStages": [
+    {
+      "base": "pasture",
+      "name": "花原太阳能板",
+      "stage": 1,
+      "gate": "ecology",
+      "firstCost": {
+        "titanium": 250
+      },
+      "priceMultiplier": 1.15,
+      "normalEffects": {
+        "energySupply": 2
+      },
+      "source": "js/buildings.js:388–413",
+      "caveat": "Winter×.75;summer÷.75;solarFarmRatio/summerchallenge/season-specific bonuses also apply."
+    },
+    {
+      "base": "aqueduct",
+      "name": "林泉水电站",
+      "stage": 1,
+      "gate": "robotics",
+      "firstCost": {
+        "titanium": 2500,
+        "concrate": 100,
+        "gear": 5
+      },
+      "priceMultiplier": 1.15,
+      "normalEffects": {
+        "energySupply": 5
+      },
+      "source": "js/buildings.js:449–477",
+      "caveat": "Supply×(1+hydroPlantRatio)."
+    },
+    {
+      "base": "library",
+      "name": "林间数据馆",
+      "stage": 1,
+      "gate": "electronics",
+      "firstCost": {
+        "steel": 100,
+        "concrate": 10,
+        "microchip": 5
+      },
+      "priceMultiplier": 1.15,
+      "normalEffects": {
+        "scienceRatio": 0.1,
+        "scienceCapacity": 750,
+        "scienceCompendiaCeiling": 1000,
+        "cultureCapacity": 250,
+        "energyDemand": 2
+      },
+      "source": "js/buildings.js:576–641",
+      "caveat": "Observatory/libraryRatio,biolab uplink,AI,cryocomputing dynamic modifiers apply."
+    },
+    {
+      "base": "amphitheatre",
+      "name": "山谷广播塔",
+      "stage": 1,
+      "gate": "electronics",
+      "firstCost": {
+        "iron": 1250,
+        "titanium": 75
+      },
+      "priceMultiplier": 1.18,
+      "normalEffects": {
+        "unhappinessRatio": -0.75,
+        "culturePerTick": 1,
+        "cultureCapacity": 300
+      },
+      "source": "js/buildings.js:1867–1904",
+      "caveat": "Culture output/cap multiplied byclamp(energySupply/energyDemand,1,1.75),rounded down.001,and1+satellites×broadcastTowerRatio."
+    },
+    {
+      "base": "warehouse",
+      "name": "林星港",
+      "stage": 1,
+      "gate": "advExogeology",
+      "firstCost": {
+        "titanium": 10000,
+        "eludium": 500,
+        "kerosene": 1000,
+        "blueprint": 500,
+        "starchart": 100000
+      },
+      "priceMultiplier": 1.15,
+      "normalEffects": {
+        "moonBaseStorageBonus": 0.0085,
+        "planetCrackerStorageBonus": 0.0085,
+        "cryostationStorageBonus": 0.0085
+      },
+      "source": "js/buildings.js:849–928",
+      "caveat": "Charts have extra1.35^count price factor(total1.5525^count).Power total5nforn≤10,else.5n(n−9)+45. FreightfulExchange automation grants.5tradeVolume each, transportSuperposition addsanother.5."
+    }
+  ],
+  "stageChangeRule": "Sourcebuildings3532–3574: sell all old-stage units at current refund percentage, switch stage, set built/active count0; new-stage units must be purchased separately. It is not a free1:1upgrade."
+}

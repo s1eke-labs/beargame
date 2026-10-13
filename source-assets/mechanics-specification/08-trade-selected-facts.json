@@ -1,0 +1,261 @@
+{
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "scope": "8/8partners, baseline first-tier goods only; advanced embassy goods unverified.",
+  "baseFee": {
+    "manpower": 50,
+    "gold": 15
+  },
+  "explorationFee": {
+    "manpower": 1000
+  },
+  "partners": [
+    {
+      "referenceKey": "lizards",
+      "name": "绿叶商团",
+      "commodityFee": {
+        "minerals": 1000
+      },
+      "standing": 0.25,
+      "embassyCulture": 100,
+      "firstTierGoods": [
+        {
+          "resource": "wood",
+          "meanAmount": 500,
+          "chance": 1,
+          "relativeFullWidth": 0.08,
+          "seasonBonuses": [
+            -0.05,
+            0.35,
+            0.15,
+            0.05
+          ]
+        }
+      ],
+      "discovery": "initial-random",
+      "source": "js/diplomacy.js:18–361"
+    },
+    {
+      "referenceKey": "sharks",
+      "name": "潮湾商团",
+      "commodityFee": {
+        "iron": 100
+      },
+      "standing": 0,
+      "embassyCulture": 100,
+      "firstTierGoods": [
+        {
+          "resource": "honey",
+          "meanAmount": 35000,
+          "chance": 1,
+          "relativeFullWidth": 0.15,
+          "seasonBonuses": [
+            0.2,
+            -0.05,
+            0.15,
+            0.45
+          ]
+        }
+      ],
+      "discovery": "initial-random",
+      "source": "js/diplomacy.js:18–361"
+    },
+    {
+      "referenceKey": "griffins",
+      "name": "云翼商团",
+      "commodityFee": {
+        "wood": 500
+      },
+      "standing": -0.15,
+      "embassyCulture": 1000,
+      "firstTierGoods": [
+        {
+          "resource": "iron",
+          "meanAmount": 250,
+          "chance": 1,
+          "relativeFullWidth": 0.12,
+          "seasonBonuses": [
+            -0.25,
+            -0.05,
+            0.35,
+            -0.2
+          ]
+        }
+      ],
+      "discovery": "initial-random",
+      "source": "js/diplomacy.js:18–361"
+    },
+    {
+      "referenceKey": "nagas",
+      "name": "盘藤商团",
+      "commodityFee": {
+        "ivory": 500
+      },
+      "standing": 0,
+      "embassyCulture": 500,
+      "firstTierGoods": [
+        {
+          "resource": "minerals",
+          "meanAmount": 1000,
+          "chance": 1,
+          "relativeFullWidth": 0.18,
+          "seasonBonuses": [
+            0.25,
+            0.05,
+            -0.35,
+            -0.05
+          ]
+        }
+      ],
+      "discovery": "culture>=1500",
+      "source": "js/diplomacy.js:18–361"
+    },
+    {
+      "referenceKey": "zebras",
+      "name": "条纹商团",
+      "commodityFee": {
+        "slab": 50
+      },
+      "standing": -0.3,
+      "embassyCulture": 25000,
+      "firstTierGoods": [
+        {
+          "resource": "iron",
+          "meanAmount": 300,
+          "chance": 1,
+          "relativeFullWidth": 0.08,
+          "seasonBonuses": [
+            0,
+            0.15,
+            -0.1,
+            -0.2
+          ]
+        },
+        {
+          "resource": "plate",
+          "meanAmount": 2,
+          "chance": 0.65,
+          "relativeFullWidth": 0.25,
+          "seasonBonuses": [
+            0.05,
+            -0.15,
+            0.05,
+            0.25
+          ]
+        }
+      ],
+      "discovery": "ship>=1",
+      "source": "js/diplomacy.js:18–361"
+    },
+    {
+      "referenceKey": "spiders",
+      "name": "丝谷商团",
+      "commodityFee": {
+        "scaffold": 50
+      },
+      "standing": 0.15,
+      "embassyCulture": 5000,
+      "firstTierGoods": [
+        {
+          "resource": "coal",
+          "meanAmount": 350,
+          "chance": 1,
+          "relativeFullWidth": 0.15,
+          "seasonBonuses": [
+            0,
+            0.05,
+            0.15,
+            -0.05
+          ]
+        }
+      ],
+      "discovery": "ship>=100 AND scienceCapacity>125000",
+      "source": "js/diplomacy.js:18–361"
+    },
+    {
+      "referenceKey": "dragons",
+      "name": "焰岭商团",
+      "commodityFee": {
+        "titanium": 250
+      },
+      "standing": 0,
+      "embassyCulture": 7500,
+      "firstTierGoods": [
+        {
+          "resource": "uranium",
+          "meanAmount": 1,
+          "chance": 0.95,
+          "relativeFullWidth": 0.25,
+          "seasonBonuses": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "discovery": "nuclearFission",
+      "source": "js/diplomacy.js:18–361"
+    },
+    {
+      "referenceKey": "leviathans",
+      "name": "星海来客",
+      "commodityFee": {
+        "unobtainium": 5000
+      },
+      "standing": 0,
+      "embassyCulture": null,
+      "firstTierGoods": [
+        {
+          "resource": "starchart",
+          "meanAmount": 250,
+          "chance": 0.5,
+          "relativeFullWidth": 0.8,
+          "seasonBonuses": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "resource": "timeCrystal",
+          "meanAmount": 0.25,
+          "chance": 0.98,
+          "relativeFullWidth": 0.15,
+          "seasonBonuses": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "resource": "sorrow",
+          "meanAmount": 1,
+          "chance": 0.15,
+          "relativeFullWidth": 0.1,
+          "seasonBonuses": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "resource": "relic",
+          "meanAmount": 1,
+          "chance": 0.05,
+          "relativeFullWidth": 0,
+          "seasonBonuses": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "discovery": "annualBlackPyramidEvent",
+      "source": "js/diplomacy.js:18–361"
+    }
+  ]
+}

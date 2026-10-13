@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "generationMode": "built-in image_gen.imagegen",
+  "generatedAssetCount": 3,
+  "styleReference": "/workspace/shared/bear-reference/cover-illustration.webp",
+  "paletteReference": {
+    "paper": "#f7f6f0",
+    "ink": "#2d322d",
+    "sage": "#667f69",
+    "yellow": "#e9d694"
+  },
+  "cropMethod": "Measured connected alpha components above 8/255, not uniform grid; 12 pixel safe transparent padding. Unmodified originals and lossless WebP retain all alpha pixels, including faint generator residue outside the measured sprites.",
+  "files": {
+    "village-terrain": {
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "files": {
+        "png": {
+          "path": "/workspace/shared/beargame-v2-art/village-terrain.png",
+          "bytes": 2224537,
+          "sha256": "bfffc0d913ddce34b9e84e6f61cf75fb80fb8e2440ddafc1bcb03d2712c6bdd6"
+        },
+        "webp": {
+          "path": "/workspace/shared/beargame-v2-art/village-terrain.webp",
+          "bytes": 1421230,
+          "sha256": "93f23f79e1766f83c0212399b9e8b549d96344a6eb9f69f614fda68798bbebe2"
+        }
+      },
+      "webpPixelIdentical": true
+    },
+    "buildings-atlas": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "files": {
+        "png": {
+          "path": "/workspace/shared/beargame-v2-art/buildings-atlas.png",
+          "bytes": 1385445,
+          "sha256": "fba01c44d817864f45a405eab919ed02bd4a881c0f409e57e8f84f7558a11279"
+        },
+        "webp": {
+          "path": "/workspace/shared/beargame-v2-art/buildings-atlas.webp",
+          "bytes": 984284,
+          "sha256": "7f2bf9372fcd2b27b4c4604463686aeff352a4def1cc6a883ad1367309890323"
+        }
+      },
+      "webpPixelIdentical": true,
+      "fullyTransparentPixelFraction": 0.5737378824762356,
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    "resources-atlas": {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "files": {
+        "png": {
+          "path": "/workspace/shared/beargame-v2-art/resources-atlas.png",
+          "bytes": 1129498,
+          "sha256": "402642c6e920ad05cbd5fac9f9cc42b369eda39fa2287ee773cd173727c8c549"
+        },
+        "webp": {
+          "path": "/workspace/shared/beargame-v2-art/resources-atlas.webp",
+          "bytes": 729790,
+          "sha256": "7db3e81775cc12402449963cd8d05eb5b2bab43782cea8c376924199cb694f9a"
+        }
+      },
+      "webpPixelIdentical": true,
+      "fullyTransparentPixelFraction": 0.6128688038786251,
+      "alphaRange": [
+        0,
+        255
+      ]
+    }
+  },
+  "crops": {
+    "buildings-atlas": {
+      "atlasWidth": 1254,
+      "atlasHeight": 1254,
+      "sprites": {
+        "beehive": {
+          "x": 67,
+          "y": 91,
+          "width": 215,
+          "height": 209,
+          "contentBounds": {
+            "x": 79,
+            "y": 103,
+            "width": 191,
+            "height": 185
+          }
+        },
+        "cottage": {
+          "x": 341,
+          "y": 63,
+          "width": 267,
+          "height": 239,
+          "contentBounds": {
+            "x": 353,
+            "y": 75,
+            "width": 243,
+            "height": 215
+          }
+        },
+        "library": {
+          "x": 632,
+          "y": 57,
+          "width": 292,
+          "height": 245,
+          "contentBounds": {
+            "x": 644,
+            "y": 69,
+            "width": 268,
+            "height": 221
+          }
+        },
+        "barn": {
+          "x": 947,
+          "y": 69,
+          "width": 271,
+          "height": 232,
+          "contentBounds": {
+            "x": 959,
+            "y": 81,
+            "width": 247,
+            "height": 208
+          }
+        },
+        "lumberyard": {
+          "x": 30,
+          "y": 393,
+          "width": 282,
+          "height": 198,
+          "contentBounds": {
+            "x": 42,
+            "y": 405,
+            "width": 258,
+            "height": 174
+          }
+        },
+        "mine": {
+          "x": 330,
+          "y": 376,
+          "width": 296,
+          "height": 233,
+          "contentBounds": {
+            "x": 342,
+            "y": 388,
+            "width": 272,
+            "height": 209
+          }
+        },
+        "workshop": {
+          "x": 642,
+          "y": 362,
+          "width": 282,
+          "height": 244,
+          "contentBounds": {
+            "x": 654,
+            "y": 374,
+            "width": 258,
+            "height": 220
+          }
+        },
+        "forge": {
+          "x": 946,
+          "y": 352,
+          "width": 279,
+          "height": 257,
+          "contentBounds": {
+            "x": 958,
+            "y": 364,
+            "width": 255,
+            "height": 233
+          }
+        },
+        "warehouse": {
+          "x": 29,
+          "y": 673,
+          "width": 286,
+          "height": 224,
+          "contentBounds": {
+            "x": 41,
+            "y": 685,
+            "width": 262,
+            "height": 200
+          }
+        },
+        "shrine": {
+          "x": 348,
+          "y": 647,
+          "width": 251,
+          "height": 261,
+          "contentBounds": {
+            "x": 360,
+            "y": 659,
+            "width": 227,
+            "height": 237
+          }
+        },
+        "observatory": {
+          "x": 637,
+          "y": 656,
+          "width": 271,
+          "height": 246,
+          "contentBounds": {
+            "x": 649,
+            "y": 668,
+            "width": 247,
+            "height": 222
+          }
+        },
+        "academy": {
+          "x": 937,
+          "y": 638,
+          "width": 295,
+          "height": 262,
+          "contentBounds": {
+            "x": 949,
+            "y": 650,
+            "width": 271,
+            "height": 238
+          }
+        },
+        "market": {
+          "x": 41,
+          "y": 957,
+          "width": 270,
+          "height": 237,
+          "contentBounds": {
+            "x": 53,
+            "y": 969,
+            "width": 246,
+            "height": 213
+          }
+        },
+        "factory": {
+          "x": 331,
+          "y": 936,
+          "width": 286,
+          "height": 260,
+          "contentBounds": {
+            "x": 343,
+            "y": 948,
+            "width": 262,
+            "height": 236
+          }
+        },
+        "launchpad": {
+          "x": 645,
+          "y": 948,
+          "width": 268,
+          "height": 247,
+          "contentBounds": {
+            "x": 657,
+            "y": 960,
+            "width": 244,
+            "height": 223
+          }
+        },
+        "portal": {
+          "x": 941,
+          "y": 945,
+          "width": 284,
+          "height": 252,
+          "contentBounds": {
+            "x": 953,
+            "y": 957,
+            "width": 260,
+            "height": 228
+          }
+        }
+      }
+    },
+    "resources-atlas": {
+      "atlasWidth": 1254,
+      "atlasHeight": 1254,
+      "sprites": {
+        "honey": {
+          "x": 32,
+          "y": 57,
+          "width": 255,
+          "height": 245,
+          "contentBounds": {
+            "x": 44,
+            "y": 69,
+            "width": 231,
+            "height": 221
+          }
+        },
+        "wood": {
+          "x": 329,
+          "y": 69,
+          "width": 286,
+          "height": 220,
+          "contentBounds": {
+            "x": 341,
+            "y": 81,
+            "width": 262,
+            "height": 196
+          }
+        },
+        "stone": {
+          "x": 646,
+          "y": 75,
+          "width": 270,
+          "height": 225,
+          "contentBounds": {
+            "x": 658,
+            "y": 87,
+            "width": 246,
+            "height": 201
+          }
+        },
+        "iron": {
+          "x": 965,
+          "y": 68,
+          "width": 256,
+          "height": 235,
+          "contentBounds": {
+            "x": 977,
+            "y": 80,
+            "width": 232,
+            "height": 211
+          }
+        },
+        "coal": {
+          "x": 22,
+          "y": 362,
+          "width": 276,
+          "height": 232,
+          "contentBounds": {
+            "x": 34,
+            "y": 374,
+            "width": 252,
+            "height": 208
+          }
+        },
+        "gold": {
+          "x": 331,
+          "y": 370,
+          "width": 266,
+          "height": 211,
+          "contentBounds": {
+            "x": 343,
+            "y": 382,
+            "width": 242,
+            "height": 187
+          }
+        },
+        "science": {
+          "x": 632,
+          "y": 368,
+          "width": 308,
+          "height": 225,
+          "contentBounds": {
+            "x": 644,
+            "y": 380,
+            "width": 284,
+            "height": 201
+          }
+        },
+        "culture": {
+          "x": 961,
+          "y": 380,
+          "width": 273,
+          "height": 209,
+          "contentBounds": {
+            "x": 973,
+            "y": 392,
+            "width": 249,
+            "height": 185
+          }
+        },
+        "faith": {
+          "x": 43,
+          "y": 674,
+          "width": 225,
+          "height": 216,
+          "contentBounds": {
+            "x": 55,
+            "y": 686,
+            "width": 201,
+            "height": 192
+          }
+        },
+        "bear": {
+          "x": 328,
+          "y": 630,
+          "width": 283,
+          "height": 291,
+          "contentBounds": {
+            "x": 340,
+            "y": 642,
+            "width": 259,
+            "height": 267
+          }
+        },
+        "plank": {
+          "x": 640,
+          "y": 680,
+          "width": 290,
+          "height": 215,
+          "contentBounds": {
+            "x": 652,
+            "y": 692,
+            "width": 266,
+            "height": 191
+          }
+        },
+        "steel": {
+          "x": 953,
+          "y": 689,
+          "width": 288,
+          "height": 209,
+          "contentBounds": {
+            "x": 965,
+            "y": 701,
+            "width": 264,
+            "height": 185
+          }
+        },
+        "gear": {
+          "x": 31,
+          "y": 946,
+          "width": 261,
+          "height": 268,
+          "contentBounds": {
+            "x": 43,
+            "y": 958,
+            "width": 237,
+            "height": 244
+          }
+        },
+        "crystal": {
+          "x": 340,
+          "y": 934,
+          "width": 251,
+          "height": 283,
+          "contentBounds": {
+            "x": 352,
+            "y": 946,
+            "width": 227,
+            "height": 259
+          }
+        },
+        "starChart": {
+          "x": 641,
+          "y": 944,
+          "width": 289,
+          "height": 274,
+          "contentBounds": {
+            "x": 653,
+            "y": 956,
+            "width": 265,
+            "height": 250
+          }
+        },
+        "berries": {
+          "x": 980,
+          "y": 965,
+          "width": 250,
+          "height": 238,
+          "contentBounds": {
+            "x": 992,
+            "y": 977,
+            "width": 226,
+            "height": 214
+          }
+        }
+      }
+    }
+  },
+  "semanticAliases": {
+    "buildings-atlas": {
+      "bear-cottage": "cottage",
+      "rocket-launchpad": "launchpad",
+      "time-portal": "portal"
+    },
+    "resources-atlas": {
+      "book": "science",
+      "scroll": "culture",
+      "star": "faith",
+      "mascot": "bear",
+      "star-chart": "starChart"
+    }
+  }
+}

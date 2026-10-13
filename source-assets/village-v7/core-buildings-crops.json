@@ -1,0 +1,110 @@
+{
+  "image": "core-buildings-atlas.webp",
+  "width": 1774,
+  "height": 887,
+  "columns": 4,
+  "rows": 2,
+  "alphaThreshold": 8,
+  "cropPadding": 10,
+  "notes": "Crop coordinates are source-image pixels; use supplied alpha-aware crops instead of arithmetic grid clipping. Generated RGBA alpha preserved. Each crop has 10px padding around its main alpha silhouette.",
+  "crops": {
+    "bearHut": {
+      "x": 38,
+      "y": 115,
+      "width": 362,
+      "height": 312
+    },
+    "library": {
+      "x": 449,
+      "y": 102,
+      "width": 402,
+      "height": 326
+    },
+    "barn": {
+      "x": 883,
+      "y": 98,
+      "width": 395,
+      "height": 330
+    },
+    "logyard": {
+      "x": 1311,
+      "y": 142,
+      "width": 443,
+      "height": 287
+    },
+    "expandedHut": {
+      "x": 17,
+      "y": 524,
+      "width": 409,
+      "height": 305
+    },
+    "expandedLibrary": {
+      "x": 434,
+      "y": 460,
+      "width": 440,
+      "height": 369
+    },
+    "expandedGranary": {
+      "x": 876,
+      "y": 466,
+      "width": 457,
+      "height": 363
+    },
+    "workshop": {
+      "x": 1356,
+      "y": 510,
+      "width": 400,
+      "height": 318
+    }
+  },
+  "alphaBounds": {
+    "bearHut": {
+      "x": 48,
+      "y": 125,
+      "width": 342,
+      "height": 292
+    },
+    "library": {
+      "x": 459,
+      "y": 112,
+      "width": 382,
+      "height": 306
+    },
+    "barn": {
+      "x": 893,
+      "y": 108,
+      "width": 375,
+      "height": 310
+    },
+    "logyard": {
+      "x": 1321,
+      "y": 152,
+      "width": 423,
+      "height": 267
+    },
+    "expandedHut": {
+      "x": 27,
+      "y": 534,
+      "width": 389,
+      "height": 285
+    },
+    "expandedLibrary": {
+      "x": 444,
+      "y": 470,
+      "width": 420,
+      "height": 349
+    },
+    "expandedGranary": {
+      "x": 886,
+      "y": 476,
+      "width": 437,
+      "height": 343
+    },
+    "workshop": {
+      "x": 1366,
+      "y": 520,
+      "width": 380,
+      "height": 298
+    }
+  }
+}

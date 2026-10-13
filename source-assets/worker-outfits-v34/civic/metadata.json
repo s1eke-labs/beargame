@@ -1,0 +1,269 @@
+{
+  "asset": "civic-atlas.png",
+  "source_raw_png": "/workspace/shared/beargame-outfits/civic/civic-atlas.png",
+  "generation_mode": "built-in image_gen",
+  "reference": "/workspace/scratch/2ea1830e5ccf/beargame/public/art/reference-bears-atlas.webp",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "layout": {
+    "columns": 3,
+    "rows": 2,
+    "column_jobs": [
+      "priest",
+      "geologist",
+      "ambassador"
+    ],
+    "row_poses": [
+      "ready",
+      "work"
+    ]
+  },
+  "alpha": {
+    "min": 0,
+    "max": 254,
+    "fully_transparent_pixels": 970824,
+    "low_alpha_1_to_8_pixels": 17387,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "coordinate_convention": "xyxy, right and bottom exclusive; baseline is last visible pixel row at alpha >127; estimates are measured from actual image pixels/visual inspection",
+  "poses": [
+    {
+      "job": "priest",
+      "pose": "ready",
+      "row": 0,
+      "column": 0,
+      "cell_box_xyxy": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "recommended_source_crop_xyxy": [
+        132,
+        64,
+        440,
+        490
+      ],
+      "visible_bbox_alpha_gt_127_xyxy": [
+        140,
+        72,
+        432,
+        482
+      ],
+      "head_center_xy_estimate": [
+        286,
+        207
+      ],
+      "body_anchor_head_center_x": 286,
+      "feet_baseline_y": 481,
+      "head_width_px_estimate": 291,
+      "anchor_in_recommended_crop_xy": [
+        154,
+        417
+      ]
+    },
+    {
+      "job": "geologist",
+      "pose": "ready",
+      "row": 0,
+      "column": 1,
+      "cell_box_xyxy": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "recommended_source_crop_xyxy": [
+        602,
+        64,
+        916,
+        491
+      ],
+      "visible_bbox_alpha_gt_127_xyxy": [
+        610,
+        72,
+        908,
+        483
+      ],
+      "head_center_xy_estimate": [
+        754,
+        207
+      ],
+      "body_anchor_head_center_x": 754,
+      "feet_baseline_y": 482,
+      "head_width_px_estimate": 289,
+      "anchor_in_recommended_crop_xy": [
+        152,
+        418
+      ]
+    },
+    {
+      "job": "ambassador",
+      "pose": "ready",
+      "row": 0,
+      "column": 2,
+      "cell_box_xyxy": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "recommended_source_crop_xyxy": [
+        1095,
+        64,
+        1424,
+        490
+      ],
+      "visible_bbox_alpha_gt_127_xyxy": [
+        1103,
+        72,
+        1416,
+        482
+      ],
+      "head_center_xy_estimate": [
+        1248,
+        207
+      ],
+      "body_anchor_head_center_x": 1248,
+      "feet_baseline_y": 481,
+      "head_width_px_estimate": 291,
+      "anchor_in_recommended_crop_xy": [
+        153,
+        417
+      ]
+    },
+    {
+      "job": "priest",
+      "pose": "work",
+      "row": 1,
+      "column": 0,
+      "cell_box_xyxy": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "recommended_source_crop_xyxy": [
+        129,
+        528,
+        437,
+        951
+      ],
+      "visible_bbox_alpha_gt_127_xyxy": [
+        137,
+        536,
+        429,
+        943
+      ],
+      "head_center_xy_estimate": [
+        282,
+        665
+      ],
+      "body_anchor_head_center_x": 282,
+      "feet_baseline_y": 942,
+      "head_width_px_estimate": 291,
+      "anchor_in_recommended_crop_xy": [
+        153,
+        414
+      ]
+    },
+    {
+      "job": "geologist",
+      "pose": "work",
+      "row": 1,
+      "column": 1,
+      "cell_box_xyxy": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "recommended_source_crop_xyxy": [
+        603,
+        526,
+        941,
+        951
+      ],
+      "visible_bbox_alpha_gt_127_xyxy": [
+        611,
+        534,
+        933,
+        943
+      ],
+      "head_center_xy_estimate": [
+        755,
+        667
+      ],
+      "body_anchor_head_center_x": 755,
+      "feet_baseline_y": 942,
+      "head_width_px_estimate": 289,
+      "anchor_in_recommended_crop_xy": [
+        152,
+        416
+      ]
+    },
+    {
+      "job": "ambassador",
+      "pose": "work",
+      "row": 1,
+      "column": 2,
+      "cell_box_xyxy": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "recommended_source_crop_xyxy": [
+        1095,
+        527,
+        1432,
+        953
+      ],
+      "visible_bbox_alpha_gt_127_xyxy": [
+        1103,
+        535,
+        1424,
+        945
+      ],
+      "head_center_xy_estimate": [
+        1248,
+        670
+      ],
+      "body_anchor_head_center_x": 1248,
+      "feet_baseline_y": 944,
+      "head_width_px_estimate": 290,
+      "anchor_in_recommended_crop_xy": [
+        153,
+        417
+      ]
+    }
+  ],
+  "integration_notes": [
+    "Preserve raw source. Use paired common scale based on head/body, not individual outer prop bounding boxes.",
+    "Normalize each pose by body_anchor_head_center_x and feet_baseline_y. Do not use each equal grid cell center as its body anchor.",
+    "Recommended source crop boxes include approximately 8px padding around intentional sprite edge.",
+    "True alpha transparency verified, but some low-alpha 1..8 debris pixels remain in raw file. Max alpha is 254 from imagegen."
+  ],
+  "identity_and_style_review": [
+    "Same original white round-faced bear identity is recognizable in all six sprites.",
+    "Correct outfits/props/actions: lavender short cape/lantern lift; sand vest/sample bag/raised rock inspection; burgundy scarf/scroll and greeting wave. No coins or pickaxes.",
+    "Pairs are close in size but not exact duplicated body/head silhouettes. Priest work head is shifted about 4px left; geologist work eyes/gaze turn right about 10px while head center remains stable.",
+    "Within-cell feet baselines differ by about 50px between atlas rows. Anchored cropping is required before animation.",
+    "Version 2 simplifies the rock facets. Some soft tonal variation remains inherent to generated raster; strict perfectly-flat palette is not guaranteed."
+  ],
+  "files": {
+    "initial_atlas": "civic-atlas-v1.png",
+    "initial_prompt": "prompt-v1.txt",
+    "final_atlas": "civic-atlas.png",
+    "edit_prompt": "prompt-v2.txt"
+  },
+  "sha256": "b13f75695235375fff2eb0ee3865d10b43593872cddf6891b10ce87bb6debc20"
+}

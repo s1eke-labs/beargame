@@ -1,0 +1,3320 @@
+{
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "purpose": "Factual identity/location checklist only; no descriptions, costs, implementation or source data tables copied.",
+  "categories": [
+    {
+      "category": "resources",
+      "features": [
+        {
+          "id": "catnip",
+          "source": "js/resources.js:22",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "wood",
+          "source": "js/resources.js:29",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "minerals",
+          "source": "js/resources.js:37",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "coal",
+          "source": "js/resources.js:44",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "iron",
+          "source": "js/resources.js:52",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "titanium",
+          "source": "js/resources.js:60",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "gold",
+          "source": "js/resources.js:68",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "oil",
+          "source": "js/resources.js:76",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "uranium",
+          "source": "js/resources.js:84",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unobtainium",
+          "source": "js/resources.js:93",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "antimatter",
+          "source": "js/resources.js:108",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "manpower",
+          "source": "js/resources.js:119",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "science",
+          "source": "js/resources.js:127",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "culture",
+          "source": "js/resources.js:135",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "faith",
+          "source": "js/resources.js:143",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "kittens",
+          "source": "js/resources.js:151",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebras",
+          "source": "js/resources.js:158",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "starchart",
+          "source": "js/resources.js:165",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "temporalFlux",
+          "source": "js/resources.js:173",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "gflops",
+          "source": "js/resources.js:180",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hashrates",
+          "source": "js/resources.js:188",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "furs",
+          "source": "js/resources.js:200",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ivory",
+          "source": "js/resources.js:209",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spice",
+          "source": "js/resources.js:218",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicorns",
+          "source": "js/resources.js:227",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alicorn",
+          "source": "js/resources.js:236",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "necrocorn",
+          "source": "js/resources.js:245",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tears",
+          "source": "js/resources.js:253",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "karma",
+          "source": "js/resources.js:259",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "paragon",
+          "source": "js/resources.js:265",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "burnedParagon",
+          "source": "js/resources.js:272",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "timeCrystal",
+          "source": "js/resources.js:279",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sorrow",
+          "source": "js/resources.js:286",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "relic",
+          "source": "js/resources.js:293",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "void",
+          "source": "js/resources.js:308",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "elderBox",
+          "source": "js/resources.js:321",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "wrappingPaper",
+          "source": "js/resources.js:336",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackcoin",
+          "source": "js/resources.js:350",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "bloodstone",
+          "source": "js/resources.js:364",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tMythril",
+          "source": "js/resources.js:378",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "beam",
+          "source": "js/resources.js:397",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "slab",
+          "source": "js/resources.js:403",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "plate",
+          "source": "js/resources.js:408",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steel",
+          "source": "js/resources.js:414",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "concrate",
+          "source": "js/resources.js:423",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "gear",
+          "source": "js/resources.js:429",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alloy",
+          "source": "js/resources.js:436",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "eludium",
+          "source": "js/resources.js:444",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "scaffold",
+          "source": "js/resources.js:452",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ship",
+          "source": "js/resources.js:458",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tanker",
+          "source": "js/resources.js:464",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "kerosene",
+          "source": "js/resources.js:470",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "plastic",
+          "source": "js/resources.js:478",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "microchip",
+          "source": "js/resources.js:485",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "parchment",
+          "source": "js/resources.js:492",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "manuscript",
+          "source": "js/resources.js:498",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "compedium",
+          "source": "js/resources.js:505",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blueprint",
+          "source": "js/resources.js:511",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "thorium",
+          "source": "js/resources.js:519",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "megalith",
+          "source": "js/resources.js:529",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "buildings",
+      "features": [
+        {
+          "id": "field",
+          "source": "js/buildings.js:349",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pasture",
+          "source": "js/buildings.js:368",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "aqueduct",
+          "source": "js/buildings.js:430",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hut",
+          "source": "js/buildings.js:483",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "logHouse",
+          "source": "js/buildings.js:508",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mansion",
+          "source": "js/buildings.js:531",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "library",
+          "source": "js/buildings.js:556",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "academy",
+          "source": "js/buildings.js:648",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "observatory",
+          "source": "js/buildings.js:684",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "biolab",
+          "source": "js/buildings.js:708",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "barn",
+          "source": "js/buildings.js:791",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "warehouse",
+          "source": "js/buildings.js:824",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "harbor",
+          "source": "js/buildings.js:942",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mine",
+          "source": "js/buildings.js:996",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "quarry",
+          "source": "js/buildings.js:1033",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "smelter",
+          "source": "js/buildings.js:1070",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "calciner",
+          "source": "js/buildings.js:1153",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steamworks",
+          "source": "js/buildings.js:1280",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "magneto",
+          "source": "js/buildings.js:1389",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "lumberMill",
+          "source": "js/buildings.js:1439",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "oilWell",
+          "source": "js/buildings.js:1458",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "workshop",
+          "source": "js/buildings.js:1508",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "factory",
+          "source": "js/buildings.js:1537",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "reactor",
+          "source": "js/buildings.js:1589",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "accelerator",
+          "source": "js/buildings.js:1639",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tradepost",
+          "source": "js/buildings.js:1705",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mint",
+          "source": "js/buildings.js:1730",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "brewery",
+          "source": "js/buildings.js:1786",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "amphitheatre",
+          "source": "js/buildings.js:1841",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chapel",
+          "source": "js/buildings.js:1907",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "temple",
+          "source": "js/buildings.js:1944",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornPasture",
+          "source": "js/buildings.js:2032",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ziggurat",
+          "source": "js/buildings.js:2062",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chronosphere",
+          "source": "js/buildings.js:2112",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "aiCore",
+          "source": "js/buildings.js:2137",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraOutpost",
+          "source": "js/buildings.js:2189",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraWorkshop",
+          "source": "js/buildings.js:2224",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraForge",
+          "source": "js/buildings.js:2263",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "stasisPod",
+          "source": "js/buildings.js:2301",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ivoryTemple",
+          "source": "js/buildings.js:2326",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "research",
+      "features": [
+        {
+          "id": "calendar",
+          "source": "js/science.js:13",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "agriculture",
+          "source": "js/science.js:25",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "archery",
+          "source": "js/science.js:38",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mining",
+          "source": "js/science.js:50",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "metal",
+          "source": "js/science.js:62",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "animal",
+          "source": "js/science.js:73",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "brewery",
+          "source": "js/science.js:84",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "civil",
+          "source": "js/science.js:93",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "math",
+          "source": "js/science.js:103",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "construction",
+          "source": "js/science.js:115",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "engineering",
+          "source": "js/science.js:130",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "currency",
+          "source": "js/science.js:141",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "writing",
+          "source": "js/science.js:152",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "philosophy",
+          "source": "js/science.js:166",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "machinery",
+          "source": "js/science.js:179",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steel",
+          "source": "js/science.js:189",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "theology",
+          "source": "js/science.js:200",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "astronomy",
+          "source": "js/science.js:217",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "navigation",
+          "source": "js/science.js:231",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "architecture",
+          "source": "js/science.js:247",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "physics",
+          "source": "js/science.js:261",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "metaphysics",
+          "source": "js/science.js:275",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chemistry",
+          "source": "js/science.js:284",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "acoustics",
+          "source": "js/science.js:298",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "drama",
+          "source": "js/science.js:311",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "archeology",
+          "source": "js/science.js:323",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "electricity",
+          "source": "js/science.js:340",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "biology",
+          "source": "js/science.js:354",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "biochemistry",
+          "source": "js/science.js:370",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "genetics",
+          "source": "js/science.js:384",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "industrialization",
+          "source": "js/science.js:397",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mechanization",
+          "source": "js/science.js:411",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "metalurgy",
+          "source": "js/science.js:427",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "combustion",
+          "source": "js/science.js:439",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ecology",
+          "source": "js/science.js:453",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "electronics",
+          "source": "js/science.js:471",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "robotics",
+          "source": "js/science.js:489",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ai",
+          "source": "js/science.js:504",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "quantumCryptography",
+          "source": "js/science.js:518",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackchain",
+          "source": "js/science.js:530",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nuclearFission",
+          "source": "js/science.js:542",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "rocketry",
+          "source": "js/science.js:556",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "oilProcessing",
+          "source": "js/science.js:573",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sattelites",
+          "source": "js/science.js:586",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "orbitalEngineering",
+          "source": "js/science.js:601",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "thorium",
+          "source": "js/science.js:614",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "exogeology",
+          "source": "js/science.js:627",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "advExogeology",
+          "source": "js/science.js:640",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nanotechnology",
+          "source": "js/science.js:655",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "superconductors",
+          "source": "js/science.js:668",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "antimatter",
+          "source": "js/science.js:681",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "terraformation",
+          "source": "js/science.js:695",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hydroponics",
+          "source": "js/science.js:707",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "exogeophysics",
+          "source": "js/science.js:719",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "particlePhysics",
+          "source": "js/science.js:729",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "dimensionalPhysics",
+          "source": "js/science.js:744",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "artificialGravity",
+          "source": "js/science.js:756",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chronophysics",
+          "source": "js/science.js:768",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tachyonTheory",
+          "source": "js/science.js:782",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cryptotheology",
+          "source": "js/science.js:796",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidSpace",
+          "source": "js/science.js:811",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "paradoxalKnowledge",
+          "source": "js/science.js:832",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "policies",
+      "features": [
+        {
+          "id": "liberty",
+          "source": "js/science.js:855",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tradition",
+          "source": "js/science.js:875",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "monarchy",
+          "source": "js/science.js:895",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "authocracy",
+          "source": "js/science.js:914",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "republic",
+          "source": "js/science.js:948",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "socialism",
+          "source": "js/science.js:966",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "scientificCommunism",
+          "source": "js/science.js:991",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "liberalism",
+          "source": "js/science.js:1010",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "communism",
+          "source": "js/science.js:1028",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "fascism",
+          "source": "js/science.js:1048",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "technocracy",
+          "source": "js/science.js:1067",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "theocracy",
+          "source": "js/science.js:1082",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "expansionism",
+          "source": "js/science.js:1096",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "transkittenism",
+          "source": "js/science.js:1111",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "necrocracy",
+          "source": "js/science.js:1130",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "radicalXenophobia",
+          "source": "js/science.js:1145",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "diplomacy",
+          "source": "js/science.js:1175",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "isolationism",
+          "source": "js/science.js:1191",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraRelationsAppeasement",
+          "source": "js/science.js:1207",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraRelationsBellicosity",
+          "source": "js/science.js:1221",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "knowledgeSharing",
+          "source": "js/science.js:1235",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "culturalExchange",
+          "source": "js/science.js:1251",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "bigStickPolicy",
+          "source": "js/science.js:1267",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cityOnAHill",
+          "source": "js/science.js:1283",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "outerSpaceTreaty",
+          "source": "js/science.js:1299",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "militarizeSpace",
+          "source": "js/science.js:1315",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "lizardRelationsEcologists",
+          "source": "js/science.js:1335",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "lizardRelationsPriests",
+          "source": "js/science.js:1370",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "lizardRelationsDiplomats",
+          "source": "js/science.js:1391",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sharkRelationsScribes",
+          "source": "js/science.js:1408",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sharkRelationsMerchants",
+          "source": "js/science.js:1423",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sharkRelationsBotanists",
+          "source": "js/science.js:1445",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "griffinRelationsMetallurgists",
+          "source": "js/science.js:1479",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "griffinRelationsScouts",
+          "source": "js/science.js:1496",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "griffinRelationsMachinists",
+          "source": "js/science.js:1513",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nagaRelationsMasons",
+          "source": "js/science.js:1533",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nagaRelationsCultists",
+          "source": "js/science.js:1553",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nagaRelationsArchitects",
+          "source": "js/science.js:1573",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spiderRelationsGeologists",
+          "source": "js/science.js:1600",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spiderRelationsChemists",
+          "source": "js/science.js:1626",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spiderRelationsPaleontologists",
+          "source": "js/science.js:1656",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "dragonRelationsPhysicists",
+          "source": "js/science.js:1674",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "dragonRelationsAstrologers",
+          "source": "js/science.js:1695",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "dragonRelationsDynamicists",
+          "source": "js/science.js:1718",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "stoicism",
+          "source": "js/science.js:1742",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "epicurianism",
+          "source": "js/science.js:1762",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "carnivale",
+          "source": "js/science.js:1778",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "extravagance",
+          "source": "js/science.js:1792",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "rationing",
+          "source": "js/science.js:1806",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "frugality",
+          "source": "js/science.js:1820",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "rationality",
+          "source": "js/science.js:1836",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mysticism",
+          "source": "js/science.js:1850",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "stripMining",
+          "source": "js/science.js:1866",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "clearCutting",
+          "source": "js/science.js:1884",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "environmentalism",
+          "source": "js/science.js:1902",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sustainability",
+          "source": "js/science.js:1919",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "fullIndustrialization",
+          "source": "js/science.js:1937",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "conservation",
+          "source": "js/science.js:1958",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "openWoodlands",
+          "source": "js/science.js:1975",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cryochamberExtraction",
+          "source": "js/science.js:1998",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "terraformingInsight",
+          "source": "js/science.js:2013",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "siphoning",
+          "source": "js/science.js:2054",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "feedingFrenzy",
+          "source": "js/science.js:2078",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "upfrontPayment",
+          "source": "js/science.js:2108",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "workshop",
+      "features": [
+        {
+          "id": "mineralHoes",
+          "source": "js/workshop.js:9",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ironHoes",
+          "source": "js/workshop.js:23",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mineralAxes",
+          "source": "js/workshop.js:36",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ironAxes",
+          "source": "js/workshop.js:50",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steelAxe",
+          "source": "js/workshop.js:61",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "reinforcedSaw",
+          "source": "js/workshop.js:72",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steelSaw",
+          "source": "js/workshop.js:86",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "titaniumSaw",
+          "source": "js/workshop.js:103",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alloySaw",
+          "source": "js/workshop.js:120",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "titaniumAxe",
+          "source": "js/workshop.js:134",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alloyAxe",
+          "source": "js/workshop.js:145",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unobtainiumAxe",
+          "source": "js/workshop.js:158",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unobtainiumSaw",
+          "source": "js/workshop.js:170",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "stoneBarns",
+          "source": "js/workshop.js:186",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "reinforcedBarns",
+          "source": "js/workshop.js:202",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "reinforcedWarehouses",
+          "source": "js/workshop.js:221",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "titaniumBarns",
+          "source": "js/workshop.js:240",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alloyBarns",
+          "source": "js/workshop.js:256",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "concreteBarns",
+          "source": "js/workshop.js:271",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "titaniumWarehouses",
+          "source": "js/workshop.js:286",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alloyWarehouses",
+          "source": "js/workshop.js:302",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "concreteWarehouses",
+          "source": "js/workshop.js:317",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "storageBunkers",
+          "source": "js/workshop.js:332",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "energyRifts",
+          "source": "js/workshop.js:349",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "stasisChambers",
+          "source": "js/workshop.js:366",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidEnergy",
+          "source": "js/workshop.js:388",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "darkEnergy",
+          "source": "js/workshop.js:407",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chronoforge",
+          "source": "js/workshop.js:422",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tachyonModerator",
+          "source": "js/workshop.js:436",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tachyonAccelerators",
+          "source": "js/workshop.js:449",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "fluxCondensator",
+          "source": "js/workshop.js:467",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "lhc",
+          "source": "js/workshop.js:478",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "photovoltaic",
+          "source": "js/workshop.js:494",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "thinFilm",
+          "source": "js/workshop.js:508",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "qdot",
+          "source": "js/workshop.js:523",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "solarSatellites",
+          "source": "js/workshop.js:539",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cargoShips",
+          "source": "js/workshop.js:552",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "barges",
+          "source": "js/workshop.js:567",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "reactorVessel",
+          "source": "js/workshop.js:582",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ironwood",
+          "source": "js/workshop.js:597",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "concreteHuts",
+          "source": "js/workshop.js:612",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unobtainiumHuts",
+          "source": "js/workshop.js:624",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "eludiumHuts",
+          "source": "js/workshop.js:636",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "silos",
+          "source": "js/workshop.js:648",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "refrigeration",
+          "source": "js/workshop.js:666",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "compositeBow",
+          "source": "js/workshop.js:680",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "crossbow",
+          "source": "js/workshop.js:701",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "railgun",
+          "source": "js/workshop.js:716",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "bolas",
+          "source": "js/workshop.js:736",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "huntingArmor",
+          "source": "js/workshop.js:754",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steelArmor",
+          "source": "js/workshop.js:771",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alloyArmor",
+          "source": "js/workshop.js:783",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nanosuits",
+          "source": "js/workshop.js:795",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "caravanserai",
+          "source": "js/workshop.js:807",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "freightfulExchange",
+          "source": "js/workshop.js:823",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "transportSuperposition",
+          "source": "js/workshop.js:845",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "advancedRefinement",
+          "source": "js/workshop.js:867",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "prospecting",
+          "source": "js/workshop.js:881",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "goldOre",
+          "source": "js/workshop.js:889",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "geodesy",
+          "source": "js/workshop.js:904",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "register",
+          "source": "js/workshop.js:919",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "strenghtenBuild",
+          "source": "js/workshop.js:929",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "miningDrill",
+          "source": "js/workshop.js:949",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unobtainiumDrill",
+          "source": "js/workshop.js:963",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "coalFurnace",
+          "source": "js/workshop.js:979",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "deepMining",
+          "source": "js/workshop.js:995",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pyrolysis",
+          "source": "js/workshop.js:1010",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "electrolyticSmelting",
+          "source": "js/workshop.js:1021",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "oxidation",
+          "source": "js/workshop.js:1035",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steelPlants",
+          "source": "js/workshop.js:1049",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "automatedPlants",
+          "source": "js/workshop.js:1064",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nuclearPlants",
+          "source": "js/workshop.js:1078",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "rotaryKiln",
+          "source": "js/workshop.js:1089",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "fluidizedReactors",
+          "source": "js/workshop.js:1105",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nuclearSmelters",
+          "source": "js/workshop.js:1120",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "orbitalGeodesy",
+          "source": "js/workshop.js:1133",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "printingPress",
+          "source": "js/workshop.js:1149",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "offsetPress",
+          "source": "js/workshop.js:1162",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "photolithography",
+          "source": "js/workshop.js:1177",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "uplink",
+          "source": "js/workshop.js:1192",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "starlink",
+          "source": "js/workshop.js:1207",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cryocomputing",
+          "source": "js/workshop.js:1222",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "machineLearning",
+          "source": "js/workshop.js:1235",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "factoryAutomation",
+          "source": "js/workshop.js:1251",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "advancedAutomation",
+          "source": "js/workshop.js:1262",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pneumaticPress",
+          "source": "js/workshop.js:1273",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "combustionEngine",
+          "source": "js/workshop.js:1284",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "fuelInjectors",
+          "source": "js/workshop.js:1300",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "factoryLogistics",
+          "source": "js/workshop.js:1316",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "carbonSequestration",
+          "source": "js/workshop.js:1330",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "factoryOptimization",
+          "source": "js/workshop.js:1346",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "factoryRobotics",
+          "source": "js/workshop.js:1360",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spaceEngineers",
+          "source": "js/workshop.js:1375",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "aiEngineers",
+          "source": "js/workshop.js:1390",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chronoEngineers",
+          "source": "js/workshop.js:1407",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spaceManufacturing",
+          "source": "js/workshop.js:1424",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "celestialMechanics",
+          "source": "js/workshop.js:1439",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "astrolabe",
+          "source": "js/workshop.js:1447",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "titaniumMirrors",
+          "source": "js/workshop.js:1461",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unobtainiumReflectors",
+          "source": "js/workshop.js:1478",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "eludiumReflectors",
+          "source": "js/workshop.js:1494",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hydroPlantTurbines",
+          "source": "js/workshop.js:1509",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "amBases",
+          "source": "js/workshop.js:1523",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "aiBases",
+          "source": "js/workshop.js:1537",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "amFission",
+          "source": "js/workshop.js:1548",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "amReactors",
+          "source": "js/workshop.js:1560",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "amReactorsMK2",
+          "source": "js/workshop.js:1577",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidReactors",
+          "source": "js/workshop.js:1594",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "relicStation",
+          "source": "js/workshop.js:1608",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "amDrive",
+          "source": "js/workshop.js:1622",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pumpjack",
+          "source": "js/workshop.js:1635",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "petri",
+          "source": "js/workshop.js:1651",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "biofuel",
+          "source": "js/workshop.js:1665",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornSelection",
+          "source": "js/workshop.js:1679",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alicornStable",
+          "source": "js/workshop.js:1696",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "gmo",
+          "source": "js/workshop.js:1719",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cadSystems",
+          "source": "js/workshop.js:1736",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "seti",
+          "source": "js/workshop.js:1747",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "logistics",
+          "source": "js/workshop.js:1761",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "augumentation",
+          "source": "js/workshop.js:1773",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "internet",
+          "source": "js/workshop.js:1785",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "neuralNetworks",
+          "source": "js/workshop.js:1795",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "assistance",
+          "source": "js/workshop.js:1809",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "enrichedUranium",
+          "source": "js/workshop.js:1821",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "coldFusion",
+          "source": "js/workshop.js:1836",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "thoriumReactors",
+          "source": "js/workshop.js:1850",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "enrichedThorium",
+          "source": "js/workshop.js:1868",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hubbleTelescope",
+          "source": "js/workshop.js:1884",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "satnav",
+          "source": "js/workshop.js:1900",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "satelliteRadio",
+          "source": "js/workshop.js:1911",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "astrophysicists",
+          "source": "js/workshop.js:1923",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mWReactor",
+          "source": "js/workshop.js:1936",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "eludiumCracker",
+          "source": "js/workshop.js:1948",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "thoriumEngine",
+          "source": "js/workshop.js:1963",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spiceNavigation",
+          "source": "js/workshop.js:1978",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "longRangeSpaceships",
+          "source": "js/workshop.js:1991",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "oilRefinery",
+          "source": "js/workshop.js:2007",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "oilDistillation",
+          "source": "js/workshop.js:2022",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "factoryProcessing",
+          "source": "js/workshop.js:2036",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidAspiration",
+          "source": "js/workshop.js:2050",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "distorsion",
+          "source": "js/workshop.js:2064",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "turnSmoothly",
+          "source": "js/workshop.js:2080",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "invisibleBlackHand",
+          "source": "js/workshop.js:2097",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "recipes",
+      "features": [
+        {
+          "id": "wood",
+          "source": "js/workshop.js:2116",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "beam",
+          "source": "js/workshop.js:2126",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "slab",
+          "source": "js/workshop.js:2135",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "plate",
+          "source": "js/workshop.js:2144",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "steel",
+          "source": "js/workshop.js:2153",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "concrate",
+          "source": "js/workshop.js:2163",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "gear",
+          "source": "js/workshop.js:2173",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alloy",
+          "source": "js/workshop.js:2182",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "eludium",
+          "source": "js/workshop.js:2192",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "scaffold",
+          "source": "js/workshop.js:2202",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ship",
+          "source": "js/workshop.js:2211",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tanker",
+          "source": "js/workshop.js:2225",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "kerosene",
+          "source": "js/workshop.js:2239",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "plastic",
+          "source": "js/workshop.js:2248",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "microchip",
+          "source": "js/workshop.js:2257",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "parchment",
+          "source": "js/workshop.js:2268",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "manuscript",
+          "source": "js/workshop.js:2277",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "compedium",
+          "source": "js/workshop.js:2287",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blueprint",
+          "source": "js/workshop.js:2297",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "thorium",
+          "source": "js/workshop.js:2307",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "megalith",
+          "source": "js/workshop.js:2316",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "bloodstone",
+          "source": "js/workshop.js:2327",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tMythril",
+          "source": "js/workshop.js:2337",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "zebraWorkshop",
+      "features": [
+        {
+          "id": "darkRevolution",
+          "source": "js/workshop.js:2353",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "darkBrew",
+          "source": "js/workshop.js:2369",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraTrappers",
+          "source": "js/workshop.js:2380",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "reforgedOutposts",
+          "source": "js/workshop.js:2398",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "whispers",
+          "source": "js/workshop.js:2416",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "minerologyDepartment",
+          "source": "js/workshop.js:2430",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "bloodstoneInstitute",
+          "source": "js/workshop.js:2448",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "rangefinders",
+          "source": "js/workshop.js:2466",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "mythicFaith",
+      "features": [
+        {
+          "id": "unicornTomb",
+          "source": "js/religion.js:635",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ivoryTower",
+          "source": "js/religion.js:676",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ivoryCitadel",
+          "source": "js/religion.js:702",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "skyPalace",
+          "source": "js/religion.js:731",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornUtopia",
+          "source": "js/religion.js:779",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sunspire",
+          "source": "js/religion.js:831",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "marker",
+          "source": "js/religion.js:878",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornGraveyard",
+          "source": "js/religion.js:909",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornNecropolis",
+          "source": "js/religion.js:929",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackPyramid",
+          "source": "js/religion.js:944",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "faith",
+      "features": [
+        {
+          "id": "solarchant",
+          "source": "js/religion.js:1046",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "scholasticism",
+          "source": "js/religion.js:1062",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "goldenSpire",
+          "source": "js/religion.js:1082",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sunAltar",
+          "source": "js/religion.js:1103",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "stainedGlass",
+          "source": "js/religion.js:1123",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "solarRevolution",
+          "source": "js/religion.js:1143",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "basilica",
+          "source": "js/religion.js:1159",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "templars",
+          "source": "js/religion.js:1179",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "apocripha",
+          "source": "js/religion.js:1199",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "transcendence",
+          "source": "js/religion.js:1212",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "frescoes",
+          "source": "js/religion.js:1228",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "transcendence",
+      "features": [
+        {
+          "id": "blackObelisk",
+          "source": "js/religion.js:1258",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackNexus",
+          "source": "js/religion.js:1275",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackCore",
+          "source": "js/religion.js:1292",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "singularity",
+          "source": "js/religion.js:1306",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackLibrary",
+          "source": "js/religion.js:1320",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackRadiance",
+          "source": "js/religion.js:1334",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blazar",
+          "source": "js/religion.js:1348",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "darkNova",
+          "source": "js/religion.js:1370",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mausoleum",
+          "source": "js/religion.js:1387",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "holyGenocide",
+          "source": "js/religion.js:1430",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "darkParacosm",
+          "source": "js/religion.js:1460",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "pacts",
+      "features": [
+        {
+          "id": "pactOfCleansing",
+          "source": "js/religion.js:2577",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pactOfDestruction",
+          "source": "js/religion.js:2601",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pactOfExtermination",
+          "source": "js/religion.js:2625",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pactOfPurity",
+          "source": "js/religion.js:2644",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pactOfArcane",
+          "source": "js/religion.js:2670",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pactOfChronicler",
+          "source": "js/religion.js:2692",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "payDebt",
+          "source": "js/religion.js:2718",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "fractured",
+          "source": "js/religion.js:2752",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "missions",
+      "features": [
+        {
+          "id": "orbitalLaunch",
+          "source": "js/space.js:23",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "moonMission",
+          "source": "js/space.js:37",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "duneMission",
+          "source": "js/space.js:51",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "piscineMission",
+          "source": "js/space.js:66",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "heliosMission",
+          "source": "js/space.js:80",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "terminusMission",
+          "source": "js/space.js:94",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "kairoMission",
+          "source": "js/space.js:108",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "rorschachMission",
+          "source": "js/space.js:122",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "yarnMission",
+          "source": "js/space.js:135",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "umbraMission",
+          "source": "js/space.js:149",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "charonMission",
+          "source": "js/space.js:163",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "centaurusSystemMission",
+          "source": "js/space.js:176",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "furthestRingMission",
+          "source": "js/space.js:192",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "planets",
+      "features": [
+        {
+          "id": "cath",
+          "source": "js/space.js:210",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "moon",
+          "source": "js/space.js:331",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "dune",
+          "source": "js/space.js:427",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "piscine",
+          "source": "js/space.js:502",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "helios",
+          "source": "js/space.js:556",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "terminus",
+          "source": "js/space.js:644",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "kairo",
+          "source": "js/space.js:690",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "yarn",
+          "source": "js/space.js:734",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "umbra",
+          "source": "js/space.js:799",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "charon",
+          "source": "js/space.js:853",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "centaurusSystem",
+          "source": "js/space.js:913",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "furthestRing",
+          "source": "js/space.js:956",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "spaceBuildings",
+      "features": [
+        {
+          "id": "spaceElevator",
+          "parent": "cath",
+          "source": "js/space.js:214",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sattelite",
+          "parent": "cath",
+          "source": "js/space.js:238",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spaceStation",
+          "parent": "cath",
+          "source": "js/space.js:294",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "moonOutpost",
+          "parent": "moon",
+          "source": "js/space.js:335",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "moonBase",
+          "parent": "moon",
+          "source": "js/space.js:376",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "planetCracker",
+          "parent": "dune",
+          "source": "js/space.js:431",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hydrofracturer",
+          "parent": "dune",
+          "source": "js/space.js:453",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spiceRefinery",
+          "parent": "dune",
+          "source": "js/space.js:477",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "researchVessel",
+          "parent": "piscine",
+          "source": "js/space.js:506",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "orbitalArray",
+          "parent": "piscine",
+          "source": "js/space.js:532",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sunlifter",
+          "parent": "helios",
+          "source": "js/space.js:560",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "containmentChamber",
+          "parent": "helios",
+          "source": "js/space.js:581",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "heatsink",
+          "parent": "helios",
+          "source": "js/space.js:603",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sunforge",
+          "parent": "helios",
+          "source": "js/space.js:622",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cryostation",
+          "parent": "terminus",
+          "source": "js/space.js:648",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spaceBeacon",
+          "parent": "kairo",
+          "source": "js/space.js:695",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "terraformingStation",
+          "parent": "yarn",
+          "source": "js/space.js:739",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hydroponics",
+          "parent": "yarn",
+          "source": "js/space.js:765",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hrHarvester",
+          "parent": "umbra",
+          "source": "js/space.js:804",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "navigationRelay",
+          "parent": "umbra",
+          "source": "js/space.js:827",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spaceShuttle",
+          "parent": "umbra",
+          "source": "js/space.js:839",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "entangler",
+          "parent": "charon",
+          "source": "js/space.js:858",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tectonic",
+          "parent": "centaurusSystem",
+          "source": "js/space.js:918",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "moltenCore",
+          "parent": "centaurusSystem",
+          "source": "js/space.js:937",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "chronoforge",
+      "features": [
+        {
+          "id": "temporalBattery",
+          "source": "js/time.js:315",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blastFurnace",
+          "source": "js/time.js:327",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "timeBoiler",
+          "source": "js/time.js:394",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "controlledDelay",
+          "source": "js/time.js:424",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "temporalAccelerator",
+          "source": "js/time.js:445",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "temporalImpedance",
+          "source": "js/time.js:468",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ressourceRetrieval",
+          "source": "js/time.js:484",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "temporalPress",
+          "source": "js/time.js:497",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "voidspace",
+      "features": [
+        {
+          "id": "cryochambers",
+          "source": "js/time.js:531",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "usedCryochambers",
+          "source": "js/time.js:555",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidHoover",
+          "source": "js/time.js:578",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidRift",
+          "source": "js/time.js:592",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chronocontrol",
+          "source": "js/time.js:608",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidResonator",
+          "source": "js/time.js:633",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "challenges",
+      "features": [
+        {
+          "id": "ironWill",
+          "source": "js/challenges.js:43",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "winterIsComing",
+          "source": "js/challenges.js:49",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "anarchy",
+          "source": "js/challenges.js:86",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "energy",
+          "source": "js/challenges.js:115",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "atheism",
+          "source": "js/challenges.js:149",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "1000Years",
+          "source": "js/challenges.js:188",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackSky",
+          "source": "js/challenges.js:229",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pacifism",
+          "source": "js/challenges.js:260",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornTears",
+          "source": "js/challenges.js:332",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "postApocalypse",
+          "source": "js/challenges.js:457",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "prestigePerks",
+      "features": [
+        {
+          "id": "engeneering",
+          "source": "js/prestige.js:4",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "codexVox",
+          "source": "js/prestige.js:18",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "codexLogos",
+          "source": "js/prestige.js:32",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "codexAgrum",
+          "source": "js/prestige.js:48",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "megalomania",
+          "source": "js/prestige.js:61",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "blackCodex",
+          "source": "js/prestige.js:72",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "codexLeviathanianus",
+          "source": "js/prestige.js:82",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "goldenRatio",
+          "source": "js/prestige.js:91",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "divineProportion",
+          "source": "js/prestige.js:105",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "vitruvianFeline",
+          "source": "js/prestige.js:119",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "renaissance",
+          "source": "js/prestige.js:132",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "diplomacy",
+          "source": "js/prestige.js:143",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraDiplomacy",
+          "source": "js/prestige.js:163",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebraCovenant",
+          "source": "js/prestige.js:173",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "navigationDiplomacy",
+          "source": "js/prestige.js:183",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ambassadors",
+          "source": "js/prestige.js:190",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "treaties",
+          "source": "js/prestige.js:201",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chronomancy",
+          "source": "js/prestige.js:220",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "astromancy",
+          "source": "js/prestige.js:231",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornmancy",
+          "source": "js/prestige.js:240",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "alicornmancy",
+          "source": "js/prestige.js:251",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "anachronomancy",
+          "source": "js/prestige.js:262",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "carnivals",
+          "source": "js/prestige.js:269",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "willenfluff",
+          "source": "js/prestige.js:280",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "pawgan",
+          "source": "js/prestige.js:293",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "numerology",
+          "source": "js/prestige.js:303",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "numeromancy",
+          "source": "js/prestige.js:313",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "malkuth",
+          "source": "js/prestige.js:325",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "yesod",
+          "source": "js/prestige.js:338",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hod",
+          "source": "js/prestige.js:351",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "netzach",
+          "source": "js/prestige.js:364",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tiferet",
+          "source": "js/prestige.js:378",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "gevurah",
+          "source": "js/prestige.js:392",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chesed",
+          "source": "js/prestige.js:406",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "binah",
+          "source": "js/prestige.js:420",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "chokhmah",
+          "source": "js/prestige.js:434",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "keter",
+          "source": "js/prestige.js:448",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "voidOrder",
+          "source": "js/prestige.js:461",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "adjustmentBureau",
+          "source": "js/prestige.js:468",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ascoh",
+          "source": "js/prestige.js:480",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "achievements",
+      "features": [
+        {
+          "id": "theElderLegacy",
+          "source": "js/achievements.js:6",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "unicornConspiracy",
+          "source": "js/achievements.js:16",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "uniception",
+          "source": "js/achievements.js:23",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sinsOfEmpire",
+          "source": "js/achievements.js:30",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "anachronox",
+          "source": "js/achievements.js:37",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "deadSpace",
+          "source": "js/achievements.js:44",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sadnessAbyss",
+          "source": "js/achievements.js:51",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ironWill",
+          "source": "js/achievements.js:58",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "uberkatzhen",
+          "source": "js/achievements.js:65",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hundredYearsSolitude",
+          "source": "js/achievements.js:72",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "soilUptuned",
+          "source": "js/achievements.js:79",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "atlasUnmeowed",
+          "source": "js/achievements.js:86",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "meowMeowRevolution",
+          "source": "js/achievements.js:93",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spaceOddity",
+          "source": "js/achievements.js:100",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "jupiterAscending",
+          "source": "js/achievements.js:111",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "veryLargeArray",
+          "source": "js/achievements.js:122",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "shadowOfTheColossus",
+          "source": "js/achievements.js:129",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sunGod",
+          "source": "js/achievements.js:136",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "heartOfDarkness",
+          "source": "js/achievements.js:143",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "winterIsComing",
+          "source": "js/achievements.js:150",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "youMonster",
+          "source": "js/achievements.js:158",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "superUnethicalClimax",
+          "source": "js/achievements.js:170",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "systemShock",
+          "source": "js/achievements.js:178",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "lotusMachine",
+          "source": "js/achievements.js:187",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "serenity",
+          "source": "js/achievements.js:194",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "utopiaProject",
+          "source": "js/achievements.js:206",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "deathStranding",
+          "source": "js/achievements.js:217",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cathammer",
+          "source": "js/achievements.js:224",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "eternalBacchanalia",
+          "source": "js/achievements.js:235",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "challenger",
+          "source": "js/achievements.js:247",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "betterSafeThanSorry",
+          "source": "js/achievements.js:258",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "badges",
+      "features": [
+        {
+          "id": "lotus",
+          "source": "js/achievements.js:276",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ivoryTower",
+          "source": "js/achievements.js:285",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "useless",
+          "source": "js/achievements.js:291",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "beta",
+          "source": "js/achievements.js:301",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "silentHill",
+          "source": "js/achievements.js:312",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "evergreen",
+          "source": "js/achievements.js:320",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "deadSpace",
+          "source": "js/achievements.js:325",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "reginaNoctis",
+          "source": "js/achievements.js:334",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ghostInTheMachine",
+          "source": "js/achievements.js:342",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "abOwo",
+          "source": "js/achievements.js:347",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cleanPaws",
+          "source": "js/achievements.js:352",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sequenceBreak",
+          "source": "js/achievements.js:357",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "fantasticFurColor",
+          "source": "js/achievements.js:365",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "whatYearIsIt",
+          "source": "js/achievements.js:374",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "tardis",
+          "source": "js/achievements.js:379",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "wheredThisComeFrom",
+          "source": "js/achievements.js:384",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "lostDates",
+          "source": "js/achievements.js:389",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "buffet",
+          "source": "js/achievements.js:400",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "newHome",
+          "source": "js/achievements.js:408",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "betterSafeThanSorry",
+          "source": "js/achievements.js:419",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "soLongAndThanksForAllTheHay",
+          "source": "js/achievements.js:425",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "jobs",
+      "features": [
+        {
+          "id": "woodcutter",
+          "source": "js/village.js:14",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "farmer",
+          "source": "js/village.js:26",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "scholar",
+          "source": "js/village.js:36",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hunter",
+          "source": "js/village.js:55",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "miner",
+          "source": "js/village.js:66",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "priest",
+          "source": "js/village.js:77",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "geologist",
+          "source": "js/village.js:102",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "engineer",
+          "source": "js/village.js:154",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "ambassador",
+          "source": "js/village.js:162",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "biomes",
+      "features": [
+        {
+          "id": "village",
+          "source": "js/village.js:1896",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "plains",
+          "source": "js/village.js:1914",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "hills",
+          "source": "js/village.js:1944",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "forest",
+          "source": "js/village.js:1962",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "boneForest",
+          "source": "js/village.js:1990",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "rainForest",
+          "source": "js/village.js:2003",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "mountain",
+          "source": "js/village.js:2014",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "volcano",
+          "source": "js/village.js:2039",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "desert",
+          "source": "js/village.js:2054",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "bloodDesert",
+          "source": "js/village.js:2071",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "swamp",
+          "source": "js/village.js:2084",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "cath",
+          "source": "js/village.js:2099",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "redmoon",
+          "source": "js/village.js:2108",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    },
+    {
+      "category": "tradingPartners",
+      "features": [
+        {
+          "id": "lizards",
+          "source": "js/diplomacy.js:18",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "sharks",
+          "source": "js/diplomacy.js:63",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "griffins",
+          "source": "js/diplomacy.js:114",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "nagas",
+          "source": "js/diplomacy.js:159",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "zebras",
+          "source": "js/diplomacy.js:212",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "spiders",
+          "source": "js/diplomacy.js:274",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "dragons",
+          "source": "js/diplomacy.js:317",
+          "status": "CATALOGUED; implementation unverified"
+        },
+        {
+          "id": "leviathans",
+          "source": "js/diplomacy.js:337",
+          "status": "CATALOGUED; implementation unverified"
+        }
+      ]
+    }
+  ]
+}

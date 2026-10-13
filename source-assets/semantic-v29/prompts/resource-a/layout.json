@@ -1,0 +1,40 @@
+{
+  "main": {
+    "file": "resources-a-spaced.png",
+    "width": 1536,
+    "height": 1024,
+    "columnBoundaries": [
+      0,
+      256,
+      512,
+      768,
+      1024,
+      1280,
+      1536
+    ],
+    "rowBoundaries": [
+      0,
+      260,
+      500,
+      744,
+      1024
+    ],
+    "keysFile": "keys.json"
+  },
+  "extras": {
+    "file": "extras.png",
+    "width": 1254,
+    "height": 1254,
+    "columnBoundaries": [
+      0,
+      650,
+      1254
+    ],
+    "rowBoundaries": [
+      0,
+      630,
+      1254
+    ],
+    "keysFile": "extras-keys.json"
+  }
+}

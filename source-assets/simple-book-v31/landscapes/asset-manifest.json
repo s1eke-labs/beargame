@@ -1,0 +1,47 @@
+{
+  "generationMode": "built-in image_gen",
+  "style": "simple rounded bear picture-book, sparse outlined flat-shape terrain",
+  "files": [
+    {
+      "file": "home-clearing.png",
+      "prompt": "home-clearing.prompt.txt",
+      "width": 1086,
+      "height": 1448,
+      "original": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-28c3e61b-e919-4604-be59-bd1a07c34555.png",
+      "notes": "Portrait home terrain. Spacious open ground and branching cream paths. No baked buildings or bears."
+    },
+    {
+      "file": "worlds-atlas.png",
+      "prompt": "worlds-atlas.prompt.txt",
+      "width": 1536,
+      "height": 1024,
+      "original": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-66304c8f-df01-43a4-a272-8b374d1c5d67.png",
+      "panels": [
+        {"name": "world-settlement", "x": 0, "y": 0, "width": 512, "height": 1024},
+        {"name": "world-industrial", "x": 512, "y": 0, "width": 512, "height": 1024},
+        {"name": "world-stellar", "x": 1024, "y": 0, "width": 512, "height": 1024}
+      ],
+      "notes": "Each world has six large empty zones for separate landmark overlays. Settlement river/roads, industrial canal/rail, stellar linked islands. No landmark buildings or characters."
+    },
+    {
+      "file": "regions-atlas.png",
+      "prompt": "regions-atlas.prompt.txt",
+      "width": 1881,
+      "height": 836,
+      "original": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-d3b134d3-9bc7-4a93-b1f0-630eb63c976c.png",
+      "panels": [
+        {"name": "region-woodland", "x": 0, "y": 0, "width": 627, "height": 836},
+        {"name": "region-river", "x": 627, "y": 0, "width": 627, "height": 836},
+        {"name": "region-twilight", "x": 1254, "y": 0, "width": 627, "height": 836}
+      ],
+      "notes": "Very thin generated vertical separation lines at panel edges. When cropping for integration, trim 1-2 pixels at interior vertical boundaries. Sparse edge trees and open centers. No bears, buildings or UI."
+    }
+  ],
+  "qa": {
+    "inspected": true,
+    "noBakedBearsOrBuildings": true,
+    "noTextOrWatermarks": true,
+    "grassNoiseAndLeafStipplingRemoved": true,
+    "minorDeviation": "A subtle smooth color wash remains despite flat-color instruction; no granular painterly texture."
+  }
+}

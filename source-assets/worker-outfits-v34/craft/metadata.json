@@ -1,0 +1,214 @@
+{
+  "asset": "craft-atlas-v2.png",
+  "generated_with": "built-in image_gen",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "layout": "3 columns by 2 rows; scholar, miner, engineer; ready above work",
+  "nominal_cell_size": [
+    512,
+    512
+  ],
+  "reference": "/workspace/scratch/2ea1830e5ccf/beargame/public/art/reference-bears-atlas.webp",
+  "alpha": {
+    "extrema": [
+      0,
+      254
+    ],
+    "fully_transparent_fraction": 0.5340614318847656,
+    "warning": "RGB in fully transparent pixels contains a dark cloudy pattern; alpha is zero there. Do not flatten or drop alpha. Preserve original RGBA."
+  },
+  "poses": [
+    {
+      "job": "scholar",
+      "pose": "ready",
+      "cell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source_crop_xyxy": [
+        100,
+        44,
+        442,
+        488
+      ],
+      "opaque_shape_bounds_xyxy": [
+        106,
+        50,
+        436,
+        482
+      ],
+      "head_center_x": 269.78,
+      "eye_line_y": 175.96,
+      "feet_baseline_y": 482,
+      "crop_local_anchor": [
+        169.78,
+        438
+      ]
+    },
+    {
+      "job": "scholar",
+      "pose": "work",
+      "cell": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "source_crop_xyxy": [
+        99,
+        521,
+        447,
+        967
+      ],
+      "opaque_shape_bounds_xyxy": [
+        105,
+        527,
+        441,
+        961
+      ],
+      "head_center_x": 269.76,
+      "eye_line_y": 653.83,
+      "feet_baseline_y": 961,
+      "crop_local_anchor": [
+        170.76,
+        440
+      ]
+    },
+    {
+      "job": "miner",
+      "pose": "ready",
+      "cell": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "source_crop_xyxy": [
+        584,
+        34,
+        977,
+        490
+      ],
+      "opaque_shape_bounds_xyxy": [
+        590,
+        40,
+        971,
+        484
+      ],
+      "head_center_x": 734.73,
+      "eye_line_y": 176.75,
+      "feet_baseline_y": 481,
+      "crop_local_anchor": [
+        150.73,
+        447
+      ]
+    },
+    {
+      "job": "miner",
+      "pose": "work",
+      "cell": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "source_crop_xyxy": [
+        585,
+        512,
+        956,
+        974
+      ],
+      "opaque_shape_bounds_xyxy": [
+        591,
+        517,
+        950,
+        968
+      ],
+      "head_center_x": 735.22,
+      "eye_line_y": 654.4,
+      "feet_baseline_y": 961,
+      "crop_local_anchor": [
+        150.22,
+        449
+      ]
+    },
+    {
+      "job": "engineer",
+      "pose": "ready",
+      "cell": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "source_crop_xyxy": [
+        1076,
+        44,
+        1486,
+        492
+      ],
+      "opaque_shape_bounds_xyxy": [
+        1082,
+        50,
+        1480,
+        486
+      ],
+      "head_center_x": 1233.68,
+      "eye_line_y": 176.36,
+      "feet_baseline_y": 481,
+      "crop_local_anchor": [
+        157.68,
+        437
+      ]
+    },
+    {
+      "job": "engineer",
+      "pose": "work",
+      "cell": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "source_crop_xyxy": [
+        1075,
+        521,
+        1487,
+        974
+      ],
+      "opaque_shape_bounds_xyxy": [
+        1081,
+        527,
+        1481,
+        968
+      ],
+      "head_center_x": 1232.69,
+      "eye_line_y": 653.82,
+      "feet_baseline_y": 962,
+      "crop_local_anchor": [
+        157.69,
+        441
+      ]
+    }
+  ],
+  "integration": "Use one shared scale for both poses of each job, align head_center_x and feet_baseline_y. Never independently fit based on tool bounds. Eye separation is about 73 pixels across all six figures. Nominal grid has y drift: visual eye line is around y176 then y654 (difference about 478), so per-pose anchors are authoritative.",
+  "inspection": {
+    "complete_characters_and_props": true,
+    "no_grid_or_text": true,
+    "head_identity": "Consistent with round simple white bear reference; tiny eyes/nose, short limbs, round ears, chunky near-black outline.",
+    "remaining_caveat": "Very mild pixel-level color variation and two-tone mineral rock remain from generation. No large shadow or backdrop exists in nonzero-alpha gutters."
+  },
+  "source_images": [
+    "/workspace/scratch/2ea1830e5ccf/generated_images/exec-e949d3d7-8bf8-4f38-ace0-05ee0685bd8d.png",
+    "/workspace/scratch/2ea1830e5ccf/generated_images/exec-07858b62-d9fe-43c5-9e2e-0d2cf8e2130d.png"
+  ],
+  "prompt_files": [
+    "prompt.txt",
+    "correction-prompt.txt"
+  ]
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff9ec">
+  <meta name="description" content="从一滴蜂蜜开始，和小熊一起照料林间家园。原创绘本画面，本地保存进度。">
+  <title>Beargame · 蜜林</title>
+  <link rel="preload" as="image" href="./chapters/forest/scenery/loading.webp" fetchpriority="high">
+  <link rel="stylesheet" href="./src/chapters/forest/style.css">
+</head>
+<body>
+  <div id="loading-screen" class="loading-screen" role="status" aria-live="polite">
+    <div class="loading-picture" id="loading-picture" aria-hidden="true"><img src="./chapters/forest/scenery/loading.webp" width="120" height="120" fetchpriority="high" alt=""></div>
+    <h1>蜜林</h1>
+    <p class="loading-intro">一点蜂蜜，一间小屋。<br>森林里的生活，从这里开始。</p>
+    <p id="loading-label">正在准备家园…</p>
+    <progress id="loading-progress" value="0" max="1" aria-label="家园加载进度"></progress>
+    <button id="loading-retry" hidden>重新加载</button>
+  </div>
+  <div id="app" aria-hidden="true" inert></div>
+  <div id="dialog-root"></div>
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <input id="save-file" type="file" accept="application/json,.json" hidden>
+  <noscript>请启用 JavaScript，让小熊的森林开始生长。</noscript>
+  <script type="module" src="./src/chapters/forest/main.js"></script>
+</body>
+</html>

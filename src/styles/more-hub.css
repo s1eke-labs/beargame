@@ -1,0 +1,25 @@
+/* The function collection is deliberately separate from the Home world map. */
+.panel-view .more-overview{height:auto;max-height:100%;background:var(--paper,#fff9e8)}
+.more-overview .game-sheet-body{padding:16px 16px 22px;overflow-y:auto;overscroll-behavior:contain}
+.more-overview .page-heading{margin:0 44px 16px 0}
+.more-overview .page-heading h1{margin:0;font-size:21px}
+.more-hub{display:flex;flex-direction:column;gap:14px}
+.more-hub-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.more-hub-entry{display:flex;align-items:center;gap:9px;min-width:0;min-height:68px;padding:8px 10px;border:1px solid var(--line,#d8ceb3);border-radius:13px;background:#fffaf0;color:var(--ink,#394d36);font-size:14px;text-align:left;line-height:1.35}
+.more-hub-entry>span:last-child{min-width:0;overflow-wrap:anywhere}
+.more-hub-art{display:flex;align-items:center;justify-content:center;flex:0 0 45px;width:45px;height:45px;border-radius:12px;background:#ecebd7}
+.more-hub-art>.atlas{width:45px;height:45px;max-width:none}
+.more-hub-art>.icon{width:25px;height:25px;color:#65775a}
+.more-hub-utilities{padding-top:14px;border-top:1px solid var(--line,#d8ceb3)}
+.more-hub-section:first-child{padding-top:0;border-top:0}
+.more-hub-utilities .more-hub-entry{min-height:58px;background:#f7f3e6}
+.more-hub-utilities .more-hub-art{width:36px;height:36px;flex-basis:36px;background:transparent}
+.more-hub-utilities .more-hub-art>.atlas{width:36px;height:36px}
+.more-hub-entry:focus-visible{outline:3px solid #a07031;outline-offset:2px}
+.more-hub-entry:active{background:#eae8d5}
+.simple-book .map-overview .world-map-header{justify-content:space-between}
+.simple-book .map-overview .world-map-header>span{font-size:12px;margin:0;color:#637453}
+@media(min-width:761px){.panel-view .more-overview{width:410px;max-height:94%;bottom:12px}}
+@media(max-width:360px){.more-overview .game-sheet-body{padding:14px 10px 18px}.more-hub-grid{gap:6px}.more-hub-entry{gap:6px;padding:7px;font-size:13px}.more-hub-art{width:39px;height:39px;flex-basis:39px}.more-hub-art>.atlas{width:39px;height:39px}}
+@media(max-height:620px){.more-hub-entry{min-height:57px}.more-hub-art,.more-hub-art>.atlas{width:36px;height:36px}.more-hub-art{flex-basis:36px}.more-hub{gap:10px}.more-hub-utilities{padding-top:10px}.more-overview .page-heading{margin-bottom:10px}}
+.simple-book .more-overview .page-heading{padding:0;min-height:36px;background:none;border:0;box-shadow:none;position:static}

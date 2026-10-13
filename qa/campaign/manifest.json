@@ -1,0 +1,153 @@
+{
+  "seed": 17,
+  "now": 1,
+  "storage": null,
+  "timeAdvancement": "Documented compressed offline API with bounded calls; active survival checked at selected repaired milestones.",
+  "stages": [
+    {
+      "id": "opening",
+      "parent": null,
+      "calls": "opening.calls.jsonl.gz",
+      "checkpoint": "opening.save.json",
+      "checkpointSha256": "3f7288848da629ffef535109c9fa12a7d9f4e785b532b39605ce12c969430b5e",
+      "count": 8550,
+      "calendarYear": 6410
+    },
+    {
+      "id": "scale",
+      "parent": "opening.save.json",
+      "calls": "scale.calls.jsonl.gz",
+      "checkpoint": "scale.save.json",
+      "checkpointSha256": "93831e3bc5ce36388b6f03da568638e1855ce16581f35f20824ac379aa81463b",
+      "count": 293,
+      "calendarYear": 7832
+    },
+    {
+      "id": "trade-and-chemistry",
+      "parent": "scale.save.json",
+      "calls": "trade-and-chemistry.calls.jsonl.gz",
+      "checkpoint": "trade-and-chemistry.save.json",
+      "checkpointSha256": "7453460837c0d91106e0b97ed9365ac782737588539c9b2517c6df019120e716",
+      "count": 9146,
+      "calendarYear": 20612
+    },
+    {
+      "id": "automation-and-electricity",
+      "parent": "trade-and-chemistry.save.json",
+      "calls": "automation-and-electricity.calls.jsonl.gz",
+      "checkpoint": "automation-and-electricity.save.json",
+      "checkpointSha256": "1980c3b471d09b76b29c8d53666e6d0c7b481f39aaecc6e6f9406028744628cd",
+      "count": 5057,
+      "calendarYear": 65087
+    },
+    {
+      "id": "repair-active-survival",
+      "parent": "automation-and-electricity.save.json",
+      "calls": "repair-active-survival.calls.jsonl.gz",
+      "checkpoint": "repair-active-survival.save.json",
+      "checkpointSha256": "ca548af4d84975ae14506c19df62a7844f4e45506181427c913552812469c8e8",
+      "count": 93,
+      "calendarYear": 65088
+    },
+    {
+      "id": "industry-and-rocketry",
+      "parent": "repair-active-survival.save.json",
+      "calls": "industry-and-rocketry.calls.jsonl.gz",
+      "checkpoint": "industry-and-rocketry.save.json",
+      "checkpointSha256": "0f6b6225e4e2f012a7075c37946894838aca606c6cfe41a2db2964028ed4291d",
+      "count": 13542,
+      "calendarYear": 123391
+    },
+    {
+      "id": "first-space",
+      "parent": "industry-and-rocketry.save.json",
+      "calls": "first-space.calls.jsonl.gz",
+      "checkpoint": "first-space.save.json",
+      "checkpointSha256": "8bda012bfa1e599ecef73c8a8d25e89f0f9b2bba835ac713ef03726e58a0c47a",
+      "count": 2430,
+      "calendarYear": 139906
+    },
+    {
+      "id": "unicorn-foundation",
+      "parent": "first-space.save.json",
+      "calls": "unicorn-foundation.calls.jsonl.gz",
+      "checkpoint": "unicorn-foundation.save.json",
+      "checkpointSha256": "ee5839814da76d05a4658ff04960ffb8b67c4f9b1ef88314c0472a1819b9c00e",
+      "count": 209,
+      "calendarYear": 140737
+    },
+    {
+      "id": "sky-palace",
+      "parent": "unicorn-foundation.save.json",
+      "calls": "sky-palace.calls.jsonl.gz",
+      "checkpoint": "sky-palace.save.json",
+      "checkpointSha256": "ca578f6914ba310facb06d3d0c2aa9d1f3c42df2a19cac70421255771ec738f7",
+      "count": 849,
+      "calendarYear": 141916
+    },
+    {
+      "id": "time-crystals",
+      "parent": "sky-palace.save.json",
+      "calls": "time-crystals.calls.jsonl.gz",
+      "checkpoint": "time-crystals.save.json",
+      "checkpointSha256": "c9b3a2a11b54a5d6259496b3fe33890ad37cfbc5f5c455c5693e82ba26d93b46",
+      "count": 187,
+      "calendarYear": 143806
+    },
+    {
+      "id": "chronophysics",
+      "parent": "time-crystals.save.json",
+      "calls": "chronophysics.calls.jsonl.gz",
+      "checkpoint": "chronophysics.save.json",
+      "checkpointSha256": "1fe7c54bc6b3cfffcaef81f07283321d1e23c87b873a3557dc1de4f5c533ddd7",
+      "count": 4275,
+      "calendarYear": 157844
+    },
+    {
+      "id": "first-time-shatter",
+      "parent": "chronophysics.save.json",
+      "calls": "first-time-shatter.calls.jsonl.gz",
+      "checkpoint": "first-time-shatter.save.json",
+      "checkpointSha256": "bb41790c036eb422af0c04e342986c08973e7f726e62c9e2a40617795d6f94c4",
+      "count": 111,
+      "calendarYear": 158798
+    },
+    {
+      "id": "lunar-supplies",
+      "parent": "first-time-shatter.save.json",
+      "calls": "lunar-supplies.calls.jsonl.gz",
+      "checkpoint": "lunar-supplies.save.json",
+      "checkpointSha256": "8c5c12dab0bd5731815a787207da4b91e6a064e9db9af436174e718e3c49697e",
+      "count": 6354,
+      "calendarYear": 189203
+    },
+    {
+      "id": "challenge-start-and-exit",
+      "parent": "lunar-supplies.save.json",
+      "calls": "challenge-start-and-exit.calls.jsonl.gz",
+      "checkpoint": "challenge-start-and-exit.save.json",
+      "checkpointSha256": "8eb7d45ca7a0a423d95f28abeda64379744efd03be756c0c88a0a300c7fd25a9",
+      "count": 9,
+      "calendarYear": 0,
+      "checkpoints": [
+        {
+          "afterCall": 5,
+          "file": "challenge-ready.save.json",
+          "sha256": "074a01363de0ec7917a89d923b1de5bf9aad8432d219dec9088a6df8266a5c75"
+        }
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "id": "first-prestige",
+      "branch": true,
+      "parent": "first-time-shatter.save.json",
+      "calls": "first-prestige.calls.jsonl.gz",
+      "checkpoint": "first-prestige.save.json",
+      "checkpointSha256": "920e942af1abe84f869c45605cf32ac1ed8f44fb1cc1029ca827dc6ce8d47ec4",
+      "count": 1,
+      "calendarYear": 0
+    }
+  ]
+}

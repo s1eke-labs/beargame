@@ -1,0 +1,15 @@
+{
+  "mode": "Built-in image_gen__imagegen",
+  "generations": 1,
+  "referencePath": "/workspace/shared/bear-reference/reference.png",
+  "generatedSourcePath": "/workspace/scratch/2ea1830e5ccf/generated_images/exec-f2f69c15-0133-420d-945a-f40de85ba55c.png",
+  "referenceRole": "Character identity reference for all 16 poses",
+  "promptFile": "prompt.txt",
+  "transparent_background": true,
+  "processing": "Byte-copy PNG; lossless exact RGBA WebP encoding; numerical crop and alpha analysis only. No pixel edits, retries, variants, crops baked into images, or resizing.",
+  "sha256": {
+    "bear-atlas-original.png": "451b6bda80ff299bd4a067d84d3104047d61376b14b3ada4249ed894b1ce5428",
+    "bear-atlas.webp": "7fcec58d7bb132f88e6dcde099532f85a4f2bfeb030d79dd804e917f261e0e3c",
+    "prompt.txt": "00cec2aebe2a3d030b0159488fc875c65e922085cc1a561bcbb85ac215c82744"
+  }
+}

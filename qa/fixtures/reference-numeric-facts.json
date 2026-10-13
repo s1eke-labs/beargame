@@ -1,0 +1,3035 @@
+{
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "scope": "Independent factual values only; no reference code, descriptions, or artwork. Catalog costs and ratios do not establish dynamic effect parity.",
+  "aliases": {
+    "field": "hive",
+    "concrate": "concrete",
+    "compedium": "compendium",
+    "catnip": "honey"
+  },
+  "excludedDefaultOff": [
+    "navigationRelay",
+    "spaceShuttle"
+  ],
+  "groups": {
+    "buildings": [
+      {
+        "id": "hive",
+        "cost": {
+          "honey": 10
+        },
+        "ratio": 1.12,
+        "source": "js/buildings.js:350"
+      },
+      {
+        "id": "hut",
+        "cost": {
+          "wood": 5
+        },
+        "ratio": 2.5,
+        "source": "js/buildings.js:484"
+      },
+      {
+        "id": "library",
+        "cost": {
+          "wood": 25
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:557"
+      },
+      {
+        "id": "barn",
+        "cost": {
+          "wood": 50
+        },
+        "ratio": 1.75,
+        "source": "js/buildings.js:792"
+      },
+      {
+        "id": "pasture",
+        "cost": {
+          "honey": 100,
+          "wood": 10
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:369"
+      },
+      {
+        "id": "aqueduct",
+        "cost": {
+          "minerals": 75
+        },
+        "ratio": 1.12,
+        "source": "js/buildings.js:431"
+      },
+      {
+        "id": "logHouse",
+        "cost": {
+          "wood": 200,
+          "minerals": 250
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:509"
+      },
+      {
+        "id": "mansion",
+        "cost": {
+          "titanium": 25,
+          "slab": 185,
+          "steel": 75
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:532"
+      },
+      {
+        "id": "academy",
+        "cost": {
+          "wood": 50,
+          "minerals": 70,
+          "science": 100
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:649"
+      },
+      {
+        "id": "observatory",
+        "cost": {
+          "iron": 750,
+          "science": 1000,
+          "slab": 35,
+          "scaffold": 50
+        },
+        "ratio": 1.1,
+        "source": "js/buildings.js:685"
+      },
+      {
+        "id": "biolab",
+        "cost": {
+          "science": 1500,
+          "slab": 100,
+          "plastic": 15,
+          "alloy": 25
+        },
+        "ratio": 1.1,
+        "source": "js/buildings.js:709"
+      },
+      {
+        "id": "warehouse",
+        "cost": {
+          "beam": 1.5,
+          "slab": 2
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:825"
+      },
+      {
+        "id": "harbor",
+        "cost": {
+          "slab": 50,
+          "plate": 75,
+          "scaffold": 5
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:943"
+      },
+      {
+        "id": "mine",
+        "cost": {
+          "wood": 100
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:997"
+      },
+      {
+        "id": "quarry",
+        "cost": {
+          "slab": 1000,
+          "steel": 125,
+          "scaffold": 50
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1034"
+      },
+      {
+        "id": "smelter",
+        "cost": {
+          "minerals": 200
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1071"
+      },
+      {
+        "id": "calciner",
+        "cost": {
+          "titanium": 15,
+          "oil": 500,
+          "steel": 100,
+          "blueprint": 1
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1154"
+      },
+      {
+        "id": "steamworks",
+        "cost": {
+          "steel": 65,
+          "gear": 20,
+          "blueprint": 1
+        },
+        "ratio": 1.25,
+        "source": "js/buildings.js:1281"
+      },
+      {
+        "id": "magneto",
+        "cost": {
+          "gear": 5,
+          "alloy": 10,
+          "blueprint": 1
+        },
+        "ratio": 1.25,
+        "source": "js/buildings.js:1390"
+      },
+      {
+        "id": "lumberMill",
+        "cost": {
+          "wood": 100,
+          "minerals": 250,
+          "iron": 50
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1440"
+      },
+      {
+        "id": "oilWell",
+        "cost": {
+          "steel": 50,
+          "gear": 25,
+          "scaffold": 25
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1459"
+      },
+      {
+        "id": "workshop",
+        "cost": {
+          "wood": 100,
+          "minerals": 400
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1509"
+      },
+      {
+        "id": "factory",
+        "cost": {
+          "titanium": 2000,
+          "plate": 2500,
+          "concrete": 15
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1538"
+      },
+      {
+        "id": "reactor",
+        "cost": {
+          "titanium": 3500,
+          "plate": 5000,
+          "concrete": 50,
+          "blueprint": 25
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1590"
+      },
+      {
+        "id": "accelerator",
+        "cost": {
+          "titanium": 7500,
+          "uranium": 25,
+          "concrete": 125
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1640"
+      },
+      {
+        "id": "tradepost",
+        "cost": {
+          "wood": 500,
+          "minerals": 200,
+          "gold": 10
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1706"
+      },
+      {
+        "id": "mint",
+        "cost": {
+          "minerals": 5000,
+          "gold": 500,
+          "plate": 200
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1731"
+      },
+      {
+        "id": "amphitheatre",
+        "cost": {
+          "wood": 200,
+          "minerals": 1200,
+          "parchment": 3
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1842"
+      },
+      {
+        "id": "chapel",
+        "cost": {
+          "minerals": 2000,
+          "culture": 250,
+          "parchment": 250
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1908"
+      },
+      {
+        "id": "temple",
+        "cost": {
+          "gold": 50,
+          "slab": 25,
+          "plate": 15,
+          "manuscript": 10
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:1945"
+      },
+      {
+        "id": "unicornPasture",
+        "cost": {
+          "unicorns": 2
+        },
+        "ratio": 1.75,
+        "source": "js/buildings.js:2033"
+      },
+      {
+        "id": "ziggurat",
+        "cost": {
+          "scaffold": 50,
+          "blueprint": 1,
+          "megalith": 50
+        },
+        "ratio": 1.25,
+        "source": "js/buildings.js:2063"
+      },
+      {
+        "id": "chronosphere",
+        "cost": {
+          "unobtainium": 2500,
+          "science": 250000,
+          "timeCrystal": 1,
+          "blueprint": 100
+        },
+        "ratio": 1.25,
+        "source": "js/buildings.js:2113"
+      },
+      {
+        "id": "aiCore",
+        "cost": {
+          "antimatter": 125,
+          "microchip": 25,
+          "science": 500000
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:2138"
+      },
+      {
+        "id": "brewery",
+        "cost": {
+          "wood": 1000,
+          "culture": 750,
+          "spice": 5,
+          "parchment": 375
+        },
+        "ratio": 1.5,
+        "source": "js/buildings.js:1787"
+      },
+      {
+        "id": "zebraOutpost",
+        "cost": {
+          "bloodstone": 1
+        },
+        "ratio": 1.35,
+        "source": "js/buildings.js:2190"
+      },
+      {
+        "id": "zebraWorkshop",
+        "cost": {
+          "bloodstone": 5
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:2225"
+      },
+      {
+        "id": "zebraForge",
+        "cost": {
+          "bloodstone": 50
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:2264"
+      },
+      {
+        "id": "stasisPod",
+        "cost": {
+          "tMythril": 1,
+          "timeCrystal": 2,
+          "void": 100
+        },
+        "ratio": 1.25,
+        "source": "js/buildings.js:2302"
+      },
+      {
+        "id": "ivoryTemple",
+        "cost": {
+          "tMythril": 1,
+          "ivory": 100
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:2326"
+      }
+    ],
+    "science": [
+      {
+        "id": "calendar",
+        "cost": {
+          "science": 30
+        },
+        "source": "js/science.js:14"
+      },
+      {
+        "id": "agriculture",
+        "cost": {
+          "science": 100
+        },
+        "source": "js/science.js:26"
+      },
+      {
+        "id": "archery",
+        "cost": {
+          "science": 300
+        },
+        "source": "js/science.js:39"
+      },
+      {
+        "id": "mining",
+        "cost": {
+          "science": 500
+        },
+        "source": "js/science.js:51"
+      },
+      {
+        "id": "metal",
+        "cost": {
+          "science": 900
+        },
+        "source": "js/science.js:63"
+      },
+      {
+        "id": "animal",
+        "cost": {
+          "science": 500
+        },
+        "source": "js/science.js:74"
+      },
+      {
+        "id": "civil",
+        "cost": {
+          "science": 1500
+        },
+        "source": "js/science.js:94"
+      },
+      {
+        "id": "math",
+        "cost": {
+          "science": 1000
+        },
+        "source": "js/science.js:104"
+      },
+      {
+        "id": "construction",
+        "cost": {
+          "science": 1300
+        },
+        "source": "js/science.js:116"
+      },
+      {
+        "id": "engineering",
+        "cost": {
+          "science": 1500
+        },
+        "source": "js/science.js:131"
+      },
+      {
+        "id": "currency",
+        "cost": {
+          "science": 2200
+        },
+        "source": "js/science.js:142"
+      },
+      {
+        "id": "writing",
+        "cost": {
+          "science": 3600
+        },
+        "source": "js/science.js:153"
+      },
+      {
+        "id": "philosophy",
+        "cost": {
+          "science": 9500
+        },
+        "source": "js/science.js:167"
+      },
+      {
+        "id": "machinery",
+        "cost": {
+          "science": 15000
+        },
+        "source": "js/science.js:180"
+      },
+      {
+        "id": "steel",
+        "cost": {
+          "science": 12000
+        },
+        "source": "js/science.js:190"
+      },
+      {
+        "id": "theology",
+        "cost": {
+          "science": 20000,
+          "manuscript": 35
+        },
+        "source": "js/science.js:201"
+      },
+      {
+        "id": "astronomy",
+        "cost": {
+          "science": 28000,
+          "manuscript": 65
+        },
+        "source": "js/science.js:218"
+      },
+      {
+        "id": "navigation",
+        "cost": {
+          "science": 35000,
+          "manuscript": 100
+        },
+        "source": "js/science.js:232"
+      },
+      {
+        "id": "architecture",
+        "cost": {
+          "science": 42000,
+          "compendium": 10
+        },
+        "source": "js/science.js:248"
+      },
+      {
+        "id": "physics",
+        "cost": {
+          "science": 50000,
+          "compendium": 35
+        },
+        "source": "js/science.js:262"
+      },
+      {
+        "id": "metaphysics",
+        "cost": {
+          "science": 55000,
+          "unobtainium": 5
+        },
+        "source": "js/science.js:276"
+      },
+      {
+        "id": "chemistry",
+        "cost": {
+          "science": 60000,
+          "compendium": 50
+        },
+        "source": "js/science.js:285"
+      },
+      {
+        "id": "acoustics",
+        "cost": {
+          "science": 60000,
+          "compendium": 60
+        },
+        "source": "js/science.js:299"
+      },
+      {
+        "id": "drama",
+        "cost": {
+          "science": 90000,
+          "parchment": 5000
+        },
+        "source": "js/science.js:312"
+      },
+      {
+        "id": "archeology",
+        "cost": {
+          "science": 65000,
+          "compendium": 65
+        },
+        "source": "js/science.js:324"
+      },
+      {
+        "id": "electricity",
+        "cost": {
+          "science": 75000,
+          "compendium": 85
+        },
+        "source": "js/science.js:341"
+      },
+      {
+        "id": "biology",
+        "cost": {
+          "science": 85000,
+          "compendium": 100
+        },
+        "source": "js/science.js:355"
+      },
+      {
+        "id": "biochemistry",
+        "cost": {
+          "science": 145000,
+          "compendium": 500
+        },
+        "source": "js/science.js:371"
+      },
+      {
+        "id": "genetics",
+        "cost": {
+          "science": 190000,
+          "compendium": 1500
+        },
+        "source": "js/science.js:385"
+      },
+      {
+        "id": "industrialization",
+        "cost": {
+          "science": 100000,
+          "blueprint": 25
+        },
+        "source": "js/science.js:398"
+      },
+      {
+        "id": "mechanization",
+        "cost": {
+          "science": 115000,
+          "blueprint": 45
+        },
+        "source": "js/science.js:412"
+      },
+      {
+        "id": "metalurgy",
+        "cost": {
+          "science": 125000,
+          "blueprint": 60
+        },
+        "source": "js/science.js:428"
+      },
+      {
+        "id": "combustion",
+        "cost": {
+          "science": 115000,
+          "blueprint": 45
+        },
+        "source": "js/science.js:440"
+      },
+      {
+        "id": "ecology",
+        "cost": {
+          "science": 125000,
+          "blueprint": 55
+        },
+        "source": "js/science.js:454"
+      },
+      {
+        "id": "electronics",
+        "cost": {
+          "science": 135000,
+          "blueprint": 70
+        },
+        "source": "js/science.js:472"
+      },
+      {
+        "id": "robotics",
+        "cost": {
+          "science": 140000,
+          "blueprint": 80
+        },
+        "source": "js/science.js:490"
+      },
+      {
+        "id": "ai",
+        "cost": {
+          "science": 250000,
+          "blueprint": 150
+        },
+        "source": "js/science.js:505"
+      },
+      {
+        "id": "quantumCryptography",
+        "cost": {
+          "science": 1250000,
+          "relic": 1024
+        },
+        "source": "js/science.js:519"
+      },
+      {
+        "id": "blackchain",
+        "cost": {
+          "science": 5000000,
+          "relic": 4096
+        },
+        "source": "js/science.js:531"
+      },
+      {
+        "id": "nuclearFission",
+        "cost": {
+          "science": 150000,
+          "blueprint": 100
+        },
+        "source": "js/science.js:543"
+      },
+      {
+        "id": "rocketry",
+        "cost": {
+          "science": 175000,
+          "blueprint": 125
+        },
+        "source": "js/science.js:557"
+      },
+      {
+        "id": "oilProcessing",
+        "cost": {
+          "science": 215000,
+          "blueprint": 150
+        },
+        "source": "js/science.js:574"
+      },
+      {
+        "id": "sattelites",
+        "cost": {
+          "science": 190000,
+          "blueprint": 125
+        },
+        "source": "js/science.js:587"
+      },
+      {
+        "id": "orbitalEngineering",
+        "cost": {
+          "science": 250000,
+          "blueprint": 250
+        },
+        "source": "js/science.js:602"
+      },
+      {
+        "id": "thorium",
+        "cost": {
+          "science": 375000,
+          "blueprint": 375
+        },
+        "source": "js/science.js:615"
+      },
+      {
+        "id": "exogeology",
+        "cost": {
+          "science": 275000,
+          "blueprint": 250
+        },
+        "source": "js/science.js:628"
+      },
+      {
+        "id": "advExogeology",
+        "cost": {
+          "science": 325000,
+          "blueprint": 350
+        },
+        "source": "js/science.js:641"
+      },
+      {
+        "id": "nanotechnology",
+        "cost": {
+          "science": 200000,
+          "blueprint": 150
+        },
+        "source": "js/science.js:656"
+      },
+      {
+        "id": "superconductors",
+        "cost": {
+          "science": 225000,
+          "blueprint": 175
+        },
+        "source": "js/science.js:669"
+      },
+      {
+        "id": "antimatter",
+        "cost": {
+          "science": 500000,
+          "antimatter": 1,
+          "relic": 1
+        },
+        "source": "js/science.js:682"
+      },
+      {
+        "id": "terraformation",
+        "cost": {
+          "science": 750000,
+          "relic": 5
+        },
+        "source": "js/science.js:696"
+      },
+      {
+        "id": "hydroponics",
+        "cost": {
+          "science": 1000000,
+          "relic": 25
+        },
+        "source": "js/science.js:708"
+      },
+      {
+        "id": "exogeophysics",
+        "cost": {
+          "science": 25000000,
+          "relic": 500
+        },
+        "source": "js/science.js:720"
+      },
+      {
+        "id": "particlePhysics",
+        "cost": {
+          "science": 185000,
+          "blueprint": 135
+        },
+        "source": "js/science.js:730"
+      },
+      {
+        "id": "dimensionalPhysics",
+        "cost": {
+          "science": 235000
+        },
+        "source": "js/science.js:745"
+      },
+      {
+        "id": "artificialGravity",
+        "cost": {
+          "science": 320000
+        },
+        "source": "js/science.js:757"
+      },
+      {
+        "id": "chronophysics",
+        "cost": {
+          "science": 250000,
+          "timeCrystal": 5
+        },
+        "source": "js/science.js:769"
+      },
+      {
+        "id": "tachyonTheory",
+        "cost": {
+          "science": 750000,
+          "timeCrystal": 25,
+          "relic": 1
+        },
+        "source": "js/science.js:783"
+      },
+      {
+        "id": "cryptotheology",
+        "cost": {
+          "science": 650000,
+          "relic": 5
+        },
+        "source": "js/science.js:797"
+      },
+      {
+        "id": "voidSpace",
+        "cost": {
+          "science": 800000,
+          "timeCrystal": 30,
+          "void": 100
+        },
+        "source": "js/science.js:812"
+      },
+      {
+        "id": "paradoxalKnowledge",
+        "cost": {
+          "science": 1000000,
+          "timeCrystal": 40,
+          "void": 250
+        },
+        "source": "js/science.js:833"
+      }
+    ],
+    "workshop": [
+      {
+        "id": "mineralHoes",
+        "cost": {
+          "minerals": 275,
+          "science": 100
+        },
+        "source": "js/workshop.js:10"
+      },
+      {
+        "id": "ironHoes",
+        "cost": {
+          "iron": 25,
+          "science": 200
+        },
+        "source": "js/workshop.js:24"
+      },
+      {
+        "id": "mineralAxes",
+        "cost": {
+          "minerals": 500,
+          "science": 100
+        },
+        "source": "js/workshop.js:37"
+      },
+      {
+        "id": "ironAxes",
+        "cost": {
+          "iron": 50,
+          "science": 200
+        },
+        "source": "js/workshop.js:51"
+      },
+      {
+        "id": "steelAxe",
+        "cost": {
+          "science": 20000,
+          "steel": 75
+        },
+        "source": "js/workshop.js:62"
+      },
+      {
+        "id": "titaniumAxe",
+        "cost": {
+          "titanium": 10,
+          "science": 38000
+        },
+        "source": "js/workshop.js:135"
+      },
+      {
+        "id": "alloyAxe",
+        "cost": {
+          "science": 70000,
+          "alloy": 25
+        },
+        "source": "js/workshop.js:146"
+      },
+      {
+        "id": "unobtainiumAxe",
+        "cost": {
+          "unobtainium": 75,
+          "science": 125000
+        },
+        "source": "js/workshop.js:159"
+      },
+      {
+        "id": "reinforcedSaw",
+        "cost": {
+          "iron": 1000,
+          "science": 2500
+        },
+        "source": "js/workshop.js:73"
+      },
+      {
+        "id": "steelSaw",
+        "cost": {
+          "science": 52000,
+          "steel": 750
+        },
+        "source": "js/workshop.js:87"
+      },
+      {
+        "id": "titaniumSaw",
+        "cost": {
+          "titanium": 500,
+          "science": 70000
+        },
+        "source": "js/workshop.js:104"
+      },
+      {
+        "id": "alloySaw",
+        "cost": {
+          "science": 85000,
+          "alloy": 75
+        },
+        "source": "js/workshop.js:121"
+      },
+      {
+        "id": "unobtainiumSaw",
+        "cost": {
+          "unobtainium": 125,
+          "science": 145000
+        },
+        "source": "js/workshop.js:171"
+      },
+      {
+        "id": "stoneBarns",
+        "cost": {
+          "wood": 1000,
+          "minerals": 750,
+          "iron": 50,
+          "science": 500
+        },
+        "source": "js/workshop.js:187"
+      },
+      {
+        "id": "reinforcedBarns",
+        "cost": {
+          "iron": 100,
+          "science": 800,
+          "beam": 25,
+          "slab": 10
+        },
+        "source": "js/workshop.js:203"
+      },
+      {
+        "id": "titaniumBarns",
+        "cost": {
+          "titanium": 25,
+          "science": 60000,
+          "steel": 200,
+          "scaffold": 250
+        },
+        "source": "js/workshop.js:241"
+      },
+      {
+        "id": "alloyBarns",
+        "cost": {
+          "science": 75000,
+          "plate": 750,
+          "alloy": 20
+        },
+        "source": "js/workshop.js:257"
+      },
+      {
+        "id": "concreteBarns",
+        "cost": {
+          "titanium": 2000,
+          "science": 100000,
+          "concrete": 45
+        },
+        "source": "js/workshop.js:272"
+      },
+      {
+        "id": "reinforcedWarehouses",
+        "cost": {
+          "science": 15000,
+          "plate": 50,
+          "steel": 50,
+          "scaffold": 25
+        },
+        "source": "js/workshop.js:222"
+      },
+      {
+        "id": "titaniumWarehouses",
+        "cost": {
+          "titanium": 50,
+          "science": 70000,
+          "steel": 500,
+          "scaffold": 500
+        },
+        "source": "js/workshop.js:287"
+      },
+      {
+        "id": "alloyWarehouses",
+        "cost": {
+          "titanium": 750,
+          "science": 90000,
+          "alloy": 50
+        },
+        "source": "js/workshop.js:303"
+      },
+      {
+        "id": "concreteWarehouses",
+        "cost": {
+          "titanium": 1250,
+          "science": 100000,
+          "concrete": 35
+        },
+        "source": "js/workshop.js:318"
+      },
+      {
+        "id": "storageBunkers",
+        "cost": {
+          "unobtainium": 500,
+          "science": 25000,
+          "concrete": 1250
+        },
+        "source": "js/workshop.js:333"
+      },
+      {
+        "id": "silos",
+        "cost": {
+          "science": 50000,
+          "steel": 125,
+          "blueprint": 5
+        },
+        "source": "js/workshop.js:649"
+      },
+      {
+        "id": "refrigeration",
+        "cost": {
+          "titanium": 2500,
+          "science": 125000,
+          "blueprint": 15
+        },
+        "source": "js/workshop.js:667"
+      },
+      {
+        "id": "advancedRefinement",
+        "cost": {
+          "honey": 5000,
+          "science": 500
+        },
+        "source": "js/workshop.js:868"
+      },
+      {
+        "id": "goldOre",
+        "cost": {
+          "minerals": 800,
+          "iron": 100,
+          "science": 1000
+        },
+        "source": "js/workshop.js:890"
+      },
+      {
+        "id": "deepMining",
+        "cost": {
+          "iron": 1200,
+          "science": 5000,
+          "beam": 50
+        },
+        "source": "js/workshop.js:996"
+      },
+      {
+        "id": "coalFurnace",
+        "cost": {
+          "minerals": 5000,
+          "iron": 2000,
+          "science": 5000,
+          "beam": 35
+        },
+        "source": "js/workshop.js:980"
+      },
+      {
+        "id": "geodesy",
+        "cost": {
+          "titanium": 250,
+          "science": 90000,
+          "starchart": 500
+        },
+        "source": "js/workshop.js:905"
+      },
+      {
+        "id": "miningDrill",
+        "cost": {
+          "titanium": 1750,
+          "science": 100000,
+          "steel": 750
+        },
+        "source": "js/workshop.js:950"
+      },
+      {
+        "id": "unobtainiumDrill",
+        "cost": {
+          "unobtainium": 250,
+          "science": 250000,
+          "alloy": 1250
+        },
+        "source": "js/workshop.js:964"
+      },
+      {
+        "id": "register",
+        "cost": {
+          "gold": 10,
+          "science": 500
+        },
+        "source": "js/workshop.js:920"
+      },
+      {
+        "id": "bolas",
+        "cost": {
+          "wood": 50,
+          "minerals": 250,
+          "science": 1000
+        },
+        "source": "js/workshop.js:737"
+      },
+      {
+        "id": "huntingArmor",
+        "cost": {
+          "iron": 750,
+          "science": 2000
+        },
+        "source": "js/workshop.js:755"
+      },
+      {
+        "id": "compositeBow",
+        "cost": {
+          "wood": 200,
+          "iron": 100,
+          "science": 500
+        },
+        "source": "js/workshop.js:681"
+      },
+      {
+        "id": "crossbow",
+        "cost": {
+          "iron": 1500,
+          "science": 12000
+        },
+        "source": "js/workshop.js:702"
+      },
+      {
+        "id": "celestialMechanics",
+        "cost": {
+          "science": 250
+        },
+        "source": "js/workshop.js:1440"
+      },
+      {
+        "id": "astrolabe",
+        "cost": {
+          "titanium": 5,
+          "science": 25000,
+          "starchart": 75
+        },
+        "source": "js/workshop.js:1448"
+      },
+      {
+        "id": "titaniumMirrors",
+        "cost": {
+          "titanium": 15,
+          "science": 20000,
+          "starchart": 20
+        },
+        "source": "js/workshop.js:1462"
+      },
+      {
+        "id": "unobtainiumReflectors",
+        "cost": {
+          "unobtainium": 75,
+          "science": 250000,
+          "starchart": 750
+        },
+        "source": "js/workshop.js:1479"
+      },
+      {
+        "id": "eludiumReflectors",
+        "cost": {
+          "science": 250000,
+          "eludium": 15
+        },
+        "source": "js/workshop.js:1495"
+      },
+      {
+        "id": "cargoShips",
+        "cost": {
+          "science": 55000,
+          "blueprint": 15
+        },
+        "source": "js/workshop.js:553"
+      },
+      {
+        "id": "caravanserai",
+        "cost": {
+          "gold": 250,
+          "science": 25000,
+          "ivory": 10000
+        },
+        "source": "js/workshop.js:808"
+      },
+      {
+        "id": "seti",
+        "cost": {
+          "titanium": 250,
+          "science": 125000
+        },
+        "source": "js/workshop.js:1748"
+      },
+      {
+        "id": "ironwood",
+        "cost": {
+          "wood": 15000,
+          "iron": 3000,
+          "science": 30000
+        },
+        "source": "js/workshop.js:598"
+      },
+      {
+        "id": "strenghtenBuild",
+        "cost": {
+          "science": 100000,
+          "concrete": 50
+        },
+        "source": "js/workshop.js:930"
+      },
+      {
+        "id": "energyRifts",
+        "cost": {
+          "titanium": 7500,
+          "uranium": 250,
+          "science": 200000
+        },
+        "source": "js/workshop.js:350"
+      },
+      {
+        "id": "lhc",
+        "cost": {
+          "unobtainium": 100,
+          "science": 250000,
+          "alloy": 150
+        },
+        "source": "js/workshop.js:479"
+      },
+      {
+        "id": "electrolyticSmelting",
+        "cost": {
+          "titanium": 2000,
+          "science": 100000
+        },
+        "source": "js/workshop.js:1022"
+      },
+      {
+        "id": "oxidation",
+        "cost": {
+          "science": 100000,
+          "steel": 5000
+        },
+        "source": "js/workshop.js:1036"
+      },
+      {
+        "id": "steelPlants",
+        "cost": {
+          "titanium": 3500,
+          "science": 140000,
+          "gear": 750
+        },
+        "source": "js/workshop.js:1050"
+      },
+      {
+        "id": "automatedPlants",
+        "cost": {
+          "science": 200000,
+          "alloy": 750
+        },
+        "source": "js/workshop.js:1065"
+      },
+      {
+        "id": "nuclearPlants",
+        "cost": {
+          "uranium": 10000,
+          "science": 250000
+        },
+        "source": "js/workshop.js:1079"
+      },
+      {
+        "id": "rotaryKiln",
+        "cost": {
+          "titanium": 5000,
+          "science": 145000,
+          "gear": 500
+        },
+        "source": "js/workshop.js:1090"
+      },
+      {
+        "id": "fluidizedReactors",
+        "cost": {
+          "science": 175000,
+          "alloy": 200
+        },
+        "source": "js/workshop.js:1106"
+      },
+      {
+        "id": "nuclearSmelters",
+        "cost": {
+          "uranium": 250,
+          "science": 165000
+        },
+        "source": "js/workshop.js:1121"
+      },
+      {
+        "id": "orbitalGeodesy",
+        "cost": {
+          "oil": 35000,
+          "science": 150000,
+          "alloy": 1000
+        },
+        "source": "js/workshop.js:1134"
+      },
+      {
+        "id": "printingPress",
+        "cost": {
+          "science": 7500,
+          "gear": 45
+        },
+        "source": "js/workshop.js:1150"
+      },
+      {
+        "id": "offsetPress",
+        "cost": {
+          "oil": 15000,
+          "science": 100000,
+          "gear": 250
+        },
+        "source": "js/workshop.js:1163"
+      },
+      {
+        "id": "photolithography",
+        "cost": {
+          "oil": 50000,
+          "uranium": 250,
+          "science": 250000,
+          "alloy": 1250
+        },
+        "source": "js/workshop.js:1178"
+      },
+      {
+        "id": "uplink",
+        "cost": {
+          "science": 75000,
+          "alloy": 1750
+        },
+        "source": "js/workshop.js:1193"
+      },
+      {
+        "id": "starlink",
+        "cost": {
+          "oil": 25000,
+          "science": 175000,
+          "alloy": 5000
+        },
+        "source": "js/workshop.js:1208"
+      },
+      {
+        "id": "pumpjack",
+        "cost": {
+          "titanium": 250,
+          "science": 100000,
+          "gear": 125
+        },
+        "source": "js/workshop.js:1636"
+      },
+      {
+        "id": "oilRefinery",
+        "cost": {
+          "titanium": 1250,
+          "science": 125000,
+          "gear": 500
+        },
+        "source": "js/workshop.js:2008"
+      },
+      {
+        "id": "petri",
+        "cost": {
+          "plastic": 250,
+          "science": 65000
+        },
+        "source": "js/workshop.js:1652"
+      },
+      {
+        "id": "biofuel",
+        "cost": {
+          "titanium": 1250,
+          "science": 150000
+        },
+        "source": "js/workshop.js:1666"
+      },
+      {
+        "id": "internet",
+        "cost": {
+          "titanium": 5000,
+          "uranium": 50,
+          "science": 150000
+        },
+        "source": "js/workshop.js:1786"
+      },
+      {
+        "id": "neuralNetworks",
+        "cost": {
+          "titanium": 7500,
+          "science": 200000
+        },
+        "source": "js/workshop.js:1796"
+      },
+      {
+        "id": "assistance",
+        "cost": {
+          "science": 100000,
+          "steel": 10000,
+          "gear": 250
+        },
+        "source": "js/workshop.js:1810"
+      },
+      {
+        "id": "enrichedUranium",
+        "cost": {
+          "titanium": 7500,
+          "uranium": 150,
+          "science": 175000
+        },
+        "source": "js/workshop.js:1822"
+      },
+      {
+        "id": "coldFusion",
+        "cost": {
+          "science": 200000,
+          "eludium": 25
+        },
+        "source": "js/workshop.js:1837"
+      },
+      {
+        "id": "thoriumReactors",
+        "cost": {
+          "science": 400000,
+          "thorium": 10000
+        },
+        "source": "js/workshop.js:1851"
+      },
+      {
+        "id": "astrophysicists",
+        "cost": {
+          "unobtainium": 350,
+          "science": 250000
+        },
+        "source": "js/workshop.js:1924"
+      },
+      {
+        "id": "mWReactor",
+        "cost": {
+          "science": 150000,
+          "eludium": 50
+        },
+        "source": "js/workshop.js:1937"
+      },
+      {
+        "id": "unicornSelection",
+        "cost": {
+          "titanium": 1500,
+          "science": 175000
+        },
+        "source": "js/workshop.js:1680"
+      },
+      {
+        "id": "stasisChambers",
+        "cost": {
+          "uranium": 2000,
+          "science": 235000,
+          "timeCrystal": 1,
+          "alloy": 200
+        },
+        "source": "js/workshop.js:367"
+      },
+      {
+        "id": "voidEnergy",
+        "cost": {
+          "uranium": 2500,
+          "science": 275000,
+          "timeCrystal": 2,
+          "alloy": 250
+        },
+        "source": "js/workshop.js:389"
+      },
+      {
+        "id": "darkEnergy",
+        "cost": {
+          "science": 350000,
+          "timeCrystal": 3,
+          "eludium": 75
+        },
+        "source": "js/workshop.js:408"
+      },
+      {
+        "id": "chronoforge",
+        "cost": {
+          "science": 500000,
+          "timeCrystal": 10,
+          "relic": 5
+        },
+        "source": "js/workshop.js:423"
+      },
+      {
+        "id": "tachyonModerator",
+        "cost": {
+          "science": 16000,
+          "gear": 500,
+          "titanium": 250
+        },
+        "source": "js/workshop.js:437"
+      },
+      {
+        "id": "tachyonAccelerators",
+        "cost": {
+          "science": 500000,
+          "timeCrystal": 10,
+          "eludium": 125
+        },
+        "source": "js/workshop.js:450"
+      },
+      {
+        "id": "fluxCondensator",
+        "cost": {
+          "unobtainium": 5000,
+          "timeCrystal": 5,
+          "alloy": 250
+        },
+        "source": "js/workshop.js:468"
+      },
+      {
+        "id": "photovoltaic",
+        "cost": {
+          "titanium": 5000,
+          "science": 75000
+        },
+        "source": "js/workshop.js:495"
+      },
+      {
+        "id": "thinFilm",
+        "cost": {
+          "uranium": 1000,
+          "unobtainium": 200,
+          "science": 125000
+        },
+        "source": "js/workshop.js:509"
+      },
+      {
+        "id": "qdot",
+        "cost": {
+          "science": 175000,
+          "eludium": 200,
+          "thorium": 1000
+        },
+        "source": "js/workshop.js:524"
+      },
+      {
+        "id": "solarSatellites",
+        "cost": {
+          "science": 225000,
+          "alloy": 750
+        },
+        "source": "js/workshop.js:540"
+      },
+      {
+        "id": "barges",
+        "cost": {
+          "titanium": 1500,
+          "science": 100000,
+          "blueprint": 30
+        },
+        "source": "js/workshop.js:568"
+      },
+      {
+        "id": "reactorVessel",
+        "cost": {
+          "titanium": 5000,
+          "uranium": 125,
+          "science": 135000
+        },
+        "source": "js/workshop.js:583"
+      },
+      {
+        "id": "concreteHuts",
+        "cost": {
+          "titanium": 3000,
+          "science": 125000,
+          "concrete": 45
+        },
+        "source": "js/workshop.js:613"
+      },
+      {
+        "id": "unobtainiumHuts",
+        "cost": {
+          "titanium": 15000,
+          "unobtainium": 350,
+          "science": 200000
+        },
+        "source": "js/workshop.js:625"
+      },
+      {
+        "id": "eludiumHuts",
+        "cost": {
+          "science": 275000,
+          "eludium": 125
+        },
+        "source": "js/workshop.js:637"
+      },
+      {
+        "id": "railgun",
+        "cost": {
+          "titanium": 5000,
+          "science": 150000,
+          "blueprint": 25
+        },
+        "source": "js/workshop.js:717"
+      },
+      {
+        "id": "steelArmor",
+        "cost": {
+          "science": 10000,
+          "steel": 50
+        },
+        "source": "js/workshop.js:772"
+      },
+      {
+        "id": "alloyArmor",
+        "cost": {
+          "science": 50000,
+          "alloy": 25
+        },
+        "source": "js/workshop.js:784"
+      },
+      {
+        "id": "nanosuits",
+        "cost": {
+          "science": 185000,
+          "alloy": 250
+        },
+        "source": "js/workshop.js:796"
+      },
+      {
+        "id": "freightfulExchange",
+        "cost": {
+          "science": 450000,
+          "eludium": 100,
+          "titanium": 1000,
+          "tanker": 5000
+        },
+        "source": "js/workshop.js:824"
+      },
+      {
+        "id": "transportSuperposition",
+        "cost": {
+          "science": 500000,
+          "eludium": 1500,
+          "thorium": 25000,
+          "tanker": 500000
+        },
+        "source": "js/workshop.js:846"
+      },
+      {
+        "id": "prospecting",
+        "cost": {
+          "minerals": 1000,
+          "science": 1000
+        },
+        "source": "js/workshop.js:882"
+      },
+      {
+        "id": "pyrolysis",
+        "cost": {
+          "science": 35000,
+          "compendium": 5
+        },
+        "source": "js/workshop.js:1011"
+      },
+      {
+        "id": "cryocomputing",
+        "cost": {
+          "science": 125000,
+          "eludium": 15
+        },
+        "source": "js/workshop.js:1223"
+      },
+      {
+        "id": "machineLearning",
+        "cost": {
+          "antimatter": 125,
+          "science": 175000,
+          "eludium": 25
+        },
+        "source": "js/workshop.js:1236"
+      },
+      {
+        "id": "factoryAutomation",
+        "cost": {
+          "science": 10000,
+          "gear": 25
+        },
+        "source": "js/workshop.js:1252"
+      },
+      {
+        "id": "advancedAutomation",
+        "cost": {
+          "science": 100000,
+          "gear": 75,
+          "blueprint": 25
+        },
+        "source": "js/workshop.js:1263"
+      },
+      {
+        "id": "pneumaticPress",
+        "cost": {
+          "science": 20000,
+          "gear": 30,
+          "blueprint": 5
+        },
+        "source": "js/workshop.js:1274"
+      },
+      {
+        "id": "combustionEngine",
+        "cost": {
+          "science": 20000,
+          "gear": 25,
+          "blueprint": 5
+        },
+        "source": "js/workshop.js:1285"
+      },
+      {
+        "id": "fuelInjectors",
+        "cost": {
+          "oil": 20000,
+          "science": 100000,
+          "gear": 250
+        },
+        "source": "js/workshop.js:1301"
+      },
+      {
+        "id": "factoryLogistics",
+        "cost": {
+          "titanium": 2000,
+          "science": 100000,
+          "gear": 250
+        },
+        "source": "js/workshop.js:1317"
+      },
+      {
+        "id": "carbonSequestration",
+        "cost": {
+          "titanium": 1250,
+          "science": 75000,
+          "gear": 125,
+          "steel": 4000,
+          "alloy": 1000
+        },
+        "source": "js/workshop.js:1331"
+      },
+      {
+        "id": "factoryOptimization",
+        "cost": {
+          "titanium": 1250,
+          "science": 75000,
+          "gear": 125
+        },
+        "source": "js/workshop.js:1347"
+      },
+      {
+        "id": "factoryRobotics",
+        "cost": {
+          "titanium": 2500,
+          "science": 100000,
+          "gear": 250
+        },
+        "source": "js/workshop.js:1361"
+      },
+      {
+        "id": "spaceEngineers",
+        "cost": {
+          "science": 225000,
+          "alloy": 500
+        },
+        "source": "js/workshop.js:1376"
+      },
+      {
+        "id": "aiEngineers",
+        "cost": {
+          "antimatter": 500,
+          "science": 35000,
+          "eludium": 50
+        },
+        "source": "js/workshop.js:1391"
+      },
+      {
+        "id": "chronoEngineers",
+        "cost": {
+          "science": 500000,
+          "timeCrystal": 5,
+          "eludium": 100
+        },
+        "source": "js/workshop.js:1408"
+      },
+      {
+        "id": "spaceManufacturing",
+        "cost": {
+          "titanium": 125000,
+          "science": 250000
+        },
+        "source": "js/workshop.js:1425"
+      },
+      {
+        "id": "hydroPlantTurbines",
+        "cost": {
+          "unobtainium": 125,
+          "science": 250000
+        },
+        "source": "js/workshop.js:1510"
+      },
+      {
+        "id": "amBases",
+        "cost": {
+          "antimatter": 250,
+          "eludium": 15
+        },
+        "source": "js/workshop.js:1524"
+      },
+      {
+        "id": "aiBases",
+        "cost": {
+          "antimatter": 7500,
+          "science": 750000
+        },
+        "source": "js/workshop.js:1538"
+      },
+      {
+        "id": "amFission",
+        "cost": {
+          "antimatter": 175,
+          "science": 525000,
+          "thorium": 7500
+        },
+        "source": "js/workshop.js:1549"
+      },
+      {
+        "id": "amReactors",
+        "cost": {
+          "antimatter": 750,
+          "eludium": 35
+        },
+        "source": "js/workshop.js:1561"
+      },
+      {
+        "id": "amReactorsMK2",
+        "cost": {
+          "antimatter": 1750,
+          "eludium": 70
+        },
+        "source": "js/workshop.js:1578"
+      },
+      {
+        "id": "voidReactors",
+        "cost": {
+          "antimatter": 2500,
+          "void": 250
+        },
+        "source": "js/workshop.js:1595"
+      },
+      {
+        "id": "relicStation",
+        "cost": {
+          "antimatter": 5000,
+          "eludium": 100
+        },
+        "source": "js/workshop.js:1609"
+      },
+      {
+        "id": "amDrive",
+        "cost": {
+          "antimatter": 125,
+          "science": 450000
+        },
+        "source": "js/workshop.js:1623"
+      },
+      {
+        "id": "alicornStable",
+        "cost": {
+          "wood": 3000,
+          "gold": 100,
+          "alicorn": 20
+        },
+        "source": "js/workshop.js:1698"
+      },
+      {
+        "id": "gmo",
+        "cost": {
+          "honey": 1000000,
+          "titanium": 1500,
+          "science": 175000
+        },
+        "source": "js/workshop.js:1720"
+      },
+      {
+        "id": "cadSystems",
+        "cost": {
+          "titanium": 750,
+          "science": 125000
+        },
+        "source": "js/workshop.js:1737"
+      },
+      {
+        "id": "logistics",
+        "cost": {
+          "science": 100000,
+          "gear": 100,
+          "scaffold": 1000
+        },
+        "source": "js/workshop.js:1762"
+      },
+      {
+        "id": "augumentation",
+        "cost": {
+          "titanium": 5000,
+          "uranium": 50,
+          "science": 150000
+        },
+        "source": "js/workshop.js:1774"
+      },
+      {
+        "id": "enrichedThorium",
+        "cost": {
+          "science": 500000,
+          "thorium": 12500
+        },
+        "source": "js/workshop.js:1869"
+      },
+      {
+        "id": "hubbleTelescope",
+        "cost": {
+          "oil": 50000,
+          "science": 250000,
+          "alloy": 1250
+        },
+        "source": "js/workshop.js:1885"
+      },
+      {
+        "id": "satnav",
+        "cost": {
+          "science": 200000,
+          "alloy": 750
+        },
+        "source": "js/workshop.js:1901"
+      },
+      {
+        "id": "satelliteRadio",
+        "cost": {
+          "science": 225000,
+          "alloy": 5000
+        },
+        "source": "js/workshop.js:1912"
+      },
+      {
+        "id": "eludiumCracker",
+        "cost": {
+          "science": 275000,
+          "eludium": 250
+        },
+        "source": "js/workshop.js:1949"
+      },
+      {
+        "id": "thoriumEngine",
+        "cost": {
+          "science": 400000,
+          "gear": 40000,
+          "alloy": 2000,
+          "ship": 10000,
+          "thorium": 100000
+        },
+        "source": "js/workshop.js:1964"
+      },
+      {
+        "id": "spiceNavigation",
+        "cost": {
+          "science": 350000,
+          "starchart": 500000
+        },
+        "source": "js/workshop.js:1979"
+      },
+      {
+        "id": "longRangeSpaceships",
+        "cost": {
+          "science": 440000,
+          "gear": 90000,
+          "alloy": 3500,
+          "tanker": 500
+        },
+        "source": "js/workshop.js:1992"
+      },
+      {
+        "id": "oilDistillation",
+        "cost": {
+          "titanium": 5000,
+          "science": 175000
+        },
+        "source": "js/workshop.js:2023"
+      },
+      {
+        "id": "factoryProcessing",
+        "cost": {
+          "titanium": 7500,
+          "science": 195000,
+          "concrete": 125
+        },
+        "source": "js/workshop.js:2037"
+      },
+      {
+        "id": "voidAspiration",
+        "cost": {
+          "antimatter": 2000,
+          "timeCrystal": 15
+        },
+        "source": "js/workshop.js:2051"
+      },
+      {
+        "id": "distorsion",
+        "cost": {
+          "antimatter": 2000,
+          "science": 300000,
+          "timeCrystal": 25,
+          "void": 1000
+        },
+        "source": "js/workshop.js:2065"
+      },
+      {
+        "id": "turnSmoothly",
+        "cost": {
+          "unobtainium": 100000,
+          "temporalFlux": 6500,
+          "timeCrystal": 25,
+          "void": 750
+        },
+        "source": "js/workshop.js:2081"
+      },
+      {
+        "id": "invisibleBlackHand",
+        "cost": {
+          "temporalFlux": 4096,
+          "timeCrystal": 128,
+          "void": 32,
+          "blackcoin": 64
+        },
+        "source": "js/workshop.js:2098"
+      }
+    ],
+    "faith": [
+      {
+        "id": "solarchant",
+        "cost": {
+          "faith": 100
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "scholasticism",
+        "cost": {
+          "faith": 250
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "goldenSpire",
+        "cost": {
+          "gold": 150,
+          "faith": 350
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "sunAltar",
+        "cost": {
+          "gold": 250,
+          "faith": 500
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "stainedGlass",
+        "cost": {
+          "gold": 250,
+          "faith": 500
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "solarRevolution",
+        "cost": {
+          "gold": 500,
+          "faith": 750
+        },
+        "ratio": null,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "basilica",
+        "cost": {
+          "gold": 750,
+          "faith": 1250
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "templars",
+        "cost": {
+          "gold": 3000,
+          "faith": 3500
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "apocripha",
+        "cost": {
+          "gold": 5000,
+          "faith": 5000
+        },
+        "ratio": null,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "transcendence",
+        "cost": {
+          "gold": 7500,
+          "faith": 7500
+        },
+        "ratio": null,
+        "source": "js/religion.js:1046–1254"
+      },
+      {
+        "id": "frescoes",
+        "cost": {
+          "gold": 5000,
+          "faith": 4000,
+          "spice": 8000
+        },
+        "ratio": 2.5,
+        "source": "js/religion.js:1046–1254"
+      }
+    ],
+    "missions": [
+      {
+        "id": "orbitalLaunch",
+        "cost": {
+          "oil": 15000,
+          "manpower": 5000,
+          "science": 100000,
+          "starchart": 250
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "moonMission",
+        "cost": {
+          "titanium": 5000,
+          "oil": 45000,
+          "science": 125000,
+          "starchart": 500
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "duneMission",
+        "cost": {
+          "titanium": 7000,
+          "science": 175000,
+          "starchart": 1000,
+          "kerosene": 75
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "piscineMission",
+        "cost": {
+          "titanium": 9000,
+          "science": 200000,
+          "starchart": 1500,
+          "kerosene": 250
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "heliosMission",
+        "cost": {
+          "titanium": 15000,
+          "science": 250000,
+          "starchart": 3000,
+          "kerosene": 1250
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "terminusMission",
+        "cost": {
+          "titanium": 12000,
+          "science": 225000,
+          "starchart": 2500,
+          "kerosene": 750
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "kairoMission",
+        "cost": {
+          "titanium": 20000,
+          "science": 300000,
+          "starchart": 5000,
+          "kerosene": 7500
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "rorschachMission",
+        "cost": {
+          "titanium": 80000,
+          "science": 500000,
+          "starchart": 15000,
+          "kerosene": 25000
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "yarnMission",
+        "cost": {
+          "titanium": 35000,
+          "science": 350000,
+          "starchart": 7500,
+          "kerosene": 12000
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "umbraMission",
+        "cost": {
+          "science": 500000,
+          "starchart": 25000,
+          "kerosene": 25000,
+          "thorium": 15000
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "charonMission",
+        "cost": {
+          "science": 750000,
+          "starchart": 75000,
+          "kerosene": 35000,
+          "thorium": 35000
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "centaurusSystemMission",
+        "cost": {
+          "titanium": 40000,
+          "science": 800000,
+          "starchart": 100000,
+          "kerosene": 50000,
+          "thorium": 50000
+        },
+        "source": "js/space.js:23–209"
+      },
+      {
+        "id": "furthestRingMission",
+        "cost": {
+          "science": 1250000,
+          "starchart": 500000,
+          "kerosene": 75000,
+          "thorium": 75000
+        },
+        "source": "js/space.js:23–209"
+      }
+    ],
+    "space": [
+      {
+        "id": "spaceElevator",
+        "cost": {
+          "titanium": 6000,
+          "unobtainium": 50,
+          "science": 75000
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:215"
+      },
+      {
+        "id": "sattelite",
+        "cost": {
+          "titanium": 2500,
+          "oil": 15000,
+          "science": 100000,
+          "starchart": 325
+        },
+        "ratio": 1.08,
+        "source": "js/space.js:239"
+      },
+      {
+        "id": "spaceStation",
+        "cost": {
+          "oil": 35000,
+          "science": 150000,
+          "starchart": 425,
+          "alloy": 750
+        },
+        "ratio": 1.12,
+        "source": "js/space.js:295"
+      },
+      {
+        "id": "moonOutpost",
+        "cost": {
+          "oil": 55000,
+          "uranium": 500,
+          "science": 100000,
+          "starchart": 650,
+          "concrete": 150,
+          "alloy": 750
+        },
+        "ratio": 1.12,
+        "source": "js/space.js:336"
+      },
+      {
+        "id": "moonBase",
+        "cost": {
+          "titanium": 9500,
+          "oil": 70000,
+          "unobtainium": 50,
+          "science": 100000,
+          "starchart": 700,
+          "concrete": 250
+        },
+        "ratio": 1.12,
+        "source": "js/space.js:377"
+      },
+      {
+        "id": "planetCracker",
+        "cost": {
+          "science": 125000,
+          "starchart": 2500,
+          "alloy": 1750,
+          "kerosene": 50
+        },
+        "ratio": 1.18,
+        "source": "js/space.js:432"
+      },
+      {
+        "id": "hydrofracturer",
+        "cost": {
+          "science": 150000,
+          "starchart": 750,
+          "alloy": 1025,
+          "kerosene": 100
+        },
+        "ratio": 1.18,
+        "source": "js/space.js:454"
+      },
+      {
+        "id": "spiceRefinery",
+        "cost": {
+          "science": 75000,
+          "starchart": 500,
+          "alloy": 500,
+          "kerosene": 125
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:478"
+      },
+      {
+        "id": "researchVessel",
+        "cost": {
+          "titanium": 12500,
+          "starchart": 100,
+          "alloy": 2500,
+          "kerosene": 250
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:507"
+      },
+      {
+        "id": "orbitalArray",
+        "cost": {
+          "science": 250000,
+          "starchart": 2000,
+          "eludium": 100,
+          "kerosene": 500
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:533"
+      },
+      {
+        "id": "sunlifter",
+        "cost": {
+          "science": 500000,
+          "eludium": 225,
+          "kerosene": 2500
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:561"
+      },
+      {
+        "id": "containmentChamber",
+        "cost": {
+          "science": 500000,
+          "kerosene": 2500
+        },
+        "ratio": 1.125,
+        "source": "js/space.js:582"
+      },
+      {
+        "id": "heatsink",
+        "cost": {
+          "science": 125000,
+          "relic": 1,
+          "kerosene": 5000,
+          "thorium": 12500
+        },
+        "ratio": 1.12,
+        "source": "js/space.js:604"
+      },
+      {
+        "id": "sunforge",
+        "cost": {
+          "antimatter": 250,
+          "science": 100000,
+          "relic": 1,
+          "kerosene": 1250
+        },
+        "ratio": 1.12,
+        "source": "js/space.js:623"
+      },
+      {
+        "id": "cryostation",
+        "cost": {
+          "science": 200000,
+          "concrete": 1500,
+          "eludium": 25,
+          "kerosene": 500
+        },
+        "ratio": 1.12,
+        "source": "js/space.js:649"
+      },
+      {
+        "id": "spaceBeacon",
+        "cost": {
+          "antimatter": 50,
+          "starchart": 25000,
+          "alloy": 25000,
+          "kerosene": 7500
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:696"
+      },
+      {
+        "id": "terraformingStation",
+        "cost": {
+          "uranium": 5000,
+          "antimatter": 25,
+          "kerosene": 5000
+        },
+        "ratio": 1.25,
+        "source": "js/space.js:740"
+      },
+      {
+        "id": "hydroponics",
+        "cost": {
+          "unobtainium": 1,
+          "kerosene": 500
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:766"
+      },
+      {
+        "id": "hrHarvester",
+        "cost": {
+          "antimatter": 1250,
+          "relic": 25
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:805"
+      },
+      {
+        "id": "entangler",
+        "cost": {
+          "antimatter": 5250,
+          "relic": 1250,
+          "eludium": 5000
+        },
+        "ratio": 1.15,
+        "source": "js/space.js:859"
+      },
+      {
+        "id": "tectonic",
+        "cost": {
+          "antimatter": 500,
+          "thorium": 75000
+        },
+        "ratio": 1.25,
+        "source": "js/space.js:919"
+      },
+      {
+        "id": "moltenCore",
+        "cost": {
+          "uranium": 5000000,
+          "science": 25000000
+        },
+        "ratio": 1.25,
+        "source": "js/space.js:938"
+      }
+    ],
+    "transcendence": [
+      {
+        "id": "blackObelisk",
+        "cost": {
+          "relic": 100
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "blackNexus",
+        "cost": {
+          "relic": 5000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "blackCore",
+        "cost": {
+          "relic": 10000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "singularity",
+        "cost": {
+          "relic": 25000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "blackLibrary",
+        "cost": {
+          "relic": 30000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "blackRadiance",
+        "cost": {
+          "relic": 37500
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "blazar",
+        "cost": {
+          "relic": 50000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "darkNova",
+        "cost": {
+          "relic": 75000,
+          "void": 7500
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "mausoleum",
+        "cost": {
+          "relic": 50000,
+          "void": 12500,
+          "necrocorn": 10
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "holyGenocide",
+        "cost": {
+          "relic": 100000,
+          "void": 25000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:1257–1480"
+      },
+      {
+        "id": "darkParacosm",
+        "cost": {
+          "relic": 230000,
+          "void": 29000,
+          "paragon": 8
+        },
+        "ratio": 1.75,
+        "source": "js/religion.js:1257–1480"
+      }
+    ],
+    "mythic": [
+      {
+        "id": "unicornTomb",
+        "cost": {
+          "ivory": 500,
+          "tears": 5
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:636"
+      },
+      {
+        "id": "ivoryTower",
+        "cost": {
+          "ivory": 25000,
+          "tears": 25
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:677"
+      },
+      {
+        "id": "ivoryCitadel",
+        "cost": {
+          "ivory": 50000,
+          "tears": 50
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:703"
+      },
+      {
+        "id": "skyPalace",
+        "cost": {
+          "ivory": 125000,
+          "tears": 500,
+          "megalith": 5
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:732"
+      },
+      {
+        "id": "unicornUtopia",
+        "cost": {
+          "gold": 500,
+          "ivory": 1000000,
+          "tears": 5000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:780"
+      },
+      {
+        "id": "sunspire",
+        "cost": {
+          "gold": 1250,
+          "ivory": 750000,
+          "tears": 25000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:832"
+      },
+      {
+        "id": "marker",
+        "cost": {
+          "unobtainium": 2500,
+          "spice": 50000,
+          "tears": 5000,
+          "megalith": 750
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:879"
+      },
+      {
+        "id": "unicornGraveyard",
+        "cost": {
+          "necrocorn": 5,
+          "megalith": 1000
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:910"
+      },
+      {
+        "id": "unicornNecropolis",
+        "cost": {
+          "alicorn": 100,
+          "necrocorn": 15,
+          "void": 5,
+          "megalith": 2500
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:930"
+      },
+      {
+        "id": "blackPyramid",
+        "cost": {
+          "unobtainium": 5000,
+          "spice": 150000,
+          "sorrow": 5,
+          "megalith": 2500
+        },
+        "ratio": 1.15,
+        "source": "js/religion.js:945"
+      }
+    ],
+    "crafts": [
+      {
+        "id": "wood",
+        "cost": {
+          "honey": 100
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "beam",
+        "cost": {
+          "wood": 175
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "slab",
+        "cost": {
+          "minerals": 250
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "plate",
+        "cost": {
+          "iron": 125
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "steel",
+        "cost": {
+          "coal": 100,
+          "iron": 100
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "concrete",
+        "cost": {
+          "slab": 2500,
+          "steel": 25
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "gear",
+        "cost": {
+          "steel": 15
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "alloy",
+        "cost": {
+          "titanium": 10,
+          "steel": 75
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "eludium",
+        "cost": {
+          "unobtainium": 1000,
+          "alloy": 2500
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "scaffold",
+        "cost": {
+          "beam": 50
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "ship",
+        "cost": {
+          "starchart": 25,
+          "plate": 150,
+          "scaffold": 100
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "tanker",
+        "cost": {
+          "alloy": 1250,
+          "ship": 200,
+          "blueprint": 5
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "kerosene",
+        "cost": {
+          "oil": 7500
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "plastic",
+        "cost": {
+          "oil": 1000
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "microchip",
+        "cost": {
+          "plastic": 50,
+          "gold": 1000,
+          "spice": 750
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "parchment",
+        "cost": {
+          "furs": 175
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "manuscript",
+        "cost": {
+          "culture": 400,
+          "parchment": 25
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "compendium",
+        "cost": {
+          "science": 9000,
+          "manuscript": 55
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "blueprint",
+        "cost": {
+          "science": 25000,
+          "compendium": 25
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "thorium",
+        "cost": {
+          "uranium": 250
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "megalith",
+        "cost": {
+          "beam": 25,
+          "slab": 50,
+          "plate": 5
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "bloodstone",
+        "cost": {
+          "timeCrystal": 5000,
+          "relic": 10000
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      },
+      {
+        "id": "tMythril",
+        "cost": {
+          "bloodstone": 5,
+          "ivory": 1000,
+          "titanium": 500
+        },
+        "amount": 1,
+        "source": "js/workshop.js:2116–2349"
+      }
+    ],
+    "stages": [
+      {
+        "id": "pasture",
+        "cost": {
+          "titanium": 250
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:388–413"
+      },
+      {
+        "id": "aqueduct",
+        "cost": {
+          "titanium": 2500,
+          "concrete": 100,
+          "gear": 5
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:449–477"
+      },
+      {
+        "id": "library",
+        "cost": {
+          "steel": 100,
+          "concrete": 10,
+          "microchip": 5
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:576–641"
+      },
+      {
+        "id": "amphitheatre",
+        "cost": {
+          "iron": 1250,
+          "titanium": 75
+        },
+        "ratio": 1.18,
+        "source": "js/buildings.js:1867–1904"
+      },
+      {
+        "id": "warehouse",
+        "cost": {
+          "titanium": 10000,
+          "eludium": 500,
+          "kerosene": 1000,
+          "blueprint": 500,
+          "starchart": 100000
+        },
+        "ratio": 1.15,
+        "source": "js/buildings.js:849–928"
+      }
+    ]
+  }
+}

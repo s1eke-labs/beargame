@@ -1,0 +1,1250 @@
+{
+  "schema": "beargame.authored.late-facts.v1",
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "religion": [
+    {
+      "referenceKey": "solarchant",
+      "name": "晨光祈歌",
+      "worshipNeeded": 150,
+      "firstCost": {
+        "faith": 100
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "scholasticism",
+      "name": "神殿研习",
+      "worshipNeeded": 300,
+      "firstCost": {
+        "faith": 250
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "goldenSpire",
+      "name": "金蜜尖塔",
+      "worshipNeeded": 500,
+      "firstCost": {
+        "gold": 150,
+        "faith": 350
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "sunAltar",
+      "name": "朝日坛",
+      "worshipNeeded": 750,
+      "firstCost": {
+        "gold": 250,
+        "faith": 500
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "stainedGlass",
+      "name": "彩光窗",
+      "worshipNeeded": 750,
+      "firstCost": {
+        "gold": 250,
+        "faith": 500
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "solarRevolution",
+      "name": "日耀启明",
+      "worshipNeeded": 1000,
+      "firstCost": {
+        "gold": 500,
+        "faith": 750
+      },
+      "repeatAfterTranscendence": false,
+      "repeatCostMultiplier": null,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "basilica",
+      "name": "群山礼堂",
+      "worshipNeeded": 10000,
+      "firstCost": {
+        "gold": 750,
+        "faith": 1250
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "templars",
+      "name": "守林誓约",
+      "worshipNeeded": 75000,
+      "firstCost": {
+        "gold": 3000,
+        "faith": 3500
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "apocripha",
+      "name": "灵悟手记",
+      "worshipNeeded": 100000,
+      "firstCost": {
+        "gold": 5000,
+        "faith": 5000
+      },
+      "repeatAfterTranscendence": false,
+      "repeatCostMultiplier": null,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "transcendence",
+      "name": "升华之路",
+      "worshipNeeded": 125000,
+      "firstCost": {
+        "gold": 7500,
+        "faith": 7500
+      },
+      "repeatAfterTranscendence": false,
+      "repeatCostMultiplier": null,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    },
+    {
+      "referenceKey": "frescoes",
+      "name": "山灵壁画",
+      "worshipNeeded": 200000,
+      "firstCost": {
+        "gold": 5000,
+        "faith": 4000,
+        "spice": 8000
+      },
+      "repeatAfterTranscendence": true,
+      "repeatCostMultiplier": 2.5,
+      "source": "js/religion.js:1046–1254",
+      "status": "Price and unlock facts verified; temple/dynamic effects separately specified."
+    }
+  ],
+  "missions": [
+    {
+      "referenceKey": "orbitalLaunch",
+      "name": "初探星空",
+      "cost": {
+        "oil": 15000,
+        "manpower": 5000,
+        "science": 100000,
+        "starchart": 250
+      },
+      "destination": "cath",
+      "opens": [
+        "moonMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "moonMission",
+      "name": "月林之旅",
+      "cost": {
+        "titanium": 5000,
+        "oil": 45000,
+        "science": 125000,
+        "starchart": 500
+      },
+      "destination": "moon",
+      "opens": [
+        "duneMission",
+        "piscineMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "duneMission",
+      "name": "远赴沙海",
+      "cost": {
+        "titanium": 7000,
+        "science": 175000,
+        "starchart": 1000,
+        "kerosene": 75
+      },
+      "destination": "dune",
+      "opens": [
+        "heliosMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "piscineMission",
+      "name": "探访潮星",
+      "cost": {
+        "titanium": 9000,
+        "science": 200000,
+        "starchart": 1500,
+        "kerosene": 250
+      },
+      "destination": "piscine",
+      "opens": [
+        "terminusMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "heliosMission",
+      "name": "近日前哨",
+      "cost": {
+        "titanium": 15000,
+        "science": 250000,
+        "starchart": 3000,
+        "kerosene": 1250
+      },
+      "destination": "helios",
+      "opens": [
+        "yarnMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "terminusMission",
+      "name": "冰境航行",
+      "cost": {
+        "titanium": 12000,
+        "science": 225000,
+        "starchart": 2500,
+        "kerosene": 750
+      },
+      "destination": "terminus",
+      "opens": [
+        "heliosMission",
+        "kairoMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "kairoMission",
+      "name": "访寻微星",
+      "cost": {
+        "titanium": 20000,
+        "science": 300000,
+        "starchart": 5000,
+        "kerosene": 7500
+      },
+      "destination": "kairo",
+      "opens": [
+        "rorschachMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "rorschachMission",
+      "name": "深空回声",
+      "cost": {
+        "titanium": 80000,
+        "science": 500000,
+        "starchart": 15000,
+        "kerosene": 25000
+      },
+      "destination": null,
+      "opens": [
+        "centaurusSystemMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "yarnMission",
+      "name": "翠星远征",
+      "cost": {
+        "titanium": 35000,
+        "science": 350000,
+        "starchart": 7500,
+        "kerosene": 12000
+      },
+      "destination": "yarn",
+      "opens": [
+        "umbraMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "umbraMission",
+      "name": "暗隙探航",
+      "cost": {
+        "science": 500000,
+        "starchart": 25000,
+        "kerosene": 25000,
+        "thorium": 15000
+      },
+      "destination": "umbra",
+      "opens": [
+        "charonMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "charonMission",
+      "name": "遥望冥岸",
+      "cost": {
+        "science": 750000,
+        "starchart": 75000,
+        "kerosene": 35000,
+        "thorium": 35000
+      },
+      "destination": "charon",
+      "opens": [],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "centaurusSystemMission",
+      "name": "双星归途",
+      "cost": {
+        "titanium": 40000,
+        "science": 800000,
+        "starchart": 100000,
+        "kerosene": 50000,
+        "thorium": 50000
+      },
+      "destination": "centaurusSystem",
+      "opens": [
+        "furthestRingMission"
+      ],
+      "source": "js/space.js:23–209"
+    },
+    {
+      "referenceKey": "furthestRingMission",
+      "name": "极远星环",
+      "cost": {
+        "science": 1250000,
+        "starchart": 500000,
+        "kerosene": 75000,
+        "thorium": 75000
+      },
+      "destination": "furthestRing",
+      "opens": [],
+      "source": "js/space.js:23–209"
+    }
+  ],
+  "spaceConstruction": [
+    {
+      "referenceKey": "spaceElevator",
+      "name": "登星藤梯",
+      "planet": "cath",
+      "requires": [
+        "orbitalEngineering",
+        "nanotechnology"
+      ],
+      "firstCost": {
+        "titanium": 6000,
+        "unobtainium": 50,
+        "science": 75000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "spaceRatio": 0.01,
+        "oilReductionRatio": 0.05,
+        "prodTransferBonus": 0.001
+      },
+      "source": "js/space.js:215"
+    },
+    {
+      "referenceKey": "sattelite",
+      "name": "巡天蜂舟",
+      "planet": "cath",
+      "requires": [
+        "sattelites"
+      ],
+      "firstCost": {
+        "titanium": 2500,
+        "oil": 15000,
+        "science": 100000,
+        "starchart": 325
+      },
+      "ratio": 1.08,
+      "effects": {
+        "observatoryRatio": 0.05,
+        "starchartPerTickBaseSpace": 0.001,
+        "energyDemand": 1
+      },
+      "source": "js/space.js:239",
+      "caveat": "Solar satellites replaces1power demand with1power supply; black sky changes charts."
+    },
+    {
+      "referenceKey": "spaceStation",
+      "name": "轨道熊屋",
+      "planet": "cath",
+      "requires": [
+        "orbitalEngineering"
+      ],
+      "firstCost": {
+        "oil": 35000,
+        "science": 150000,
+        "starchart": 425,
+        "alloy": 750
+      },
+      "ratio": 1.12,
+      "effects": {
+        "scienceRatio": 0.5,
+        "housing": 2,
+        "energyDemand": 10
+      },
+      "source": "js/space.js:295",
+      "caveat": "Builds housing and breaks Iron Will."
+    },
+    {
+      "referenceKey": "moonOutpost",
+      "name": "月林采晶站",
+      "planet": "moon",
+      "requires": [],
+      "firstCost": {
+        "oil": 55000,
+        "uranium": 500,
+        "science": 100000,
+        "starchart": 650,
+        "concrate": 150,
+        "alloy": 750
+      },
+      "ratio": 1.12,
+      "effects": {
+        "uraniumConsumption": 0.35,
+        "unobtainiumPerTickSpace": 0.007,
+        "energyDemand": 5
+      },
+      "source": "js/space.js:336"
+    },
+    {
+      "referenceKey": "moonBase",
+      "name": "月林基地",
+      "planet": "moon",
+      "requires": [],
+      "firstCost": {
+        "titanium": 9500,
+        "oil": 70000,
+        "unobtainium": 50,
+        "science": 100000,
+        "starchart": 700,
+        "concrate": 250
+      },
+      "ratio": 1.12,
+      "effects": {
+        "honeyCapacity": 45000,
+        "woodCapacity": 25000,
+        "mineralsCapacity": 30000,
+        "coalCapacity": 3500,
+        "ironCapacity": 9000,
+        "titaniumCapacity": 1250,
+        "oilCapacity": 3500,
+        "unobtainiumCapacity": 150,
+        "energyDemand": 10
+      },
+      "source": "js/space.js:377",
+      "caveat": "amBases reduces demand to5; AI and spaceport modify storage."
+    },
+    {
+      "referenceKey": "planetCracker",
+      "name": "星岩采集器",
+      "planet": "dune",
+      "requires": [],
+      "firstCost": {
+        "science": 125000,
+        "starchart": 2500,
+        "alloy": 1750,
+        "kerosene": 50
+      },
+      "ratio": 1.18,
+      "effects": {
+        "uraniumPerTickSpace": 0.3,
+        "uraniumCapacity": 1750
+      },
+      "caveat": "Output×(1+crackerRatio); capacity×(1+planetCrackerStorageBonus).",
+      "source": "js/space.js:432"
+    },
+    {
+      "referenceKey": "hydrofracturer",
+      "name": "深砂油泵",
+      "planet": "dune",
+      "requires": [],
+      "firstCost": {
+        "science": 150000,
+        "starchart": 750,
+        "alloy": 1025,
+        "kerosene": 100
+      },
+      "ratio": 1.18,
+      "effects": {
+        "oilPerTickAutoprodSpace": 0.5
+      },
+      "caveat": "",
+      "source": "js/space.js:454"
+    },
+    {
+      "referenceKey": "spiceRefinery",
+      "name": "星香提炼站",
+      "planet": "dune",
+      "requires": [],
+      "firstCost": {
+        "science": 75000,
+        "starchart": 500,
+        "alloy": 500,
+        "kerosene": 125
+      },
+      "ratio": 1.15,
+      "effects": {
+        "spicePerTickAutoprodSpace": 0.025
+      },
+      "caveat": "",
+      "source": "js/space.js:478"
+    },
+    {
+      "referenceKey": "researchVessel",
+      "name": "潮星研究船",
+      "planet": "piscine",
+      "requires": [],
+      "firstCost": {
+        "titanium": 12500,
+        "starchart": 100,
+        "alloy": 2500,
+        "kerosene": 250
+      },
+      "ratio": 1.15,
+      "effects": {
+        "scienceCapacity": 10000,
+        "starchartPerTickBaseSpace": 0.01
+      },
+      "caveat": "Science capacity×(1+spaceScienceRatio); blackSky removes charts.",
+      "source": "js/space.js:507"
+    },
+    {
+      "referenceKey": "orbitalArray",
+      "name": "环星阵列",
+      "planet": "piscine",
+      "requires": [],
+      "firstCost": {
+        "science": 250000,
+        "starchart": 2000,
+        "eludium": 100,
+        "kerosene": 500
+      },
+      "ratio": 1.15,
+      "effects": {
+        "spaceRatio": 0.02,
+        "energyDemand": 20
+      },
+      "caveat": "",
+      "source": "js/space.js:533"
+    },
+    {
+      "referenceKey": "sunlifter",
+      "name": "采日环",
+      "planet": "helios",
+      "requires": [],
+      "firstCost": {
+        "science": 500000,
+        "eludium": 225,
+        "kerosene": 2500
+      },
+      "ratio": 1.15,
+      "effects": {
+        "antimatterPerYear": 1,
+        "energySupply": 30
+      },
+      "caveat": "Antimatter is annual, with energy sufficiency checks; never implement as1/tick.",
+      "source": "js/space.js:561"
+    },
+    {
+      "referenceKey": "containmentChamber",
+      "name": "星质储舱",
+      "planet": "helios",
+      "requires": [],
+      "firstCost": {
+        "science": 500000,
+        "kerosene": 2500
+      },
+      "ratio": 1.125,
+      "effects": {
+        "antimatterCapacity": 100,
+        "energyDemand": 50
+      },
+      "caveat": "Each heatsink adds2%to capacity,1%to demand.",
+      "source": "js/space.js:582"
+    },
+    {
+      "referenceKey": "heatsink",
+      "name": "散热翼",
+      "planet": "helios",
+      "requires": [],
+      "firstCost": {
+        "science": 125000,
+        "relic": 1,
+        "kerosene": 5000,
+        "thorium": 12500
+      },
+      "ratio": 1.12,
+      "effects": {
+        "containmentCapacityRatio": 0.02,
+        "containmentDemandRatio": 0.01
+      },
+      "caveat": "",
+      "source": "js/space.js:604"
+    },
+    {
+      "referenceKey": "sunforge",
+      "name": "日焰锻台",
+      "planet": "helios",
+      "requires": [],
+      "firstCost": {
+        "antimatter": 250,
+        "science": 100000,
+        "relic": 1,
+        "kerosene": 1250
+      },
+      "ratio": 1.12,
+      "effects": {
+        "baseMetalCapacityRatio": 0.01
+      },
+      "caveat": "",
+      "source": "js/space.js:623"
+    },
+    {
+      "referenceKey": "cryostation",
+      "name": "冰境仓站",
+      "planet": "terminus",
+      "requires": [],
+      "firstCost": {
+        "science": 200000,
+        "concrate": 1500,
+        "eludium": 25,
+        "kerosene": 500
+      },
+      "ratio": 1.12,
+      "effects": {
+        "woodCapacity": 200000,
+        "mineralsCapacity": 200000,
+        "coalCapacity": 25000,
+        "ironCapacity": 50000,
+        "titaniumCapacity": 7500,
+        "oilCapacity": 7500,
+        "uraniumCapacity": 5000,
+        "unobtainiumCapacity": 750
+      },
+      "caveat": "All capacities×(1+cryostationStorageBonus), then applicable cycle/global modifiers.",
+      "source": "js/space.js:649"
+    },
+    {
+      "referenceKey": "spaceBeacon",
+      "name": "远星灯塔",
+      "planet": "kairo",
+      "requires": [],
+      "firstCost": {
+        "antimatter": 50,
+        "starchart": 25000,
+        "alloy": 25000,
+        "kerosene": 7500
+      },
+      "ratio": 1.15,
+      "effects": {
+        "scienceCapacity": 25000,
+        "starchartPerTickBaseSpace": 0.025
+      },
+      "caveat": "Science cap×(1+spaceScienceRatio); relic/day=beaconRelicsPerDay×(1+relicRefineRatio×effectiveBlackPyramids×.1)×min(antimatterCapacity/5000,1)×(1+.25hashLevel).",
+      "source": "js/space.js:696"
+    },
+    {
+      "referenceKey": "terraformingStation",
+      "name": "翠星造林站",
+      "planet": "yarn",
+      "requires": [
+        "terraformation"
+      ],
+      "firstCost": {
+        "uranium": 5000,
+        "antimatter": 25,
+        "kerosene": 5000
+      },
+      "ratio": 1.25,
+      "effects": {
+        "housing": 1
+      },
+      "caveat": "Housing per unit1+UDR(activeHydroponics,100).",
+      "source": "js/space.js:740"
+    },
+    {
+      "referenceKey": "hydroponics",
+      "name": "星际蜜园",
+      "planet": "yarn",
+      "requires": [
+        "hydroponics"
+      ],
+      "firstCost": {
+        "unobtainium": 1,
+        "kerosene": 500
+      },
+      "ratio": 1.15,
+      "effects": {
+        "honeyRatio": 0.025,
+        "honeyCapacityRatio": 0.1
+      },
+      "caveat": "Housing interaction nonlinear:100gardens→+1housing per station;300→+2.",
+      "source": "js/space.js:766"
+    },
+    {
+      "referenceKey": "hrHarvester",
+      "name": "暗隙能量帆",
+      "planet": "umbra",
+      "requires": [],
+      "firstCost": {
+        "antimatter": 1250,
+        "relic": 25
+      },
+      "ratio": 1.15,
+      "effects": {
+        "energySupply": 1
+      },
+      "caveat": "Power=(1+.01UDR(max(darkFutureYears,0),.075))×(1+umbraBoostRatio).",
+      "source": "js/space.js:805"
+    },
+    {
+      "referenceKey": "navigationRelay",
+      "name": "远航中继",
+      "planet": "umbra",
+      "requires": false,
+      "firstCost": {
+        "titanium": 50000,
+        "concrate": 5000
+      },
+      "ratio": 1.2,
+      "effects": {},
+      "caveat": "SOURCE PLACEHOLDER: requiredTech=false, no effects, unavailable in default mainline. Exclude rather than pretend functional.",
+      "source": "js/space.js:828"
+    },
+    {
+      "referenceKey": "spaceShuttle",
+      "name": "星海摆渡舟",
+      "planet": "umbra",
+      "requires": false,
+      "firstCost": {
+        "antimatter": 50,
+        "eludium": 500
+      },
+      "ratio": 1.15,
+      "effects": {},
+      "caveat": "SOURCE PLACEHOLDER: requiredTech=false, no effects, unavailable in default mainline. Exclude rather than pretend functional.",
+      "source": "js/space.js:840"
+    },
+    {
+      "referenceKey": "entangler",
+      "name": "量子织机",
+      "planet": "charon",
+      "requires": [
+        "quantumCryptography"
+      ],
+      "firstCost": {
+        "antimatter": 5250,
+        "relic": 1250,
+        "eludium": 5000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "gflopsConsumption": 0.1,
+        "energyDemand": 25
+      },
+      "caveat": "Consumed gflops becomes hashrates1:1. Hash level=max(0,floor(log(hashrates/1000)/log1.6)); next threshold1000×1.6^(level+1). Level is global, not multiplied by machine count.",
+      "source": "js/space.js:859"
+    },
+    {
+      "referenceKey": "tectonic",
+      "name": "地脉发电站",
+      "planet": "centaurusSystem",
+      "requires": [
+        "terraformation"
+      ],
+      "firstCost": {
+        "antimatter": 500,
+        "thorium": 75000
+      },
+      "ratio": 1.25,
+      "effects": {
+        "energySupply": 25
+      },
+      "caveat": "Power×(1+tectonicBonus).",
+      "source": "js/space.js:919"
+    },
+    {
+      "referenceKey": "moltenCore",
+      "name": "熔核井",
+      "planet": "centaurusSystem",
+      "requires": [
+        "exogeophysics"
+      ],
+      "firstCost": {
+        "uranium": 5000000,
+        "science": 25000000
+      },
+      "ratio": 1.25,
+      "effects": {
+        "tectonicBonus": 0.05
+      },
+      "caveat": "",
+      "source": "js/space.js:938"
+    }
+  ],
+  "transcendence": [
+    {
+      "referenceKey": "blackObelisk",
+      "name": "夜晶碑",
+      "tier": 1,
+      "firstCost": {
+        "relic": 100
+      },
+      "ratio": 1.15,
+      "effects": {
+        "solarLimitPerTier": 0.05
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "blackNexus",
+      "name": "暗光汇点",
+      "tier": 3,
+      "firstCost": {
+        "relic": 5000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "relicRefineRatio": 1
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "blackCore",
+      "name": "幽晶核",
+      "tier": 5,
+      "firstCost": {
+        "relic": 10000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "sorrowCapacity": 1
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "singularity",
+      "name": "群星奇点",
+      "tier": 7,
+      "firstCost": {
+        "relic": 25000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "globalResourceRatio": 0.1
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "blackLibrary",
+      "name": "夜林藏书馆",
+      "tier": 9,
+      "firstCost": {
+        "relic": 30000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "compendiaTTBoostRatio": 0.02
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "blackRadiance",
+      "name": "静夜光辉",
+      "tier": 12,
+      "firstCost": {
+        "relic": 37500
+      },
+      "ratio": 1.15,
+      "effects": {
+        "blsCorruptionRatio": 0.0012
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "blazar",
+      "name": "远星脉冲",
+      "tier": 15,
+      "firstCost": {
+        "relic": 50000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "timeRatio": 0.1,
+        "rrRatio": 0.02
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "darkNova",
+      "name": "暗星新生",
+      "tier": 20,
+      "firstCost": {
+        "relic": 75000,
+        "void": 7500
+      },
+      "ratio": 1.15,
+      "effects": {
+        "energyProductionRatio": 0.02
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "mausoleum",
+      "name": "长眠星庭",
+      "tier": 23,
+      "firstCost": {
+        "relic": 50000,
+        "void": 12500,
+        "necrocorn": 10
+      },
+      "ratio": 1.15,
+      "effects": {
+        "pactsAvailable": 1
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "holyGenocide",
+      "name": "族群升格",
+      "tier": 25,
+      "firstCost": {
+        "relic": 100000,
+        "void": 25000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "maxKittensRatio": -0.01,
+        "simScalingRatio": 0.02
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    },
+    {
+      "referenceKey": "darkParacosm",
+      "name": "镜外森林",
+      "tier": 27,
+      "firstCost": {
+        "relic": 230000,
+        "void": 29000,
+        "paragon": 8
+      },
+      "ratio": 1.75,
+      "effects": {
+        "milleninumParagon": 1
+      },
+      "source": "js/religion.js:1257–1480",
+      "caveat": "Mausoleum/darkParacosm feature-flagged; paragon ingredient darkParacosm ratio2; divine population scaling has active-state exceptions."
+    }
+  ],
+  "warning": "Independently transcribed selected factual quantities. Incomplete dynamic effects and feature flags must not be represented as complete implementation.",
+  "routes": [
+    {
+      "referenceKey": "cath",
+      "name": "故林",
+      "baseDays": 0
+    },
+    {
+      "referenceKey": "moon",
+      "name": "月林",
+      "baseDays": 30
+    },
+    {
+      "referenceKey": "dune",
+      "name": "沙海星",
+      "baseDays": 356
+    },
+    {
+      "referenceKey": "piscine",
+      "name": "潮星",
+      "baseDays": 256
+    },
+    {
+      "referenceKey": "helios",
+      "name": "日冕",
+      "baseDays": 1200
+    },
+    {
+      "referenceKey": "terminus",
+      "name": "冰境星",
+      "baseDays": 2500
+    },
+    {
+      "referenceKey": "kairo",
+      "name": "微光星",
+      "baseDays": 5000
+    },
+    {
+      "referenceKey": "yarn",
+      "name": "翠星",
+      "baseDays": 3800
+    },
+    {
+      "referenceKey": "umbra",
+      "name": "暗隙",
+      "baseDays": 7500
+    },
+    {
+      "referenceKey": "charon",
+      "name": "冥岸",
+      "baseDays": 25000
+    },
+    {
+      "referenceKey": "centaurusSystem",
+      "name": "双星群",
+      "baseDays": 120000
+    },
+    {
+      "referenceKey": "furthestRing",
+      "name": "极远星环",
+      "baseDays": 725000000
+    }
+  ],
+  "scopeNote": "24/24space identities represented;22functional default-mainline definitions and2explicit placeholders. Costs/basic effects verified; cycle/policy/challenge/resource-transfer interplay still needs tests.",
+  "mythicFaith": [
+    {
+      "referenceKey": "unicornTomb",
+      "name": "灵鹿石冢",
+      "firstCost": {
+        "ivory": 500,
+        "tears": 5
+      },
+      "ratio": 1.15,
+      "effects": {
+        "unicornsRatioReligion": 0.05
+      },
+      "availableAfter": "ziggurat",
+      "caveat": "Default mythic upgrade; opensivoryTower; unicornTears completion adds faith cap formula.",
+      "source": "js/religion.js:636"
+    },
+    {
+      "referenceKey": "ivoryTower",
+      "name": "白枝高塔",
+      "firstCost": {
+        "ivory": 25000,
+        "tears": 25
+      },
+      "ratio": 1.15,
+      "effects": {
+        "unicornsRatioReligion": 0.1,
+        "riftChance": 0.0005
+      },
+      "availableAfter": "unicornTomb",
+      "caveat": "OpensivoryCitadel.",
+      "source": "js/religion.js:677"
+    },
+    {
+      "referenceKey": "ivoryCitadel",
+      "name": "白枝城垣",
+      "firstCost": {
+        "ivory": 50000,
+        "tears": 50
+      },
+      "ratio": 1.15,
+      "effects": {
+        "unicornsRatioReligion": 0.25,
+        "ivoryMeteorChance": 0.0005
+      },
+      "availableAfter": "ivoryTower",
+      "caveat": "OpensskyPalace.",
+      "source": "js/religion.js:703"
+    },
+    {
+      "referenceKey": "skyPalace",
+      "name": "云巅灵宫",
+      "firstCost": {
+        "ivory": 125000,
+        "tears": 500,
+        "megalith": 5
+      },
+      "ratio": 1.15,
+      "effects": {
+        "goldCapacityRatio": 0.01,
+        "unicornsRatioReligion": 0.5,
+        "alicornChance": 0.0001,
+        "alicornPerTick": 2e-05,
+        "ivoryMeteorRatio": 0.05
+      },
+      "availableAfter": "ivoryCitadel",
+      "caveat": "Alicorn passive rate only after first alicorn exists OR alicornmancy; opensunicornUtopia.",
+      "source": "js/religion.js:732"
+    },
+    {
+      "referenceKey": "unicornUtopia",
+      "name": "灵鹿乐土",
+      "firstCost": {
+        "gold": 500,
+        "ivory": 1000000,
+        "tears": 5000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "unicornsRatioReligion": 2.5,
+        "alicornChance": 0.00015,
+        "alicornPerTick": 2.5e-05,
+        "tcRefineRatio": 0.05,
+        "ivoryMeteorRatio": 0.15
+      },
+      "availableAfter": "skyPalace",
+      "caveat": "Same passive prerequisite; openssunspire.",
+      "source": "js/religion.js:780"
+    },
+    {
+      "referenceKey": "sunspire",
+      "name": "朝阳灵柱",
+      "firstCost": {
+        "gold": 1250,
+        "ivory": 750000,
+        "tears": 25000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "unicornsRatioReligion": 5,
+        "alicornChance": 0.0003,
+        "alicornPerTick": 5e-05,
+        "tcRefineRatio": 0.1,
+        "ivoryMeteorRatio": 0.5
+      },
+      "availableAfter": "unicornUtopia",
+      "caveat": "Same passive prerequisite.",
+      "source": "js/religion.js:832"
+    },
+    {
+      "referenceKey": "marker",
+      "name": "幽林界碑",
+      "firstCost": {
+        "unobtainium": 2500,
+        "spice": 50000,
+        "tears": 5000,
+        "megalith": 750
+      },
+      "ratio": 1.15,
+      "effects": {
+        "corruptionPerTick": 1e-06
+      },
+      "availableAfter": "perk:megalomania",
+      "caveat": "BlackSky reward modifies corruption; late faction/event unlock must be verified.",
+      "source": "js/religion.js:879"
+    },
+    {
+      "referenceKey": "unicornGraveyard",
+      "name": "灵鹿静园",
+      "firstCost": {
+        "necrocorn": 5,
+        "megalith": 1000
+      },
+      "ratio": 1.15,
+      "effects": {
+        "cultureMaxRatioBonus": 0.01,
+        "blackLibraryBonus": 0.02
+      },
+      "availableAfter": "perk:blackCodex",
+      "caveat": "OpensunicornNecropolis.",
+      "source": "js/religion.js:910"
+    },
+    {
+      "referenceKey": "unicornNecropolis",
+      "name": "静夜鹿城",
+      "firstCost": {
+        "alicorn": 100,
+        "necrocorn": 15,
+        "void": 5,
+        "megalith": 2500
+      },
+      "ratio": 1.15,
+      "effects": {
+        "corruptionBoostRatio": 0.1
+      },
+      "availableAfter": "unicornGraveyard",
+      "caveat": "",
+      "source": "js/religion.js:930"
+    },
+    {
+      "referenceKey": "blackPyramid",
+      "name": "夜蜜金字塔",
+      "firstCost": {
+        "unobtainium": 5000,
+        "spice": 150000,
+        "sorrow": 5,
+        "megalith": 2500
+      },
+      "ratio": 1.15,
+      "effects": {},
+      "availableAfter": "perk:megalomania",
+      "caveat": "Core of elder arrivals/relic refinement/pacts; effects dynamically depend on selected pacts and debt, not free flat production.",
+      "source": "js/religion.js:945"
+    }
+  ],
+  "transforms": [
+    {
+      "input": {
+        "unicorns": 2500
+      },
+      "output": {
+        "tears": "activeZiggurats"
+      },
+      "gate": "religionTab and activeZiggurats>0",
+      "source": "js/religion.js:65–68,1535–1545"
+    },
+    {
+      "input": {
+        "alicorn": 25
+      },
+      "output": {
+        "timeCrystal": "1+tcRefineRatio"
+      },
+      "source": "js/religion.js:3059–3070"
+    },
+    {
+      "input": {
+        "tears": 10000
+      },
+      "output": {
+        "sorrow": 1
+      },
+      "gate": "blackPyramid unlocked",
+      "source": "js/religion.js:3083–3094",
+      "caveat": "Capacity and sorrow conversion-price behavior must be checked."
+    },
+    {
+      "input": {
+        "timeCrystal": 25
+      },
+      "output": {
+        "relic": "1+relicRefineRatio×effectiveBlackPyramids"
+      },
+      "source": "js/religion.js:3096–3111"
+    }
+  ]
+}

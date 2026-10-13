@@ -1,0 +1,13 @@
+/* Transient storybook feedback; all game controls remain available. */
+#story-moment.story-moment-slot{position:fixed;z-index:90;left:50%;top:calc(116px + env(safe-area-inset-top,0px));width:min(420px,calc(100vw - 24px));transform:translateX(-50%);pointer-events:none}
+.story-moment{display:flex;align-items:flex-start;gap:10px;padding:14px 8px 14px 14px;color:#453d29;background:linear-gradient(110deg,#fff9e8,#eee1bc);border:1px solid #b9aa7e;border-radius:6px 17px 17px 6px;box-shadow:inset 4px 0 #d1bc82,0 5px 20px #34402e24;animation:story-page-arrive .24s ease-out;pointer-events:auto}
+.story-moment-mark{display:grid;place-items:center;width:40px;min-width:40px;height:46px;font-size:33px;color:#526c45;background:#e0e7c555;border-radius:50%}
+.story-moment-mark>.atlas{display:block;width:40px;height:46px;max-width:none;flex:none}
+.story-moment-copy{min-width:0;flex:1;overflow-wrap:anywhere}.story-moment-copy small{display:block;color:#786a46;font-size:11px;line-height:1.5;letter-spacing:.03em}.story-moment-copy strong{display:block;font-size:16px;line-height:1.5;margin:2px 0}.story-moment-copy p{margin:0;color:#635d45;font-size:12px;line-height:1.6}
+.story-moment-close{display:grid;place-items:center;flex:0 0 44px;width:44px;min-height:44px;padding:0;color:#645b42;background:transparent;border:0;border-radius:50%;font-size:25px;cursor:pointer}.story-moment-close:hover{background:#d4c49344}.story-moment-close:focus-visible{outline:2px solid #526c45;outline-offset:-3px}
+.offline-insights{padding:12px 14px;margin:12px 0;border:1px solid #d2c59e;border-radius:6px 13px 13px 6px;background:#f5edda;color:#625a3c}.offline-insights>strong{font-size:13px;color:#4a5c3d}.offline-insights ul{padding:0 0 0 18px;margin:6px 0 0}.offline-insights li{font-size:13px;line-height:1.65;margin:3px 0}
+@keyframes story-page-arrive{from{opacity:0;translate:0 -7px}to{opacity:1;translate:0 0}}
+@media(max-width:380px){.story-moment{gap:7px;padding-left:11px}.story-moment-mark{width:30px;min-width:30px;font-size:27px}.story-moment-mark>.atlas{width:30px;height:38px}.story-moment-copy strong{font-size:15px}}
+@media(max-height:500px){#story-moment.story-moment-slot{top:12px;left:auto;right:12px;transform:none;width:min(380px,calc(100vw - 24px))}}
+@media(prefers-reduced-motion:reduce){.story-moment{animation:none}}
+.motion-reduced .story-moment{animation:none}

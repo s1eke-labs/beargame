@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { geometricCost, limitedDR } from '../src/engine/math.js';
+import { createState, parseSave, serialize, readStorage, writeStorage } from '../src/engine/save.js';
+import { constants } from '../src/engine/catalog.js';
+const close=(actual,expected,eps=1e-10)=>assert.ok(Math.abs(actual-expected)<=eps,`${actual} != ${expected}`);
+const valid=()=>JSON.parse(serialize(createState(99,123456),123456));
+test('independent first ten hive geometric price fixture',()=>close(geometricCost(10,1.12,0,10),175.48735069535087));
+test('independent hut ratio and flat-ratio batch fixture',()=>{close(geometricCost(5,2.5,0,2),17.5);close(geometricCost(7,1,100,9),63);});
+test('diminishing reduction applies to both signs',()=>{for(const [x,y] of [[.75,.75],[1,.875],[1.5,.9375],[-.75,-.75],[-1,-.875],[-1.5,-.9375]])close(limitedDR(x,1),y);});
+test('new game is genuinely empty and versioned',()=>{const s=createState(99,123456);assert.equal(s.format,'beargame');assert.equal(s.version,constants.SAVE_VERSION);assert.deepEqual(s.bears,[]);assert.ok(Object.values(s.resources).every(x=>x===0));assert.deepEqual(s.buildings,{});});
+test('save parser rejects wrong format, unsupported version, malformed JSON and large text',()=>{assert.throws(()=>parseSave('{bad'));assert.throws(()=>parseSave('{}'));let s=valid();s.version=999;assert.throws(()=>parseSave(JSON.stringify(s)));assert.throws(()=>parseSave(' '.repeat(2000001)));});
+test('save parser rejects non-finite, negative, null and string quantities',()=>{for(const value of [-1,null,'1',1e101]){const s=valid();s.resources.honey=value;assert.throws(()=>parseSave(JSON.stringify(s)),String(value));}});
+test('save parser rejects unknown resource and population identity corruption',()=>{let s=valid();s.resources.neverDefined=1;assert.throws(()=>parseSave(JSON.stringify(s)));s=valid();s.bears=[{id:1},{id:1}];s.nextBearId=2;assert.throws(()=>parseSave(JSON.stringify(s)));s=valid();s.bears=[{id:1}];s.nextBearId=1;assert.throws(()=>parseSave(JSON.stringify(s)));});
+test('save parser rejects invalid calendar, tick, settings and jobs',()=>{for(const edit of [s=>s.calendar.season=4,s=>s.calendar.day=100,s=>s.calendar.tick=10,s=>s.tickRemainder=2,s=>s.settings.paused='false',s=>{s.bears=[{id:1,job:'invalid'}];s.nextBearId=2;}]){const s=valid();edit(s);assert.throws(()=>parseSave(JSON.stringify(s)));}});
+test('save round trip retains simulation quantities and fractional remainder',()=>{const s=createState(99,123456);s.resources.honey=17.125;s.tickRemainder=.07;s.arrival=.23;s.calendar={year:1,season:2,day:30,tick:4,weather:-1};const p=parseSave(serialize(s,123456),123456);for(const key of ['resources','calendar','arrival','tickRemainder','rng','version'])assert.deepEqual(p[key],s[key]);});
+test('storage read and write exceptions become controlled failure results',()=>{const storage={getItem(){throw Error('denied');},setItem(){throw Error('quota');}};assert.equal(readStorage(storage).ok,false);assert.equal(writeStorage(storage,'hi').ok,false);assert.equal(writeStorage(null,'hi').ok,false);});
+test('save serializer changes no original fields',()=>{const s=createState(99,123456),before=structuredClone(s);serialize(s,999999);assert.deepEqual(s,before);});

@@ -1,0 +1,440 @@
+{
+  "semantic-resources-b": {
+    "width": 1536,
+    "height": 1024,
+    "columns": 6,
+    "rows": 4,
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "fully_transparent_percent": 62.47,
+    "crop_alpha_threshold": 16,
+    "icons": {
+      "relic": {
+        "cell": 0,
+        "crop": {
+          "x": 61,
+          "y": 59,
+          "width": 168,
+          "height": 197
+        }
+      },
+      "blackcoin": {
+        "cell": 1,
+        "crop": {
+          "x": 305,
+          "y": 66,
+          "width": 183,
+          "height": 182
+        }
+      },
+      "void": {
+        "cell": 2,
+        "crop": {
+          "x": 553,
+          "y": 63,
+          "width": 188,
+          "height": 188
+        }
+      },
+      "temporalFlux": {
+        "cell": 3,
+        "crop": {
+          "x": 818,
+          "y": 53,
+          "width": 160,
+          "height": 203
+        }
+      },
+      "furnaceHeat": {
+        "cell": 4,
+        "crop": {
+          "x": 1066,
+          "y": 55,
+          "width": 181,
+          "height": 201
+        }
+      },
+      "tears": {
+        "cell": 5,
+        "crop": {
+          "x": 1343,
+          "y": 74,
+          "width": 127,
+          "height": 179
+        }
+      },
+      "sorrow": {
+        "cell": 6,
+        "crop": {
+          "x": 79,
+          "y": 256,
+          "width": 121,
+          "height": 239
+        }
+      },
+      "unicorns": {
+        "cell": 7,
+        "crop": {
+          "x": 298,
+          "y": 289,
+          "width": 214,
+          "height": 208
+        }
+      },
+      "alicorn": {
+        "cell": 8,
+        "crop": {
+          "x": 512,
+          "y": 293,
+          "width": 240,
+          "height": 204
+        }
+      },
+      "necrocorn": {
+        "cell": 9,
+        "crop": {
+          "x": 786,
+          "y": 256,
+          "width": 219,
+          "height": 243
+        }
+      },
+      "zebras": {
+        "cell": 10,
+        "crop": {
+          "x": 1056,
+          "y": 303,
+          "width": 218,
+          "height": 196
+        }
+      },
+      "bloodstone": {
+        "cell": 11,
+        "crop": {
+          "x": 1325,
+          "y": 312,
+          "width": 163,
+          "height": 175
+        }
+      },
+      "tMythril": {
+        "cell": 12,
+        "crop": {
+          "x": 47,
+          "y": 561,
+          "width": 178,
+          "height": 160
+        }
+      },
+      "gflops": {
+        "cell": 13,
+        "crop": {
+          "x": 301,
+          "y": 536,
+          "width": 190,
+          "height": 232
+        }
+      },
+      "hashrates": {
+        "cell": 14,
+        "crop": {
+          "x": 544,
+          "y": 527,
+          "width": 215,
+          "height": 206
+        }
+      },
+      "plastic": {
+        "cell": 15,
+        "crop": {
+          "x": 801,
+          "y": 565,
+          "width": 202,
+          "height": 149
+        }
+      },
+      "microchip": {
+        "cell": 16,
+        "crop": {
+          "x": 1070,
+          "y": 544,
+          "width": 169,
+          "height": 224
+        }
+      },
+      "catnip": {
+        "cell": 17,
+        "crop": {
+          "x": 1319,
+          "y": 536,
+          "width": 184,
+          "height": 192
+        }
+      },
+      "energy": {
+        "cell": 18,
+        "crop": {
+          "x": 73,
+          "y": 770,
+          "width": 127,
+          "height": 194
+        }
+      },
+      "happiness": {
+        "cell": 19,
+        "crop": {
+          "x": 283,
+          "y": 768,
+          "width": 221,
+          "height": 200
+        }
+      },
+      "beam": {
+        "cell": 20,
+        "crop": {
+          "x": 546,
+          "y": 774,
+          "width": 194,
+          "height": 181
+        }
+      },
+      "steel": {
+        "cell": 21,
+        "crop": {
+          "x": 797,
+          "y": 789,
+          "width": 199,
+          "height": 166
+        }
+      },
+      "gear": {
+        "cell": 22,
+        "crop": {
+          "x": 1053,
+          "y": 768,
+          "width": 204,
+          "height": 200
+        }
+      },
+      "starchart": {
+        "cell": 23,
+        "crop": {
+          "x": 1317,
+          "y": 777,
+          "width": 195,
+          "height": 187
+        }
+      }
+    }
+  },
+  "semantic-resources-extra": {
+    "width": 1254,
+    "height": 1254,
+    "columns": 2,
+    "rows": 2,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "fully_transparent_percent": 64.53,
+    "crop_alpha_threshold": 16,
+    "icons": {
+      "tanker": {
+        "cell": 0,
+        "crop": {
+          "x": 79,
+          "y": 163,
+          "width": 548,
+          "height": 417
+        }
+      },
+      "megalith": {
+        "cell": 1,
+        "crop": {
+          "x": 627,
+          "y": 77,
+          "width": 512,
+          "height": 525
+        }
+      },
+      "karma": {
+        "cell": 2,
+        "crop": {
+          "x": 99,
+          "y": 664,
+          "width": 492,
+          "height": 473
+        }
+      },
+      "burnedParagon": {
+        "cell": 3,
+        "crop": {
+          "x": 679,
+          "y": 688,
+          "width": 519,
+          "height": 466
+        }
+      }
+    }
+  },
+  "resources-atlas": {
+    "width": 1254,
+    "height": 1254,
+    "columns": 4,
+    "rows": 4,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "fully_transparent_percent": 61.12,
+    "crop_alpha_threshold": 16,
+    "icons": {
+      "honey": {
+        "cell": 0,
+        "crop": {
+          "x": 55,
+          "y": 87,
+          "width": 224,
+          "height": 218
+        }
+      },
+      "wood": {
+        "cell": 1,
+        "crop": {
+          "x": 345,
+          "y": 95,
+          "width": 259,
+          "height": 203
+        }
+      },
+      "stone": {
+        "cell": 2,
+        "crop": {
+          "x": 664,
+          "y": 106,
+          "width": 238,
+          "height": 194
+        }
+      },
+      "iron": {
+        "cell": 3,
+        "crop": {
+          "x": 974,
+          "y": 95,
+          "width": 232,
+          "height": 209
+        }
+      },
+      "coal": {
+        "cell": 4,
+        "crop": {
+          "x": 43,
+          "y": 377,
+          "width": 241,
+          "height": 207
+        }
+      },
+      "gold": {
+        "cell": 5,
+        "crop": {
+          "x": 343,
+          "y": 385,
+          "width": 253,
+          "height": 198
+        }
+      },
+      "science": {
+        "cell": 6,
+        "crop": {
+          "x": 642,
+          "y": 385,
+          "width": 291,
+          "height": 199
+        }
+      },
+      "culture": {
+        "cell": 7,
+        "crop": {
+          "x": 966,
+          "y": 398,
+          "width": 247,
+          "height": 191
+        }
+      },
+      "faith": {
+        "cell": 8,
+        "crop": {
+          "x": 54,
+          "y": 682,
+          "width": 205,
+          "height": 199
+        }
+      },
+      "bear": {
+        "cell": 9,
+        "crop": {
+          "x": 365,
+          "y": 647,
+          "width": 204,
+          "height": 256
+        }
+      },
+      "plank": {
+        "cell": 10,
+        "crop": {
+          "x": 655,
+          "y": 690,
+          "width": 266,
+          "height": 195
+        }
+      },
+      "steel": {
+        "cell": 11,
+        "crop": {
+          "x": 960,
+          "y": 687,
+          "width": 259,
+          "height": 201
+        }
+      },
+      "gear": {
+        "cell": 12,
+        "crop": {
+          "x": 43,
+          "y": 949,
+          "width": 237,
+          "height": 237
+        }
+      },
+      "crystal": {
+        "cell": 13,
+        "crop": {
+          "x": 350,
+          "y": 940,
+          "width": 238,
+          "height": 249
+        }
+      },
+      "star": {
+        "cell": 14,
+        "crop": {
+          "x": 664,
+          "y": 942,
+          "width": 258,
+          "height": 243
+        }
+      },
+      "berries": {
+        "cell": 15,
+        "crop": {
+          "x": 981,
+          "y": 964,
+          "width": 238,
+          "height": 226
+        }
+      }
+    }
+  }
+}

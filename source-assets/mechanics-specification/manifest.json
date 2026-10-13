@@ -1,0 +1,90 @@
+{
+  "referenceCommit": "781e379f79f1e7512d168849cba21ed111502644",
+  "files": [
+    {
+      "path": "00-scope-and-provenance.md",
+      "sha256": "9a6a2369ac6b9d046992ed6b60e3c80129e63f56f7f08d6d193c67e4590b1213",
+      "bytes": 2932
+    },
+    {
+      "path": "01-core-rules.md",
+      "sha256": "6c50b17b4a8be16b204288a7d117f150b212cf5b04f7cbf9b5fc4ac971eb5294",
+      "bytes": 7738
+    },
+    {
+      "path": "02-selected-facts.json",
+      "sha256": "1550e9824dcd6218582ecae590c53edc065ab87d7e400bd937b1db063f091781",
+      "bytes": 55621
+    },
+    {
+      "path": "03-population-crafting-prestige.md",
+      "sha256": "442e4d88c6d36d185eff8d64e2d1e0fc1caa4bb2b3526dde208eccd9a847f147",
+      "bytes": 5740
+    },
+    {
+      "path": "04-workshop-selected-facts.json",
+      "sha256": "0ab902109ee891dd3e118d46f4bb5a1fa03bdc850392e14dbb9fed2a72084984",
+      "bytes": 49650
+    },
+    {
+      "path": "05-faith-space-rules.md",
+      "sha256": "c38ee1c4a384101790abff79dc241b3c912d5e1f522879567a06951d0ee031ac",
+      "bytes": 5704
+    },
+    {
+      "path": "06-late-selected-facts.json",
+      "sha256": "ee418cce03fe79f923393692f45812a374adfc7a9430aeea6aec605a20d91e39",
+      "bytes": 32569
+    },
+    {
+      "path": "07-trade-and-events.md",
+      "sha256": "42d8d1ac5eedfc51aa8163cf8718ad842461af2b74b85a559604ab5cac1f597e",
+      "bytes": 5994
+    },
+    {
+      "path": "08-trade-selected-facts.json",
+      "sha256": "e87647c812ae2184a1d288641b6da5d25685800c3da7f23e360e81f97c208b1d",
+      "bytes": 5688
+    },
+    {
+      "path": "09-feature-catalogue.json",
+      "sha256": "6f005aa6ae3e212c69019fdb5e1b71d5b0e2719a0926110feea66a8644d7f9fb",
+      "bytes": 100470
+    },
+    {
+      "path": "09-feature-catalogue.md",
+      "sha256": "ec9582867936857971d2c5797666fafc08ffd634e088baf16a3deaa35a0c58a6",
+      "bytes": 24671
+    },
+    {
+      "path": "10-industry-storage-pollution.md",
+      "sha256": "c8b27e4a429ed82cc3223de5374c02383c55c4f05d99d74fc55e1ef33cb366d4",
+      "bytes": 7184
+    },
+    {
+      "path": "11-pacts-celestial-cycles.md",
+      "sha256": "b105ae8e5e36b0f0fdf44057f2ad465c5487fd6d9ba1b51401d24604acbb16d7",
+      "bytes": 5901
+    },
+    {
+      "path": "12-cycles-facts.json",
+      "sha256": "3815068df1963e076e18f565e4f064bfbfa3b44917eda3c3a99b80c828c96e09",
+      "bytes": 7252
+    },
+    {
+      "path": "13-special-workshop-facts.json",
+      "sha256": "4c435b54b2c038d971ab052cac6c32976e8978701355e76edb8ccb36455424a4",
+      "bytes": 3203
+    },
+    {
+      "path": "14-challenge-handoff.md",
+      "sha256": "af02e4054e5020fe7e355e03aaa002c889aa125faca6e5e21f7f48ee68fcdf15",
+      "bytes": 9963
+    },
+    {
+      "path": "15-default-profile-and-handoff.md",
+      "sha256": "c5b4001fa2ea30a9146445117bd74576b3091e99369c309b4512257f4a5daab3",
+      "bytes": 6502
+    }
+  ]
+}
