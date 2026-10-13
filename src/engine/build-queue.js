@@ -40,6 +40,7 @@ export function queueCapacity(ctx){
 }
 const used=q=>q.items.reduce((sum,item)=>sum+item.amount,0);
 function embassyBill(ctx,d,amount=1){const e=ctx.effects();return {culture:geometricCost(d.embassyCost*(1-(e.embassyCostReduction||0)),1.15,n(ctx.state.embassies,d.id)+(e.embassyFakeBought||0),amount)};}
+export function embassyPurchaseCosts(ctx,id,amount=1){const d=ctx.catalog.trades.find(c=>c.id===id&&c.embassyCost!=null);return d?embassyBill(ctx,d,amount):{};}
 export function embassyView(ctx){return ctx.catalog.trades.filter(d=>d.embassyCost!=null).map(d=>{const s=ctx.state,gate=!s.science.writing?'需要书写研究':!s.discoveries[d.id]?'尚未认识这支商队':'',bill=embassyBill(ctx,d);return {id:d.id,type:'embassy',name:`${d.name}使馆`,description:'增加往来，让商队带回更多物资。',unlocked:!gate,visible:!gate,available:!gate&&ctx.enough(bill),reason:gate||(!ctx.enough(bill)?'物资不足':''),owned:n(s.embassies,d.id),costs:[{id:'culture',name:ctx.resourceById.culture.name,value:bill.culture,owned:s.resources.culture}],effects:'使馆等级 +1'};});}
 export function actEmbassy(ctx,type,id,amount=1){
  if(type!=='embassy')return undefined;

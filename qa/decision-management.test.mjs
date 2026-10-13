@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createGame,catalog} from '../src/engine/index.js';
-import {page,resourceBar,resourcesDialog,detailDialog,hudResources} from '../src/ui/render.js';
+import {page,resourceBar,resourcesDialog,detailDialog,hudResources,explorationKey} from '../src/ui/render.js';
 import {decisionStatus,acquisitionMarkup} from '../src/ui/decision-navigation.js';
 import {sceneKey} from '../src/ui/experience.js';
 
@@ -51,4 +51,5 @@ test('建造、队列、改建和生产管理为同级且状态变化使地图�
  const html=page(vm,{page:'build',buildTab:'industry'});assert.match(html,/data-build-tab="build"/);assert.match(html,/data-build-tab="queue"/);assert.match(html,/data-build-tab="stages"/);assert.match(html,/data-build-tab="industry"/);assert.match(html,/data-act="toggle" data-id="smelter"/);assert.doesNotMatch(html,/class="advanced-section queue-panel"/);
  const a=sceneKey(vm,{page:'home'});vm.energy={supply:0,demand:10};assert.notEqual(sceneKey(vm,{page:'home'}),a);
  const b=sceneKey(vm,{page:'home'});vm.resources.find(r=>r.id==='wood').value=vm.resources.find(r=>r.id==='wood').max;assert.notEqual(sceneKey(vm,{page:'home'}),b);
+ const map=explorationKey(vm);vm.buildings.find(c=>c.id==='smelter').enabled=false;assert.notEqual(explorationKey(vm),map,'地图异常概览也应随设施状态刷新');
 });

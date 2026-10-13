@@ -4,6 +4,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {tmpdir} from 'node:os';
+import {createGame} from '../src/engine/index.js';
 
 const checkout=resolve(import.meta.dirname,'..');
 export async function reviewFullUi(browser,origin,{output=resolve(tmpdir(),'beargame-ui-review')}={}){
@@ -71,11 +72,41 @@ export async function reviewFullUi(browser,origin,{output=resolve(tmpdir(),'bear
  }finally{await context.close();}
 }
 
+export async function reviewAttentionUi(browser,origin){
+ const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();
+ page.setDefaultTimeout(12000);
+ const seed=JSON.parse(createGame({storage:null,now:Date.now()}).export());
+ seed.buildings.hut=1;seed.buildings.hive=20;seed.resources.honey=100;seed.arrival=.99;seed.settings.offline=false;
+ await context.addInitScript(seed=>{if(!sessionStorage.getItem('attention-review-seeded')){localStorage.clear();localStorage.setItem('beargame.save.v1',JSON.stringify(seed));sessionStorage.setItem('attention-review-seeded','1');}},seed);
+ const errors=[];page.on('pageerror',error=>errors.push(error.message));
+ try{
+  await page.goto(origin);await page.locator('#loading-screen').waitFor({state:'hidden'});
+  const story=page.locator('[data-story-moment="first-bear"]');await story.waitFor();
+  await story.locator('button').focus();await page.waitForTimeout(7300);assert.equal(await story.count(),1);
+  await page.locator('.gather-button').focus();await story.waitFor({state:'detached',timeout:9000});
+  assert.ok(await page.evaluate(()=>JSON.parse(localStorage.getItem('honeywood-ui-v1')).notices.some(n=>n.id==='story:first-bear')));
+  await page.reload();await page.locator('#loading-screen').waitFor({state:'hidden'});
+  assert.ok(await page.evaluate(()=>JSON.parse(localStorage.getItem('honeywood-ui-v1')).notices.some(n=>n.id==='story:first-bear')));
+  await page.goto(origin+'#build');await page.locator('#loading-screen').waitFor({state:'hidden'});
+  await page.locator('[data-build-choice="hut"]').click();
+  await page.locator('.build-station .batch-controls summary').click();
+  const single=page.locator('.build-station .buy-button'),batch=page.locator('.build-station [data-amount="5"]');
+  for(const button of [single,batch]){
+   // aria-disabled 保留解释入口；跳过驱动的可用性等待，仍发送真实点击。
+   assert.equal(await button.getAttribute('aria-disabled'),'true');await button.click({force:true});
+   assert.equal(await button.evaluate(el=>el.nextElementSibling?.classList.contains('inline-action-feedback')),true);
+   assert.equal(await page.locator('[aria-describedby="action-feedback"]').count(),1);
+  }
+  assert.deepEqual(errors,[]);
+  return {checks:['故事获得焦点后超过自动收起时长仍保留，移出焦点后收起','成长消息刷新后仍可回看','连续失败与不同批量操作的错误信息紧邻当前按钮'],errors};
+ }finally{await context.close();}
+}
+
 if(process.argv[1]&&resolve(process.argv[1])===resolve(import.meta.filename)){
  const url=process.argv[process.argv.indexOf('--url')+1];
  if(!process.argv.includes('--url')||!url)throw Error('请传入 --url 本地完整版本地址。');
  const driver=process.env.BEARGAME_BROWSER_DRIVER;
  if(!driver)throw Error('请通过 BEARGAME_BROWSER_DRIVER 指定导出 launch() 的本地浏览器适配模块，必须开启浏览器自身沙箱。');
  const {launch}=await import(pathToFileURL(resolve(driver)).href),browser=await launch();
- try{console.log(JSON.stringify(await reviewFullUi(browser,url),null,2));}finally{await browser.close();}
+ try{const controls=await reviewFullUi(browser,url),attention=await reviewAttentionUi(browser,url);console.log(JSON.stringify({controls,attention},null,2));}finally{await browser.close();}
 }

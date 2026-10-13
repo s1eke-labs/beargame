@@ -38,10 +38,10 @@ test('real faith confirmation cancel and Escape retain parent detail without spe
  const before=t.snapshot().progression.praised;
  await clickRendered(t,{act:'adore',id:'adore'},'#dialog-root');
  await clickRendered(t,{command:'cancel'},'#dialog-root');
- assert.match(t.doc.node('#dialog-root').innerHTML,/进行沉淀灵悟/);assert.equal(t.snapshot().progression.praised,before);
+ assert.match(t.doc.node('#dialog-root').innerHTML,/转化颂愿 · 沉淀灵悟/);assert.equal(t.snapshot().progression.praised,before);
  await clickRendered(t,{act:'adore',id:'adore'},'#dialog-root');
  await t.event('keydown',{key:'Escape',preventDefault(){}});
- assert.match(t.doc.node('#dialog-root').innerHTML,/进行沉淀灵悟/);assert.equal(t.snapshot().progression.praised,before);
+ assert.match(t.doc.node('#dialog-root').innerHTML,/转化颂愿 · 沉淀灵悟/);assert.equal(t.snapshot().progression.praised,before);
 });
 test('locked deep links never expose paid controls and retain home exit',()=>{
  const v=fixture().snapshot();for(const id of ['faith','space','challenges','prestige']){

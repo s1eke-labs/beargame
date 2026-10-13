@@ -1,3 +1,4 @@
+import {batchDecision} from './decision-batch.js';
 import {jobDecisions,happinessBreakdown} from './decision-jobs.js';
 import {tradeDecision,researchRelations} from './decision-view.js';
 import {checkSeasonalGiftOnLoad,seasonalGiftsView,actSeasonalGifts} from './seasonal-gifts.js';
@@ -295,7 +296,7 @@ export function createGame(options={}){
   const extended=prestigePreview(context());if(extended)return extended;
   return {paragon:Math.max(0,state.bears.length-70),karma:0,bears:state.bears.length,available:!!state.science.metaphysics,description:'重建营地会清除本轮资源、建筑、科技与熊群。保留传承、业力及已完成挑战。'};
  }
- function snapshot({jobDetails=false}={}){
+ function snapshot({jobDetails=false,batchTarget=null}={}){
   const previousCache=effectCache;const p=production();effectCache=p.effects;try{
   const rateScale=realTicksPerSecond(),counts=jobCounts(), assigned=Object.values(counts).reduce((a,b)=>a+b,0);
   const defsWith=(key)=>catalog[key].map(d=>card(key==='buildings'?buildingDefinition(d.id):d));
@@ -310,7 +311,7 @@ export function createGame(options={}){
   const praiseGain=state.resources.faith*progressionHooks.praiseMultiplier(state.faithRatio);
   const praiseReason=!state.science.theology?'需要星光礼仪':isChallenge('atheism')?'无星长夜中不能举行祈愿':state.resources.faith<=.0001?'还没有积攒足够的信仰':!Number.isFinite(praiseGain)||praiseGain>1e100-state.praised?'祈愿结果超出可保存范围':'';
   return {
-   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades').map(c=>c.unlocked||c.owned?{...c,tradePreview:tradeDecision(context(),maps.trades[c.id],p)}:c),challenges:advanced.challengeCards,
+   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,batchPreview:batchTarget?batchDecision(context(),batchTarget,p,advanced):null,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades').map(c=>c.unlocked||c.owned?{...c,tradePreview:tradeDecision(context(),maps.trades[c.id],p)}:c),challenges:advanced.challengeCards,
    actions:[
     {id:'honey',type:'gather',name:'采集蜂蜜',description:'从花丛边采回 1 蜂蜜。',unlocked:true,available:state.resources.honey<p.caps.honey,costs:[],effects:'+1 蜂蜜'},
     card(maps.crafts.wood),card(festivalDefinition),

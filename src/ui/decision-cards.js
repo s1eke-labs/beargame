@@ -21,3 +21,15 @@ export function specializedDecision(c,{compact=false,paused=false}={}){
 }
 
 export function completionLabel(c){return c.family==='mission'?(c.travelDays>0?'正在航行':'已抵达'):'已掌握';}
+
+export function batchControls(c,section,vm){
+ const preview=vm?.batchPreview;if(!preview||preview.section!==section||preview.id!==c.id)return '';
+ const costs=o=>o.costs.map(x=>`${number(x.value)} ${x.name}`).join('、')||'无需资源';
+ return `<details class="batch-controls fold-section" data-fold="batch-${esc(section)}-${esc(c.id)}"><summary>批量操作 · 查看总消耗</summary>${preview.options.filter(o=>o.amount!==1).map(o=>{
+  const label=o.amount==='max'?`最多 ×${number(o.count)}`:`${actionLabel(c,section)} ×${o.count}`;
+  const output=o.output?`预计产出 ${number(o.output.total)} ${o.output.name}，实际入库 ${number(o.output.stored)}${o.output.lost>0?`，溢出损失 ${number(o.output.lost)}`:''}。`:'';
+  const explanation=`按当前库存执行 ${o.count} 次${c.name}，总消耗 ${costs(o)}。${output}确认时按实际库存与价格重新计算。`;
+  const confirmation=[c.confirmationText||c.confirm||'',explanation].filter(Boolean).join(' ');
+  return `<div class="batch-choice"><button class="secondary-button" data-act="${esc(preview.type)}" data-id="${esc(c.id)}" data-amount="${o.amount}" ${!o.available?'aria-disabled="true"':''} data-reason="${esc(o.reason)}" data-confirm="${esc(confirmation)}">${esc(label)}</button><p class="batch-total">总消耗：${esc(costs(o))}</p>${output?`<p class="${o.output.lost>0?'storage-warning':'batch-output'}">${esc(output)}</p>`:''}${preview.type==='trade'?'<small>贸易回报按每次交换分别随机结算。</small>':''}</div>`;
+ }).join('')}</details>`;
+}
