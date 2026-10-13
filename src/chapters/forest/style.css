@@ -153,3 +153,8 @@ button[aria-disabled=true]{opacity:.65}.primary[aria-disabled=true],.secondary[a
 [data-text-size=large] .guide b,[data-text-size=large] .guide small{overflow-wrap:anywhere}
 @media(max-width:699px) and (max-height:650px){[data-text-size=large] .resource-ribbon{height:76px}[data-text-size=large] .app-shell{--compact-hud:76px;--compact-nav:72px}[data-text-size=large] .bottom-nav button{min-height:64px;max-height:64px}}
 @media(max-height:450px) and (min-width:700px){[data-text-size=large] .app-shell.home-view{--home-topbar:44px;--home-hud:64px;--home-toolbar:40px;--home-dock:112px;--home-nav:64px}[data-text-size=large] .home-view .guide{height:52px;min-height:52px}[data-text-size=large] .home-view .resource-tile{min-height:58px}[data-text-size=large] .home-view .bottom-nav button{min-height:56px;max-height:56px}}
+
+/* 窄屏大字号将容量放在独立行，为底部状态保留完整行高。 */
+.resource-amount{display:block}.resource-capacity{font-size:.75rem;line-height:1rem;white-space:nowrap}
+.build-station .action-row .primary{min-width:3.5em;white-space:nowrap}
+@media(max-width:420px){[data-text-size=large] .app-shell.home-view{--home-hud:96px}[data-text-size=large] .app-shell{--compact-hud:96px}[data-text-size=large] .resource-ribbon{height:96px;min-height:96px}[data-text-size=large] .resource-tile{min-height:88px}[data-text-size=large] .resource-amount strong,[data-text-size=large] .resource-capacity{display:block}[data-text-size=large] .resource-amount{line-height:1.125rem}[data-text-size=large] .resource-capacity{line-height:1rem}[data-text-size=large] .build-station .action-row button{padding-inline:7px}}
