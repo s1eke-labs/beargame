@@ -77,7 +77,7 @@ test('continuous painting fills tall Home and keeps long maps scrollable without
 });
 
 test('short phone selected building and first notebook card keep their action in the first screen',()=>{
- const vars=Object.fromEntries([...css.matchAll(/--compact-(topbar|hud|heading|hero|nav):(\d+)px/g)].map(([,key,value])=>[key,Number(value)]));
+ const vars=Object.fromEntries([...css.match(/:root\{(--compact-[^}]+)\}/)[1].matchAll(/--compact-(topbar|hud|heading|hero|nav):(\d+)px/g)].map(([,key,value])=>[key,Number(value)]));
  assert.deepEqual(vars,{topbar:48,hud:60,heading:46,hero:100,nav:64});
  // Two cost rows, two effect lines and a paused banner still leave the primary action visible.
  const station=8+82+78+50;
@@ -133,6 +133,7 @@ export const fixture={
  init(storage,id='test-a') { globalThis.localStorage=storage; tabId=id; storageIssue=''; readOnly=false; loadBlocked=false; settling=false; settlementFailed=false; hiddenAt=null; dialog=null; dialogHistory=false; parentDialog=null; ui.revealBuilding=null; ui.page='home'; ui.region='village'; ui.buildChoice='hive'; settings.reducedMotion=false; refreshDialog=()=>{}; render=()=>{vm=game.snapshot();}; renderStatus=()=>{}; openDialog=(kind,title,data={})=>{dialog={kind,title,...data};}; closeDialog=()=>{dialog=null;}; notify=()=>{}; dialogRoot={querySelector(){return null;}}; app={querySelector(){return null;}}; claim(); reloadGame(); return vm;},
  step, save, perform, onVisibility, onStorage, flushActive, settle, importFile, preload, prefetchArt, imageFailed,
  resetArt(){failedAssets.clear();loadedAssets.clear();},
+ textSize:()=>settings.textSize,restoreTextSize(value){settings.textSize=value;applyTextSize();},
  scene(snapshot,root,options={}){vm=snapshot;app=root;ui.page='home';ui.region=options.region||'village';readOnly=false;storageIssue='';loadBlocked=false;settling=false;settlementFailed=false;dialog=null;settings.reducedMotion=!!options.reduced;if(Object.hasOwn(options,'revealBuilding'))ui.revealBuilding=options.revealBuilding;updateScene();},
  views(snapshot){vm=snapshot;return {map:mapPage(),more:morePage(),build:buildPage(),queue:queuePage()};},
  live(snapshot,root){vm=snapshot;app=root;updateLive();},
@@ -582,7 +583,7 @@ test('queue editing focus cannot move to a different numeric-index target after 
 test('working bears leave building-name badges clickable without moving building lots',()=>{
  const snapshot=allOccupations();snapshot.buildings.find(c=>c.id==='smelter').enabled=false;
  assert.match(css,/\.placed-building\{[^}]*justify-content:flex-end/);
- assert.match(css,/\.building-label\{[^}]*font-size:12px;padding:3px 8px/);
+ assert.match(css,/\.building-label\{[^}]*font-size:0\.75rem;padding:3px 8px/);
  for(const viewportWidth of [336,504,900])for(const region of visibleRegions(snapshot)){
   const width=Math.min(viewportWidth,680),before=sceneLayout(snapshot,region.id),layout=sceneActors(snapshot,region.id,{width,viewportWidth});
   assert.deepEqual(sceneLayout(snapshot,region.id),before);
@@ -593,4 +594,11 @@ test('working bears leave building-name badges clickable without moving building
    for(const actor of layout.actors)assert.equal(intersects(actor.bounds,box),false,`${viewportWidth} ${region.id}: ${actor.job}/${before.buildings[i].card.id} label`);
   }
  }
+});
+
+test('森林大字号切换作用于页面并持久化，未知偏好回到标准字号',()=>{
+ const storage=storageFor();globalThis.document={documentElement:{dataset:{}}};
+ try{fixture.init(storage);fixture.restoreTextSize('normal');fixture.click({command:'text-size'});assert.equal(globalThis.document.documentElement.dataset.textSize,'large');assert.equal(JSON.parse(storage.getItem(UI_KEY)).textSize,'large');fixture.restoreTextSize(JSON.parse(storage.getItem(UI_KEY)).textSize);assert.equal(fixture.textSize(),'large');fixture.click({command:'text-size'});assert.equal(globalThis.document.documentElement.dataset.textSize,'normal');assert.equal(JSON.parse(storage.getItem(UI_KEY)).textSize,'normal');fixture.restoreTextSize('unsupported');assert.equal(fixture.textSize(),'normal');}
+ finally{delete globalThis.document;delete globalThis.localStorage;}
+ assert.match(css,/:root\[data-text-size=large\]\{font-size:20px\}/);assert.match(css,/\.card-copy p[^{]*\{font-size:[0-9.]+rem/);
 });
