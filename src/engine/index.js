@@ -1,4 +1,5 @@
 import {batchDecision} from './decision-batch.js';
+import {buildingDecision} from './decision-buildings.js';
 import {jobDecisions,happinessBreakdown} from './decision-jobs.js';
 import {tradeDecision,researchRelations} from './decision-view.js';
 import {checkSeasonalGiftOnLoad,seasonalGiftsView,actSeasonalGifts} from './seasonal-gifts.js';
@@ -274,6 +275,10 @@ export function createGame(options={}){
  }
  function notify(){if(!listeners.size)return;const view=snapshot();for(const fn of [...listeners]){try{fn(view);}catch(error){console.error('Beargame view update failed',error);}}}
  function result(ok,message,extra={}){if(ok&&!yearJumpCollectors){log(message,'action');notify();}return {ok,message,...extra};}
+ function applyBuildingPurchase(def,amount){
+  const before=enabledCount(def.id);state.buildings[def.id]=owned(def)+amount;state.activeBuildings[def.id]=before+amount;state.disabled[def.id]=false;
+  if(['hut','logHouse','mansion'].includes(def.id)){state.ironWill=false;state.activeChallenges=state.activeChallenges.filter(x=>x!=='ironWill');if(state.challenge==='ironWill')state.challenge=state.activeChallenges[0]||null;}
+ }
  function buy(def,amount){
   if(!def)return result(false,'没有找到这个项目。');
   const reason=gateReason(def.gate);if(reason)return result(false,reason);
@@ -284,7 +289,7 @@ export function createGame(options={}){
   if(amount<1)return result(false,'物资不足，或已达到上限。');
   const costs=costsFor(def,amount);if(!enough(costs))return result(false,'物资不足。');
   pay(costs);
-  if(def.type==='build'){const before=enabledCount(def.id);state.buildings[def.id]=owned(def)+amount;state.activeBuildings[def.id]=before+amount;state.disabled[def.id]=false;if(['hut','logHouse','mansion'].includes(def.id)){state.ironWill=false;state.activeChallenges=state.activeChallenges.filter(x=>x!=='ironWill');if(state.challenge==='ironWill')state.challenge=state.activeChallenges[0]||null;}}
+  if(def.type==='build')applyBuildingPurchase(def,amount);
   if(def.type==='research')state.science[def.id]=true;
   if(def.type==='upgrade')state.workshop[def.id]=true;
   if(def.type==='faith')state.religion[def.id]=owned(def)+amount;
@@ -296,7 +301,7 @@ export function createGame(options={}){
   const extended=prestigePreview(context());if(extended)return extended;
   return {paragon:Math.max(0,state.bears.length-70),karma:0,bears:state.bears.length,available:!!state.science.metaphysics,description:'重建营地会清除本轮资源、建筑、科技与熊群。保留传承、业力及已完成挑战。'};
  }
- function snapshot({jobDetails=false,batchTarget=null}={}){
+ function snapshot({jobDetails=false,batchTarget=null,buildingTargets=[]}={}){
   const previousCache=effectCache;const p=production();effectCache=p.effects;try{
   const rateScale=realTicksPerSecond(),counts=jobCounts(), assigned=Object.values(counts).reduce((a,b)=>a+b,0);
   const defsWith=(key)=>catalog[key].map(d=>card(key==='buildings'?buildingDefinition(d.id):d));
@@ -308,10 +313,21 @@ export function createGame(options={}){
    jobs=jobDecisions({state,production:p,rateScale,jobs,resources,project});
   }
   const season=state.calendar.season,advanced=progressionView(context(),p);
+  const requestedBuildings=[...new Set([...(batchTarget?.section==='buildings'?[batchTarget.id]:[]),...(Array.isArray(buildingTargets)?buildingTargets:[])])].filter(id=>typeof id==='string'&&maps.buildings[id]).slice(0,6);
+  const projectBuilding=(definition,purchase)=>{
+   const originalState=state,originalCache=effectCache;
+   try{
+    state=clone(originalState);effectCache=null;
+    if(purchase)pay(costsFor(definition));
+    applyBuildingPurchase(definition,1);maintainPolicies(state);maintainQueueSources(context());effectCache=null;
+    return production();
+   }finally{state=originalState;effectCache=originalCache;}
+  };
+  const buildingPreviews=requestedBuildings.map(id=>buildingDecision(context(),id,p,projectBuilding)).filter(Boolean);
   const praiseGain=state.resources.faith*progressionHooks.praiseMultiplier(state.faithRatio);
   const praiseReason=!state.science.theology?'需要星光礼仪':isChallenge('atheism')?'无星长夜中不能举行祈愿':state.resources.faith<=.0001?'还没有积攒足够的信仰':!Number.isFinite(praiseGain)||praiseGain>1e100-state.praised?'祈愿结果超出可保存范围':'';
   return {
-   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,batchPreview:batchTarget?batchDecision(context(),batchTarget,p,advanced):null,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades').map(c=>c.unlocked||c.owned?{...c,tradePreview:tradeDecision(context(),maps.trades[c.id],p)}:c),challenges:advanced.challengeCards,
+   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,buildingPreviews,batchPreview:batchTarget?batchDecision(context(),batchTarget,p,advanced):null,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades').map(c=>c.unlocked||c.owned?{...c,tradePreview:tradeDecision(context(),maps.trades[c.id],p)}:c),challenges:advanced.challengeCards,
    actions:[
     {id:'honey',type:'gather',name:'采集蜂蜜',description:'从花丛边采回 1 蜂蜜。',unlocked:true,available:state.resources.honey<p.caps.honey,costs:[],effects:'+1 蜂蜜'},
     card(maps.crafts.wood),card(festivalDefinition),
