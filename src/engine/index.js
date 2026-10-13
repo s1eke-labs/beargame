@@ -1,5 +1,6 @@
 import {batchDecision} from './decision-batch.js';
 import {buildingDecision} from './decision-buildings.js';
+import {jobTransferPlan,applyJobTransfer,jobTransferDecision} from './decision-job-transfer.js';
 import {jobDecisions,happinessBreakdown} from './decision-jobs.js';
 import {tradeDecision,researchRelations} from './decision-view.js';
 import {checkSeasonalGiftOnLoad,seasonalGiftsView,actSeasonalGifts} from './seasonal-gifts.js';
@@ -301,7 +302,7 @@ export function createGame(options={}){
   const extended=prestigePreview(context());if(extended)return extended;
   return {paragon:Math.max(0,state.bears.length-70),karma:0,bears:state.bears.length,available:!!state.science.metaphysics,description:'重建营地会清除本轮资源、建筑、科技与熊群。保留传承、业力及已完成挑战。'};
  }
- function snapshot({jobDetails=false,batchTarget=null,buildingTargets=[]}={}){
+ function snapshot({jobDetails=false,batchTarget=null,buildingTargets=[],jobTransfer=null}={}){
   const previousCache=effectCache;const p=production();effectCache=p.effects;try{
   const rateScale=realTicksPerSecond(),counts=jobCounts(), assigned=Object.values(counts).reduce((a,b)=>a+b,0);
   const defsWith=(key)=>catalog[key].map(d=>card(key==='buildings'?buildingDefinition(d.id):d));
@@ -324,10 +325,16 @@ export function createGame(options={}){
    }finally{state=originalState;effectCache=originalCache;}
   };
   const buildingPreviews=requestedBuildings.map(id=>buildingDecision(context(),id,p,projectBuilding)).filter(Boolean);
+  const projectTransfer=plan=>{
+   const originalState=state,originalCache=effectCache;
+   try{state=clone(originalState);applyJobTransfer(state,plan);effectCache=null;return production();}
+   finally{state=originalState;effectCache=originalCache;}
+  };
+  const jobTransferPreview=jobTransfer?jobTransferDecision(context(),jobTransfer,p,projectTransfer):null;
   const praiseGain=state.resources.faith*progressionHooks.praiseMultiplier(state.faithRatio);
   const praiseReason=!state.science.theology?'需要星光礼仪':isChallenge('atheism')?'无星长夜中不能举行祈愿':state.resources.faith<=.0001?'还没有积攒足够的信仰':!Number.isFinite(praiseGain)||praiseGain>1e100-state.praised?'祈愿结果超出可保存范围':'';
   return {
-   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,buildingPreviews,batchPreview:batchTarget?batchDecision(context(),batchTarget,p,advanced):null,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades').map(c=>c.unlocked||c.owned?{...c,tradePreview:tradeDecision(context(),maps.trades[c.id],p)}:c),challenges:advanced.challengeCards,
+   version:constants.SAVE_VERSION,rateMultiplier:rateScale/5,buildingPreviews,jobTransferPreview,batchPreview:batchTarget?batchDecision(context(),batchTarget,p,advanced):null,resources,buildings:defsWith('buildings'),crafts:defsWith('crafts'),science:defsWith('science'),workshop:defsWith('workshop'),jobs,faith:advanced.faithCards,space:advanced.spaceCards,trades:defsWith('trades').map(c=>c.unlocked||c.owned?{...c,tradePreview:tradeDecision(context(),maps.trades[c.id],p)}:c),challenges:advanced.challengeCards,
    actions:[
     {id:'honey',type:'gather',name:'采集蜂蜜',description:'从花丛边采回 1 蜂蜜。',unlocked:true,available:state.resources.honey<p.caps.honey,costs:[],effects:'+1 蜂蜜'},
     card(maps.crafts.wood),card(festivalDefinition),
@@ -464,7 +471,7 @@ export function createGame(options={}){
    const outcome=resolveAction(type,id,amount);finishUndoAction(context(),undoToken,outcome);let changed=0;
    if(outcome.ok){
     if(type==='trade')changed+=achievementEvent(context(),'trade',{count:outcome.success||0});
-    if(type==='assign'&&id==='hunter')changed+=achievementEvent(context(),'huntersAssigned');
+    if(type==='assign'&&id==='hunter'||type==='reassign'&&String(id).endsWith(':hunter'))changed+=achievementEvent(context(),'huntersAssigned');
     if(type==='engineerAssign'&&id==='wood')changed+=achievementEvent(context(),'engineerWoodAssigned');
     if(type==='upgrade'&&id==='carbonSequestration')changed+=achievementEvent(context(),'carbonPurchased');
     if(type==='shatter'&&!yearJumpCollectors)changed+=achievementEvent(context(),'shatter',{...before,count:state.calendar.year-before.year});
@@ -528,6 +535,13 @@ export function createGame(options={}){
    candidates.sort((a,b)=>type==='unassign'&&id==='engineer'?(Number(!!a.engineerSpecialty)-Number(!!b.engineerSpecialty))||((a.skills[id]||0)-(b.skills[id]||0)):(b.skills[id]||0)-(a.skills[id]||0));
    for(let i=0;i<amount;i++){candidates[i].job=type==='assign'?id:null;if(type==='unassign')candidates[i].engineerSpecialty=null;}
    return result(true,`${amount} 只小熊${type==='assign'?`成为${job.name}`:'回到休息区'}。`);
+  }
+  if(type==='reassign'){
+   const [from,to,...extra]=String(id||'').split(':');
+   if(extra.length)return result(false,'调岗标识无效。');
+   const plan=jobTransferPlan(context(),{from,to,amount});if(!plan.available)return result(false,plan.reason,{actualCount:0});
+   applyJobTransfer(state,plan);
+   return result(true,`${plan.actualCount} 只伙伴从${maps.jobs[from].name}转为${maps.jobs[to].name}。`,{actualCount:plan.actualCount});
   }
   if(type==='toggle'){
    const def=buildingDefinition(id)||maps.space[id];if(!def||(!def.conversion&&!def.toggleable&&!['steamworks','oilWell','biolab','factory'].includes(def.id))||!owned(def))return result(false,'这个项目不能切换。');
