@@ -252,6 +252,13 @@
 .simple-book .storage-warning{display:block;color:var(--state-warning);font-size:var(--text-body)}
 .simple-book .acquisition-links,.simple-book .prerequisite-list{display:flex;flex-direction:column;gap:8px;margin:10px 0;font-size:var(--text-body);overflow-wrap:anywhere}
 .simple-book .missing-resource{grid-column:1/-1;font-size:var(--text-body);padding-top:8px;border-top:1px solid var(--line)}
+.simple-book .batch-controls{grid-column:1/-1;min-width:0;width:100%;margin:8px 0;font-size:var(--text-body)}
+.simple-book .batch-controls>summary{min-height:44px;line-height:1.5;white-space:normal}
+.simple-book .batch-choice{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:12px 0;border-top:1px solid var(--line);min-width:0}
+.simple-book .batch-choice>button{min-height:44px;align-self:flex-start;max-width:100%;white-space:normal}
+.simple-book .batch-choice p{font-size:var(--text-body);line-height:1.6;overflow-wrap:anywhere}
+.simple-book .batch-choice small{font-size:var(--text-caption);line-height:1.5;overflow-wrap:anywhere}
+.simple-book .batch-output{color:var(--state-success)}
 .simple-book .decision-extra-filters{width:100%;font-size:var(--text-body)}
 .simple-book .decision-extra-filters>summary{cursor:pointer;display:flex;align-items:center;min-height:44px;color:var(--muted)}
 .simple-book .decision-extra-filters>summary:before{content:'▸';margin-right:8px}
@@ -345,6 +352,9 @@
  .simple-book .resource-copy .resource-capacity,.simple-book .resource-mini-meter{display:none}
  .simple-book .nav-token{display:none}
  .simple-book .bottom-nav>button{min-height:44px}
- .simple-book .panel-view .game-sheet{max-height:100%;height:100%}
+ .simple-book .playfield.panel-view{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+ .simple-book .panel-view .home-controls{display:none}
+ .simple-book .panel-view .world-board{visibility:hidden}
+ .simple-book .panel-view .game-sheet{position:absolute;inset:0;width:100%;max-height:100%;height:100%;border-radius:12px}
  .simple-book .guide-picture{display:none}
 }

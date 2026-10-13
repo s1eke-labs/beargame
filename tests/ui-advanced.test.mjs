@@ -41,7 +41,7 @@ test('engineer output clipping warning is visible alongside real progress and as
  const html=engineeringPanel(vm);assert.match(html,/aria-valuenow="40"/);assert.match(html,/库存已满/);assert.match(html,/data-act="engineerUnassign"/);
 });
 test('short-phone layout compacts scene and keeps full-size primary controls',async()=>{
- const css=await readFile(new URL('../src/styles/main.css',import.meta.url),'utf8');assert.match(css,/@media\(max-width:760px\) and \(max-height:740px\)/);assert.match(css,/height:100dvh/);assert.match(css,/gather-button strong,.refine-button strong\{font-size:16px\}/);assert.match(css,/min-height:56px/);
+ const css=await readFile(new URL('../src/styles/main.css',import.meta.url),'utf8');assert.match(css,/@media\(max-width:760px\) and \(max-height:740px\)/);assert.match(css,/height:100dvh/);assert.match(css,/--text-emphasis:1rem/);assert.match(css,/gather-button strong,.refine-button strong\{font-size:var\(--text-emphasis\)\}/);assert.match(css,/min-height:56px/);
 });
 test('achievement page preserves engine secrecy and unavailable-service boundaries',()=>{
  const vm=createGame({storage:null,now:0}).snapshot();vm.achievements={cards:[{id:'earned',name:'第一步',description:'已完成的里程碑',unlocked:true,visible:true,starred:true},{id:'secret',name:'尚未发现',description:'继续探索',unlocked:false,visible:true,secret:true},{id:'hidden',name:'不应露出的标题',description:'不应露出的条件',visible:false}],total:2,unlocked:1,starsTotal:1,starsUnlocked:1};vm.badges=[{id:'external',name:'暂不可达',description:'需要外部服务',reason:'此版本没有账号服务',available:false,visible:true}];vm.badgeTotals={total:1,unlocked:0};
